@@ -1,35 +1,8 @@
 # UTN - Ingeniería Industrial
 
-Repositorio de materiales, trabajos y proyectos de la cursada de **Ingeniería Industrial** en la Universidad Tecnológica Nacional.
+Repositorio de materiales y trabajos de la cursada de **Ingeniería Industrial** en la Universidad Tecnológica Nacional.
 
 ---
 
-## Contenido
-
-| Carpeta | Descripción |
-|--------|-------------|
-| `/tp` | Trabajos prácticos |
-| `/parciales` | Resoluciones de parciales |
-| `/resumenes` | Resúmenes por materia |
-| `/proyectos` | Proyectos integradores |
-
-> Las carpetas se van creando a medida que avanza la cursada.
-
----
-
-## Materias
-
-- [ ] Análisis Matemático
-- [ ] Álgebra y Geometría Analítica
-- [ ] Física
-- [ ] Química
-- [ ] Sistemas de Representación
-- [ ] Inglés Técnico
-
----
-
-## Autor
-
-**Santiago Greco** — [@santiigreco](https://github.com/santiigreco)
-
-UTN · Ingeniería Industrial
+**Alumno:** Santiago Greco
+**Carrera:** Ingeniería Industrial
