@@ -1,0 +1,14 @@
+---- clase 1 --- 25/03 
+Intro de probabilidad + calculos con matrices
+
+---- clase 2 --- 01/04
+
+
+Intro procesos estocásticos
+Simulación. El ejercicio 2 de Simulación entró al último final.
+Dudas que surgen en examenes: 
+    1. el orden del proceso determina el resultado. No pasa nada.
+    2. Como tomo una decisión? hay que incrementar la cantidad de observaciones, debido a que ahí converge montecarlo. Si no converge no sirve para nada.
+    3. Error tipico de examen: olvidarse de acumular e ir directaente contra la funcion de densidad.
+
+Enseño como usar antigravity, sobre todo para los TP. EL profesor hizo en clase el ejercicio 2 con antigravity.
