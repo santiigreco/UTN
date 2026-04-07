@@ -1,0 +1,34 @@
+06/04/2026
+Repaso clase 1: 
+Punto de parcial: ejemplificar estado teorico y estado real
+Definiciion de mantenimiento: proceso de gestion que debe asegurar la disponibilidad, confiabilidad y eficiencia de los equipos. el nivel de disponibilidad previamentee stablecido para las funciones de los activos de la empresa, en un contexto operacional (dinámico) dado; siempre administrando de forma óptima los recursos de la organización.
+
+El plan de mantenimiento es dinamico.
+
+Siempre que exista ingeniería de planta, mantenimiento depende de este área porque es quien tiene los tiempos y los costos.
+
+---------------------------
+
+Estado de Conservación Adecuado: es muy teorico y no se condice con la realidad, porque las máquinas no llegan a durar 10 años.
+
+Factores clave de la evolución del mantenimiento
+1. Evolución tecnológica
+2. Capacidad instalada
+3. Trabajo continuo
+4. Mantenimiento y su influencia en la calidad
+5. Mantenimiento y su influencia en los costos
+
+Los requisitos de calidad cambiaron los últimos 30 años. Antes se hablabal dirigida a la conformidad, hoy se hala de calidad dirigida al objetivo. 
+La tolerancia es mucho más chica hoy en día.
+Gráfico X-R: media-rango, detecta una alerta temprana, o mantenimiento de primera linea. Debe identificarlo el operario de producción en el mejor de los casos.
+
+**Mantenimiento y su influencia en costos** 
+Es lo mas importante de la clase de hoy. 
+
+Costo total = a + b*t 
+
+a=costo del material inutilizado por paro imprevisto
+b: sumatoria de horas maquina, h hombre, penalizacion por atraso. Depende del tiempo.
+
+El costo variable es el lucro cesante y esta dado por:
+horas maquina + horas hombre + amortizacion de capital + penalizaciones
