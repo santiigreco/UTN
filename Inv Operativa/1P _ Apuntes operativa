@@ -12,3 +12,30 @@ Dudas que surgen en examenes:
     3. Error tipico de examen: olvidarse de acumular e ir directaente contra la funcion de densidad.
 
 Enseño como usar antigravity, sobre todo para los TP. EL profesor hizo en clase el ejercicio 2 con antigravity.
+
+
+----- clase 3 --- 08/04 
+Método de la transformada inversa 
+
+Sirve para hacer un sampleo de variables aleatorias. 
+Ventaja: simple de obtener, requiere invertir func acumulada de densidad de probailidad.
+Desventaja: es necesario conocer la solucion analitica de la acumulada. EN muchos casos no existe.
+
+Ejemplo empresa e-commerce 
+
+Transformada inversa con distribución exponencial:
+Distribución exponencial -> permite calcular y modelizar tiempos entre eventos discretos
+Siempre vamos a usar la acumulada -> se puede invertir
+
+Ejemplo con python
+Importante conceptos: tiempo entre fallas de maquina, y luego armar los cronómetros.
+
+
+Ejercicio 4 -- Simulación
+
+En ejerciciode simulacion van a pedir linea de timepo. cantidad de stock.
+Que la tasa de despacho sea mayor, significa que la linea tiene sobrecapacidad. Entonces la tasa de despacho tiende a la tasa de arribos (lambda = 2)
+
+Ajuste de distribuciones: 
+likelihood - > verosimilitud de las distribuciones
+

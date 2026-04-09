@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulación Discreta — Inv. Operativa UTN</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#04091a;--bg2:#080f24;--bg3:#0e1a36;--bg4:#152248;
+  --border:rgba(56,139,253,0.13);
+  --orange:#fb8c00;--orange-l:#ffa726;--orange-dim:rgba(251,140,0,0.11);
+  --blue:#2979ff;--blue-dim:rgba(41,121,255,0.11);
+  --cyan:#00b8ff;--green:#00e676;--green-dim:rgba(0,230,118,0.1);
+  --red:#ff5252;--red-dim:rgba(255,82,82,0.1);
+  --text:#dce8ff;--text-dim:#7a99c8;--text-muted:#3d5a8a;
+  --mono:'JetBrains Mono',monospace;--display:'Syne',sans-serif;--body:'Outfit',sans-serif;
+  --r:12px;--sw:268px
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:15px;line-height:1.6;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(41,121,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(41,121,255,0.025) 1px,transparent 1px);background-size:44px 44px;pointer-events:none;z-index:0}
+
+/* ─── SIDEBAR ─── */
+.sidebar{position:fixed;left:0;top:0;bottom:0;width:var(--sw);background:var(--bg2);border-right:1px solid var(--border);z-index:100;display:flex;flex-direction:column;overflow-y:auto}
+.sb-logo{padding:22px 20px;border-bottom:1px solid var(--border)}
+.sb-logo .uni{font-family:var(--mono);font-size:10px;color:var(--orange);letter-spacing:.15em;text-transform:uppercase;margin-bottom:5px}
+.sb-logo h2{font-family:var(--display);font-size:15px;font-weight:700;line-height:1.35}
+.sb-nav{padding:14px 10px;flex:1}
+.nav-lbl{font-family:var(--mono);font-size:9.5px;color:var(--text-muted);letter-spacing:.18em;text-transform:uppercase;padding:8px 8px 3px;margin-top:8px}
+.nav-a{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:8px;cursor:pointer;text-decoration:none;color:var(--text-dim);font-size:13px;font-weight:500;border:1px solid transparent;transition:all .18s}
+.nav-a:hover{background:var(--bg3);color:var(--text);border-color:var(--border)}
+.nav-a.active{background:var(--orange-dim);color:var(--orange);border-color:rgba(251,140,0,.22)}
+.nav-num{font-family:var(--mono);font-size:10px;color:var(--text-muted);min-width:18px}
+.nav-a.active .nav-num{color:var(--orange)}
+.prog-bar{height:2px;background:var(--border);margin:4px 10px 0;border-radius:2px}
+.prog-fill{height:100%;background:var(--orange);border-radius:2px;transition:width .35s;width:20%}
+
+/* ─── MAIN ─── */
+.main{margin-left:var(--sw);position:relative;z-index:1}
+
+/* HERO */
+.hero{padding:72px 60px 56px;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
+.hero::after{content:'SIMULACIÓN';position:absolute;right:-30px;top:50%;transform:translateY(-50%) rotate(-90deg);font-family:var(--display);font-size:130px;font-weight:800;color:rgba(41,121,255,.035);white-space:nowrap;pointer-events:none}
+.hero-tag{font-family:var(--mono);font-size:11px;color:var(--orange);letter-spacing:.15em;text-transform:uppercase;margin-bottom:14px}
+.hero h1{font-family:var(--display);font-size:50px;font-weight:800;line-height:1.08;margin-bottom:18px}
+.hero h1 span{color:var(--orange)}
+.hero p{font-size:16px;color:var(--text-dim);max-width:580px;line-height:1.72}
+.badges{display:flex;gap:10px;margin-top:26px;flex-wrap:wrap}
+.badge{display:inline-flex;align-items:center;gap:5px;padding:5px 13px;border-radius:100px;font-family:var(--mono);font-size:11px;border:1px solid var(--border);color:var(--text-dim);background:var(--bg2)}
+.badge.o{border-color:rgba(251,140,0,.3);color:var(--orange);background:var(--orange-dim)}
+.badge.b{border-color:rgba(0,184,255,.3);color:var(--cyan);background:rgba(0,184,255,.08)}
+
+/* SECTIONS */
+section{padding:72px 60px;border-bottom:1px solid var(--border);min-height:100vh}
+.sec-hdr{margin-bottom:44px}
+.sec-num{font-family:var(--mono);font-size:10.5px;color:var(--orange);letter-spacing:.2em;text-transform:uppercase;margin-bottom:7px}
+.sec-title{font-family:var(--display);font-size:38px;font-weight:800;line-height:1.12;margin-bottom:13px}
+.sec-sub{font-size:15.5px;color:var(--text-dim);max-width:680px;line-height:1.72}
+
+/* CARDS */
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:26px;margin-bottom:20px}
+.card-title{font-family:var(--display);font-size:17px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.card-ic{width:30px;height:30px;border-radius:7px;background:var(--orange-dim);border:1px solid rgba(251,140,0,.2);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+
+/* FORMULA */
+.fbox{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:18px 22px;margin:13px 0;text-align:center}
+.fbox .flbl{font-family:var(--mono);font-size:10px;color:var(--text-muted);letter-spacing:.08em;margin-bottom:5px}
+.formula{font-family:var(--mono);font-size:17px;color:var(--text);line-height:1.9}
+.formula .v{color:var(--cyan)}.formula .val{color:var(--orange)}
+
+/* GRIDS */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.g5{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+
+/* TABLE */
+.t-wrap{overflow-x:auto;border-radius:var(--r);border:1px solid var(--border)}
+.t-scroll{max-height:420px;overflow-y:auto}
+table{width:100%;border-collapse:collapse;font-size:13px}
+thead tr{background:var(--bg3);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:2}
+th{padding:11px 14px;text-align:left;font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--text-dim);text-transform:uppercase;white-space:nowrap}
+td{padding:9px 14px;border-bottom:1px solid var(--border);font-family:var(--mono);font-size:12.5px;color:var(--text)}
+tr:last-child td{border-bottom:none}
+tr.llegada td{background:rgba(0,230,118,.03)}
+tr.salida td{background:rgba(255,82,82,.03)}
+tr.hl td{background:rgba(251,140,0,.12)!important;outline:1px solid rgba(251,140,0,.3)}
+
+/* CHIP */
+.chip{display:inline-flex;align-items:center;gap:4px;padding:2px 9px;border-radius:100px;font-size:11px;font-family:var(--mono);font-weight:500}
+.chip.llegada{background:var(--green-dim);color:var(--green);border:1px solid rgba(0,230,118,.2)}
+.chip.salida{background:var(--red-dim);color:var(--red);border:1px solid rgba(255,82,82,.2)}
+
+/* CONTROLS */
+.ctl{display:flex;flex-direction:column;gap:5px}
+label{font-family:var(--mono);font-size:10.5px;color:var(--text-dim);letter-spacing:.07em;text-transform:uppercase}
+input[type=number]{background:var(--bg3);border:1px solid var(--border);border-radius:8px;color:var(--text);padding:9px 13px;font-family:var(--mono);font-size:14px;width:100%;outline:none;transition:border-color .2s}
+input[type=number]:focus{border-color:var(--orange)}
+input[type=range]{width:100%;cursor:pointer;accent-color:var(--orange);background:transparent;border:none;padding:4px 0}
+textarea{background:var(--bg3);border:1px solid var(--border);border-radius:8px;color:var(--text);padding:11px 13px;font-family:var(--mono);font-size:12.5px;width:100%;outline:none;resize:vertical;transition:border-color .2s}
+textarea:focus{border-color:var(--orange)}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:11px 22px;border-radius:8px;font-family:var(--display);font-size:14px;font-weight:700;cursor:pointer;border:none;transition:all .18s;letter-spacing:.02em}
+.btn-p{background:var(--orange);color:#fff}
+.btn-p:hover{background:var(--orange-l);transform:translateY(-1px);box-shadow:0 6px 22px rgba(251,140,0,.28)}
+.btn-s{background:var(--bg3);color:var(--text);border:1px solid var(--border)}
+.btn-s:hover{background:var(--bg4);border-color:var(--orange);color:var(--orange)}
+.btn-big{padding:17px 46px;font-size:17px;border-radius:11px;letter-spacing:.06em;text-transform:uppercase}
+
+/* STAT CARDS */
+.stat{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:18px;text-align:center}
+.stat-v{font-family:var(--display);font-size:34px;font-weight:800;color:var(--orange);line-height:1;margin-bottom:5px}
+.stat-l{font-family:var(--mono);font-size:10px;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase}
+
+/* CHART CONTAINER */
+.cbox{position:relative;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:18px;margin:16px 0}
+.clbl{font-family:var(--mono);font-size:10px;color:var(--text-muted);margin-bottom:8px}
+
+/* INFO BOXES */
+.info{background:var(--blue-dim);border:1px solid rgba(41,121,255,.2);border-radius:8px;padding:14px 18px;margin:14px 0;font-size:14px;display:flex;gap:10px;line-height:1.6}
+.info.warn{background:var(--orange-dim);border-color:rgba(251,140,0,.2)}
+.info.ok{background:var(--green-dim);border-color:rgba(0,230,118,.2)}
+.info-ic{font-size:17px;flex-shrink:0;margin-top:1px}
+
+/* CONCEPT GRID */
+.con-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin:18px 0}
+.con-card{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:18px;transition:all .2s;cursor:default}
+.con-card:hover{border-color:var(--orange);background:var(--bg4)}
+.con-card .ico{font-size:26px;margin-bottom:10px}
+.con-card h4{font-family:var(--display);font-size:14.5px;font-weight:700;margin-bottom:7px}
+.con-card p{font-size:12.5px;color:var(--text-dim);line-height:1.5}
+
+/* CLASS TABLE */
+.ctbl{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;margin:14px 0}
+.ctbl th,.ctbl td{padding:14px 18px;text-align:center;border:1px solid var(--border)}
+.ctbl th{background:var(--bg3);color:var(--orange);font-family:var(--mono);font-size:11px;letter-spacing:.08em}
+.ctbl td{background:var(--bg2);font-size:13px;color:var(--text);font-family:var(--body)}
+.ctbl .corner{background:var(--bg4)}
+
+/* STEP BOX */
+.stepbox{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:18px;margin-top:16px;min-height:74px;transition:all .3s}
+.stepbox h4{font-family:var(--mono);font-size:11px;color:var(--orange);letter-spacing:.1em;text-transform:uppercase;margin-bottom:7px}
+.stepbox p{font-size:13.5px;color:var(--text);line-height:1.6}
+
+/* TOGGLE */
+.tog-wrap{display:flex;align-items:center;gap:9px;cursor:pointer}
+.tog{position:relative;width:42px;height:22px}
+.tog input{opacity:0;width:0;height:0}
+.tog-sl{position:absolute;inset:0;background:var(--bg3);border:1px solid var(--border);border-radius:100px;transition:.2s;cursor:pointer}
+.tog-sl::before{content:'';position:absolute;left:4px;top:50%;transform:translateY(-50%);width:13px;height:13px;background:var(--text-muted);border-radius:50%;transition:.2s}
+.tog input:checked+.tog-sl{background:var(--orange-dim);border-color:rgba(251,140,0,.4)}
+.tog input:checked+.tog-sl::before{transform:translate(19px,-50%);background:var(--orange)}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:var(--text-muted)}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.fu{animation:fadeUp .4s ease forwards}
+
+/* CODE BLOCK */
+.code-blk{background:var(--bg3);border-radius:8px;padding:15px 18px;font-family:var(--mono);font-size:12px;color:var(--text);line-height:1.85;border:1px solid var(--border)}
+.code-blk .cm{color:var(--text-muted)}.code-blk .kw{color:var(--cyan)}.code-blk .vr{color:var(--orange)}
+
+/* DIVIDER */
+hr{border:none;border-top:1px solid var(--border);margin:28px 0}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .sidebar{transform:translateX(-100%)}.main{margin-left:0}
+  section,.hero{padding:44px 20px}
+  .hero h1{font-size:34px}.sec-title{font-size:28px}
+  .g2,.g3,.g4,.g5{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════ SIDEBAR ═══════════ -->
+<nav class="sidebar">
+  <div class="sb-logo">
+    <div class="uni">UTN · Inv. Operativa · 1er Parcial</div>
+    <h2>Simulación de Eventos Discretos</h2>
+  </div>
+  <div class="sb-nav">
+    <div class="nav-lbl">Progreso de lectura</div>
+    <div class="prog-bar"><div class="prog-fill" id="progFill"></div></div>
+
+    <div class="nav-lbl" style="margin-top:20px">Secciones</div>
+    <a href="#s1" class="nav-a active"><span class="nav-num">01</span>Procesos Estocásticos</a>
+    <a href="#s2" class="nav-a"><span class="nav-num">02</span>Transformada Inversa</a>
+    <a href="#s3" class="nav-a"><span class="nav-num">03</span>Distribución Exponencial</a>
+    <a href="#s4" class="nav-a"><span class="nav-num">04</span>Simulador Interactivo</a>
+    <a href="#s5" class="nav-a"><span class="nav-num">05</span>Ajuste MLE</a>
+
+    <div class="nav-lbl" style="margin-top:24px">Acceso Rápido</div>
+    <a href="#s4" class="nav-a" style="background:var(--orange-dim);border-color:rgba(251,140,0,.25);color:var(--orange)">
+      <span style="font-size:15px">⚡</span> Ir al Simulador
+    </a>
+  </div>
+</nav>
+
+<!-- ═══════════ MAIN ═══════════ -->
+<main class="main">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">Investigación Operativa · Ejercicio 4 · Simulación</div>
+  <h1>Simulación de<br><span>Eventos Discretos</span></h1>
+  <p>Domina los conceptos de procesos estocásticos, muestreo por transformada inversa y simulación de colas con llegadas y salidas de Poisson. Ejercicio 4 resuelto de manera interactiva.</p>
+  <div class="badges">
+    <span class="badge o">λ = 2/hora · llegadas</span>
+    <span class="badge o">μ = 3/hora · salidas</span>
+    <span class="badge b">T = 4 horas · Capacidad ∞</span>
+    <span class="badge">Distribución Exponencial</span>
+    <span class="badge">Transformada Inversa</span>
+  </div>
+</div>
+
+<!-- ═══════════ S1: PROCESOS ESTOCÁSTICOS ═══════════ -->
+<section id="s1">
+  <div class="sec-hdr">
+    <div class="sec-num">01 — Introducción</div>
+    <h2 class="sec-title">Procesos Estocásticos</h2>
+    <p class="sec-sub">Un proceso estocástico es una colección de variables aleatorias que evolucionan con el tiempo. Permiten modelar sistemas que cambian de manera probabilística, como la cantidad de pallets en una sala.</p>
+  </div>
+
+  <div class="con-grid">
+    <div class="con-card"><div class="ico">📍</div><h4>Estado</h4><p>Configuración completa de las variables del sistema en un instante. Ej: número de pallets en la sala = 3.</p></div>
+    <div class="con-card"><div class="ico">🗺️</div><h4>Espacio de Estados</h4><p>Conjunto de todos los estados posibles. Puede ser discreto {0,1,2,...} o continuo [0,∞).</p></div>
+    <div class="con-card"><div class="ico">↔️</div><h4>Transición de Estado</h4><p>Probabilidad de pasar de un estado a otro. Define la dinámica del sistema en cada evento.</p></div>
+    <div class="con-card"><div class="ico">🧠</div><h4>Propiedad de Markov</h4><p>El futuro solo depende del estado actual, no del historial pasado. Sistema "sin memoria".</p></div>
+  </div>
+
+  <!-- Markov vs Memory -->
+  <div class="g2" style="margin-top:4px">
+    <div class="card">
+      <div class="card-title"><div class="card-ic">✓</div>Sin Memoria (Markov)</div>
+      <p style="color:var(--text-dim);font-size:14px;line-height:1.7">El estado futuro solo depende del estado actual, independientemente del historial.</p>
+      <div class="fbox" style="margin-top:10px">
+        <div class="formula" style="font-size:14px"><span class="v">P</span>(X<sub>n+1</sub> | X<sub>n</sub>,...,X<sub>0</sub>) = <span class="v">P</span>(X<sub>n+1</sub> | X<sub>n</sub>)</div>
+      </div>
+      <p style="color:var(--text-dim);font-size:13px;margin-top:10px">Ejemplos: longitud de cola, stock de pallets en depósito, cadenas de Markov.</p>
+    </div>
+    <div class="card">
+      <div class="card-title"><div class="card-ic" style="background:var(--red-dim);border-color:rgba(255,82,82,.2)">×</div>Con Memoria</div>
+      <p style="color:var(--text-dim);font-size:14px;line-height:1.7">El futuro depende de uno o más estados anteriores, no solo del estado actual.</p>
+      <div class="fbox" style="margin-top:10px">
+        <div class="formula" style="font-size:14px"><span class="v">P</span>(X<sub>n+1</sub> | X<sub>n</sub>,...,X<sub>0</sub>) ≠ <span class="v">P</span>(X<sub>n+1</sub> | X<sub>n</sub>)</div>
+      </div>
+      <p style="color:var(--text-dim);font-size:13px;margin-top:10px">Ejemplos: modelos de lenguaje (ChatGPT), series de tiempo con tendencias, ARIMA.</p>
+    </div>
+  </div>
+
+  <!-- Classification -->
+  <div class="card" style="margin-top:4px">
+    <div class="card-title"><div class="card-ic">📊</div>Clasificación de Procesos Estocásticos</div>
+    <table class="ctbl">
+      <thead>
+        <tr><th class="corner"></th><th>Parámetro Discreto</th><th>Parámetro Continuo</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th style="background:var(--bg3);color:var(--orange);font-family:var(--mono);font-size:11px">Variable Discreta</th>
+          <td>Cambios de calificación crediticia<br><small style="color:var(--text-muted)">Pasos discretos en el tiempo</small></td>
+          <td style="border:2px solid rgba(251,140,0,.4);background:var(--orange-dim)"><strong style="color:var(--orange)">★ Nuestro ejercicio</strong><br>Estados de una cola M/M/∞<br><small style="color:var(--text-dim)">Cantidad de pallets en sala</small></td>
+        </tr>
+        <tr>
+          <th style="background:var(--bg3);color:var(--orange);font-family:var(--mono);font-size:11px">Variable Continua</th>
+          <td>Stock en inventario (fin de día)<br><small style="color:var(--text-muted)">Un valor por período</small></td>
+          <td>Temperatura en un proceso<br><small style="color:var(--text-muted)">Evolución continua en el tiempo</small></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="info" style="margin-top:14px">
+      <span class="info-ic">💡</span>
+      <div><strong>Nuestro modelo:</strong> Variable discreta (pallets: 0,1,2,...) con parámetro continuo (el tiempo). El estado cambia con saltos instantáneos en cada llegada o salida.</div>
+    </div>
+  </div>
+
+  <!-- Random Walk Interactive -->
+  <div class="card" style="margin-top:4px">
+    <div class="card-title"><div class="card-ic">🎲</div>Caminata Aleatoria — Demo Interactiva</div>
+    <p style="color:var(--text-dim);font-size:14px;margin-bottom:14px">El sistema evoluciona paso a paso de manera aleatoria. Cada paso el estado sube o baja con probabilidad ½. Así funciona un proceso estocástico simple.</p>
+    <div class="cbox" style="height:210px;margin:0">
+      <canvas id="rwChart"></canvas>
+    </div>
+    <div style="display:flex;gap:10px;margin-top:14px;align-items:center;flex-wrap:wrap">
+      <button class="btn btn-p" onclick="rwStep()">▶ Siguiente Paso</button>
+      <button class="btn btn-s" onclick="rwReset()">↺ Reiniciar</button>
+      <button class="btn btn-s" onclick="rwAuto()">⚡ 15 pasos</button>
+      <span style="font-family:var(--mono);font-size:12.5px;color:var(--text-dim)">Paso: <span id="rwS" style="color:var(--orange)">0</span> &nbsp;|&nbsp; Estado: <span id="rwE" style="color:var(--cyan)">0</span></span>
+    </div>
+    <div class="stepbox" id="rwBox">
+      <h4>Instrucción</h4>
+      <p>Presiona "Siguiente Paso" para avanzar. Observa cómo el sistema cambia de estado aleatoriamente. La propiedad de Markov garantiza que el siguiente estado solo depende del actual.</p>
+    </div>
+  </div>
+
+  <!-- Simulation Components -->
+  <div class="card" style="margin-top:4px">
+    <div class="card-title"><div class="card-ic">⚙️</div>Componentes de una Simulación</div>
+    <div class="g3">
+      <div style="padding:13px;border:1px solid var(--border);border-radius:8px">
+        <div style="font-family:var(--mono);font-size:10px;color:var(--orange);margin-bottom:5px;letter-spacing:.08em">MODELO</div>
+        <p style="font-size:13px;color:var(--text-dim)">Representación del sistema real con sus características y reglas de comportamiento.</p>
+      </div>
+      <div style="padding:13px;border:1px solid var(--border);border-radius:8px">
+        <div style="font-family:var(--mono);font-size:10px;color:var(--orange);margin-bottom:5px;letter-spacing:.08em">RELOJ</div>
+        <p style="font-size:13px;color:var(--text-dim)">Mecanismo para generar el avance del tiempo en la simulación (aquí: eventos discretos).</p>
+      </div>
+      <div style="padding:13px;border:1px solid var(--border);border-radius:8px">
+        <div style="font-family:var(--mono);font-size:10px;color:var(--orange);margin-bottom:5px;letter-spacing:.08em">TRAYECTORIA</div>
+        <p style="font-size:13px;color:var(--text-dim)">Historia completa de estados generada en una corrida de simulación.</p>
+      </div>
+      <div style="padding:13px;border:1px solid var(--border);border-radius:8px">
+        <div style="font-family:var(--mono);font-size:10px;color:var(--orange);margin-bottom:5px;letter-spacing:.08em">MUESTREO</div>
+        <p style="font-size:13px;color:var(--text-dim)">Método para generar valores de variables aleatorias siguiendo su distribución.</p>
+      </div>
+      <div style="padding:13px;border:1px solid var(--border);border-radius:8px">
+        <div style="font-family:var(--mono);font-size:10px;color:var(--orange);margin-bottom:5px;letter-spacing:.08em">GENERADOR RNG</div>
+        <p style="font-size:13px;color:var(--text-dim)">Software que produce secuencias de números pseudo-aleatorios reproducibles.</p>
+      </div>
+      <div style="padding:13px;border:1px solid var(--border);border-radius:8px">
+        <div style="font-family:var(--mono);font-size:10px;color:var(--orange);margin-bottom:5px;letter-spacing:.08em">ESPERANZA</div>
+        <p style="font-size:13px;color:var(--text-dim)">Promedio transversal del evento en un tiempo dado, sobre todas las trayectorias posibles.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ S2: TRANSFORMADA INVERSA ═══════════ -->
+<section id="s2">
+  <div class="sec-hdr">
+    <div class="sec-num">02 — Método de Muestreo</div>
+    <h2 class="sec-title">Método de la<br>Transformada Inversa</h2>
+    <p class="sec-sub">Permite generar muestras de cualquier distribución usando solo números uniformes U(0,1), aprovechando la función de distribución acumulada (CDF) invertida.</p>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-title"><div class="card-ic">📐</div>Fundamento Teórico</div>
+      <p style="color:var(--text-dim);font-size:14px;line-height:1.7;margin-bottom:14px">Si <strong style="color:var(--text)">U ~ Uniforme(0,1)</strong> y F(x) es la CDF de la distribución deseada, entonces:</p>
+      <div class="fbox">
+        <div class="flbl">MÉTODO GENERAL</div>
+        <div class="formula"><span class="v">X</span> = <span class="v">F</span><sup>−1</sup>(<span class="v">U</span>)</div>
+      </div>
+      <p style="color:var(--text-dim);font-size:13.5px;line-height:1.7;margin-top:10px">Se elige un número al azar en [0,1] y se "proyecta" a través de la CDF invertida para obtener una muestra de la distribución objetivo.</p>
+    </div>
+    <div class="card">
+      <div class="card-title"><div class="card-ic">📈</div>Para Distribución Exponencial</div>
+      <p style="color:var(--text-dim);font-size:14px;margin-bottom:10px">Dado que F(x) = 1 − e<sup>−λx</sup>, invertimos F:</p>
+      <div class="fbox">
+        <div class="flbl">DERIVACIÓN</div>
+        <div class="formula" style="font-size:14.5px;text-align:left;display:inline-block">
+          <span class="v">u</span> = 1 − e<sup>−λx</sup><br>
+          e<sup>−λx</sup> = 1 − <span class="v">u</span><br>
+          <span class="v">x</span> = −<sup>1</sup>⁄<sub>λ</sub> · ln(1 − <span class="v">u</span>)
+        </div>
+      </div>
+      <div class="info warn" style="margin-top:10px">
+        <span class="info-ic">⚡</span>
+        <div style="font-size:13px">Como (1−u) también es U(0,1), simplificamos: <strong style="font-family:var(--mono);color:var(--orange)">x = −(1/λ)·ln(u)</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="g2" style="margin-top:4px">
+    <div class="card">
+      <div class="card-title" style="font-size:15px"><span style="color:var(--green);font-size:18px">✓</span> Ventajas</div>
+      <ul style="color:var(--text-dim);font-size:14px;line-height:2.1;padding-left:18px">
+        <li>Muy simple de implementar</li>
+        <li>Solo requiere invertir la CDF analíticamente</li>
+        <li>Exacto, sin aproximaciones</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title" style="font-size:15px"><span style="color:var(--red);font-size:18px">✗</span> Desventajas</div>
+      <ul style="color:var(--text-dim);font-size:14px;line-height:2.1;padding-left:18px">
+        <li>Requiere solución analítica de la CDF</li>
+        <li>Muchas distribuciones no la tienen en forma cerrada</li>
+        <li>En esos casos se usan métodos numéricos</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Interactive CDF visualization -->
+  <div class="card" style="margin-top:4px">
+    <div class="card-title"><div class="card-ic">🎯</div>Visualización — Proyección a través de la CDF</div>
+    <p style="color:var(--text-dim);font-size:14px;margin-bottom:14px">Un número uniforme <strong style="color:var(--cyan)">u</strong> se proyecta horizontalmente sobre la CDF, y luego verticalmente hacia abajo para obtener el valor muestreado <strong style="color:var(--orange)">x</strong>.</p>
+
+    <div style="display:flex;gap:14px;align-items:flex-end;flex-wrap:wrap;margin-bottom:14px">
+      <div class="ctl" style="flex:1;min-width:180px">
+        <label>Tasa λ = <span id="itfLv">2</span>/hora</label>
+        <input type="range" id="itfL" min="0.5" max="5" step="0.5" value="2" oninput="itfUpdate()">
+      </div>
+      <button class="btn btn-p" onclick="itfSample()">🎲 Nuevo Muestreo</button>
+      <div style="font-family:var(--mono);font-size:13px;background:var(--bg3);padding:10px 15px;border-radius:8px;border:1px solid var(--border);white-space:nowrap">
+        u = <span id="itfU" style="color:var(--cyan)">—</span>&nbsp;&nbsp;→&nbsp;&nbsp;x = <span id="itfX" style="color:var(--orange)">—</span> h
+      </div>
+      <span style="font-family:var(--mono);font-size:11px;color:var(--text-muted)">Muestras: <span id="itfN" style="color:var(--orange)">0</span></span>
+    </div>
+
+    <div class="g2">
+      <div class="cbox" style="margin:0">
+        <div class="clbl">CDF Exponencial — F(x) = 1 − e<sup>−λx</sup></div>
+        <canvas id="itfCDF" height="210"></canvas>
+      </div>
+      <div class="cbox" style="margin:0">
+        <div class="clbl">Histograma de muestras vs PDF teórica</div>
+        <canvas id="itfHist" height="210"></canvas>
+      </div>
+    </div>
+
+    <div class="stepbox" id="itfBox">
+      <h4>Cómo funciona</h4>
+      <p>1. Se genera <strong>u</strong> uniforme en (0,1).<br>
+         2. Se aplica la transformada inversa: <strong>x = −(1/λ)·ln(u)</strong><br>
+         3. El resultado <strong>x</strong> sigue Exponencial(λ).<br>
+         Presiona "Nuevo Muestreo" para verlo en acción. El histograma converge a la PDF teórica.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ S3: DISTRIBUCIÓN EXPONENCIAL ═══════════ -->
+<section id="s3">
+  <div class="sec-hdr">
+    <div class="sec-num">03 — Herramienta Principal</div>
+    <h2 class="sec-title">Distribución<br>Exponencial</h2>
+    <p class="sec-sub">La distribución fundamental para modelar tiempos entre eventos en procesos de Poisson. Su propiedad sin memoria la hace ideal para simular llegadas y salidas en sistemas de colas.</p>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-title"><div class="card-ic">∫</div>Funciones</div>
+      <div class="fbox">
+        <div class="flbl">DENSIDAD (PDF)</div>
+        <div class="formula">f(x) = <span class="val">λ</span> · e<sup>−<span class="val">λ</span>x</sup>&nbsp;,&nbsp; x ≥ 0</div>
+      </div>
+      <div class="fbox">
+        <div class="flbl">ACUMULADA (CDF)</div>
+        <div class="formula">F(x) = 1 − e<sup>−<span class="val">λ</span>x</sup></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title"><div class="card-ic">📏</div>Momentos</div>
+      <div class="fbox">
+        <div class="flbl">MEDIA — Tiempo medio entre eventos</div>
+        <div class="formula">E[X] = <sup>1</sup>⁄<sub><span class="val">λ</span></sub></div>
+      </div>
+      <div class="fbox">
+        <div class="flbl">VARIANZA</div>
+        <div class="formula">Var(X) = <sup>1</sup>⁄<sub><span class="val">λ</span>²</sub></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Explorer -->
+  <div class="card" style="margin-top:4px">
+    <div class="card-title"><div class="card-ic">🔧</div>Explorador Interactivo</div>
+    <div style="display:flex;gap:16px;align-items:flex-end;flex-wrap:wrap;margin-bottom:18px">
+      <div class="ctl" style="flex:1;min-width:240px">
+        <label>Tasa λ = <span id="expLv" style="color:var(--orange)">2</span>/hora &nbsp;·&nbsp; Media E[X] = <span id="expMv" style="color:var(--cyan)">0.50</span> horas</label>
+        <input type="range" id="expL" min="0.5" max="6" step="0.5" value="2" oninput="expUpdate()">
+      </div>
+    </div>
+    <div class="g2">
+      <div class="cbox" style="margin:0">
+        <div class="clbl">Densidad f(x) = λe<sup>−λx</sup></div>
+        <canvas id="expPDF" height="210"></canvas>
+      </div>
+      <div class="cbox" style="margin:0">
+        <div class="clbl">Acumulada F(x) = 1 − e<sup>−λx</sup></div>
+        <canvas id="expCDF" height="210"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Memoryless -->
+  <div class="card" style="margin-top:4px">
+    <div class="card-title"><div class="card-ic">⏰</div>Propiedad Sin Memoria</div>
+    <div class="info warn">
+      <span class="info-ic">⚡</span>
+      <div><strong>Propiedad clave:</strong> La probabilidad de que ocurra un evento en el futuro no depende de cuánto tiempo ya esperamos.</div>
+    </div>
+    <div class="fbox">
+      <div class="flbl">PROPIEDAD FORMAL</div>
+      <div class="formula">P(X > s + t &nbsp;|&nbsp; X > s) = P(X > t)</div>
+    </div>
+    <p style="color:var(--text-dim);font-size:14px;line-height:1.75;margin-top:12px">Si ya esperé 5 minutos un pallet y no llegó, la probabilidad de que llegue en el próximo minuto es <em>exactamente</em> la misma que al principio. Esta es la razón por la que la exponencial modela perfectamente los procesos de Poisson.</p>
+    <div class="g3" style="margin-top:16px">
+      <div style="text-align:center;padding:14px;background:var(--bg3);border-radius:8px;border:1px solid var(--border)">
+        <div style="font-size:22px;margin-bottom:8px">📦</div>
+        <div style="font-family:var(--mono);font-size:10px;color:var(--orange);margin-bottom:4px">LLEGADAS</div>
+        <p style="font-size:12px;color:var(--text-dim)">Tiempo entre pallets que llegan al depósito</p>
+      </div>
+      <div style="text-align:center;padding:14px;background:var(--bg3);border-radius:8px;border:1px solid var(--border)">
+        <div style="font-size:22px;margin-bottom:8px">⚙️</div>
+        <div style="font-family:var(--mono);font-size:10px;color:var(--orange);margin-bottom:4px">FALLAS</div>
+        <p style="font-size:12px;color:var(--text-dim)">Tiempo entre fallas de máquinas industriales</p>
+      </div>
+      <div style="text-align:center;padding:14px;background:var(--bg3);border-radius:8px;border:1px solid var(--border)">
+        <div style="font-size:22px;margin-bottom:8px">📞</div>
+        <div style="font-family:var(--mono);font-size:10px;color:var(--orange);margin-bottom:4px">LLAMADAS</div>
+        <p style="font-size:12px;color:var(--text-dim)">Tiempo entre llamadas en un call center</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ S4: SIMULADOR ═══════════ -->
+<section id="s4">
+  <div class="sec-hdr">
+    <div class="sec-num">04 — Ejercicio 4</div>
+    <h2 class="sec-title">Simulador<br>Interactivo</h2>
+    <p class="sec-sub">Sala con capacidad infinita. Pallets llegan con tasa λ (Poisson) y se retiran con tasa μ (Poisson). Simula y analiza el estado del sistema a lo largo del tiempo.</p>
+  </div>
+
+  <!-- Enunciado -->
+  <div class="card" style="border-color:rgba(251,140,0,.28);background:rgba(251,140,0,.04)">
+    <div class="card-title"><div class="card-ic">📋</div>Enunciado — Ejercicio 4</div>
+    <p style="font-size:15px;line-height:1.75">Considerar la misma sala del ejercicio 3 (capacidad infinita) donde los pallets llegan a razón de <strong style="color:var(--orange)">λ = 2/hora</strong>. Ahora los pallets parten a razón de <strong style="color:var(--orange)">μ = 3/hora</strong> siguiendo una distribución de Poisson. <strong>Simular el sistema durante 4 horas</strong>. Definir el estado del sistema, graficarlo en el tiempo y detallar la simulación en una tabla.</p>
+    <div class="badges" style="margin-top:12px">
+      <span class="badge o">λ = 2/hora (llegadas)</span>
+      <span class="badge o">μ = 3/hora (salidas)</span>
+      <span class="badge b">T = 4 horas</span>
+      <span class="badge">Stock inicial = 0</span>
+      <span class="badge">Capacidad ∞</span>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <div class="card" style="margin-top:4px">
+    <div class="card-title"><div class="card-ic">🎛️</div>Parámetros de Simulación</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:14px;align-items:end">
+      <div class="ctl">
+        <label>Tasa Llegadas λ (/hora)</label>
+        <input type="number" id="sL" value="2" min="0.1" max="20" step="0.5">
+      </div>
+      <div class="ctl">
+        <label>Tasa Salidas μ (/hora)</label>
+        <input type="number" id="sM" value="3" min="0.1" max="20" step="0.5">
+      </div>
+      <div class="ctl">
+        <label>Tiempo T (horas)</label>
+        <input type="number" id="sT" value="4" min="1" max="48" step="1">
+      </div>
+      <div><button class="btn btn-s" onclick="resetDef()" title="Valores del ejercicio">↺ Ej. 4</button></div>
+    </div>
+    <div style="margin-top:14px;display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+      <label class="tog-wrap">
+        <div class="tog"><input type="checkbox" id="sbsMode"><div class="tog-sl"></div></div>
+        <span style="font-size:14px;color:var(--text-dim)">Modo Paso a Paso</span>
+      </label>
+      <span style="font-size:13px;color:var(--text-muted)">Activa este modo para ver cada evento individualmente con su explicación</span>
+    </div>
+    <div style="margin-top:22px;text-align:center">
+      <button class="btn btn-p btn-big" onclick="runSim()">⚡ SIMULAR</button>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div id="simRes" style="display:none">
+
+    <!-- Stats -->
+    <div class="g5" style="margin-top:20px">
+      <div class="stat"><div class="stat-v" id="stAvg">—</div><div class="stat-l">Stock Promedio</div></div>
+      <div class="stat"><div class="stat-v" id="stMax">—</div><div class="stat-l">Stock Máximo</div></div>
+      <div class="stat"><div class="stat-v" id="stArr">—</div><div class="stat-l">Total Llegadas</div></div>
+      <div class="stat"><div class="stat-v" id="stDep">—</div><div class="stat-l">Total Salidas</div></div>
+      <div class="stat"><div class="stat-v" id="stEmp">—</div><div class="stat-l">% Tiempo Vacío</div></div>
+    </div>
+
+    <!-- Chart -->
+    <div class="card" style="margin-top:16px">
+      <div class="card-title"><div class="card-ic">📈</div>Estado del Sistema en el Tiempo
+        <span style="margin-left:auto;display:flex;gap:10px;font-size:12px;font-family:var(--mono)">
+          <span style="color:var(--green)">▲ Llegada</span>
+          <span style="color:var(--red)">▼ Salida</span>
+        </span>
+      </div>
+      <div class="cbox" style="height:290px">
+        <canvas id="simChart"></canvas>
+      </div>
+    </div>
+
+    <!-- Step controls -->
+    <div id="sbsCtrl" style="display:none" class="card" style="margin-top:16px">
+      <div class="card-title"><div class="card-ic">👣</div>Navegación Paso a Paso</div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+        <button class="btn btn-p" onclick="sbsPrev()">◀ Anterior</button>
+        <button class="btn btn-p" onclick="sbsNext()">Siguiente ▶</button>
+        <button class="btn btn-s" onclick="sbsAll()">Mostrar Todo</button>
+        <span style="font-family:var(--mono);font-size:12.5px;color:var(--text-dim)">Evento <span id="sbsCur" style="color:var(--orange)">0</span> / <span id="sbsTot">0</span></span>
+      </div>
+      <div class="stepbox" id="sbsBox" style="margin-top:12px">
+        <h4>Listo</h4>
+        <p>Presiona "Siguiente" para ver el primer evento de la simulación.</p>
+      </div>
+    </div>
+
+    <!-- Event table -->
+    <div class="card" style="margin-top:16px">
+      <div class="card-title"><div class="card-ic">📊</div>Tabla de Eventos</div>
+      <div class="t-wrap t-scroll">
+        <table>
+          <thead><tr>
+            <th>#</th><th>Tiempo (h)</th><th>Evento</th><th>Stock</th>
+            <th>u (muestra)</th><th>Δt inter-evento</th>
+          </tr></thead>
+          <tbody id="evTbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Algorithm -->
+    <div class="card" style="margin-top:16px">
+      <div class="card-title"><div class="card-ic">🧮</div>Algoritmo de Simulación</div>
+      <div class="g2">
+        <div>
+          <div style="font-family:var(--mono);font-size:10px;color:var(--text-muted);margin-bottom:10px;letter-spacing:.1em">PSEUDOCÓDIGO</div>
+          <div class="code-blk">
+<span class="cm">// 1. Generar tiempos de eventos</span>
+t_arr ← <span class="vr">Exp(λ)</span> acumulado hasta T
+t_dep ← <span class="vr">Exp(μ)</span> acumulado hasta T
+
+<span class="cm">// 2. Procesar cronológicamente</span>
+stock ← 0
+<span class="kw">mientras</span> t_actual &lt; T:
+  <span class="kw">si</span> t_arr ≤ t_dep:
+    stock ← stock + 1  <span class="cm">▲ llegada</span>
+    avanzar t_arr
+  <span class="kw">sino</span>:
+    <span class="kw">si</span> stock &gt; 0:
+      stock ← stock - 1  <span class="cm">▼ salida</span>
+    avanzar t_dep  <span class="cm">⚠ saltar si vacío</span>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:var(--mono);font-size:10px;color:var(--text-muted);margin-bottom:10px;letter-spacing:.1em">FÓRMULAS DE MUESTREO</div>
+          <div class="fbox" style="margin:0 0 10px">
+            <div class="flbl">TIEMPO ENTRE LLEGADAS</div>
+            <div class="formula">Δt<sub>llegada</sub> = −<sup>1</sup>⁄<sub><span class="val">λ</span></sub> · ln(<span class="v">u</span>)</div>
+          </div>
+          <div class="fbox" style="margin:0 0 10px">
+            <div class="flbl">TIEMPO ENTRE SALIDAS</div>
+            <div class="formula">Δt<sub>salida</sub> = −<sup>1</sup>⁄<sub><span class="val">μ</span></sub> · ln(<span class="v">u</span>)</div>
+          </div>
+          <div class="info" style="margin-top:10px">
+            <span class="info-ic">⚠️</span>
+            <div style="font-size:13px">Las salidas solo se procesan si <strong>stock &gt; 0</strong>. No puede haber inventario negativo.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /simRes -->
+</section>
+
+<!-- ═══════════ S5: MLE ═══════════ -->
+<section id="s5">
+  <div class="sec-hdr">
+    <div class="sec-num">05 — Estimación de Parámetros</div>
+    <h2 class="sec-title">Ajuste de<br>Distribuciones (MLE)</h2>
+    <p class="sec-sub">Dado un conjunto de observaciones reales, el método de Máxima Verosimilitud (MLE) permite estimar los parámetros óptimos de una distribución teórica.</p>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-title"><div class="card-ic">🎯</div>Probabilidad</div>
+      <div class="fbox"><div class="formula" style="font-size:16px"><span class="v">P</span>(X | θ)</div></div>
+      <p style="color:var(--text-dim);font-size:14px;line-height:1.7;margin-top:12px">Dados parámetros <strong style="color:var(--text)">conocidos θ</strong>, ¿cuál es la probabilidad de observar los datos X?</p>
+      <p style="color:var(--text-muted);font-size:13px;margin-top:8px">Ej: Si λ=2, ¿cuál es la prob de esperar 0.3h?</p>
+    </div>
+    <div class="card">
+      <div class="card-title"><div class="card-ic">🔍</div>Verosimilitud (Likelihood)</div>
+      <div class="fbox"><div class="formula" style="font-size:16px"><span class="v">L</span>(θ | X)</div></div>
+      <p style="color:var(--text-dim);font-size:14px;line-height:1.7;margin-top:12px">Dados datos <strong style="color:var(--text)">observados X</strong>, ¿qué tan verosímiles son los parámetros θ?</p>
+      <p style="color:var(--text-muted);font-size:13px;margin-top:8px">Ej: Observé [0.3, 0.5, 0.2] h, ¿cuál λ los explica mejor?</p>
+    </div>
+  </div>
+
+  <!-- MLE for exponential -->
+  <div class="card" style="margin-top:4px">
+    <div class="card-title"><div class="card-ic">📐</div>MLE para Distribución Exponencial</div>
+    <p style="color:var(--text-dim);font-size:14px;margin-bottom:14px">Para n observaciones X₁,...,Xₙ de una Exp(λ), la función de verosimilitud es:</p>
+    <div class="fbox">
+      <div class="flbl">FUNCIÓN DE VEROSIMILITUD</div>
+      <div class="formula" style="font-size:15px"><span class="v">L</span>(λ|X₁,...,Xₙ) = ∏ᵢ λe<sup>−λxᵢ</sup> = λⁿ · e<sup>−λΣxᵢ</sup></div>
+    </div>
+    <p style="color:var(--text-dim);font-size:14px;margin:10px 0">Maximizando (derivada de log-verosimilitud igualada a cero):</p>
+    <div class="g2">
+      <div class="fbox">
+        <div class="flbl">LOG-VEROSIMILITUD</div>
+        <div class="formula" style="font-size:15px">ℓ(λ) = n·ln(λ) − λ·Σxᵢ</div>
+      </div>
+      <div class="fbox" style="border-color:rgba(251,140,0,.35);background:var(--orange-dim)">
+        <div class="flbl">ESTIMADOR MLE</div>
+        <div class="formula" style="font-size:18px"><span class="val">λ̂</span> = <sup>n</sup>⁄<sub>Σxᵢ</sub> = <sup>1</sup>⁄<sub>x̄</sub></div>
+      </div>
+    </div>
+    <div class="info ok" style="margin-top:4px">
+      <span class="info-ic">✓</span>
+      <div><strong>Resultado:</strong> El estimador MLE de λ es el inverso de la media muestral. Si el tiempo promedio entre eventos es x̄, entonces <strong style="font-family:var(--mono)">λ̂ = 1/x̄</strong>.</div>
+    </div>
+  </div>
+
+  <!-- Interactive MLE -->
+  <div class="card" style="margin-top:4px">
+    <div class="card-title"><div class="card-ic">🧪</div>Ajuste Interactivo</div>
+    <p style="color:var(--text-dim);font-size:14px;margin-bottom:14px">Ingresa tiempos entre eventos separados por comas (en horas) y el sistema estimará el λ óptimo.</p>
+    <div class="ctl" style="margin-bottom:14px">
+      <label>Datos — Tiempos entre eventos (horas, separados por coma)</label>
+      <textarea id="mleD" rows="3" placeholder="Ej: 0.463, 0.472, 0.621, 1.532, 0.218...">0.463, 0.472, 0.621, 1.532, 0.218, 0.390, 0.049, 0.156, 0.328, 0.754</textarea>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="btn btn-p" onclick="fitMLE()">🔍 Ajustar MLE</button>
+      <button class="btn btn-s" onclick="genMLE()">🎲 Generar datos de ejemplo</button>
+    </div>
+
+    <div id="mleRes" style="display:none;margin-top:20px">
+      <div class="g4">
+        <div class="stat"><div class="stat-v" id="mleN">—</div><div class="stat-l">n (obs.)</div></div>
+        <div class="stat"><div class="stat-v" id="mleMe">—</div><div class="stat-l">x̄ media</div></div>
+        <div class="stat"><div class="stat-v" id="mleLa" style="color:var(--orange)">—</div><div class="stat-l">λ̂ = 1/x̄</div></div>
+        <div class="stat"><div class="stat-v" id="mleLL">—</div><div class="stat-l">log-L(λ̂)</div></div>
+      </div>
+      <div class="cbox" style="margin-top:16px">
+        <div class="clbl">Función de Log-Verosimilitud — El máximo indica el λ̂ óptimo</div>
+        <canvas id="mleChart" height="230"></canvas>
+      </div>
+      <div class="info" id="mleIntr" style="margin-top:4px">
+        <span class="info-ic">📊</span>
+        <div id="mleIntrTxt" style="font-size:14px"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script>
+'use strict';
+// ══════════════════════════════════════════════════
+// CHART DEFAULTS
+// ══════════════════════════════════════════════════
+Chart.defaults.color = '#7a99c8';
+Chart.defaults.borderColor = 'rgba(56,139,253,0.13)';
+Chart.defaults.font.family = "'JetBrains Mono', monospace";
+Chart.defaults.font.size = 10;
+
+const C = {
+  orange:'#fb8c00', orangeL:'#ffa726', cyan:'#00b8ff',
+  green:'#00e676', red:'#ff5252', blue:'#2979ff', text:'#dce8ff'
+};
+
+function rnd() { return Math.random(); }
+function sExp(rate) { return -(1/rate)*Math.log(rnd()); }
+
+// ══════════════════════════════════════════════════
+// NAV / PROGRESS
+// ══════════════════════════════════════════════════
+const sIds = ['s1','s2','s3','s4','s5'];
+function updateNav(){
+  const sy = window.scrollY + 220;
+  let active = 0;
+  sIds.forEach((id,i)=>{
+    const el = document.getElementById(id);
+    if(el && el.offsetTop <= sy) active = i;
+  });
+  document.querySelectorAll('.nav-a').forEach((a,i) => a.classList.toggle('active', i===active));
+  document.getElementById('progFill').style.width = ((active+1)/sIds.length*100)+'%';
+}
+window.addEventListener('scroll', updateNav, {passive:true});
+
+// ══════════════════════════════════════════════════
+// S1: RANDOM WALK
+// ══════════════════════════════════════════════════
+let rwD = [0], rwC = null;
+
+function initRW(){
+  const ctx = document.getElementById('rwChart').getContext('2d');
+  rwC = new Chart(ctx, {
+    type:'line',
+    data:{
+      labels:['0'],
+      datasets:[{
+        data:[0], borderColor:C.cyan, backgroundColor:'rgba(0,184,255,0.07)',
+        borderWidth:2, pointRadius:4, pointBackgroundColor:C.cyan,
+        fill:true, stepped:'before', tension:0
+      }]
+    },
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      animation:{duration:200},
+      scales:{
+        x:{title:{display:true,text:'Paso',color:C.text}},
+        y:{title:{display:true,text:'Estado',color:C.text},grid:{color:'rgba(56,139,253,0.1)'}}
+      },
+      plugins:{legend:{display:false}}
+    }
+  });
+}
+
+function rwStep(){
+  const prev = rwD[rwD.length-1];
+  const d = Math.random()<0.5 ? 1:-1;
+  const next = prev + d;
+  rwD.push(next);
+  const step = rwD.length-1;
+
+  rwC.data.labels.push(step.toString());
+  rwC.data.datasets[0].data = [...rwD];
+  // Color last point by direction
+  const colors = rwD.map((_,i)=> i===0 ? C.cyan : (rwD[i]-rwD[i-1]>0?C.green:C.red));
+  rwC.data.datasets[0].pointBackgroundColor = colors;
+  rwC.update('none');
+
+  document.getElementById('rwS').textContent = step;
+  document.getElementById('rwE').textContent = next;
+
+  const col = d>0?C.green:C.red;
+  const dir = d>0?'SUBE (+1)':'BAJA (−1)';
+  document.getElementById('rwBox').innerHTML = `
+    <h4>Paso ${step}</h4>
+    <p>Estado anterior: <strong style="color:${C.cyan}">${prev}</strong> &nbsp;→&nbsp;
+       <strong style="color:${col}">${dir}</strong> &nbsp;→&nbsp;
+       Estado actual: <strong style="color:${C.orange}">${next}</strong><br>
+       <span style="color:var(--text-dim);font-size:12.5px">Por la propiedad de Markov, el paso ${step+1} dependerá solo de ${next}, sin importar el historial anterior.</span></p>`;
+}
+
+function rwReset(){
+  rwD = [0];
+  rwC.data.labels = ['0'];
+  rwC.data.datasets[0].data = [0];
+  rwC.data.datasets[0].pointBackgroundColor = [C.cyan];
+  rwC.update();
+  document.getElementById('rwS').textContent = '0';
+  document.getElementById('rwE').textContent = '0';
+  document.getElementById('rwBox').innerHTML = '<h4>Reiniciado</h4><p>El proceso comienza en estado 0. Presiona "Siguiente Paso" para continuar.</p>';
+}
+
+function rwAuto(){
+  let n = 0;
+  const iv = setInterval(()=>{ rwStep(); if(++n>=15) clearInterval(iv); }, 160);
+}
+
+// ══════════════════════════════════════════════════
+// S2: INVERSE TRANSFORM
+// ══════════════════════════════════════════════════
+let itfCDF = null, itfHist = null, itfSamp = [];
+
+function mkXs(max=4.5, n=80){ return Array.from({length:n},(_,i)=>i*max/(n-1)); }
+
+function initITF(){
+  const lam = 2, xs = mkXs();
+  // CDF Chart
+  const c1 = document.getElementById('itfCDF').getContext('2d');
+  itfCDF = new Chart(c1, {
+    type:'line',
+    data:{
+      labels: xs.map(x=>x.toFixed(2)),
+      datasets:[
+        {label:'CDF', data:xs.map(x=>1-Math.exp(-lam*x)),
+         borderColor:C.blue, borderWidth:2, pointRadius:0, fill:false},
+        {label:'Punto u→x', data:[],
+         type:'scatter', borderColor:C.orange, backgroundColor:C.orange,
+         pointRadius:8, showLine:false}
+      ]
+    },
+    options:{
+      responsive:true, maintainAspectRatio:false, animation:{duration:300},
+      scales:{
+        x:{title:{display:true,text:'x (horas)',color:C.text}},
+        y:{min:0,max:1,title:{display:true,text:'F(x)',color:C.text},grid:{color:'rgba(56,139,253,0.1)'}}
+      },
+      plugins:{legend:{display:false}}
+    }
+  });
+  // Histogram
+  const c2 = document.getElementById('itfHist').getContext('2d');
+  itfHist = new Chart(c2, {
+    type:'bar',
+    data:{labels:[],datasets:[
+      {label:'Muestras', data:[], backgroundColor:'rgba(251,140,0,0.45)', borderColor:C.orange, borderWidth:1},
+      {label:'PDF teórica', data:[], type:'line', borderColor:C.cyan, borderWidth:2, pointRadius:0, fill:false}
+    ]},
+    options:{
+      responsive:true, maintainAspectRatio:false, animation:{duration:200},
+      scales:{
+        x:{title:{display:true,text:'x',color:C.text}},
+        y:{title:{display:true,text:'Frecuencia',color:C.text},grid:{color:'rgba(56,139,253,0.1)'}}
+      },
+      plugins:{legend:{display:true, labels:{boxWidth:10, font:{size:10}}}}
+    }
+  });
+}
+
+function itfUpdate(){
+  const lam = parseFloat(document.getElementById('itfL').value);
+  document.getElementById('itfLv').textContent = lam;
+  itfSamp = [];
+  document.getElementById('itfN').textContent = 0;
+  const xs = mkXs();
+  itfCDF.data.labels = xs.map(x=>x.toFixed(2));
+  itfCDF.data.datasets[0].data = xs.map(x=>1-Math.exp(-lam*x));
+  itfCDF.data.datasets[1].data = [];
+  itfCDF.update('none');
+  itfHist.data.labels = []; itfHist.data.datasets[0].data = []; itfHist.data.datasets[1].data = [];
+  itfHist.update('none');
+}
+
+function itfSample(){
+  const lam = parseFloat(document.getElementById('itfL').value);
+  const u = rnd();
+  const x = -(1/lam)*Math.log(u);
+  document.getElementById('itfU').textContent = u.toFixed(4);
+  document.getElementById('itfX').textContent = x.toFixed(4);
+
+  // Mark point on CDF
+  const xs = mkXs();
+  const px = Math.min(x, xs[xs.length-1]);
+  const py = u;
+  itfCDF.data.datasets[1].data = [{x: px.toFixed(2), y: py}];
+  itfCDF.update('none');
+
+  // Accumulate and histogram
+  itfSamp.push(x);
+  document.getElementById('itfN').textContent = itfSamp.length;
+  updateItfHist(lam);
+
+  document.getElementById('itfBox').innerHTML = `
+    <h4>Muestra #${itfSamp.length}</h4>
+    <p>
+      <strong style="color:${C.cyan}">Paso 1:</strong> u = ${u.toFixed(4)} (uniforme en [0,1])<br>
+      <strong style="color:${C.cyan}">Paso 2:</strong> x = −(1/${lam}) × ln(${u.toFixed(4)}) = <strong style="color:${C.orange}">${x.toFixed(4)} horas</strong><br>
+      <span style="font-size:12px;color:var(--text-dim)">Con ${itfSamp.length} muestras, el histograma comienza a aproximarse a la PDF teórica (línea celeste).</span>
+    </p>`;
+}
+
+function updateItfHist(lam){
+  if(itfSamp.length===0) return;
+  const nBins = Math.min(18, Math.max(5, Math.ceil(Math.sqrt(itfSamp.length)*1.2)));
+  const maxV = Math.max(...itfSamp, 2/lam);
+  const bw = maxV/nBins;
+  const bins = Array(nBins).fill(0);
+  itfSamp.forEach(s=>{ const idx=Math.min(Math.floor(s/bw),nBins-1); bins[idx]++; });
+  const ctrs = Array.from({length:nBins},(_,i)=>((i+0.5)*bw).toFixed(2));
+  const pdfScale = itfSamp.length * bw;
+  const pdfV = ctrs.map(c=>lam*Math.exp(-lam*parseFloat(c))*pdfScale);
+  itfHist.data.labels = ctrs;
+  itfHist.data.datasets[0].data = bins;
+  itfHist.data.datasets[1].data = pdfV;
+  itfHist.update('none');
+}
+
+// ══════════════════════════════════════════════════
+// S3: EXPONENTIAL DISTRIBUTION
+// ══════════════════════════════════════════════════
+let expPDF = null, expCDF = null;
+
+function initExp(){
+  const xs = mkXs(3.5);
+  const lam = 2;
+  const c1 = document.getElementById('expPDF').getContext('2d');
+  expPDF = new Chart(c1, {
+    type:'line',
+    data:{
+      labels:xs.map(x=>x.toFixed(2)),
+      datasets:[{
+        label:'PDF f(x)', data:xs.map(x=>lam*Math.exp(-lam*x)),
+        borderColor:C.orange, backgroundColor:'rgba(251,140,0,0.1)',
+        borderWidth:2.5, pointRadius:0, fill:true
+      }]
+    },
+    options:{responsive:true,maintainAspectRatio:false,animation:{duration:250},
+      scales:{
+        x:{title:{display:true,text:'x (horas)',color:C.text}},
+        y:{title:{display:true,text:'f(x)',color:C.text},min:0,grid:{color:'rgba(56,139,253,0.1)'}}
+      },
+      plugins:{legend:{display:false}}}
+  });
+  const c2 = document.getElementById('expCDF').getContext('2d');
+  expCDF = new Chart(c2, {
+    type:'line',
+    data:{
+      labels:xs.map(x=>x.toFixed(2)),
+      datasets:[{
+        label:'CDF F(x)', data:xs.map(x=>1-Math.exp(-lam*x)),
+        borderColor:C.cyan, backgroundColor:'rgba(0,184,255,0.08)',
+        borderWidth:2.5, pointRadius:0, fill:true
+      }]
+    },
+    options:{responsive:true,maintainAspectRatio:false,animation:{duration:250},
+      scales:{
+        x:{title:{display:true,text:'x (horas)',color:C.text}},
+        y:{min:0,max:1,title:{display:true,text:'F(x)',color:C.text},grid:{color:'rgba(56,139,253,0.1)'}}
+      },
+      plugins:{legend:{display:false}}}
+  });
+}
+
+function expUpdate(){
+  const lam = parseFloat(document.getElementById('expL').value);
+  document.getElementById('expLv').textContent = lam;
+  document.getElementById('expMv').textContent = (1/lam).toFixed(2);
+  const xs = mkXs(3.5);
+  expPDF.data.labels = xs.map(x=>x.toFixed(2));
+  expPDF.data.datasets[0].data = xs.map(x=>lam*Math.exp(-lam*x));
+  expPDF.update('none');
+  expCDF.data.labels = xs.map(x=>x.toFixed(2));
+  expCDF.data.datasets[0].data = xs.map(x=>1-Math.exp(-lam*x));
+  expCDF.update('none');
+}
+
+// ══════════════════════════════════════════════════
+// S4: SIMULATION ENGINE
+// ══════════════════════════════════════════════════
+let simEvts = [], simCh = null, sbsStep = 0, sbsMode = false;
+
+function resetDef(){
+  document.getElementById('sL').value = 2;
+  document.getElementById('sM').value = 3;
+  document.getElementById('sT').value = 4;
+}
+
+function generateEvents(lam, mu, T){
+  // Generate potential arrivals
+  const arr = [];
+  let t = 0;
+  while(true){
+    const u = rnd(); const dt = -(1/lam)*Math.log(u); t += dt;
+    if(t >= T) break;
+    arr.push({time:t, u, dt});
+  }
+  // Generate potential departures (over-generate)
+  const dep = [];
+  t = 0;
+  const maxDep = arr.length * 5 + 30;
+  let genCount = 0;
+  while(genCount < maxDep){
+    const u = rnd(); const dt = -(1/mu)*Math.log(u); t += dt;
+    if(t >= T * 4) break;
+    dep.push({time:t, u, dt});
+    genCount++;
+  }
+
+  // Merge-process
+  const evts = [];
+  let stock = 0, ai = 0, di = 0, prevT = 0;
+
+  while(true){
+    const nA = ai < arr.length ? arr[ai].time : Infinity;
+    const nD = di < dep.length ? dep[di].time : Infinity;
+    if(nA === Infinity && nD === Infinity) break;
+    if(Math.min(nA, nD) >= T) break;
+
+    if(nA <= nD){
+      if(nA >= T) break;
+      stock++;
+      evts.push({time:arr[ai].time, type:'llegada', stock, u:arr[ai].u, dt:arr[ai].time-prevT, prevT});
+      prevT = arr[ai].time; ai++;
+    } else {
+      if(nD >= T){ di++; continue; }
+      if(stock > 0){
+        stock--;
+        evts.push({time:dep[di].time, type:'salida', stock, u:dep[di].u, dt:dep[di].time-prevT, prevT});
+        prevT = dep[di].time;
+      }
+      di++;
+    }
+  }
+  return evts;
+}
+
+function calcStats(evts, T){
+  if(!evts.length) return {avg:'0.00', max:0, arr:0, dep:0, emp:'100.0'};
+  const arr = evts.filter(e=>e.type==='llegada').length;
+  const dep = evts.filter(e=>e.type==='salida').length;
+  const maxS = Math.max(...evts.map(e=>e.stock));
+  let ws = 0, et = 0, prev = 0, ps = 0;
+  for(const ev of evts){
+    ws += ps*(ev.time-prev); if(ps===0) et += ev.time-prev;
+    prev = ev.time; ps = ev.stock;
+  }
+  ws += ps*(T-prev); if(ps===0) et += T-prev;
+  return {avg:(ws/T).toFixed(2), max:maxS, arr, dep, emp:((et/T)*100).toFixed(1)};
+}
+
+function runSim(){
+  const lam = parseFloat(document.getElementById('sL').value)||2;
+  const mu  = parseFloat(document.getElementById('sM').value)||3;
+  const T   = parseFloat(document.getElementById('sT').value)||4;
+  sbsMode   = document.getElementById('sbsMode').checked;
+
+  simEvts = generateEvents(lam, mu, T);
+  sbsStep = sbsMode ? 0 : simEvts.length;
+
+  document.getElementById('simRes').style.display = 'block';
+  setTimeout(()=>document.getElementById('simRes').scrollIntoView({behavior:'smooth',block:'nearest'}),50);
+
+  const st = calcStats(simEvts, T);
+  document.getElementById('stAvg').textContent = st.avg;
+  document.getElementById('stMax').textContent = st.max;
+  document.getElementById('stArr').textContent = st.arr;
+  document.getElementById('stDep').textContent = st.dep;
+  document.getElementById('stEmp').textContent = st.emp+'%';
+
+  document.getElementById('sbsCtrl').style.display = sbsMode ? 'block' : 'none';
+  document.getElementById('sbsTot').textContent = simEvts.length;
+  document.getElementById('sbsCur').textContent = sbsStep;
+  document.getElementById('sbsBox').innerHTML = '<h4>Listo</h4><p>Presiona "Siguiente" para ver el primer evento.</p>';
+
+  renderChart(simEvts.slice(0, sbsStep), T);
+  renderTable(simEvts.slice(0, sbsStep), -1);
+}
+
+function renderChart(evts, T){
+  const times = [0], stocks = [0];
+  for(const ev of evts){ times.push(ev.time); stocks.push(ev.stock); }
+  times.push(T); stocks.push(stocks[stocks.length-1]);
+
+  const ptColors = [C.orange, ...evts.map(e=>e.type==='llegada'?C.green:C.red), C.orange];
+  const ptSizes  = [0, ...evts.map(()=>6), 0];
+
+  if(simCh){ simCh.destroy(); simCh = null; }
+  const ctx = document.getElementById('simChart').getContext('2d');
+  simCh = new Chart(ctx, {
+    type:'line',
+    data:{
+      labels:times.map(t=>t.toFixed(3)),
+      datasets:[{
+        label:'Stock', data:stocks,
+        borderColor:C.orange, backgroundColor:'rgba(251,140,0,0.07)',
+        borderWidth:2.5, fill:true, stepped:'before', tension:0,
+        pointRadius:ptSizes, pointBackgroundColor:ptColors,
+        pointBorderColor:ptColors, pointBorderWidth:1
+      }]
+    },
+    options:{
+      responsive:true, maintainAspectRatio:false, animation:{duration:400},
+      scales:{
+        x:{title:{display:true,text:'Tiempo (horas)',color:C.text}, ticks:{maxTicksLimit:12}},
+        y:{min:0, title:{display:true,text:'Stock (pallets)',color:C.text},
+           ticks:{stepSize:1}, grid:{color:'rgba(56,139,253,0.1)'}}
+      },
+      plugins:{
+        legend:{display:false},
+        tooltip:{callbacks:{
+          label(ctx){
+            const i = ctx.dataIndex;
+            if(i>0 && i<=evts.length){
+              const ev = evts[i-1];
+              return ` ${ev.type==='llegada'?'▲ Llegada':'▼ Salida'} → Stock: ${ev.stock}`;
+            }
+            return ` Stock: ${ctx.raw}`;
+          }
+        }}
+      }
+    }
+  });
+}
+
+function renderTable(evts, hlIdx){
+  const lam = parseFloat(document.getElementById('sL').value)||2;
+  const mu  = parseFloat(document.getElementById('sM').value)||3;
+  const tbody = document.getElementById('evTbody');
+  tbody.innerHTML = '';
+  evts.forEach((ev,i)=>{
+    const row = document.createElement('tr');
+    row.className = ev.type + (i===hlIdx?' hl':'');
+    row.id = 'ev'+i;
+    const rate = ev.type==='llegada'?lam:mu;
+    row.innerHTML = `
+      <td>${i+1}</td>
+      <td>${ev.time.toFixed(4)}</td>
+      <td><span class="chip ${ev.type}">${ev.type==='llegada'?'▲ Llegada':'▼ Salida'}</span></td>
+      <td style="font-size:17px;font-weight:700;color:${ev.stock===0?C.text:C.orange}">${ev.stock}</td>
+      <td style="color:var(--text-muted)">${ev.u.toFixed(4)}</td>
+      <td style="color:var(--text-muted)">${ev.dt.toFixed(4)}</td>`;
+    tbody.appendChild(row);
+  });
+}
+
+function sbsNext(){
+  if(sbsStep>=simEvts.length) return;
+  const T = parseFloat(document.getElementById('sT').value)||4;
+  sbsStep++;
+  document.getElementById('sbsCur').textContent = sbsStep;
+  renderChart(simEvts.slice(0,sbsStep), T);
+  renderTable(simEvts.slice(0,sbsStep), sbsStep-1);
+  const row = document.getElementById('ev'+(sbsStep-1));
+  if(row) row.scrollIntoView({behavior:'smooth',block:'nearest'});
+
+  const ev = simEvts[sbsStep-1];
+  const lam = parseFloat(document.getElementById('sL').value)||2;
+  const mu  = parseFloat(document.getElementById('sM').value)||3;
+  const rate = ev.type==='llegada'?lam:mu;
+  const action = ev.type==='llegada'
+    ? `<strong style="color:${C.green}">▲ LLEGÓ un pallet</strong> → Stock: <strong style="color:${C.orange}">${ev.stock}</strong>`
+    : (ev.stock>=0
+        ? `<strong style="color:${C.red}">▼ SALIÓ un pallet</strong> → Stock: <strong style="color:${C.orange}">${ev.stock}</strong>`
+        : `<strong style="color:${C.red}">▼ Intento de salida ignorado</strong> (stock = 0)`);
+
+  document.getElementById('sbsBox').innerHTML = `
+    <h4>Evento ${sbsStep} — t = ${ev.time.toFixed(4)} h</h4>
+    <p>${action}<br>
+    <span style="font-size:12px;color:var(--text-dim)">
+      u = ${ev.u.toFixed(4)} &nbsp;→&nbsp; Δt = −(1/${rate}) × ln(${ev.u.toFixed(4)}) = ${ev.dt.toFixed(4)} h
+      &nbsp;|&nbsp; Tiempo anterior: ${ev.prevT.toFixed(4)} h
+    </span></p>`;
+}
+
+function sbsPrev(){
+  if(sbsStep<=0) return;
+  const T = parseFloat(document.getElementById('sT').value)||4;
+  sbsStep--;
+  document.getElementById('sbsCur').textContent = sbsStep;
+  renderChart(simEvts.slice(0,sbsStep), T);
+  renderTable(simEvts.slice(0,sbsStep), sbsStep-1);
+
+  if(sbsStep>0){
+    const ev = simEvts[sbsStep-1];
+    document.getElementById('sbsBox').innerHTML = `
+      <h4>Retroceso — Evento ${sbsStep}</h4>
+      <p>Estado en t = ${ev.time.toFixed(4)} h: Stock = <strong style="color:${C.orange}">${ev.stock}</strong></p>`;
+  } else {
+    document.getElementById('sbsBox').innerHTML = '<h4>Inicio</h4><p>Sistema en estado inicial: Stock = 0, Tiempo = 0.</p>';
+  }
+}
+
+function sbsAll(){
+  const T = parseFloat(document.getElementById('sT').value)||4;
+  sbsStep = simEvts.length;
+  document.getElementById('sbsCur').textContent = sbsStep;
+  renderChart(simEvts, T);
+  renderTable(simEvts, -1);
+  document.getElementById('sbsBox').innerHTML = `<h4>Simulación Completa</h4><p>Todos los <strong style="color:${C.orange}">${simEvts.length}</strong> eventos procesados. Usa "Anterior" para navegar hacia atrás.</p>`;
+}
+
+// ══════════════════════════════════════════════════
+// S5: MLE
+// ══════════════════════════════════════════════════
+let mleCh = null;
+
+function fitMLE(){
+  const raw = document.getElementById('mleD').value;
+  const data = raw.split(',').map(s=>parseFloat(s.trim())).filter(x=>!isNaN(x)&&x>0);
+  if(data.length<2){ alert('Ingresa al menos 2 valores positivos separados por comas.'); return; }
+
+  const n = data.length;
+  const sum = data.reduce((a,b)=>a+b,0);
+  const mean = sum/n;
+  const lHat = 1/mean;
+  const logL = n*Math.log(lHat) - lHat*sum;
+
+  document.getElementById('mleN').textContent = n;
+  document.getElementById('mleMe').textContent = mean.toFixed(4);
+  document.getElementById('mleLa').textContent = lHat.toFixed(3);
+  document.getElementById('mleLL').textContent = logL.toFixed(3);
+  document.getElementById('mleRes').style.display = 'block';
+
+  // Likelihood curve
+  const lRange = Array.from({length:120},(_,i)=>0.05 + i*0.12);
+  const logLVals = lRange.map(l=>n*Math.log(l) - l*sum);
+  const minLL = Math.max(...logLVals) - 25;
+
+  // Find closest lambda to lHat for annotation
+  const hlIdx = lRange.reduce((b,l,i)=>Math.abs(l-lHat)<Math.abs(lRange[b]-lHat)?i:b,0);
+  const ptData = lRange.map((l,i)=>i===hlIdx?logLVals[i]:null);
+
+  if(mleCh){ mleCh.destroy(); mleCh = null; }
+  const ctx = document.getElementById('mleChart').getContext('2d');
+  mleCh = new Chart(ctx, {
+    type:'line',
+    data:{
+      labels:lRange.map(l=>l.toFixed(2)),
+      datasets:[
+        {label:'log-Verosimilitud ℓ(λ)', data:logLVals,
+         borderColor:C.blue, borderWidth:2, pointRadius:0, fill:false},
+        {label:'λ̂ óptimo', data:ptData, type:'scatter',
+         borderColor:C.orange, backgroundColor:C.orange, pointRadius:8, showLine:false}
+      ]
+    },
+    options:{
+      responsive:true, maintainAspectRatio:false, animation:{duration:400},
+      scales:{
+        x:{title:{display:true,text:'λ',color:C.text}},
+        y:{min:minLL, title:{display:true,text:'ℓ(λ|X)',color:C.text},grid:{color:'rgba(56,139,253,0.1)'}}
+      },
+      plugins:{legend:{display:true, labels:{boxWidth:10, font:{size:10}}}}
+    }
+  });
+
+  document.getElementById('mleIntrTxt').innerHTML =
+    `<strong>Resultado:</strong> Con <strong>${n}</strong> observaciones y media muestral
+     <strong style="font-family:var(--mono)">x̄ = ${mean.toFixed(4)} h</strong>, el estimador MLE es
+     <strong style="color:var(--orange);font-family:var(--mono)">λ̂ = 1/${mean.toFixed(4)} = ${lHat.toFixed(3)}/hora</strong>.
+     Tiempo promedio entre eventos: <strong>${mean.toFixed(3)} horas</strong>.
+     El punto naranja indica el máximo de la función de log-verosimilitud.`;
+}
+
+function genMLE(){
+  const lam = 1 + Math.random()*3;
+  const smp = Array.from({length:15+Math.floor(Math.random()*10)},()=>sExp(lam));
+  document.getElementById('mleD').value = smp.map(s=>s.toFixed(3)).join(', ');
+}
+
+// ══════════════════════════════════════════════════
+// INIT
+// ══════════════════════════════════════════════════
+window.addEventListener('load',()=>{
+  initRW();
+  initITF();
+  initExp();
+  updateNav();
+  // Run default sim on load for demo
+  setTimeout(()=>{
+    runSim();
+  }, 400);
+});
+</script>
+</body>
+</html>
