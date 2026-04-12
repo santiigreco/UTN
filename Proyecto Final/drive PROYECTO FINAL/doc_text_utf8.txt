@@ -1,0 +1,219 @@
+PROYECTO FINAL
+GRUPO 8
+PROYECTO      
+  Alimentos sin tacc
+INTEGRANTES
+  Albarracín, Mateo
+  Carrizo, Joaquin
+  Greco, Santiago
+  Rodriguez, Brenda
+  Schaltegger, Franco
+DOCENTES
+  Profesores Adjuntos: 
+Diego Berenguer
+  Marcelo Romero
+  Docentes Auxiliares:
+Luis Zangrando
+Marcelo Caimi
+Juan Manuel Seivane
+Juan Cruz Balbo
+Nicolás Ferreyra
+ 
+Análisis de Prefactibilidad
+Actualmente, el paradigma alimentario a nivel local y global evidencia una sostenida transición hacia el consumo de alimentos saludables, impulsada no sólo por mayores índices de diagnóstico de enfermedad celíaca e intolerancia al gluten, sino también por una elección consciente hacia dietas plant-based y regímenes exentos de alérgenos y azúcares..
+Bajo este marco, la línea de productos consistirá en galletitas de chocolate con picante, chocolinas endulzadas naturalmente y otra línea de panificados que incluye panes y budines. Todo es elaborado bajo estándares de seguridad y con la particularidad de producirse en una planta 100% aislada. Este diseño de las instalaciones elimina de raíz el riesgo de contaminación cruzada, un factor crítico para la seguridad del paciente afectado. 
+Comercial
+Análisis del mercado objetivo
+El mercado objetivo primario del proyecto es la plaza argentina, sectorizada en dos macrogrupos definidos: la población con afección celíaca (una demanda que asciende a una base estimada de más de 400.000 diagnosticados), y una demanda periférica expansiva (consumidores adeptos a estilos de vida saludables, vegetarianos, y veganos). https://www.anmat.gob.ar/Enfermedad_Celiaca/principal.asp.  
+Se operará con una dinámica B2B2C. Los canales de distribución estarán vinculados con: grandes distribuidores mayoristas, supermercados regionales o hipermercados nacionales, proveedores de dietéticas, canales farmacéuticos. 
+Entorno competitivo
+Los competidores directos suelen estar representados por emprendimientos de nicho o marcas artesanales que carecen de procesos industriales sofisticados. Esta deficiencia tecnológica se refleja en el producto final, que el consumidor considera inferior a los productos con trigo. Además, encarece de forma sostenida los costos operativos fijos, y por ende, los precios de exhibición. Por otro lado, el mercado carece de productores a gran escala que fabriquen productos sin gluten y a la vez saludables.
+Otro potencial competidor latente son las importaciones de estos productos, afectadas fuertemente en su llegada por aranceles o barreras comerciales.
+Estrategia de diferenciación y producto
+Teniendo en cuenta el entorno competitivo mencionado anteriormente,la estrategia de diferenciación principal se fundamenta en fabricar alimentos con sabores no disponibles en el mercado actual, que sean libres de gluten, libres de alérgenos, endulzados naturalmente y veganos.
+Nuestro mix productivo incluye:
+Galletitas de chocolate con chips picante.
+Galletitas estilo chocolinas endulzadas naturalmente.
+Panes.
+Budines de cacao y algarroba.
+Análisis FODA
+FORTALEZAS
+OPORTUNIDADES
+F
+1
+Certificaciones de calidad: FSSC 22000; ANMAT.
+O
+6
+Crecimiento del mercado por mayor conciencia sobre alimentación y salud.
+F
+2
+Sin riesgo de contaminación cruzada.
+O
+7
+El mercado nacional presenta poca producción a nivel industrial.
+F
+3
+Amplia variedad de productos.
+O
+8
+Trabajar con nutricionistas, farmacias y dietéticas.
+F
+4
+Distribución a todo el país.
+F
+5
+Producción a nivel industrial.
+DEBILIDADES
+AMENAZAS
+D
+9
+Dependencia del mercado nacional.
+A
+14
+Incremento de la competencia nacional e internacional.
+D
+10
+Elevados costos de materia prima e insumos sin TACC.
+A
+15
+Inestabilidad económica nacional.
+D
+11
+Elevados costos operativos derivados a estrictos controles del proceso. Se requiere infraestructura especializada.
+A
+16
+Cambios en regulaciones o certificaciones.
+D
+12
+Alta dependencia de proveedores específicos.
+A
+17
+Cambios en la tendencia de consumo.
+D
+13
+Necesidad de inversión en marketing.
+Precio
+Tomando en cuenta precios de venta a distribuidores de otros competidores, tomaremos los siguientes:
+-Galletitas estilo “Chocolinas”, $10.500/kg
+-Galletitas de chocolate con chips picante, $13.700/kg
+-Budines de cacao y banana: $12.000/kg
+-Pan de molde: $12.700/kg
+Estimación de ventas
+La estrategia de penetración a nivel precios asume un valor mayorista que resulta fuertemente agresivo frente a la oferta competitiva actual. El estudio macro sitúa al producto bajo un precio referencial de mercado aproximado de $17.500 ARS por kilogramo.
+A nivel operativo industrial, considerando una matriz basada en tres líneas conjuntas de horneado en operación en turnos plenos de lunes a viernes, se prevé alcanzar una productividad (Q) de 720 toneladas anuales. Acoplada una venta integral estable, la sinergia comercial proyecta en primera instancia facturaciones que superarían los $12.600 millones de pesos anuales. 
+South America Gluten Free Foods & Beverages Market Report 2030
+Técnica
+Característica del producto
+Se fabricarán 3 tipos de productos sin TACC:
+Pepas
+Galletas dulces sin gluten con base de masa suave y relleno central de dulce de membrillo, elaboradas a partir de harinas alternativas aptas para celíacos, orientadas al consumo masivo como producto de snack o merienda.
+Polvorones saborizados
+Galletas sin gluten de textura friable y sabor intensificado (vainilla, chocolate, limón, entre otros), elaboradas con harinas alternativas y alto contenido graso, destinadas al consumo como producto dulce de acompañamiento o snack.
+Budines saborizados
+Productos de panadería sin gluten elaborados a base de mezclas húmedas, con textura esponjosa y variantes de sabor (vainilla, chocolate, frutas), orientados al consumo individual o familiar como opción de desayuno o merienda.
+Descripción del proceso
+Recepción de materias prima. 
+Almacenamiento.
+Pesado y dosificación.
+Mezclado/Batido: Dependiendo del tipo de producto se realizará una u otra. En el caso de los polvorones y pepas se realiza un amasado en amasadoras industriales con el objetivo de formar una masa quebrada u homogénea. En el caso de los budines se realiza el batido en batidoras planetarias. 
+Moldeado/Formado: En los polvorones y pepas se realiza un formado en una máquina cortadora formadora de alambre, donde se les da la forma específica a las galletas, en cambio, para los budines, se utiliza un dosificador que inyecta la masa semi líquida en los moldes.
+Horneado: Proceso de cocción.
+Enfriado: Circulación a través de una cinta transportadora con circulación forzada de aire para las galletas y en racks/carros de enfriamiento para los budines.
+Empaquetado: Mediante envasadora vertical o una Flow Pack.
+Rotulado: Etiquetado cumpliendo la normativa vigente.
+Principales máquinas y herramientas
+Uso general:
+Autoelevador 
+Zorra
+Impresora Injket 
+Computadoras 
+Balanza micro pesado : Pesaje de las materias primas de pequeño porcentaje. 
+Balanza macro pesado: Pesaje de las materias primas de mayor volumen 
+Línea de Galletitas 
+Amasadora Industrial: Mezcla las harinas sin gluten con la materia grasa y azúcares.
+Rotativa: 
+Dosificadora de membrillo: Para la producción de pepas coloca la dosificadora de membrillo posterior a la formación de las galletitas. 
+Moldes formadores: 
+Horno de Túnel (Continuo): Horno de gran longitud con cinta transportadora de malla metálica donde se cocinan los alimentos. 
+Cinta de Enfriamiento: Trayecto de varios metros para que la galleta baje su temperatura de forma natural. 
+Envasadora: Se utiliza una envasadora vertical con balanza y detector de metales internos. 
+Línea de panificados
+Batidora Industrial: Equipada con varilla globo para lograr la emulsión del batido sin gluten.
+Dosificadora Volumétrica de Pistones: Máquina que succiona el batido y lo descarga con precisión dentro de los moldes de papel.
+Horno Rotativo: Se usan hornos donde los panificados entran en los carros con los moldes de budines 
+Fermentadora de pan: camara que se utiliza para activar la levadura 
+Cortadora de pan: Rebana al pan en 20 rebanadas 
+Carros de enfriamiento: Estanterías móviles donde los budines reposan para estabilizar la miga antes de ser envueltos.
+Detector de metales:  Se usa de manera obligatoria para asegurar que no haya presencia de metales. 
+Envasadora: Se utiliza una Flow pack 
+Localización
+La compañía tendrá su planta productiva en Av. Escalada 1975, Mataderos, Cdad. Autónoma de Buenos Aires 
+Estándares de calidadLa compañía adoptará un enfoque de Inocuidad Alimentaria basado en estándares internacionales para garantizar la seguridad del consumidor y facilitar la exportación:
+Sistema de Gestión: Se implementará y certificará el esquema FSSC 22000 (Versión 6), que integra la norma ISO 22000 y los requisitos adicionales de la Fundación FSSC.
+Control de Procesos: El corazón del sistema será el plan HACCP (Análisis de Peligros y Puntos Críticos de Control), que permite identificar y monitorear riesgos biológicos, químicos y físicos en tiempo real.
+Logística
+Infraestructura
+Estimación de costos principales
+Para la estimación haremos el cálculo de los costos mensuales.
+ 
+Costos directos (70% del Costo Total)
+Materia prima (MP)
+Tomamos como insumos principales para la producción de ambas líneas el siguiente listado:
+Mezcla de Harinas Sin TACC (Almidón de maíz, Harina de arroz, Harina de soja)
+Endulzantes (Azúcar, Jarabe de glucosa, JMAF, Miel)
+Materia Grasa (Aceite vegetal interesterificado)
+Líquidos y Aglutinantes (Agua, Huevo en polvo, Leche en polvo)
+Rellenos (Dulce de membrillo)
+Aditivos y Sabor (Leudantes, Gomas, Esencias, Sal, Conservantes)
+Por lo que para la producción de X toneladas, se estima un costo total de 
+Estimación de costos
+Mano de Obra Directa (MO)
+Se estiman aproximadamente unos 60 empleados, tomando valores mensuales expresados en Costo Total Empresa (Sueldo Bruto + ~35% de cargas sociales, ART y aportes). con un sueldo promedio unitario de: $2.835.000
+Costos indirectos y Otros
+Estimamos un 30% del costo total a otros costos, como pueden ser servicios, mantenimiento, logística y publicidad.
+Administrativa y Comercial
+Marco Legal
+Por su naturaleza como empresa alimentaria, debe cumplir con un marco normativo que regula la inocuidad, el rotulado, la trazabilidad y las condiciones de producción y comercialización de alimentos.Legislación alimentaria 
+Código Alimentario Argentino (CAA) - Decreto N° 2126/71 y sus modificatorias: regula la elaboración, fraccionamiento, conservación, transporte y comercialización de alimentos.
+Ley Nacional N° 18.284 - crea el CAA y establece la autoridad sanitaria competente (ANMAT / Ministerio de Salud).
+Normativa específica para alimentos libres de gluten
+Ley N° 26.588 de “Enfermedad Celíaca” y su modificatoria N° 27.196:
+Establece la obligatoriedad de identificar los productos “libres de gluten” con el logo oficial SIN TACC, previa verificación analítica.Obliga a garantizar la ausencia de contaminación cruzada en todo el proceso productivo
+Determina que los alimentos deben estar inscriptos en el Listado Oficial de Alimentos Libres de Gluten (ANMAT).
+Autoridades sanitarias y habilitaciones
+ANMAT (Administración Nacional de Medicamentos, Alimentos y Tecnología Médica) — Autoridad regulatoria que habilita establecimientos, controla el cumplimiento del CAA y gestiona los registros de productos (RNPA y RNE).
+SENASA (Servicio Nacional de Sanidad y Calidad Agroalimentaria) — Interviene en el control sanitario de materias primas de origen vegetal y animal, especialmente en exportaciones.
+Legislación de seguridad, higiene y medio ambiente
+Ley N° 19.587 y Decreto 351/79 - Higiene y Seguridad en el Trabajo: establece las condiciones mínimas de seguridad laboral, iluminación, ventilación y ergonomía de los puestos de trabajo.
+Ley N° 24.557 - Riesgos del Trabajo: regula la prevención de accidentes laborales y la cobertura por parte de la ART.s
+Ley N° 24.051 - Residuos Peligrosos: regula la gestión de residuos industriales.
+Certificaciones de calidad e inocuidad:
+FSSC 22000 (seguridad alimentaria, reconocida por GFSI).
+Certificación “Libre de Gluten” (ANMAT).
+Certificación Kosher
+Organigrama
+Los roles que se visualizan en el organigrama se mencionan a continuación, detallando sus responsabilidades:
+Presidente: Define la visión y los objetivos de largo plazo. Aprueba planes estratégicos, inversiones y políticas clave. Representa a la empresa ante directorio, bancos y grandes clientes. Supervisa al Gerente General y evalúa resultados globales.
+Gerente General: Traduce la estrategia en planes anuales con metas, presupuesto y responsables. Asegura recursos, lidera la revisión por la Dirección, sigue KPIs transversales y coordina a todas las gerencias.
+Vendedores: Visitan y asesoran clientes. Negocian pedidos dentro de las políticas, registran información en el CRM y hacen seguimiento de entrega y cobro. Levantan alertas de mercado y retroalimentan a Ventas.
+Gerente de Producción: Garantiza fabricar a tiempo, con calidad y al costo objetivo. Balancea capacidad (turnos, líneas), define estándares, 5S y seguridad operativa. Coordina jefaturas de Producción, Calidad y Mantenimiento para cumplir el plan maestro. KPIs: OEE, FPY, scrap, cumplimiento de programa.
+Líder de Supply & Planning: Integra demanda, abastecimiento, inventarios y distribución. Define políticas de stock y prioridades de producción. Coordina con Compras, Logística y Producción para minimizar quiebres y exceso de inventario.
+Quality Assurance – Co-packing: Asegura que lo tercerizado cumpla especificaciones, rotulado y normativa. Homologa y audita co-packers, válida cambios, revisa registros y libera lotes.  Lidera la Gestión de la Calidad y es el responsable de seguridad que el Sistema de Gestión de Calidad sea conforme a la norma ISO 9001:2015 y mantener la integridad del mismo. 
+Jefe de Administración y Finanzas: Lleva presupuesto, costos, tesorería y contabilidad (propia o tercerizada). Administra contratos y pagos a proveedores, impuestos y obligaciones legales. Elabora reportes de gestión para la dirección.
+Jefe de Mantenimiento: Mantiene la disponibilidad y seguridad de equipos e instalaciones. Administra planes preventivos/correctivos, repuestos críticos y servicios de terceros. Registra historial, analiza fallas y mejora confiabilidad.
+Jefe de Producción: Organiza turnos, asigna recursos y asegura el cumplimiento del programa diario. Estandarizar métodos (ITs), capacita operarios y controla calidad en proceso. Gestiona productos y propone mejoras de productividad y seguridad.
+Jefe de Calidad: Implementa el plan de control desde recepción hasta producto terminado. Gestiona no conformidades, reclamos y acciones correctivas; lidera auditorías internas/externas.Coordinador de Logística: Administra los pedidos y asegura el transporte. Controla la documentación de la carga y cumple con las entregas en tiempo y forma. Coordina con Ventas y Producción ante picos o desvíos en el forecast.
+Responsable de Seguridad e Higiene: Evalúa riesgos, establece procedimientos, capacita y controla el uso de EPP. Gestiona incidentes, planes de emergencia, residuos y cumplimiento legal. Audita condiciones de planta y acompaña proyectos para asegurar diseño seguro.
+Analistas: Procesan datos, elaboran tableros e informes, modelan escenarios y dan soporte a decisiones. Documentan procesos, miden KPIs y promueven mejoras (automatizaciones, estándares).
+Operarios: Ejecutan tareas de producción y logística según instrucciones de trabajo y normas de seguridad.
+Económica
+Inversiones
+Estimación de ingresos y egresos
+Flujo de fondos
+Recupero de la inversión
+Beneficio neto
+VAN
+TIR
+Estimación inicial de Tiempos y Riesgos
+Cronograma tentativo
+Riesgos potenciales (Nivel de Riesgo)
