@@ -1370,9 +1370,9 @@ function downloadPDF() {
   const element = document.documentElement;
 
   const opt = {
-    margin:       0,
+    margin:       [5, 8, 5, 8],
     filename:     'Planta_SinTACC_Prefactibilidad_G8.pdf',
-    image:        { type: 'jpeg', quality: 0.95 },
+    image:        { type: 'jpeg', quality: 0.98 },
     html2canvas:  {
       scale: 2,
       useCORS: true,
@@ -1381,8 +1381,8 @@ function downloadPDF() {
       scrollY: 0,
       windowWidth: 1060
     },
-    jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
-    pagebreak:    { mode: ['css', 'legacy'], avoid: ['.card', '.chart-box', '.kpi', '.img-card', '.callout', '.tbl', '.org-tree'] }
+    jsPDF:        { unit: 'mm', format: 'a4', orientation: 'landscape' },
+    pagebreak:    { mode: ['css', 'legacy'], avoid: ['.card', '.chart-box', '.kpi', '.img-card', '.callout', '.tbl', '.org-tree', '.g2', '.g3', '.g4', '.process-flow'] }
   };
 
   html2pdf().set(opt).from(element).save().then(function() {
