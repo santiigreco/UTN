@@ -428,6 +428,121 @@
     .pf-arrow { display: none; }
     .section { padding: 40px 0; }
   }
+
+  /* ── PRINT ── */
+  @media print {
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+
+    body {
+      background: #fff !important;
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    .wrap {
+      max-width: 100%;
+      padding: 0 16px;
+    }
+
+    /* Hero → compact print version */
+    .hero {
+      min-height: auto !important;
+      background: var(--forest) !important;
+      padding: 32px;
+      break-after: page;
+    }
+    .hero-bg { opacity: .2 !important; }
+    .hero-overlay { background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,.7) 100%) !important; }
+    .hero-content { padding: 24px 0 !important; }
+    .hero h1 { font-size: 28px; }
+    .hero p { font-size: 13px; }
+    .hero-stats { gap: 24px; margin-top: 20px; padding-top: 16px; }
+    .hero-stat .val { font-size: 22px; }
+
+    /* Sections */
+    .section {
+      padding: 28px 0;
+      break-inside: avoid;
+      border-bottom: 1px solid #ccc;
+    }
+    .section h2 { font-size: 20px; }
+    .section .lead { font-size: 12px; margin-bottom: 16px; }
+
+    /* Cards */
+    .card, .chart-box, .kpi, .img-card {
+      box-shadow: none !important;
+      border: 1px solid #ddd;
+      break-inside: avoid;
+    }
+    .card { padding: 16px; }
+    .card h3 { font-size: 10px; margin-bottom: 10px; padding-bottom: 8px; }
+    .card ul li { padding: 4px 0 4px 18px; font-size: 11px; }
+    .card ul li::before { top: 11px; width: 5px; height: 5px; }
+
+    /* KPIs */
+    .kpi { padding: 14px; }
+    .kpi .val { font-size: 22px; }
+    .kpi .label { font-size: 9px; }
+    .kpi .sub { font-size: 10px; }
+
+    /* Grids - keep structure */
+    .g2 { gap: 12px; }
+    .g3 { gap: 12px; }
+    .g4 { gap: 10px; }
+
+    /* Tables */
+    .tbl { font-size: 10px; }
+    .tbl thead th { padding: 8px 10px; font-size: 9px; }
+    .tbl tbody td { padding: 7px 10px; }
+
+    /* Charts - give them breathing room */
+    .chart-box { padding: 16px; break-inside: avoid; }
+    .chart-box canvas { max-height: 240px !important; }
+
+    /* Images */
+    .img-card img { height: 160px !important; min-height: 160px !important; }
+    .img-card .caption { padding: 10px 14px; font-size: 11px; }
+
+    /* Callouts */
+    .callout { padding: 14px 18px; font-size: 11px; margin: 14px 0; break-inside: avoid; }
+
+    /* Process flow */
+    .process-flow { gap: 8px; }
+    .pf-step { padding: 10px 6px; }
+    .pf-step .pf-num { width: 22px; height: 22px; font-size: 9px; margin-bottom: 4px; }
+    .pf-step .pf-label { font-size: 9px; }
+
+    /* Org chart */
+    .org-node { padding: 8px 12px; min-width: 100px; }
+    .org-node .title { font-size: 10px; }
+    .org-node .detail { font-size: 9px; }
+
+    /* Timeline */
+    .tl-item .tl-period { font-size: 10px; }
+    .tl-item .tl-desc { font-size: 11px; }
+    .tl-item { padding-bottom: 14px; }
+
+    /* Score bars */
+    .score-bar-track { height: 8px; }
+    .score-bar-label { font-size: 11px; }
+
+    /* Big green conclusion box */
+    .section > div[style*="background:var(--forest)"] {
+      break-inside: avoid;
+    }
+
+    /* Footer */
+    .footer { padding: 20px 0; font-size: 10px; }
+
+    /* Force page breaks before heavy sections */
+    #s4 { break-before: page; }
+    #s6 { break-before: page; }
+    #s9 { break-before: page; }
+  }
 </style>
 </head>
 <body>
