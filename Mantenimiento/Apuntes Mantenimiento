@@ -32,3 +32,73 @@ b: sumatoria de horas maquina, h hombre, penalizacion por atraso. Depende del ti
 
 El costo variable es el lucro cesante y esta dado por:
 horas maquina + horas hombre + amortizacion de capital + penalizaciones
+
+
+
+--------------- clase 3 13/04/2026 Unidad 1 -----------
+
+Programa stabdard de una reparacion
+
+1. informe de falla
+2. determinar extension del trabajo
+3. coordinar ejecucion
+4. desarmar
+5. limpiar
+6. verificar estado teorico
+7. restabblecer estado teorico
+8. prueba de funcionamiento
+9. puesta en marcha: junto con produccion, para verificar que la maquina funciona y que el proximo turno va a estar funcionando
+10. carga de documento "historial de equipos": tiene la historia de la vida util de ese equipo, si se cambio algo, si tuvo fallas, cuanto costó.
+
+Mantenimiento en la estructura empresaria
+a. sin ingenieria de planta
+b. con ingenieria de planta:  aporta especificaciones tecnicas, tiempos, costos. Con estos costos y tiempos se que tipo de mantenimiento tengo que hacer, cual va ser el lucro cesante. Como tiene todos estos datos, mantenimiento depende de ingenieria de planta. 
+
+examen: de quien depende mantenimiento y porque: de ingienieria de planta, porque tiene especificaciones, tiempos y costos.
+
+de ing de planta dependen taller, of tecnica, almacenes y "EJECUCIÓN" (mantenimiento, son tecnicos)
+
+
+casos:
+1. of tecnica recibe un pedido, se lo manda a ejecución, consulta con almacen si tiene la pieza a cambiar, si lo tiene se la da a ejecución y repara el pedido.
+2. of tecnica recibe un pedido para reparar un motor. ejecucion consulta con almacen y le cambia el motor m2 por m1. ejecucion cambia el motor, y envia el averuadi al taller para ser reparado. El motor es un subconjunto. Luego taller envia el motor reparado al almacen 
+
+Mantenimiento centralizado: todo el mantenimiento se controla desde una locación central. 
+pregunta de examen: caracteristicas, ventajas y desventajas de mantenimiento centralizado
+desventaja: tiempo
+ventaja:  no se duplica el equipamiento, trabajo bajo criterios unificados
+fundamental fijar prioridades: le doy prioridad a lo más importante.
+
+
+Mantenimiento descentralizado(o por áreas): llevar el area de mantenimiento a cada uno de los centros productivos
+se utiliza en la industria del proceso continuo, por ejemplo una siderurgia, o cuando hay alta distancia entre centros de producción, por ejemplo, una petroquímica.
+ventaja: disminuyen los tiempos,
+desventaja: duplico herramental (mas costo), es muy dificil homogeneizar procedimientos y normas (para esto se pueden fijar reuniones periodicas pero asi y todo es dificil homogeneizar).
+
+Mantenimiento Mixto: algunas áreas con mantenimiento centralizado y otras áreas con su área de mantenimiento propio
+
+
+----- 
+Unidad 2: sistema integral de mantenimiento
+
+SIM: es el sistema que integra todo lo que es mantenimiento
+examen: calcular un presupuesto de mantenimiento
+
+Administración de personal: mantenimiento no tiene un sector propio de rrhh
+no hay presupuesto para capacitaciones, pero se puede armar con los empleados mas capacitados, los proveedores a veces dan capacitaciones. 
+    1. Nuevo personal = costo fijo. 
+    2. Además el proceso de contratación es largo, hay que capacitarlo ( curva de aprendizaje)
+    3. Los de mantenimiento son "bichos".
+    examen: entra ejercicio de calculo de dotacion de personal
+Existe un horario central de trabajo: LaV 8 a 18, Sab 8 a 12. Cualquier tarea fuera de este horario, es más caro.  Turno noche cobra 14% más, y no hay control, entonces hay desperdicio de recursos
+Entonces se trabaja en el horario central y fuera hay guardias (activas y pasivas)
+Ausentismo: el ausentismo en mantenimienzo roza entre el 2 y el 5% 
+
+Herramietnas para admin de personal en mantenimiento:
+1. Reasignar tareas -> riesgo
+2. horas  extras: costo adicional
+3. tercerización: no conoce la empresa, no tiene motivaición, le tengo que pagar extra a la consultora
+4. contratar nevo personal -> costo fijo
+
+examen: pueden pedir analizar el grafico de la diapo 17, o de la 18. Lo imprtante es usar las primeras 3 herramientas, nunca contratar nuevo personal.
+
