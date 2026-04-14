@@ -456,7 +456,82 @@
   .pdf-btn.loading { opacity: .7; pointer-events: none; }
   .pdf-btn svg { width: 18px; height: 18px; }
 
-  @media print { .pdf-btn { display: none !important; } }
+  /* ── PRINT — LANDSCAPE, CADA SECCION = 1 PAGINA ── */
+  @media print {
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+
+    @page {
+      size: A4 landscape;
+      margin: 10mm 12mm;
+    }
+
+    body { background: var(--bg) !important; }
+    .wrap { max-width: 100%; padding: 0; }
+
+    /* Ocultar boton */
+    .pdf-btn { display: none !important; }
+
+    /* ── HERO = pagina 1 ── */
+    .hero {
+      min-height: 0 !important;
+      height: auto;
+      break-after: page;
+    }
+
+    /* ── CADA SECCION arranca en pagina nueva ── */
+    .section {
+      break-before: page;
+      padding: 24px 0;
+      border-bottom: none;
+    }
+
+    /* ── NADA se corta entre paginas ── */
+    .card,
+    .chart-box,
+    .kpi,
+    .img-card,
+    .callout,
+    .process-flow,
+    .org-tree,
+    .g2,
+    .g3,
+    .g4,
+    .score-bar-wrap,
+    .tl,
+    table,
+    .table-wrap,
+    .card.flush,
+    .section-header,
+    .highlight-box,
+    tr {
+      break-inside: avoid !important;
+    }
+
+    /* Evitar paginas huerfanas */
+    h2, h3 {
+      break-after: avoid;
+    }
+
+    /* Sombras no se imprimen bien */
+    .card, .chart-box, .kpi, .img-card, .pf-step, .org-node {
+      box-shadow: none !important;
+    }
+
+    /* Imagenes no tan altas para que entre todo */
+    .img-card img {
+      height: 180px !important;
+      min-height: 180px !important;
+    }
+
+    /* Charts un poco mas compactos */
+    .chart-box canvas {
+      max-height: 260px !important;
+    }
+  }
 </style>
 </head>
 <body>
