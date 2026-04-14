@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Bundle version="1.0" xsi:schemaLocation="" xmlns="https://emsfs.autodesk.com/schema/manifest/1/0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Identity>
+        <Publisher>Autodesk, Inc.</Publisher>
+        <DisplayName>Autodesk AutoCAD 2022 - English</DisplayName>
+        <PLC>ACD</PLC>
+        <Release>2022</Release>
+        <BuildNumber>24.1.51.0</BuildNumber>
+        <UPI2>{1E7D4EF7-A28E-3D3E-BA3C-C6FAE4AAB2E0}</UPI2>
+        <UpgradeCode>{F191E1EE-A46B-3B0C-A57D-2CF099D0F25F}</UpgradeCode>
+        <ConstantId>{9E19F249-DB7B-3063-BA25-E0CD658368A0}</ConstantId>
+        <Signature>Ijq2hA7J1pBPWx41/aNX5igftSrJNh+nQBFAD5ZGj8E=</Signature>
+        <Type>PRD</Type>
+    </Identity>
+    <Resources>
+        <LocalizedResources>SetupRes/locale/%setuplang%/setup.xml</LocalizedResources>
+        <Images>
+            <Image id="ProductIconImage">SetupRes/icons/acad.svg</Image>
+            <Image id="ProductBrandImage">SetupRes/branding/acad.png</Image>
+            <Image id="ProductLogoImage">SetupRes/icons/acad.ico</Image>
+            <Image id="ProductARPIcon">SetupRes/icons/acad.ico</Image>
+        </Images>
+        <ThemeColor>#dd2222</ThemeColor>
+    </Resources>
+    <Configuration>
+        <Conditions>
+            <Condition messageId="AcadStillRunning" state="RUNNING"><![CDATA[(%ADSK_RUNNING_PROC_LIST% CONTAINS acad.exe)]]></Condition>
+            <Condition messageId="xx" state="NOT_RECOMMENDED" type="SYSTEM_REQUIREMENT"><![CDATA[( %ADSK_MEMORY_RAM% < 4) ]]></Condition>
+            <Condition messageId="xx" state="NOT_APPLICABLE" type="SYSTEM_REQUIREMENT"><![CDATA[( %ADSK_MEMORY_RAM% < 2) ]]></Condition>
+            <Condition messageId="xx" state="NOT_APPLICABLE" type="SYSTEM_REQUIREMENT"><![CDATA[( %GRAPHICS_FEATURE_LEVEL% < 30 )]]></Condition>
+            <Condition messageId="hasInstalled" state="INSTALLED"><![CDATA[((%ADSK_WIN_INSTALLED_MSI% CONTAINS {28B89EEF-5101-0409-2102-CF3F3A09B77D}) AND (NOT(%ACAD_PRD_INSTALLED_VER% = 24.1.51.0)))]]></Condition>
+        </Conditions>
+        <Platforms>
+            <Platform name="Windows" architecture="x64" minVersion="10.0.14393" useNTVersion="true"/>
+        </Platforms>
+        <Languages>
+            <Language langId="en-US"></Language>
+        </Languages>
+        <Properties>
+            <Property property="GRAPHICS_FEATURE_LEVEL">
+                <GraphicsCheck/>
+            </Property>
+            <Property property="ACAD_INSTALL_PATH" defaultValue="%INSTALL_DEST%\AutoCAD 2022\">
+                <RegistrySearch id="SearchInstallLocation" key="SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{28B89EEF-5101-0000-0102-CF3F3A09B77D}" name="InstallLocation" root="HKLM"/>
+            </Property>
+            <Property property="ACAD_PRD_INSTALLED_VER">
+                <MsiSearch name="VersionString" productCode="{28B89EEF-5101-0409-2102-CF3F3A09B77D}"/>
+            </Property>
+        </Properties>
+        <Media>
+            <Disk diskLabel="acad2022" diskPromptId="DiskPrompt" defaultDisk="true"></Disk>
+        </Media>
+    </Configuration>
+    <Settings>
+        <Setting name="SUPPORT_CONTENT_ROOT" defaultVal="" deployment="true" standalone="false"><![CDATA[]]></Setting>
+        <Setting name="SUPPORT_CONTENT_CUSTOM_PATH" defaultVal="" deployment="true" standalone="false"><![CDATA[]]></Setting>
+        <Setting name="LOCKSECURITYSETTINGS" defaultVal="0" deployment="true" standalone="false"><![CDATA[]]></Setting>
+        <Setting name="SECURELOAD" defaultVal="1" deployment="true" standalone="false"><![CDATA[]]></Setting>
+        <Setting name="ACADProfile_TrustedPaths" defaultVal="" deployment="true" standalone="false"><![CDATA[]]></Setting>
+        <Setting name="ACADProfile_TrustedDomains" defaultVal="*.autodesk.com;*.google-analytics.com;*.virtualearth.net" deployment="true" standalone="false"><![CDATA[]]></Setting>
+        <Setting name="LEGACYCODESEARCH" defaultVal="0" deployment="true" standalone="false"><![CDATA[]]></Setting>
+        <Setting name="ACADLspAsDoc" defaultVal="#0" deployment="true" standalone="false"><![CDATA[]]></Setting>
+        <Setting name="ACOMP_EXPRESS_TOOLS" defaultVal="1" deployment="true" standalone="false"><![CDATA[]]></Setting>
+        <Setting name="ACAD_USE_ONLINE_CONTENT" defaultVal="#1" deployment="true" standalone="false"><![CDATA[]]></Setting>
+        <Setting name="ACAD_SUBSCRIPTIONCENTER_ENABLE" defaultVal="#1" deployment="true" standalone="false"><![CDATA[]]></Setting>
+        <Setting name="ACAD_ENABLE_SEND_PC_NAME" defaultVal="#1" deployment="true" standalone="false"><![CDATA[]]></Setting>
+        <Setting name="ACAD_ENABLE_ROUNDTRIP" defaultVal="#1" deployment="true" standalone="false"><![CDATA[]]></Setting>
+        <Setting name="ADSK_DESKTOPSHORTCUT_1" defaultVal="1" deployment="true" standalone="false"><![CDATA[]]></Setting>
+    </Settings>
+    <Applications>
+        <Application sequence="1" launchApp="true" installAs="core" name="AutoCAD 2022" external="false" path="manifest/app.acad.en-US.xml" upi2="{88BB4C6B-3028-3BE8-904D-9197123C6791}" upgradeCode="{3769B4D4-A943-3E49-A2FA-ACE9831EF473}"/>
+        <Application sequence="2" installAs="optional" name="AutoCAD Performance Reporting Tool" external="false" path="manifest/app.acperfmon.xml" upi2="{9EA2EB15-E36D-339E-8371-9CDCE270C4B7}" upgradeCode="{B8F1125C-DDF6-36D7-ACCD-D38A82B56D68}"/>
+    </Applications>
+</Bundle>

@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ambom>
+    <FileName>file.xml</FileName>
+    <MAVer>5.1.0.0</MAVer>
+    <WorkSpaceId>0</WorkSpaceId>
+    <DmsId>1234</DmsId>
+    <assemblies>
+        <assembly>
+            <RefId>{9650235A-D37E-3D02-BEC8-D97B799125DD}</RefId>
+            <Name>Autodesk AutoCAD 2022 - English</Name>
+            <UnitType>PRD - Product</UnitType>
+            <Description>Autodesk AutoCAD 2022 - English</Description>
+            <Upi2>{1E7D4EF7-A28E-3D3E-BA3C-C6FAE4AAB2E0}</Upi2>
+            <BuildDate>01/29/2021 05:37:39 AM</BuildDate>
+            <BuildNumber>24.1.51.0</BuildNumber>
+            <ProductLine>ACD</ProductLine>
+            <Version>2022</Version>
+            <SubRelease>0</SubRelease>
+            <Platform>WIN64 - Windows 64-bit</Platform>
+            <Language>en-US - English - United States</Language>
+            <assemblies>
+                <assembly>
+                    <RefId>{C89A290B-4363-38A3-8309-07881722A82B}</RefId>
+                    <Name>AutoCAD 2022 - English</Name>
+                    <UnitType>APP - Application</UnitType>
+                    <Description>AutoCAD 2022 - English</Description>
+                    <Upi2>{2F9DA8EC-569C-40DF-B9E6-5CEEDB9AE7F2}</Upi2>
+                    <BuildDate>01/29/2021 05:37:36 AM</BuildDate>
+                    <BuildNumber>24.1.51.0</BuildNumber>
+                    <ProductLine>ACD</ProductLine>
+                    <Version>2022</Version>
+                    <SubRelease>0</SubRelease>
+                    <Platform>WIN64 - Windows 64-bit</Platform>
+                    <Language>en-US - English - United States</Language>
+                    <assemblies>
+                        <assembly>
+                            <RefId>{535A79B2-AA82-3872-B963-0EF1A849DA49}</RefId>
+                            <Name>ACAD Private</Name>
+                            <UnitType>COM - Component</UnitType>
+                            <Description>ACAD Private</Description>
+                            <Upi2>{C54CBE6F-7D81-4B6D-8BA1-49580C3B8A4E}</Upi2>
+                            <BuildDate>01/29/2021 05:37:36 AM</BuildDate>
+                            <BuildNumber>24.1.51.0</BuildNumber>
+                            <ProductLine>ACD</ProductLine>
+                            <Version>2022</Version>
+                            <SubRelease>0</SubRelease>
+                            <Platform>WIN64 - Windows 64-bit</Platform>
+                            <Language>NA - Language Independent</Language>
+                            <assemblies>
+<assembly>
+    <RefId>{BEEACAE1-8320-3CAD-A39C-85F278DFF3B5}</RefId>
+    <Name>AutoCAD 2022</Name>
+    <UnitType>COM - Component</UnitType>
+    <Description>AutoCAD 2022</Description>
+    <Upi2>{AA94B568-5901-4325-A780-5398A6303FF3}</Upi2>
+    <BuildDate>01/29/2021 05:37:34 AM</BuildDate>
+    <BuildNumber>24.1.51.0</BuildNumber>
+    <ProductLine>ACD</ProductLine>
+    <Version>2022</Version>
+    <SubRelease>0</SubRelease>
+    <Platform>WIN64 - Windows 64-bit</Platform>
+    <Language>NA - Language Independent</Language>
+    <assemblies>
+        <assembly>
+            <RefId>{0A65BD91-E3EC-3C91-A263-CBA4690D28DF}</RefId>
+            <Name>Autodesk Single Sign On Component</Name>
+            <UnitType>COM - Component</UnitType>
+            <Description>Autodesk Single Sign On Component</Description>
+            <Upi2>{8AE68CB2-6668-476B-A3CF-D591129AD697}</Upi2>
+            <BuildDate>01/29/2021 05:37:33 AM</BuildDate>
+            <BuildNumber>12.3.3.1803</BuildNumber>
+            <ProductLine>ADSSO</ProductLine>
+            <Version>2020</Version>
+            <SubRelease>0</SubRelease>
+            <Platform>WIN64 - Windows 64-bit</Platform>
+            <Language>en-US - English - United States</Language>
+        </assembly>
+        <assembly>
+            <RefId>{F18B5170-07C1-388E-9C7E-A5D56788B0DA}</RefId>
+            <Name>Autodesk Material Library Base Resolution Image Library 2022</Name>
+            <UnitType>COM - Component</UnitType>
+            <Description>Autodesk Material Library Base Resolution Image Library 2022</Description>
+            <Upi2>{80F8F9E5-B879-4CE1-AD5A-756F33DD5273}</Upi2>
+            <BuildDate>01/29/2021 05:37:33 AM</BuildDate>
+            <BuildNumber>20.3.7.0</BuildNumber>
+            <ProductLine>PLC0000014</ProductLine>
+            <Version>2022</Version>
+            <SubRelease>0</SubRelease>
+            <Platform>WIN64 - Windows 64-bit</Platform>
+            <Language>cs - Czech,de - German,en-US - English - United States,es - Spanish,fr - French,it - Italian,ja - Japanese,ko - Korean,pl - Polish,pt-BR - Portuguese - Brazilian,ru - Russian,zh-Hans - Simplified Chinese,zh-Hant - Traditional Chinese</Language>
+            <assemblies>
+                <assembly>
+                    <RefId>{5137EDEE-EA52-3050-A201-0C83522255E2}</RefId>
+                    <Name>Autodesk Material Library 2022</Name>
+                    <UnitType>COM - Component</UnitType>
+                    <Description>Autodesk Material Library 2022</Description>
+                    <Upi2>{73E2F625-BB5E-42B5-8A27-6407559C5897}</Upi2>
+                    <BuildDate>01/29/2021 05:37:33 AM</BuildDate>
+                    <BuildNumber>20.3.7.0</BuildNumber>
+                    <ProductLine>PLC0000013</ProductLine>
+                    <Version>2022</Version>
+                    <SubRelease>0</SubRelease>
+                    <Platform>WIN64 - Windows 64-bit</Platform>
+                    <Language>cs - Czech,de - German,en-US - English - United States,es - Spanish,fr - French,it - Italian,ja - Japanese,ko - Korean,pl - Polish,pt-BR - Portuguese - Brazilian,ru - Russian,zh-Hans - Simplified Chinese,zh-Hant - Traditional Chinese</Language>
+                </assembly>
+            </assemblies>
+        </assembly>
+        <assembly>
+            <RefId>{F1AEDBBB-DA32-3AB0-A4B7-07D351C9BAF6}</RefId>
+            <Name>Autodesk Licensing Installer 1.0</Name>
+            <UnitType>COM - Component</UnitType>
+            <Description>Autodesk Licensing Installer 1.0</Description>
+            <Upi2>{D93E01D9-AF6E-32E9-ACA2-61D9E92563C1}</Upi2>
+            <BuildDate>01/29/2021 05:37:34 AM</BuildDate>
+            <BuildNumber>11.0.0.4854</BuildNumber>
+            <ProductLine>PLC0000036</ProductLine>
+            <Version>1.0</Version>
+            <SubRelease>0</SubRelease>
+            <Platform>WIN64 - Windows 64-bit</Platform>
+            <Language>NA - Language Independent</Language>
+        </assembly>
+    </assemblies>
+</assembly>
+                            </assemblies>
+                        </assembly>
+                        <assembly>
+                            <RefId>{6442D609-9A47-38C7-B181-CA68BD1A6921}</RefId>
+                            <Name>AutoCAD 2022 Language Pack - English</Name>
+                            <UnitType>COM - Component</UnitType>
+                            <Description>AutoCAD 2022 Language Pack - English</Description>
+                            <Upi2>{4FD9EA18-5F0E-428C-8FD0-87FCAAC103EA}</Upi2>
+                            <BuildDate>01/29/2021 05:37:36 AM</BuildDate>
+                            <BuildNumber>24.1.51.0</BuildNumber>
+                            <ProductLine>ACD</ProductLine>
+                            <Version>2022</Version>
+                            <SubRelease>0</SubRelease>
+                            <Platform>WIN64 - Windows 64-bit</Platform>
+                            <Language>en-US - English - United States</Language>
+                        </assembly>
+                        <assembly>
+                            <RefId>{13659599-D32E-3B4D-B26D-2E28AFCD9FA6}</RefId>
+                            <Name>ACA &amp; MEP 2022 Object Enabler</Name>
+                            <UnitType>COM - Component</UnitType>
+                            <Description>ACA &amp; MEP 2022 Object Enabler</Description>
+                            <Upi2>{75A6EBA9-735B-453B-9F45-19B6A61C8BB6}</Upi2>
+                            <BuildDate>01/29/2021 05:37:37 AM</BuildDate>
+                            <BuildNumber>8.4.45.0</BuildNumber>
+                            <ProductLine>ARCHDESK</ProductLine>
+                            <Version>2022</Version>
+                            <SubRelease>0</SubRelease>
+                            <Platform>WIN64 - Windows 64-bit</Platform>
+                            <Language>NA - Language Independent</Language>
+                        </assembly>
+                        <assembly>
+                            <RefId>{DD46550D-5A18-3214-AE43-505ABAE5B344}</RefId>
+                            <Name>Autodesk Save to Web and Mobile</Name>
+                            <UnitType>COM - Component</UnitType>
+                            <Description>Autodesk Save to Web and Mobile</Description>
+                            <Upi2>{4547EBFD-4728-410C-86D3-0102258EB17B}</Upi2>
+                            <BuildDate>01/29/2021 05:37:37 AM</BuildDate>
+                            <BuildNumber>3.0.29.0</BuildNumber>
+                            <ProductLine>ACD</ProductLine>
+                            <Version>2022</Version>
+                            <SubRelease>0</SubRelease>
+                            <Platform>WIN64 - Windows 64-bit</Platform>
+                            <Language>NA - Language Independent</Language>
+                        </assembly>
+                        <assembly>
+                            <RefId>{D43EFAA2-9E90-387C-AA03-A76FBD5B8C4B}</RefId>
+                            <Name>Autodesk Genuine Service</Name>
+                            <UnitType>COM - Component</UnitType>
+                            <Description>Autodesk Genuine Service</Description>
+                            <Upi2>{A1C7D85E-D78B-478A-86FE-4D1172CD859B}</Upi2>
+                            <BuildDate>01/29/2021 05:37:37 AM</BuildDate>
+                            <BuildNumber>4.1.2.25</BuildNumber>
+                            <ProductLine>AGS</ProductLine>
+                            <Version>4.0</Version>
+                            <SubRelease>0</SubRelease>
+                            <Platform>WIN64 - Windows 64-bit</Platform>
+                            <Language>NA - Language Independent</Language>
+                        </assembly>
+                        <assembly>
+                            <RefId>{C95015AC-E061-353C-B94D-6C95A491BAF9}</RefId>
+                            <Name>Autodesk Desktop app</Name>
+                            <UnitType>COM - Component</UnitType>
+                            <Description>Autodesk Desktop app</Description>
+                            <Upi2>{AC79A0ED-A792-340A-B40F-C9D4C1C52B89}</Upi2>
+                            <BuildDate>01/29/2021 05:37:37 AM</BuildDate>
+                            <BuildNumber>8.0.0.46</BuildNumber>
+                            <ProductLine>ADSKAPP</ProductLine>
+                            <Version>1.0</Version>
+                            <SubRelease>0</SubRelease>
+                            <Platform>WIN64 - Windows 64-bit</Platform>
+                            <Language></Language>
+                        </assembly>
+                        <assembly>
+                            <RefId>{93862921-5AA1-3DB5-8B41-C80A34236481}</RefId>
+                            <Name>Autodesk App Manager</Name>
+                            <UnitType>COM - Component</UnitType>
+                            <Description>Autodesk App Manager</Description>
+                            <Upi2>{378D2F61-53D6-4B43-A13A-501036FB93D3}</Upi2>
+                            <BuildDate>01/29/2021 05:37:37 AM</BuildDate>
+                            <BuildNumber>3.2.1</BuildNumber>
+                            <ProductLine>ACD</ProductLine>
+                            <Version>2022</Version>
+                            <SubRelease>0</SubRelease>
+                            <Platform>WIN64 - Windows 64-bit</Platform>
+                            <Language>NA - Language Independent</Language>
+                        </assembly>
+                        <assembly>
+                            <RefId>{E81C154D-1806-3F26-9A55-43D051AA10E3}</RefId>
+                            <Name>Autodesk Featured Apps</Name>
+                            <UnitType>COM - Component</UnitType>
+                            <Description>Autodesk Featured Apps</Description>
+                            <Upi2>{445C5755-E118-49F6-A7B4-1A7A18895DC3}</Upi2>
+                            <BuildDate>01/29/2021 05:37:37 AM</BuildDate>
+                            <BuildNumber>3.2.1</BuildNumber>
+                            <ProductLine>ACD</ProductLine>
+                            <Version>2022</Version>
+                            <SubRelease>0</SubRelease>
+                            <Platform>WIN64 - Windows 64-bit</Platform>
+                            <Language>NA - Language Independent</Language>
+                        </assembly>
+                        <assembly>
+                            <RefId>{76D59AE0-A8E3-357C-A3F3-C3D0FC4E4A44}</RefId>
+                            <Name>AutoCAD Open in Desktop</Name>
+                            <UnitType>COM - Component</UnitType>
+                            <Description>AutoCAD Open in Desktop</Description>
+                            <Upi2>{709D89FA-0310-4C2E-853B-3EE00B002A9D}</Upi2>
+                            <BuildDate>01/29/2021 05:37:37 AM</BuildDate>
+                            <BuildNumber>1.0.20.0</BuildNumber>
+                            <ProductLine>ACADOID</ProductLine>
+                            <Version>2022</Version>
+                            <SubRelease>0</SubRelease>
+                            <Platform>WIN64 - Windows 64-bit</Platform>
+                            <Language>NA - Language Independent</Language>
+                        </assembly>
+                    </assemblies>
+                </assembly>
+                <assembly>
+                    <RefId>{91422C94-4B94-33D7-B02E-420E9DB3C86E}</RefId>
+                    <Name>Autodesk AutoCAD Performance Feedback Tool 1.3.8</Name>
+                    <UnitType>COM - Component</UnitType>
+                    <Description>Autodesk AutoCAD Performance Feedback Tool 1.3.8</Description>
+                    <Upi2>{71F7FC53-D485-4CEE-931A-F2CF1F921DD9}</Upi2>
+                    <BuildDate>01/29/2021 05:37:39 AM</BuildDate>
+                    <BuildNumber>1.3.8.0</BuildNumber>
+                    <ProductLine>ACD</ProductLine>
+                    <Version>2022</Version>
+                    <SubRelease>0</SubRelease>
+                    <Platform>WIN64 - Windows 64-bit</Platform>
+                    <Language>NA - Language Independent</Language>
+                </assembly>
+            </assemblies>
+        </assembly>
+    </assemblies>
+</ambom>
