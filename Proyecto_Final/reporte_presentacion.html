@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Planta Sin TACC — Estudio de Prefactibilidad</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=DM+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg: #faf9f6;
+    --surface: #ffffff;
+    --surface-alt: #f3f1ec;
+    --border: #e4e0d8;
+    --text: #1a1a1a;
+    --text-2: #4a4540;
+    --text-3: #8a847a;
+    --wheat: #c8a96e;
+    --wheat-light: #f5edd6;
+    --forest: #2d5a3d;
+    --forest-light: #e6f0ea;
+    --terra: #b85c3c;
+    --terra-light: #fbeee8;
+    --navy: #2c3e6b;
+    --navy-light: #e8ecf4;
+    --plum: #6b3a6b;
+    --plum-light: #f3e8f3;
+    --radius: 8px;
+    --shadow: 0 1px 3px rgba(0,0,0,.06), 0 4px 12px rgba(0,0,0,.04);
+    --shadow-lg: 0 4px 24px rgba(0,0,0,.08);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── LAYOUT ── */
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 32px; }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 520px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    background: #1a1a1a;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: url('https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1400&q=80') center/cover;
+    opacity: .45;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 30%, rgba(0,0,0,.85) 100%);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 48px 48px 52px;
+    max-width: 760px;
+  }
+  .hero-tag {
+    display: inline-block;
+    padding: 5px 14px;
+    background: var(--wheat);
+    color: #1a1a1a;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.15;
+    color: #fff;
+    letter-spacing: -.5px;
+    margin-bottom: 16px;
+  }
+  .hero p {
+    color: rgba(255,255,255,.7);
+    font-size: 17px;
+    max-width: 560px;
+    line-height: 1.6;
+  }
+  .hero-stats {
+    display: flex;
+    gap: 32px;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,.15);
+  }
+  .hero-stat .val { font-size: 28px; font-weight: 800; color: var(--wheat); font-family: 'DM Mono', monospace; }
+  .hero-stat .lbl { font-size: 12px; color: rgba(255,255,255,.5); margin-top: 2px; text-transform: uppercase; letter-spacing: .6px; }
+
+  /* ── SECTION ── */
+  .section {
+    padding: 64px 0;
+    border-bottom: 1px solid var(--border);
+    scroll-margin-top: 20px;
+  }
+  .section:last-child { border-bottom: none; }
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    margin-bottom: 10px;
+  }
+  .section-label .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .section-label .dot.wheat { background: var(--wheat); }
+  .section-label .dot.forest { background: var(--forest); }
+  .section-label .dot.terra { background: var(--terra); }
+  .section-label .dot.navy { background: var(--navy); }
+  .section-label .dot.plum { background: var(--plum); }
+  .section h2 {
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -.4px;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .section .lead {
+    color: var(--text-2);
+    font-size: 16px;
+    max-width: 640px;
+    margin-bottom: 36px;
+  }
+  .section .meta-line {
+    font-size: 13px;
+    color: var(--text-3);
+    margin-bottom: 28px;
+  }
+  .section .meta-line strong { color: var(--text-2); }
+
+  /* ── GRID ── */
+  .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+  .g4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+  /* ── CARD ── */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: var(--shadow);
+  }
+  .card.flush { padding: 0; overflow: hidden; }
+  .card h3 {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-3);
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .card p, .card li { font-size: 14px; color: var(--text-2); line-height: 1.7; }
+  .card ul { list-style: none; }
+  .card ul li { padding: 7px 0 7px 22px; position: relative; }
+  .card ul li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 15px;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    border: 2px solid var(--wheat);
+  }
+
+  /* ── KPI ── */
+  .kpi {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow);
+  }
+  .kpi .label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    color: var(--text-3);
+    margin-bottom: 8px;
+  }
+  .kpi .val {
+    font-family: 'DM Mono', monospace;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1;
+  }
+  .kpi .val.wheat { color: var(--wheat); }
+  .kpi .val.forest { color: var(--forest); }
+  .kpi .val.terra { color: var(--terra); }
+  .kpi .val.navy { color: var(--navy); }
+  .kpi .val.plum { color: var(--plum); }
+  .kpi .sub { font-size: 12px; color: var(--text-3); margin-top: 6px; }
+
+  /* ── TABLE ── */
+  .tbl { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .tbl thead th {
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .7px;
+    color: var(--text-3);
+    background: var(--surface-alt);
+    border-bottom: 2px solid var(--border);
+  }
+  .tbl tbody td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-2);
+  }
+  .tbl tbody tr:last-child td { border-bottom: none; }
+  .tbl .r { text-align: right; font-family: 'DM Mono', monospace; font-size: 13px; }
+  .tbl .total td {
+    font-weight: 700;
+    color: var(--text);
+    background: var(--surface-alt);
+    border-top: 2px solid var(--border);
+  }
+  .tbl .green { color: var(--forest); }
+  .tbl .tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .tbl .tag-a { background: var(--navy-light); color: var(--navy); }
+  .tbl .tag-b { background: var(--terra-light); color: var(--terra); }
+  .tbl .tag-risk { background: var(--terra-light); color: var(--terra); }
+
+  /* ── CHART CONTAINER ── */
+  .chart-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow);
+    position: relative;
+  }
+  .chart-box h3 {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-3);
+    margin-bottom: 20px;
+  }
+  .chart-box canvas { max-height: 320px; }
+
+  /* ── IMAGE CARD ── */
+  .img-card {
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    position: relative;
+  }
+  .img-card img { width: 100%; height: 220px; object-fit: cover; display: block; }
+  .img-card .caption {
+    padding: 16px 20px;
+    background: var(--surface);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-2);
+  }
+  .img-card .caption span {
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--text-3);
+    margin-top: 3px;
+  }
+
+  /* ── FLOW (grid 5-col) ── */
+  .process-flow {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    padding: 8px 0;
+  }
+  .pf-step {
+    padding: 18px 12px;
+    text-align: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+  .pf-step .pf-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--forest);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .pf-step .pf-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-2);
+    line-height: 1.35;
+  }
+  .pf-arrow { display: none; }
+
+  /* ── MICRO SCORE BAR ── */
+  .score-bar-wrap { margin-bottom: 10px; }
+  .score-bar-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-2);
+    margin-bottom: 4px;
+  }
+  .score-bar-label .sc { font-family: 'DM Mono', monospace; }
+  .score-bar-track {
+    height: 10px;
+    background: var(--surface-alt);
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .score-bar-fill {
+    height: 100%;
+    border-radius: 5px;
+    transition: width .4s;
+  }
+
+  /* ── ORG ── */
+  .org-tree { display: flex; flex-direction: column; align-items: center; gap: 8px; margin: 20px 0; }
+  .org-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .org-node {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 20px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    min-width: 130px;
+  }
+  .org-node .title { font-size: 13px; font-weight: 700; color: var(--text); }
+  .org-node .detail { font-size: 11px; color: var(--text-3); margin-top: 2px; }
+  .org-node.lvl1 { border-color: var(--forest); border-width: 2px; }
+  .org-node.lvl2 { border-color: var(--wheat); border-width: 2px; }
+  .org-line { width: 2px; height: 14px; background: var(--border); }
+  .org-hline { height: 2px; background: var(--border); flex: 1; align-self: center; }
+
+  /* ── HIGHLIGHT ── */
+  .callout {
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin: 24px 0;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .callout.forest { background: var(--forest-light); border-left: 4px solid var(--forest); color: var(--forest); }
+  .callout.terra { background: var(--terra-light); border-left: 4px solid var(--terra); color: var(--terra); }
+  .callout.wheat { background: var(--wheat-light); border-left: 4px solid var(--wheat); color: #7a6530; }
+  .callout strong { color: inherit; }
+
+  /* ── TIMELINE ── */
+  .tl { position: relative; padding-left: 28px; margin: 20px 0; }
+  .tl::before { content: ''; position: absolute; left: 8px; top: 6px; bottom: 6px; width: 2px; background: var(--border); }
+  .tl-item { position: relative; padding: 0 0 24px 20px; }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: -24px; top: 6px;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    border: 3px solid var(--forest);
+    background: var(--bg);
+  }
+  .tl-item .tl-period { font-size: 12px; font-weight: 700; color: var(--forest); margin-bottom: 2px; }
+  .tl-item .tl-desc { font-size: 14px; color: var(--text-2); }
+
+  /* ── FOOTER ── */
+  .footer {
+    padding: 40px 0;
+    text-align: center;
+    font-size: 13px;
+    color: var(--text-3);
+  }
+  .footer strong { color: var(--text-2); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .wrap { padding: 0 16px; }
+    .g2, .g3, .g4 { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 28px; }
+    .hero-content { padding: 32px 24px; }
+    .hero-stats { flex-wrap: wrap; gap: 20px; }
+    .process-flow { flex-wrap: wrap; }
+    .pf-arrow { display: none; }
+    .section { padding: 40px 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ████████████████████████████████████████████████████████
+     HERO
+     ████████████████████████████████████████████████████████ -->
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-tag">UTN FRBA &mdash; Grupo 8</span>
+    <h1>Planta Industrial de Alimentos Libres de Gluten</h1>
+    <p>Estudio de prefactibilidad para la primera planta 100% aislada de Argentina dedicada a la produccion de alimentos sin TACC a escala industrial.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="val">38,85%</div><div class="lbl">TIR</div></div>
+      <div class="hero-stat"><div class="val">$1.964M</div><div class="lbl">Inversion (ARS)</div></div>
+      <div class="hero-stat"><div class="val">3,5</div><div class="lbl">Años payback</div></div>
+      <div class="hero-stat"><div class="val">7</div><div class="lbl">Productos</div></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- ████████████████████████████████████████████████████████
+     1. MERCADO OBJETIVO
+     ████████████████████████████████████████████████████████ -->
+<section class="section" id="s1">
+  <div class="section-label"><span class="dot wheat"></span> Seccion 1</div>
+  <h2>Mercado Objetivo</h2>
+  <p class="lead">Un mercado de mas de 1,3 millones de consumidores que hoy paga hasta 3x mas por productos de baja calidad y con riesgo de contaminacion cruzada.</p>
+
+  <div class="g4" style="margin-bottom:24px">
+    <div class="kpi"><div class="label">Poblacion AR</div><div class="val navy">46M</div></div>
+    <div class="kpi"><div class="label">Celiacos (1%)</div><div class="val terra">460.000</div></div>
+    <div class="kpi"><div class="label">Mercado ampliado</div><div class="val forest">1,33M</div><div class="sub">Convivientes + saludables</div></div>
+    <div class="kpi"><div class="label">Consumo per capita</div><div class="val wheat">24 kg/a</div></div>
+  </div>
+
+  <div class="g2">
+    <div class="chart-box">
+      <h3>Composicion del mercado target</h3>
+      <canvas id="chartMercado"></canvas>
+    </div>
+    <div class="card">
+      <h3>Oportunidad</h3>
+      <ul>
+        <li>La celiaquía afecta al <strong>1% de la poblacion</strong> (fuente ANMAT). El diagnostico crece cada año.</li>
+        <li>Convivientes que adaptan su alimentacion al hogar libre de gluten multiplican la base <strong>x1,5</strong>.</li>
+        <li>El consumo consciente (veganos, plant-based, clean label) suma un factor adicional de <strong>x1,4</strong>.</li>
+        <li>Market share objetivo: <strong>7%</strong> del mercado ampliado (~93.380 consumidores). Conservador vs. SMAMS (~10% con operacion semi-artesanal).</li>
+        <li>Tendencia global: el mercado gluten-free crece sostenidamente (ref: SA GF Market Report 2030).</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="g3" style="margin-top:20px">
+    <div class="img-card">
+      <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&q=80" alt="Galletitas y snacks">
+      <div class="caption">Demanda insatisfecha<span>Productos caros, poca variedad, riesgo de contaminacion cruzada</span></div>
+    </div>
+    <div class="img-card">
+      <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=600&q=80" alt="Gondola de supermercado">
+      <div class="caption">Gondola limitada<span>La oferta actual no cubre las necesidades del consumidor celiaco</span></div>
+    </div>
+    <div class="img-card">
+      <img src="https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=600&q=80" alt="Alimentacion saludable">
+      <div class="caption">Tendencia saludable<span>+1,4x de consumidores por eleccion, no por diagnostico</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ████████████████████████████████████████████████████████
+     2. PRODUCTO Y DIFERENCIACION
+     ████████████████████████████████████████████████████████ -->
+<section class="section" id="s2">
+  <div class="section-label"><span class="dot forest"></span> Seccion 2</div>
+  <h2>Producto y Diferenciacion</h2>
+  <p class="lead">7 SKUs industriales, veganos, sin alergenos y endulzados naturalmente. Precios entre $7.000 y $13.700/kg vs. referencia de mercado de $17.500/kg.</p>
+
+  <div class="card flush" style="margin-bottom:24px">
+    <table class="tbl">
+      <thead><tr><th>Producto</th><th>Linea</th><th>Descripcion</th><th class="r">Precio/kg</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Chocolate con chips picante</strong></td><td><span class="tag tag-a">Linea A</span></td><td>Galletita dulce con chocolate y chips de especias</td><td class="r">$13.700</td></tr>
+        <tr><td><strong>Galletitas simil Chocolinas</strong></td><td><span class="tag tag-a">Linea A</span></td><td>Version sin TACC del clasico, endulzada naturalmente</td><td class="r">$10.500</td></tr>
+        <tr><td><strong>Pepas chocolate y batata</strong></td><td><span class="tag tag-a">Linea A</span></td><td>Base suave con relleno de dulce de batata</td><td class="r">$11.000</td></tr>
+        <tr><td><strong>Bizcochos salados</strong></td><td><span class="tag tag-a">Linea A</span></td><td>Snack salado de harinas alternativas</td><td class="r">$7.000</td></tr>
+        <tr><td><strong>Polvorones</strong></td><td><span class="tag tag-a">Linea A</span></td><td>Galletitas desmenuzables: vainilla, chocolate, limon</td><td class="r">$10.500</td></tr>
+        <tr><td><strong>Pan de molde</strong></td><td><span class="tag tag-b">Linea B</span></td><td>Pan lactal rebanado, alta rotacion diaria</td><td class="r">$12.700</td></tr>
+        <tr><td><strong>Budines</strong></td><td><span class="tag tag-b">Linea B</span></td><td>Saborizados (vainilla, chocolate, frutas)</td><td class="r">$12.000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <h3>Que nos diferencia</h3>
+      <ul>
+        <li><strong>Planta 100% aislada</strong> &mdash; cero contaminacion cruzada por diseño estructural, no por protocolo de limpieza.</li>
+        <li><strong>Vegano + sin alergenos</strong> &mdash; formula que amplifica la base de consumidores mas alla del celiaco.</li>
+        <li><strong>Endulzado natural</strong> &mdash; alineado con tendencia de clean label.</li>
+        <li><strong>Sabores inexistentes</strong> en el mercado actual (chips picante, batata, variantes de polvoron).</li>
+        <li><strong>Escala industrial</strong> &mdash; precios hasta 40% debajo de la referencia de mercado.</li>
+      </ul>
+    </div>
+    <div class="chart-box">
+      <h3>Precio vs. referencia de mercado ($17.500/kg)</h3>
+      <canvas id="chartPrecios"></canvas>
+    </div>
+  </div>
+
+  <div class="callout wheat" style="margin-top:24px">
+    <strong>Certificaciones:</strong> FSSC 22000 (v6) + HACCP + ANMAT + Logo SIN TACC oficial + Kosher. Esta combinacion es una barrera de entrada significativa para competidores.
+  </div>
+</section>
+
+<!-- ████████████████████████████████████████████████████████
+     3. PLAN DE VENTAS
+     ████████████████████████████████████████████████████████ -->
+<section class="section" id="s3">
+  <div class="section-label"><span class="dot terra"></span> Seccion 3</div>
+  <h2>Plan de Ventas</h2>
+  <p class="lead">383,5 toneladas/año distribuidas en 7 SKUs a traves de 4 canales. Facturacion anual de $4.382 MM.</p>
+
+  <div class="g3" style="margin-bottom:24px">
+    <div class="kpi"><div class="label">Produccion anual</div><div class="val forest">383,5 tn</div></div>
+    <div class="kpi"><div class="label">Facturacion anual</div><div class="val navy">$4.382M</div></div>
+    <div class="kpi"><div class="label">Acumulado 10 años</div><div class="val plum">$43.819M</div></div>
+  </div>
+
+  <div class="g2">
+    <div class="chart-box">
+      <h3>Revenue por producto (anual, ARS MM)</h3>
+      <canvas id="chartRevenue"></canvas>
+    </div>
+    <div class="chart-box">
+      <h3>Volumen por producto (tn/año)</h3>
+      <canvas id="chartVolumen"></canvas>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:24px">
+    <h3>Canales de distribucion</h3>
+    <div class="g2" style="gap:0">
+      <ul>
+        <li><strong>Distribuidores mayoristas</strong> &mdash; canal principal (B2B), cobertura nacional.</li>
+        <li><strong>Supermercados e hipermercados</strong> &mdash; gondola de productos saludables/dieteticos.</li>
+      </ul>
+      <ul>
+        <li><strong>Dieteticas</strong> &mdash; canal especializado, alto margen, afinidad con el consumidor celiaco.</li>
+        <li><strong>Farmacias</strong> &mdash; canal complementario para productos de salud.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ████████████████████████████████████████████████████████
+     4. PROCESO PRODUCTIVO
+     ████████████████████████████████████████████████████████ -->
+<section class="section" id="s4">
+  <div class="section-label"><span class="dot navy"></span> Seccion 4</div>
+  <h2>Proceso Productivo</h2>
+  <p class="lead">10 etapas en dos lineas dedicadas. Horno tunel continuo para galletitas y hornos rotativos para panificados, con detector de metales integrado en cada linea.</p>
+
+  <div class="card" style="margin-bottom:24px">
+    <h3>Flujo de produccion &mdash; 10 etapas</h3>
+    <div class="process-flow">
+      <div class="pf-step"><span class="pf-num">1</span><div class="pf-label">Recepcion de MP</div></div>
+      <div class="pf-step"><span class="pf-num">2</span><div class="pf-label">Almacenamiento</div></div>
+      <div class="pf-step"><span class="pf-num">3</span><div class="pf-label">Pesado y dosificado</div></div>
+      <div class="pf-step"><span class="pf-num">4</span><div class="pf-label">Mezclado / amasado</div></div>
+      <div class="pf-step"><span class="pf-num">5</span><div class="pf-label">Moldeado / formado</div></div>
+      <div class="pf-step"><span class="pf-num">6</span><div class="pf-label">Horneado</div></div>
+      <div class="pf-step"><span class="pf-num">7</span><div class="pf-label">Enfriado</div></div>
+      <div class="pf-step"><span class="pf-num">8</span><div class="pf-label">Envasado + det. metales</div></div>
+      <div class="pf-step"><span class="pf-num">9</span><div class="pf-label">Etiquetado</div></div>
+      <div class="pf-step"><span class="pf-num">10</span><div class="pf-label">Almacen PT</div></div>
+    </div>
+  </div>
+
+  <div class="g2" style="margin-bottom:24px">
+    <div class="img-card">
+      <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&q=80" alt="Galletitas en bandeja de horneado">
+      <div class="caption">Linea A &mdash; Galletitas y snacks<span>100 kg/h real &middot; 61,9% utilizacion &middot; Horno tunel continuo</span></div>
+    </div>
+    <div class="img-card">
+      <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=600&q=80" alt="Produccion de pan industrial">
+      <div class="caption">Linea B &mdash; Panificados y budines<span>50 kg/h real &middot; 75,9% utilizacion &middot; Hornos rotativos</span></div>
+    </div>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <h3>Equipo clave &mdash; Linea A</h3>
+      <ul>
+        <li>Amasadora industrial (USD 13.500)</li>
+        <li>Rotativa con dulcera (USD 15.000)</li>
+        <li>4 moldes formadores (USD 5.000 c/u)</li>
+        <li><strong>Horno tunel continuo</strong> con cinta metalica (USD 100.000)</li>
+        <li>Cinta de enfriamiento por aire forzado</li>
+        <li>Envasadora vertical con balanza + detector de metales</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Equipo clave &mdash; Linea B</h3>
+      <ul>
+        <li>Batidora industrial con accesorio batidor</li>
+        <li>Dosificadora volumetrica de pistones</li>
+        <li><strong>2 hornos rotativos</strong> con carros ($30 MM)</li>
+        <li>Fermentadora de pan (activacion levadura)</li>
+        <li>Cortadora de pan (20 rebanadas/pieza)</li>
+        <li>Detector de metales + Envasadora Flow Pack (USD 50.000)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout forest" style="margin-top:24px">
+    <strong>Control critico:</strong> Detector de metales obligatorio integrado en cada linea. Plan HACCP monitoreando en tiempo real todos los puntos criticos de control (biologicos, quimicos y fisicos) en las 10 etapas.
+  </div>
+</section>
+
+<!-- ████████████████████████████████████████████████████████
+     5. LOCALIZACION E INFRAESTRUCTURA
+     ████████████████████████████████████████████████████████ -->
+<section class="section" id="s5">
+  <div class="section-label"><span class="dot plum"></span> Seccion 5</div>
+  <h2>Localizacion e Infraestructura</h2>
+  <p class="lead">Analisis sistematico en dos etapas: macrolocalizacion (3 regiones) y microlocalizacion (3 parques industriales con matriz ponderada). Resultado: Parque Industrial de Garin.</p>
+
+  <div class="g3" style="margin-bottom:24px">
+    <div class="kpi"><div class="label">Superficie planta</div><div class="val plum">1.330 m&sup2;</div></div>
+    <div class="kpi"><div class="label">Ubicacion elegida</div><div class="val navy" style="font-size:16px">P.I. Garin</div><div class="sub">GBA Norte &middot; Panamericana</div></div>
+    <div class="kpi"><div class="label">Puntaje micro</div><div class="val forest" style="font-size:30px">8,45/10</div><div class="sub">1ro de 3 candidatos</div></div>
+  </div>
+
+  <!-- MACRO -->
+  <div class="g2" style="margin-bottom:24px">
+    <div class="card">
+      <h3>Macrolocalizacion &mdash; 3 regiones evaluadas</h3>
+      <div class="table-wrap" style="border:1px solid var(--border); border-radius:var(--radius); overflow:hidden">
+        <table class="tbl">
+          <thead><tr><th>Region</th><th>Ventaja</th><th>Desventaja</th></tr></thead>
+          <tbody>
+            <tr><td><strong>A &mdash; Centro (Cordoba)</strong></td><td>Cercanía a fuentes de harinas sin TACC</td><td>Lejos del principal mercado de consumo</td></tr>
+            <tr><td><strong>B &mdash; Litoral (Santa Fe)</strong></td><td>Punto logistico estrategico para recepcion de MP</td><td>Mercado consumidor diluido</td></tr>
+            <tr style="background:var(--forest-light)"><td><strong>C &mdash; AMBA / GBA</strong></td><td>~40% de la poblacion, mayor poder adquisitivo, centros de distribucion de hipermercados</td><td>&mdash;</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout wheat" style="margin-top:16px; margin-bottom:0">
+        <strong>Decision:</strong> Region C (AMBA/GBA). Los centros de distribucion de las principales cadenas estan en GBA. Es mas barato traer MP a granel desde el interior que despachar producto terminado a larga distancia.
+      </div>
+    </div>
+    <div class="img-card">
+      <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80" alt="Logistica y distribucion" style="height:100%; min-height:280px">
+      <div class="caption">Hub logistico GBA<span>Cercanía a centros de distribucion de las principales cadenas</span></div>
+    </div>
+  </div>
+
+  <!-- MICRO -->
+  <div class="g2" style="margin-bottom:24px">
+    <div class="img-card">
+      <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=600&q=80" alt="Parque industrial" style="height:100%; min-height:340px">
+      <div class="caption">Parque Industrial Garin<span>Zonificacion Categoria 3 &middot; Sobre Autopista Panamericana</span></div>
+    </div>
+    <div class="card">
+      <h3>Microlocalizacion &mdash; Matriz ponderada (Tabla 5)</h3>
+      <p style="font-size:13px; color:var(--text-3); margin-bottom:16px">3 parques industriales con Zonificacion Categoria 3 (apta industria alimenticia):</p>
+      <div class="table-wrap" style="border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; margin-bottom:16px">
+        <table class="tbl">
+          <thead><tr><th>Factor</th><th class="r">Peso</th><th class="r">Ezeiza</th><th class="r">Garin</th><th class="r">Pilar</th></tr></thead>
+          <tbody>
+            <tr><td>Proximidad a distrib. y clientes</td><td class="r">0,30</td><td class="r">7</td><td class="r" style="color:var(--forest); font-weight:700">8</td><td class="r">6</td></tr>
+            <tr><td>Infraestructura y servicios</td><td class="r">0,25</td><td class="r">8</td><td class="r" style="color:var(--forest); font-weight:700">9</td><td class="r">9</td></tr>
+            <tr><td>Marco legal y zonificacion</td><td class="r">0,20</td><td class="r">9</td><td class="r" style="color:var(--forest); font-weight:700">9</td><td class="r">9</td></tr>
+            <tr><td>Costo superficie y expansion</td><td class="r">0,15</td><td class="r">9</td><td class="r">8</td><td class="r" style="font-weight:700">9</td></tr>
+            <tr><td>Mano de obra e infra. vial</td><td class="r">0,10</td><td class="r">7</td><td class="r" style="color:var(--forest); font-weight:700">8</td><td class="r">7</td></tr>
+            <tr class="total"><td><strong>Total ponderado</strong></td><td class="r"><strong>1,00</strong></td><td class="r"><strong>7,95</strong></td><td class="r" style="color:var(--forest)"><strong>8,45</strong></td><td class="r"><strong>7,90</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- Score bars -->
+      <div class="score-bar-wrap">
+        <div class="score-bar-label"><span>P.I. Garin</span><span class="sc" style="color:var(--forest)">8,45</span></div>
+        <div class="score-bar-track"><div class="score-bar-fill" style="width:84.5%; background:var(--forest)"></div></div>
+      </div>
+      <div class="score-bar-wrap">
+        <div class="score-bar-label"><span>P.I. Ezeiza</span><span class="sc">7,95</span></div>
+        <div class="score-bar-track"><div class="score-bar-fill" style="width:79.5%; background:var(--wheat)"></div></div>
+      </div>
+      <div class="score-bar-wrap">
+        <div class="score-bar-label"><span>P.I. Pilar</span><span class="sc">7,90</span></div>
+        <div class="score-bar-track"><div class="score-bar-fill" style="width:79%; background:var(--terra)"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INFRAESTRUCTURA + PLANTA -->
+  <div class="g2" style="margin-bottom:24px">
+    <div class="chart-box">
+      <h3>Distribucion de superficies &mdash; 1.330 m&sup2;</h3>
+      <canvas id="chartPlanta"></canvas>
+    </div>
+    <div class="card">
+      <h3>Infraestructura critica en planta</h3>
+      <ul>
+        <li><strong>Energia electrica:</strong> amasadoras, batidoras, cintas transportadoras, camaras de frio. Alto consumo de arranque y sostenido.</li>
+        <li><strong>Gas industrial:</strong> horno tunel continuo y hornos rotativos operan con quemadores de alto consumo.</li>
+        <li><strong>Aire comprimido:</strong> actuadores neumaticos en envasadoras y dosificadoras.</li>
+        <li><strong>Agua de red y de proceso:</strong> como ingrediente y para protocolos de limpieza (prevencion de polvo en suspension).</li>
+        <li><strong>Tratamiento de efluentes:</strong> lavado de maquinaria genera residuos organicos, aceites vegetales y azucares.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout forest" style="margin-top:0">
+    <strong>Conclusion:</strong> La matriz de microlocalizacion establece al Parque Industrial Garin como el nodo optimo logistico-funcional. Su convergencia estrategica sobre la Autopista Panamericana le confiere facilidad para abastecerse de MP a granel, sumada a su eficiencia para despachar producto terminado hacia los centros de distribucion del AMBA.
+  </div>
+</section>
+
+<!-- ████████████████████████████████████████████████████████
+     6. COSTOS PRINCIPALES
+     ████████████████████████████████████████████████████████ -->
+<section class="section" id="s6">
+  <div class="section-label"><span class="dot terra"></span> Seccion 6</div>
+  <h2>Costos Principales</h2>
+  <p class="lead">Costo operativo total de $3.060 MM/año con un margen bruto de 30,2% y margen neto de 18,1% despues de impuestos.</p>
+
+  <div class="g3" style="margin-bottom:24px">
+    <div class="kpi"><div class="label">Costo total anual</div><div class="val terra">$3.060M</div></div>
+    <div class="kpi"><div class="label">Resultado bruto</div><div class="val forest">$1.322M</div><div class="sub">Margen 30,2%</div></div>
+    <div class="kpi"><div class="label">Resultado neto</div><div class="val navy">$793M</div><div class="sub">Margen 18,1%</div></div>
+  </div>
+
+  <div class="g2" style="margin-bottom:24px">
+    <div class="chart-box">
+      <h3>Composicion de costos operativos</h3>
+      <canvas id="chartCostos"></canvas>
+    </div>
+    <div class="chart-box">
+      <h3>Margen bruto de materia prima por producto</h3>
+      <canvas id="chartMargenes"></canvas>
+    </div>
+  </div>
+
+  <div class="card flush" style="margin-bottom:24px">
+    <table class="tbl">
+      <thead><tr><th>Puesto</th><th class="r">Cant.</th><th class="r">Sueldo bruto/mes</th><th class="r">Costo anual (MM)</th></tr></thead>
+      <tbody>
+        <tr><td>Operarios de produccion</td><td class="r">32</td><td class="r">$1.072.000</td><td class="r">$510,4</td></tr>
+        <tr><td>Mantenimiento y logistica</td><td class="r">6</td><td class="r">$1.395.200</td><td class="r">$124,6</td></tr>
+        <tr><td>Staff de produccion</td><td class="r">6</td><td class="r">$2.500.000</td><td class="r">$223,2</td></tr>
+        <tr><td>Administrativos</td><td class="r">4</td><td class="r">$2.200.000</td><td class="r">$130,9</td></tr>
+        <tr><td>Gerentes (planta + admin)</td><td class="r">2</td><td class="r">$7.000.000</td><td class="r">$208,3</td></tr>
+        <tr class="total"><td><strong>Total</strong></td><td class="r"><strong>50</strong></td><td class="r">&mdash;</td><td class="r"><strong>$1.197,5</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout forest">
+    <strong>Cascada de resultado:</strong> Facturacion $4.382 MM &minus; Costos $3.060 MM = Resultado bruto $1.322 MM (30,2%) &minus; Hon. directorio 5% ($66 MM) &minus; IIGG 35% ($463 MM) = <strong>Resultado neto $793 MM</strong> (18,1%).
+  </div>
+</section>
+
+<!-- ████████████████████████████████████████████████████████
+     7. ORGANIGRAMA
+     ████████████████████████████████████████████████████████ -->
+<section class="section" id="s7">
+  <div class="section-label"><span class="dot wheat"></span> Seccion 7</div>
+  <h2>Organigrama</h2>
+  <p class="lead">Estructura de 50 personas con doble control de calidad (aseguramiento + inspeccion) y linea de produccion en 3 turnos.</p>
+
+  <div class="card" style="margin-bottom:24px">
+    <h3>Estructura organizacional</h3>
+    <div class="org-tree">
+      <div class="org-row">
+        <div class="org-node lvl1"><div class="title">Presidente</div></div>
+      </div>
+      <div class="org-line"></div>
+      <div class="org-row">
+        <div class="org-node lvl1"><div class="title">Gerente General</div><div class="detail">+ Asesoria legal/contable ext.</div></div>
+      </div>
+      <div class="org-line"></div>
+      <div class="org-row">
+        <div class="org-node lvl2"><div class="title">Ventas</div><div class="detail">Vendedores</div></div>
+        <div class="org-node lvl2"><div class="title">Gte. Produccion</div><div class="detail">~40 personas</div></div>
+        <div class="org-node lvl2"><div class="title">Aseg. Calidad</div><div class="detail">3 analistas</div></div>
+        <div class="org-node lvl2"><div class="title">Calidad e I+D</div><div class="detail">3 inspectores</div></div>
+        <div class="org-node lvl2"><div class="title">Planeamiento</div><div class="detail">3 operadores</div></div>
+        <div class="org-node lvl2"><div class="title">Admin y Finanzas</div><div class="detail">4 areas</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="g3">
+    <div class="card">
+      <h3>Produccion</h3>
+      <ul>
+        <li><strong>Jefe de Mantenimiento:</strong> 1 supervisor + 3 tecnicos.</li>
+        <li><strong>3 turnos:</strong> Mañana (30), Tarde (20), Noche (12).</li>
+        <li><strong>SySH:</strong> 4 operadores dedicados a seguridad laboral.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Calidad (doble control)</h3>
+      <ul>
+        <li><strong>Aseguramiento:</strong> analista de calidad, analista de proveedores, 2 QA.</li>
+        <li><strong>Inspeccion:</strong> 3 inspectores in-line.</li>
+        <li>Clave para mantener FSSC 22000 y HACCP.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Administracion</h3>
+      <ul>
+        <li>Cuentas a Pagar</li>
+        <li>Tesoreria</li>
+        <li>Facturacion y Cobranzas</li>
+        <li>RRHH (50 personas)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ████████████████████████████████████████████████████████
+     8. INVERSIONES
+     ████████████████████████████████████████████████████████ -->
+<section class="section" id="s8">
+  <div class="section-label"><span class="dot forest"></span> Seccion 8</div>
+  <h2>Inversiones</h2>
+  <p class="lead">$1.964 MM (~ USD 1,4M) con 71% destinado a la nave industrial, el activo mas duradero del proyecto.</p>
+
+  <div class="g2" style="margin-bottom:24px">
+    <div class="kpi" style="text-align:center">
+      <div class="label">Inversion total</div>
+      <div class="val forest" style="font-size:42px">$1.964 MM</div>
+      <div class="sub">~USD 1,4 M (TC: 1.400 ARS/USD)</div>
+    </div>
+    <div class="chart-box">
+      <h3>Distribucion de la inversion</h3>
+      <canvas id="chartInversion"></canvas>
+    </div>
+  </div>
+
+  <div class="card flush">
+    <table class="tbl">
+      <thead><tr><th>Rubro</th><th class="r">ARS (MM)</th><th class="r">%</th><th>Detalle</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Nave industrial</strong></td><td class="r">$1.400,0</td><td class="r">71,3%</td><td>Planta aislada 1.330 m&sup2; + terreno</td></tr>
+        <tr><td><strong>Obras complementarias</strong></td><td class="r">$186,2</td><td class="r">9,5%</td><td>Electricidad, sanitarias, gas, climatizacion</td></tr>
+        <tr><td><strong>Maquinaria operativa</strong></td><td class="r">$345,5</td><td class="r">17,6%</td><td>Linea A + Linea B completas</td></tr>
+        <tr><td><strong>Vehiculos y aux.</strong></td><td class="r">$22,8</td><td class="r">1,2%</td><td>Autoelevador, zorras, balanzas</td></tr>
+        <tr><td><strong>Muebles y utiles</strong></td><td class="r">$9,8</td><td class="r">0,5%</td><td>PCs (x8), mobiliario, sanitarios</td></tr>
+        <tr class="total"><td><strong>Total</strong></td><td class="r"><strong>$1.964,3</strong></td><td class="r"><strong>100%</strong></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ████████████████████████████████████████████████████████
+     9. FLUJO DE FONDOS E INDICADORES
+     ████████████████████████████████████████████████████████ -->
+<section class="section" id="s9">
+  <div class="section-label"><span class="dot navy"></span> Seccion 9</div>
+  <h2>Flujo de Fondos e Indicadores</h2>
+  <p class="lead">VAN positivo, TIR mas del doble del costo de capital y recupero de la inversion en 3,5 años. El proyecto es viable.</p>
+
+  <div class="g4" style="margin-bottom:24px">
+    <div class="kpi"><div class="label">VAN (15%)</div><div class="val forest">$1.752M</div><div class="sub">Valor Actual Neto</div></div>
+    <div class="kpi"><div class="label">TIR</div><div class="val navy" style="font-size:36px">38,85%</div><div class="sub">vs. WACC 15%</div></div>
+    <div class="kpi"><div class="label">Payback</div><div class="val terra">3,5 años</div><div class="sub">3 años y 175 dias</div></div>
+    <div class="kpi"><div class="label">Retorno 10a</div><div class="val plum">$5.965M</div><div class="sub">~3x la inversion</div></div>
+  </div>
+
+  <div class="chart-box" style="margin-bottom:24px">
+    <h3>Flujo de fondos acumulado &mdash; horizonte 10 años (ARS MM)</h3>
+    <canvas id="chartFlujo" style="max-height:360px"></canvas>
+  </div>
+
+  <div class="card flush" style="margin-bottom:24px">
+    <table class="tbl">
+      <thead><tr><th>Año</th><th class="r">Ingresos</th><th class="r">Costos</th><th class="r">Res. bruto</th><th class="r">Hon. Dir. 5%</th><th class="r">IIGG 35%</th><th class="r">Flujo neto</th><th class="r">Acumulado</th></tr></thead>
+      <tbody>
+        <tr><td><strong>0</strong></td><td class="r">&mdash;</td><td class="r">$1.964</td><td class="r" style="color:var(--terra)">-$1.964</td><td class="r">&mdash;</td><td class="r">&mdash;</td><td class="r" style="color:var(--terra)">-$1.964</td><td class="r" style="color:var(--terra)">-$1.964</td></tr>
+        <tr><td><strong>1</strong></td><td class="r">$4.382</td><td class="r">$3.060</td><td class="r">$1.322</td><td class="r">$66</td><td class="r">$463</td><td class="r green">$793</td><td class="r" style="color:var(--terra)">-$1.171</td></tr>
+        <tr><td><strong>2</strong></td><td class="r">$4.382</td><td class="r">$3.060</td><td class="r">$1.322</td><td class="r">$66</td><td class="r">$463</td><td class="r green">$793</td><td class="r" style="color:var(--terra)">-$378</td></tr>
+        <tr style="background:var(--forest-light)"><td><strong>3</strong></td><td class="r">$4.382</td><td class="r">$3.060</td><td class="r">$1.322</td><td class="r">$66</td><td class="r">$463</td><td class="r green"><strong>$793</strong></td><td class="r green"><strong>+$414</strong></td></tr>
+        <tr><td><strong>4-10</strong></td><td class="r">$4.382/a</td><td class="r">$3.060/a</td><td class="r">$1.322/a</td><td class="r">$66/a</td><td class="r">$463/a</td><td class="r green">$793/a</td><td class="r green">+$5.965</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="g2">
+    <div class="chart-box">
+      <h3>TIR vs. WACC</h3>
+      <canvas id="chartTirWacc"></canvas>
+    </div>
+    <div class="card">
+      <h3>Criterios de decision</h3>
+      <ul>
+        <li><strong>VAN > 0</strong> ($1.752 MM) &mdash; El proyecto genera valor por encima del costo de oportunidad del capital.</li>
+        <li><strong>TIR > WACC</strong> (38,85% vs. 15%) &mdash; Rentabilidad mas del doble de la tasa exigida.</li>
+        <li><strong>Payback < horizonte</strong> (3,5 de 10 años) &mdash; Recupero rapido, 6,5 años de flujo positivo neto.</li>
+        <li><strong>ROI a 10 años: ~304%</strong> &mdash; Cada peso invertido genera $3 en el horizonte del proyecto.</li>
+      </ul>
+      <div class="callout forest" style="margin-top:16px; margin-bottom:0">
+        <strong>Conclusion:</strong> El proyecto es economica y financieramente viable bajo los tres criterios estandar de evaluacion de proyectos de inversion.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ████████████████████████████████████████████████████████
+     10. CONCLUSIONES
+     ████████████████████████████████████████████████████████ -->
+<section class="section" id="s10">
+  <div class="section-label"><span class="dot forest"></span> Seccion 10</div>
+  <h2>Conclusiones</h2>
+  <p class="lead">El proyecto es viable desde lo tecnico, comercial y financiero.</p>
+
+  <div class="g3" style="margin-bottom:24px">
+    <div class="card" style="border-top: 3px solid var(--wheat)">
+      <h3>Oportunidad</h3>
+      <ul>
+        <li>+1,3M consumidores con demanda insatisfecha.</li>
+        <li>Competidores artesanales, sin escala.</li>
+        <li>Precios elevados por falta de oferta industrial.</li>
+        <li>Tendencia global de crecimiento sostenido.</li>
+      </ul>
+    </div>
+    <div class="card" style="border-top: 3px solid var(--forest)">
+      <h3>Ventaja competitiva</h3>
+      <ul>
+        <li>Unica planta 100% aislada del pais.</li>
+        <li>FSSC 22000 + HACCP + ANMAT + Kosher.</li>
+        <li>Escala industrial = precios competitivos.</li>
+        <li>7 SKUs veganos, sin alergenos.</li>
+      </ul>
+    </div>
+    <div class="card" style="border-top: 3px solid var(--navy)">
+      <h3>Viabilidad financiera</h3>
+      <ul>
+        <li>TIR 38,85% (>2x costo capital).</li>
+        <li>VAN positivo: $1.752 MM.</li>
+        <li>Payback: 3,5 años.</li>
+        <li>Retorno 3x en 10 años.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card flush" style="margin-bottom:24px">
+    <table class="tbl">
+      <thead><tr><th>Riesgo critico</th><th>Nivel</th><th>Mitigacion propuesta</th></tr></thead>
+      <tbody>
+        <tr><td>Demoras SENASA/ANMAT</td><td><span class="tag tag-risk">Critico</span></td><td>Inicio de tramites en paralelo con obra civil; asesoria regulatoria</td></tr>
+        <tr><td>Cash flow negativo Año 1</td><td><span class="tag tag-risk">Critico</span></td><td>Capital de trabajo previsto en inversion; ramp-up gradual</td></tr>
+        <tr><td>Demora equipos importados</td><td><span class="tag tag-risk">Critico</span></td><td>Compra anticipada; proveedores alternativos nacionales</td></tr>
+        <tr><td>Alta inflacion</td><td><span class="tag tag-risk">Critico</span></td><td>Clausulas de ajuste; stock estrategico MP; revision de precios</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card" style="margin-bottom:24px">
+    <h3>Timeline de implementacion</h3>
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-period">Meses 1 &ndash; 4</div>
+        <div class="tl-desc"><strong>Planificacion y constitucion</strong> &mdash; Business plan, constitucion legal, presupuestos, seleccion de socios clave.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-period">Meses 3 &ndash; 7</div>
+        <div class="tl-desc"><strong>Ingenieria y permisos</strong> &mdash; Diseño de planta y layout, habilitaciones regulatorias, certificacion TACC (ACSA/ANMAT).</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-period">Meses 4 &ndash; 10</div>
+        <div class="tl-desc"><strong>Obra civil</strong> &mdash; Preparacion del terreno, construccion de estructura, instalaciones electricas, aprobacion final de obra.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-period">Meses 6 &ndash; 11</div>
+        <div class="tl-desc"><strong>Equipos y validacion</strong> &mdash; Compra de maquinaria (nacional e importada), instalacion, validacion de procesos.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-period">Meses 9 &ndash; 12</div>
+        <div class="tl-desc"><strong>RRHH y capacitacion</strong> &mdash; Reclutamiento de las 50 posiciones, formacion en BPM, HACCP y procedimientos.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-period">Mes 13+</div>
+        <div class="tl-desc"><strong>Puesta en marcha</strong> &mdash; Pruebas piloto, ajuste de recetas, validacion comercial y lanzamiento.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:var(--forest); border-radius:var(--radius); padding:40px; text-align:center; color:#fff;">
+    <p style="font-size:13px; text-transform:uppercase; letter-spacing:1.5px; opacity:.7; margin-bottom:12px">Conclusion del estudio</p>
+    <p style="font-size:24px; font-weight:800; margin-bottom:8px; letter-spacing:-.3px">El proyecto es viable desde lo tecnico, comercial y financiero.</p>
+    <p style="font-size:16px; opacity:.8; font-family:'DM Mono',monospace">TIR 38,85% &nbsp;&middot;&nbsp; VAN $1.752 MM &nbsp;&middot;&nbsp; Payback 3,5 años &nbsp;&middot;&nbsp; Retorno 3x</p>
+  </div>
+</section>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer wrap">
+  <p><strong>Proyecto Final &mdash; UTN FRBA 2026 &mdash; Grupo 8</strong></p>
+  <p style="margin-top:4px">Albarracin &middot; Carrizo &middot; Greco &middot; Rodriguez &middot; Schaltegger</p>
+</footer>
+
+<!-- ████████████████████████████████████████████████████████
+     CHARTS
+     ████████████████████████████████████████████████████████ -->
+<script>
+Chart.defaults.font.family = "'DM Sans', system-ui, sans-serif";
+Chart.defaults.font.size = 12;
+Chart.defaults.color = '#8a847a';
+Chart.defaults.plugins.legend.labels.usePointStyle = true;
+Chart.defaults.plugins.legend.labels.pointStyle = 'circle';
+
+const COLORS = {
+  wheat: '#c8a96e',
+  forest: '#2d5a3d',
+  terra: '#b85c3c',
+  navy: '#2c3e6b',
+  plum: '#6b3a6b',
+  sage: '#7a9a6a',
+  slate: '#5a6a7a',
+  rose: '#c47a7a'
+};
+const palette = [COLORS.forest, COLORS.navy, COLORS.terra, COLORS.wheat, COLORS.plum, COLORS.sage, COLORS.slate];
+
+// 1. Mercado
+new Chart(document.getElementById('chartMercado'), {
+  type: 'doughnut',
+  data: {
+    labels: ['Celiacos diagnosticados (460K)', 'Convivientes (+230K)', 'Consumo saludable (+644K)'],
+    datasets: [{
+      data: [460, 230, 644],
+      backgroundColor: [COLORS.terra, COLORS.wheat, COLORS.forest],
+      borderWidth: 0,
+      spacing: 3,
+      borderRadius: 4
+    }]
+  },
+  options: {
+    cutout: '62%',
+    plugins: {
+      legend: { position: 'bottom', labels: { padding: 14, font: { size: 11 } } }
+    }
+  }
+});
+
+// 2. Precios vs referencia
+new Chart(document.getElementById('chartPrecios'), {
+  type: 'bar',
+  data: {
+    labels: ['Choc. chips', 'Pan molde', 'Budines', 'Pepas', 'Chocolinas', 'Polvorones', 'Bizcochos'],
+    datasets: [
+      {
+        label: 'Nuestro precio',
+        data: [13700, 12700, 12000, 11000, 10500, 10500, 7000],
+        backgroundColor: COLORS.forest,
+        borderRadius: 4,
+        barPercentage: .7
+      },
+      {
+        label: 'Ref. mercado ($17.500)',
+        data: [17500, 17500, 17500, 17500, 17500, 17500, 17500],
+        backgroundColor: 'rgba(200,169,110,.25)',
+        borderColor: COLORS.wheat,
+        borderWidth: 2,
+        borderDash: [4,4],
+        type: 'line',
+        pointStyle: false,
+        fill: false
+      }
+    ]
+  },
+  options: {
+    indexAxis: 'y',
+    scales: {
+      x: { grid: { color: '#eee' }, ticks: { callback: v => '$' + (v/1000) + 'K' } },
+      y: { grid: { display: false } }
+    },
+    plugins: { legend: { position: 'bottom' } }
+  }
+});
+
+// 3. Revenue por producto
+new Chart(document.getElementById('chartRevenue'), {
+  type: 'bar',
+  data: {
+    labels: ['Pan molde', 'Pepas', 'Budines', 'Choc. chips', 'Polvorones', 'Chocolinas', 'Bizcochos'],
+    datasets: [{
+      data: [952.5, 858, 849.6, 657.6, 554.4, 291.4, 218.4],
+      backgroundColor: palette,
+      borderRadius: 4,
+      barPercentage: .75
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    scales: {
+      x: { grid: { color: '#eee' }, ticks: { callback: v => '$' + v + 'M' } },
+      y: { grid: { display: false } }
+    },
+    plugins: { legend: { display: false } }
+  }
+});
+
+// 4. Volumen
+new Chart(document.getElementById('chartVolumen'), {
+  type: 'doughnut',
+  data: {
+    labels: ['Pepas 78tn', 'Pan 75tn', 'Budines 70.8tn', 'Polvorones 52.8tn', 'Choc. chips 48tn', 'Bizcochos 31.2tn', 'Chocolinas 27.75tn'],
+    datasets: [{
+      data: [78, 75, 70.8, 52.8, 48, 31.2, 27.75],
+      backgroundColor: palette,
+      borderWidth: 0,
+      spacing: 2,
+      borderRadius: 4
+    }]
+  },
+  options: {
+    cutout: '55%',
+    plugins: {
+      legend: { position: 'bottom', labels: { padding: 10, font: { size: 11 } } }
+    }
+  }
+});
+
+// 5. Planta
+new Chart(document.getElementById('chartPlanta'), {
+  type: 'doughnut',
+  data: {
+    labels: ['Produccion y oficinas (680 m2)', 'Deposito PT (450 m2)', 'Deposito MP (200 m2)'],
+    datasets: [{
+      data: [680, 450, 200],
+      backgroundColor: [COLORS.plum, COLORS.navy, COLORS.wheat],
+      borderWidth: 0,
+      spacing: 3,
+      borderRadius: 4
+    }]
+  },
+  options: {
+    cutout: '62%',
+    plugins: { legend: { position: 'bottom', labels: { padding: 14, font: { size: 11 } } } }
+  }
+});
+
+// 6. Costos
+new Chart(document.getElementById('chartCostos'), {
+  type: 'doughnut',
+  data: {
+    labels: ['Mano de obra $1.197M (39%)', 'Materia prima $945M (31%)', 'Otros costos $918M (30%)'],
+    datasets: [{
+      data: [1197.5, 944.8, 918.1],
+      backgroundColor: [COLORS.navy, COLORS.forest, COLORS.wheat],
+      borderWidth: 0,
+      spacing: 3,
+      borderRadius: 4
+    }]
+  },
+  options: {
+    cutout: '62%',
+    plugins: { legend: { position: 'bottom', labels: { padding: 14, font: { size: 11 } } } }
+  }
+});
+
+// 7. Margenes de MP
+new Chart(document.getElementById('chartMargenes'), {
+  type: 'bar',
+  data: {
+    labels: ['Choc. chips', 'Bizcochos', 'Chocolinas', 'Polvorones', 'Pepas', 'Pan molde', 'Budines'],
+    datasets: [{
+      label: 'Margen bruto MP',
+      data: [87.0, 86.1, 85.7, 81.3, 78.1, 76.1, 68.3],
+      backgroundColor: function(ctx) {
+        const v = ctx.raw;
+        return v > 80 ? COLORS.forest : v > 70 ? COLORS.sage : COLORS.wheat;
+      },
+      borderRadius: 4,
+      barPercentage: .7
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    scales: {
+      x: { min: 50, max: 100, grid: { color: '#eee' }, ticks: { callback: v => v + '%' } },
+      y: { grid: { display: false } }
+    },
+    plugins: { legend: { display: false } }
+  }
+});
+
+// 8. Inversion
+new Chart(document.getElementById('chartInversion'), {
+  type: 'doughnut',
+  data: {
+    labels: ['Nave industrial (71%)', 'Obras compl. (10%)', 'Maquinaria (18%)', 'Vehiculos + mob. (2%)'],
+    datasets: [{
+      data: [1400, 186.2, 345.5, 32.6],
+      backgroundColor: [COLORS.forest, COLORS.wheat, COLORS.navy, COLORS.terra],
+      borderWidth: 0,
+      spacing: 3,
+      borderRadius: 4
+    }]
+  },
+  options: {
+    cutout: '62%',
+    plugins: { legend: { position: 'bottom', labels: { padding: 14, font: { size: 11 } } } }
+  }
+});
+
+// 9. Flujo acumulado
+new Chart(document.getElementById('chartFlujo'), {
+  type: 'bar',
+  data: {
+    labels: ['Año 0', 'Año 1', 'Año 2', 'Año 3', 'Año 4', 'Año 5', 'Año 6', 'Año 7', 'Año 8', 'Año 9', 'Año 10'],
+    datasets: [
+      {
+        label: 'Flujo neto anual',
+        data: [-1964, 793, 793, 793, 793, 793, 793, 793, 793, 793, 793],
+        backgroundColor: function(ctx) {
+          return ctx.raw < 0 ? COLORS.terra : COLORS.forest;
+        },
+        borderRadius: 4,
+        barPercentage: .55,
+        order: 2
+      },
+      {
+        label: 'Acumulado',
+        data: [-1964, -1171, -378, 414, 1207, 2000, 2793, 3586, 4379, 5172, 5965],
+        type: 'line',
+        borderColor: COLORS.navy,
+        backgroundColor: 'rgba(44,62,107,.08)',
+        borderWidth: 2.5,
+        pointBackgroundColor: function(ctx) {
+          return ctx.raw < 0 ? COLORS.terra : COLORS.forest;
+        },
+        pointBorderColor: '#fff',
+        pointBorderWidth: 2,
+        pointRadius: 5,
+        fill: true,
+        tension: .3,
+        order: 1
+      }
+    ]
+  },
+  options: {
+    scales: {
+      x: { grid: { display: false } },
+      y: { grid: { color: '#eee' }, ticks: { callback: v => (v >= 0 ? '+' : '') + '$' + (v/1000).toFixed(1) + 'B' } }
+    },
+    plugins: {
+      legend: { position: 'bottom' },
+      tooltip: { callbacks: { label: function(c) { return c.dataset.label + ': $' + c.raw.toLocaleString() + ' MM'; } } }
+    }
+  }
+});
+
+// 10. TIR vs WACC
+new Chart(document.getElementById('chartTirWacc'), {
+  type: 'bar',
+  data: {
+    labels: ['TIR del proyecto', 'WACC (costo capital)'],
+    datasets: [{
+      data: [38.85, 15],
+      backgroundColor: [COLORS.forest, COLORS.terra],
+      borderRadius: 6,
+      barPercentage: .5
+    }]
+  },
+  options: {
+    scales: {
+      x: { grid: { display: false } },
+      y: { max: 50, grid: { color: '#eee' }, ticks: { callback: v => v + '%' } }
+    },
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: c => c.raw + '%' } }
+    }
+  }
+});
+</script>
+
+</body>
+</html>
