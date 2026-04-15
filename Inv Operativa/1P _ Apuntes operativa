@@ -39,3 +39,34 @@ Que la tasa de despacho sea mayor, significa que la linea tiene sobrecapacidad. 
 Ajuste de distribuciones: 
 likelihood - > verosimilitud de las distribuciones
 
+
+
+-------- clase 4 15/04/2026 -------
+
+Cadenas de markov
+Todo lo que sean series temporales, son procesos con memoria. 
+
+Matriz de transición discreta de un paso. Todas las filas suman 1. "Dado que estoy en un estado, si o si debo ir a otro o seguir en el actual"
+Las filas son de donde parto, las columnas a donde llego.
+
+Cadenas de Markov homogeneas: las probabilidades de transición no dependen del tiempo (parametro)
+
+Regla de Chapman- Kolmogorov
+Elevo la matriz de transicion de un paso al cuadrado y me da la T^2 .
+
+Vector de distribución de probabilidad de estados: es un vector fila que muestra la probabilidad de estar en un estado "i" en tiempo "t". No expresa transición, es un concepto estático
+
+p(t)= [p1(t)    p2(t)   p3(t) ... pi(t)]
+
+la suma de cada probabilidad debe dar 1. 
+p3(t), por ejemplo, es la probabilidad de estar en el estado 3, en el tiempo t.
+
+Vector de estado inicial y final:
+
+p(t+m)=p(t) * T^m
+
+examen: cual es la probabilidad de partiendo de t=0, evolucionar y llegar a m. respuesta-> me pongo en m-1 y calculo un paso.
+
+examen: calcule el vector de estado final en 8 pasos, dado que la probabilidad de estado inicial es tal. Lo que hay que hacer es ir un paso anterior y elevarlo una vez. No es capsioso, es conceptual.
+
+
