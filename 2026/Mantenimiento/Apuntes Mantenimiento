@@ -102,3 +102,88 @@ Herramietnas para admin de personal en mantenimiento:
 
 examen: pueden pedir analizar el grafico de la diapo 17, o de la 18. Lo imprtante es usar las primeras 3 herramientas, nunca contratar nuevo personal.
 
+--------------- clase 4 20/04/2026 Unidad 1 -----------
+
+
+Examen: no suelen entrar preguntas teoricas de presupuesto
+
+que es presupuesto? una herramienta para en control de gasteos
+cuando se hace? cuando se prepara el plan de ventas. Generalmente es anual pero peude ser semestra, quincenal, etc.
+quienes participan? todos. error tipico: lo hace el gerente. Todos deben participar.
+
+Confección de un presupuesto de mantenimiento
+1. Acuerdos sobre eficiencia de producción: 
+n en horas (95%) y n técnico (99%)
+2. Plan de actividades
+3. Estructura organizativa y dotación
+4. Planificación de stock
+5. Plan de inversiones y gasteos
+6. Obtención de datos de depto economico/financiero
+7. Costos de amortización.
+
+examen: se toma en todos los parciales ejercicios practicos de presupuestos
+
+
+* Calculo de presupuestoa de la jefatura de mantenimiento
+    1 gerente y 1 asistente
+    Sueldos y cargas sociales
+    gastos de oficina
+    amortizaciones (son las del mobiliario) -> el criterio lo fija economico/financiero
+    energia electrica
+    -----------------
+    TOTAL jefatura: 1.486.000
+
+* Cálculo de presupuesto de planificaicon y control
+    1 jefe y 1 tecnico
+    Sueldos y cargas sociales
+    gastos de oficina
+    amortizaciones -> el criterio lo fija economico/financiero
+    energia electrica
+    -----------------
+    TOTAL planif y control: 1.576.000
+
+* Calculo de presupuesto del almacen
+    1 gerente y 1 asistente
+    Sueldos y cargas sociales
+    gastos de oficina
+    amortizaciones (son las del mobiliario) -> el criterio lo fija economico/financiero
+    energia electrica
+    ** Repuestos por obsolescencia
+    ** Alquiler del local -> un porcentaje del alquiler total de la planta se le asigna a almacen
+    ** Interés sobre el stock (x%) -> este interes es sobre el stock promedio anual, es plata que podría estar generando rendimientos pero está parada en stock
+    -----------------
+    TOTAL Alquiler : 1.880.000
+
+    Stock promedio anual (existencias) 1000000 
+    Consumo repuestos 1.400.000
+^^^ estos 2 datos nos lo van a dar siempre para el ejercicio
+    examen: calcular el interes sobre el stock se toma siempre , se calcula stock promedio x interes sobre stock
+
+* Calculo de presupuesto de Operaciones
+    1 jefe, 2 super, 4 operarios y ((** 16 operarios de mantenimiento)) -> estos ultimos son MANO DE OBRA DIRECTA
+    Sueldos y cargas sociales
+    gastos de oficina
+    amortizaciones -> el criterio lo fija economico/financiero
+    energia electrica
+    ** consumibles -> costos indirectos, que no puedo cuantificar. Son estimados.
+    ** diferencias de inventario -> muchas herramientas, consumibles son hurtados o pedidos por las dudas/ no usa en la realidad y no devuelve.
+    ** servicios de terceros
+    ** Alquiler del local -> un porcentaje del alquiler total de la planta se le asigna a almacen
+    -----------------
+    TOTAL Operaciones : 7.944.000
+
+
+Luego se suman los 4 totales para obtener el subtotal de mantenimiento
+
+Con el subtotal, tengo que agregar entre un 8-15% de imprevistos al subtotal.
+Si trabajo con poco mantenimiento preventivo, uso el 15% de imprevistos.
+Si trabajo con mucho mantenimiento preventivo, uso el 8% de imprevistos.
+examen: me van a decir que estime un valor coherente de imprevistos. Tengo que elegir 1 y explicar porqué.
+Se va a corregir por procedimiento, no por resultado
+
+le sumo los repuestos, y tengo el presupuesto total con materiales.
+
+CALCULO HORA hombre
+Se calcula sin materiales y con materiales.
+
+* Sin materiales-> parto del presup sin materiales. Voy a tener el dato de la cantidad de hroas al año que puede trabajar un operario. 

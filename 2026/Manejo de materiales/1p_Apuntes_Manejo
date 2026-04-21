@@ -176,3 +176,83 @@ Modelo de incertidumbre: mide el costo total en base a diferentes escenarios.
 Modelo de riesgo: analiza las probabilidades de variación de demanda
 
 En el parcial puede entrar losparametros que intervienen: que es r, que es 2, diferencia entre ponderacion cuadratica y lineal
+
+
+------------------ clase 4 20/04/2026 (U8)------------------
+
+TP1 : Localización de plantas.
+
+Introducción: 
+
+Va a ser una empresa de fundición de acero. 
+Factores cuantitativos: costo de transporte, beneficios, van por locacion
+Factores cualitativos: MO calificada, gestion ambiental.
+Método cuantitativo de puntos: ponderación de factores para elegir la ubicación óptima.
+
+
+2. Datos del caso brindados:
+
+- Inversión en terreno
+- Inversion en instalaciones yu equiopámiento
+- Costos y distancias-> tranporte mp -> locaciones
+- Costos yu distancias: tranpsorte pt ->clientes
+- Costos generales: 840.000 USD (excluye mp y pt)
+
+Locaciones evaluadas: 
+- San Nicolás (Bs As.)
+- Alberti (Córdoba)
+- San Luis 
+
+3-. Determinación de costos
+
+Costo transporte MP: se calcula el costo total de traer MP desde proveedores hasta cada locación
+
+Costo de Transporte de PT: costo total de distribuir el PT desde cada locación hasta los clientes
+
+Precio de venta: Se tomará promedio entre locaciones
+
+4. Cálculo de VAN por locación
+
+- Calculo de VAN con datos del caso
+    * VAN negativa -> ver alternativas a gestionar
+    * VAN positiva -> se puede implementar
+
+Tener en cuenta ingresos, gastos, impuestos, depreciación.
+
+
+5. Factores cualitativos
+
+Disponibilidad de MO calificada
+- 25 operarios
+- 7 técnicos
+- 3 ingenieros
+total: 35 personas
+
+Relevancia de la gestion ambiental
+- Exigencia normativa
+- Costo de cumplimiento 
+- Frecuencia de controles
+- Infraestructura disponible
+
+Citar y verificar las fuentes de datos
+
+6. Método cuantitativo de puntos.
+
+Se hace para cada locación.
+
+Se ponderan los factores críticos para cada locación y se obtiene un puntaje total.
+
+Transporte MP
+Transporte PT
+VAN
+MO calificada
+Gestion ambiental
+Beneficio Neto
+Impuestos (Credito fiscal)
+
+Introducción 
+Desarrollo - cuadros de calculos , por locacion, VAN por locacion 
+
+
+Fecha de entrega : 18 de mayo aprox
+
