@@ -70,3 +70,60 @@ examen: cual es la probabilidad de partiendo de t=0, evolucionar y llegar a m. r
 examen: calcule el vector de estado final en 8 pasos, dado que la probabilidad de estado inicial es tal. Lo que hay que hacer es ir un paso anterior y elevarlo una vez. No es capsioso, es conceptual.
 
 
+
+----- clase 5 --- 22/04 
+
+Tipos de cadenas de Markov y estado estacionario
+estado accesible: desde donde es accesible
+estado comunicantes: ambos estados son accesibles entre si. 
+estado absorbente: no se puede escapar de este esatdo.
+
+clases: son cnjuntos de estados
+    -comunicante
+    -no comunicante
+    -recurrente: siempre hay probabilidad de regresar depues de n pasos
+    -transitoria: existe la probabilidad de nunca regresar a la clase despues de n casos
+    -reducible: se puede descponer en 2 o mas subgrafos entre los cuales es imposible transicionar en n pasos
+    -irreducible: está formada por estados comunicantes, es decir, son recurrentes
+
+Periodicidad: numoro de pasos que le toma a una cadena regrsar al estado "i". Es el Máximo Comun Divisor de todas las iteraciones "k" hasta lograr volver al estado.
+
+Si el período es =1, se dice que el período es aperiodico.
+Si una cadena tiene todos sus estados aperiodicos, se dice que la cadena de Markov es aperiódica.
+En una cadena irreducible basta con que un estado sea aperiódico para que toda la cadena sea aperiódica.En una cadena irreducible periódica todos los estados tienen el mismo período.
+
+Ergodicidad: pregunta de examen.
+
+Una cadena es ergódica si.
+1) es irreducible (es una clase comunicante)
+2) es aperiódica (periodicidad = 1)
+
+Es util saber que es ergodica porque garantiza la convergencia al estado estacionario, único y dependiendo desde cualquier distribución inicial.
+
+El estado estacionario es un estado de equilibrio en el que la probabilidad del estado se mantiene constante a través del tiempo, sin importar el estado inicial.
+
+Matriz de transición y estado estacionario:
+formas de clacular el estado estacionaro en cadenas ergodicas.
+
+
+1) Método de fuerza bruta: elevar la matriz hasta lograr el estado estable
+2) Sistema de ecuaciones Chapman Kolmogorov: 
+3) Flujos probabilisticos:
+4) Teorema de Perron-Frobenius: partiendo de chapman-kolmogorov 
+
+
+spectral gap -> mide la separacion entre los 2 mayores autovalores de la matriz de transición
+
+sg = 1- |lambda2|
+
+sg alto : convergencia rapida
+sg bajo : convergencia lenta
+
+examen-> de los 4 metodos, cual de los 4 metodos se usa a gran escala? -> fuerza bruta, es mas eficiente porque hace siempre la misma operación muchas veces, sin tanto calculo matricial.
+examen-> si piden calcular estacionario, va a ser con chapman-kolmogorov
+
+
+
+
+
+
