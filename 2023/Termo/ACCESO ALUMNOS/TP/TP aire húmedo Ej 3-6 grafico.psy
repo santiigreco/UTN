@@ -1,0 +1,20 @@
+#
+# Psychrometric Chart Data
+# © Dr.A.J.Marsh '96-'06.
+#
+
+Cursor: 24.700  9.100
+CursorArrow: 20.000  7.443
+BarometricPressure: 100.000
+TemperatureRange: 0.000  50.000
+HumidityRange: 0.000  35.000
+Snap: 0.100  0.100
+
+Conditions: 1.0  1.5  24.7  25.0  0.5  45.6
+Comfort: 0.74  16.6
+
+DataPnt: 20.000  7.701
+DataPnt: 30.000  10.750
+DataPnt: 17.000  12.283
+DataPnt: 24.700  9.100
+
