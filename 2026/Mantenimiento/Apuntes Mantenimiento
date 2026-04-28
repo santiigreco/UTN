@@ -183,7 +183,76 @@ Se va a corregir por procedimiento, no por resultado
 
 le sumo los repuestos, y tengo el presupuesto total con materiales.
 
-CALCULO HORA hombre
+CALCULO HORA hombre -> uso operarios de SOLO DE MANTENIMIENTO (son la mano de obra directa, son los que hacen la reparacion). NO HAY QUE USAR LOS DE TALLER.
+
 Se calcula sin materiales y con materiales.
 
 * Sin materiales-> parto del presup sin materiales. Voy a tener el dato de la cantidad de hroas al año que puede trabajar un operario. 
+
+-------- clase 5 27/04/2026 -----------
+
+* Calculo cantidad de horas al año por operario: 
+
+9hs/ día * 5 días / semana * 52 semanas / año = 2340 hs/año -> falta aplicar descuentos
+
+vacaciones = 3 semanas/ año = 15 días / año * 9hs/ día  = 135 hs/año
+feriados = 10 días / año * 9hs / día = 90hs / año
+descanso diario = 0,5hs / dia  *  235 dias / año  ((((((((((2340-135-90 )/9hs))))))))) = 
+
+
+ausentismo = (2340-135-90-117 ) *3 % = 60 hs / año  
+ausentismo (2-5)% calcular siempre, por más uqe no diga el ejercicio
+
+horas netas= 2340-136-90-117-60 hs = 1938 hs/ año
+
+-> costo hh sin materiales = 449 $/h
+-> costo hh con materiales = 494 $/h
+
+-------
+maquina 1: 
+    20 hs
+    repuestos $2000
+    costo reparacion = 20hs * 449 +2000 = 10980
+    si no tengo el dato de cantidad de repuestos -> uso costo hh con materiales
+    costo rep = 9880
+
+maquina 2: 
+    10hs
+    repuestos $4000
+    costo reparacion = 10*449+4000 = 8490
+    si no tengo el dato de cantidad de repuestos -> uso costo hh con materiales
+    costo rep = 4940
+
+maquina 3: 
+    7hs
+    repuestos $8000
+    costo reparacion = 7*449 + 8000 = 11143
+    si no tengo el dato de cantidad de repuestos -> uso costo hh con materiales
+    costo rep = 3458
+
+examen: ¿para que sirve la hora hombre con materiales y sin materiales? 
+la mano de obra sin materiales sirve para hacer un control del presupuesto CALENDARIZADO. Puedo saber el costo de la mano de obra en cada máquina. Puedo saber el costo de los materiales en cada máquina. Puedo saber el costo de reparación total en cada máquina. La gran ventaja es que me permite decidir que hacer con cada máquina porque se cuanta plata estoy gastando en cada máquina.
+la mano de hora hombre con materiales sirve para hacer un control de presupuesto el 31/12/2026. No puedo decidir que hacer con cada máquina
+
+Ejercicio de dotacion: 
+
+dato: necesito 620hs/semana
+cada operario puede brindar 1938 hs / año operario
+
+dotacion = lo que necesito / lo que me da 1 operario =  (620 hs/ semana * 52 semanas / año ) / 1938 hs/ año operario 
+dotacion = 16.65 -> REDONDEO A 16 -> para evitar costos fijos , el tiempo de capacitación  .. ( y justificar con  #Herramietnas para admin de personal en mantenimiento:
+)$
+
+
+
+Acciones reactivas
+
+Acciones proactivas 
+    Mantenimiento Imperativo / legal : es un mantenimiento que fijan las normas o las leyes de la jurisdicción en la cual estoy trabajando. Lo que dicen las normas o leyes son un piso, lo que cono mínimo tengo que hacer , lo que es mandatario.
+    Mantenimiento Curativo: compro una maquina y el fabricante determina que una parte de la maquina tiene una falla de diseño. Por ejemplo un auto que viene con una computadora a bordo y el airbag del acompañante se activa en cualquier momento. EL fabricante tenia trazabilidad de en que unidades estaba instalada esta parte con fallas, llamó a los lcientes para que cambien las partes correspondientes. En una planta es alrevés, si una maquina tiene falla, el fabricante tiene que ir a la planta , detener la producción, pagar el repuesto.
+    Mantenimiento Detectivo: edesur me provee 380v, en un momento deja de darme servicio y un grupo electrogeno me da los 380v. Cuando tengo que utilizarlo, puede ser que no acople porque tengo una FALLA OCULTA. Para detectarla, deberi acortar por ejmplo la luz cada 7 días y poner en marcha el grupo electrogeno. Es un mantenimiento que se hace en equipos redundantes.
+
+    
+
+
+
