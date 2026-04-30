@@ -122,8 +122,17 @@ sg bajo : convergencia lenta
 examen-> de los 4 metodos, cual de los 4 metodos se usa a gran escala? -> fuerza bruta, es mas eficiente porque hace siempre la misma operación muchas veces, sin tanto calculo matricial.
 examen-> si piden calcular estacionario, va a ser con chapman-kolmogorov
 
+---------- clase 6 29/04/2026 --------------
+
+Precios de acciones con markov
+
+Cadenas de markov de parámetro continuo:
+Proceso sin memoria: la realización de un evento aleatorio en un intervalo [𝑡0,𝑡0+𝑡]depende únicamentede la longitud 𝑡del intervalo y no de la posición en el tiempo.
+La distribución por excelencia que permite el proceso sin memoria es la exponencial.
+La duración de tiempo, un instante antes de producirse un evento, es una variable 𝑇~exp(𝜆).
+Siendo 𝜆, la tasa de ocurrencia de un evento.
 
 
+examen: no suele tomar el caso del especialista. Si pueden tomar pasar de un sistema dado y armar la matriz generadora (matriz de transición de tasas)
 
-
-
+Ejercicio 6 - supermercados
