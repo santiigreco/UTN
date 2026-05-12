@@ -262,3 +262,63 @@ Ver clase en youtube
 examen: ejercicio
 
 
+-------- Clase 7 11/05/2026 ------------------
+
+Sistema integral de mantenimiento
+
+Subsistema 3) Aministración de stock
+
+Clasificación de inventarios. 
+* Repuestos estrategicos o especifios -> pocos items -> fabricante/ representante (1 o 2 en el pais), no hay elementos genericos -> va en una maquina -> no lo puedo cambiar por uno universal
+* Repuestos universales -> muchos items -> muchos proveedores localess -> costo medio/bajo -> los puedo intercambiar entre equipos (intercambiabilidad: mientras más intercambiabilidad, mas facil es resolver problemas de mantenimiento -> esto disminuye tiempo de reparación, aumenta la MANTENIBILIDAD)
+* Articulos generales-> consumo masivo, lo que consigo en ferreteria/bulonera. Los compro cuando los necesito.
+* Conjuntos / subconjuntos-> elementos completos
+
+Subsistema 4) almacen
+
+tiene a cargo la operacion fisica del stock. Su responsabilidad es cumplir las normas y procedimientos 
+
+* Recepcion y control de m
+ateriales y repuestos
+* resguardo de mateariales y repuestosv-> tiempo y forma . no es solo tener, sino tiene que estar en condiciones (no vencido, oxidado)
+    - rodamientos lubricados
+    - electrodos sin humedad
+    - motores: tiene que ir personal de mantenimiento cada X dias, girar el eje 1 vuelta completa  y 1/4 de vuelta para el otro lado.
+    - lubricantes: si se vence pierdo: costo de compra + capital de trabajo + disposición final
+* despacho (incluye herramientas y utilajes)
+* informes de requerimietnos 
+
+examen: funcionamiento de circuito subsistema almacen
+.  . .. . . . . . . . 
+
+Funcion planeamiento. 
+
+1.1) informacion deol equipamiento
+
+Informacion estatica
+Informacion dinamica:  documetnacin que emite mantenimiento y se tiene que ir actualizando durate toda la vida util de la máquina.
+
+Cada equipo tiene un ID, por ejemplo MOT01. Por cada equipo hay
+    - Arbol de equipo: es una posición lógica. cada posicion la ocupa un ID. 
+    - Maestro de especificaciones: doble entrada, ID y en que posicion logica está.
+    - Historial de equipos: mas importante para mantenimiento. Está toda la historia del equipo, todo lo que se rompió, todo lo que le fui haciendo. Sirve para en algun caso saber que el problema no lo tiene el equipo, sino que puede estar en esa ubicacion logistica.
+    - Registro central para la planificacion de intervenciones
+
+
+Subsistemas 5)Operaciones planeadas y 6) Operaciones eventuales
+
+Orden de trabajo: es el vínculo entre mantenimiento y el resto de la empresa. 
+examen: ¿que documento esta relacionado a la orden de trbaajo? ¿que documento esta relacionado al historial del equipo? uno nutre al otro
+
+EMITE               TIPO                CARACTERIZCIÓN              CUANDO              FALLA               CIERRA
+
+produccion          eventual            Emerg/Urg/Normal            produccion          idea de q falla     produccion
+        
+mantenimiento       planificada/reacon  normal/urgente              prioridad a conv                        produccion    
+
+
+2.3) Estudio del trabajo. 
+
+es dificil estimar un tiempo porque las tareas no son repetitivas.
+Lo que puedo hacer es ver ergonomia, tener equipamiento versatil, acortar distancias, trabajar con repuestos universales, y trabajar bajo procedimientos (estos deben ser visuales y sinteticos)
+s

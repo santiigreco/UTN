@@ -1,0 +1,585 @@
+--- PAGE 1 ---
+ 
+Universidad Tecnológica Nacional 
+Facultad Regional Buenos Aires 
+ 
+ 
+“Guía para la elaboración del Proyecto Final” 
+ 
+ 
+ 
+ 
+Ingeniería Industrial 
+ 
+ 
+Elaboró:  
+Ing. Romero Marcelo 
+Revisaron:  
+Ing. Valvano Guillermo 
+ 
+ 
+Ing. Stutz Ricardo 
+ 
+ 
+ 
+
+--- PAGE 2 ---
+UTN - FRBA 
+Ingeniería Industrial 
+Proyecto Final 
+ 
+ 
+Guía para la elaboración del Proyecto Final v17 
+  
+2 
+ 
+Introducción 
+El objeto de la presente guía es brindar un modelo con los principales aspectos a tener en cuenta 
+para elaborar el Proyecto Final de Ingeniería Industrial.  
+Dicho modelo está basado en una metodología que puede aplicarse para evaluar un proyecto 
+genérico de ingeniería, desde la concepción de la idea hasta la factibilidad de su implementación. 
+Por lo tanto, sirve para la elaboración del proyecto final, como así también para la aplicación en el 
+ejercicio profesional. 
+Cabe destacar que, si bien la metodología está orientada a la evaluación de un proyecto industrial, 
+perfectamente puede aplicarse a un proyecto de servicios, simplemente basta con obviar los 
+aspectos que no apliquen a dicho tipo de proyecto.  
+Asimismo, esta metodología expone un conjunto de puntos genéricos a tener en cuenta para 
+evaluar un proyecto, pero dependiendo de la naturaleza del mismo, puede ser que ciertos aspectos 
+no sean de aplicación y/o que, por el contrario, haya que considerar otros aquí no mencionados. 
+La metodología abarca cuatro grandes etapas: la Selección del Proyecto, el Análisis de Pre-
+Factibilidad, el Análisis de Factibilidad y, finalmente, la Estimación de Tiempos y Riesgos. Dentro de 
+cada una se detallan los principales aspectos que podrían ser analizados, como se mencionó 
+anteriormente, sin perjuicio de excluir o añadir algunos a consideración del responsable del 
+proyecto.  
+Finalmente, cabe señalar que esta guía brinda únicamente la estructura de la metodología, 
+señalando sus principales puntos pero sin detallar cómo abordar y desarrollar cada uno de ellos.  
+ 
+Metodología 
+A continuación se describen las etapas de la metodología y sus principales componentes. Cada etapa 
+tiene un objetivo específico y, analizando los aspectos expuestos en cada una, se debe arribar a los 
+entregables. Los entregables conforman el resultado básico que se desprende de cada etapa y que 
+alimentan la etapa siguiente.  
+Por una cuestión de orden, la aplicación de la metodología para evaluar un proyecto es secuencial, 
+no obstante, a medida que se avanza en la evaluación, es común que surjan nuevos elementos que 
+obliguen a rever etapas anteriores, ya sea considerando aspectos no tenidos en cuenta o realizando 
+ajustes sobre el proyecto. Gráficamente se puede representar este concepto de la siguiente forma: 
+ 
+ 
+
+--- PAGE 3 ---
+UTN - FRBA 
+Ingeniería Industrial 
+Proyecto Final 
+ 
+ 
+Guía para la elaboración del Proyecto Final v17 
+  
+3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+1. Selección del Proyecto 
+ 
+ Objetivo: Seleccionar un proyecto para satisfacer una necesidad definida. 
+ 
+1.1. Necesidad: Definir la necesidad a satisfacer que puede estar asociada a: 
+1.1.1. Demanda insatisfecha 
+1.1.2. Requerimiento técnico 
+1.1.3. Resolución de un problema 
+1.1.4. Mejora de un proceso  
+1.1.5. Otros 
+ 
+1.2. Idea: Definir un proyecto que satisfaga la necesidad expuesta. Indicar su Alcance preliminar, 
+considerando: 
+1.2.1. Ventajas / Desventajas 
+1.2.2. Noción preliminar de recursos involucrados: Materiales / Tecnológicos / Humanos / 
+Económicos 
+1.2.3. Complejidad 
+1.2.4. Impacto 
+1.2.5. Beneficio 
+ 
+1.3. Validación: Verificar con los interesados (profesores) la aprobación y selección del proyecto 
+ 
+ Entregables:  
+o 
+Descripción del Proyecto seleccionado 
+o 
+Definición preliminar del Alcance del proyecto 
+ 
+ 
+Ajuste y revisión 
+Factibilidad 
+Selecció
+n del 
+Proyecto 
+Pre-
+factibilidad 
+Comercia
+l 
+Técnica 
+Administrativa 
+y 
+Organizacional 
+Económica y 
+Financiera 
+ 
+Tiempos 
+y Riesgos 
+Entregable
+Entregables
+Entregable
+Entregables
+Entregables
+Entregable
+-1- 
+-2- 
+-3- 
+-4- 
+-3.1- 
+-3.2- 
+-3.3- 
+-3.4- 
+
+--- PAGE 4 ---
+UTN - FRBA 
+Ingeniería Industrial 
+Proyecto Final 
+ 
+ 
+Guía para la elaboración del Proyecto Final v17 
+  
+4 
+ 
+2. Análisis de Pre-Factibilidad 
+ 
+ Objetivo: Verificar a través de un análisis preliminar, de características macro, si el proyecto 
+seleccionado es susceptible de ser implementado. Determinar si se justifica avanzar en un 
+estudio de mayor profundidad o se debe rever el Alcance original del proyecto, reformularlo o 
+descartarlo. 
+ 
+2.1. Comercial: Mercado objetivo / Potenciales clientes / Potenciales competidores / FODA / 
+Producto / Precio / Diferenciación / Estimación de ventas / P x Q / Identificación de Stakeholders 
+ 
+2.2. Técnica: Características del producto / Descripción del proceso / Principales máquinas y 
+herramientas / Localización / Estándares de Calidad / Logística / Infraestructura / Estimación de 
+costos principales 
+ 
+2.3. Administrativa y organizacional: Marco Legal / Organigrama / Personal involucrado 
+ 
+2.4. Económica: Inversiones / Estimación de ingresos y egresos / Flujo de fondos / Recupero de la 
+inversión / Beneficio neto / VAN / TIR 
+ 
+2.5. Estimación inicial de Tiempos y Riesgos: Cronograma tentativo / Riesgos potenciales (Nivel de 
+Riesgo) 
+ 
+ Entregables: 
+o 
+Informe y/o Presentación con los resultados y conclusiones del estudio de Pre-Factibilidad 
+ 
+ 
+ 
+
+--- PAGE 5 ---
+UTN - FRBA 
+Ingeniería Industrial 
+Proyecto Final 
+ 
+ 
+Guía para la elaboración del Proyecto Final v17 
+  
+5 
+ 
+3. Análisis de Factibilidad 
+ 
+ Objetivo: Verificar la factibilidad de implementar el proyecto considerando en detalle aspectos 
+comerciales, técnicos, administrativos, organizacionales, económicos y financieros. Permitir 
+optar fundadamente entre varias alternativas de proyectos. 
+ 
+ 
+3.1. Factibilidad Comercial 
+ 
+ Objetivo: Determinar y cuantificar la existencia de un mercado potencial a quien dirigir el 
+producto/servicio del proyecto durante su vida útil. 
+ 
+3.1.1. Análisis de contexto (Macro entorno): Regional / Nacional / Internacional 
+ 
+3.1.2. Variables Endógenas y Exógenas 
+ 
+3.1.3. Micro entorno: Porter 
+ 
+3.1.4. Análisis de estrategias: FODA / Diferenciación / Ventaja competitiva / Penetración / BCG 
+ 
+3.1.5. Investigación de mercado: Mercado potencial / Mercado objetivo / Porción de mercado / 
+Características y comportamiento / Segmentación / Análisis proyectivos, prospectivos y de 
+tendencias / Investigación por: Encuestas, Focus, Entrevistas, Observación, Información 
+histórica, Prueba piloto o experimental / Modelos matemáticos de estimación de demanda / 
+Ciclo de vida 
+ 
+3.1.6. Misión / Visión / Objetivos / Metas 
+ 
+3.1.7. Macrolocalización 
+ 
+3.1.8. Mix de Marketing 
+ 
+Producto: Características / Funcionalidad / Prestaciones / Productos y servicios 
+complementarios / Comparativo con productos similares / Sustitutos / Presentación: 
+Empaque y etiqueta 
+ 
+ 
+Precio: Determinación del precio / Justificación / Análisis de la competencia / Sustitutos / 
+Oferta y Demanda / Elasticidad / Márgenes de ganancia / Análisis de portfolio 
+ 
+ 
+Promoción: Estrategia publicitaria / Canales de comunicación / Marca e Imagen / 
+Posicionamiento / Relaciones públicas / Prensa 
+ 
+
+--- PAGE 6 ---
+UTN - FRBA 
+Ingeniería Industrial 
+Proyecto Final 
+ 
+ 
+Guía para la elaboración del Proyecto Final v17 
+  
+6 
+ 
+Plaza: Puntos de venta / Estrategia de distribución / Estrategia de comercialización / 
+Importación / Exportación / Mayoristas y minoristas / Corredores / Representantes / Fuerza 
+de ventas 
+ 
+3.1.9. Plan de Ventas 
+ 
+ Entregables: 
+o 
+Market Share 
+o 
+Estrategia y plan de acción comercial 
+o 
+Proyección de ventas (Demanda) 
+o 
+Costos Comerciales 
+ 
+ 
+3.2. Factibilidad Técnica 
+ 
+ Objetivo: Determinar si el proyecto puede concretarse a través de la utilización de recursos 
+tecnológicos, materiales y humanos; como así también la disponibilidad de la infraestructura 
+necesaria para su funcionamiento. 
+ 
+3.2.1. Producto: Características Técnicas, Físicas y Químicas / Dimensiones / Materiales / 
+Componentes /Planos / Normas / Diagramas / Materia prima / Tratamientos  
+ 
+ 
+Calidad del producto: Atributos / Tolerancias / Resistencia / Durabilidad / Vida útil / 
+Confiabilidad / Garantía / Normas y certificaciones requeridas 
+ 
+3.2.2. Proceso: Flujograma / Cantidades / Caudales / Volúmenes / Potencias / Rendimientos / 
+Tiempos / Diagrama de Operaciones de Proceso detallado  
+ 
+3.2.3. Máquinas y Herramientas: Selección: descripción detallada frente a opciones / Definición de 
+superficies y volúmenes de ocupación de las máquinas de producción / Análisis detallado del 
+puesto de trabajo  
+ 
+3.2.4. Estudio del trabajo: Análisis de operaciones / Estudio de tiempos / Estudio de movimientos 
+/ Esfuerzos y fatiga / Régimen de trabajo y descanso / Ergonomía / Antropometría  
+ 
+3.2.5. Primera presentación del Lay Out de Planta: Análisis cualitativo / Estudio de frecuencias / 
+Estudio de Frecuencia – cargas / Diagrama de recorrido / Movimiento y almacenaje de 
+Materiales / Disposición de máquinas, equipos y herramientas final 
+ 
+3.2.6. Productividad: Rendimiento y eficiencia / Mermas y descartes / Productividad / Diagrama de 
+Análisis de Proceso / Balance de línea / Capacidad de proceso  
+ 
+
+--- PAGE 7 ---
+UTN - FRBA 
+Ingeniería Industrial 
+Proyecto Final 
+ 
+ 
+Guía para la elaboración del Proyecto Final v17 
+  
+7 
+3.2.7. Calidad del proceso: Sistemas de control / Puntos de control / Forma de control / Flujograma 
+/ Plan de calidad / Acción ante desvíos / Aceptación y rechazo / Herramientas de la calidad / 
+Trazabilidad / Normas y certificaciones  
+ 
+3.2.8. Mantenimiento: Equipos, Elementos y Sistemas: Máquinas y equipos del proceso productivo 
+y complementarias / Herramientas / Mantenimiento mecánico / Mantenimiento eléctrico / 
+Mantenimiento civil y edilicio / Mantenimiento de instalaciones de gas, agua, aire, vapor y 
+complementarias / Sistemas de iluminación / Sistemas de climatización y ventilación / 
+Mantenimiento sectores administrativos  
+ 
+Primera revisión del Lay Out: Verificar las necesidades de ajustes en función de la incorporación de 
+las fases 3.2.6, 3.2.7 y 3.2.8. 
+ 
+3.2.9. Planificación y control de la producción: Sistema de planificación (Push-Pull) / Proyecciones 
+de demanda / Requerimientos de materiales / Tiempos de fabricación / Análisis de stock / Lote 
+óptimo / Esquema de aprovisionamiento / dimensionamiento de depósitos de MP y PT para el 
+final del proyecto 
+ 
+3.2.10. Logística: Flujo de mercadería interno/ Compras / Distribución / Almacenaje / Medios de 
+transporte internos / Flota de vehículos / Tercerización / Centros de distribución / 
+Microlocalización 
+Segunda revisión del Lay Out: Verificar las necesidades de ajustes en función de la incorporación de 
+las fases 3.2.9 y 3.2.10. 
+ 
+3.2.11. Seguridad e Higiene: Identificación de riesgos / Tipos de riesgos (eléctricos, mecánicos, 
+químicos, biológicos, impacto, cortes, caídas, trabajo en altura, espacios confinados, incendio, 
+ruido, carga térmica, ventilación, vibraciones, iluminación, fatiga, ergonomía, otros) / Impacto 
+/ Probabilidad de ocurrencia / Gravedad / Mapa de riesgos / Priorización / Planes de mitigación 
+o prevención / Sistemas de prevención y extinción de incendios / Equipos de protección 
+individual y colectiva / Incidentes / Accidentes / ART / Auditorias  
+ 
+3.2.12. Medio ambiente: Efluentes sólidos, líquidos y gaseosos / Impacto ambiental / Métodos y 
+sistemas de tratamiento (físicos, químicos y biológicos) / Tercerización / Venta y reciclaje / 
+Concientización y control / Vínculo con la comunidad (RSE)  
+ 
+Tercera revisión del Lay Out: Verificar las necesidades de ajustes en función de la incorporación de 
+las fases 3.2.11 y 3.2.12. 
+ 
+ 
+
+--- PAGE 8 ---
+UTN - FRBA 
+Ingeniería Industrial 
+Proyecto Final 
+ 
+ 
+Guía para la elaboración del Proyecto Final v17 
+  
+8 
+3.2.13. Infraestructura y Servicios  
+ 
+ 
+Civil: Plano de las instalaciones / Dimensiones / Características constructivas / Distribución 
+de áreas y sectores (industriales, administrativos y complementarios) / Edificios / Calles / 
+Playas / Cercos / Jardines / Considerar requerimientos del proceso  
+ 
+ 
+Energía Eléctrica: Potencia / Consumo energético / Tableros / Factor de potencia / Puntos 
+de consumo / Distribución / Iluminación / Elementos de maniobra / Sistemas de protección 
+/ Sistemas alternativos de abastecimiento / Planos  
+ 
+ 
+Agua: Para proceso y consumo / Temperatura / Características / Presiones / Caudales / 
+Tanques / Bombas / Cañerías / Incendio / Planos  
+ 
+ 
+Gas: Para proceso y consumo / Características / Presiones / Abastecimiento / Cañerías / 
+Planos  
+ 
+ 
+Aire Comprimido: Presiones / Compresor / Cañerías / Sistemas complementarios / Planos  
+ 
+ 
+Climatización: Ventilación / Calefacción / Refrigeración / Humedad / Presión / Planos  
+ 
+ 
+Efluentes: Recolección / Transporte / Almacenaje / Sistemas de tratamiento / Cloacas / 
+Planos  
+ 
+ 
+Otras instalaciones y servicios: Vapor / Calderas / Hornos / Combustible / Otros necesarios 
+para el proyecto  
+ 
+Cuarta revisión del Lay Out: Verificar las necesidades de ajustes en función de la incorporación de la 
+fase 3.2.13. 
+ 
+Para el final de esta fase como conceptos de cierre:  
+Se propone como cierre un análisis de la gestión del sistema productivo desarrollado para evaluar 
+los ajustes necesarios. Para ello se detallan algunos aspectos que podrían modificar levemente las 
+inversiones y algunas instalaciones proyectadas. 
+3.2.14. Política de mantenimiento: Reactivo / Preventivo / Predictivo / Identificación y clasificación 
+de fallas / Plan de contingencia / Dispositivos redundantes / Tercerización  
+ 
+3.2.15. Plan de mantenimiento: Equipo, Elemento o Sistema a mantener / Acción a realizar / 
+Frecuencia / Recursos necesarios (materiales, tecnológicos y humanos) / Control, ensayo y 
+medición / Stock de repuestos / Costos de mantenimiento  
+
+--- PAGE 9 ---
+UTN - FRBA 
+Ingeniería Industrial 
+Proyecto Final 
+ 
+ 
+Guía para la elaboración del Proyecto Final v17 
+  
+9 
+ 
+3.2.16. Calidad de la empresa: Estrategia de calidad / Satisfacción del cliente / Servicio post venta / 
+Gestión de quejas y reclamos / Costos de la calidad / Auditorias / Normas y certificaciones  
+ 
+3.2.17. Seguridad, Higiene y Medio Ambiente: Marco normativo: Leyes/ Ordenanzas / Regulaciones 
+/ Políticas / Normas  
+ 
+3.2.18. Otros a definir 
+ 
+ Entregables: 
+o 
+Definición del producto 
+o 
+Definición del proceso 
+o 
+Diseño de la planta 
+o 
+Plan de calidad 
+o 
+Plan de producción 
+o 
+Plan de mantenimiento 
+o 
+Plan de seguridad, higiene y medio ambiente 
+o 
+Costos físicos 
+ 
+ 
+ 
+3.3. Factibilidad Administrativa y Organizacional 
+ 
+ Objetivo: Determinar la estructura necesaria para que el proyecto pueda operar en términos 
+legales, administrativos y organizacionales. 
+ 
+3.3.1. Legalidad: Leyes nacionales, provinciales y municipales / Disposiciones internacionales / 
+Habilitaciones y permisos / Organismos de supervisión y control / Constitución de la empresa / 
+Tipos societarios / Licencias / Registros / Contratos 
+ 
+3.3.2. Estructura organizacional: Departamentalización / Organigrama / Puestos / Funciones / 
+Perfiles / Habilidades / Responsabilidades / Atribuciones / Salarios / Capacitación y desarrollo / 
+Selección de personal / Sistema de incentivos / Remuneración variable / Tercerización / 
+Sindicatos 
+ 
+ Infraestructura administrativa: Muebles y útiles / Equipos informáticos / Software y licencias / 
+Internet / Red / Telefonía 
+ 
+3.3.3. Control de gestión: Identificación de indicadores clave (KPI) / Forma y frecuencia de medición 
+/ Software de gestión administrativa e industrial 
+ 
+
+--- PAGE 10 ---
+UTN - FRBA 
+Ingeniería Industrial 
+Proyecto Final 
+ 
+ 
+Guía para la elaboración del Proyecto Final v17 
+  
+10 
+ Entregables: 
+o 
+Estructura administrativa y organizacional 
+o 
+Marco legal 
+o 
+Costos administrativos y organizacionales 
+ 
+ 
+3.4. Factibilidad Económica y Financiera 
+ 
+ Objetivo: Determinar si la implementación del proyecto generará beneficios económicos y 
+financieros para la organización o el inversor. Verificar la conveniencia de invertir en 
+determinado proyecto frente a varias alternativas de inversión. 
+ 
+3.4.1. Inversiones 
+ 
+Activo Fijo: Terrenos / Edificios y obras complementarias / Instalaciones / Máquinas / 
+Gastos de importación y transporte / Montaje / Rodados / Equipos auxiliares / Muebles y 
+útiles / Infraestructura / Cargos diferidos (Puesta en marcha, legales, organización 
+empresa) 
+ 
+ 
+Activo de trabajo: Materia prima / Materiales / Insumos / Semi elaborados / Producto en 
+curso / Producto terminado / Rotación Cuentas por Cobrar / Rotación Proveedores  
+ 
+3.4.2. Amortizaciones: Edificios y obras / Máquinas y equipos / Rodados / Muebles y útiles 
+ 
+3.4.3. Ventas: Plan de ventas / Cantidades / Precio / Facturación 
+ 
+3.4.4. Gastos y Costos: Sistema de costeo / Centros de costos 
+ 
+Producción: Materia prima / Mano de obra directa e indirecta / Amortización Activo Fijo / 
+Personal / Cargas sociales / Materiales e insumos / Energía Eléctrica / Combustible / Tasas 
+e impuestos / Seguros / Alquileres / Tercerización 
+ 
+ 
+Administración: Personal / Cargas sociales / Amortización Activo Fijo / Materiales de 
+administración / Energía eléctrica / Combustible / Tasas e impuestos / Seguros / Alquileres 
+/ Tercerización 
+ 
+ 
+Comercialización: Personal / Cargas sociales / Remuneración variable / Materiales de 
+comercialización / Viáticos / Publicidad / Campañas / Seguros / Tasas e impuestos 
+ 
+ 
+Otros gastos y costos: Diferentes centros de costo / Imprevistos / Contingencias 
+ 
+ 
+Costo total 
+ 
+
+--- PAGE 11 ---
+UTN - FRBA 
+Ingeniería Industrial 
+Proyecto Final 
+ 
+ 
+Guía para la elaboración del Proyecto Final v17 
+  
+11 
+ 
+Punto de equilibrio: Cantidad mínima a producir / Capacidad instalada / Análisis marginal / 
+Apalancamiento operativo 
+ 
+3.4.5. IVA: Plan de explotación / Pago de IVA / Cancelación crédito fiscal 
+ 
+3.4.6. Flujo de fondos: Ingresos / Egresos 
+ 
+3.4.7. Evaluación económica: Período de recupero / Beneficio neto / VAN / Tasa de descuento / TIR 
+ 
+3.4.8. Introducción de financiamiento: Estructura financiera / Créditos / Tasas / Gasto financiero 
+ 
+3.4.9. Incidencia del financiamiento en el dimensionamiento económico: Inversiones / Punto de 
+equilibrio / IVA / Flujo de fondos / Período de recupero / VAN / TIR / Apalancamiento financiero 
+ 
+3.4.10. Formulación del proyecto para el inversor: Flujo de fondos / VAN / TOR / Apalancamiento 
+para el inversor 
+ 
+ Entregables: 
+o 
+Inversión total 
+o 
+Flujo de fondos 
+o 
+Payback 
+o 
+VAN / TIR 
+o 
+Comportamiento con financiamiento 
+ 
+4. Estimación de Tiempos y Riesgos 
+ 
+ Objetivo: Estimar el tiempo que demandaría implementar el proyecto y estimar los riesgos 
+asociados a su ejecución y operación. 
+ 
+4.1.1. Cronograma de ejecución: Definición de actividades / Secuenciamiento / Asignación de 
+recursos / Estimación de tiempos / Gantt / Camino crítico 
+ 
+4.1.2. Riesgos de ejecución/operación: 
+ 
+Análisis cualitativo: Identificación de riesgos / Probabilidad e impacto / Priorización / Matriz 
+de riesgos / Acciones mitigantes y contingentes 
+ 
+Análisis cuantitativo: Análisis de sensibilidad / Árboles de decisión / Valor esperado / 
+Montecarlo 
+ 
+ Entregables: 
+o 
+Cronograma de ejecución 
+o 
+Resistencia del proyecto a los riesgos (Mapa de riesgos del proyecto y Contingencias 
+posibles) 
