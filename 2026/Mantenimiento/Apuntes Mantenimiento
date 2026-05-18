@@ -268,6 +268,11 @@ Sistema integral de mantenimiento
 
 Subsistema 3) Aministración de stock
 
+Se utiulizan dos alternativas: 
+* Sistema a tiempo fijo
+* Sistema a pedido
+
+
 Clasificación de inventarios. 
 * Repuestos estrategicos o especifios -> pocos items -> fabricante/ representante (1 o 2 en el pais), no hay elementos genericos -> va en una maquina -> no lo puedo cambiar por uno universal
 * Repuestos universales -> muchos items -> muchos proveedores localess -> costo medio/bajo -> los puedo intercambiar entre equipos (intercambiabilidad: mientras más intercambiabilidad, mas facil es resolver problemas de mantenimiento -> esto disminuye tiempo de reparación, aumenta la MANTENIBILIDAD)
@@ -288,7 +293,7 @@ ateriales y repuestos
 * despacho (incluye herramientas y utilajes)
 * informes de requerimietnos 
 
-examen: funcionamiento de circuito subsistema almacen
+examen: a veces se toma el gráfico de funcionamiento de circuito subsistema almacen
 .  . .. . . . . . . . 
 
 Funcion planeamiento. 
@@ -322,3 +327,83 @@ mantenimiento       planificada/reacon  normal/urgente              prioridad a 
 es dificil estimar un tiempo porque las tareas no son repetitivas.
 Lo que puedo hacer es ver ergonomia, tener equipamiento versatil, acortar distancias, trabajar con repuestos universales, y trabajar bajo procedimientos (estos deben ser visuales y sinteticos)
 s
+
+
+----------- Clase 8 18/05/2026 -----------
+
+Indicadores de mantenimiento
+indican la informacion necesaria de mantenimiento en terminos de eficiencia y de monitoreo de costos, para ser utilizada a los niveles de Direccion.
+
+1) Tiempo medio entre fallas.  MTBF -> meantime Between failures
+
+Es basico para mantenimiento.
+Establece el periodo promedio entre dos fallas de un elemento.
+Puede expresarse como el tiempo sstablecido para operar (t0), menos el tiempo por paradas no programadas (tnp), dividido por la canmtidad de fallas Confección
+
+MTBF=  (t0.n - SUM tnp) / SUM Cf
+
+
+2) Tiempo medio para reparacion. MTTR -> meantime to Repair
+
+Es la relacio0n entre el tiempo total de intervenciones correctivas Tr en un conjunto de elementos con falla y el numero total de reparaciones Cr en el periodo observado-
+
+MTTR= SUM Tr / SUM Cr
+
+Este indice debe ser usado para elementos en los cuales el tiempo de reparacion es significativo en relacion al tiempo de operacion.
+
+3) Tiempo medio pra la falla. MTTF -> meantime to Failure
+
+Para elementos que se sustituyen ante la falla.
+Indica en proimedio con que frecuencia se producirá la falla del componente.
+Es la relacion entre el tiempo total de opreacion de un conjunto de elementos T0 y el numero total de fallas detectadas en esos elementos Cf en el periodo observado.
+
+MTTF= T0*n / Sum Cf
+
+4) Disponibilidad de equipos D0
+
+Tambien identificado como performance o desempeño de los quipos
+
+D0= ((T0 -Tnp)/T0)*100
+
+Es de gran importancia para mantenimiento pues a traves de el se peude realizar un analisis selectivo de los equipos cuyo comportamiento esta debnajo de los estandares aceptables.
+
+5) Costo de mantenimiento por el valor de reposición
+
+CMRV = Sum CTM / VLR * 100
+
+CTM: costo total acumulado
+VLR: valor de reposición 
+
+Este indice debe ser calculado  para los equipos mas importantes de la empresa.
+
+. . . . . . . . ..  .
+
+Unidad 3
+
+confiabilidad es la probabilidad de que un componente o equipo satisfaga las funciones establecidas sin fallas durante un periodo dado y en un contexto definido.
+
+Mantenibilidad: probabildiad que tiene un item en estado de falla de ser diagnosticado y reparado con exito en  un tiempo t y en el contexto de operacion establecido.
+
+sube si hay repuestos universales y/o conjuntos, por intercambiabilidad.
+sube si hay experiencias, buenas capacitaciones.
+trabajar con equipos poka yoke(APB) -> sube mantenibilidad.
+sube si mejoramos el tiempo de diagnostico.
+Trabajar con manuales, despieces, planos.
+
+La mantenibilidad BAJA con el mantenimiento correctivo, porque lo hjago desesperado y a los pedos y puedo meter la pata.
+
+
+
+examen: a mmedida que sube la mantenibilidad, baja el MTTR
+examen: como mejorar la disponibilidad. Rta: mejorando la mantenibilidad y la confiabilidad ( y justificar estas 2)
+
+Disponibilidad: 
+
+la combinacion apropiada de mantenibilidad y confiabilidad es garantía del sostenimiento de la disponibilidad. Con mantenimiento se busca sostener la disponibilidad segun las necesidades del proceso.
+
+Tipos de falla:
+
+Falla: perdida de la capacidad, total o parcial de un elemento mantenible para satisfacer el nivel de operacion establecido por la funcion. 
+Cuando la falla impide el funcionamiento total de l equipo, al que pertenece el elemento se dice que ocurrió una AVERÍA.
+
+
