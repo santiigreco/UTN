@@ -286,5 +286,53 @@ Vigas de reparticion de caergas: perfiles o vigas metalicas ancladas a los nodos
 
 #Parte practica -> entra al examen
 
+------------ clase 7 11/05/2026  
+
+
+Edificios industriales
+
+
+fin de explicacion de cabreadas. 
+examen: entender los planos de vigas de reparticion de cargas. Coeficientes de seguridad. 
+
+. . ... . . . 
+
+Uniones. Pueden ser fijas o removibles.     
+
+examen: no va a tomar que es bulon, que es tornillo. 
+
+importante: partes del tornillo porque definenn por norma como pedikr y comprar un componemte.
+
+Tornillo: 
+    cuerpo-> parte del tornillo o bulon donde se forma la rosca.
+    cabeza-> diferentes formas que permiten el ajuste del tornillo
+    cuello-> parte no roscada. 
+        elemenots de maquina van sin cuello- para juntar 2 piezas si va con cuello
+    
+
+roscas
+    dn-> diametro nominal. diametro medio al filete
+    d-> diametro exterior o de cresta
+    di-> diametro interior o de valle
+    p-> paso de rosca o pitch. medida fundamental
+    a-> angulo de flanco
+
+    Metrica ISO 
+        designacion M10x 1.25 (milimetros y paso en numero de hilos por mm)
+    ANSI (USA)
+        designacion 3/4 UNC (paso grueso) o 3/5 UNF (paso fino) (pulgadas, y paso en numero de hilos por pulgada)
+    Withworth (INGLESA)
+        3/4 BSW (paso grueso) o 3/4 BSF ( paso fino)
+
+Uniones soldadas
+
+Cordon de soldadura -> hay si es con aporte de material
+ZONA DE soldadura-> zona central, formada fundamentalmente por metal de aportacion
+Zona de penetración-> parte de las piezas fundida por los electrodos
+Zona de transición -> mas proxima a la zona de penetracion
+
+luego hay que tratar la pieza para alivianar tensiones y evitar fisuras / rotura del material
+
+tipos de soldaduras.
 
 

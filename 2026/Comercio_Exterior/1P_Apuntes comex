@@ -52,33 +52,56 @@ Medidas para-arancelarias: no esta relacionada con pagar algo, sino que tengo qu
 Subpolítica promocional: 
 * Prefinanciacion de exportacion
 
-------------------------------------------
-Clase 3 - 24/04/2026 - Módulo II: Logística internacional
-------------------------------------------
+----  08/05/2026 ----- 
 
-**Transporte de carga internacional**: objetivos: 
-- Reconocer los medios y modos de transporte disponibles en el mercado nacional e internacional.
-- Establecer los valores que incorpora el sistema de distribución a la carga
-- Reconocer factores que incluyen en el costo de un flete
-- Aplicar correctamente reglas internacionales, INCOTERMS
+Logística internacional
 
+*   TRANSPORTE: modos/medios
+                    - contratacion
+                    - sujetos
+                    -  documentos
+                    - FLETE
+Contenedores
+    -20 pies: TEU, 6m x 2,44 x 2,59
+    -40 pies: FEU, 12m x 2,44 x 2,59
+    -40 pies High Cube, 12m x 2,44 x 2,90
 
-Regla de oro de la DFI: "Transportar el producto adecuado en la cantidad requerida al lugar acordad y al menor costo para satisfacer las necesidades del consumidor en el mercado internacional"
+    Distintos tipos: 
+        -Cerrados, Dry o Seco:  carga general
+        - Open Top: techo abierto
+        - Open side: abierto en laterales
+        - Iso tank: cisterna para graneles liquidos o gaseosos
+        - Plataforma: sin techo ni laterales
+        - Reefers: refrigerados 
+        - Flat rack: sin paredes laterales ni techo
+        - De atmosfera controlada
 
-Modos de transporte 
-* Acuatico: 
-    marítimo
-    fluvial
-* Terrestre
-    carretero
-    ferroviario
-* Aereo
+Pallets
+NIF 15: Certificacion libre de plagas
 
+marcas precautorias-
 
-Para la selección del medio adecuadno consideramos: 
+----------------------- 16/05/2026 -----
+Unidad 3 - INCOTERMS 2020 (se actualiza cada 10 años)
 
-* Precio
-* Tiempo de transito promedio
-* Variación del tiempo de tránsito
-* Pérdidas y daños. 
+Son un conjunto de terminos comerciales formados por sigas de 3 letras que reflejan derechos y bligaciones del vendedor y comprador a lo largo del transporte y entrega de mercaderia en maeteria de: 
+- tareas a cumplir
+- gastos a erogar
+- riesgos a cubrir
 
+EXW : Ex works -> el precio de la mercancia no incluye flete, seguro, maniobras ni tramites de exportacion. Para el vendedor es una venta local. El comprador debe retirar en el local de vendedor, contratar el transporte hasta destino y hacerse cargo del tramite de exp en origen y en destino.
+FCA: Free Carrier-> el precio puede o no incluir flete y seguro en el mercado de origen, pero incluye maniobras y tramite de exportación. 
+FOB: Free On Board-> el precio puede o no incluir flete y seguro en mercado de origen, pero debe incluir el costo y lasmaniobras de carga y el tramite de exportacion. La responsabilidad termina cuando sube al barco.
+FAS: Free Alongside Ship (libre al costado del buque)-> el precio inclye flete y seguro en el mercado de origen hasta el costado del buque en tiempo y forma segun instrucciones del transportirsta internacional contratado por el comprador. SOLO PARA MERCADOERIA A GRANEL
+
+En los grupo C, el vendedor se hace responsable de contratar el transporte
+CFR: Cost and Freight-> el precio de la mercaderia incluye el flete maritimo internacional hasta un punto convenido en destio, contratado por orden cuenta y riesgo del importador. Es el homologo del FOB.
+CPT: Carriage Paid To-> el precio incluye el flete internacional hasta un punto convenido en destino, contratado por orden cuenta y riesgo del importador. El riesgo se transfiere cuado la mercaderia esta a bordo del  transporta.
+
+CIP: Carriage and Insurance Paid To-> Idem CPT pero incluye seguro
+CIF: costo seguro y flete. Idem CFR pero incluye seguro. 
+
+examen; en cual de los INCOTERMS el exportador esta obligado a contratar seguro? 
+DPU: Delivered at Place Unloaded
+DAP: Delivered at Place
+DDP: Delivered Duty Paid

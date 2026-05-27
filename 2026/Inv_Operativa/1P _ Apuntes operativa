@@ -136,3 +136,58 @@ Siendo 𝜆, la tasa de ocurrencia de un evento.
 examen: no suele tomar el caso del especialista. Si pueden tomar pasar de un sistema dado y armar la matriz generadora (matriz de transición de tasas)
 
 Ejercicio 6 - supermercados
+
+
+-------- clase 7 06/05/2026 --------
+
+Intro filas de espera
+
+Proceso de poisson -> cadena de markov de estado infinito.
+
+Proceso de conteo, donde el tiempo entre eventos sigue una distribución exponencial. Se genera un proceso estocástico monótono creciente. Los estados se definen por la cantidad de eventso generados.
+
+Ejemplos de aplicaciones
+- Conteos de fallas en un proceso/maquina
+- Conteo de llamados a un servicio
+- Riesgo de default en finanzas
+
+Proceso de nacimiento y muerte
+
+examen: como es la matriz generadora de un proceso de nacimiento y muerte?
+
+Filas de espera
+
+Las tasas de nacimiento son arribos de agentes: lambda
+Las tasas de muerte son despachos de agentes: mu
+
+Los estados del sistema es la cantidad de agentes en el sistema
+
+Notacion de kendall
+
+M/M/1 -> procesos de poisson, exponencial, 1 servidor
+
+
+
+Metricas
+- Factor de trafico
+ro = lambda / mu
+
+ro < 1sistema estable
+ro>=1 sistema inestable
+
+examen: si el sistema es estable, quiere decir que el sistema no tiene fila? -> NO, porque es un proceso aleatorio
+
+Cantidad de clientes promedio
+-  En fila: Lq
+-  En el sistema: Ls o L
+
+Tiempo de espera promedio
+-  En fila: Wq
+-  En el sistema: Ws o W
+
+Probabilidad
+-  De tener 0 clientes: P0
+-  De tener n clientes: Pn
+- 
+
+
