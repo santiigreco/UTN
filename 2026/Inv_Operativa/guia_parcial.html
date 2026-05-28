@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IO · 1er Parcial</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0b12;--bg2:#12121c;--bg3:#0e0e17;
+  --bgf:#0d1520;--bgt:#181200;--bgok:#091a0f;--bgno:#1a0909;
+  --bd:#1e1e2e;--bd2:#2a2a3c;
+  --tx:#ddd8cc;--tx2:#887f70;--tx3:#484440;
+  --ac:#c8a020;--acd:#7a6218;--acl:#d4b030;
+  --bl:#4d94ff;--ok:#52b374;--no:#d95f5f;
+  --fh:'Playfair Display',Georgia,serif;
+  --fb:'Source Sans 3',system-ui,sans-serif;
+  --fm:'Fira Code',monospace;
+  --r:8px;--rs:5px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font-family:var(--fb);font-size:15px;line-height:1.65;min-height:100vh}
+body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,0.035) 1px,transparent 0);background-size:28px 28px;pointer-events:none;z-index:0}
+
+/* HEADER */
+header{position:sticky;top:0;z-index:200;background:rgba(11,11,18,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--bd);padding:13px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.hbrand h1{font-family:var(--fh);font-size:18px;font-weight:600;color:var(--ac);letter-spacing:.02em}
+.hbrand p{font-size:11px;color:var(--tx3);letter-spacing:.12em;text-transform:uppercase;margin-top:1px}
+.hright{display:flex;align-items:center;gap:12px}
+#timer{font-family:var(--fm);font-size:16px;color:var(--ac);letter-spacing:.08em;display:none;min-width:55px;text-align:right}
+#timer.urgent{color:var(--no);animation:blink 1s step-end infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.btn-ex{background:transparent;border:1px solid var(--acd);color:var(--ac);padding:6px 14px;border-radius:var(--rs);font-family:var(--fb);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .2s}
+.btn-ex:hover{background:rgba(200,160,32,.1);border-color:var(--ac)}
+.btn-ex.on{background:var(--ac);color:#080808;border-color:var(--ac)}
+
+/* TOPIC NAV */
+#tnav{position:sticky;top:52px;z-index:190;background:rgba(11,11,18,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--bd);display:flex;overflow-x:auto;scrollbar-width:none}
+#tnav::-webkit-scrollbar{display:none}
+.ttab{background:none;border:none;border-bottom:2px solid transparent;color:var(--tx2);padding:12px 18px 10px;font-family:var(--fb);font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;display:flex;flex-direction:column;align-items:center;gap:4px;white-space:nowrap;flex-shrink:0}
+.ttab:hover{color:var(--tx);background:rgba(255,255,255,.02)}
+.ttab.on{color:var(--ac);border-bottom-color:var(--ac)}
+.ttab .bdg{font-family:var(--fm);font-size:10px;padding:1px 7px;border-radius:10px;background:rgba(255,255,255,.05);color:var(--tx3);border:1px solid var(--bd);transition:all .3s}
+.ttab.on .bdg{background:rgba(200,160,32,.12);color:var(--ac);border-color:rgba(200,160,32,.3)}
+.ttab .bdg.done{background:rgba(82,179,116,.12);color:var(--ok);border-color:rgba(82,179,116,.3)}
+
+/* MAIN */
+main{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:28px 20px 80px}
+
+/* TOPIC SECTIONS */
+.tsec{display:none}
+.tsec.on{display:block;animation:fup .3s ease forwards}
+@keyframes fup{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.thead{margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--bd)}
+.thead h2{font-family:var(--fh);font-size:26px;font-weight:600;color:var(--tx);margin-bottom:3px}
+.thead p{font-size:13px;color:var(--tx2)}
+
+/* PANEL SWITCHER */
+.psw{display:flex;background:var(--bg3);border:1px solid var(--bd);border-radius:var(--rs);padding:3px;margin-bottom:20px;gap:2px}
+.pbtn{flex:1;background:none;border:none;color:var(--tx2);padding:7px 12px;border-radius:4px;font-family:var(--fb);font-size:13px;font-weight:500;cursor:pointer;transition:all .2s}
+.pbtn:hover{color:var(--tx)}
+.pbtn.on{background:rgba(200,160,32,.1);color:var(--ac)}
+
+/* PANELS */
+.panel{display:none}
+.panel.on{display:block;animation:fup .25s ease forwards}
+
+/* TEORIA CARDS */
+.tgrid{display:flex;flex-direction:column;gap:12px}
+.tcard{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--r);padding:18px 20px;transition:border-color .2s}
+.tcard:hover{border-color:var(--bd2)}
+.tcard-ttl{font-family:var(--fh);font-size:15px;color:var(--ac);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.tcard-ttl::before{content:'';width:3px;height:15px;background:var(--ac);border-radius:2px;flex-shrink:0}
+.tcard ul{list-style:none;display:flex;flex-direction:column;gap:5px;margin-bottom:8px}
+.tcard li{font-size:14px;color:var(--tx);padding-left:18px;position:relative}
+.tcard li::before{content:'·';position:absolute;left:6px;color:var(--tx3)}
+.fml{background:var(--bgf);border:1px solid rgba(77,148,255,.2);border-radius:5px;padding:8px 13px;font-family:var(--fm);font-size:13px;color:var(--bl);margin:6px 0 0;overflow-x:auto;white-space:pre}
+.fml.blk{text-align:center;font-size:14px;padding:10px 14px}
+.dgram{margin:12px 0 0;overflow-x:auto}
+
+/* TIP CARDS */
+.tipgrid{display:flex;flex-direction:column;gap:10px}
+.tipcard{background:var(--bgt);border:1px solid rgba(200,160,32,.22);border-left:3px solid var(--ac);border-radius:0 var(--rs) var(--rs) 0;padding:13px 16px;display:flex;align-items:flex-start;gap:10px}
+.tipcard.danger{background:#160808;border-color:rgba(217,95,95,.22);border-left-color:var(--no)}
+.tipicon{font-size:15px;flex-shrink:0;margin-top:1px;line-height:1}
+.tiplbl{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ac);margin-bottom:3px}
+.tipcard.danger .tiplbl{color:var(--no)}
+.tiptx{font-size:14px;color:var(--tx);line-height:1.55}
+.tiptx code{font-family:var(--fm);font-size:12px;color:var(--bl);background:rgba(77,148,255,.08);padding:1px 6px;border-radius:3px}
+
+/* QUESTIONS */
+.qhdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:8px}
+.qprog-txt{font-family:var(--fm);font-size:12px;color:var(--tx3)}
+.qprog-txt span{color:var(--ac)}
+.pbar{height:2px;background:var(--bd);border-radius:2px;margin-bottom:18px;overflow:hidden}
+.pfill{height:100%;background:linear-gradient(90deg,var(--acd),var(--ac));border-radius:2px;transition:width .5s cubic-bezier(.4,0,.2,1)}
+.qlist{display:flex;flex-direction:column;gap:14px}
+.qcard{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--r);padding:18px 20px;transition:border-color .3s}
+.qcard.answered{border-color:#1e1e30}
+.qmeta{display:flex;gap:7px;align-items:center;margin-bottom:11px;flex-wrap:wrap}
+.qnum{font-family:var(--fm);font-size:11px;color:var(--tx3);background:rgba(255,255,255,.04);border:1px solid var(--bd);border-radius:4px;padding:1px 7px}
+.qtype{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--tx3);border:1px solid var(--bd);border-radius:10px;padding:1px 8px}
+.qtxt{font-size:15px;color:var(--tx);line-height:1.55;margin-bottom:13px}
+.opts{display:flex;flex-direction:column;gap:7px;margin-bottom:10px}
+.opt{display:flex;gap:10px;align-items:flex-start;background:rgba(255,255,255,.025);border:1px solid var(--bd);color:var(--tx);padding:10px 14px;border-radius:var(--rs);text-align:left;font-family:var(--fb);font-size:14px;cursor:pointer;transition:all .15s;width:100%}
+.opt:hover:not(:disabled){background:rgba(255,255,255,.05);border-color:var(--bd2)}
+.opt:disabled{cursor:default}
+.oltr{font-family:var(--fm);font-size:11px;color:var(--tx3);flex-shrink:0;margin-top:2px;min-width:16px}
+.opt.ok{background:var(--bgok);border-color:rgba(82,179,116,.5);color:var(--ok)}
+.opt.ok .oltr{color:var(--ok)}
+.opt.no{background:var(--bgno);border-color:rgba(217,95,95,.5);color:var(--no)}
+.opt.no .oltr{color:var(--no)}
+.tfrow{display:flex;gap:8px;margin-bottom:10px}
+.tfbtn{flex:1;background:rgba(255,255,255,.025);border:1px solid var(--bd);color:var(--tx);padding:9px;border-radius:var(--rs);font-family:var(--fb);font-size:14px;font-weight:500;cursor:pointer;transition:all .15s;text-align:center}
+.tfbtn:hover:not(:disabled){background:rgba(255,255,255,.05);border-color:var(--bd2)}
+.tfbtn:disabled{cursor:default}
+.tfbtn.ok{background:var(--bgok);border-color:rgba(82,179,116,.5);color:var(--ok)}
+.tfbtn.no{background:var(--bgno);border-color:rgba(217,95,95,.5);color:var(--no)}
+.revbtn{background:transparent;border:1px solid var(--bd);color:var(--tx2);padding:7px 15px;border-radius:var(--rs);font-family:var(--fb);font-size:13px;cursor:pointer;transition:all .2s;margin-bottom:10px;display:inline-flex;align-items:center;gap:6px}
+.revbtn:hover{border-color:var(--acd);color:var(--ac)}
+.revbtn.open{border-color:var(--acd);color:var(--ac);background:rgba(200,160,32,.05)}
+.expl{display:none;background:rgba(255,255,255,.025);border:1px solid var(--bd2);border-radius:var(--rs);padding:12px 15px;font-size:14px;line-height:1.6;color:var(--tx)}
+.expl.show{display:block;animation:fup .22s ease forwards}
+.expl .albl{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ok);margin-bottom:6px}
+.expl .albl.wrong{color:var(--no)}
+.expl code{font-family:var(--fm);font-size:12px;color:var(--bl);background:rgba(77,148,255,.08);padding:1px 6px;border-radius:3px}
+
+/* EXAM MODE */
+body.exam .pbtn[data-p="teoria"],
+body.exam .pbtn[data-p="tips"]{opacity:.25;pointer-events:none}
+body.exam .panel.tpanel,
+body.exam .panel.tipanel{display:none!important}
+
+/* RESPONSIVE */
+@media(max-width:580px){
+  header{padding:11px 14px}
+  main{padding:16px 13px 60px}
+  .ttab{padding:10px 13px;font-size:12px}
+  .pbtn{font-size:12px;padding:6px 8px}
+  .thead h2{font-size:22px}
+  .opt{font-size:13px}
+}
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:#2a2a38;border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:#3a3a50}
+</style>
+</head>
+<body>
+<header>
+  <div class="hbrand">
+    <h1>Investigación Operativa</h1>
+    <p>UTN · Guía de estudio · 1er Parcial</p>
+  </div>
+  <div class="hright">
+    <div id="timer">60:00</div>
+    <button class="btn-ex" id="btnex">Modo Examen</button>
+  </div>
+</header>
+<nav id="tnav"></nav>
+<main id="main"></main>
+
+<script>
+// ── DATA ──────────────────────────────────────────────────────────────────────
+
+const TOPICS = [
+{
+  id:'sim', name:'Simulación', sub:'8 preguntas · Transformada inversa, Monte Carlo, DES',
+  teoria:[
+    { ttl:'Método Transformada Inversa',
+      items:['Si U ~ Uniform(0,1) y F es la CDF de X, entonces <code>X = F⁻¹(U)</code> tiene distribución F',
+             'Permite muestrear cualquier distribución con CDF invertible analíticamente',
+             'Ventaja principal: garantizado si existe F⁻¹ en forma cerrada'],
+      fmls:['X = F⁻¹(U),   U ~ Uniform(0,1)','Exponencial: X = −ln(U) / λ'],
+      diag:`<svg width="100%" height="62" viewBox="0 0 560 62" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ah1" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#484440"/></marker></defs>
+<line x1="20" y1="33" x2="520" y2="33" stroke="#2a2a3c" stroke-width="1.5" marker-end="url(#ah1)"/>
+<text x="528" y="37" fill="#484440" font-size="11" font-family="Fira Code">t</text>
+<polygon points="80,33 74,16 86,16" fill="#c8a020" opacity=".85"/><text x="80" y="53" text-anchor="middle" fill="#887f70" font-size="10" font-family="Fira Code">A₁</text>
+<polygon points="160,33 154,16 166,16" fill="#c8a020" opacity=".85"/><text x="160" y="53" text-anchor="middle" fill="#887f70" font-size="10" font-family="Fira Code">A₂</text>
+<circle cx="225" cy="33" r="5" fill="#4d94ff" opacity=".9"/><text x="225" y="53" text-anchor="middle" fill="#4d94ff" font-size="10" font-family="Fira Code">S₁</text>
+<polygon points="300,33 294,16 306,16" fill="#c8a020" opacity=".85"/><text x="300" y="53" text-anchor="middle" fill="#887f70" font-size="10" font-family="Fira Code">A₃</text>
+<circle cx="380" cy="33" r="5" fill="#4d94ff" opacity=".9"/><text x="380" y="53" text-anchor="middle" fill="#4d94ff" font-size="10" font-family="Fira Code">S₂</text>
+<polygon points="450,33 444,16 456,16" fill="#c8a020" opacity=".65"/><text x="450" y="53" text-anchor="middle" fill="#887f70" font-size="10" font-family="Fira Code">A₄</text>
+<text x="20" y="12" fill="#887f70" font-size="9" font-family="Fira Code">▲ = llegada   ● = fin de servicio</text></svg>`
+    },
+    { ttl:'Distribución Exponencial',
+      items:['Única distribución continua sin memoria: <code>P(X > s+t | X > s) = P(X > t)</code>',
+             'Parámetro λ = tasa (eventos por unidad de tiempo)',
+             'Media = 1/λ, Varianza = 1/λ²',
+             'Modela tiempos entre llegadas y tiempos de servicio en sistemas M/M/c'],
+      fmls:['F(x) = 1 − e^{−λx},   x ≥ 0','E[X] = 1/λ     Var[X] = 1/λ²']
+    },
+    { ttl:'Simulación de Eventos Discretos (DES)',
+      items:['El sistema cambia de estado solo en instantes discretos (eventos)',
+             'La Future Event List (FEL) contiene los próximos eventos ordenados por tiempo',
+             'El reloj de simulación salta al próximo evento — no avanza segundo a segundo',
+             'Tipos de eventos: llegada, inicio de servicio, fin de servicio, etc.'],
+      fmls:['Algoritmo: mientras FEL ≠ ∅: extraer evento mínimo → procesar → insertar nuevos eventos']
+    },
+    { ttl:'Monte Carlo',
+      items:['Estima cantidades mediante muestreo aleatorio repetido',
+             'Con pocas muestras el estimador es inestable (alta varianza)',
+             'Error estándar ∝ 1/√n → para reducir error a la mitad, necesitás 4× las muestras',
+             'No simula la dinámica temporal — solo evalúa una función con entradas aleatorias'],
+      fmls:['Error estándar ≈ σ / √n']
+    },
+    { ttl:'Ajuste de Distribuciones (MLE)',
+      items:['Máxima Verosimilitud (MLE): encontrar θ que maximiza la probabilidad de observar los datos',
+             'Para la exponencial: λ̂ = n / Σxᵢ = 1 / x̄',
+             'Después de ajustar, validar con test χ² o Kolmogorov-Smirnov'],
+      fmls:['L(θ) = Π f(xᵢ ; θ)   →   maximizar log L(θ)','Exponencial MLE: λ̂ = 1 / x̄']
+    }
+  ],
+  tips:[
+    {icon:'⚠', danger:false, lbl:'A tener en cuenta', tx:'El orden de procesamiento de eventos simultáneos NO importa para el resultado estadístico final.'},
+    {icon:'🚨', danger:true,  lbl:'Error común', tx:'Con pocas iteraciones Monte Carlo el resultado es inestable. Necesitás cientos o miles de repeticiones para que los estimadores converjan.'},
+    {icon:'✓', danger:false, lbl:'Propiedad clave', tx:'La exponencial tiene la propiedad sin memoria (memoryless). Esto justifica su uso en sistemas de Markov: el futuro no depende de cuánto tiempo lleva en el estado actual.'},
+    {icon:'⚠', danger:true,  lbl:'Trampa de examen', tx:'Siempre verificar que U sea <code>Uniform(0,1)</code> antes de aplicar la transformada inversa. Si U viene de otra distribución, la fórmula no vale.'},
+    {icon:'✓', danger:false, lbl:'DES', tx:'En simulación de colas distinguí tiempo de llegada vs. tiempo de inicio de servicio — si hay cola, el cliente llega pero no empieza a ser atendido inmediatamente.'},
+    {icon:'💡', danger:false, lbl:'Tip', tx:'Para la exponencial podés usar tanto U como (1−U) en la transformada inversa, ya que ambas son Uniform(0,1). En la práctica se usa U = −ln(U)/λ.'},
+  ],
+  preguntas:[
+    {type:'mc', txt:'¿Cuál es la fórmula correcta para generar una variable exponencial con tasa λ usando la transformada inversa?',
+     opts:['X = −ln(U) / λ','X = ln(U) / λ','X = e^(−λU)','X = 1 − e^(−λU)'], cor:0,
+     expl:'La CDF exponencial es F(x) = 1 − e^(−λx). Despejando: si U = F(X), entonces e^(−λX) = 1−U, tomando logaritmo: X = −ln(1−U)/λ. Como (1−U) también es Uniform(0,1), se simplifica a <code>X = −ln(U)/λ</code>.'},
+    {type:'tf', txt:'Una simulación de Monte Carlo con 10 iteraciones es suficiente para obtener resultados confiables.',
+     cor:false,
+     expl:'<span class="albl wrong">FALSO.</span> El error estándar de Monte Carlo es σ/√n. Con n=10, la varianza del estimador es muy alta. Se necesitan cientos o miles de muestras para que los resultados sean estadísticamente robustos.'},
+    {type:'open', txt:'Si U = 0.7 y λ = 2, ¿cuál es el tiempo entre llegadas generado con la transformada inversa?',
+     ans:'<span class="albl">RESOLUCIÓN</span>X = −ln(U) / λ = −ln(0.7) / 2 ≈ 0.3567 / 2 ≈ <strong>0.178 unidades de tiempo</strong><br><br>Paso a paso: ln(0.7) ≈ −0.3567, luego X = −(−0.3567)/2 = 0.3567/2 ≈ 0.178.'},
+    {type:'open', txt:'¿Qué propiedad hace que la distribución exponencial sea especialmente útil en simulación de colas (y en cadenas de Markov)?',
+     ans:'<span class="albl">RESPUESTA</span>La propiedad <strong>sin memoria (memoryless)</strong>: <code>P(X > s+t | X > s) = P(X > t)</code>.<br><br>Esto implica que el tiempo restante hasta el próximo evento no depende de cuánto tiempo ya pasó. En Markov continuo, esta propiedad es la que garantiza que los tiempos de permanencia en un estado sean exponenciales.'},
+    {type:'open', txt:'En una simulación de eventos discretos, ¿qué representa la "Future Event List" (FEL o cola de eventos futuros)?',
+     ans:'<span class="albl">RESPUESTA</span>La FEL es una <strong>cola de prioridad</strong> que contiene todos los eventos programados para el futuro, ordenados por tiempo de ocurrencia.<br><br>El algoritmo siempre extrae el evento de menor tiempo, lo procesa (actualizando el estado del sistema), y puede insertar nuevos eventos como consecuencia. Así el reloj de simulación "salta" de evento en evento.'},
+    {type:'mc', txt:'¿Cuál es la diferencia principal entre simulación de Monte Carlo y simulación de eventos discretos (DES)?',
+     opts:['Monte Carlo modela dinámica temporal; DES evalúa funciones con entradas aleatorias','DES modela la evolución temporal del sistema; Monte Carlo estima cantidades por muestreo repetido sin modelar el tiempo','Ambas son equivalentes para modelar colas','Monte Carlo requiere más iteraciones que DES para el mismo nivel de precisión'],
+     cor:1,
+     expl:'<code>DES</code> modela explícitamente cómo evoluciona el sistema en el tiempo (clientes llegando, siendo atendidos, saliendo). <code>Monte Carlo</code> evalúa una función con entradas aleatorias para estimar una cantidad esperada — no hay "reloj de simulación" ni secuencia de eventos.'},
+    {type:'mc', txt:'En una simulación de un sistema de colas, la longitud de la cola crece indefinidamente con el tiempo. ¿Qué indica esto?',
+     opts:['Que el sistema tiene muchos clientes — es normal','Que el sistema es inestable: la tasa de llegadas supera la capacidad de servicio (ρ ≥ 1)','Que hay un bug en la simulación','Que hay que aumentar el tiempo de simulación'],
+     cor:1,
+     expl:'Una cola que crece sin límite indica <strong>inestabilidad</strong>: la tasa de llegadas λ es igual o mayor que la tasa de servicio c·μ, por lo que ρ = λ/(c·μ) ≥ 1. En este régimen el sistema nunca llega a estado estacionario.'},
+    {type:'open', txt:'¿Por qué se usa la distribución de Poisson (y la exponencial para tiempos entre llegadas) para modelar llegadas en sistemas reales?',
+     ans:'<span class="albl">RESPUESTA</span>El <strong>proceso de Poisson</strong> modela conteo de eventos aleatorios que cumplen 3 condiciones: (1) estacionariedad (la tasa λ es constante), (2) independencia entre intervalos, (3) rareza (probabilidad de 2 eventos simultáneos ≈ 0).<br><br>Muchos sistemas reales (llamadas telefónicas, llegadas a un banco, requests a un servidor) cumplen estas condiciones aproximadamente. Los tiempos entre llegadas de un proceso de Poisson siguen distribución exponencial con media 1/λ.'},
+  ]
+},
+
+// ── MARKOV ────────────────────────────────────────────────────────────────────
+{
+  id:'markov', name:'Cadenas de Markov', sub:'10 preguntas · Discretas, continuas, estado estacionario',
+  teoria:[
+    { ttl:'Definición y Matriz de Transición',
+      items:['Una cadena de Markov es un proceso estocástico donde el futuro depende solo del estado actual (propiedad de Markov)',
+             'La matriz de transición T: Tᵢⱼ = P(Xₙ₊₁ = j | Xₙ = i)',
+             '<strong>Las filas de T suman 1</strong> (no las columnas)',
+             'Filas = estado de origen, Columnas = estado de destino'],
+      fmls:['Tᵢⱼ ≥ 0   y   Σⱼ Tᵢⱼ = 1  para todo i'],
+      diag:`<svg width="320" height="115" viewBox="0 0 320 115" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <marker id="ma1" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#4d94ff"/></marker>
+  <marker id="ma2" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#4d94ff"/></marker>
+</defs>
+<circle cx="80" cy="65" r="28" fill="#0e0e17" stroke="#c8a020" stroke-width="1.5"/>
+<text x="80" y="70" text-anchor="middle" fill="#ddd8cc" font-size="13" font-family="Playfair Display,serif">S₁</text>
+<circle cx="240" cy="65" r="28" fill="#0e0e17" stroke="#c8a020" stroke-width="1.5"/>
+<text x="240" y="70" text-anchor="middle" fill="#ddd8cc" font-size="13" font-family="Playfair Display,serif">S₂</text>
+<path d="M62,38 Q30,5 70,37" stroke="#4d94ff" stroke-width="1.2" fill="none" marker-end="url(#ma1)"/>
+<text x="38" y="18" fill="#4d94ff" font-size="11" font-family="Fira Code">0.7</text>
+<path d="M258,38 Q290,5 250,37" stroke="#4d94ff" stroke-width="1.2" fill="none" marker-end="url(#ma2)"/>
+<text x="260" y="18" fill="#4d94ff" font-size="11" font-family="Fira Code">0.6</text>
+<path d="M109,55 L211,55" stroke="#4d94ff" stroke-width="1.2" fill="none" marker-end="url(#ma1)"/>
+<text x="160" y="48" text-anchor="middle" fill="#4d94ff" font-size="11" font-family="Fira Code">0.3</text>
+<path d="M211,75 L109,75" stroke="#4d94ff" stroke-width="1.2" fill="none" marker-end="url(#ma1)"/>
+<text x="160" y="90" text-anchor="middle" fill="#4d94ff" font-size="11" font-family="Fira Code">0.4</text>
+<text x="160" y="110" text-anchor="middle" fill="#887f70" font-size="9" font-family="Fira Code">T = [[0.7, 0.3], [0.4, 0.6]]</text>
+</svg>`
+    },
+    { ttl:'Chapman-Kolmogorov',
+      items:['Para n pasos: elevar la matriz de transición a la n',
+             'El vector de estado en tiempo t: π(t) = π(0) · Tᵗ',
+             'La probabilidad de ir de i a j en n pasos es la entrada [i,j] de Tⁿ'],
+      fmls:['Tⁿ = T · T · ... · T   (n veces)','π(t) = π(0) · Tᵗ']
+    },
+    { ttl:'Estado Estacionario — 4 Métodos',
+      items:['El vector π tal que π = π·T y Σᵢπᵢ = 1',
+             '① Fuerza bruta: elevar T a potencias altas hasta que converja',
+             '② C-K por ecuaciones: resolver el sistema π = π·T junto con Σπᵢ = 1 (método más pedido en examen)',
+             '③ Flujos probabilísticos: πᵢ·Tᵢⱼ = πⱼ·Tⱼᵢ para cadenas reversibles',
+             '④ Teorema de Perron-Frobenius: el autovector izquierdo dominante de T'],
+      fmls:['π = π · T   y   Σᵢ πᵢ = 1']
+    },
+    { ttl:'Clasificación de Estados',
+      items:['<strong>Accesible:</strong> j es accesible desde i si P(llegar a j desde i) > 0',
+             '<strong>Comunicante:</strong> i y j se comunican si cada uno es accesible desde el otro',
+             '<strong>Absorbente:</strong> Tᵢᵢ = 1 (una vez que se entra, no se sale)',
+             '<strong>Recurrente:</strong> se vuelve a visitar con probabilidad 1',
+             '<strong>Transitorio:</strong> hay probabilidad positiva de no volver',
+             '<strong>Período:</strong> máximo común divisor de los tiempos de retorno']
+    },
+    { ttl:'Ergodicidad y Convergencia',
+      items:['<strong>Irreducible:</strong> desde cualquier estado se puede llegar a cualquier otro',
+             '<strong>Aperiódica:</strong> el período de todos los estados es 1',
+             '<strong>Ergódica = Irreducible + Aperiódica</strong>: garantiza convergencia a estado estacionario único, independiente del estado inicial',
+             '<strong>Spectral gap:</strong> diferencia entre el mayor y el segundo mayor valor propio. Gap alto → convergencia rápida'],
+      fmls:['Ergódica  ⟹  ∃! distribución estacionaria π']
+    },
+    { ttl:'Markov de Tiempo Continuo (CMTC)',
+      items:['Los tiempos de permanencia en cada estado siguen distribución exponencial',
+             'La dinámica se describe con la matriz generadora Q (tasas de transición)',
+             'La ecuación de balance: ∂π(t)/∂t = π(t) · Q',
+             'En estado estacionario: π · Q = 0'],
+      fmls:['Qᵢⱼ = tasa de transición de i a j (i ≠ j)','Qᵢᵢ = −Σⱼ≠ᵢ Qᵢⱼ']
+    }
+  ],
+  tips:[
+    {icon:'🚨', danger:true,  lbl:'Error clásico de parcial', tx:'Las FILAS de T suman 1, no las columnas. Si sumás las columnas y te da 1, probablemente tenés la matriz transpuesta.'},
+    {icon:'⚠', danger:false, lbl:'Estado absorbente', tx:'Un estado absorbente tiene la fila con 1 en la diagonal y 0 en el resto. Una cadena con estado absorbente NO puede ser ergódica (no es irreducible).'},
+    {icon:'✓', danger:false, lbl:'Ergodicidad', tx:'Cadena ergódica garantiza estado estacionario único e independiente del estado inicial. Siempre verificar ergodicidad antes de calcular el estado estacionario.'},
+    {icon:'💡', danger:false, lbl:'Spectral Gap', tx:'El spectral gap = λ₁ − λ₂ (diferencia entre el mayor y el segundo mayor autovalor de T). Gap cercano a 0 → convergencia muy lenta; gap cercano a 1 → convergencia rápida.'},
+    {icon:'✓', danger:false, lbl:'Método más pedido', tx:'Chapman-Kolmogorov por sistema de ecuaciones es el método más pedido en examen. Reemplazás π = π·T, sustituís la última ecuación por Σπᵢ = 1, y resolvés el sistema.'},
+    {icon:'⚠', danger:false, lbl:'Trampa sutil', tx:'El estado estacionario π = πT siempre tiene solución (si la cadena es irreducible). Pero si no es ergódica, puede no ser único o la cadena puede no converger hacia él.'},
+  ],
+  preguntas:[
+    {type:'mc', txt:'En una matriz de transición 3×3, ¿qué propiedad deben cumplir SIEMPRE las filas?',
+     opts:['Cada fila suma 1','Cada columna suma 1','La diagonal es siempre mayor que 0.5','Todos los elementos son iguales entre sí'],
+     cor:0,
+     expl:'Por definición, Tᵢⱼ representa la probabilidad de pasar del estado i al estado j. Como el sistema debe estar en algún estado en el siguiente paso, la suma de probabilidades de todas las transiciones desde i debe ser 1: Σⱼ Tᵢⱼ = 1.'},
+    {type:'open', txt:'Dada T = [[0.7, 0.3], [0.4, 0.6]], ¿cuál es la probabilidad de estar en el estado 2 después de 2 pasos, partiendo del estado 1?',
+     ans:'<span class="albl">RESOLUCIÓN</span>Hay que calcular T²[0][1] (fila 0 = estado 1, columna 1 = estado 2).<br><br>T²[0][1] = T[0][0]·T[0][1] + T[0][1]·T[1][1] = 0.7×0.3 + 0.3×0.6 = 0.21 + 0.18 = <strong>0.39</strong><br><br>Hay un 39% de probabilidad de estar en el estado 2 luego de 2 pasos partiendo del estado 1.'},
+    {type:'tf', txt:'Una cadena de Markov que tiene un estado absorbente puede ser ergódica.',
+     cor:false,
+     expl:'<span class="albl wrong">FALSO.</span> Para ser ergódica la cadena debe ser irreducible (se puede ir desde cualquier estado a cualquier otro). Un estado absorbente del que no se puede salir rompe esta condición: desde otros estados sí se llega a él, pero desde él no se puede volver. Ergo, la cadena no es irreducible, no es ergódica.'},
+    {type:'mc', txt:'¿Cuál de los 4 métodos para calcular el estado estacionario es el más pedido en examen?',
+     opts:['Fuerza bruta (elevar T a potencias)','Chapman-Kolmogorov por sistema de ecuaciones','Flujos probabilísticos','Teorema de Perron-Frobenius'],
+     cor:1,
+     expl:'El método de <strong>C-K por sistema de ecuaciones</strong> es el estándar en los parciales. Se plantea π = π·T como un sistema lineal, se reemplaza una de las ecuaciones redundantes por Σπᵢ = 1, y se resuelve. Es algebraico y exacto.'},
+    {type:'open', txt:'¿Qué significa que una cadena de Markov sea "irreducible"?',
+     ans:'<span class="albl">RESPUESTA</span>Una cadena es <strong>irreducible</strong> cuando desde cualquier estado es posible llegar a cualquier otro estado en algún número finito de pasos (con probabilidad positiva).<br><br>Equivalentemente: todos los estados se comunican entre sí y forman una única clase de comunicación. Una cadena con estados absorbentes o estados aislados NO es irreducible.'},
+    {type:'open', txt:'Si el spectral gap de una cadena de Markov es muy pequeño (cercano a 0), ¿qué implica sobre su convergencia al estado estacionario?',
+     ans:'<span class="albl">RESPUESTA</span>Un spectral gap pequeño implica <strong>convergencia muy lenta</strong> al estado estacionario.<br><br>El spectral gap = λ₁ − λ₂ (donde λ₁ = 1 es el autovalor dominante). Si λ₂ ≈ 1, la cadena "mezcla" lentamente: se necesitan muchos pasos para que la distribución de estados se aproxime a π. Un gap cercano a 1 significa convergencia rápida.'},
+    {type:'open', txt:'Si el estado estacionario de una cadena es π = [0.3, 0.7], ¿qué significa en términos prácticos?',
+     ans:'<span class="albl">RESPUESTA</span>En el largo plazo, el sistema pasará el <strong>30% del tiempo en el estado 1</strong> y el <strong>70% del tiempo en el estado 2</strong>, independientemente del estado inicial.<br><br>Esto es válido siempre que la cadena sea ergódica. Es una afirmación sobre frecuencias de visita en el tiempo, no sobre una sola realización.'},
+    {type:'tf', txt:'Una cadena de Markov periódica puede tener un vector de distribución estacionaria π tal que π = πT.',
+     cor:true,
+     expl:'<span class="albl">VERDADERO.</span> La solución al sistema π = πT + Σπᵢ = 1 existe incluso para cadenas periódicas. Sin embargo, la cadena NO converge hacia π desde un estado inicial arbitrario — oscila entre estados. La ergodicidad (irreducible + aperiódica) garantiza la convergencia, no la existencia de π.'},
+    {type:'open', txt:'En una cadena de Markov de tiempo continuo (CMTC), ¿qué distribución siguen los tiempos de permanencia en cada estado?',
+     ans:'<span class="albl">RESPUESTA</span>Los tiempos de permanencia siguen distribución <strong>exponencial</strong>. Esto es consecuencia directa de la propiedad de Markov: el tiempo restante en el estado actual no depende de cuánto tiempo ya lleva ahí (sin memoria).<br><br>Si la tasa de salida del estado i es qᵢ = −Qᵢᵢ, entonces el tiempo en ese estado ~ Exp(qᵢ).'},
+    {type:'mc', txt:'¿Cuál es la diferencia entre un estado "transitorio" y un estado "recurrente"?',
+     opts:['Transitorio: la cadena lo visita infinitas veces; Recurrente: solo lo visita una vez','Recurrente: la cadena vuelve a él con probabilidad 1; Transitorio: hay probabilidad positiva de no volver nunca','Transitorio: tiene período > 1; Recurrente: tiene período = 1','No hay diferencia real, son sinónimos'],
+     cor:1,
+     expl:'Un estado es <strong>recurrente</strong> si, al salir de él, la probabilidad de volver es exactamente 1 (retorno garantizado). Un estado es <strong>transitorio</strong> si existe probabilidad positiva de que la cadena nunca regrese a ese estado. En cadenas finitas irreducibles, todos los estados son recurrentes.'},
+  ]
+},
+
+// ── FILAS ─────────────────────────────────────────────────────────────────────
+{
+  id:'filas', name:'Filas de Espera', sub:'9 preguntas · M/M/1, Ley de Little, costos',
+  teoria:[
+    { ttl:'Notación de Kendall',
+      items:['Formato: A/B/c/K/N donde A=distribución de llegadas, B=distribución de servicio, c=servidores, K=capacidad máx, N=población',
+             'M = Markoviana (Poisson/Exponencial), D = Determinística, G = General',
+             'En examen casi siempre trabajamos con M/M/1 o M/M/s'],
+      fmls:['M/M/1 = llegadas Poisson / servicio exponencial / 1 servidor (capacidad ∞, población ∞)'],
+      diag:`<svg width="100%" height="82" viewBox="0 0 500 82" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="qa" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#2a2a3c"/></marker></defs>
+<text x="15" y="47" fill="#c8a020" font-size="14" font-family="Fira Code">λ</text><line x1="30" y1="42" x2="75" y2="42" stroke="#2a2a3c" stroke-width="1.5" marker-end="url(#qa)"/>
+<rect x="80" y="27" width="26" height="30" rx="2" fill="#0e0e17" stroke="#2a2a3c" stroke-width="1.2"/>
+<rect x="106" y="27" width="26" height="30" rx="2" fill="#0e0e17" stroke="#2a2a3c" stroke-width="1.2"/>
+<rect x="132" y="27" width="26" height="30" rx="2" fill="#0e0e17" stroke="#2a2a3c" stroke-width="1.2"/>
+<rect x="158" y="27" width="28" height="30" rx="2" fill="rgba(200,160,32,.08)" stroke="#c8a020" stroke-width="1.2"/>
+<text x="172" y="47" text-anchor="middle" fill="#c8a020" font-size="11" font-family="Fira Code">●</text>
+<text x="123" y="72" text-anchor="middle" fill="#484440" font-size="10" font-family="Fira Code">Cola (Lq)</text>
+<line x1="190" y1="42" x2="235" y2="42" stroke="#2a2a3c" stroke-width="1.5" marker-end="url(#qa)"/>
+<rect x="242" y="20" width="58" height="44" rx="5" fill="#0e0e17" stroke="#4d94ff" stroke-width="1.5"/>
+<text x="271" y="47" text-anchor="middle" fill="#4d94ff" font-size="14" font-family="Fira Code">μ</text>
+<text x="271" y="76" text-anchor="middle" fill="#484440" font-size="10" font-family="Fira Code">Servidor</text>
+<line x1="302" y1="42" x2="360" y2="42" stroke="#2a2a3c" stroke-width="1.5" marker-end="url(#qa)"/>
+<text x="115" y="16" text-anchor="middle" fill="#484440" font-size="9" font-family="Fira Code">clientes en cola</text>
+</svg>`
+    },
+    { ttl:'Intensidad de Tráfico ρ',
+      items:['ρ = fracción del tiempo que los servidores están ocupados',
+             'Sistema estable si y solo si ρ < 1',
+             'Con ρ cercano a 1 el sistema puede ser estable pero las colas se hacen muy largas'],
+      fmls:['ρ = λ / (c · μ)   →   ρ < 1 para estabilidad','P₀ = 1 − ρ   (probabilidad de sistema vacío en M/M/1)']
+    },
+    { ttl:'Métricas M/M/1',
+      items:['Lq = clientes promedio esperando en cola (sin ser atendidos)',
+             'Ls = clientes promedio en el sistema (cola + siendo atendidos)',
+             'Wq = tiempo promedio de espera en cola',
+             'Ws = tiempo promedio en el sistema'],
+      fmls:['Lq = ρ² / (1−ρ)     Ls = ρ / (1−ρ)','Wq = ρ / (μ(1−ρ))   Ws = 1 / (μ(1−ρ))']
+    },
+    { ttl:'Ley de Little',
+      items:['Relación fundamental válida para CUALQUIER sistema estacionario',
+             'L = número promedio de clientes en el sistema',
+             'W = tiempo promedio que un cliente pasa en el sistema',
+             'Se aplica también para la cola sola: Lq = λ · Wq'],
+      fmls:['L = λ · W    (y    Lq = λ · Wq)']
+    },
+    { ttl:'Análisis de Costos',
+      items:['El objetivo es minimizar el costo total del sistema',
+             'Costo operacional: aumenta al agregar servidores (costo por servidor)',
+             'Costo de oportunidad: disminuye al agregar servidores (costo por cliente esperando)',
+             'El óptimo está donde la derivada del costo total respecto a c es cero'],
+      fmls:['CT = Co · c + Cw · Lq','Co = costo por servidor   Cw = costo por cliente en cola']
+    }
+  ],
+  tips:[
+    {icon:'🚨', danger:true,  lbl:'Trampa crítica', tx:'ρ < 1 es necesario pero NO suficiente para tener cola pequeña. Con ρ = 0.9 la cola promedio Lq = ρ²/(1−ρ) = 8.1 clientes. El sistema estalla exponencialmente cuando ρ → 1.'},
+    {icon:'⚠', danger:false, lbl:'Conceptual clave', tx:'Estable (ρ < 1) no significa sin cola. Es un proceso estocástico: habrá momentos con cola y momentos sin cola, pero en promedio el sistema no explota.'},
+    {icon:'✓', danger:false, lbl:'Ley de Little', tx:'La Ley de Little (L = λW) se aplica a cualquier sistema estacionario, no solo M/M/1. Es una identidad matemática, no una aproximación.'},
+    {icon:'🚨', danger:true,  lbl:'Primer paso', tx:'Siempre verificar estabilidad (ρ < 1) ANTES de calcular cualquier métrica. Si ρ ≥ 1, las fórmulas de Lq, Ls, etc. no tienen sentido (tienden a infinito).'},
+    {icon:'⚠', danger:false, lbl:'M/M/s', tx:'En sistemas M/M/s con s > 1, calcular P₀ es el paso más complejo. La fórmula involucra una suma de potencias y un término especial para s servidores.'},
+    {icon:'💡', danger:false, lbl:'Optimización', tx:'En análisis de costos: agregar servidores reduce el costo de espera (Cw·Lq) pero aumenta el costo operacional (Co·c). El óptimo está donde la reducción de Cw·Lq no compensa el aumento de Co.'},
+  ],
+  preguntas:[
+    {type:'open', txt:'Un banco tiene λ = 10 clientes/hora y μ = 15 clientes/hora con 1 servidor (M/M/1). ¿Cuántos clientes hay en promedio en el sistema?',
+     ans:'<span class="albl">RESOLUCIÓN</span><strong>Paso 1:</strong> verificar estabilidad. ρ = λ/μ = 10/15 = 2/3 ≈ 0.667 < 1 ✓<br><br><strong>Paso 2:</strong> Ls = ρ/(1−ρ) = (2/3)/(1/3) = <strong>2 clientes</strong> en promedio en el sistema.<br><br>También: Lq = ρ²/(1−ρ) = (4/9)/(1/3) = 4/3 ≈ 1.33 clientes en cola.'},
+    {type:'mc', txt:'¿Qué significa en términos prácticos que ρ = 0.95 en un sistema M/M/1?',
+     opts:['El sistema está al 95% de utilización, hay pocas colas','El sistema está casi saturado: las colas serán muy largas (Lq ≈ 18 clientes)','ρ = 0.95 implica inestabilidad, el sistema colapsará','El servidor está libre el 95% del tiempo'],
+     cor:1,
+     expl:'Con ρ = 0.95: Lq = ρ²/(1−ρ) = 0.9025/0.05 ≈ 18 clientes esperando. El sistema es estable (ρ < 1) pero opera cerca del límite. La curva de Lq vs ρ crece explosivamente cerca de 1. El servidor está ocupado el 95% del tiempo (P₀ = 1 − ρ = 5%).'},
+    {type:'tf', txt:'En un sistema M/M/1 con λ = μ (misma tasa de llegadas que de servicio), el sistema es estable.',
+     cor:false,
+     expl:'<span class="albl wrong">FALSO.</span> Si λ = μ entonces ρ = λ/μ = 1. La condición de estabilidad es ρ < 1 estricto. Con ρ = 1 la cola crece indefinidamente. Las fórmulas Lq = ρ²/(1−ρ) → ∞. El sistema es inestable (en el límite, nunca llega a estado estacionario).'},
+    {type:'mc', txt:'¿Cuál es la diferencia entre Lq y Ls en un sistema de colas?',
+     opts:['Lq incluye a los que están siendo atendidos; Ls solo a los que esperan en cola','Ls incluye a los que esperan en cola Y a los que están siendo atendidos; Lq es solo los que esperan','Son equivalentes en M/M/1','Ls es siempre mayor que Lq en exactamente 1 unidad'],
+     cor:1,
+     expl:'<code>Lq</code> = clientes promedio <em>esperando en la cola</em> (sin ser atendidos).<br><code>Ls</code> = clientes promedio <em>en todo el sistema</em> = en cola + siendo atendidos.<br><br>Relación: Ls = Lq + λ/μ = Lq + ρ. En M/M/1: Ls = ρ/(1−ρ) y Lq = ρ²/(1−ρ), entonces Ls − Lq = ρ (que no siempre es 1).'},
+    {type:'open', txt:'Usando la Ley de Little: en un sistema en estado estacionario hay en promedio L = 5 clientes y la tasa de llegadas es λ = 2 clientes/min. ¿Cuánto tiempo pasa en promedio un cliente en el sistema?',
+     ans:'<span class="albl">RESOLUCIÓN</span>Ley de Little: L = λ · W   →   W = L / λ = 5 / 2 = <strong>2.5 minutos</strong> por cliente en el sistema.<br><br>La Ley de Little es válida para cualquier sistema estacionario, sin importar las distribuciones de llegadas o servicio.'},
+    {type:'open', txt:'¿Por qué conviene modelar llegadas con distribución de Poisson en la mayoría de los sistemas reales?',
+     ans:'<span class="albl">RESPUESTA</span>El proceso de Poisson satisface condiciones que muchos sistemas reales cumplen aproximadamente:<br>① <strong>Estacionariedad:</strong> la tasa λ es constante en el tiempo<br>② <strong>Independencia:</strong> el número de llegadas en intervalos disjuntos es independiente<br>③ <strong>Rareza:</strong> la probabilidad de 2 o más llegadas en un intervalo infinitesimal es despreciable<br><br>Además, el proceso de Poisson está directamente relacionado con cadenas de Markov (es un proceso de nacimiento puro) y su CDF inversa tiene forma cerrada (exponencial).'},
+    {type:'mc', txt:'Se tiene un sistema M/M/2 vs. un sistema M/M/1, ambos con la misma tasa total de servicio (μ_total = c·μ). ¿Cuál tiene menor tiempo de espera en cola?',
+     opts:['M/M/1 tiene menor tiempo de espera porque tiene un solo servidor y es más simple','M/M/2 tiene menor tiempo de espera porque hay dos servidores que pueden atender en paralelo','Son equivalentes si la tasa total de servicio es igual','Depende exclusivamente de ρ'],
+     cor:1,
+     expl:'El sistema <strong>M/M/2</strong> tiene menor tiempo de espera. Con dos servidores en paralelo, cuando llega un cliente hay más probabilidades de que al menos uno esté libre. La flexibilidad de tener dos servidores reduce drásticamente la cola comparado con concentrar toda la capacidad en uno solo. Esto se puede demostrar calculando Lq para ambos sistemas con la misma ρ total.'},
+    {type:'open', txt:'¿Cuándo conviene agregar un segundo servidor desde la perspectiva del análisis de costos?',
+     ans:'<span class="albl">RESPUESTA</span>Conviene agregar un segundo servidor cuando la <strong>reducción en el costo de oportunidad</strong> (clientes esperando menos) supera el <strong>aumento en el costo operacional</strong> (pagar el segundo servidor).<br><br>Matemáticamente: agregar el servidor c+1 conviene si:<br><code>Cw · (Lq(c) − Lq(c+1)) > Co</code><br><br>Es decir, el ahorro en costo de espera al pasar de c a c+1 servidores debe ser mayor que el costo de operar el servidor adicional.'},
+    {type:'mc', txt:'En un sistema M/M/1, Wq = 0. ¿Qué implica esto?',
+     opts:['El sistema está vacío en todo momento','Los clientes nunca esperan en cola (el servidor siempre está libre cuando llega un cliente)','Es imposible que Wq = 0 en M/M/1','Que μ = 0'],
+     cor:1,
+     expl:'Wq = 0 significa que en promedio los clientes no esperan en cola. En M/M/1 esto ocurriría si ρ → 0 (λ << μ, el servidor está casi siempre libre). En la práctica, en un sistema estocástico Wq > 0 siempre que ρ > 0, pero puede ser despreciablemente pequeño. Wq = ρ/(μ(1−ρ)), que solo es exactamente 0 si λ = 0.'},
+  ]
+},
+
+// ── CPM/PERT ──────────────────────────────────────────────────────────────────
+{
+  id:'cpm', name:'Proyectos CPM/PERT', sub:'8 preguntas · Camino crítico, holguras, PERT probabilístico',
+  teoria:[
+    { ttl:'CPM vs PERT',
+      items:['<strong>CPM (Critical Path Method):</strong> tiempos de actividad determinísticos. Útil cuando la duración de cada tarea es conocida con certeza.',
+             '<strong>PERT (Program Evaluation and Review Technique):</strong> tiempos de actividad probabilísticos, modelados con distribución Beta.',
+             'Ambos usan diagramas de red tipo Activity-on-Node (AON) o Activity-on-Arrow (AOA)'],
+      fmls:['CPM: duración d es fija   |   PERT: d ~ Beta(a, m, b)']
+    },
+    { ttl:'Tiempos PERT',
+      items:['a = tiempo optimista (mejor caso)', 'm = tiempo más probable (moda)', 'b = tiempo pesimista (peor caso)',
+             'La distribución Beta aproximada tiene media te y varianza σ²'],
+      fmls:['tₑ = (a + 4m + b) / 6       (tiempo esperado)','σ² = ((b − a) / 6)²          (varianza)']
+    },
+    { ttl:'Forward Pass (Paso Adelante)',
+      items:['Calcula los tiempos más tempranos: Early Start (ES) y Early Finish (EF)',
+             'ES del primer nodo = 0',
+             'EF = ES + duración de la actividad',
+             'ES(j) = máximo de los EF de todas las actividades predecesoras de j'],
+      fmls:['EF = ES + d','ES(j) = max{ EF(i) }   para todos los predecesores i'],
+      diag:`<svg width="100%" height="120" viewBox="0 0 500 120" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <marker id="ca" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#484440"/></marker>
+  <marker id="cc" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#d95f5f"/></marker>
+</defs>
+<circle cx="50" cy="60" r="18" fill="#0e0e17" stroke="#c8a020" stroke-width="1.5"/>
+<text x="50" y="64" text-anchor="middle" fill="#c8a020" font-size="9" font-family="Fira Code">Inicio</text>
+<rect x="120" y="18" width="48" height="32" rx="4" fill="#0e0e17" stroke="#2a2a3c" stroke-width="1.5"/>
+<text x="144" y="39" text-anchor="middle" fill="#ddd8cc" font-size="12" font-family="Source Sans 3,sans-serif">A(5d)</text>
+<rect x="120" y="70" width="48" height="32" rx="4" fill="#0e0e17" stroke="#2a2a3c" stroke-width="1.5"/>
+<text x="144" y="91" text-anchor="middle" fill="#ddd8cc" font-size="12" font-family="Source Sans 3,sans-serif">B(3d)</text>
+<rect x="245" y="18" width="48" height="32" rx="4" fill="#0e0e17" stroke="#d95f5f" stroke-width="1.8"/>
+<text x="269" y="39" text-anchor="middle" fill="#d95f5f" font-size="12" font-family="Source Sans 3,sans-serif">C*(8d)</text>
+<rect x="245" y="70" width="48" height="32" rx="4" fill="#0e0e17" stroke="#2a2a3c" stroke-width="1.5"/>
+<text x="269" y="91" text-anchor="middle" fill="#ddd8cc" font-size="12" font-family="Source Sans 3,sans-serif">D(4d)</text>
+<circle cx="440" cy="60" r="18" fill="#0e0e17" stroke="#c8a020" stroke-width="1.5"/>
+<text x="440" y="64" text-anchor="middle" fill="#c8a020" font-size="9" font-family="Fira Code">Fin</text>
+<line x1="68" y1="52" x2="120" y2="36" stroke="#484440" stroke-width="1.2" marker-end="url(#ca)"/>
+<line x1="68" y1="68" x2="120" y2="78" stroke="#484440" stroke-width="1.2" marker-end="url(#ca)"/>
+<line x1="168" y1="34" x2="245" y2="34" stroke="#d95f5f" stroke-width="1.5" marker-end="url(#cc)"/>
+<line x1="168" y1="86" x2="245" y2="86" stroke="#484440" stroke-width="1.2" marker-end="url(#ca)"/>
+<line x1="293" y1="34" x2="422" y2="53" stroke="#d95f5f" stroke-width="1.5" marker-end="url(#cc)"/>
+<line x1="293" y1="86" x2="422" y2="67" stroke="#484440" stroke-width="1.2" marker-end="url(#ca)"/>
+<text x="210" y="27" text-anchor="middle" fill="#d95f5f" font-size="9" font-family="Fira Code">crítico</text>
+<text x="400" y="108" fill="#887f70" font-size="9" font-family="Fira Code">— rojo = ruta crítica</text>
+</svg>`
+    },
+    { ttl:'Backward Pass (Paso Atrás)',
+      items:['Calcula los tiempos más tardíos: Late Finish (LF) y Late Start (LS)',
+             'LF del último nodo = EF del último nodo (duración total del proyecto)',
+             'LS = LF − duración de la actividad',
+             'LF(i) = mínimo de los LS de todas las actividades sucesoras de i'],
+      fmls:['LS = LF − d','LF(i) = min{ LS(j) }   para todos los sucesores j']
+    },
+    { ttl:'Holgura y Camino Crítico',
+      items:['Holgura (Slack) = tiempo que puede retrasarse sin afectar el proyecto',
+             'Actividad crítica: H = 0 (no puede retrasarse ni un instante)',
+             'Camino crítico: secuencia de actividades críticas, de inicio a fin',
+             'El camino crítico determina la duración mínima del proyecto'],
+      fmls:['H = LS − ES = LF − EF','Crítico ⟺ H = 0']
+    }
+  ],
+  tips:[
+    {icon:'🚨', danger:true,  lbl:'Error clásico', tx:'El camino crítico es el de MAYOR duración, NO el más corto. Es el camino que NO tiene holgura — cualquier retraso en él retrasa todo el proyecto.'},
+    {icon:'⚠', danger:false, lbl:'H = 0 → crítico', tx:'Si una actividad tiene H = 0, es crítica sin excepción. No hay casos en los que H = 0 y la actividad no sea crítica — es una equivalencia exacta.'},
+    {icon:'✓', danger:false, lbl:'PERT probabilístico', tx:'En PERT el tiempo total del proyecto sigue distribución normal (por el Teorema Central del Límite aplicado al camino crítico). Esto permite calcular probabilidades de terminar antes de una fecha.'},
+    {icon:'✓', danger:false, lbl:'Actividades no críticas', tx:'Atrasar una actividad NO crítica dentro de su holgura NO afecta la duración del proyecto. Esto permite reasignar recursos de actividades con holgura a las críticas.'},
+    {icon:'💡', danger:false, lbl:'Dibujar primero', tx:'Siempre dibujar la red ANTES de calcular. Un error de precedencia es muy difícil de detectar en los números — pero es obvio en el grafo.'},
+    {icon:'⚠', danger:false, lbl:'Múltiples caminos críticos', tx:'Si hay más de un camino crítico, todos deben monitorearse con la misma prioridad. Cualquiera de ellos puede retrasar el proyecto.'},
+  ],
+  preguntas:[
+    {type:'mc', txt:'¿Cuál es la fórmula correcta del tiempo esperado en PERT?',
+     opts:['tₑ = (a + m + b) / 3','tₑ = (a + 4m + b) / 6','tₑ = (2a + m + 2b) / 5','tₑ = m   (la moda es el mejor estimador)'],
+     cor:1,
+     expl:'La fórmula PERT es <code>tₑ = (a + 4m + b) / 6</code>, derivada de la aproximación a la distribución Beta. El peso 4 para la moda refleja que el tiempo más probable tiene más influencia que los extremos. La varianza es σ² = ((b−a)/6)².'},
+    {type:'open', txt:'Una actividad tiene ES=3, EF=7, LS=5, LF=9. ¿Es crítica? ¿Cuánta holgura tiene?',
+     ans:'<span class="albl">RESOLUCIÓN</span>Holgura: H = LS − ES = 5 − 3 = <strong>2 días</strong> (verificación: LF − EF = 9 − 7 = 2 ✓)<br><br>Como H = 2 > 0, la actividad <strong>NO es crítica</strong>. Puede retrasarse hasta 2 días sin afectar la duración total del proyecto. Solo las actividades con H = 0 son críticas.'},
+    {type:'tf', txt:'Si el camino crítico tarda 20 días, el proyecto puede terminar en 18 días sin ningún cambio en las actividades.',
+     cor:false,
+     expl:'<span class="albl wrong">FALSO.</span> El camino crítico determina la duración mínima del proyecto. Si tarda 20 días y no se modifica ninguna actividad (acortar duraciones, agregar recursos, cambiar precedencias), el proyecto no puede terminar en menos de 20 días.'},
+    {type:'mc', txt:'¿Cuál es la principal diferencia entre CPM y PERT?',
+     opts:['CPM usa diagramas AON; PERT usa diagramas AOA','CPM usa tiempos determinísticos; PERT usa tiempos probabilísticos con distribución Beta','CPM solo se usa en construcción; PERT en software','CPM calcula holguras; PERT no'],
+     cor:1,
+     expl:'La diferencia fundamental es el tratamiento de la incertidumbre. <code>CPM</code> asume que la duración de cada actividad es conocida con certeza (un solo valor). <code>PERT</code> modela la incertidumbre con 3 estimaciones (a, m, b) y una distribución Beta, lo que permite calcular probabilidades sobre la duración del proyecto.'},
+    {type:'mc', txt:'En una red con 3 caminos posibles de duración 15, 20 y 18 días respectivamente, ¿cuál es el camino crítico?',
+     opts:['El de 15 días (el más corto, por donde van los recursos)','El de 18 días (el del medio)','El de 20 días (el más largo, el que determina la duración del proyecto)','No hay camino crítico único, se debe promediar'],
+     cor:2,
+     expl:'El camino crítico es siempre el de <strong>mayor duración</strong> (20 días). La duración del proyecto no puede ser menor que la del camino más largo. Las actividades en ese camino tienen holgura H = 0 y cualquier retraso en ellas retrasa todo el proyecto.'},
+    {type:'tf', txt:'Si se acelera (crashing) una actividad que no pertenece al camino crítico, se reduce la duración total del proyecto.',
+     cor:false,
+     expl:'<span class="albl wrong">FALSO.</span> Acortar una actividad no crítica no afecta el camino crítico, por lo que la duración del proyecto no cambia. Solo acortar actividades del camino crítico puede reducir la duración del proyecto. (Cuidado: si se acorta mucho una actividad crítica, otro camino puede volverse crítico.)'},
+    {type:'open', txt:'¿Qué implica tener más de un camino crítico en una red de proyectos?',
+     ans:'<span class="albl">RESPUESTA</span>Tener múltiples caminos críticos implica <strong>mayor riesgo de retraso</strong> y la necesidad de monitorear todos ellos con igual prioridad.<br><br>Cualquiera de los caminos críticos puede causar retraso al proyecto si alguna de sus actividades se atrasa. Además, la probabilidad de que alguno de los caminos sufra un retraso es mayor cuando hay más caminos críticos. En PERT, la duración del proyecto tiene mayor incertidumbre.'},
+    {type:'open', txt:'En PERT, ¿cómo se calcula la probabilidad de terminar el proyecto antes de una fecha dada T?',
+     ans:'<span class="albl">RESOLUCIÓN</span><strong>Paso 1:</strong> Calcular tₑ y σ² de cada actividad del camino crítico usando tₑ = (a+4m+b)/6 y σ² = ((b−a)/6)².<br><br><strong>Paso 2:</strong> Sumar los tₑ del camino crítico → μ_proyecto. Sumar las σ² → σ²_proyecto.<br><br><strong>Paso 3:</strong> Por el TCL, la duración del proyecto ~ Normal(μ, σ²).<br><br><strong>Paso 4:</strong> Estandarizar: Z = (T − μ) / σ<br><br><strong>Paso 5:</strong> P(terminar antes de T) = Φ(Z) usando la tabla de la normal estándar.'},
+  ]
+}
+];
+
+// ── STATE ─────────────────────────────────────────────────────────────────────
+const state = {
+  activeTopic: 0,
+  panels: {},       // topicIdx → 'teoria'|'tips'|'preguntas'
+  answered: {},     // topicIdx → Set of question indices
+  examMode: false,
+  timerInterval: null,
+  timerSecs: 3600
+};
+
+TOPICS.forEach((_,i) => {
+  state.panels[i] = 'teoria';
+  state.answered[i] = new Set();
+});
+
+// ── RENDER ────────────────────────────────────────────────────────────────────
+function renderNav() {
+  const nav = document.getElementById('tnav');
+  nav.innerHTML = TOPICS.map((t,i) => `
+    <button class="ttab${i===0?' on':''}" onclick="switchTopic(${i})">
+      <span>${t.name}</span>
+      <span class="bdg" id="bdg-${i}">0/${t.preguntas.length}</span>
+    </button>`).join('');
+}
+
+function renderAll() {
+  const main = document.getElementById('main');
+  main.innerHTML = TOPICS.map((t,i) => renderTopic(t,i)).join('');
+}
+
+function renderTopic(t, i) {
+  return `<div class="tsec${i===0?' on':''}" id="sec-${i}">
+  <div class="thead">
+    <h2>${t.name}</h2>
+    <p>${t.sub}</p>
+  </div>
+  <div class="psw">
+    <button class="pbtn on" data-p="teoria" onclick="switchPanel(${i},'teoria')">Resumen Teórico</button>
+    <button class="pbtn" data-p="tips" onclick="switchPanel(${i},'tips')">Tips de Parcial</button>
+    <button class="pbtn" data-p="preguntas" onclick="switchPanel(${i},'preguntas')">Preguntas (${t.preguntas.length})</button>
+  </div>
+  <div class="panel tpanel on" id="panel-${i}-teoria">${renderTeoria(t)}</div>
+  <div class="panel tipanel" id="panel-${i}-tips">${renderTips(t)}</div>
+  <div class="panel qpanel" id="panel-${i}-preguntas">${renderPreguntas(t,i)}</div>
+</div>`;
+}
+
+function renderTeoria(t) {
+  return `<div class="tgrid">${t.teoria.map(c => `
+  <div class="tcard">
+    <div class="tcard-ttl">${c.ttl}</div>
+    ${c.items ? `<ul>${c.items.map(x=>`<li>${x}</li>`).join('')}</ul>` : ''}
+    ${(c.fmls||[]).map(f=>`<div class="fml blk">${f}</div>`).join('')}
+    ${c.diag ? `<div class="dgram">${c.diag}</div>` : ''}
+  </div>`).join('')}</div>`;
+}
+
+function renderTips(t) {
+  return `<div class="tipgrid">${t.tips.map(tip => `
+  <div class="tipcard${tip.danger?' danger':''}">
+    <div class="tipicon">${tip.icon}</div>
+    <div>
+      <div class="tiplbl">${tip.lbl}</div>
+      <div class="tiptx">${tip.tx}</div>
+    </div>
+  </div>`).join('')}</div>`;
+}
+
+function renderPreguntas(t, ti) {
+  const total = t.preguntas.length;
+  return `
+  <div class="qhdr">
+    <div class="qprog-txt">Respondidas: <span id="qcnt-${ti}">0</span>/${total}</div>
+  </div>
+  <div class="pbar"><div class="pfill" id="pfill-${ti}" style="width:0%"></div></div>
+  <div class="qlist">${t.preguntas.map((q,qi) => renderQ(q,ti,qi)).join('')}</div>`;
+}
+
+function renderQ(q, ti, qi) {
+  const labels = ['A','B','C','D'];
+  let body = '';
+  if (q.type === 'mc') {
+    body = `<div class="opts">${q.opts.map((o,oi)=>`
+      <button class="opt" id="opt-${ti}-${qi}-${oi}" onclick="answerMC(${ti},${qi},${oi})">
+        <span class="oltr">${labels[oi]}</span><span>${o}</span>
+      </button>`).join('')}</div>`;
+  } else if (q.type === 'tf') {
+    body = `<div class="tfrow">
+      <button class="tfbtn" id="tf-${ti}-${qi}-v" onclick="answerTF(${ti},${qi},true)">Verdadero</button>
+      <button class="tfbtn" id="tf-${ti}-${qi}-f" onclick="answerTF(${ti},${qi},false)">Falso</button>
+    </div>`;
+  } else {
+    body = `<button class="revbtn" id="rev-${ti}-${qi}" onclick="toggleReveal(${ti},${qi})">Ver respuesta ↓</button>`;
+  }
+  const typeLabel = q.type==='mc'?'Opción múltiple':q.type==='tf'?'Verdadero / Falso':'Respuesta abierta';
+  return `<div class="qcard" id="qcard-${ti}-${qi}">
+  <div class="qmeta">
+    <span class="qnum">${String(qi+1).padStart(2,'0')}</span>
+    <span class="qtype">${typeLabel}</span>
+  </div>
+  <div class="qtxt">${q.txt}</div>
+  ${body}
+  <div class="expl" id="expl-${ti}-${qi}">${q.expl||q.ans||''}</div>
+</div>`;
+}
+
+// ── INTERACTION ───────────────────────────────────────────────────────────────
+function switchTopic(i) {
+  document.querySelectorAll('.tsec').forEach(s=>s.classList.remove('on'));
+  document.querySelectorAll('.ttab').forEach(b=>b.classList.remove('on'));
+  document.getElementById(`sec-${i}`).classList.add('on');
+  document.querySelectorAll('.ttab')[i].classList.add('on');
+  state.activeTopic = i;
+  // restore panel state
+  const p = state.panels[i];
+  syncPanelUI(i, p);
+  if (state.examMode) switchPanel(i, 'preguntas');
+}
+
+function switchPanel(ti, panel) {
+  state.panels[ti] = panel;
+  syncPanelUI(ti, panel);
+}
+
+function syncPanelUI(ti, panel) {
+  const sec = document.getElementById(`sec-${ti}`);
+  if (!sec) return;
+  sec.querySelectorAll('.pbtn').forEach(b => {
+    b.classList.toggle('on', b.dataset.p === panel);
+  });
+  ['teoria','tips','preguntas'].forEach(p => {
+    const el = document.getElementById(`panel-${ti}-${p}`);
+    if (el) el.classList.toggle('on', p === panel);
+  });
+}
+
+function answerMC(ti, qi, chosen) {
+  const q = TOPICS[ti].preguntas[qi];
+  if (state.answered[ti].has(qi)) return;
+  state.answered[ti].add(qi);
+  const n = q.opts.length;
+  for (let i = 0; i < n; i++) {
+    const btn = document.getElementById(`opt-${ti}-${qi}-${i}`);
+    if (!btn) continue;
+    btn.disabled = true;
+    if (i === q.cor) btn.classList.add('ok');
+    else if (i === chosen) btn.classList.add('no');
+  }
+  showExpl(ti, qi);
+  updateProgress(ti);
+}
+
+function answerTF(ti, qi, answer) {
+  const q = TOPICS[ti].preguntas[qi];
+  if (state.answered[ti].has(qi)) return;
+  state.answered[ti].add(qi);
+  const bV = document.getElementById(`tf-${ti}-${qi}-v`);
+  const bF = document.getElementById(`tf-${ti}-${qi}-f`);
+  if (!bV || !bF) return;
+  bV.disabled = true; bF.disabled = true;
+  const isCorrect = (answer === q.cor);
+  if (answer === true)  bV.classList.add(isCorrect ? 'ok' : 'no');
+  else                  bF.classList.add(isCorrect ? 'ok' : 'no');
+  // highlight correct
+  if (q.cor === true)   bV.classList.add('ok');
+  else                  bF.classList.add('ok');
+  showExpl(ti, qi);
+  updateProgress(ti);
+}
+
+function toggleReveal(ti, qi) {
+  if (state.answered[ti].has(qi)) {
+    // toggle hide/show
+    const expl = document.getElementById(`expl-${ti}-${qi}`);
+    const btn = document.getElementById(`rev-${ti}-${qi}`);
+    if (!expl || !btn) return;
+    const showing = expl.classList.contains('show');
+    expl.classList.toggle('show', !showing);
+    btn.classList.toggle('open', !showing);
+    btn.textContent = showing ? 'Ver respuesta ↓' : 'Ocultar ↑';
+    return;
+  }
+  state.answered[ti].add(qi);
+  showExpl(ti, qi);
+  const btn = document.getElementById(`rev-${ti}-${qi}`);
+  if (btn) { btn.classList.add('open'); btn.textContent = 'Ocultar ↑'; }
+  updateProgress(ti);
+}
+
+function showExpl(ti, qi) {
+  const expl = document.getElementById(`expl-${ti}-${qi}`);
+  const card = document.getElementById(`qcard-${ti}-${qi}`);
+  if (expl) expl.classList.add('show');
+  if (card) card.classList.add('answered');
+}
+
+function updateProgress(ti) {
+  const total = TOPICS[ti].preguntas.length;
+  const done = state.answered[ti].size;
+  const pct = Math.round((done/total)*100);
+  const cnt = document.getElementById(`qcnt-${ti}`);
+  const fill = document.getElementById(`pfill-${ti}`);
+  const bdg = document.getElementById(`bdg-${ti}`);
+  if (cnt) cnt.textContent = done;
+  if (fill) fill.style.width = pct + '%';
+  if (bdg) {
+    bdg.textContent = `${done}/${total}`;
+    bdg.classList.toggle('done', done === total);
+  }
+}
+
+// ── EXAM MODE ─────────────────────────────────────────────────────────────────
+let timerSecs = 3600;
+let timerInterval = null;
+
+document.getElementById('btnex').addEventListener('click', () => {
+  state.examMode = !state.examMode;
+  document.body.classList.toggle('exam', state.examMode);
+  const btn = document.getElementById('btnex');
+  const timerEl = document.getElementById('timer');
+  btn.classList.toggle('on', state.examMode);
+  btn.textContent = state.examMode ? 'Salir del Examen' : 'Modo Examen';
+
+  if (state.examMode) {
+    // switch all visible panels to preguntas
+    TOPICS.forEach((_,i) => switchPanel(i, 'preguntas'));
+    syncPanelUI(state.activeTopic, 'preguntas');
+    timerSecs = 3600;
+    timerEl.style.display = 'block';
+    updateTimerDisplay();
+    timerInterval = setInterval(() => {
+      timerSecs--;
+      updateTimerDisplay();
+      if (timerSecs <= 0) {
+        clearInterval(timerInterval);
+        timerEl.textContent = '¡TIEMPO!';
+      }
+    }, 1000);
+  } else {
+    clearInterval(timerInterval);
+    timerEl.style.display = 'none';
+    // restore panels to teoria
+    TOPICS.forEach((_,i) => {
+      state.panels[i] = 'teoria';
+      syncPanelUI(i, 'teoria');
+    });
+    syncPanelUI(state.activeTopic, 'teoria');
+  }
+});
+
+function updateTimerDisplay() {
+  const el = document.getElementById('timer');
+  const m = Math.floor(timerSecs / 60);
+  const s = timerSecs % 60;
+  el.textContent = `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+  el.classList.toggle('urgent', timerSecs <= 300 && timerSecs > 0);
+}
+
+// ── INIT ──────────────────────────────────────────────────────────────────────
+renderNav();
+renderAll();
+</script>
+</body>
+</html>

@@ -191,3 +191,72 @@ Probabilidad
 - 
 
 
+--------------- 27/05/2026 ---------------
+Caso carrefour
+
+. . . .. . . . . 
+Redes de proyectos 
+CPM
+
+Fti = Fecha temprana del evento i. Minima fecha de ocurrecncia del evento i.
+FTi = Fecha tardía del eventi i. Máxima fecha de ocurrencia del eventi i.
+
+Tarea k: son las flechas en el grafo. Consumen tiempo fijo.
+Dk: tiempo de ejecución requerido por la tarea k.
+
+Condicion de dependencia -> en fecha temprana, un evento "c" no puede concretarse hasta que hayan finalizado las tareas "ac" y "bc"
+
+Redes o grafos: 
+
+El inicioes un evento puntual, del que parten todas las primeras tareas.
+▪El fines un evento puntual al que confluyen todaslas últimas tareas.
+▪Existe precedencia entre tareas, lo que genera comportamiento en serie
+
+Margen independiente: cuanto puede retrasarse o adelantarse el inicio de la tarea sin perjudicar tareas anteriores o posteriores -> MIij = Ftj - FTi - Dij
+
+Margen total: cuanto puede retrarase una tarea sin retrasar la totalidad del proyecto. Puede impactar en otras tareas -> MTij = FTj -Fti - Dij
+Tarea crítica: cuando el marten total = 0 ; es decir, el retraso de esta tarea compromete el proyecto.
+
+Margen libre: cuanto puede retrasarse una tarea sin afectar el comienzo de las posteriores
+
+METODO DEL CAMINO CRÍTICO
+Es un algoritmo de optimización de redes en donde una grafo representa las tareas de un proyecto y sus relaciones.
+El objetivo es encontrar el conjunto de tareas críticas.
+
+Supuestos del cpm:
+- El inicio es un evento puntual, del que parten las primeras tareas
+- El fin es un evento puntual, al que llegan las últimas tareas
+- Existe precedencia entre tareas, lo que genera comportamiento en serie.
+- La criticidad de cada tarea depende de la precedencia y la configuracion de tiempos.
+
+Procedimiento general
+1. Crear grafo del proyecto. Matriz de incidencia.
+2. Calcular fechas tempranas
+3. Calcular fechas tardias
+4. Calcular metricas, especialmente margen total
+5. Determinar tareas criticas
+
+Matriz de incidencia-> indica la relación entre los nodos y los arcos, o tareas y eventos del proyecto. Es una matriznodo-arco.
+Matriz de adyacencia -> indica la relacion de adyacencia. Es una matriz nodo-nodo
+
+
+2. Calculo de fechas tempranas
+La fecha de inicio siempre es 0. Se calcula en orden desde el inicio al final. 
+
+
+Tareas ficticias: 
+- Son tareas que surgen de la representacion del grafo de proyecto y no de la realidad
+- Son consecuancia de representar las tareas como flechas
+- Necesarias para respetar la precedencia en determinadas situaciones puntuales
+- Tienen duración nula, no impacta directamente en la finalización del proyecto
+- El camino crítico puede pasar por la tarea ficticia.
+
+Calendarios de redes de proyectos:
+El calendario se calcula luego de obtener los margenes y camino crítico.
+Las tareas críticas no tienen un margen de movimiento, ya que retrasarían todo el proyecto.
+Las tareas no críticas pueden comenzar entre 2 fechas ->
+ - Primera fecha de comienzo
+ - última fecha de comienzo
+
+Calendarias de fechas tempranas -> Todas las tareas son ejecutadas a primera fecha de comienzo. Se prefiere desde un punto de vista de riesgo de ejecución. Es mas conservador.
+Calendario de fechas tardías -> Todas las tareas son ejecutadas a última fecha de comienzo. Se prefiere desde un punto de vista financiero, permitiendo el desembolso de capital al final del periodo.
