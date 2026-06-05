@@ -1,0 +1,889 @@
+
+
+
+
+
+
+
+UNIVERSIDAD TECNOLÓGICA NACIONAL
+FACULTAD REGIONAL BUENOS AIRES
+DEPARTAMENTO DE INGENIERÍA INDUSTRIAL
+ASIGNATURA
+CÓDIGO
+CICLO LECTIVO
+Manejo de Materiales y Distribución de Plantas
+
+
+2026
+ESTUDIANTES
+NOMBRE Y APELLIDO
+Greco, Santiago
+LEGAJO
+1779801
+NOMBRE Y APELLIDO
+De Conto, Franco
+LEGAJO
+2094277
+NOMBRE Y APELLIDO
+Echagüe, Ricardo Martín
+LEGAJO
+2093870
+NOMBRE Y APELLIDO
+Diaz, Maria Belen
+LEGAJO
+1636571
+
+
+CURSO
+AÑO
+GRUPO
+I 5054
+5to
+[N°545]
+DOCENTES
+PROFESOR
+Ing. Gustavo Grimolizzi
+AYUDANTE T.P.
+Ing. Pablo Lassave
+FIRMA DEL RESPONSABLE
+FIRMA DEL JTP, ATP
+
+
+NOTA
+
+
+
+ENTREGA
+Fecha ENTREGA
+Fecha VISADO
+FECHAS DESTACADAS
+1ra
+
+
+
+
+
+
+
+
+
+
+
+
+FECHA DE INICIO
+2da
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3ra
+
+
+
+
+
+
+
+
+
+
+
+
+FECHA DE FINALIZACIÓN
+4ta
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Índice
+1. Objetivo y alcance del informe	3
+1.1 Objetivo	3
+1.2 Alcance	3
+2. Recolección de datos y bases de cálculo	5
+2.1 Inversión en activo fijo	5
+2.2 Amortizaciones	5
+2.3 Precio de venta y estructura de costos	6
+2.4 Activo de trabajo	7
+3. Análisis de factores cuantitativos	8
+3.1 Costo de transporte de MP	8
+3.2 Costo de transporte de producto terminado	8
+3.3 Plan de ventas	9
+3.4 Flujo de fondos proyectado	9
+3.5 Indicadores financieros. VAN y TIR	11
+4. Análisis de factores cualitativos	13
+4.1 Disponibilidad de mano de obra calificada	13
+4.2 Relevancia de la gestión ambiental in situ	18
+5. Modelo de Ponderación de Factores	22
+5.1 Factores y pesos	22
+5.2 Criterio de normalización	22
+5.3 Matriz de ponderación de factores	22
+6. Conclusiones y recomendaciones	25
+6.1 Conclusiones	25
+6.2 Recomendaciones	25
+
+ESTUDIO DE LOCALIZACIÓN DE PLANTA PARA FABRICACIÓN DE CUCHARAS DE COLADA
+1. Objetivo y alcance del informe
+1.1 Objetivo
+El presente informe técnico tiene como objetivo determinar la ubicación óptima para la radicación de una nueva planta industrial destinada a la fabricación de cucharas de colada para acerías. Para ello, se aplica una metodología de evaluación multicriterio —el Modelo de Ponderación de Factores— que integra variables cuantitativas y cualitativas, permitiendo una comparación sistemática y objetiva de las alternativas de localización.
+1.2 Alcance
+El estudio abarca los siguientes aspectos:
+Horizonte de planeamiento: 5 años, considerando un incremento progresivo de la capacidad productiva.
+Alternativas de localización evaluadas:
+San Nicolás (Provincia de Buenos Aires)
+Alberdi (Provincia de Córdoba)
+San Luis Capital (Provincia de San Luis)
+Clientes contemplados en la demanda proyectada:
+METCON (San Nicolás)
+ACEROS ZAPLA (San Salvador de Jujuy)
+ACERBRAG (Bragado)
+Composición del modelo de evaluación: 90% factores cuantitativos y 10% factores cualitativos.
+Tasa de descuento aplicada: 9% para el cálculo del Valor Actual Neto (VAN).
+Régimen impositivo: tasa del 25% sobre la utilidad antes de impuestos (EBT), con compensación de quebrantos fiscales en ejercicios subsiguientes. Para San Luis se contempla un crédito fiscal equivalente al 3% de la inversión original por 10 años.
+
+El informe no incluye el análisis de ingeniería de detalle del proceso productivo, ni estudios de impacto ambiental específicos. Su foco se circunscribe a la decisión de localización dentro del marco de la asignatura Manejo de Materiales y Distribución de Plantas.
+
+
+2. Recolección de datos y bases de cálculo
+Se presentan los datos recopilados y las hipótesis adoptadas para la formulación económico-financiera del proyecto en cada una de las tres alternativas de localización. Los datos provienen de relevamientos de mercado, consultas a fuentes oficiales y estimaciones técnicas del equipo de trabajo.
+2.1 Inversión en activo fijo
+El emplazamiento requiere un predio mínimo de 5.000 m². El costo del terreno varía significativamente entre las tres locaciones, mientras que la inversión en nave industrial y equipamiento se mantiene constante.
+
+INVERSIÓN EN AF
+SAN NICOLÁS
+ALBERDI
+SAN LUIS
+Costo terreno [USD/m2]
+166
+40
+1,81
+Superficie terreno [m2]
+5.000
+5.000
+5.000
+Inversión en terreno [USD]
+830.000
+200.000
+9.050
+Inversión nave industrial [USD]
+2.062.500
+2.062.500
+2.062.500
+Inversión equipos [USD]
+687.500
+687.500
+687.500
+TOTAL AF [USD]
+3.580.000
+2.950.000
+2.759.050
+
+
+San Luis presenta la inversión total más baja, un 22,9% inferior a San Nicolás, debido fundamentalmente al costo casi marginal del terreno (1,81 USD/m² frente a 166 USD/m²).
+
+2.2 Amortizaciones
+Los activos se amortizan linealmente según las siguientes vidas útiles: terreno y nave industrial en 10 años, equipos en 5 años.
+
+AMORTIZACIONES
+SAN NICOLÁS
+ALBERDI
+SAN LUIS
+Vida útil terreno [años]
+10
+10
+10
+Vida útil nave industrial [años]
+10
+10
+10
+Vida útil equipos [años]
+5
+5
+5
+Amortiz. anual terreno [USD/año]
+83.000
+20.000
+905
+Amortiz. anual nave industrial [USD/año]
+206.250
+206.250
+206.250
+Amortiz. anual equipos [USD/año]
+137.500
+137.500
+137.500
+TOTAL AMORTIZACIÓN ANUAL [USD/año]
+426.750
+363.750
+344.655
+
+
+La diferencia en amortización anual entre San Nicolás y San Luis es de 82.095 USD/año, atribuible íntegramente a la diferencia en el valor del terreno.
+2.3 Precio de venta y estructura de costos
+El costo de producción por unidad se estima en 840.000 USD, uniforme para las tres locaciones, con un margen bruto objetivo del 19%. Al costo de producción se adicionan los costos de transporte de materia prima y de producto terminado, que sí varían por locación.
+
+PRECIO DE VENTA
+SAN NICOLÁS
+ALBERDI
+SAN LUIS
+Costo de producción por cuchara [USD]
+840.000
+840.000
+840.000
+Margen bruto [%]
+19%
+19%
+19%
+Costo transporte MP por cuchara [USD]
+25.812
+56.280
+65.088
+Costo transporte PT prom. pond. por cuchara [USD]
+4.110
+7.863
+18.021
+Costo total por cuchara [USD]
+869.922
+904.143
+923.109
+PRECIO DE VENTA [USD/cuchara]
+1.073.978
+1.116.226
+1.139.641
+
+
+Dado que existe un único precio de mercado para el producto, se adopta un precio de venta promedio de 1.109.949 USD/cuchara, calculado como promedio de los precios resultantes de cada alternativa. Este criterio garantiza la comparabilidad entre locaciones sobre una base de ingresos uniforme.
+2.4 Activo de trabajo
+Se contempla una inversión en activo de trabajo correspondiente a un mes de costos operativos variables del Año 1, representando el capital mínimo inmovilizado antes del primer cobro.
+
+ACTIVO DE TRABAJO
+SAN NICOLÁS
+ALBERDI
+SAN LUIS
+Inversión AT [USD]
+72.169
+75.354
+76.890
+
+
+Este capital se recupera íntegramente al final del horizonte de evaluación (Año 5).
+
+3. Análisis de factores cuantitativos
+3.1 Costo de transporte de MP
+Para la fabricación de cada cuchara se requieren 6 semirremolques de materia prima provenientes del AMBA. Los costos unitarios de flete y las distancias varían según la locación.
+
+TRANSPORTE DE MP
+SAN NICOLÁS
+ALBERDI
+SAN LUIS
+Costo MP [USD/km]
+18
+14
+12
+Distancia al proveedor (AMBA) [km]
+239
+670
+904
+Semis por cuchara
+6
+6
+6
+Costo transporte MP por cuchara [USD]
+25.812
+56.280
+65.088
+
+
+San Nicolás presenta una ventaja sustancial en transporte de MP: su costo unitario es un 54,1% inferior al de Alberdi y un 60,3% inferior al de San Luis. A lo largo de las 28 unidades del horizonte de 5 años, el costo acumulado de transporte de MP asciende a:
+San Nicolás: 722.736 USD
+Alberdi: 1.575.840 USD
+San Luis: 1.822.464 USD
+3.2 Costo de transporte de producto terminado
+El producto terminado se despacha mediante carretón deprimido específico (1 unidad por envío). Los costos varían según el cliente destino, la distancia y la tarifa por kilómetro.
+
+TRANSPORTE DE PT
+SAN NICOLÁS
+ALBERDI
+SAN LUIS
+Cliente
+Costo/km [USD]
+Dist. [km]
+Costo/cuchara [USD]
+Costo/km [USD]
+Dist. [km]
+Costo/cuchara [USD]
+Costo/km [USD]
+Dist. [km]
+Costo/cuchara [USD]
+Metcon (San Nicolás)
+22
+10
+220
+22
+362
+7.964
+24
+733
+17.592
+Zapla (Jujuy)
+14
+254
+3.556
+12
+508
+6.096
+24
+727
+17.448
+Acerbrag (Bragado)
+18
+1.288
+23.184
+16
+906
+14.496
+18
+1.232
+22.176
+
+
+San Nicolás goza de una ventaja logística decisiva para Metcon (apenas 10 km) y Zapla, aunque presenta el mayor costo para Acerbrag. Alberdi ofrece la mejor posición respecto de Acerbrag (14.496 USD) al estar a menor distancia (906 km vs. 1.288 km de San Nicolás).
+3.3 Plan de ventas
+La demanda proyectada contempla una incorporación gradual de clientes, comenzando por el cliente ancla Metcon en el Año 1, Zapla a partir del Año 2 y Acerbrag a partir del Año 4.
+
+VENTAS [unidades] 
+Unidades vendidas por cliente y año
+Cliente
+
+
+Año 1
+Año 2
+Año 3
+Año 4
+Año 5
+TOTAL
+Metcon
+0
+1
+3
+3
+3
+3
+13
+Zapla
+0
+0
+3
+3
+0
+6
+12
+Acerbrag
+0
+0
+0
+0
+2
+1
+3
+TOTAL
+0
+1
+6
+6
+5
+10
+28
+
+
+El programa de ventas es idéntico para las tres locaciones, totalizando 28 cucharas en el horizonte de planeamiento.
+3.4 Flujo de fondos proyectado
+Se presenta a continuación el flujo de fondos para cada alternativa de localización, incluyendo egresos (inversión en activo fijo, activo de trabajo, impuestos), ingresos (ventas, valor residual del activo fijo y recupero del activo de trabajo), costos operativos y resultado económico.
+3.4.2 Formulación del proyecto - San Nicolás
+Inversión total: 3.652.169 USD (AF: 3.580.000 + AT: 72.169)
+Amortización anual: 426.750 USD
+Formulación del proyecto - San Nicolás
+Año
+Activo Fijo
+Activo de Trabajo
+Impuestos
+Total Egresos
+Utilidad A/ Impuestos
+Amortizaciones
+Total Ingresos
+Saldo Anual
+Saldo Acumulado
+Año 0
+3.580.000
+72.169
+-
+3.652.169
+-
+-
+-
+(3.652.169)
+(3.652.169)
+Año 1
+-
+-
+-
+-
+(182.833)
+426.750
+243.917
+243.917
+(3.408.252)
+Año 2
+-
+-
+256.685
+256.685
+1.026.741
+426.750
+1.453.491
+1.196.806
+(2.211.447)
+Año 3
+-
+-
+256.685
+256.685
+1.026.741
+426.750
+1.453.491
+1.196.806
+(1.014.641)
+Año 4
+-
+-
+186.726
+186.726
+746.905
+426.750
+1.173.655
+986.928
+(27.713)
+Año 5
+(1.446.250)
+(72.169)
+492.359
+(1.026.060)
+1.969.435
+426.750
+2.396.185
+3.422.245
+3.394.533
+TOTAL
+2.133.750
+-
+1.192.455
+3.326.205
+4.586.988
+2.133.750
+6.720.738
+3.394.533
+3.394.533
+
+
+Beneficio neto acumulado: 3.394.533 USD. El saldo acumulado se torna positivo recién en el Año 5, indicando un período de recupero cercano a los 4 años.
+3.4.2 Formulación del proyecto - Alberdi
+Inversión total: 3.025.354 USD (AF: 2.950.000 + AT: 75.354)
+Amortización anual: 363.750 USD
+
+Formulación del proyecto - Alberdi
+Año
+Activo Fijo
+Activo de Trabajo
+Impuestos
+Total Egresos
+Utilidad A/ Impuestos
+Amortizaciones
+Total Ingresos
+Saldo Anual
+Saldo Acumulado
+Año 0
+2.950.000
+75.354
+-
+3.025.354
+-
+-
+-
+(3.025.354)
+(3.025.354)
+Año 1
+-
+-
+-
+-
+(158.045)
+363.750
+205.705
+205.705
+(2.819.649)
+Año 2
+-
+-
+219.020
+219.020
+876.081
+363.750
+1.239.831
+1.020.811
+(1.798.839)
+Año 3
+-
+-
+219.020
+219.020
+876.081
+363.750
+1.239.831
+1.020.811
+(778.028)
+Año 4
+-
+-
+162.927
+162.927
+651.709
+363.750
+1.015.459
+852.531
+74.503
+Año 5
+(1.131.250)
+(75.354)
+424.493
+(782.111)
+1.697.971
+363.750
+2.061.721
+2.843.832
+2.918.336
+TOTAL
+1.818.750
+-
+1.025.460
+2.844.210
+3.943.796
+1.818.750
+5.762.546
+2.918.336
+2.918.336
+
+
+Beneficio neto acumulado: 2.918.336 USD. El saldo acumulado se torna positivo en el Año 4, un período de recupero ligeramente más corto que San Nicolás, explicado por la menor inversión inicial.
+3.4.3 Formulación del proyecto - San Luis
+Inversión total: 2.835.940 USD (AF: 2.759.050 + AT: 76.890)
+Amortización anual: 344.655 USD
+Crédito fiscal anual: 82.772 USD (3% × 2.759.050 USD)
+Formulación del proyecto - San Luis
+Año
+Activo Fijo
+Activo de Trabajo
+Impuestos
+Total Egresos
+Utilidad A/ Impuestos
+Amortizaciones
+Total Ingresos
+Saldo Anual
+Saldo Acumulado
+Año 0
+2.759.050
+76.890
+-
+2.835.940
+-
+-
+-
+(2.835.940)
+(2.835.940)
+Año 1
+-
+-
+-
+-
+(157.386)
+344.655
+187.269
+187.269
+(2.648.671)
+Año 2
+-
+-
+112.076
+112.076
+779.388
+344.655
+1.124.043
+1.011.968
+(1.636.704)
+Año 3
+-
+-
+112.076
+112.076
+779.388
+344.655
+1.124.043
+1.011.968
+(624.736)
+Año 4
+-
+-
+62.858
+62.858
+582.520
+344.655
+927.175
+864.316
+239.580
+Año 5
+(1.035.775)
+(76.890)
+298.306
+(814.359)
+1.524.310
+344.655
+1.868.965
+2.683.324
+2.922.904
+TOTAL
+1.723.275
+-
+585.315
+2.308.590
+3.508.219
+1.723.275
+5.231.494
+2.922.904
+2.922.904
+
+
+Beneficio neto acumulado: 2.922.904 USD. Gracias al crédito fiscal provincial, San Luis logra la menor carga impositiva acumulada (585.315 USD frente a 1.192.455 USD de San Nicolás). El saldo acumulado se torna positivo en el Año 4, similar a Alberdi.
+
+3.5 Indicadores financieros. VAN y TIR
+Resumen de indicadores financieros:
+
+
+SAN NICOLÁS
+ALBERDI
+SAN LUIS
+VAN ( 9%) [USD]
+1.308.696
+1.158.776
+1.215.893
+TIR [%]
+19,3%
+20,0%
+21,2%
+Beneficio neto [USD]
+3.394.533
+2.918.336
+2.922.904
+
+
+Las tres alternativas presentan VAN positivo a la tasa del 9%, lo cual indica la viabilidad económica del proyecto independientemente de la locación seleccionada. San Nicolás presenta el mayor VAN y el mayor beneficio neto acumulado, aunque la menor TIR (19,3%). San Luis exhibe la mayor TIR (21,2%), reflejo de su menor inversión inicial y su ventaja fiscal, mientras que Alberdi presenta valores intermedios.
+
+4. Análisis de factores cualitativos
+4.1 Disponibilidad de mano de obra calificada (peso 0.05)
+4.1.1 M.O calificada en San Nicolás (Provincia de Buenos Aires) - Calificación 9/10
+La ciudad de San Nicolás de los Arroyos, estratégicamente ubicada en el corredor industrial del norte de la Provincia de Buenos Aires, constituye el epicentro histórico y actual de la siderurgia pesada en Argentina. Apalancada por la presencia de la planta integrada más grande del país, la ex-SOMISA, actualmente operada por el Grupo Ternium, la región ha consolidado un ecosistema metalmecánico intrínsecamente ligado a la industria base. En esta área y su zona de influencia, incluyendo el Parque Industrial COMIRSA (compartido con el partido de Ramallo), operan decenas de empresas contratistas, talleres metalmecánicos de gran envergadura y establecimientos de servicios industriales, como Punto Metal San Nicolás SRL, enfocados en el montaje, la calderería pesada y el mantenimiento preventivo de altos hornos y acerías. Esta concentración asegura la existencia de una masa crítica de trabajadores que conviven diariamente con las exigencias del tonelaje extremo y la cultura de seguridad de la manufactura pesada.
+En el ámbito de la formación técnica y la provisión de nuevos talentos, San Nicolás ostenta una infraestructura educativa robusta, directamente moldeada por las necesidades de su entorno industrial. El Instituto Tecnológico Rafael de Aguiar (ITEC), una institución de referencia regional impulsada por el entramado corporativo local, ofrece programas de formación y capacitación continua, incluyendo cursos específicos de soldadura industrial con duraciones que alcanzan las 96 horas cátedra. Esta formación es complementada por iniciativas institucionales como los talleres de soldadura impulsados por el Consorcio de Gestión del Puerto de San Nicolás, los cuales buscan certificar habilidades, reducir riesgos laborales y mejorar la eficiencia en operaciones de mantenimiento de equipos pesados de estiba y transporte. En lo que respecta a la formación en Ensayos No Destructivos, si bien los entes rectores como la Asociación Argentina de Ensayos No Destructivos y Estructurales (AAENDE) centralizan gran parte de la matriculación nacional , la zona cuenta con una densa red de empresas proveedoras de servicios END, tales como ENDITEC S.A., radicada en la vecina localidad de Campana, que proveen personal certificado para la inspección ultrasónica y radiográfica de tuberías y componentes estructurales críticos.
+El perfil de mano de obra predominante en San Nicolás es de una naturaleza excepcional para los fines de este proyecto: manufactura pesada, siderúrgica y metalúrgica de gran escala. Los trabajadores de esta zona poseen una destreza tácita en el manejo de grúas puente de alto tonelaje, operaciones de corte por plasma CNC de chapas gruesas, y soldadura multipasada. Por lo tanto, reclutar soldadores homologados (AWS/IRAM) y técnicos radiógrafos o de ultrasonido resulta un proceso de menor fricción técnica comparado con el resto del país. Sin embargo, la dificultad real no radica en la inexistencia del talento, sino en la feroz competencia para captarlo y retenerlo. Las grandes corporaciones y sus contratistas principales establecen pisos salariales elevados y absorben rápidamente a los operarios más experimentados, lo que requerirá que la nueva planta ofrezca paquetes de compensación altamente competitivos para asegurar la lealtad de su plantilla técnica.
+Desde la perspectiva del mercado laboral macroeconómico, los informes recientes del INDEC arrojan luz sobre la disponibilidad efectiva de trabajadores. Durante el tercer trimestre de 2024, el aglomerado urbano San Nicolás-Villa Constitución registró una tasa de desocupación del 7,2%, afectando a aproximadamente 6.000 personas de una Población Económicamente Activa (PEA) de 84.000 individuos. Este registro evidenció un crecimiento de 0,7 puntos porcentuales respecto al trimestre anterior y se situó levemente por encima de la media nacional del 6,9% para ese mismo período. A nivel interanual, la desocupación en la zona aumentó desde el 6,4% observado en 2023. De particular relevancia para el reclutamiento industrial es la tasa de subocupación demandante, que alcanzó el 5,4% (unas 5.000 personas), junto con un contingente de 10.000 personas ocupadas que se encuentran en búsqueda activa de un nuevo o segundo empleo. Esta presión sobre el mercado de trabajo implica que existe un volumen considerable de operarios técnicos con experiencia que, frente a una propuesta laboral estable en una planta de fabricación de equipos pesados de primera línea, estarían dispuestos a movilizarse, mitigando la barrera de la competencia salarial extrema.
+4.1.2 M.O calificada en Alberdi (Provincia de Córdoba) - Calificación 6/10
+La ciudad de Córdoba y su área metropolitana conforman el segundo polo industrial más importante de la Argentina. La provincia se caracteriza por una agresiva política de aglomeración productiva, evidenciada por la existencia de más de 60 parques industriales aprobados. Históricamente, la región del barrio Alberdi y zonas adyacentes han concentrado una gran cantidad de establecimientos industriales de variada escala. La industria metalmecánica cordobesa es masiva, provee empleo a decenas de miles de trabajadores a través de talleres de mecanizado, plantas de inyección de aluminio, y ensambladoras de bienes de capital.
+En el plano de la infraestructura educativa, la capital cordobesa exhibe una red de formación técnica de excelencia. A nivel medio, instituciones como el I.P.E.M. N° 250 "Dr. Juan Bialet Massé", con orientación en automotores y electrónica, y el I.P.E.M. N° 24 en Malvinas Argentinas, enfocado en construcciones y especialidades técnicas, aseguran un flujo continuo de jóvenes con alfabetización técnica básica. A nivel superior, la presencia de la Universidad Tecnológica Nacional y la Universidad Nacional de Córdoba provee los mandos gerenciales y de ingeniería necesarios. En el ámbito específico de los Ensayos No Destructivos, Córdoba cuenta con laboratorios universitarios y filiales de la AAENDE que dictan cursos de líquidos penetrantes, radiografía y ultrasonido. Además, la presencia de la industria aeroespacial (FAdeA) y plantas automotrices tracciona una demanda constante de técnicos END certificados, lo que garantiza la existencia de profesionales capaces de operar equipos de ultrasonido avanzado.
+No obstante, el análisis cualitativo del perfil de la mano de obra predominante revela un obstáculo estructural para la fabricación de cucharas de colada. El trabajador metalúrgico cordobés promedio está profundamente inmerso en la cultura de la manufactura liviana a mediana, la industria automotriz, la fabricación de autopartes, y la maquinaria agroindustrial. La soldadura característica de estos sectores opera sobre chapa fina o estructuras tubulares de espesores delgados a medios, utilizando predominantemente procesos semiautomáticos (MIG/MAG - GMAW) que priorizan la velocidad de producción y la estética del cordón, más no la penetración profunda ni el manejo de las enormes tensiones residuales. El comportamiento térmico del acero de alto espesor y la necesidad de precalentamiento y tratamiento térmico post-soldadura (PWHT) son variables ajenas al operario automotriz estándar.
+En consecuencia, el reclutamiento de soldadores homologados bajo normas estructurales severas (AWS D1.1 para espesores ilimitados) será significativamente difícil en su fase inicial. La corporación deberá implementar una estrategia de reskilling (reconversión de habilidades), invirtiendo capital y tiempo en entrenar a soldadores de procesos MIG/MAG para que alcancen la pericia táctil y teórica necesaria en procesos de arco sumergido o alambre tubular (FCAW). Por el contrario, la contratación de técnicos de END Nivel II en ultrasonido será relativamente accesible gracias a la herencia de la industria aeronáutica y automotriz, aunque la inspección radiográfica de componentes masivos de fundición y soldadura pesada requerirá adaptación a las densidades del acero siderúrgico.
+En términos de disponibilidad laboral reciente, los informes del INDEC para el total de los 31 aglomerados urbanos, de los cuales el Gran Córdoba es un componente principal, situaron la desocupación nacional en un 7,7% en el primer trimestre de 2024 , descendiendo levemente al 6,9% para el tercer trimestre de 2024, con una PEA total de más de 14,3 millones de personas a nivel nacional. Históricamente, el aglomerado del Gran Córdoba mantiene tasas de desempleo ligeramente por encima de la media nacional, lo que se traduce en una vasta reserva de mano de obra. Los ciclos económicos de la industria automotriz y agropecuaria a menudo liberan operarios calificados durante las contracciones, lo que proporciona una excelente oportunidad para que una nueva industria de manufactura pesada absorba personal con ética de trabajo industrial, siempre y cuando asuma el costo de la nivelación técnica.
+4.1.3 M.O calificada en San Luis Capital (Provincia de San Luis) - Calificación 4/10
+La Provincia de San Luis ha transitado un proceso de transformación productiva en las últimas décadas, traccionado inicialmente por regímenes de promoción industrial que permitieron diversificar su economía. En la actualidad, las actividades secundarias concentran el 47,8% del PBI provincial, consolidando a San Luis como un polo manufacturero relevante. El estado cuenta con una sólida infraestructura para la radicación de empresas, con parques industriales modernos en la zona metropolitana de la capital, como el Millennium Industrial Park, el Parque Industrial WTC y el Parque Industrial Fundidores. Sin embargo, la matriz empresarial metalúrgica de la provincia, aunque activa, representa una fracción menor en comparación con los gigantes de Buenos Aires o Córdoba, con directorios que evidencian una mixtura de empresas textiles, plásticas, alimenticias y metalúrgicas de escala pyme.
+Para sostener este desarrollo, San Luis ha invertido estratégicamente en la formación de mandos medios y técnicos. Destaca el Instituto Superior de Tecnicaturas (INSUTEC), el cual dicta la Tecnicatura Superior en Metalmecánica. Esta carrera, de carácter público y gratuito, posee una currícula fuertemente anclada en la práctica, formando técnicos en diseño, cálculo, fabricación y gestión industrial, con competencias en dibujo, mecánica y soldadura. Los egresados de INSUTEC están diseñados para nutrir a la industria local, y la institución mantiene una estrecha vinculación con el sector productivo. Paralelamente, la Universidad Nacional de San Luis (UNSL), a través de su Facultad de Ingeniería y Ciencias Agropecuarias, impulsa talleres de extensión y actividades formativas en ensayos destructivos y no destructivos, acercando equipos y tecnologías a estudiantes de escuelas técnicas que carecen de laboratorios propios. La presencia de profesionales independientes certificados como Nivel III en END que brindan capacitación y asesoramiento en la región también suma al fortalecimiento de este nicho.
+A pesar de estos esfuerzos educativos, el perfil de la mano de obra disponible en San Luis Capital diverge drásticamente de los requerimientos de la manufactura de cucharas de colada. Predomina la manufactura de bienes de consumo masivo, la industria plástica, el embalaje, los electrodomésticos y una metalmecánica orientada al soporte logístico y estructural liviano. La provincia carece de una tradición histórica en la forja, fundición pesada, y calderería de equipos siderúrgicos masivos.
+Debido a esta matriz productiva, la dificultad para reclutar localmente soldadores homologados en soldadura pesada y técnicos de radiografía industrial experimentados en altos espesores será extrema. La oferta de talento con experiencia comprobable en cordones de penetración completa en acero al carbono de 50mm es prácticamente nula. Si se opta por esta locación, la empresa estará obligada a implementar una de dos estrategias: la relocalización de personal clave desde polos industriales maduros (Mendoza, Córdoba, Buenos Aires o Santa Fe), asumiendo los elevados costos de desarraigo, vivienda y bonos de retención; o la contratación de los técnicos recién egresados de INSUTEC, asumiendo una prolongada e ineficiente curva de aprendizaje in situ que retrasará la productividad nominal de la planta.
+En cuanto a las métricas del mercado laboral, la desocupación en San Luis tiende a fluctuar en rangos similares o levemente inferiores al promedio nacional del 6,9% al 7,7% registrado a lo largo de 2024. Existe una disponibilidad general de operarios con formación básica, pero el desafío subyace en la hiperespecialización. Si bien el gobierno provincial apoya activamente la generación de empleo industrial, la fricción técnica para arrancar una operación de manufactura pesada en este entorno representa el mayor riesgo operativo del proyecto desde la perspectiva de recursos humanos.
+4.2 Relevancia de la gestión ambiental in situ (peso 0.05)
+4.2.1 Gestión ambiental en San Nicolás (Provincia de Buenos Aires) - Calificación 5/10
+El marco legal ambiental de la Provincia de Buenos Aires es históricamente uno de los más densos, estrictos y burocratizados de la Argentina. Administrado anteriormente por el Organismo Provincial para el Desarrollo Sostenible (OPDS) y actualmente bajo la órbita del Ministerio de Ambiente provincial, el sistema exige que todo establecimiento industrial obtenga el Certificado de Aptitud Ambiental (CAA) como condición sine qua non para operar. El proceso de Evaluación de Impacto Ambiental clasifica a las industrias según su Nivel de Complejidad Ambiental (NCA). Debido al uso intensivo de energía, la manipulación de residuos especiales (refractarios) y el empleo de radiaciones ionizantes para ensayos no destructivos, la planta de cucharas de colada será categorizada indudablemente como de Tercera Categoría o "Con Relevante Efecto" (CRE). Según la normativa homologada en el territorio bonaerense y de CABA, los CAA para proyectos clasificados como CRE poseen una vigencia limitada de 4 años, mientras que aquellos "Sin Relevante Efecto" (SRE) gozan de 6 años de vigencia. Esta categorización impone la carga de renovaciones frecuentes, auditorías preventivas y la necesidad de mantener un departamento de gestión ambiental in situ permanentemente activo.
+
+A nivel de infraestructura, San Nicolás y su zona de influencia (como el Parque Industrial COMIRSA) están equipados para soportar industria pesada. Existen corredores logísticos consolidados para el transporte de cargas sobredimensionadas, redes de monitoreo de la calidad del aire y una amplia disponibilidad de empresas gestoras habilitadas para el transporte, tratamiento y disposición final en rellenos de seguridad para los residuos especiales.
+
+Sin embargo, el aspecto más crítico y potencialmente adverso de esta locación es el extremo escrutinio regulatorio y social. San Nicolás es la sede de la operación siderúrgica de Ternium (ex-SOMISA), la cual ha sido históricamente el epicentro de tensiones ambientales. Las emisiones atmosféricas, el material particulado y el manejo de pasivos industriales han generado intervenciones legislativas, exhortos del Congreso y una permanente vigilancia comunitaria. Insertar una nueva planta de manufactura pesada en este entorno hiper-regulado y socialmente sensibilizado garantiza que la empresa estará sujeta a inspecciones de oficio constantes. Para operar sin interrupciones, la corporación deberá invertir capital de clase mundial en sistemas de control de emisiones: captadores de polvo tipo baghouse sobredimensionados para la extracción de humos de soldadura, barreras acústicas perimetrales para mitigar el ruido industrial, y protocolos de vertido cero. Los tiempos típicos para la obtención del CAA para industrias de esta envergadura en la Provincia de Buenos Aires son célebremente prolongados, superando frecuentemente los 12 a 18 meses debido a la saturación administrativa y la exigencia de audiencias públicas para proyectos de Tercera Categoría.
+4.2.2 Gestión ambiental en Alberdi (Provincia de Córdoba) - Calificación 3/10
+El ecosistema legal ambiental en la Provincia de Córdoba está estructurado fundamentalmente por la Ley N° 10.208 de Política Ambiental Provincial y la Ley N° 10.830. El órgano de aplicación es el Ministerio de Ambiente y Economía Circular. Para radicarse en la provincia, el marco jurídico exige la tramitación de la Licencia Ambiental. Se obtiene tras la aprobación de un Estudio de Impacto Ambiental (EIA) exhaustivo, en concordancia con los Anexos I y II de la ley, que determinan los requerimientos según el nivel de externalidades del proyecto.
+La selección de la geografía introduce un grado de complejidad ambiental que amenaza la viabilidad del proyecto. El río Suquía, que recorre más de 200 kilómetros, de los cuales 37 atraviesan el tejido urbano y periurbano de la capital, es el cuerpo hídrico más impactado de la provincia. Durante décadas, la cuenca ha sufrido un estrés ecológico debido a los volcamientos industriales de cientos de establecimientos, muchos de ellos ubicados en la ciudad y localidades adyacentes. Los estudios académicos han documentado la contaminación con desechos tóxicos y metales pesados provenientes de vertidos y desagües pluviales industriales, afectando la calidad del agua utilizada para riego y consumo.
+En respuesta a esta degradación, en la última década (2011-2023) se ha desatado un fuerte movimiento social, urbanístico y estatal para la "recuperación y puesta en valor" del río Suquía. Barrios históricos como Alberdi se han convertido en focos de lucha patrimonial y ambiental, mientras que el desarrollismo inmobiliario ha capitalizado la zona construyendo torres residenciales de alta gama y parques privados que mercantilizan la naturaleza y el paisaje ribereño. Esta "estetización del paisaje" y la gentrificación de las orillas del Suquía transforman la ribera en una zona de altísimo conflicto ambiental para la industria pesada.
+Cualquier operación en este sector que genere ruido industrial o posea eventuales efluentes enfrentará una resistencia administrativa y ciudadana. Las autoridades exigirán sistemas de circuito cerrado absoluto para asegurar que ni una sola gota de agua con trazas de hidrocarburos, sedimentos o calor ingrese a la cuenca. La contaminación acústica de la molienda de aceros chocará de frente con los residentes de la zona.
+Como contrapeso a este escenario, Córdoba ofrece los incentivos económicos más agresivos para la adopción de tecnologías limpias. La Ley de Promoción Industrial y Desarrollo de Clústeres Productivos (Ley 10.792) exime del pago de impuestos provinciales por 10 años, y otorga subsidios al empleo y al consumo eléctrico incremental. Adicionalmente, el gobierno promueve las inversiones que incorporen economía circular y buenas prácticas ambientales. Paralelamente, programas financiados por el Consejo Federal de Inversiones (CFI) proveen fondos no reintegrables y líneas de crédito para maquinaria limpia e infraestructura de mitigación de impacto. Si bien estos incentivos financieros son excepcionales, la fricción geográfica de ubicarse sobre el río Suquía requerirá que la totalidad de estos beneficios se reinviertan en escudos ambientales.
+
+4.2.3 Gestión ambiental en San Luis (Provincia de San Luis) - Calificación 8/10
+La gestión ambiental en la Provincia de San Luis es capitaneada por la Secretaría de Ambiente y Desarrollo Sustentable. El marco normativo exige que cada establecimiento industrial obtenga su Certificado de Aptitud Ambiental (CAA) como paso previo e indispensable para tramitar las habilitaciones municipales de funcionamiento. La autoridad emite el CAA luego de evaluar y aprobar la Declaración de Impacto Ambiental del emprendimiento. Un aspecto diferencial y muy ventajoso es que este organismo permite tramitar las solicitudes y hacer el seguimiento de los expedientes de manera íntegramente digital a través de su plataforma web, dinamizando los tiempos de obtención de permisos. Tras reformas regulatorias, la vigencia del CAA para proyectos industriales quedó establecida en 4 años.
+A nivel de fomento, el gobierno provincial promueve activamente la radicación industrial mediante créditos a través del Consejo Federal de Inversiones (CFI) y exenciones impositivas directas. Las empresas que cumplen con los requisitos pueden acceder a beneficios como la exención en el pago del impuesto a los Ingresos Brutos, amparados en la Ley de Promoción Industrial N° VIII-0501-2006.
+Los parques industriales que rodean a la capital de San Luis (como el Parque Industrial Norte y Sur) cuentan con la infraestructura básica de servicios y tratamiento de efluentes sanitarios. Al tratarse de un polo con preponderancia de industria liviana y logística, la sensibilidad y el escrutinio social ante externalidades industriales es notablemente menor que en zonas con pasivos históricos como San Nicolás, o en zonas de disputa urbana como el río Suquía.
+
+
+
+5. Modelo de Ponderación de Factores
+Para la evaluación integral de las tres alternativas se aplica el Modelo de Ponderación de Factores, que combina variables cuantitativas (90% del peso total) y cualitativas (10%).
+5.1 Factores y pesos
+Tipo
+Factor
+Peso
+Cuantitativo
+VAN
+0,15
+Cuantitativo
+Transporte de MP
+0,30
+Cuantitativo
+Transporte de PT
+0,25
+Cuantitativo
+Beneficio
+0,10
+Cuantitativo
+Impuestos
+0,10
+Cualitativo
+Disponibilidad de MO Calificada
+0,05
+Cualitativo
+Relevancia de la Gestión Ambiental in situ
+0,05
+
+
+Total
+1,00
+
+5.2 Criterio de normalización
+Para permitir la comparación entre factores de distinta naturaleza y magnitud, cada variable fue normalizada mediante el método de razón al mejor valor (Vfi). Este método asigna al mejor desempeño el valor máximo de 1,00 y expresa las demás alternativas como proporción de dicho óptimo:
+Para factores donde mayor valor es mejor (VAN, Beneficio neto, factores cualitativos):
+  Vfi = Valor de la alternativa / Valor de la mejor alternativa
+Para factores donde menor valor es mejor (Costos de transporte, Impuestos):
+  Vfi = Valor de la mejor alternativa (menor costo) / Valor de la alternativa evaluada
+5.3 Matriz de ponderación de factores
+
+Factor
+Ponderación
+SAN NICOLÁS
+ALBERDI
+SAN LUIS
+VAN (tasa 9%)
+0,15
+1,00
+0,89
+0,93
+Costo transp. MP
+0,30
+1,00
+0,46
+0,40
+Costo transp. PT
+0,25
+1,00
+0,52
+0,23
+Beneficio neto
+0,10
+1,00
+0,86
+0,86
+Impuestos
+0,10
+0,51
+0,59
+1,00
+Disponibilidad de MO calificada
+0,05
+1,00
+0,67
+0,44
+Gestión ambiental in situ
+0,05
+0,63
+0,38
+1,00
+
+
+San Nicolás obtiene el puntaje ponderado más alto (0,932), seguido por Alberdi (0,599) y San Luis (0,574). San Nicolás alcanza el valor máximo normalizado (1,00) en cinco de los siete factores evaluados (VAN, transporte de MP, transporte de PT, beneficio neto y disponibilidad de MO calificada}, que en conjunto representan el 85% del peso total del modelo. La única debilidad relativa de San Nicolás se manifiesta en impuestos (0,51) y gestión ambiental (0,63), factores cuyo peso combinado (15%) resulta insuficiente para alterar el ranking. Si bien San Luis lidera en impuestos y gestión ambiental, sus severas penalidades logísticas y de capital humano la relegan al tercer puesto. Alberdi ocupa una posición intermedia, penalizada principalmente por la lejanía al proveedor de MP y la problemática ambiental del río Suquía.
+
+
+6. Conclusiones y recomendaciones
+6.1 Conclusiones
+Tras la aplicación del Modelo de Ponderación de Factores con siete criterios de evaluación (cinco cuantitativos y dos cualitativos), normalizados mediante el método de razón al mejor valor, se obtuvieron los siguientes puntajes ponderados:
+
+Localización
+Puntaje
+Posición
+SAN NICOLÁS
+0,932
+1°
+ALBERDI
+0,599
+2°
+SAN LUIS
+0,574
+3°
+
+
+Las tres alternativas son viables desde el punto de vista financiero, ya que todas presentan VAN positivo a la tasa de descuento del 9% y TIR superiores a dicha tasa:
+
+
+
+SAN NICOLÁS
+ALBERDI
+SAN LUIS
+VAN ( 9%) [USD]
+1.308.696
+1.158.776
+1.215.893
+TIR [%]
+19,3%
+20,0%
+21,2%
+
+
+No obstante, la superioridad de San Nicolás en el modelo multicriterio es decisiva y se explica por la convergencia de tres factores estratégicos:
+
+a) Proximidad logística. Al encontrarse a solo 239 km del proveedor de materia prima en el AMBA y a 10 km del cliente ancla Metcon, San Nicolás minimiza los costos de transporte, que en conjunto representan el 55% del peso total del modelo. San Nicolás alcanza un Vfi de 1,00 en ambos factores de transporte, mientras que Alberdi y San Luis obtienen valores significativamente inferiores). Sobre el horizonte de 5 años, el costo total de transporte de San Nicolás es menos de la mitad del de Alberdi y apenas un 36% del de San Luis.
+b) Rentabilidad operativa. San Nicolás exhibe el mayor beneficio neto acumulado y el VAN más elevado, reflejando una estructura de costos operativos más eficiente derivada del menor gasto logístico. 
+c) Disponibilidad de recursos humanos especializados. El ecosistema siderúrgico del Grupo Techint, la Facultad Regional de la UTN con Ing. Metalúrgica, y la red de talleres metalmecánicos garantizan acceso a soldadores homologados, técnicos en ensayos no destructivos y operarios con experiencia en manufactura pesada. Alberdi y San Luis presentan perfiles de mano de obra orientados a manufactura liviana y automotriz, requiriendo costosas estrategias de reconversión o relocalización de personal.
+6.2 Recomendaciones
+Se recomienda la radicación de la planta de fabricación de cucharas de colada en la ciudad de San Nicolás, Provincia de Buenos Aires, por ser la alternativa que:
+Presenta el mayor VAN y beneficio neto acumulado.
+Mejor se alinea con los requerimientos técnicos, logísticos y de capital humano del proyecto en el horizonte de planeamiento de 5 años.
+Minimiza los riesgos operativos asociados al reclutamiento de personal especializado en manufactura pesada.
+Como acción mitigatoria, se recomienda iniciar los trámites de habilitación ambiental con la mayor anticipación posible, a fin de compensar los plazos administrativos inherentes a esta jurisdicción.
+
