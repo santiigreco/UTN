@@ -1,0 +1,83 @@
+Ejercicio N°5
+
+P.1.5 (Segun croquis P.1.5 de los Anexos)
+
+Datos
+
+• Q = 2.400 kg
+• Carga Max por Nodo = 400 kg
+• sigma admisible a la flexion = 1.000 kg/cm2
+• Coef. de seguridad para nodos = 0,10
+• Nodos no utilizables: N1 a N3, N23 a N25, N26 y N28
+
+En primer lugar se debe analizar la disponibilidad real de carga en los nodos. En este caso,
+a diferencia de los ejercicios anteriores, el coeficiente indicado para nodos es menor que 1.
+Por lo tanto, se interpreta como porcentaje de capacidad residual disponible en cada nodo.
+
+Capacidad residual por nodo:
+
+Carga disponible por nodo = Carga Max por Nodo x Coef. de seguridad para nodos
+Carga disponible por nodo = 400 kg x 0,10 = 40 kg/nodo
+
+Luego, se calcula la cantidad de nodos necesarios para poder sostener la carga solicitada:
+
+N° Nodos necesarios = Q / Carga disponible por nodo
+N° Nodos necesarios = 2.400 kg / 40 kg/nodo = 60 nodos
+
+Sin embargo, el plano P.1.5 dispone geometricamente de:
+
+Nodos totales del plano = 5 columnas x 6 filas = 30 nodos
+
+Ademas, segun la consigna, no pueden utilizarse los nodos N1, N2, N3, N23, N24, N25, N26 y N28.
+Por lo tanto:
+
+Nodos disponibles = 30 nodos - 8 nodos no utilizables = 22 nodos
+
+La capacidad total disponible de la estructura, considerando solamente los nodos que pueden
+ser utilizados, resulta:
+
+Capacidad total disponible = 22 nodos x 40 kg/nodo = 880 kg
+
+Verificacion:
+
+Capacidad total disponible = 880 kg
+Carga solicitada = 2.400 kg
+
+Como 880 kg < 2.400 kg, la estructura disponible no cumple con la carga requerida.
+
+Conclusion del ejercicio
+
+No es posible resolver el anclaje de la carga Q = 2.400 kg utilizando unicamente las vigas de
+reparticion sobre los nodos disponibles del plano P.1.5. La carga solicitada supera ampliamente
+la capacidad residual admisible de la estructura.
+
+Por lo tanto, el problema no debe resolverse agregando mas vigas de reparticion sobre la misma
+estructura, ya que no existe cantidad suficiente de nodos disponibles para repartir la carga sin
+superar la capacidad admisible.
+
+La solucion tecnica consiste en realizar previamente un refuerzo de cabreadas y/o nodos, o bien
+incorporar una estructura auxiliar independiente que tome la carga. Una vez ejecutado dicho
+refuerzo, deberan recalcularse las reacciones y verificarse nuevamente los nodos resultantes.
+
+Perfil de referencia para la viga sosten, condicionado al refuerzo
+
+Aunque la estructura existente no permite colgar la carga sin refuerzo previo, puede calcularse
+el perfil minimo de referencia para la viga sosten de ultimo nivel.
+
+Para la viga sosten se considera la carga Q = 2.400 kg aplicada a 1,0 m de un apoyo en una luz
+de 2,5 m, segun el croquis.
+
+Mmax = Q x a x b / L
+Mmax = 2.400 kg x 1,0 m x 1,5 m / 2,5 m = 1.440 kgm
+Mmax = 144.000 kgcm
+
+Wnec = Mmax / sigma admisible
+Wnec = 144.000 kgcm / 1.000 kg/cm2 = 144 cm3
+
+De la tabla de perfiles IPN, el primer perfil con Wx mayor o igual a 144 cm3 es:
+
+IPN 180, con Wx = 161,1 cm3
+
+El perfil IPN 180 solo resulta valido para la viga sosten si previamente se resuelve el refuerzo
+estructural necesario. No habilita por si mismo el uso de los nodos existentes.
+
