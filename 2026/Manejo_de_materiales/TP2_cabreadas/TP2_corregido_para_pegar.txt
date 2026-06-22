@@ -1,0 +1,758 @@
+DIMENSIONAMIENTO Y APROVECHAMIENTO ESPACIAL DE NAVES INDUSTRIALES
+
+Grupo 5
+
+1. Introduccion y objetivo
+
+En los edificios metalicos que se representan en los diferentes croquis adjuntos se pide:
+
+a) Dibujar, tanto en planta como en las vistas A y B, las vigas de reparticion que resulten
+necesarias para poder realizar el anclaje de un equipo a colgar de la estructura, cuyo peso es Q.
+
+b) Indicar la carga resultante para cada uno de los nodos utilizados en la resolucion del problema.
+
+c) Seleccionar, de la tabla de perfiles IPN adjunta en los Anexos, el perfil adecuado para utilizar
+como viga sosten de la carga definida en cada problema, considerando solamente la viga de
+ultimo nivel.
+
+Para los calculos se considera que no se tiene en cuenta el peso propio de las vigas de
+reparticion ni el de los accesorios utilizados para el anclaje. Tambien se considera que las
+flechas generadas por las cargas son menores a las admisibles.
+
+Cuando existe coeficiente de seguridad para nodos mayor que 1, se calcula la capacidad de
+trabajo del nodo como:
+
+Carga admisible de trabajo = Carga maxima por nodo / Coeficiente de seguridad
+
+Cuando existe coeficiente de seguridad para vigas, se aplica sobre el momento maximo para
+obtener el modulo resistente necesario:
+
+Wnec = Mmax x Coeficiente de seguridad para vigas / sigma admisible
+
+Ejercicio Nro 1
+
+P.1.1 (Segun croquis P.1.1 de los Anexos)
+
+Datos
+
+- Q = 3.900 kg
+- Carga Max por Nodo = 400 kg
+- sigma admisible a la flexion = 1.000 kg/cm2
+- Coef. de seguridad para nodos = no aplica
+- Coef. de seguridad para vigas de reparticion = no aplica
+
+En primer lugar se calcula la cantidad minima de nodos necesarios para repartir la carga:
+
+Nro Nodos necesarios = Q / Carga Max por Nodo
+Nro Nodos necesarios = 3.900 kg / 400 kg = 9,75 nodos
+
+Como el sistema de reparto se resuelve mediante niveles sucesivos, se adopta el numero
+inmediato superior que permita una distribucion por potencias de 2:
+
+16 nodos = 2^4
+
+Por lo tanto, se adopta una estructura de 4 niveles de vigas de reparticion.
+
+A continuacion se realiza el calculo de las reacciones en cada nivel.
+
+Nivel 4
+
+Se considera la viga sosten de ultimo nivel con luz de 8 m y carga centrada.
+
+Sumatoria de momentos:
+
+RB x 8 m = Q x 4 m
+RB = 3.900 kg x 4 m / 8 m
+RB = 1.950 kg
+
+Sumatoria de fuerzas verticales:
+
+RA + RB = Q
+RA = 3.900 kg - 1.950 kg
+RA = 1.950 kg
+
+Nivel 3
+
+Por simetria, cada reaccion de 1.950 kg se reparte en dos apoyos:
+
+R = 1.950 kg / 2 = 975 kg
+
+Nivel 2
+
+Cada reaccion de 975 kg se reparte nuevamente en dos apoyos:
+
+R = 975 kg / 2 = 487,5 kg
+
+Nivel 1
+
+Cada reaccion de 487,5 kg se reparte sobre dos nodos finales:
+
+R nodo = 487,5 kg / 2 = 243,75 kg
+
+Verificacion de nodos
+
+Carga maxima resultante por nodo = 243,75 kg
+Carga maxima admisible por nodo = 400 kg
+
+Como 243,75 kg < 400 kg, la estructura cumple.
+
+Seleccion del perfil IPN para la viga sosten
+
+La viga sosten de ultimo nivel trabaja con la carga Q = 3.900 kg aplicada en el centro de una
+luz de 8 m.
+
+Mmax = Q x L / 4
+Mmax = 3.900 kg x 800 cm / 4
+Mmax = 780.000 kgcm
+
+Wnec = Mmax / sigma admisible
+Wnec = 780.000 kgcm / 1.000 kg/cm2
+Wnec = 780 cm3
+
+De la tabla de perfiles IPN, el primer perfil con Wx mayor o igual a 780 cm3 es:
+
+IPN 320, con Wx = 781,9 cm3
+
+Conclusion
+
+El sistema cumple en nodos y se selecciona IPN 320 como perfil de la viga sosten.
+
+
+Ejercicio Nro 2
+
+P.1.2 (Segun croquis P.1.2 de los Anexos)
+
+Datos
+
+- Q = 3.800 kg
+- Carga Max por Nodo = 450 kg
+- sigma admisible a la flexion = 1.000 kg/cm2
+- Coef. de seguridad para nodos = 1,25
+- Coef. de seguridad para vigas de reparticion = no aplica
+
+En primer lugar se calcula la capacidad admisible de trabajo por nodo:
+
+Carga admisible de trabajo = 450 kg / 1,25
+Carga admisible de trabajo = 360 kg/nodo
+
+Luego, se calcula la cantidad minima de nodos necesarios:
+
+Nro Nodos necesarios = Q / Carga admisible de trabajo
+Nro Nodos necesarios = 3.800 kg / 360 kg
+Nro Nodos necesarios = 10,56 nodos
+
+Se adopta el numero inmediato superior compatible con el sistema de reparto:
+
+16 nodos = 2^4
+
+Por lo tanto, se adopta una estructura de 4 niveles.
+
+A continuacion se realiza el calculo de las reacciones en cada nivel.
+
+Nivel 4
+
+Se considera la viga sosten de ultimo nivel con luz de 8 m. La carga se ubica a 5 m del apoyo A
+y a 3 m del apoyo B.
+
+Sumatoria de momentos respecto de A:
+
+RB x 8 m = Q x 5 m
+RB = 3.800 kg x 5 m / 8 m
+RB = 2.375 kg
+
+Sumatoria de fuerzas verticales:
+
+RA + RB = Q
+RA = 3.800 kg - 2.375 kg
+RA = 1.425 kg
+
+Nivel 3
+
+Ramal A:
+
+La reaccion RA = 1.425 kg se reparte mediante una viga de 5 m. Segun la posicion adoptada
+en el croquis, se consideran brazos de 2,95 m y 2,05 m.
+
+R A2 = 1.425 kg x 2,95 m / 5 m = 840,75 kg
+R A1 = 1.425 kg - 840,75 kg = 584,25 kg
+
+Ramal B:
+
+La reaccion RB = 2.375 kg se reparte mediante una viga de 5 m. Segun la posicion adoptada
+en el croquis, se consideran brazos de 2,95 m y 2,05 m.
+
+R B2 = 2.375 kg x 2,95 m / 5 m = 1.401,25 kg
+R B1 = 2.375 kg - 1.401,25 kg = 973,75 kg
+
+Nivel 2
+
+Cada reaccion del nivel anterior se reparte en dos apoyos:
+
+584,25 kg / 2 = 292,125 kg
+840,75 kg / 2 = 420,375 kg
+973,75 kg / 2 = 486,875 kg
+1.401,25 kg / 2 = 700,625 kg
+
+Nivel 1
+
+Cada reaccion del nivel 2 se reparte finalmente en dos nodos:
+
+292,125 kg / 2 = 146,0625 kg
+420,375 kg / 2 = 210,1875 kg
+486,875 kg / 2 = 243,4375 kg
+700,625 kg / 2 = 350,3125 kg
+
+Verificacion de nodos
+
+Carga maxima resultante por nodo = 350,3125 kg
+Carga admisible de trabajo por nodo = 360 kg
+
+Como 350,3125 kg < 360 kg, la estructura cumple.
+
+Seleccion del perfil IPN para la viga sosten
+
+La viga sosten tiene luz de 8 m y la carga se encuentra a 5 m de un apoyo y a 3 m del otro.
+
+Mmax = Q x a x b / L
+Mmax = 3.800 kg x 5 m x 3 m / 8 m
+Mmax = 7.125 kgm
+Mmax = 712.500 kgcm
+
+Wnec = Mmax / sigma admisible
+Wnec = 712.500 kgcm / 1.000 kg/cm2
+Wnec = 712,5 cm3
+
+De la tabla de perfiles IPN, el primer perfil con Wx mayor o igual a 712,5 cm3 es:
+
+IPN 320, con Wx = 781,9 cm3
+
+Conclusion
+
+El sistema cumple en nodos y se selecciona IPN 320 como perfil de la viga sosten. No es
+necesario agregar un quinto nivel.
+
+
+Ejercicio Nro 3
+
+P.1.3 (Segun croquis P.1.3 de los Anexos)
+
+Datos
+
+- Q = 2.660 kg
+- Carga Max por Nodo = 430 kg
+- sigma admisible a la flexion = 1.000 kg/cm2
+- Coef. de seguridad para nodos = 1,50
+- Coef. de seguridad para vigas de reparticion = 1,80
+
+En primer lugar se calcula la capacidad admisible de trabajo por nodo:
+
+Carga admisible de trabajo = 430 kg / 1,50
+Carga admisible de trabajo = 286,67 kg/nodo
+
+Luego, se calcula la cantidad minima teorica de nodos necesarios:
+
+Nro Nodos necesarios = Q / Carga admisible de trabajo
+Nro Nodos necesarios = 2.660 kg / 286,67 kg
+Nro Nodos necesarios = 9,28 nodos
+
+Se adopta el numero inmediato superior compatible con el sistema de reparto:
+
+16 nodos = 2^4
+
+En este caso la carga se encuentra excentrica. Por lo tanto, una distribucion uniforme de 8
+nodos no cumple, ya que algunos nodos resultarian sobrecargados. Se adopta entonces una
+distribucion no uniforme, abriendo en mayor cantidad de nodos el ramal mas solicitado.
+
+A continuacion se realiza el calculo de las reacciones en cada nivel.
+
+Nivel 4
+
+Se considera la viga sosten de ultimo nivel con luz de 2,5 m. La carga se ubica a 1,1 m del
+apoyo A y a 1,4 m del apoyo B.
+
+Sumatoria de momentos respecto de A:
+
+RB x 2,5 m = Q x 1,1 m
+RB = 2.660 kg x 1,1 m / 2,5 m
+RB = 1.170,4 kg
+
+Sumatoria de fuerzas verticales:
+
+RA + RB = Q
+RA = 2.660 kg - 1.170,4 kg
+RA = 1.489,6 kg
+
+Nivel 3
+
+Ramal A:
+
+La reaccion RA = 1.489,6 kg se reparte sobre una viga con separacion total de 4 m.
+Considerando brazos de 0,8 m y 3,2 m:
+
+R A superior = 1.489,6 kg x 3,2 m / 4 m = 1.191,68 kg
+R A inferior = 1.489,6 kg - 1.191,68 kg = 297,92 kg
+
+Ramal B:
+
+La reaccion RB = 1.170,4 kg se reparte sobre una viga con separacion total de 4 m.
+Considerando brazos de 0,8 m y 3,2 m:
+
+R B superior = 1.170,4 kg x 3,2 m / 4 m = 936,32 kg
+R B inferior = 1.170,4 kg - 936,32 kg = 234,08 kg
+
+Distribucion final adoptada
+
+Para no superar la capacidad admisible de 286,67 kg/nodo, se adopta la siguiente distribucion:
+
+Ramal A superior: 1.191,68 kg / 8 nodos = 148,96 kg/nodo
+Ramal A inferior: 297,92 kg / 2 nodos = 148,96 kg/nodo
+Ramal B superior: 936,32 kg / 4 nodos = 234,08 kg/nodo
+Ramal B inferior: 234,08 kg / 2 nodos = 117,04 kg/nodo
+
+Nodos totales utilizados = 8 + 2 + 4 + 2 = 16 nodos
+
+Verificacion de nodos
+
+Carga maxima resultante por nodo = 234,08 kg
+Carga admisible de trabajo por nodo = 286,67 kg
+
+Como 234,08 kg < 286,67 kg, la estructura cumple.
+
+Seleccion del perfil IPN para la viga sosten
+
+La viga sosten de ultimo nivel tiene luz de 2,5 m y la carga se ubica a 1,1 m del apoyo A.
+El momento maximo se obtiene en el punto de aplicacion de la carga:
+
+Mmax = RA x 1,1 m
+Mmax = 1.489,6 kg x 1,1 m
+Mmax = 1.638,56 kgm
+Mmax = 163.856 kgcm
+
+Como existe coeficiente de seguridad para vigas de reparticion:
+
+Wnec = Mmax x Coef. seguridad para vigas / sigma admisible
+Wnec = 163.856 kgcm x 1,80 / 1.000 kg/cm2
+Wnec = 294,94 cm3
+
+De la tabla de perfiles IPN, el primer perfil con Wx mayor o igual a 294,94 cm3 es:
+
+IPN 240, con Wx = 354,2 cm3
+
+Conclusion
+
+El sistema corregido cumple en nodos y se selecciona IPN 240 como perfil de la viga sosten.
+
+
+Ejercicio Nro 4
+
+P.1.4 (Segun croquis P.1.4 de los Anexos)
+
+Datos
+
+- Q1 = 1.200 kg
+- Q2 = 1.800 kg
+- Carga Max por Nodo = 430 kg
+- sigma admisible a la flexion = 1.000 kg/cm2
+- Coef. de seguridad para nodos = 1,50
+- Coef. de seguridad para vigas de reparticion = 1,50
+
+Este ejercicio debe resolverse con un unico sistema de vigas de reparticion para ambas cargas.
+
+En primer lugar se calcula la capacidad admisible de trabajo por nodo:
+
+Carga admisible de trabajo = 430 kg / 1,50
+Carga admisible de trabajo = 286,67 kg/nodo
+
+Luego, se calcula la cantidad minima teorica de nodos necesarios:
+
+Q total = Q1 + Q2 = 1.200 kg + 1.800 kg = 3.000 kg
+
+Nro Nodos necesarios = 3.000 kg / 286,67 kg
+Nro Nodos necesarios = 10,47 nodos
+
+Se adopta el numero inmediato superior compatible con el sistema de reparto:
+
+16 nodos = 2^4
+
+Por lo tanto, se adopta una estructura de 4 niveles.
+
+A continuacion se realiza el calculo de las reacciones en cada nivel.
+
+Nivel 4
+
+Se considera la viga sosten de ultimo nivel con luz de 12 m. La carga Q1 se ubica a 4 m del
+apoyo A y la carga Q2 se ubica a 9 m del apoyo A.
+
+Sumatoria de momentos respecto de A:
+
+RB x 12 m = Q1 x 4 m + Q2 x 9 m
+RB = (1.200 kg x 4 m + 1.800 kg x 9 m) / 12 m
+RB = (4.800 kgm + 16.200 kgm) / 12 m
+RB = 1.750 kg
+
+Sumatoria de fuerzas verticales:
+
+RA + RB = Q1 + Q2
+RA = 3.000 kg - 1.750 kg
+RA = 1.250 kg
+
+Nivel 3
+
+Por simetria de la estructura adoptada:
+
+R A1 = 1.250 kg / 2 = 625 kg
+R A2 = 1.250 kg / 2 = 625 kg
+
+R B1 = 1.750 kg / 2 = 875 kg
+R B2 = 1.750 kg / 2 = 875 kg
+
+Nivel 2
+
+Cada reaccion del nivel anterior se reparte nuevamente en dos apoyos:
+
+625 kg / 2 = 312,5 kg
+875 kg / 2 = 437,5 kg
+
+Nivel 1
+
+Cada reaccion del nivel 2 se reparte finalmente en dos nodos:
+
+312,5 kg / 2 = 156,25 kg/nodo
+437,5 kg / 2 = 218,75 kg/nodo
+
+Verificacion de nodos
+
+Carga maxima resultante por nodo = 218,75 kg
+Carga admisible de trabajo por nodo = 286,67 kg
+
+Como 218,75 kg < 286,67 kg, la estructura cumple.
+
+Seleccion del perfil IPN para la viga sosten
+
+Se calculan los momentos principales de la viga sosten.
+
+Momento en Q1:
+
+M1 = RA x 4 m
+M1 = 1.250 kg x 4 m
+M1 = 5.000 kgm
+M1 = 500.000 kgcm
+
+Momento en Q2:
+
+M2 = RA x 9 m - Q1 x (9 m - 4 m)
+M2 = 1.250 kg x 9 m - 1.200 kg x 5 m
+M2 = 11.250 kgm - 6.000 kgm
+M2 = 5.250 kgm
+M2 = 525.000 kgcm
+
+El momento maximo es:
+
+Mmax = 525.000 kgcm
+
+Como existe coeficiente de seguridad para vigas:
+
+Wnec = Mmax x Coef. seguridad para vigas / sigma admisible
+Wnec = 525.000 kgcm x 1,50 / 1.000 kg/cm2
+Wnec = 787,5 cm3
+
+De la tabla de perfiles IPN:
+
+IPN 320: Wx = 781,9 cm3, no alcanza.
+IPN 340: Wx = 923,5 cm3, cumple.
+
+Por lo tanto, se selecciona:
+
+IPN 340, con Wx = 923,5 cm3
+
+Conclusion estructural
+
+El sistema cumple en nodos y se selecciona IPN 340 como perfil de la viga sosten.
+
+Consigna adicional para el ejercicio 4
+
+Una vez definida y verificada la estructura, se calcula la longitud total de perfiles, el peso,
+el costo estimado y el desperdicio.
+
+Longitudes de perfiles
+
+Nivel 4:
+1 viga de 12 m = 12 m
+
+Nivel 3:
+2 vigas de 5 m = 10 m
+
+Nivel 2:
+4 vigas de 4 m = 16 m
+
+Nivel 1:
+8 vigas de 2,5 m = 20 m
+
+Longitud total teorica:
+
+L total = 12 m + 10 m + 16 m + 20 m
+L total = 58 m
+
+Se adiciona un 5% extra por tareas de soldadura, fijacion y preparacion en obra:
+
+L requerida = 58 m x 1,05
+L requerida = 60,9 m
+
+Medida comercial adoptada
+
+Se adopta IPN 340 en barras comerciales de 12 m.
+
+Cantidad de barras necesarias:
+
+Cantidad = 60,9 m / 12 m = 5,075 barras
+
+Por lo tanto, se deben comprar 6 barras de 12 m.
+
+Longitud comprada:
+
+L comprada = 6 x 12 m = 72 m
+
+Plan de corte propuesto
+
+Barra 1:
+12,00 m para tramo principal de nivel 4.
+Remanente: 0,00 m
+
+Barra 2:
+0,60 m para complemento del tramo de nivel 4 + 5,25 m + 5,25 m
+Uso total: 11,10 m
+Remanente: 0,90 m
+
+Barra 3:
+4,20 m + 4,20 m + 2,625 m
+Uso total: 11,025 m
+Remanente: 0,975 m
+
+Barra 4:
+4,20 m + 4,20 m + 2,625 m
+Uso total: 11,025 m
+Remanente: 0,975 m
+
+Barra 5:
+2,625 m + 2,625 m + 2,625 m + 2,625 m
+Uso total: 10,50 m
+Remanente: 1,50 m
+
+Barra 6:
+2,625 m + 2,625 m
+Uso total: 5,25 m
+Remanente: 6,75 m
+
+Longitud utilizada:
+
+L utilizada = 60,9 m
+
+Longitud desperdiciada:
+
+L desperdiciada = 72 m - 60,9 m
+L desperdiciada = 11,1 m
+
+Peso del material
+
+De la tabla de perfiles IPN:
+
+IPN 340: peso = 67,9 kg/m
+
+Peso instalado:
+
+Peso instalado = 60,9 m x 67,9 kg/m
+Peso instalado = 4.135,11 kg
+
+Peso comprado:
+
+Peso comprado = 72 m x 67,9 kg/m
+Peso comprado = 4.888,8 kg
+
+Peso desperdiciado:
+
+Peso desperdiciado = 11,1 m x 67,9 kg/m
+Peso desperdiciado = 753,69 kg
+
+Porcentaje de desperdicio:
+
+% desperdicio = 11,1 m / 72 m x 100
+% desperdicio = 15,42%
+
+Estimacion de costos
+
+Se adopta, para presupuesto academico, un precio de referencia del acero de:
+
+Precio material = 2,00 USD/kg
+
+Costo del material comprado:
+
+Costo material = 4.888,8 kg x 2,00 USD/kg
+Costo material = 9.777,60 USD
+
+Costo del desperdicio:
+
+Costo desperdicio = 753,69 kg x 2,00 USD/kg
+Costo desperdicio = 1.507,38 USD
+
+Horas de mano de obra estimadas
+
+Preparacion y corte: 16 horas
+Soldadura: 24 horas
+Limpieza y tratamiento anticorrosivo: 15 horas
+Pintura: 15 horas
+
+Total de horas:
+
+H total = 16 h + 24 h + 15 h + 15 h
+H total = 70 h
+
+Se adopta un costo horario de taller especializado de:
+
+Costo horario = 35 USD/h
+
+Costo de mano de obra:
+
+Costo MO = 70 h x 35 USD/h
+Costo MO = 2.450 USD
+
+Costo total del sistema:
+
+Costo total = Costo material + Costo MO
+Costo total = 9.777,60 USD + 2.450 USD
+Costo total = 12.227,60 USD
+
+Adoptando un tipo de cambio de 1.420 pesos/USD:
+
+Costo total = 12.227,60 USD x 1.420 pesos/USD
+Costo total = 17.363.192 pesos
+
+Conclusion economica
+
+El sistema de vigas de reparticion del ejercicio 4 requiere 60,9 m efectivos de IPN 340.
+Para material comercial en barras de 12 m se compran 72 m, con un desperdicio estimado de
+11,1 m, equivalente a 753,69 kg y 15,42% del material adquirido. El costo total estimado del
+sistema es de 12.227,60 USD, equivalente a 17.363.192 pesos.
+
+
+Ejercicio Nro 5
+
+P.1.5 (Segun croquis P.1.5 de los Anexos)
+
+Datos
+
+- Q = 2.400 kg
+- Carga Max por Nodo = 400 kg
+- sigma admisible a la flexion = 1.000 kg/cm2
+- Coef. de seguridad para nodos = 0,10
+- Coef. de seguridad para vigas de reparticion = no aplica
+- Nodos no utilizables: N1 a N3, N23 a N25, N26 y N28
+
+En primer lugar se debe analizar la disponibilidad real de carga en los nodos. En este caso,
+a diferencia de los ejercicios anteriores, el coeficiente indicado para nodos es menor que 1.
+Por lo tanto, se interpreta como porcentaje de capacidad residual disponible en cada nodo.
+
+Capacidad residual por nodo:
+
+Carga disponible por nodo = Carga Max por Nodo x Coef. de seguridad para nodos
+Carga disponible por nodo = 400 kg x 0,10
+Carga disponible por nodo = 40 kg/nodo
+
+Luego, se calcula la cantidad de nodos necesarios para poder sostener la carga solicitada:
+
+Nro Nodos necesarios = Q / Carga disponible por nodo
+Nro Nodos necesarios = 2.400 kg / 40 kg/nodo
+Nro Nodos necesarios = 60 nodos
+
+Sin embargo, el plano P.1.5 dispone geometricamente de:
+
+Nodos totales del plano = 5 columnas x 6 filas
+Nodos totales del plano = 30 nodos
+
+Ademas, segun la consigna, no pueden utilizarse los nodos N1, N2, N3, N23, N24, N25,
+N26 y N28.
+
+Por lo tanto:
+
+Nodos disponibles = 30 nodos - 8 nodos no utilizables
+Nodos disponibles = 22 nodos
+
+La capacidad total disponible de la estructura, considerando solamente los nodos que pueden
+ser utilizados, resulta:
+
+Capacidad total disponible = 22 nodos x 40 kg/nodo
+Capacidad total disponible = 880 kg
+
+Verificacion:
+
+Capacidad total disponible = 880 kg
+Carga solicitada = 2.400 kg
+
+Como 880 kg < 2.400 kg, la estructura disponible no cumple con la carga requerida.
+
+Conclusion del ejercicio
+
+No es posible resolver el anclaje de la carga Q = 2.400 kg utilizando unicamente las vigas de
+reparticion sobre los nodos disponibles del plano P.1.5. La carga solicitada supera ampliamente
+la capacidad residual admisible de la estructura.
+
+Por lo tanto, el problema no debe resolverse agregando mas vigas de reparticion sobre la misma
+estructura, ya que no existe cantidad suficiente de nodos disponibles para repartir la carga sin
+superar la capacidad admisible.
+
+La solucion tecnica consiste en realizar previamente un refuerzo de cabreadas y/o nodos, o bien
+incorporar una estructura auxiliar independiente que tome la carga. Una vez ejecutado dicho
+refuerzo, deberan recalcularse las reacciones y verificarse nuevamente los nodos resultantes.
+
+Resolucion adoptada para el caso
+
+1) No se utilizan los nodos indicados como agotados ni nodos que superen 40 kg disponibles.
+Decision: se descarta el anclaje directo a la estructura actual.
+
+2) La carga requerida es 2.400 kg y la capacidad residual total disponible es 880 kg.
+Decision: la VRC por si sola no resuelve el problema.
+
+3) Para mantener los coeficientes sin modificarlos, debe aumentarse la capacidad estructural.
+Decision: se requiere refuerzo de cabreadas/nodos o estructura auxiliar independiente.
+
+4) Luego del refuerzo se deben recalcular las reacciones y verificar nuevamente cada nodo.
+Decision: solo despues de esa verificacion puede instalarse la viga sosten seleccionada.
+
+Perfil de referencia para la viga sosten, condicionado al refuerzo
+
+Aunque la estructura existente no permite colgar la carga sin refuerzo previo, puede calcularse
+el perfil minimo de referencia para la viga sosten de ultimo nivel.
+
+Para la viga sosten se considera la carga Q = 2.400 kg aplicada a 1,0 m de un apoyo en una luz
+de 2,5 m, segun el croquis.
+
+Mmax = Q x a x b / L
+Mmax = 2.400 kg x 1,0 m x 1,5 m / 2,5 m
+Mmax = 1.440 kgm
+Mmax = 144.000 kgcm
+
+Wnec = Mmax / sigma admisible
+Wnec = 144.000 kgcm / 1.000 kg/cm2
+Wnec = 144 cm3
+
+De la tabla de perfiles IPN, el primer perfil con Wx mayor o igual a 144 cm3 es:
+
+IPN 180, con Wx = 161,1 cm3
+
+El perfil IPN 180 solo resulta valido para la viga sosten si previamente se resuelve el refuerzo
+estructural necesario. No habilita por si mismo el uso de los nodos existentes.
+
+Conclusion
+
+El ejercicio P.1.5 queda resuelto como caso no factible con la estructura disponible. Para poder
+colgar la carga solicitada sin modificar los coeficientes de seguridad, debe reforzarse previamente
+la estructura o incorporarse una estructura auxiliar independiente.
+
+
+Resumen final
+
+P.1.1: Cumple. Maximo nodo = 243,75 kg. Perfil seleccionado: IPN 320.
+P.1.2: Cumple. Maximo nodo = 350,3125 kg. Perfil seleccionado: IPN 320.
+P.1.3: Cumple con redistribucion no uniforme. Maximo nodo = 234,08 kg. Perfil seleccionado: IPN 240.
+P.1.4: Cumple. Maximo nodo = 218,75 kg. Perfil seleccionado: IPN 340.
+P.1.5: No factible sin refuerzo. Capacidad disponible = 880 kg < 2.400 kg. Perfil de referencia condicionado al refuerzo: IPN 180.
+
