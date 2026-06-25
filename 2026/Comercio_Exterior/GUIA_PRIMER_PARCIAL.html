@@ -1,0 +1,2470 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guía 1er Parcial – Comercio Exterior UTN</title>
+  <meta name="description" content="Guía completa para el primer parcial de Comercio Exterior UTN. Resumen por prioridad, preguntas frecuentes, INCOTERMS, logística, políticas comerciales." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-primary:    #0a0e1a;
+      --bg-secondary:  #111827;
+      --bg-card:       #161d2e;
+      --bg-card-hover: #1c2540;
+      --accent-1:      #6366f1;
+      --accent-2:      #8b5cf6;
+      --accent-3:      #06b6d4;
+      --accent-4:      #10b981;
+      --accent-warn:   #f59e0b;
+      --accent-danger: #ef4444;
+      --text-primary:  #f1f5f9;
+      --text-secondary:#94a3b8;
+      --text-muted:    #64748b;
+      --border:        rgba(99,102,241,0.18);
+      --border-glow:   rgba(99,102,241,0.4);
+      --shadow-lg:     0 20px 60px rgba(0,0,0,0.5);
+      --radius:        12px;
+      --radius-sm:     8px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── BACKGROUND ANIMATED BLOBS ── */
+    body::before, body::after {
+      content: '';
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.12;
+      pointer-events: none;
+      z-index: 0;
+      animation: blobFloat 12s ease-in-out infinite alternate;
+    }
+    body::before {
+      width: 600px; height: 600px;
+      background: var(--accent-1);
+      top: -200px; left: -200px;
+    }
+    body::after {
+      width: 500px; height: 500px;
+      background: var(--accent-2);
+      bottom: -200px; right: -200px;
+      animation-delay: -6s;
+    }
+    @keyframes blobFloat {
+      from { transform: translate(0,0) scale(1); }
+      to   { transform: translate(40px,30px) scale(1.08); }
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      padding: 70px 24px 50px;
+      background: linear-gradient(180deg, rgba(99,102,241,0.08) 0%, transparent 100%);
+      border-bottom: 1px solid var(--border);
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(99,102,241,0.15);
+      border: 1px solid var(--border-glow);
+      color: var(--accent-1);
+      padding: 5px 14px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .badge-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--accent-1);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50%      { opacity: 0.5; transform: scale(1.4); }
+    }
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 800;
+      background: linear-gradient(135deg, #f1f5f9 0%, var(--accent-1) 50%, var(--accent-3) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      max-width: 580px;
+      margin: 0 auto 28px;
+    }
+
+    /* ── PRIORITY PILLS ── */
+    .priority-strip {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .p-pill {
+      padding: 5px 16px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border: 1px solid;
+    }
+    .p-pill.crit  { background: rgba(239,68,68,0.12); border-color: rgba(239,68,68,0.35); color: #fca5a5; }
+    .p-pill.high  { background: rgba(245,158,11,0.12); border-color: rgba(245,158,11,0.35); color: #fcd34d; }
+    .p-pill.med   { background: rgba(16,185,129,0.12); border-color: rgba(16,185,129,0.35); color: #6ee7b7; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,14,26,0.92);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      gap: 3px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding: 8px 0;
+      align-items: center;
+    }
+    .nav-inner::-webkit-scrollbar { display: none; }
+    .nav-btn {
+      white-space: nowrap;
+      padding: 0;
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--text-secondary);
+      font-family: 'Inter', sans-serif;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.22s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      padding: 6px 12px;
+      line-height: 1;
+    }
+    .nav-btn .nav-unit {
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 1px 6px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      color: var(--text-muted);
+      transition: all 0.22s;
+    }
+    .nav-btn .nav-label {
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    .nav-btn:hover {
+      background: rgba(99,102,241,0.12);
+      border-color: rgba(99,102,241,0.2);
+      color: var(--accent-1);
+    }
+    .nav-btn:hover .nav-unit {
+      background: rgba(99,102,241,0.2);
+      color: var(--accent-1);
+    }
+    .nav-btn.active {
+      background: rgba(99,102,241,0.18);
+      border-color: rgba(99,102,241,0.35);
+      color: var(--accent-1);
+    }
+    .nav-btn.active .nav-unit {
+      background: rgba(99,102,241,0.3);
+      color: #c7d2fe;
+    }
+    .nav-sep {
+      width: 1px;
+      height: 28px;
+      background: var(--border);
+      flex-shrink: 0;
+      margin: 0 4px;
+    }
+
+    /* ── MAIN ── */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── SECTION TITLES ── */
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 56px 0 24px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-icon {
+      width: 42px; height: 42px;
+      border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .section-title h2 {
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    .section-title .sec-sub {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* ICON COLORS */
+    .ic-red    { background: rgba(239,68,68,0.15); }
+    .ic-amber  { background: rgba(245,158,11,0.15); }
+    .ic-violet { background: rgba(99,102,241,0.15); }
+    .ic-cyan   { background: rgba(6,182,212,0.15); }
+    .ic-green  { background: rgba(16,185,129,0.15); }
+    .ic-pink   { background: rgba(236,72,153,0.15); }
+
+    /* ── CARD ── */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 26px;
+      margin-bottom: 18px;
+      transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      height: 3px; width: 100%;
+      border-radius: var(--radius) var(--radius) 0 0;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: var(--border-glow);
+      box-shadow: var(--shadow-lg);
+      background: var(--bg-card-hover);
+    }
+    .card:hover::before { opacity: 1; }
+
+    .card.crit::before  { background: linear-gradient(90deg, var(--accent-danger), transparent); }
+    .card.high::before  { background: linear-gradient(90deg, var(--accent-warn), transparent); }
+    .card.med::before   { background: linear-gradient(90deg, var(--accent-4), transparent); }
+    .card.info::before  { background: linear-gradient(90deg, var(--accent-1), transparent); }
+    .card.cyan::before  { background: linear-gradient(90deg, var(--accent-3), transparent); }
+
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .card-tag {
+      flex-shrink: 0;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+    .tag-crit   { background: rgba(239,68,68,0.15); color: #fca5a5; border: 1px solid rgba(239,68,68,0.3); }
+    .tag-high   { background: rgba(245,158,11,0.15); color: #fcd34d; border: 1px solid rgba(245,158,11,0.3); }
+    .tag-med    { background: rgba(16,185,129,0.15); color: #6ee7b7; border: 1px solid rgba(16,185,129,0.3); }
+    .tag-info   { background: rgba(99,102,241,0.15); color: #a5b4fc; border: 1px solid rgba(99,102,241,0.3); }
+    .tag-exam   { background: rgba(236,72,153,0.15); color: #f9a8d4; border: 1px solid rgba(236,72,153,0.3); }
+
+    .card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0;
+    }
+    .card p, .card li {
+      color: var(--text-secondary);
+      font-size: 0.93rem;
+      line-height: 1.7;
+    }
+    .card ul { padding-left: 20px; }
+    .card li { margin-bottom: 6px; }
+    .card li::marker { color: var(--accent-1); }
+
+    /* ── HIGHLIGHT BOX ── */
+    .highlight {
+      background: rgba(99,102,241,0.08);
+      border-left: 3px solid var(--accent-1);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 14px 18px;
+      margin: 12px 0;
+      font-size: 0.91rem;
+      color: var(--text-secondary);
+    }
+    .highlight strong { color: var(--accent-1); }
+
+    .warn-box {
+      background: rgba(245,158,11,0.08);
+      border-left: 3px solid var(--accent-warn);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 14px 18px;
+      margin: 12px 0;
+      font-size: 0.91rem;
+      color: var(--text-secondary);
+    }
+    .warn-box strong { color: var(--accent-warn); }
+
+    .danger-box {
+      background: rgba(239,68,68,0.08);
+      border-left: 3px solid var(--accent-danger);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 14px 18px;
+      margin: 12px 0;
+      font-size: 0.91rem;
+      color: var(--text-secondary);
+    }
+    .danger-box strong { color: var(--accent-danger); }
+
+    /* ── GRID ── */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+    @media (max-width: 768px) {
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    }
+
+    /* ── INCOTERMS TABLE ── */
+    .inc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .inc-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      transition: all 0.25s;
+      cursor: default;
+    }
+    .inc-card:hover {
+      border-color: var(--border-glow);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+    }
+    .inc-term {
+      font-size: 1.5rem;
+      font-weight: 800;
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 6px;
+    }
+    .inc-name {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 10px;
+    }
+    .inc-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      margin-bottom: 3px;
+    }
+    .inc-label { color: var(--text-muted); }
+    .yes { color: #34d399; font-weight: 600; }
+    .no  { color: #f87171; font-weight: 600; }
+    .part { color: #fbbf24; font-weight: 600; }
+    .inc-transport {
+      margin-top: 8px;
+      font-size: 0.72rem;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-weight: 600;
+      display: inline-block;
+    }
+    .t-mar  { background: rgba(6,182,212,0.15); color: #67e8f9; border: 1px solid rgba(6,182,212,0.3); }
+    .t-all  { background: rgba(16,185,129,0.15); color: #6ee7b7; border: 1px solid rgba(16,185,129,0.3); }
+    .g-E    { border-top: 3px solid #f59e0b; }
+    .g-F    { border-top: 3px solid #6366f1; }
+    .g-C    { border-top: 3px solid #06b6d4; }
+    .g-D    { border-top: 3px solid #10b981; }
+
+    /* ── FAQ ── */
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 12px;
+      overflow: hidden;
+      transition: border-color 0.25s;
+    }
+    .faq-item:hover { border-color: var(--border-glow); }
+    .faq-q {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 22px;
+      cursor: pointer;
+      gap: 16px;
+    }
+    .faq-q h4 {
+      font-size: 0.97rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .faq-q h4 .q-icon {
+      flex-shrink: 0;
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: rgba(99,102,241,0.2);
+      color: var(--accent-1);
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+    .faq-arrow {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      transition: transform 0.3s;
+      flex-shrink: 0;
+    }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-a {
+      display: none;
+      padding: 0 22px 18px;
+    }
+    .faq-a p, .faq-a li {
+      color: var(--text-secondary);
+      font-size: 0.91rem;
+      line-height: 1.7;
+    }
+    .faq-a ul { padding-left: 20px; }
+    .faq-a li { margin-bottom: 4px; }
+    .faq-item.open .faq-a { display: block; }
+    .repeat-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      background: rgba(236,72,153,0.15);
+      border: 1px solid rgba(236,72,153,0.3);
+      color: #f9a8d4;
+      border-radius: 999px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+
+    /* ── MINI TABLE ── */
+    table.t {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin-top: 14px;
+    }
+    table.t th {
+      background: rgba(99,102,241,0.12);
+      color: var(--accent-1);
+      font-weight: 700;
+      padding: 10px 14px;
+      text-align: left;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    table.t td {
+      padding: 9px 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      color: var(--text-secondary);
+      vertical-align: top;
+    }
+    table.t tr:last-child td { border-bottom: none; }
+    table.t tr:hover td { background: rgba(255,255,255,0.02); }
+    table.t td:first-child {
+      color: var(--text-primary);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    /* ── PROGRESS CHECKLIST ── */
+    .checklist {
+      list-style: none;
+      padding: 0;
+    }
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      color: var(--text-secondary);
+      font-size: 0.93rem;
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .check-box {
+      width: 20px; height: 20px;
+      border-radius: 5px;
+      border: 2px solid var(--accent-1);
+      flex-shrink: 0;
+      margin-top: 2px;
+      cursor: pointer;
+      transition: all 0.2s;
+      position: relative;
+    }
+    .check-box.done {
+      background: var(--accent-1);
+    }
+    .check-box.done::after {
+      content: '✓';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    /* ── CODE SPAN ── */
+    code {
+      font-family: 'JetBrains Mono', monospace;
+      background: rgba(99,102,241,0.12);
+      color: var(--accent-1);
+      padding: 2px 7px;
+      border-radius: 5px;
+      font-size: 0.85em;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      border-top: 1px solid var(--border);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── SCROLL PROGRESS ── */
+    #scroll-bar {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-1), var(--accent-3));
+      z-index: 9999;
+      width: 0%;
+      transition: width 0.1s linear;
+    }
+
+    /* ── ANIMATIONS ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── TOPIC CHIP ── */
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .chip {
+      padding: 4px 12px;
+      background: rgba(99,102,241,0.1);
+      border: 1px solid rgba(99,102,241,0.25);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      color: #a5b4fc;
+      font-weight: 500;
+    }
+
+    /* ── STAR RATING ── */
+    .stars { color: #fbbf24; font-size: 0.9rem; letter-spacing: 2px; }
+
+    /* ── TERRITORY DIAGRAM ── */
+    .territory-diagram {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin: 16px 0;
+      text-align: center;
+    }
+    .terr-box {
+      border: 2px dashed;
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin: 8px auto;
+      max-width: 480px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .terr-tag { color: var(--text-secondary); font-size: 0.75rem; margin-top: 4px; font-weight: 400; }
+
+    /* ── MEGA TABLE RESPONSIVE ── */
+    .table-wrap { overflow-x: auto; }
+
+  </style>
+</head>
+<body>
+
+<div id="scroll-bar"></div>
+
+<!-- HEADER -->
+<header>
+  <div class="badge"><span class="badge-dot"></span> UTN · Comercio Exterior · 2026</div>
+  <h1>Guía 1er Parcial<br/>Comercio Exterior</h1>
+  <p class="subtitle">Todo lo que necesitás saber, ordenado por prioridad, con preguntas frecuentes de examen y casos que se repiten.</p>
+  <div class="priority-strip">
+    <span class="p-pill crit">🔴 Crítico – entra seguro</span>
+    <span class="p-pill high">🟡 Alta prioridad</span>
+    <span class="p-pill med">🟢 Importante conocer</span>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <button class="nav-btn active" onclick="navScroll(this,'prioridades')">
+      <span class="nav-unit">Resumen</span>
+      <span class="nav-label">📊 Prioridades</span>
+    </button>
+
+    <div class="nav-sep"></div>
+
+    <button class="nav-btn" onclick="navScroll(this,'politicas')">
+      <span class="nav-unit">Unidad 1</span>
+      <span class="nav-label">🏛️ Políticas</span>
+    </button>
+    <button class="nav-btn" onclick="navScroll(this,'territorio')">
+      <span class="nav-unit">Unidad 1</span>
+      <span class="nav-label">🗺️ Territorio</span>
+    </button>
+    <button class="nav-btn" onclick="navScroll(this,'aduana')">
+      <span class="nav-unit">Unidad 1</span>
+      <span class="nav-label">🏷️ Aduana</span>
+    </button>
+
+    <div class="nav-sep"></div>
+
+    <button class="nav-btn" onclick="navScroll(this,'logistica')">
+      <span class="nav-unit">Unidad 2</span>
+      <span class="nav-label">🚢 Logística</span>
+    </button>
+
+    <div class="nav-sep"></div>
+
+    <button class="nav-btn" onclick="navScroll(this,'incoterms')">
+      <span class="nav-unit">Unidad 3</span>
+      <span class="nav-label">📦 INCOTERMS</span>
+    </button>
+
+    <div class="nav-sep"></div>
+
+    <button class="nav-btn" onclick="navScroll(this,'costos')">
+      <span class="nav-unit">Ejercicio</span>
+      <span class="nav-label">🧮 Costos Import.</span>
+    </button>
+
+    <div class="nav-sep"></div>
+
+    <button class="nav-btn" onclick="navScroll(this,'faq')">
+      <span class="nav-unit">Examen</span>
+      <span class="nav-label">❓ Preguntas</span>
+    </button>
+    <button class="nav-btn" onclick="navScroll(this,'checklist')">
+      <span class="nav-unit">Examen</span>
+      <span class="nav-label">✅ Checklist</span>
+    </button>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ══════════════════════════════════════
+       SECCIÓN 0 – MAPA DE PRIORIDADES
+  ══════════════════════════════════════ -->
+  <section id="prioridades">
+    <div class="section-title fade-in">
+      <div class="section-icon ic-red">📊</div>
+      <div>
+        <h2>Mapa de Prioridades</h2>
+        <div class="sec-sub">Qué estudiar primero según frecuencia en exámenes</div>
+      </div>
+    </div>
+
+    <div class="grid-3 fade-in">
+      <div class="card crit">
+        <div class="card-header">
+          <span class="card-tag tag-crit">🔴 Crítico</span>
+          <h3>INCOTERMS 2020</h3>
+        </div>
+        <p>El tema que más puntos pesa y que siempre aparece. Conocé los 11 términos, sus grupos (E/F/C/D), quién paga qué, y en cuáles el vendedor <strong>está obligado a contratar seguro</strong>.</p>
+        <div class="chips">
+          <span class="chip">EXW</span><span class="chip">FOB</span><span class="chip">CIF</span>
+          <span class="chip">CFR</span><span class="chip">CIP</span><span class="chip">DDP</span>
+        </div>
+      </div>
+
+      <div class="card crit">
+        <div class="card-header">
+          <span class="card-tag tag-crit">🔴 Crítico</span>
+          <h3>Territorio Aduanero</h3>
+        </div>
+        <p>TAG vs TAE, zonas primaria/secundaria/vigilancia especial/marítima. Enclave vs Exclave. Área franca. Tierra del Fuego como caso especial.</p>
+        <div class="chips">
+          <span class="chip">TAG</span><span class="chip">TAE</span><span class="chip">Zonas</span><span class="chip">Zona Franca</span>
+        </div>
+      </div>
+
+      <div class="card crit">
+        <div class="card-header">
+          <span class="card-tag tag-crit">🔴 Crítico</span>
+          <h3>Medidas Arancelarias y Para-arancelarias</h3>
+        </div>
+        <p>Diferencia entre arancelarias (pago) y para-arancelarias (trámites/certificados). Tipos de derechos: ad-valorem, específicos, mixtos. Licencias automáticas vs no automáticas.</p>
+        <div class="chips">
+          <span class="chip">Ad-valorem</span><span class="chip">Licencias</span><span class="chip">Prohibiciones</span>
+        </div>
+      </div>
+
+      <div class="card high">
+        <div class="card-header">
+          <span class="card-tag tag-high">🟡 Alta</span>
+          <h3>Documentos de Transporte</h3>
+        </div>
+        <p>Bill of Lading (BL/conocimiento de embarque), Carta de Porte (terrestre), AWB (aéreo), CMR. Quién lo emite, función, si es título valor.</p>
+        <div class="chips">
+          <span class="chip">BL</span><span class="chip">AWB</span><span class="chip">Carta de Porte</span>
+        </div>
+      </div>
+
+      <div class="card high">
+        <div class="card-header">
+          <span class="card-tag tag-high">🟡 Alta</span>
+          <h3>Contenedores</h3>
+        </div>
+        <p>Medidas exactas de TEU y FEU, tipos de contenedores (Dry, Reefer, Open Top, Iso Tank, etc.) y sus usos. Los pallets y NIMF 15.</p>
+        <div class="chips">
+          <span class="chip">TEU 20'</span><span class="chip">FEU 40'</span><span class="chip">Reefer</span>
+        </div>
+      </div>
+
+      <div class="card high">
+        <div class="card-header">
+          <span class="card-tag tag-high">🟡 Alta</span>
+          <h3>Sujetos del Transporte</h3>
+        </div>
+        <p>Armador, propietario, capitán, agente marítimo, ATA, despachante, shipper, consignee. Roles y responsabilidades de cada uno.</p>
+        <div class="chips">
+          <span class="chip">Armador</span><span class="chip">ATA</span><span class="chip">Despachante</span>
+        </div>
+      </div>
+
+      <div class="card med">
+        <div class="card-header">
+          <span class="card-tag tag-med">🟢 Importante</span>
+          <h3>Políticas Comerciales</h3>
+        </div>
+        <p>MULC, subpolíticas monetaria/comercial/promocional. Objetivos de la política comercial.</p>
+      </div>
+
+      <div class="card med">
+        <div class="card-header">
+          <span class="card-tag tag-med">🟢 Importante</span>
+          <h3>Tipos de Buques</h3>
+        </div>
+        <p>Carga general, graneleros, portacontenedores, RoRo, frigoríficos, petroleros. Qué transporta cada uno.</p>
+      </div>
+
+      <div class="card med">
+        <div class="card-header">
+          <span class="card-tag tag-med">🟢 Importante</span>
+          <h3>Fletamento vs Línea Regular</h3>
+        </div>
+        <p>Diferencia entre buque Tramp (fletado) y Liner (línea regular). Tipos de fletamento: viaje, tiempo, casco desnudo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SECCIÓN 1 – POLÍTICAS
+  ══════════════════════════════════════ -->
+  <section id="politicas">
+    <div class="section-title fade-in">
+      <div class="section-icon ic-violet">🏛️</div>
+      <div>
+        <h2>Políticas de Comercio Exterior</h2>
+        <div class="sec-sub">Módulo 1 – Subpolíticas e instrumentos</div>
+      </div>
+    </div>
+
+    <div class="card info fade-in">
+      <div class="card-header">
+        <span class="card-tag tag-info">Concepto clave</span>
+        <h3>MULC – Mercado Único y Libre de Cambios</h3>
+      </div>
+      <div class="danger-box">
+        <strong>⚠️ Trampa de examen:</strong> El nombre es engañoso. En realidad NO es único (es múltiple) y NO es de libre cambio (puede haber cepo, restricciones al dólar, etc.). El nombre es político, no técnico.
+      </div>
+      <p>El MULC es el mercado donde se realizan todas las operaciones de cambio de moneda extranjera. Su dinámica depende del escenario nacional e internacional.</p>
+    </div>
+
+    <div class="grid-2 fade-in">
+      <div class="card info">
+        <h3>📌 Subpolítica Monetaria</h3>
+        <p style="margin-top:10px;">Monitorear e intervenir a través de instrumentos para alcanzar objetivos macroeconómicos.</p>
+        <ul style="margin-top:10px;">
+          <li><strong>Expansiva:</strong> aumentar cantidad de dinero en circulación</li>
+          <li><strong>Restrictiva:</strong> disminuir cantidad de dinero en circulación</li>
+          <li><strong>Convencional</strong> vs <strong>No convencional</strong></li>
+        </ul>
+      </div>
+
+      <div class="card info">
+        <h3>📌 Subpolítica Comercial</h3>
+        <p style="margin-top:10px;">Regular el ingreso/egreso de mercancías para lograr equilibrio entre apertura comercial y protección del mercado doméstico.</p>
+        <ul style="margin-top:10px;">
+          <li>Proteger industria doméstica (competencia externa)</li>
+          <li>Sustituir importaciones</li>
+          <li>Proteger industrias nacientes</li>
+          <li>Generar/proteger empleo</li>
+          <li>Equilibrio de balanza de pagos</li>
+          <li>Proteger contra <strong>dumping</strong></li>
+          <li>Estándares de calidad, seguridad, sanidad</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card info fade-in">
+      <div class="card-header">
+        <span class="card-tag tag-info">Módulo 1</span>
+        <h3>Instrumentos de Política Comercial</h3>
+      </div>
+      <div class="grid-2" style="margin-top:14px;">
+        <div>
+          <p><strong style="color:#a5b4fc;">📋 Medidas ARANCELARIAS</strong> (relacionadas con pagar algo)</p>
+          <ul style="margin-top:8px;">
+            <li><strong>Derechos Ad-valorem:</strong> % sobre el valor de la mercancía</li>
+            <li><strong>Derechos Específicos:</strong> monto fijo por unidad (peso, volumen, etc.)</li>
+            <li><strong>Derechos Mixtos:</strong> combinación de ambos</li>
+            <li>Tasas</li>
+            <li>Contribuciones (porcentuales, no voluntarias)</li>
+            <li>Impuestos</li>
+            <li><strong>Cupos:</strong> límite de cantidad permitida</li>
+          </ul>
+        </div>
+        <div>
+          <p><strong style="color:#6ee7b7;">🚫 Medidas PARA-ARANCELARIAS</strong> (no es pagar, es tramitar)</p>
+          <ul style="margin-top:8px;">
+            <li>Técnicas / No técnicas</li>
+            <li><strong>Prohibiciones económicas:</strong> proteger balanza comercial</li>
+            <li><strong>Prohibiciones no económicas:</strong> medio ambiente, seguridad nacional</li>
+            <li>Prohibiciones absolutas (total) vs relativas (parcial)</li>
+            <li><strong>Licencias previas automáticas:</strong> se conceden siempre (solo trámite)</li>
+            <li><strong>Licencias previas no automáticas:</strong> pueden rechazarse, controlan cantidad/precio</li>
+          </ul>
+          <div class="warn-box" style="margin-top:8px;">
+            <strong>Ejemplo:</strong> Para importar armas se necesita certificación especial → medida para-arancelaria, no impositiva.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card info fade-in">
+      <h3>📌 Subpolítica Promocional</h3>
+      <p style="margin-top:10px;">Herramientas para incentivar las exportaciones:</p>
+      <ul style="margin-top:8px;">
+        <li><strong>Prefinanciación de exportaciones</strong></li>
+        <li>Reintegros / Reembolsos de impuestos</li>
+        <li>Draw-back (devolución de aranceles pagados en importaciones)</li>
+        <li>Ferias y misiones comerciales</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SECCIÓN 2 – TERRITORIO ADUANERO
+  ══════════════════════════════════════ -->
+  <section id="territorio">
+    <div class="section-title fade-in">
+      <div class="section-icon ic-amber">🗺️</div>
+      <div>
+        <h2>Territorio Aduanero</h2>
+        <div class="sec-sub">Código Aduanero – Tema frecuente en parciales</div>
+      </div>
+    </div>
+
+    <div class="card high fade-in">
+      <div class="card-header">
+        <span class="card-tag tag-high">Concepto base</span>
+        <h3>¿Qué es el Territorio Aduanero?</h3>
+      </div>
+      <p>El ámbito terrestre, acuático y aéreo sometido a la soberanía nacional <em>en el que se aplica un mismo sistema arancelario y de prohibiciones de carácter económico a las importaciones y exportaciones</em>.</p>
+      <div class="danger-box" style="margin-top:12px;">
+        <strong>⚠️ Importante:</strong> <strong>Territorio aduanero ≠ Territorio soberano.</strong><br>
+        Ejemplo: La UE es un único territorio aduanero con múltiples territorios soberanos. Argentina tiene 1 territorio soberano pero 2 territorios aduaneros (TAG + TAE de TDF).
+      </div>
+    </div>
+
+    <div class="territory-diagram fade-in">
+      <h3 style="color:var(--text-primary); margin-bottom:16px;">Esquema del Territorio Argentino</h3>
+      <div class="terr-box" style="border-color:#6366f1; max-width:550px;">
+        <span style="color:#a5b4fc; font-weight:700;">🇦🇷 Territorio Soberano Argentino</span>
+        <div style="margin-top:12px; display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+          <div class="terr-box" style="border-color:#10b981; max-width:100%; margin:0;">
+            <span style="color:#6ee7b7;">TAG – Territorio Aduanero General</span>
+            <div class="terr-tag">Área continental + archipiélagos<br>(excl. zonas francas y exclaves)</div>
+          </div>
+          <div class="terr-box" style="border-color:#f59e0b; max-width:100%; margin:0;">
+            <span style="color:#fcd34d;">TAE – Territorio Aduanero Especial</span>
+            <div class="terr-tag">Isla Grande de Tierra del Fuego<br>(Ley 19.640 de 1972)</div>
+          </div>
+        </div>
+        <div style="margin-top:10px;" class="terr-box" style="border-color:#ef4444; max-width:100%; margin:6px 0 0;">
+          <span style="color:#fca5a5;">🏖️ Área Aduanera Franca</span>
+          <div class="terr-tag">Isla de los Estados · Antártida · Malvinas · Atlántico Sur<br>(NO es territorio aduanero)</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="color:var(--text-primary); margin: 24px 0 14px; font-size:1.1rem;">División del Territorio Aduanero</h3>
+
+    <div class="grid-2 fade-in">
+      <div class="card info">
+        <h3>🔵 Zona Primaria Aduanera</h3>
+        <p style="margin-top:8px;">Parte del territorio aduanero <strong>habilitada para la ejecución de operaciones aduaneras</strong> o afectada al control de las mismas. Rigen normas especiales para circulación de personas y mercadería.</p>
+        <ul style="margin-top:8px;">
+          <li>Puertos, muelles, atracaderos</li>
+          <li>Aeropuertos y pasos fronterizos</li>
+          <li>Depósitos, plazoletas, locales</li>
+          <li>Espejos de agua adyacentes</li>
+          <li>Espacios aéreos correspondientes</li>
+        </ul>
+      </div>
+
+      <div class="card info">
+        <h3>🟣 Zona Secundaria Aduanera</h3>
+        <p style="margin-top:8px;">El territorio aduanero <strong>a excepción de la zona primaria</strong>. Es el resto del país fuera de puertos y pasos.</p>
+        <div style="margin-top:14px;">
+          <h3>🟠 Zona de Vigilancia Especial</h3>
+          <p style="margin-top:8px;">Franja de la zona secundaria sometida a disposiciones especiales de control. Se extiende desde fronteras terrestres/acuáticas hacia el interior a distancia reglamentada. Incluye también los enclaves.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card info fade-in">
+      <h3>🔵 Zona Marítima Aduanera</h3>
+      <p style="margin-top:8px;">Franja del <strong>mar territorial argentino</strong> desde la línea de las más bajas mareas hacia el exterior. <strong>No puede exceder 20 km.</strong> Sujeta a disposiciones especiales de control.</p>
+    </div>
+
+    <div class="grid-2 fade-in">
+      <div class="card high">
+        <div class="card-header">
+          <span class="card-tag tag-high">Art. 4 CA</span>
+          <h3>🏳️ Enclave</h3>
+        </div>
+        <p>Ámbito sometido a la soberanía de <strong>otro Estado</strong>, en el cual, por convenio internacional, se aplica la <strong>legislación aduanera nacional</strong>.</p>
+        <div class="highlight"><strong>Argentina hoy:</strong> NO tiene enclaves.</div>
+      </div>
+
+      <div class="card high">
+        <div class="card-header">
+          <span class="card-tag tag-high">Art. 4 CA</span>
+          <h3>🚩 Exclave</h3>
+        </div>
+        <p>Ámbito sometido a la soberanía de la <strong>Nación Argentina</strong>, en el cual, por convenio internacional, se aplica la <strong>legislación aduanera de otro Estado</strong>.</p>
+        <div class="highlight"><strong>Argentina:</strong> Tuvo 2 exclaves cerca del puerto de Rosario (Paraguay y Bolivia). En 2019 comenzaron a relocalizarse.</div>
+      </div>
+    </div>
+
+    <div class="card high fade-in">
+      <div class="card-header">
+        <span class="card-tag tag-high">Art. 590 CA</span>
+        <h3>🏖️ Área Franca / Zona Franca</h3>
+      </div>
+      <p>Ámbito dentro del cual la mercadería <strong>no está sometida al control habitual del servicio aduanero</strong> y su introducción/extracción <strong>no está gravada con tributos</strong> (excepto tasas retributivas de servicios). No es alcanzada por prohibiciones de carácter económico.</p>
+      <div class="warn-box">
+        <strong>Regla de examen:</strong> Introducir mercadería al área franca desde el TAG se trata como <strong>importación</strong>. Extraerla hacia el TAG se trata como <strong>exportación</strong>. Aunque estén en el mismo territorio soberano.
+      </div>
+      <p style="margin-top:10px;"><strong>Prohibido siempre</strong> en zonas francas: armas, municiones, mercadería que atente contra moral, salud, sanidad vegetal/animal, seguridad, medio ambiente.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SECCIÓN 3 – LOGÍSTICA INTERNACIONAL
+  ══════════════════════════════════════ -->
+  <section id="logistica">
+    <div class="section-title fade-in">
+      <div class="section-icon ic-cyan">🚢</div>
+      <div>
+        <h2>Logística Internacional</h2>
+        <div class="sec-sub">Módulo 2 – Transporte, documentos, sujetos</div>
+      </div>
+    </div>
+
+    <!-- CONTENEDORES -->
+    <div class="card cyan fade-in">
+      <div class="card-header">
+        <span class="card-tag tag-info">⭐ Siempre entra</span>
+        <h3>📦 Contenedores – Medidas exactas</h3>
+      </div>
+      <div class="table-wrap">
+        <table class="t" style="margin-top:14px;">
+          <tr>
+            <th>Nombre</th><th>Sigla</th><th>Largo</th><th>Ancho</th><th>Alto</th>
+          </tr>
+          <tr>
+            <td>Contenedor de 20 pies</td><td><code>TEU</code></td>
+            <td>6 m (≈20')</td><td>2,44 m</td><td>2,59 m</td>
+          </tr>
+          <tr>
+            <td>Contenedor de 40 pies</td><td><code>FEU</code></td>
+            <td>12 m (≈40')</td><td>2,44 m</td><td>2,59 m</td>
+          </tr>
+          <tr>
+            <td>40 pies High Cube</td><td><code>HC</code></td>
+            <td>12 m</td><td>2,44 m</td><td><strong>2,90 m</strong></td>
+          </tr>
+        </table>
+      </div>
+      <div class="highlight" style="margin-top:14px;">
+        <strong>TEU = Twenty-foot Equivalent Unit</strong> · <strong>FEU = Forty-foot Equivalent Unit</strong><br>
+        El High Cube se diferencia por ser más ALTO (30 cm más que el estándar).
+      </div>
+    </div>
+
+    <h3 style="color:var(--text-primary); margin: 24px 0 14px; font-size:1.1rem;">Tipos de Contenedores</h3>
+    <div class="grid-3 fade-in">
+      <div class="card info">
+        <h3>🔒 Dry / Cerrado</h3>
+        <p style="margin-top:6px;">Para <strong>carga general</strong>. Cerrado herméticamente. El más utilizado en el mundo.</p>
+      </div>
+      <div class="card info">
+        <h3>🔝 Open Top</h3>
+        <p style="margin-top:6px;">Sin techo. Para cargas <strong>que sobresalen por arriba</strong> (maquinaria, madera).</p>
+      </div>
+      <div class="card info">
+        <h3>↔️ Open Side</h3>
+        <p style="margin-top:6px;">Abierto en laterales. Para carga que <strong>se carga de costado</strong>.</p>
+      </div>
+      <div class="card info">
+        <h3>🛢️ Iso Tank</h3>
+        <p style="margin-top:6px;">Cisterna. Para <strong>graneles líquidos o gaseosos</strong> (aceites, químicos, gases).</p>
+      </div>
+      <div class="card info">
+        <h3>🧱 Plataforma / Flat Rack</h3>
+        <p style="margin-top:6px;"><strong>Sin techo ni laterales</strong>. Para cargas sobredimensionadas.</p>
+      </div>
+      <div class="card info">
+        <h3>❄️ Reefer</h3>
+        <p style="margin-top:6px;"><strong>Refrigerado</strong>. Para cargas perecederas (alimentos, flores, farmacéuticos).</p>
+      </div>
+    </div>
+
+    <div class="card cyan fade-in" style="margin-top:18px;">
+      <div class="card-header">
+        <span class="card-tag tag-exam">📝 Dato de examen</span>
+        <h3>🪵 Pallets y NIMF 15</h3>
+      </div>
+      <p>Los pallets de madera deben cumplir la norma <strong>NIMF 15</strong> (Norma Internacional para Medidas Fitosanitarias N°15) que establece los tratamientos requeridos para eliminar plagas en material de embalaje de madera. Sin este certificado, la mercadería puede ser rechazada en destino.</p>
+      <div class="highlight"><strong>NIMF 15 = Certificación libre de plagas</strong> para embalajes de madera utilizados en comercio internacional.</div>
+    </div>
+
+    <!-- SUJETOS DEL TRANSPORTE -->
+    <div class="section-title fade-in" style="margin-top:40px; border:none; padding:0 0 14px;">
+      <h2 style="font-size:1.25rem;">👥 Sujetos del Transporte Marítimo</h2>
+    </div>
+
+    <div class="table-wrap fade-in">
+      <table class="t">
+        <tr>
+          <th>Sujeto</th><th>Rol / Función</th>
+        </tr>
+        <tr>
+          <td>Propietario</td>
+          <td>Dueño del buque. Puede o no gestionar la operación.</td>
+        </tr>
+        <tr>
+          <td>Armador</td>
+          <td>Realiza la <strong>gestión navegadora y comercial</strong> del buque. Puede ser el propietario o no. Designa al capitán y al agente marítimo. Se ocupa de entregar la mercadería en destino en buenas condiciones.</td>
+        </tr>
+        <tr>
+          <td>Capitán</td>
+          <td>Dirige la travesía y <strong>resguarda la mercancía</strong> durante el viaje.</td>
+        </tr>
+        <tr>
+          <td>Agente Marítimo</td>
+          <td>Representante del armador en cada puerto. Realiza gestión de representación y documental.</td>
+        </tr>
+        <tr>
+          <td>ATA (Agente de Transporte Aduanero)</td>
+          <td>Representa a los <strong>transportistas</strong> ante el servicio aduanero. Gestiona la presentación del vehículo y carga ante aduana.</td>
+        </tr>
+        <tr>
+          <td>Despachante de Aduana</td>
+          <td>Representa al <strong>importador/exportador</strong> ante aduana. Gestiona el despacho de la mercadería.</td>
+        </tr>
+        <tr>
+          <td>Shipper / Cargador</td>
+          <td>Quien <strong>suministra la carga</strong> (generalmente el exportador o vendedor).</td>
+        </tr>
+        <tr>
+          <td>Consignee / Consignatario</td>
+          <td>Quien <strong>recibe la carga</strong> en destino (generalmente el importador o comprador).</td>
+        </tr>
+        <tr>
+          <td>Freight Forwarder / OTM</td>
+          <td>Operador de Transporte Multimodal. Organiza toda la cadena logística, contrata distintos modos de transporte.</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- DOCUMENTOS -->
+    <div class="section-title fade-in" style="margin-top:40px; border:none; padding:0 0 14px;">
+      <h2 style="font-size:1.25rem;">📄 Documentos del Transporte</h2>
+    </div>
+
+    <div class="grid-2 fade-in">
+      <div class="card cyan">
+        <div class="card-header">
+          <span class="card-tag tag-high">Marítimo</span>
+          <h3>Bill of Lading (BL)</h3>
+        </div>
+        <p>Conocimiento de embarque marítimo. <strong>Es un título valor negociable</strong>. Funciones:</p>
+        <ul style="margin-top:8px;">
+          <li>Recibo de la mercadería por parte del transportista</li>
+          <li>Contrato de transporte</li>
+          <li>Título de propiedad de la mercadería (negociable)</li>
+        </ul>
+        <div class="highlight"><strong>¿Quién lo emite?</strong> El armador / transportista marítimo.</div>
+      </div>
+
+      <div class="card cyan">
+        <div class="card-header">
+          <span class="card-tag tag-high">Aéreo</span>
+          <h3>AWB – Air Waybill</h3>
+        </div>
+        <p>Conocimiento de embarque aéreo. <strong>NO es título valor</strong> (es nominativo, no negociable). Funciones:</p>
+        <ul style="margin-top:8px;">
+          <li>Contrato de transporte aéreo</li>
+          <li>Recibo de la mercadería</li>
+          <li>Declaración aduanera</li>
+        </ul>
+        <div class="highlight"><strong>¿Quién lo emite?</strong> La empresa aérea / aerolínea.</div>
+      </div>
+
+      <div class="card cyan">
+        <div class="card-header">
+          <span class="card-tag tag-high">Terrestre</span>
+          <h3>Carta de Porte</h3>
+        </div>
+        <p>Documento del transporte terrestre (camión). No es título valor, es nominativo. Acompaña a la mercadería durante todo el viaje.</p>
+        <div class="highlight"><strong>CMR</strong> = Carta de porte internacional según Convenio CMR (transporte internacional por carretera).</div>
+      </div>
+
+      <div class="card cyan">
+        <div class="card-header">
+          <span class="card-tag tag-info">Ferroviario</span>
+          <h3>Carta de Porte Ferroviaria</h3>
+        </div>
+        <p>Documento del transporte por ferrocarril. Similar a la carta de porte terrestre. No es título valor.</p>
+      </div>
+    </div>
+
+    <!-- TIPOS DE BUQUES -->
+    <div class="card cyan fade-in" style="margin-top:18px;">
+      <div class="card-header">
+        <span class="card-tag tag-info">Módulo 2</span>
+        <h3>🚢 Tipos de Buques</h3>
+      </div>
+      <div class="table-wrap">
+        <table class="t">
+          <tr><th>Tipo</th><th>Carga que transporta</th><th>Sistema de carga</th></tr>
+          <tr><td>Carga General</td><td>Cargamentos básicos generales</td><td>Grúas, no apto para contenedores</td></tr>
+          <tr><td>Granelero</td><td>Carga suelta a granel (granos, minerales)</td><td>Tolvas o cucharas</td></tr>
+          <tr><td>Portacontenedores</td><td>Contenedores (+50% del comercio mundial)</td><td>Grúas especiales, celdas</td></tr>
+          <tr><td>RoRo (Roll on/Roll off)</td><td>Vehículos y carga sobre ruedas</td><td>Rodamiento (rampa)</td></tr>
+          <tr><td>Frigorífico / Reefer</td><td>Carga refrigerada (alimentos perecederos)</td><td>Temperatura controlada</td></tr>
+          <tr><td>Petrolero</td><td>Petróleo crudo / derivados</td><td>Tanques especiales</td></tr>
+          <tr><td>Gases licuados</td><td>Gases en estado líquido</td><td>Tanques esféricos en cubierta</td></tr>
+          <tr><td>Cargas químicas</td><td>Sustancias químicas (sin mezclar)</td><td>Múltiples tanques independientes</td></tr>
+          <tr><td>Ganadero</td><td>Animales vivos</td><td>Zonas de ubicación y alimentación</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- CONTRATACIÓN TRANSPORTE -->
+    <div class="card cyan fade-in" style="margin-top:18px;">
+      <div class="card-header">
+        <span class="card-tag tag-high">Frecuente en examen</span>
+        <h3>Contratación del Transporte Marítimo</h3>
+      </div>
+      <div class="grid-2" style="margin-top:14px;">
+        <div>
+          <p><strong style="color:#67e8f9;">🚢 Línea Regular (Liner)</strong></p>
+          <ul style="margin-top:6px;">
+            <li>Itinerarios y rutas <strong>pre-establecidas</strong></li>
+            <li>Tarifas constantes</li>
+            <li>Disponibilidad de espacios para carga general y contenedorizada</li>
+            <li><strong>Conferencia:</strong> 2+ empresas armadoras acuerdan cubrir determinadas rutas (tráfico conferenciado)</li>
+            <li>Empresas fuera de conferencia: <strong>Outsiders</strong> o armadores independientes</li>
+          </ul>
+        </div>
+        <div>
+          <p><strong style="color:#67e8f9;">⛵ Fletamento (Tramp)</strong></p>
+          <ul style="margin-top:6px;">
+            <li>Modalidad similar a un <strong>alquiler</strong></li>
+            <li>Documento: <strong>póliza/contrato de fletamento</strong></li>
+            <li><strong>Por viaje:</strong> se contrata para un viaje específico</li>
+            <li><strong>Por tiempo:</strong> se alquila por un período</li>
+            <li><strong>Casco desnudo:</strong> se entrega la nave sin tripulación ni insumos</li>
+          </ul>
+        </div>
+      </div>
+      <div class="highlight" style="margin-top:12px;">
+        <strong>Velocidad de buques:</strong> Se mide en <strong>nudos</strong>. 1 nudo = 1,852 km/h.
+      </div>
+    </div>
+
+    <!-- OTROS MODOS -->
+    <div class="card info fade-in" style="margin-top:18px;">
+      <div class="card-header">
+        <span class="card-tag tag-info">Otros modos</span>
+        <h3>Transporte Aéreo, Terrestre y Multimodal</h3>
+      </div>
+      <div class="grid-3" style="margin-top:14px;">
+        <div>
+          <p><strong style="color:#a5b4fc;">✈️ Aéreo</strong></p>
+          <ul style="margin-top:6px;">
+            <li>Más rápido, más costoso</li>
+            <li>Ideal para cargas de alto valor, urgentes o perecederas</li>
+            <li>Documento: AWB</li>
+            <li>Convenio de Montreal (responsabilidad)</li>
+          </ul>
+        </div>
+        <div>
+          <p><strong style="color:#a5b4fc;">🚛 Terrestre</strong></p>
+          <ul style="margin-top:6px;">
+            <li>Más flexible, puerta a puerta</li>
+            <li>Documento: Carta de Porte / CMR</li>
+            <li>Integración con otros modos</li>
+          </ul>
+        </div>
+        <div>
+          <p><strong style="color:#a5b4fc;">🔄 Multimodal</strong></p>
+          <ul style="margin-top:6px;">
+            <li>Combina 2+ modos de transporte</li>
+            <li>Un solo documento: <strong>FBL</strong> (FIATA Bill of Lading)</li>
+            <li>Un responsable: OTM (Operador de Transporte Multimodal)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SECCIÓN 4 – INCOTERMS
+  ══════════════════════════════════════ -->
+  <section id="incoterms">
+    <div class="section-title fade-in">
+      <div class="section-icon ic-green">📦</div>
+      <div>
+        <h2>INCOTERMS 2020</h2>
+        <div class="sec-sub">Módulo 3 – El tema más importante del primer parcial</div>
+      </div>
+    </div>
+
+    <div class="card crit fade-in">
+      <div class="card-header">
+        <span class="card-tag tag-crit">🔴 Critico</span>
+        <h3>¿Qué son los INCOTERMS?</h3>
+      </div>
+      <p>Son un conjunto de <strong>términos comerciales</strong> formados por siglas de 3 letras, publicados por la <strong>Cámara de Comercio Internacional (CCI/ICC)</strong>, que reflejan derechos y obligaciones del vendedor y comprador a lo largo del transporte y entrega de mercadería en materia de:</p>
+      <div class="grid-3" style="margin-top:14px;">
+        <div class="highlight">📋 <strong>Tareas a cumplir</strong><br>quién hace qué</div>
+        <div class="highlight">💰 <strong>Gastos a erogar</strong><br>quién paga qué</div>
+        <div class="highlight">⚠️ <strong>Riesgos a cubrir</strong><br>dónde se transfiere el riesgo</div>
+      </div>
+      <div class="warn-box" style="margin-top:14px;">
+        <strong>Importante:</strong> Los INCOTERMS <strong>NO son un contrato de compraventa</strong> y no lo sustituyen. Tampoco regulan la transferencia de propiedad de la mercadería. Se actualizan cada 10 años (últimas revisiones: 2000, 2010, 2020).
+      </div>
+      <p style="margin-top:12px;"><strong>Estructura de cotización correcta:</strong> <code>Moneda · Monto · Término · Lugar · INCOTERMSAr · Revisión · Comentario</code></p>
+      <div class="highlight">Ej: <strong>USD 2.750.000 FOB Puerto de Buenos Aires INCOTERMSAr 2020</strong></div>
+    </div>
+
+    <h3 style="color:var(--text-primary); margin: 28px 0 16px; font-size:1.2rem;">Los 4 Grupos de INCOTERMS</h3>
+
+    <div class="inc-grid fade-in">
+      <!-- GRUPO E -->
+      <div class="inc-card g-E" style="grid-column: span 1;">
+        <div class="inc-term" style="color:#f59e0b;">Grupo E</div>
+        <div class="inc-name">El vendedor pone mercadería a disposición del comprador en su local</div>
+        <hr style="border-color:rgba(255,255,255,0.06); margin: 10px 0;">
+        <strong style="color:#fcd34d; font-size:1.1rem;">EXW</strong> — Ex Works
+        <div class="inc-row" style="margin-top:8px;"><span class="inc-label">Flete:</span><span class="no">Comprador</span></div>
+        <div class="inc-row"><span class="inc-label">Seguro:</span><span class="no">Comprador</span></div>
+        <div class="inc-row"><span class="inc-label">Exportación:</span><span class="no">Comprador</span></div>
+        <div class="inc-row"><span class="inc-label">Riesgo pasa:</span><span class="part">En depósito del vendedor</span></div>
+        <span class="inc-transport t-all">Todo modo</span>
+      </div>
+
+      <!-- GRUPO F -->
+      <div class="inc-card g-F">
+        <div class="inc-term" style="color:#6366f1;">Grupo F</div>
+        <div class="inc-name">Vendedor entrega al transportista internacional contratado por el COMPRADOR</div>
+        <hr style="border-color:rgba(255,255,255,0.06); margin: 10px 0;">
+
+        <p style="font-weight:700; color:#a5b4fc; margin-bottom:8px;">FAS — Free Alongside Ship</p>
+        <div class="inc-row"><span class="inc-label">Flete local:</span><span class="yes">Vendedor</span></div>
+        <div class="inc-row"><span class="inc-label">Carga al buque:</span><span class="no">Comprador</span></div>
+        <div class="inc-row"><span class="inc-label">Exportación:</span><span class="yes">Vendedor</span></div>
+        <div class="inc-row"><span class="inc-label">Uso:</span><span class="part">Solo graneles/especiales</span></div>
+        <span class="inc-transport t-mar">Solo marítimo</span>
+
+        <hr style="border-color:rgba(255,255,255,0.06); margin: 12px 0;">
+
+        <p style="font-weight:700; color:#a5b4fc; margin-bottom:8px;">FCA — Free Carrier</p>
+        <div class="inc-row"><span class="inc-label">Flete local:</span><span class="part">Puede o no</span></div>
+        <div class="inc-row"><span class="inc-label">Maniobras:</span><span class="yes">Vendedor</span></div>
+        <div class="inc-row"><span class="inc-label">Exportación:</span><span class="yes">Vendedor</span></div>
+        <span class="inc-transport t-all">Todo modo</span>
+
+        <hr style="border-color:rgba(255,255,255,0.06); margin: 12px 0;">
+
+        <p style="font-weight:700; color:#a5b4fc; margin-bottom:8px;">FOB — Free On Board</p>
+        <div class="inc-row"><span class="inc-label">Flete local:</span><span class="part">Puede o no</span></div>
+        <div class="inc-row"><span class="inc-label">Carga al buque:</span><span class="yes">Vendedor</span></div>
+        <div class="inc-row"><span class="inc-label">Exportación:</span><span class="yes">Vendedor</span></div>
+        <div class="inc-row"><span class="inc-label">Riesgo pasa:</span><span class="yes">Cuando sube al barco</span></div>
+        <span class="inc-transport t-mar">Solo marítimo</span>
+      </div>
+
+      <!-- GRUPO C -->
+      <div class="inc-card g-C">
+        <div class="inc-term" style="color:#06b6d4;">Grupo C</div>
+        <div class="inc-name">Vendedor CONTRATA el transporte (por orden, cuenta y riesgo del COMPRADOR)</div>
+        <hr style="border-color:rgba(255,255,255,0.06); margin: 10px 0;">
+
+        <p style="font-weight:700; color:#67e8f9; margin-bottom:8px;">CFR — Cost &amp; Freight</p>
+        <div class="inc-row"><span class="inc-label">Flete internacional:</span><span class="yes">Vendedor</span></div>
+        <div class="inc-row"><span class="inc-label">Seguro:</span><span class="no">Comprador</span></div>
+        <div class="inc-row"><span class="inc-label">Riesgo pasa:</span><span class="part">Al cargar en buque origen</span></div>
+        <span class="inc-transport t-mar">Solo marítimo</span>
+
+        <hr style="border-color:rgba(255,255,255,0.06); margin: 12px 0;">
+
+        <p style="font-weight:700; color:#67e8f9; margin-bottom:8px;">CIF — Cost, Insurance &amp; Freight ⭐</p>
+        <div class="inc-row"><span class="inc-label">Flete internacional:</span><span class="yes">Vendedor</span></div>
+        <div class="inc-row"><span class="inc-label">Seguro:</span><span class="yes" style="color:#f9a8d4;">Vendedor (OBLIGATORIO)</span></div>
+        <div class="inc-row"><span class="inc-label">Riesgo pasa:</span><span class="part">Al cargar en buque origen</span></div>
+        <span class="inc-transport t-mar">Solo marítimo</span>
+
+        <hr style="border-color:rgba(255,255,255,0.06); margin: 12px 0;">
+
+        <p style="font-weight:700; color:#67e8f9; margin-bottom:8px;">CPT — Carriage Paid To</p>
+        <div class="inc-row"><span class="inc-label">Flete internacional:</span><span class="yes">Vendedor</span></div>
+        <div class="inc-row"><span class="inc-label">Seguro:</span><span class="no">Comprador</span></div>
+        <span class="inc-transport t-all">Todo modo</span>
+
+        <hr style="border-color:rgba(255,255,255,0.06); margin: 12px 0;">
+
+        <p style="font-weight:700; color:#67e8f9; margin-bottom:8px;">CIP — Carriage &amp; Insurance Paid ⭐</p>
+        <div class="inc-row"><span class="inc-label">Flete internacional:</span><span class="yes">Vendedor</span></div>
+        <div class="inc-row"><span class="inc-label">Seguro:</span><span class="yes" style="color:#f9a8d4;">Vendedor (OBLIGATORIO)</span></div>
+        <span class="inc-transport t-all">Todo modo</span>
+      </div>
+
+      <!-- GRUPO D -->
+      <div class="inc-card g-D" style="grid-column: span 1;">
+        <div class="inc-term" style="color:#10b981;">Grupo D</div>
+        <div class="inc-name">Vendedor asume gastos y riesgos hasta el punto convenido EN DESTINO</div>
+        <hr style="border-color:rgba(255,255,255,0.06); margin: 10px 0;">
+
+        <p style="font-weight:700; color:#6ee7b7; margin-bottom:8px;">DAP — Delivered At Place</p>
+        <div class="inc-row"><span class="inc-label">Descarga:</span><span class="no">Comprador</span></div>
+        <div class="inc-row"><span class="inc-label">Importación:</span><span class="no">Comprador</span></div>
+        <span class="inc-transport t-all">Todo modo</span>
+
+        <hr style="border-color:rgba(255,255,255,0.06); margin: 12px 0;">
+
+        <p style="font-weight:700; color:#6ee7b7; margin-bottom:8px;">DPU — Delivered At Place Unloaded</p>
+        <div class="inc-row"><span class="inc-label">Descarga:</span><span class="yes">Vendedor</span></div>
+        <div class="inc-row"><span class="inc-label">Importación:</span><span class="no">Comprador</span></div>
+        <div class="inc-row"><span class="inc-label">Único INCOTERM:</span><span class="yes">Incluye descarga</span></div>
+        <span class="inc-transport t-all">Todo modo</span>
+
+        <hr style="border-color:rgba(255,255,255,0.06); margin: 12px 0;">
+
+        <p style="font-weight:700; color:#6ee7b7; margin-bottom:8px;">DDP — Delivered Duty Paid ⭐</p>
+        <div class="inc-row"><span class="inc-label">Todos los costos:</span><span class="yes">Vendedor</span></div>
+        <div class="inc-row"><span class="inc-label">Importación:</span><span class="yes">Vendedor</span></div>
+        <div class="inc-row"><span class="inc-label">Derechos aduaneros:</span><span class="yes">Vendedor</span></div>
+        <div class="inc-row" style="margin-top:6px;"><span class="part">Máx. obligación del vendedor</span></div>
+        <span class="inc-transport t-all">Todo modo</span>
+      </div>
+    </div>
+
+    <!-- PREGUNTA ESTRELLA DE INCOTERMS -->
+    <div class="card crit fade-in" style="margin-top:24px;">
+      <div class="card-header">
+        <span class="card-tag tag-exam">⭐ Pregunta estrella de examen</span>
+        <h3>¿En cuáles INCOTERMS el exportador está OBLIGADO a contratar seguro?</h3>
+      </div>
+      <div class="danger-box">
+        <strong>RESPUESTA:</strong> Solo en 2 términos:<br><br>
+        🔹 <strong>CIF</strong> (Cost, Insurance and Freight) → Solo transporte marítimo<br>
+        🔹 <strong>CIP</strong> (Carriage and Insurance Paid To) → Todo medio de transporte<br><br>
+        En todos los demás INCOTERMS, el seguro es <strong>optativo / recomendado pero NO obligatorio</strong>.
+      </div>
+      <div class="warn-box" style="margin-top:12px;">
+        <strong>Dato adicional:</strong> En CIP (INCOTERMS 2020), el nivel de cobertura del seguro debe ser mínimo según las cláusulas "A" del Institute Cargo Clauses (la más amplia). En CIF, el mínimo es la cláusula "C" (la más básica).
+      </div>
+    </div>
+
+    <div class="card high fade-in" style="margin-top:18px;">
+      <div class="card-header">
+        <span class="card-tag tag-high">Resumen rápido</span>
+        <h3>Tabla de transferencia de riesgo</h3>
+      </div>
+      <div class="table-wrap">
+        <table class="t">
+          <tr><th>INCOTERM</th><th>El riesgo pasa al comprador cuando…</th><th>Transporte</th></tr>
+          <tr><td>EXW</td><td>La mercadería está a disposición en el depósito del vendedor</td><td>Todo</td></tr>
+          <tr><td>FCA</td><td>Entregada al primer transportista designado por comprador</td><td>Todo</td></tr>
+          <tr><td>FAS</td><td>Mercadería está al costado del buque en puerto de origen</td><td>Marítimo</td></tr>
+          <tr><td>FOB</td><td>Mercadería correctamente estivada a bordo del buque</td><td>Marítimo</td></tr>
+          <tr><td>CFR / CIF</td><td>Al cargar en el buque en origen (riesgo ≠ costo del flete)</td><td>Marítimo</td></tr>
+          <tr><td>CPT / CIP</td><td>Al entregarla al primer porteador en origen</td><td>Todo</td></tr>
+          <tr><td>DAP / DPU / DDP</td><td>En el punto de destino convenido</td><td>Todo</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SECCIÓN 4b – ADUANA (NACIF)
+  ══════════════════════════════════════ -->
+  <section id="aduana">
+    <div class="section-title fade-in">
+      <div class="section-icon ic-amber">🏷️</div>
+      <div>
+        <h2>Operatoria Aduanera</h2>
+        <div class="sec-sub">Nacif – Clasificación, valoración, canales, prácticas desleales</div>
+      </div>
+    </div>
+
+    <!-- CLASIFICACIÓN ARANCELARIA -->
+    <div class="card high fade-in">
+      <div class="card-header">
+        <span class="card-tag tag-high">⭐ Frecuente</span>
+        <h3>📋 Clasificación / Posición Arancelaria (NCM)</h3>
+      </div>
+      <p>La clasificación arancelaria consiste en determinar una <strong>nomenclatura uniforme</strong> del producto a través de un código, con el objetivo de determinar el tratamiento arancelario en operaciones de importación y exportación.</p>
+      <div class="highlight">
+        <strong>¿Quién la realiza?</strong> El <strong>despachante de aduana</strong>.
+      </div>
+      <ul style="margin-top:10px;">
+        <li><strong>Los primeros 6 dígitos son universales</strong> (iguales en todos los países del mundo – Sistema Armonizado HS).</li>
+        <li>Los dígitos restantes son específicos de cada país (Argentina usa 8 dígitos: NCM).</li>
+        <li><strong>Subpartida regional:</strong> la que compartimos con los países del MERCOSUR.</li>
+        <li>El <strong>ítem</strong> puede indicar marcas, información adicional, etc.</li>
+        <li>El <strong>Dígito de Control (DC):</strong> sirve solo para controlar que se tipió correctamente la posición arancelaria.</li>
+      </ul>
+    </div>
+
+    <!-- VALORACIÓN ADUANERA -->
+    <div class="card high fade-in">
+      <div class="card-header">
+        <span class="card-tag tag-high">⭐ Muy frecuente</span>
+        <h3>💰 Valoración Aduanera</h3>
+      </div>
+      <p>La valoración aduanera determina la <strong>base imponible</strong> para calcular los tributos a abonar o los beneficios fiscales a percibir.</p>
+      <div class="danger-box">
+        <strong>Regla crítica:</strong><br>
+        🔹 En <strong>importación</strong> → se usa el valor <strong>CIF</strong> (Costo + Seguro + Flete)<br>
+        🔹 En <strong>exportación</strong> → se usa el valor <strong>FOB</strong>
+      </div>
+      <p style="margin-top:10px;"><strong>Método principal:</strong> Valor de transacción (precio realmente pagado). Si no hay valor de transacción válido, se aplican métodos alternativos en orden:</p>
+      <ol style="padding-left:20px; margin-top:8px; color:var(--text-secondary); font-size:0.91rem;">
+        <li>Valor de transacción de mercancías idénticas</li>
+        <li>Valor de transacción de mercancías similares</li>
+        <li>Método deductivo</li>
+        <li>Método del valor reconstruido</li>
+        <li>Método de última instancia</li>
+      </ol>
+      <div class="warn-box" style="margin-top:12px;">
+        <strong>Objetivo:</strong> Evitar prácticas deshonestas como declarar un valor menor para evadir impuestos, o un valor mayor para facilitar fuga de divisas.
+      </div>
+    </div>
+
+    <!-- ORIGEN Y PROCEDENCIA -->
+    <div class="card info fade-in">
+      <div class="card-header">
+        <span class="card-tag tag-info">Nacif</span>
+        <h3>🌐 Origen vs Procedencia</h3>
+      </div>
+      <div class="grid-2" style="margin-top:10px;">
+        <div class="highlight">
+          <strong>Origen:</strong> País donde se FABRICÓ la mercadería (o donde se realizó la última modificación significativa). Determina el tratamiento arancelario aplicable.
+        </div>
+        <div class="warn-box" style="margin:0;">
+          <strong>Procedencia:</strong> País desde el cual SE ENVIÓ la mercadería. No necesariamente coincide con el origen.
+        </div>
+      </div>
+      <div class="danger-box" style="margin-top:12px;">
+        <strong>Regla clave para el ejercicio:</strong> El arancel se aplica según el <strong>ORIGEN</strong>, no la procedencia.<br>
+        Ej: Si el origen es China pero viene de México → se aplica DIE de China, NO la preferencia arancelaria de México/ALADI.
+      </div>
+      <p style="margin-top:10px;"><strong>Criterios de origen:</strong></p>
+      <ul style="margin-top:6px;">
+        <li>Productos naturales: son originarios del país donde fueron criados/cosechados.</li>
+        <li>Manufactura en un solo país sin aportes externos: originaria de ese país.</li>
+        <li>Manufactura con aportes de otro país: originaria del que produjo el cambio de partida arancelaria.</li>
+        <li>Criterio de valor agregado: es originaria del país que mayor valor agregado aportó.</li>
+      </ul>
+    </div>
+
+    <!-- CANALES ADUANEROS -->
+    <div class="card crit fade-in">
+      <div class="card-header">
+        <span class="card-tag tag-crit">🔴 Entra siempre</span>
+        <h3>🚦 Canales de Control Aduanero</h3>
+      </div>
+      <p>Dependiendo del nivel de control asignado por el sistema MARIA, se clasifica a la declaración en uno de los siguientes canales:</p>
+      <div class="table-wrap">
+        <table class="t" style="margin-top:12px;">
+          <tr><th>Canal</th><th>Color</th><th>Qué implica</th></tr>
+          <tr>
+            <td>Canal Verde</td>
+            <td><span style="color:#34d399; font-weight:700;">🟢 Verde</span></td>
+            <td>Permite el retiro o embarque de la mercadería <strong>sin trámites adicionales</strong>. Liberación automática.</td>
+          </tr>
+          <tr>
+            <td>Canal Naranja</td>
+            <td><span style="color:#fbbf24; font-weight:700;">🟡 Naranja</span></td>
+            <td>Requiere <strong>control previo de documentación</strong> antes de liberar la mercadería.</td>
+          </tr>
+          <tr>
+            <td>Canal Rojo</td>
+            <td><span style="color:#f87171; font-weight:700;">🔴 Rojo</span></td>
+            <td><strong>Control de documentación + verificación física</strong> de la mercadería antes del retiro/embarque.</td>
+          </tr>
+          <tr>
+            <td>Canal Morado</td>
+            <td><span style="color:#c4b5fd; font-weight:700;">🟣 Morado</span></td>
+            <td><strong>Revisión más exhaustiva</strong>, especialmente en lo relativo a la mercadería. El más restrictivo.</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- PRÁCTICAS DESLEALES -->
+    <div class="card high fade-in">
+      <div class="card-header">
+        <span class="card-tag tag-high">Nacif – Módulo 1</span>
+        <h3>⚔️ Prácticas Desleales: Dumping y Subvenciones</h3>
+      </div>
+      <div class="grid-2" style="margin-top:12px;">
+        <div>
+          <p><strong style="color:#fcd34d;">🔨 Dumping</strong></p>
+          <p style="margin-top:6px;">Vender productos a precios <strong>más bajos en el extranjero</strong> que en el mercado interno del país exportador.</p>
+          <ul style="margin-top:8px;">
+            <li>Debe constatarse un <strong>daño real e inminente</strong> en el sector productivo del país importador.</li>
+            <li>Si se comprueba → se aplica un <strong>derecho antidumping</strong> específico para ese producto, origen y proveedor.</li>
+            <li>Solo se puede aplicar con pruebas del daño a la industria local.</li>
+          </ul>
+        </div>
+        <div>
+          <p><strong style="color:#fcd34d;">💰 Subvenciones</strong></p>
+          <p style="margin-top:6px;">Ayudas financieras del gobierno a exportadores: transferencias directas, exenciones impositivas, financiamiento especial, provisión de bienes/servicios.</p>
+          <ul style="margin-top:8px;">
+            <li>Objetivo: que los exportadores tengan precios más competitivos en mercados internacionales.</li>
+            <li>Pueden ser <strong>prohibidas</strong> (dañan el comercio) o <strong>recurribles</strong> (pueden impugnarse).</li>
+            <li>Contramedida: <strong>derecho compensatorio</strong> para neutralizar el efecto de la subvención.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="highlight" style="margin-top:12px;">
+        <strong>Salvaguardia:</strong> Medida de urgencia ante el aumento de importaciones que cause o amenace causar daño grave a la producción nacional. A diferencia del antidumping, no requiere probar conducta desleal, solo el daño.
+      </div>
+    </div>
+
+    <!-- SEGUROS -->
+    <div class="card info fade-in">
+      <div class="card-header">
+        <span class="card-tag tag-info">Nacif – Módulo 2</span>
+        <h3>🛡️ Seguros en Comercio Internacional</h3>
+      </div>
+      <p>Tres tipos de seguros según el objetivo:</p>
+      <div class="grid-3" style="margin-top:12px;">
+        <div class="highlight">
+          <strong>1. Seguro de transporte</strong><br>
+          Protege las mercaderías durante el traslado.
+        </div>
+        <div class="highlight">
+          <strong>2. Seguro de crédito a la exportación</strong><br>
+          Asegura el cobro de créditos comerciales internacionales.
+        </div>
+        <div class="highlight">
+          <strong>3. Seguro de caución</strong><br>
+          Por obligaciones ante la aduana.
+        </div>
+      </div>
+      <p style="margin-top:14px;"><strong>Elementos del contrato de seguro:</strong></p>
+      <div class="table-wrap">
+        <table class="t">
+          <tr><th>Elemento</th><th>Definición</th></tr>
+          <tr><td>Tomador</td><td>Quien contrata el seguro (puede ser importador o exportador)</td></tr>
+          <tr><td>Asegurado</td><td>Puede o no coincidir con el tomador</td></tr>
+          <tr><td>Asegurador</td><td>La compañía de seguros</td></tr>
+          <tr><td>Beneficiario</td><td>Quien cobra en caso de siniestro</td></tr>
+          <tr><td>Póliza</td><td>El contrato del seguro</td></tr>
+          <tr><td>Prima</td><td>El valor que la aseguradora le pone al riesgo cubierto</td></tr>
+          <tr><td>Premio</td><td>Prima + gastos administrativos + impuestos + gastos financieros. Lo que realmente pagás.</td></tr>
+          <tr><td>Cobertura</td><td>Lo que la compañía cubre. Para que haya cobertura, el premio debe estar pago a término.</td></tr>
+        </table>
+      </div>
+      <div class="warn-box" style="margin-top:12px;">
+        <strong>Costo del seguro por modo:</strong> Transporte marítimo (más caro) &gt; Terrestre &gt; Aéreo (más barato en proporción al valor)
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SECCIÓN COSTOS DE IMPORTACIÓN
+  ══════════════════════════════════════ -->
+  <section id="costos">
+    <div class="section-title fade-in">
+      <div class="section-icon" style="background:rgba(16,185,129,0.15);">🧮</div>
+      <div>
+        <h2>Ejercicio: Costos de Importación</h2>
+        <div class="sec-sub">Paso a paso completo – el ejercicio numérico del parcial</div>
+      </div>
+    </div>
+
+    <div class="card crit fade-in">
+      <div class="card-header">
+        <span class="card-tag tag-crit">🔴 Entra en el parcial</span>
+        <h3>Reglas de Oro antes de empezar</h3>
+      </div>
+      <div class="table-wrap">
+        <table class="t">
+          <tr><th>Regla</th><th>Detalle</th></tr>
+          <tr><td>Honorarios del despachante</td><td>Siempre se calcula sobre el <strong>CIF en aduana</strong></td></tr>
+          <tr><td>Comisiones bancarias y otros %</td><td>Se calculan sobre la <strong>factura comercial = INCOTERM acordado</strong> (ej: DPU, DAP, FOB, etc.)</td></tr>
+          <tr><td>Seguro para CIF en aduana</td><td>Usar siempre <strong>1%</strong> sobre CFR, independientemente de lo que diga el enunciado. Luego se hace ajuste.</td></tr>
+          <tr><td>Arancel según origen</td><td>Se analiza el <strong>país de ORIGEN</strong>, no de procedencia. China de México → arancel de China.</td></tr>
+          <tr><td>MERCOSUR (DII)</td><td>DII = 0% y Tasa Estadística = 0%</td></tr>
+          <tr><td>Extrazona (DIE)</td><td>DIE según la posición arancelaria + Tasa Estadística 3% (excepto Perú y Chile: TE = 0%)</td></tr>
+          <tr><td>ALADI (LATAM fuera Mercosur)</td><td>DIE con preferencia arancelaria</td></tr>
+          <tr><td>IIGG empresa vs personal</td><td>Empresa: 6% · Uso personal: 11%</td></tr>
+          <tr><td>IVA, IG, IB, Imp. País</td><td>Todos se calculan sobre la <strong>Base Imponible (BI)</strong></td></tr>
+          <tr><td>THC</td><td>Terminal Handling Charge – gastos de manipulación portuaria</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="card high fade-in" style="margin-top:0;">
+      <div class="card-header">
+        <span class="card-tag tag-high">Ejemplo resuelto de clase</span>
+        <h3>Datos del ejercicio</h3>
+      </div>
+      <div class="table-wrap">
+        <table class="t">
+          <tr><th>Dato</th><th>Valor</th><th>Nota</th></tr>
+          <tr><td>Origen mercadería</td><td>México</td><td>ALADI → preferencia arancelaria</td></tr>
+          <tr><td>Cantidad</td><td>500 unidades</td><td></td></tr>
+          <tr><td>Precio INCOTERM mercadería</td><td>USD 3,20/unidad FCA</td><td>Base para gastos de operación</td></tr>
+          <tr><td>INCOTERM acordado compra</td><td>DPU</td><td>Base para comisiones bancarias y %</td></tr>
+          <tr><td>Flete internacional</td><td>USD 1,55/unidad</td><td></td></tr>
+          <tr><td>Gastos logísticos cláusula</td><td>USD 0,35/unidad</td><td></td></tr>
+          <tr><td>Seguro</td><td>1% sobre CFR</td><td>Sin ajuste en este caso</td></tr>
+          <tr><td>DIE</td><td>12%</td><td></td></tr>
+          <tr><td>DII</td><td>0%</td><td>No aplica (México no es Mercosur)</td></tr>
+          <tr><td>Preferencia arancelaria</td><td>25%</td><td>ALADI: Argentina-México</td></tr>
+          <tr><td>Tasa Estadística (TE)</td><td>3%</td><td>No Mercosur</td></tr>
+          <tr><td>IVA General</td><td>21%</td><td>Sobre BI</td></tr>
+          <tr><td>IVA Adicional</td><td>20%</td><td>Sobre BI</td></tr>
+          <tr><td>IIGG adelanto</td><td>6%</td><td>Empresa – sobre BI</td></tr>
+          <tr><td>Impuesto País</td><td>17,5%</td><td>Sobre BI</td></tr>
+          <tr><td>Ingresos Brutos</td><td>3%</td><td>Sobre BI</td></tr>
+          <tr><td>Impuesto Interno (TN)</td><td>6%</td><td>Jugo concentrado</td></tr>
+          <tr><td>Gastos bancarios</td><td>USD 120</td><td>Fijos</td></tr>
+          <tr><td>Gastos de despacho</td><td>USD 100</td><td>Fijos</td></tr>
+          <tr><td>Arancel SIM</td><td>USD 10</td><td>Fijos</td></tr>
+          <tr><td>Certificado de origen</td><td>USD 55</td><td>Necesario para preferencia ALADI</td></tr>
+          <tr><td>Certificado INAL</td><td>USD 65</td><td>Producto comestible</td></tr>
+          <tr><td>THC</td><td>USD 110</td><td>Fijos</td></tr>
+          <tr><td>Flete interno</td><td>USD 55</td><td>Fijos</td></tr>
+          <tr><td>Honorarios despachante</td><td>1% sobre CIF</td><td></td></tr>
+          <tr><td>Comisiones bancarias</td><td>0,3% sobre DPU</td><td></td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- PASOS -->
+    <div style="display:flex; flex-direction:column; gap:14px; margin-top:4px;">
+
+      <div class="card med fade-in">
+        <div class="card-header">
+          <span class="card-tag tag-med">Paso 1</span>
+          <h3>Calcular el valor CIF en Aduana</h3>
+        </div>
+        <p>Partís del INCOTERM de la mercadería (FCA en este caso) y agregás lo que falta para llegar a CIF.</p>
+        <div class="highlight">
+          Si es <strong>FCA</strong> → sumar flete + seguro<br>
+          Si es <strong>FOB</strong> → sumar flete + seguro<br>
+          Si es <strong>CPT</strong> → flete ya incluido, solo agregar seguro<br>
+          Si es <strong>CIF</strong> → ya está listo
+        </div>
+        <div class="table-wrap" style="margin-top:12px;">
+          <table class="t">
+            <tr><th>Concepto</th><th>Cálculo</th><th>Resultado</th></tr>
+            <tr><td>Precio FCA total</td><td>3,20 × 500 unidades</td><td><strong>USD 1.600,00</strong></td></tr>
+            <tr><td>Flete internacional total</td><td>1,55 × 500</td><td><strong>USD 775,00</strong></td></tr>
+            <tr><td>CFR</td><td>1.600 + 775</td><td><strong>USD 2.375,00</strong></td></tr>
+            <tr><td>Seguro (siempre 1% × CFR)</td><td>2.375 × 1%</td><td><strong>USD 23,75</strong></td></tr>
+            <tr><td style="color:var(--accent-4); font-size:1rem;">✅ CIF ADUANA</td><td>1.600 + 775 + 23,75</td><td style="color:var(--accent-4); font-weight:800; font-size:1rem;">USD 2.398,75</td></tr>
+          </table>
+        </div>
+        <div class="warn-box" style="margin-top:10px;">
+          <strong>Ajuste de seguro:</strong> Si el enunciado dice que el seguro real es distinto del 1%, hacés un ajuste al final:<br>
+          • Seguro real mayor (ej: 3%) → ajuste negativo (mayor gasto): CFR × (3% − 1%)<br>
+          • Seguro real menor (ej: 0,5%) → ajuste positivo (menor gasto): CFR × (1% − 0,5%)<br>
+          • Sin seguro → ajuste positivo: CFR × 1%
+        </div>
+      </div>
+
+      <div class="card med fade-in">
+        <div class="card-header">
+          <span class="card-tag tag-med">Paso 2</span>
+          <h3>Calcular el Arancel (DI)</h3>
+        </div>
+        <p>Determinás el derecho de importación a aplicar según el origen.</p>
+        <div class="table-wrap" style="margin-top:12px;">
+          <table class="t">
+            <tr><th>Concepto</th><th>Cálculo</th><th>Resultado</th></tr>
+            <tr><td>DIE original</td><td>12%</td><td>12%</td></tr>
+            <tr><td>Con preferencia ALADI (25%)</td><td>12% × (1 − 25%)</td><td><strong>9% (DIE ajustado)</strong></td></tr>
+            <tr><td>Derecho de Importación (DI)</td><td>CIF × 9% = 2.398,75 × 9%</td><td style="color:var(--accent-4); font-weight:700;"><strong>USD 215,89</strong></td></tr>
+          </table>
+        </div>
+        <div class="danger-box" style="margin-top:10px;">
+          <strong>Caso DIEM (Derecho de Importación Específico Mínimo):</strong> Si te dan también un DIEM, calculás ambos y te quedás con el MAYOR, pero con condición:<br>
+          • Si DIE &gt; DIEM → usás DIE<br>
+          • Si DIEM &gt; DIE y DIEM &lt; 35% del CIF (tope OMC) → usás DIEM<br>
+          • Si DIEM &gt; DIE y DIEM &gt; 35% del CIF → usás 35% del CIF (tope OMC)
+        </div>
+      </div>
+
+      <div class="card med fade-in">
+        <div class="card-header">
+          <span class="card-tag tag-med">Paso 3</span>
+          <h3>Calcular la Tasa Estadística (TE)</h3>
+        </div>
+        <div class="table-wrap">
+          <table class="t">
+            <tr><th>Concepto</th><th>Cálculo</th><th>Resultado</th></tr>
+            <tr><td>Tasa Estadística (3%)</td><td>CIF × 3% = 2.398,75 × 3%</td><td style="color:var(--accent-4); font-weight:700;"><strong>USD 71,96</strong></td></tr>
+          </table>
+        </div>
+        <div class="highlight">MERCOSUR y DDP: TE = 0%. Perú y Chile: TE = 0%. Todos los demás: TE = 3%.</div>
+      </div>
+
+      <div class="card med fade-in">
+        <div class="card-header">
+          <span class="card-tag tag-med">Paso 4</span>
+          <h3>Calcular la Base Imponible (BI)</h3>
+        </div>
+        <div class="table-wrap">
+          <table class="t">
+            <tr><th>Concepto</th><th>Cálculo</th><th>Resultado</th></tr>
+            <tr><td>Base Imponible</td><td>CIF + DI + TE = 2.398,75 + 215,89 + 71,96</td><td style="color:var(--accent-4); font-weight:700; font-size:1rem;"><strong>USD 2.686,60</strong></td></tr>
+          </table>
+        </div>
+        <div class="highlight">La BI también se llama <strong>Base Imponible IVA</strong>. Todos los impuestos nacionales se aplican SOBRE ESTA BASE.</div>
+      </div>
+
+      <div class="card med fade-in">
+        <div class="card-header">
+          <span class="card-tag tag-med">Pasos 5 al 9</span>
+          <h3>Calcular Impuestos Nacionales (sobre BI)</h3>
+        </div>
+        <div class="table-wrap">
+          <table class="t">
+            <tr><th>Impuesto</th><th>%</th><th>Cálculo</th><th>Resultado</th></tr>
+            <tr><td>IVA Tasa General</td><td>21%</td><td>2.686,60 × 21%</td><td><strong>USD 564,19</strong></td></tr>
+            <tr><td>IVA Adicional</td><td>20%</td><td>2.686,60 × 20%</td><td><strong>USD 537,32</strong></td></tr>
+            <tr><td>IIGG (adelanto)</td><td>6%</td><td>2.686,60 × 6%</td><td><strong>USD 161,20</strong></td></tr>
+            <tr><td>Impuesto País</td><td>17,5%</td><td>2.686,60 × 17,5%</td><td><strong>USD 470,16</strong></td></tr>
+            <tr><td>Ingresos Brutos (IB)</td><td>3%</td><td>2.686,60 × 3%</td><td><strong>USD 80,60</strong></td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card med fade-in">
+        <div class="card-header">
+          <span class="card-tag tag-med">Paso 10</span>
+          <h3>Calcular Impuesto Interno</h3>
+        </div>
+        <p>El impuesto interno se calcula con la <strong>Tasa Efectiva (TE)</strong>, que se obtiene a partir de la Tasa Nominal (TN):</p>
+        <div class="highlight" style="margin-top:10px;">
+          <strong>Fórmula TE:</strong> TE = (100 × TN%) / (100 − TN%)<br>
+          Ejemplo con TN = 6%: TE = (100 × 6) / (100 − 6) = 6/94 = <strong>6,38%</strong>
+        </div>
+        <div class="table-wrap" style="margin-top:10px;">
+          <table class="t">
+            <tr><th>Concepto</th><th>Cálculo</th><th>Resultado</th></tr>
+            <tr><td>Impuesto Interno</td><td>BI × 1,3 × TE% = 2.686,60 × 1,3 × 6,38%</td><td style="color:var(--accent-4); font-weight:700;"><strong>USD 222,83</strong></td></tr>
+          </table>
+        </div>
+        <div class="warn-box"><strong>El 1,3 es un coeficiente fijo</strong> que siempre se aplica en el cálculo del impuesto interno de importación.</div>
+      </div>
+
+      <div class="card med fade-in">
+        <div class="card-header">
+          <span class="card-tag tag-med">Paso 11</span>
+          <h3>Calcular Gastos de Operación</h3>
+        </div>
+        <p>Los gastos de operación son todos los costos adicionales del proceso de importación. Dependen de la cotización del INCOTERM de la mercadería para determinar qué gastos incluir.</p>
+        <div class="table-wrap" style="margin-top:10px;">
+          <table class="t">
+            <tr><th>Gasto</th><th>Base</th><th>Resultado</th></tr>
+            <tr><td>Gastos bancarios</td><td>Dato fijo</td><td>USD 120,00</td></tr>
+            <tr><td>Gastos de despacho</td><td>Dato fijo</td><td>USD 100,00</td></tr>
+            <tr><td>Arancel SIM</td><td>Dato fijo</td><td>USD 10,00</td></tr>
+            <tr><td>Certificado de origen</td><td>Dato fijo</td><td>USD 55,00</td></tr>
+            <tr><td>Certificado INAL</td><td>Dato fijo</td><td>USD 65,00</td></tr>
+            <tr><td>THC</td><td>Dato fijo</td><td>USD 110,00</td></tr>
+            <tr><td>Flete interno</td><td>Dato fijo</td><td>USD 55,00</td></tr>
+            <tr><td>Honorarios despachante</td><td>1% × CIF = 1% × 2.398,75</td><td><strong>USD 23,99</strong></td></tr>
+            <tr><td>Valor DPU (base comisiones)</td><td>500×3,20 + 1,55×500 + 0,35×500</td><td>USD 2.550,00</td></tr>
+            <tr><td>Comisiones bancarias</td><td>0,3% × 2.550</td><td><strong>USD 7,65</strong></td></tr>
+            <tr style="background:rgba(16,185,129,0.08);"><td style="color:var(--accent-4);">TOTAL Gastos Operación</td><td></td><td style="color:var(--accent-4); font-weight:700;"><strong>USD 546,64</strong></td></tr>
+          </table>
+        </div>
+        <div class="danger-box" style="margin-top:10px;">
+          <strong>¿Qué gastos entran en los "Gastos de Operación"?</strong><br>
+          Mirá el INCOTERM de la cotización de la mercadería (FCA en el ejemplo). Si el INCOTERM no incluye el flete, ese flete también es gasto de operación, etc.
+        </div>
+      </div>
+
+      <div class="card med fade-in">
+        <div class="card-header">
+          <span class="card-tag tag-med">Paso 12</span>
+          <h3>Calcular Carga Tributaria Total</h3>
+        </div>
+        <div class="table-wrap">
+          <table class="t">
+            <tr><th>Componente</th><th>Monto</th></tr>
+            <tr><td>DI (Derecho Importación)</td><td>USD 215,89</td></tr>
+            <tr><td>Tasa Estadística</td><td>USD 71,96</td></tr>
+            <tr><td>IVA 21%</td><td>USD 564,19</td></tr>
+            <tr><td>IVA Adicional 20%</td><td>USD 537,32</td></tr>
+            <tr><td>IIGG 6%</td><td>USD 161,20</td></tr>
+            <tr><td>Imp. País 17,5%</td><td>USD 470,16</td></tr>
+            <tr><td>IB 3%</td><td>USD 80,60</td></tr>
+            <tr><td>Imp. Interno</td><td>USD 222,83</td></tr>
+            <tr style="background:rgba(239,68,68,0.08);"><td style="color:#fca5a5;">CARGA TRIBUTARIA TOTAL</td><td style="color:#fca5a5; font-weight:700;">USD 2.324,15</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card crit fade-in">
+        <div class="card-header">
+          <span class="card-tag tag-crit">Paso Final</span>
+          <h3>Calcular Presupuesto y Costo</h3>
+        </div>
+        <div class="grid-2" style="margin-top:12px;">
+          <div>
+            <p><strong style="color:#fcd34d;">📋 PRESUPUESTO</strong> (incluye todo, con impuestos nacionales)</p>
+            <div class="highlight" style="margin-top:8px;">
+              Presupuesto = BI + IVA TG + IVA Adic + IIGG + Imp.País + IB + Imp.Int + Gastos Op
+            </div>
+          </div>
+          <div>
+            <p><strong style="color:#6ee7b7;">💼 COSTO</strong> (sin impuestos nacionales recuperables)</p>
+            <div class="highlight" style="margin-top:8px;">
+              Costo = BI + Gastos Op + Imp.Int<br>
+              <em>(NO incluye IVA 21%, IVA Adic, IIGG, Imp.País, IB)</em>
+            </div>
+          </div>
+        </div>
+        <div class="table-wrap" style="margin-top:14px;">
+          <table class="t">
+            <tr><th>Concepto</th><th>Fórmula</th><th>Resultado</th></tr>
+            <tr><td>Costo Total</td><td>2.686,60 + 546,64 + 222,83</td><td style="color:var(--accent-4); font-weight:700;">USD 3.456,07</td></tr>
+            <tr><td>Costo Unitario</td><td>3.456,07 / 500 unidades</td><td style="color:var(--accent-4); font-weight:700;">USD 6,91/u</td></tr>
+          </table>
+        </div>
+        <div class="warn-box" style="margin-top:12px;">
+          <strong>Incidencia Financiera (IF):</strong> Si el enunciado menciona que hay un pago diferido o financiamiento, se suma o resta la IF al presupuesto/costo final.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- MAPA MENTAL PASOS -->
+    <div class="card info fade-in" style="margin-top:10px;">
+      <h3>🗺️ Mapa mental del ejercicio</h3>
+      <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; align-items:center; justify-content:center;">
+        <div style="background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.3); border-radius:8px; padding:8px 14px; font-size:0.82rem; font-weight:600; color:#6ee7b7; text-align:center;">1.<br>CIF</div>
+        <div style="color:var(--text-muted);">→</div>
+        <div style="background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.3); border-radius:8px; padding:8px 14px; font-size:0.82rem; font-weight:600; color:#6ee7b7; text-align:center;">2.<br>DI (arancel)</div>
+        <div style="color:var(--text-muted);">→</div>
+        <div style="background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.3); border-radius:8px; padding:8px 14px; font-size:0.82rem; font-weight:600; color:#6ee7b7; text-align:center;">3.<br>TE</div>
+        <div style="color:var(--text-muted);">→</div>
+        <div style="background:rgba(245,158,11,0.2); border:1px solid rgba(245,158,11,0.4); border-radius:8px; padding:8px 14px; font-size:0.82rem; font-weight:700; color:#fcd34d; text-align:center;">4.<br>BASE IMP.</div>
+        <div style="color:var(--text-muted);">→</div>
+        <div style="background:rgba(99,102,241,0.15); border:1px solid rgba(99,102,241,0.3); border-radius:8px; padding:8px 14px; font-size:0.82rem; font-weight:600; color:#a5b4fc; text-align:center;">5–9.<br>IVA+IIGG+IB+IMP.País</div>
+        <div style="color:var(--text-muted);">→</div>
+        <div style="background:rgba(99,102,241,0.15); border:1px solid rgba(99,102,241,0.3); border-radius:8px; padding:8px 14px; font-size:0.82rem; font-weight:600; color:#a5b4fc; text-align:center;">10.<br>Imp. Interno</div>
+        <div style="color:var(--text-muted);">→</div>
+        <div style="background:rgba(239,68,68,0.15); border:1px solid rgba(239,68,68,0.3); border-radius:8px; padding:8px 14px; font-size:0.82rem; font-weight:600; color:#fca5a5; text-align:center;">11.<br>Gastos Op.</div>
+        <div style="color:var(--text-muted);">→</div>
+        <div style="background:rgba(239,68,68,0.2); border:1px solid rgba(239,68,68,0.4); border-radius:8px; padding:8px 14px; font-size:0.85rem; font-weight:700; color:#fca5a5; text-align:center;">COSTO<br>PRESUPUESTO</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SECCIÓN 5 – PREGUNTAS FRECUENTES
+  ══════════════════════════════════════ -->
+  <section id="faq">
+    <div class="section-title fade-in">
+      <div class="section-icon ic-pink">❓</div>
+      <div>
+        <h2>Preguntas Frecuentes de Examen</h2>
+        <div class="sec-sub">Preguntas que se repiten en distintos temas del parcial</div>
+      </div>
+    </div>
+
+    <!-- BLOQUE 1: INCOTERMS -->
+    <h3 style="color:var(--accent-3); font-size:1rem; margin-bottom:12px; text-transform:uppercase; letter-spacing:0.05em;">📦 INCOTERMS</h3>
+
+    <div class="faq-item fade-in" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <h4><span class="q-icon">Q</span>¿En qué INCOTERMS el exportador ESTÁ OBLIGADO a contratar seguro?</h4>
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span class="repeat-badge">🔁 Siempre entra</span>
+          <span class="faq-arrow">▼</span>
+        </div>
+      </div>
+      <div class="faq-a">
+        <p><strong>Solo en CIF y CIP.</strong></p>
+        <ul>
+          <li><strong>CIF:</strong> Cost, Insurance and Freight → solo transporte marítimo. El seguro es obligatorio pero al nivel mínimo (cláusula C).</li>
+          <li><strong>CIP:</strong> Carriage and Insurance Paid To → todo modo de transporte. El seguro debe ser de cobertura máxima (cláusula A).</li>
+        </ul>
+        <p>En todos los demás INCOTERMS (EXW, FCA, FAS, FOB, CFR, CPT, DAP, DPU, DDP), el seguro es <em>opcional</em>.</p>
+      </div>
+    </div>
+
+    <div class="faq-item fade-in" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <h4><span class="q-icon">Q</span>¿Cuál es la diferencia entre FOB y CIF?</h4>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        <p>Ambos son solo para transporte <strong>marítimo</strong>.</p>
+        <ul>
+          <li><strong>FOB:</strong> El vendedor entrega la mercadería abordo del buque en el puerto de origen. El comprador contrata el flete y el seguro internacionales.</li>
+          <li><strong>CIF:</strong> El vendedor, además de hacer lo de FOB, también <strong>contrata y paga el flete internacional y el seguro</strong> hasta el puerto de destino. Sin embargo, el riesgo se transfiere igual al subir al barco en origen.</li>
+        </ul>
+        <p><em>Truco: En CIF el vendedor paga el flete y el seguro, pero el riesgo ya es del comprador desde que sube al barco.</em></p>
+      </div>
+    </div>
+
+    <div class="faq-item fade-in" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <h4><span class="q-icon">Q</span>¿Cuál es el INCOTERM más desfavorable para el vendedor? ¿Y para el comprador?</h4>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        <ul>
+          <li><strong>Más desfavorable para el comprador:</strong> EXW. El comprador asume toda la responsabilidad desde el depósito del vendedor, incluyendo el trámite de exportación en el país del vendedor (algo difícil si es extranjero).</li>
+          <li><strong>Más desfavorable para el vendedor:</strong> DDP. El vendedor asume absolutamente todo: flete internacional, seguro, trámite de importación en el país del comprador, y el pago de los derechos aduaneros de importación.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="faq-item fade-in" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <h4><span class="q-icon">Q</span>¿Qué INCOTERM es el único que incluye la descarga en destino?</h4>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        <p><strong>DPU – Delivered at Place Unloaded</strong></p>
+        <p>Es el único INCOTERM en el que el vendedor asume el costo y riesgo de la <strong>descarga</strong> de la mercadería en el lugar de destino convenido. En DAP, el vendedor lleva la mercadería hasta destino pero <em>no la descarga</em>.</p>
+      </div>
+    </div>
+
+    <div class="faq-item fade-in" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <h4><span class="q-icon">Q</span>¿Cuáles INCOTERMS son solo para transporte marítimo y vías navegables interiores?</h4>
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span class="repeat-badge">🔁 Frecuente</span>
+          <span class="faq-arrow">▼</span>
+        </div>
+      </div>
+      <div class="faq-a">
+        <p>Los 4 que solo aplican a transporte marítimo/fluvial son:</p>
+        <ul>
+          <li><strong>FAS</strong> – Free Alongside Ship</li>
+          <li><strong>FOB</strong> – Free On Board</li>
+          <li><strong>CFR</strong> – Cost and Freight</li>
+          <li><strong>CIF</strong> – Cost, Insurance and Freight</li>
+        </ul>
+        <p>Los demás 7 (EXW, FCA, CPT, CIP, DAP, DPU, DDP) aplican a <strong>cualquier modo de transporte</strong>.</p>
+      </div>
+    </div>
+
+    <div class="faq-item fade-in" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <h4><span class="q-icon">Q</span>¿Para qué mercadería se utiliza FAS?</h4>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        <p>FAS (Free Alongside Ship) se utiliza en la práctica para:</p>
+        <ul>
+          <li><strong>Mercadería a granel:</strong> carbón, granos, combustibles, que se transportan en bodega de buque.</li>
+          <li><strong>Mercaderías especiales:</strong> por sus características y dimensiones precisan operativa de estiba especial (generadores, turbinas, autobuses, maquinaria pesada).</li>
+        </ul>
+        <p>No es adecuado para mercadería contenedorizada porque en ese caso el riesgo ya se transfiere antes de llegar al costado del buque.</p>
+      </div>
+    </div>
+
+    <div class="faq-item fade-in" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <h4><span class="q-icon">Q</span>¿Qué pasa si el vendedor usa EXW pero no puede hacer los trámites de exportación?</h4>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        <p>En EXW el comprador es responsable del trámite de exportación en el país del vendedor. Esto es <strong>problemático si el comprador es extranjero</strong>, ya que puede no conocer la legislación local ni tener los permisos necesarios.</p>
+        <p>Además, para el <strong>vendedor</strong>: si usa EXW no tiene acceso a los beneficios de exportación (reintegros, draw-back, etc.) porque técnicamente para él es una venta local.</p>
+        <div class="warn-box"><strong>Por eso EXW no se recomienda para compradores inexpertos ni para vendedores que quieran aprovechar beneficios exportadores.</strong></div>
+      </div>
+    </div>
+
+    <br>
+    <!-- BLOQUE 2: TERRITORIO Y ADUANA -->
+    <h3 style="color:var(--accent-3); font-size:1rem; margin-bottom:12px; text-transform:uppercase; letter-spacing:0.05em;">🗺️ Territorio Aduanero</h3>
+
+    <div class="faq-item fade-in" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <h4><span class="q-icon">Q</span>¿Cuál es la diferencia entre enclave y exclave?</h4>
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span class="repeat-badge">🔁 Clásico</span>
+          <span class="faq-arrow">▼</span>
+        </div>
+      </div>
+      <div class="faq-a">
+        <ul>
+          <li><strong>Enclave:</strong> Territorio soberano de <em>otro Estado</em> donde se aplica la legislación aduanera <em>argentina</em>. Argentina hoy NO tiene enclaves.</li>
+          <li><strong>Exclave:</strong> Territorio soberano <em>argentino</em> donde se aplica la legislación aduanera de <em>otro Estado</em>. Argentina tuvo exclaves de Paraguay y Bolivia en Rosario (en negociación desde 2019).</li>
+        </ul>
+        <div class="highlight"><strong>Mnemotécnico:</strong> En-clave: el otro te da la clave (rige nuestra ley en suelo ajeno). Ex-clave: te excluyen de aplicar tu ley (rige ley ajena en suelo propio).</div>
+      </div>
+    </div>
+
+    <div class="faq-item fade-in" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <h4><span class="q-icon">Q</span>¿Por qué el TAG y TAE son dos territorios aduaneros distintos en Argentina?</h4>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        <p>Tierra del Fuego tiene un régimen especial (Ley 19.640 de 1972) que le da beneficios aduaneros e impositivos especiales para promover la radicación industrial en la zona. La circulación de mercadería entre el TAE (TDF) y el TAG recibe el tratamiento de una importación o exportación, aunque ambos formen parte del mismo territorio soberano argentino.</p>
+      </div>
+    </div>
+
+    <div class="faq-item fade-in" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <h4><span class="q-icon">Q</span>¿Qué ocurre cuando se introduce mercadería a una zona franca desde el TAG?</h4>
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span class="repeat-badge">🔁 Frecuente</span>
+          <span class="faq-arrow">▼</span>
+        </div>
+      </div>
+      <div class="faq-a">
+        <ul>
+          <li><strong>Introducción</strong> al área franca (desde TAG): se trata como <strong>importación</strong>.</li>
+          <li><strong>Extracción</strong> del área franca (hacia TAG): se trata como <strong>exportación</strong>.</li>
+        </ul>
+        <p>Esto aplica aunque ambos ámbitos estén en el mismo territorio soberano. La zona franca es un ámbito donde la mercadería NO está sometida al control habitual aduanero y no paga tributos.</p>
+      </div>
+    </div>
+
+    <div class="faq-item fade-in" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <h4><span class="q-icon">Q</span>¿Qué mercadería está prohibida siempre en las zonas francas?</h4>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        <p>Expresamente prohibido en zonas francas:</p>
+        <ul>
+          <li>Armas y municiones</li>
+          <li>Mercadería que atente contra la <strong>moral</strong></li>
+          <li>Mercadería que atente contra la <strong>salud</strong></li>
+          <li>Mercadería que atente contra la <strong>sanidad vegetal y animal</strong></li>
+          <li>Mercadería que atente contra la <strong>seguridad</strong></li>
+          <li>Mercadería que atente contra la <strong>preservación del medio ambiente</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <br>
+    <!-- BLOQUE 3: LOGÍSTICA -->
+    <h3 style="color:var(--accent-3); font-size:1rem; margin-bottom:12px; text-transform:uppercase; letter-spacing:0.05em;">🚢 Logística Internacional</h3>
+
+    <div class="faq-item fade-in" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <h4><span class="q-icon">Q</span>¿Cuánto mide un contenedor TEU y un FEU?</h4>
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span class="repeat-badge">🔁 Siempre entra</span>
+          <span class="faq-arrow">▼</span>
+        </div>
+      </div>
+      <div class="faq-a">
+        <ul>
+          <li><strong>TEU</strong> (Twenty-foot Equivalent Unit): 6m × 2,44m × 2,59m</li>
+          <li><strong>FEU</strong> (Forty-foot Equivalent Unit): 12m × 2,44m × 2,59m</li>
+          <li><strong>40' High Cube:</strong> 12m × 2,44m × 2,90m (más alto)</li>
+        </ul>
+        <p>La diferencia principal entre FEU y High Cube es la <strong>altura</strong>: 2,59m vs 2,90m.</p>
+      </div>
+    </div>
+
+    <div class="faq-item fade-in" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <h4><span class="q-icon">Q</span>¿Cuál es la diferencia entre armador y propietario?</h4>
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span class="repeat-badge">🔁 Frecuente</span>
+          <span class="faq-arrow">▼</span>
+        </div>
+      </div>
+      <div class="faq-a">
+        <ul>
+          <li><strong>Propietario:</strong> dueño del buque (posee el activo).</li>
+          <li><strong>Armador:</strong> quien realiza la gestión navegadora y comercial del buque. Puede ser el mismo propietario o no. Es responsable de entregar la mercadería en destino en buenas condiciones. Designa al capitán y al agente marítimo.</li>
+        </ul>
+        <div class="highlight"><em>Analogía:</em> El propietario es como el dueño del edificio; el armador es como la inmobiliaria que lo gestiona y alquila.</div>
+      </div>
+    </div>
+
+    <div class="faq-item fade-in" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <h4><span class="q-icon">Q</span>¿Qué es el Bill of Lading y en qué se diferencia del AWB?</h4>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        <table class="t">
+          <tr><th>Concepto</th><th>Bill of Lading (BL)</th><th>AWB (Air Waybill)</th></tr>
+          <tr><td>Modo</td><td>Marítimo</td><td>Aéreo</td></tr>
+          <tr><td>¿Es título valor?</td><td><strong>SÍ</strong> (negociable)</td><td><strong>NO</strong> (nominativo)</td></tr>
+          <tr><td>¿Quién lo emite?</td><td>Armador/transportista</td><td>Aerolínea</td></tr>
+          <tr><td>Función</td><td>Contrato + recibo + título de propiedad</td><td>Contrato + recibo + declaración aduanera</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="faq-item fade-in" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <h4><span class="q-icon">Q</span>¿Qué diferencia hay entre un buque Liner y un buque Tramp?</h4>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        <ul>
+          <li><strong>Liner (Línea Regular):</strong> itinerarios fijos, tarifas establecidas, salidas periódicas programadas. Puede operar en conferencia con otras empresas (fijan tarifas y rutas conjuntas) o como outsider.</li>
+          <li><strong>Tramp (Fletamento):</strong> no tiene itinerario fijo, opera bajo demanda, como un "taxi del mar". Se contrata mediante póliza de fletamento. Puede ser por viaje, por tiempo o a casco desnudo.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="faq-item fade-in" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <h4><span class="q-icon">Q</span>¿Qué es la NIMF 15 y por qué es importante?</h4>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        <p>NIMF 15 (Norma Internacional para Medidas Fitosanitarias N°15) es una norma internacional que establece los tratamientos requeridos para el <strong>embalaje de madera</strong> (pallets, cajones, etc.) utilizado en el comercio internacional.</p>
+        <p>Su objetivo es <strong>prevenir la propagación de plagas y enfermedades</strong> que pueden viajar en la madera. Los embalajes deben estar tratados (calor, fumigación con bromuro de metilo) y marcados con el sello IPPC.</p>
+        <div class="warn-box"><strong>Sin NIMF 15:</strong> la mercadería puede ser rechazada, devuelta o fumigada a costa del importador en el país de destino.</div>
+      </div>
+    </div>
+
+    <br>
+    <!-- BLOQUE 4: POLÍTICAS -->
+    <h3 style="color:var(--accent-3); font-size:1rem; margin-bottom:12px; text-transform:uppercase; letter-spacing:0.05em;">🏛️ Políticas Comerciales</h3>
+
+    <div class="faq-item fade-in" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <h4><span class="q-icon">Q</span>¿Cuál es la diferencia entre medidas arancelarias y para-arancelarias?</h4>
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span class="repeat-badge">🔁 Clásico</span>
+          <span class="faq-arrow">▼</span>
+        </div>
+      </div>
+      <div class="faq-a">
+        <ul>
+          <li><strong>Arancelarias:</strong> implican pagar algo al Estado (impuestos, derechos, tasas). Ej: derecho ad-valorem del 10% sobre el valor CIF de la importación.</li>
+          <li><strong>Para-arancelarias:</strong> no implican un pago, sino la obtención de algún trámite, certificado, licencia, o el cumplimiento de una norma técnica. Ej: para importar medicamentos se necesita aprobación del ANMAT.</li>
+        </ul>
+        <div class="highlight"><strong>Regla fácil:</strong> arancelaria = pagar · para-arancelaria = tramitar/certificar.</div>
+      </div>
+    </div>
+
+    <div class="faq-item fade-in" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <h4><span class="q-icon">Q</span>¿Qué diferencia hay entre una licencia automática y una no automática?</h4>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        <ul>
+          <li><strong>Licencia automática:</strong> Se concede siempre, es solo un trámite burocrático de registro. Su objetivo es recopilar estadísticas y tener control de qué se importa. No puede ser rechazada.</li>
+          <li><strong>Licencia no automática:</strong> Puede ser rechazada. Permite al gobierno controlar el volumen, precio, calidad, o quién puede importar. Son una herramienta de protección comercial real.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="faq-item fade-in" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <h4><span class="q-icon">Q</span>¿Qué son los derechos ad-valorem, específicos y mixtos?</h4>
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span class="repeat-badge">🔁 Frecuente</span>
+          <span class="faq-arrow">▼</span>
+        </div>
+      </div>
+      <div class="faq-a">
+        <ul>
+          <li><strong>Ad-valorem:</strong> Se calcula como un porcentaje sobre el valor de la mercancía. Ej: 15% del valor CIF. Es el más común.</li>
+          <li><strong>Específico:</strong> Monto fijo por unidad de medida (por kilo, por litro, por unidad). Ej: $2 por litro de vino importado. No depende del valor, sino de la cantidad.</li>
+          <li><strong>Mixto:</strong> Combinación de los anteriores. Ej: 10% del valor CIF + $1 por kg. Se aplica cuando ninguno de los dos por sí solo protege adecuadamente.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="faq-item fade-in" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <h4><span class="q-icon">Q</span>¿Por qué el MULC no es realmente ni "único" ni "libre"?</h4>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        <p>El nombre completo es <strong>Mercado Único y Libre de Cambios</strong>, pero en la práctica:</p>
+        <ul>
+          <li><strong>No es único:</strong> coexisten múltiples mercados cambiarios (oficial, blue, MEP, CCL, etc.).</li>
+          <li><strong>No es libre:</strong> puede haber cepo cambiario, restricciones al acceso al dólar, tipos de cambio diferenciales (ej: dólar soja, dólar turista), regulaciones del BCRA, etc.</li>
+        </ul>
+        <div class="warn-box"><strong>Es un nombre político/aspiracional, no una descripción técnica de la realidad.</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SECCIÓN 6 – CHECKLIST FINAL
+  ══════════════════════════════════════ -->
+  <section id="checklist">
+    <div class="section-title fade-in">
+      <div class="section-icon ic-green">✅</div>
+      <div>
+        <h2>Checklist del Parcial</h2>
+        <div class="sec-sub">Marcá lo que ya sabés antes de rendir</div>
+      </div>
+    </div>
+
+    <div class="card info fade-in">
+      <h3>🔴 Cosas que SÍ O SÍ tenés que saber</h3>
+      <ul class="checklist" style="margin-top:14px;" id="checklist-items">
+        <li><span class="check-box" onclick="toggleCheck(this)"></span>Los 11 INCOTERMS 2020 con su nombre completo y grupo (E/F/C/D)</li>
+        <li><span class="check-box" onclick="toggleCheck(this)"></span>En cuáles INCOTERMS el seguro es OBLIGATORIO (CIF y CIP)</li>
+        <li><span class="check-box" onclick="toggleCheck(this)"></span>Cuáles INCOTERMS son solo para transporte marítimo (FAS, FOB, CFR, CIF)</li>
+        <li><span class="check-box" onclick="toggleCheck(this)"></span>Medidas exactas del TEU (6m×2,44×2,59) y FEU (12m×2,44×2,59)</li>
+        <li><span class="check-box" onclick="toggleCheck(this)"></span>Diferencia entre TAG y TAE en Argentina (TDF = TAE, Ley 19.640)</li>
+        <li><span class="check-box" onclick="toggleCheck(this)"></span>Enclave vs Exclave (definición y estado actual en Argentina)</li>
+        <li><span class="check-box" onclick="toggleCheck(this)"></span>Qué pasa al introducir/extraer mercadería de una zona franca (importación/exportación)</li>
+        <li><span class="check-box" onclick="toggleCheck(this)"></span>Zona primaria vs zona secundaria aduanera</li>
+        <li><span class="check-box" onclick="toggleCheck(this)"></span>Diferencia entre medidas arancelarias y para-arancelarias</li>
+        <li><span class="check-box" onclick="toggleCheck(this)"></span>Ad-valorem vs específico vs mixto</li>
+        <li><span class="check-box" onclick="toggleCheck(this)"></span>Licencias automáticas vs no automáticas</li>
+        <li><span class="check-box" onclick="toggleCheck(this)"></span>Diferencia entre Bill of Lading y AWB</li>
+        <li><span class="check-box" onclick="toggleCheck(this)"></span>Rol del armador vs propietario del buque</li>
+        <li><span class="check-box" onclick="toggleCheck(this)"></span>NIMF 15 – qué es y para qué sirve</li>
+        <li><span class="check-box" onclick="toggleCheck(this)"></span>Por qué el MULC no es realmente único ni libre</li>
+        <li><span class="check-box" onclick="toggleCheck(this)"></span>Tipos de contenedores y sus usos (Dry, Reefer, Open Top, Iso Tank, etc.)</li>
+        <li><span class="check-box" onclick="toggleCheck(this)"></span>Diferencia entre buque Liner y Tramp (fletamento)</li>
+        <li><span class="check-box" onclick="toggleCheck(this)"></span>Tipos de fletamento: por viaje, por tiempo, casco desnudo</li>
+        <li><span class="check-box" onclick="toggleCheck(this)"></span>Sujetos del transporte: shipper, consignee, ATA, despachante</li>
+        <li><span class="check-box" onclick="toggleCheck(this)"></span>Grupos de INCOTERMS E/F/C/D y su característica principal</li>
+        <li><span class="check-box" onclick="toggleCheck(this)"></span>Estructura correcta de una cotización INCOTERM (Moneda Monto Término Lugar INCOTERMSAr Revisión)</li>
+        <li><span class="check-box" onclick="toggleCheck(this)"></span>Objetivos de la subpolítica comercial (7-8 objetivos)</li>
+        <li><span class="check-box" onclick="toggleCheck(this)"></span>Valoración aduanera: CIF para importación, FOB para exportación</li>
+        <li><span class="check-box" onclick="toggleCheck(this)"></span>Canales aduaneros: Verde (libre), Naranja (docs), Rojo (docs + físico), Morado (exhaustivo)</li>
+        <li><span class="check-box" onclick="toggleCheck(this)"></span>Dumping vs Subvención vs Salvaguardia</li>
+        <li><span class="check-box" onclick="toggleCheck(this)"></span>Origen vs Procedencia (el arancel se aplica por ORIGEN)</li>
+        <li><span class="check-box" onclick="toggleCheck(this)"></span>Clasificación arancelaria: quién la hace (despachante), 6 dígitos universales</li>
+        <li><span class="check-box" onclick="toggleCheck(this)"></span>Ejercicio costos importación: los 4 pasos base (CIF → DI → TE → BI)</li>
+        <li><span class="check-box" onclick="toggleCheck(this)"></span>Impuestos sobre BI: IVA 21%, IVA Adic 20%, IIGG 6%, IB 3%</li>
+        <li><span class="check-box" onclick="toggleCheck(this)"></span>Honorarios despachante siempre sobre CIF; comisiones bancarias sobre INCOTERM acordado</li>
+        <li><span class="check-box" onclick="toggleCheck(this)"></span>Fórmula tasa efectiva impuesto interno: TE = 100×TN / (100−TN)</li>
+        <li><span class="check-box" onclick="toggleCheck(this)"></span>Costo NO incluye impuestos nacionales recuperables (IVA, IIGG, IB, Imp.País)</li>
+      </ul>
+    </div>
+
+    <div class="card high fade-in" style="margin-top:18px;">
+      <h3>⚡ Resumen ultra rápido – Para el día del examen</h3>
+      <div class="table-wrap">
+        <table class="t" style="margin-top:12px;">
+          <tr><th>Tema</th><th>Lo más importante</th></tr>
+          <tr><td>INCOTERMS seguro obligatorio</td><td><strong>Solo CIF y CIP</strong></td></tr>
+          <tr><td>INCOTERMS solo marítimos</td><td><strong>FAS, FOB, CFR, CIF</strong></td></tr>
+          <tr><td>INCOTERM + favorable vendedor</td><td><strong>EXW</strong></td></tr>
+          <tr><td>INCOTERM + favorable comprador</td><td><strong>DDP</strong></td></tr>
+          <tr><td>INCOTERM único con descarga incluida</td><td><strong>DPU</strong></td></tr>
+          <tr><td>TEU medidas</td><td><strong>6m × 2,44m × 2,59m</strong></td></tr>
+          <tr><td>FEU medidas</td><td><strong>12m × 2,44m × 2,59m</strong></td></tr>
+          <tr><td>High Cube diferencia</td><td><strong>2,90m de alto</strong></td></tr>
+          <tr><td>TAE Argentina</td><td><strong>Isla Grande de Tierra del Fuego (Ley 19.640/1972)</strong></td></tr>
+          <tr><td>Enclave</td><td><strong>Ley argentina en suelo ajeno. Argentina no tiene.</strong></td></tr>
+          <tr><td>Exclave</td><td><strong>Ley ajena en suelo argentino. Ex: Paraguay y Bolivia en Rosario.</strong></td></tr>
+          <tr><td>Zona Franca → TAG</td><td><strong>Se trata como exportación</strong></td></tr>
+          <tr><td>TAG → Zona Franca</td><td><strong>Se trata como importación</strong></td></tr>
+          <tr><td>NIMF 15</td><td><strong>Certificación fitosanitaria para embalajes de madera</strong></td></tr>
+          <tr><td>BL vs AWB</td><td><strong>BL = título valor (marítimo). AWB = nominativo (aéreo).</strong></td></tr>
+          <tr><td>Arancelaria</td><td><strong>Pagar</strong></td></tr>
+          <tr><td>Para-arancelaria</td><td><strong>Tramitar/certificar</strong></td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>📚 Guía preparada en base a los módulos 1, 2 y 3 de Comercio Exterior UTN · Parciales resueltos B, C, H · 2026</p>
+  <p style="margin-top:6px; color:var(--text-muted);">Revisá también los apuntes de clase y los parciales resueltos que tenés guardados.</p>
+</footer>
+
+<script>
+  // Scroll progress bar
+  window.addEventListener('scroll', () => {
+    const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+    document.getElementById('scroll-bar').style.width = scrolled + '%';
+  });
+
+  // Smooth scroll nav – nombre propio para no pisar window.scrollTo
+  function navScroll(btn, sectionId) {
+    const el = document.getElementById(sectionId);
+    if (el) {
+      const navH = document.querySelector('nav').offsetHeight;
+      const top = el.getBoundingClientRect().top + window.scrollY - navH - 8;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+
+  // FAQ toggle
+  function toggleFaq(el) {
+    const isOpen = el.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(item => item.classList.remove('open'));
+    if (!isOpen) el.classList.add('open');
+  }
+
+  // Checklist toggle
+  function toggleCheck(el) {
+    el.classList.toggle('done');
+    const li = el.parentElement;
+    if (el.classList.contains('done')) {
+      li.style.opacity = '0.5';
+      li.style.textDecoration = 'line-through';
+    } else {
+      li.style.opacity = '1';
+      li.style.textDecoration = 'none';
+    }
+    saveChecklist();
+  }
+
+  // Persist checklist in localStorage
+  function saveChecklist() {
+    const boxes = document.querySelectorAll('.check-box');
+    const state = Array.from(boxes).map(b => b.classList.contains('done'));
+    localStorage.setItem('parcial_checklist', JSON.stringify(state));
+  }
+
+  function loadChecklist() {
+    const saved = localStorage.getItem('parcial_checklist');
+    if (!saved) return;
+    const state = JSON.parse(saved);
+    const boxes = document.querySelectorAll('.check-box');
+    boxes.forEach((box, i) => {
+      if (state[i]) {
+        box.classList.add('done');
+        box.parentElement.style.opacity = '0.5';
+        box.parentElement.style.textDecoration = 'line-through';
+      }
+    });
+  }
+
+  // Intersection Observer for fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Init
+  loadChecklist();
+</script>
+</body>
+</html>
