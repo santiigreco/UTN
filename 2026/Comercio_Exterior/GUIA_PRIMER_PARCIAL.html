@@ -723,6 +723,13 @@
       <span class="nav-unit">Examen</span>
       <span class="nav-label">✅ Checklist</span>
     </button>
+
+    <div class="nav-sep"></div>
+
+    <button class="nav-btn" onclick="navScroll(this,'parciales')">
+      <span class="nav-unit">Parciales</span>
+      <span class="nav-label">📝 Resueltos</span>
+    </button>
   </div>
 </nav>
 
@@ -2384,11 +2391,375 @@
     </div>
   </section>
 
+  <!-- ══════════════════════════════════════
+       SECCIÓN EXTRA – PARCIALES RESUELTOS
+  ══════════════════════════════════════ -->
+  <section id="parciales">
+    <div class="section-title fade-in">
+      <div class="section-icon ic-pink">📝</div>
+      <div>
+        <h2>Parciales Resueltos</h2>
+        <div class="sec-sub">Análisis completo de todos los parciales reales — preguntas clave y resoluciones detalladas</div>
+      </div>
+    </div>
+
+    <!-- ── PARCIAL 1: I5054 · 14/07/2023 ── -->
+    <div class="card info fade-in" style="margin-bottom:28px;">
+      <div class="card-header">
+        <span class="card-tag tag-exam">📅 2023 · I5054</span>
+        <h3>Parcial 1° — Ing. Industrial · Comercio Exterior · 14/07/2023</h3>
+      </div>
+      <div class="warn-box">
+        <strong>Contexto del ejercicio:</strong> Importación de plátanos desde Ecuador. El comprador tramita importación y descarga en su almacén en San Lorenzo, Santa Fe. El transporte acuático fue contratado por el exportador. El precio incluye cert. de origen y fitosanitario.
+      </div>
+      <div class="grid-2" style="margin-top:16px;">
+        <div>
+          <h4 style="color:var(--accent-warn);margin-bottom:10px;">🔑 Preguntas y Respuestas clave</h4>
+          <ul>
+            <li><strong>P1 (1,5p) – INCOTERM correcto:</strong> El exportador contrata el transporte acuático hasta destino, pero el riesgo pasa al comprador al embarque. Incluye certificados. → <code>CPT Puerto San Lorenzo, Santa Fe – INCOTERMS 2020</code></li>
+            <li><strong>P2 (1p) – Territorio Aduanero:</strong> Definido por el Código Aduanero. Zonas: <em>primaria</em> (puertos/terminales), <em>secundaria</em> (resto del TAG), <em>vigilancia especial</em> (fronteras). Las zonas francas están fuera del TAG.</li>
+            <li><strong>P3 (1p) – V/F Clasificación aduanera establece tributos:</strong> → <span style="color:#f87171;font-weight:700;">FALSO</span>. La clasificación determina la <em>posición NCM</em>; los tributos surgen de esa posición. La clasificación NO hace las transacciones más flexibles.</li>
+            <li><strong>P4 (1p) – Importaciones definitivas a consumo:</strong> Correctas: <strong>c) abonan tributos · d) circulan libremente</strong>. No garantizan (los pagan), permanecen indefinidamente.</li>
+            <li><strong>P5 (1p) – INCOTERM nueces España → Bs As, disponible en puerto de Bs As, costos y gastos incluidos, sin certificaciones ni financiamiento:</strong> → <code>CFR</code> (Cost and Freight). Vendedor paga flete hasta puerto de destino; riesgo pasa al comprador al embarque.</li>
+            <li><strong>P6 (1p) – Agente de Tally y Forwarder:</strong> <em>Agente de Tally:</em> controla y verifica carga/descarga, cuenta bultos. <em>Freight Forwarder:</em> organiza y coordina toda la logística internacional (reserva de espacio, docs, seguimiento).</li>
+            <li><strong>P7 (1p) – 9° día hábil de arribada, ¿cuántos días quedan para solicitar destinación?</strong> Plazo total = 15 días hábiles. Al 9° día quedan → <strong>6 días hábiles</strong> ✓</li>
+            <li><strong>P9 (1p) – Seguros internacionales:</strong> Correctas: <strong>TLO</strong> (Total Loss Only) y <strong>avería gruesa</strong>. Prima = precio del seguro. CIF = FOB + Flete + Seguro.</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color:var(--accent-3);margin-bottom:10px;">🧮 P8 — Cotización Importación (1,5p)</h4>
+          <div class="highlight">
+            <strong>Caso:</strong> 15 bobinas de cable de acero desde Colombia. FOB: 15 U$S/kg × 125 kg/bobina. Flete TEU: 2.500 U$S (importador paga). Seguro: 275 U$S. Honor. despachante: 1% o mín. 375 U$S. Com. bancarias ord. 1,25% / benef. 1,05%. Gastos terminal incl. SIM: 300 U$S. Transp. Puerto→Planta: 35.000 $. Embalaje: 230 U$S. Certif.: 15.850 $. Gastos adm.: 26.850 $. Aduaneros: 180 U$S.<br><br>
+            Posición: DII 0%, DIE 21%, AEC 20%, DIEM 1,25 u$s/kg. T°C: 266/276.
+          </div>
+          <div class="table-wrap">
+            <table class="t">
+              <tr><th>Concepto</th><th>Valor (U$S)</th></tr>
+              <tr><td>FOB (15 × 125 kg × 15 U$S)</td><td>28.125</td></tr>
+              <tr><td>+ Flete marítimo</td><td>2.500</td></tr>
+              <tr><td>+ Seguro internacional</td><td>275</td></tr>
+              <tr><td><strong>= CIF (base imponible)</strong></td><td><strong>30.900</strong></td></tr>
+              <tr><td>DII (0% × CIF)</td><td>0</td></tr>
+              <tr><td>DIE (21% × CIF)</td><td>6.489</td></tr>
+              <tr><td>AEC (20% × CIF)</td><td>6.180</td></tr>
+              <tr><td>DIEM (1,25 U$S × 1.875 kg)</td><td>2.344</td></tr>
+              <tr><td>+ Gastos terminal / SIM</td><td>300</td></tr>
+              <tr><td>+ Honor. despachante (1% CIF = 309 → mín. 375)</td><td>375</td></tr>
+              <tr><td>+ Com. bancarias (ord. 1,25% + benef. 1,05% sobre FOB)</td><td>646</td></tr>
+              <tr><td>+ Embalaje protección</td><td>230</td></tr>
+              <tr><td>+ Aduaneros destino</td><td>180</td></tr>
+              <tr><td>+ Transp. Puerto→Planta + Certif. + Gastos adm.</td><td>en $</td></tr>
+              <tr><td style="color:var(--accent-4);font-weight:700;">COSTO TOTAL aprox.</td><td style="color:var(--accent-4);font-weight:700;">~46.864 U$S + $ arg.</td></tr>
+            </table>
+          </div>
+          <div class="danger-box" style="margin-top:10px;">
+            <strong>⚠️ Clave:</strong> DIEM se calcula sobre el <em>peso total en kg</em>. Si DIEM &gt; DIE, se aplica el DIEM (siempre se paga el mayor).
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── PARCIAL 2: I5053 · Tema 2 ── -->
+    <div class="card info fade-in" style="margin-bottom:28px;">
+      <div class="card-header">
+        <span class="card-tag tag-exam">📅 I5053 · Tema 2</span>
+        <h3>Parcial 1° — Comercio Exterior I5053 · Tema 2 (Bananas Ecuador / Nueces EEUU)</h3>
+      </div>
+      <div class="warn-box">
+        <strong>Contexto:</strong> 1) Bananas desde Ecuador: el <em>vendedor</em> tramita exportación y pone la mercadería en su almacén cerca del Puerto de Guayaquil. El precio incluye cert. de origen. 2) Nueces desde EEUU: exportador entrega en puerto de Nueva York, costos y riesgos cubiertos, sin descarga ni financiamiento.
+      </div>
+      <div class="grid-2" style="margin-top:16px;">
+        <div>
+          <h4 style="color:var(--accent-warn);margin-bottom:10px;">🔑 Preguntas y Respuestas clave</h4>
+          <ul>
+            <li><strong>P1 (1,5p) – INCOTERM bananas Ecuador (vendedor tramita exportación, deja en su almacén cerca de Guayaquil):</strong> → <code>FCA Puerto Guayaquil – INCOTERMS 2020</code>. El vendedor entrega exportada en el primer transportista en el lugar designado.</li>
+            <li><strong>P2 (1p) – Territorio aduanero y origen de mercaderías:</strong> El territorio aduanero delimita dónde se aplica la ley aduanera. El <em>origen</em> determina el tratamiento arancelario preferencial. Posición NCM + origen = derechos aplicables.</li>
+            <li><strong>P3 (1p) – V/F Clasificación arancelaria busca reducir trabas:</strong> → <span style="color:#f87171;font-weight:700;">FALSO</span>. La clasificación determina el tratamiento impositivo y regulatorio. No busca reducir trabas comerciales.</li>
+            <li><strong>P4 (1p) – Importaciones suspensivas:</strong> <strong>b) permanecen en el TA por tiempo determinado · c) no abonan tributos · e) no permiten la comercialización libre · f) la circulación es restringida</strong>.</li>
+            <li><strong>P5 (1p) – INCOTERM nueces EEUU, exportador entrega en puerto NY, costos y riesgos cubiertos, sin descarga:</strong> → <code>CPT</code> (Carriage Paid To). Exportador paga el flete hasta destino; el riesgo pasa al transportista en el punto de entrega.</li>
+            <li><strong>P6 (1p) – Freight Forwarder y ATA:</strong> <em>Freight Forwarder:</em> gestiona logística integral. <em>ATA (Agente de Transporte Aduanero):</em> mueve mercadería entre zonas aduaneras con garantía.</li>
+            <li><strong>P7 (1p) – 5° día hábil ignorando el contenido, ¿plazo para destinación?</strong> Plazo = 15 días hábiles desde arribo. Si al 5° día se ignora el contenido: → <strong>20 días hábiles</strong> (opción c, total desde arribo).</li>
+            <li><strong>P9 (1p) – Seguros:</strong> Correctas: <strong>prima</strong> (precio del seguro) y <strong>avería gruesa</strong>. TLO también válido. El cert. de origen NO es un seguro.</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color:var(--accent-3);margin-bottom:10px;">🧮 P8 — Cotización Importación (1,5p)</h4>
+          <div class="highlight">
+            <strong>Caso:</strong> 50 bobinas de cartulina desde Panamá. CFR: 5 U$S/kg × 350 kg/bobina. Seguro: NO considerado. Honor.: 1%. Com. bancarias: 0,85%. Terminal incl. SIM: 200 U$S. Puerto→Planta: 5.000 U$S. Certif. Res. 316-E: 2.500 $. Gastos adm.: 6.850 $. Aduaneros: 150 U$S.<br><br>
+            Posición: DII 0%, DIE 21%, AEC 21%, DIEM 1,1 u$s/kg. T°C: 153/161.
+          </div>
+          <div class="table-wrap">
+            <table class="t">
+              <tr><th>Concepto</th><th>Valor (U$S)</th></tr>
+              <tr><td>CFR (50 × 350 kg × 5 U$S)</td><td>87.500</td></tr>
+              <tr><td>Seguro (no considerado)</td><td>0</td></tr>
+              <tr><td><strong>= CIF (base imponible)</strong></td><td><strong>87.500</strong></td></tr>
+              <tr><td>DII (0%)</td><td>0</td></tr>
+              <tr><td>DIE (21% × CIF)</td><td>18.375</td></tr>
+              <tr><td>AEC (21% × CIF)</td><td>18.375</td></tr>
+              <tr><td>DIEM (1,1 U$S × 17.500 kg)</td><td>19.250</td></tr>
+              <tr><td>+ Terminal / SIM</td><td>200</td></tr>
+              <tr><td>+ Honor. despachante (1% CIF)</td><td>875</td></tr>
+              <tr><td>+ Com. bancarias (0,85%)</td><td>744</td></tr>
+              <tr><td>+ Transp. Puerto→Planta</td><td>5.000</td></tr>
+              <tr><td>+ Aduaneros</td><td>150</td></tr>
+              <tr><td>+ Certif. + Gastos adm.</td><td>en $</td></tr>
+              <tr><td style="color:var(--accent-4);font-weight:700;">COSTO TOTAL aprox.</td><td style="color:var(--accent-4);font-weight:700;">~142.969 U$S + $ arg.</td></tr>
+            </table>
+          </div>
+          <div class="danger-box" style="margin-top:10px;">
+            <strong>⚠️ Atención:</strong> Sin seguro, CIF = CFR. DIEM (19.250) &gt; DIE (18.375) → se aplica DIEM.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── PARCIAL 3: I5053 · Tema 1 ── -->
+    <div class="card info fade-in" style="margin-bottom:28px;">
+      <div class="card-header">
+        <span class="card-tag tag-exam">📅 I5053 · Tema 1</span>
+        <h3>Parcial 1° — Comercio Exterior I5053 · Tema 1 (Herramientas China / Zapatillas Paraguay)</h3>
+      </div>
+      <div class="warn-box">
+        <strong>Contexto:</strong> 1) Herramientas desde China, vía acuática. Exportador tramita exportación pero no asume costos/riesgos hasta Exolgan. Importador contrata su propio seguro. Escalas en Estambul y Hong Kong. Precio incluye certificados. 2) Zapatillas desde Paraguay: vendedor entrega en depósito del importador sin costos de nacionalización ni riesgos de transporte. Precio incluye carga pero no descarga.
+      </div>
+      <div class="grid-2" style="margin-top:16px;">
+        <div>
+          <h4 style="color:var(--accent-warn);margin-bottom:10px;">🔑 Preguntas y Respuestas clave</h4>
+          <ul>
+            <li><strong>P1 (1p) – Despacho directo a Plaza:</strong> Se solicita cuando la mercadería puede ir directamente al domicilio del importador sin pasar por depósito fiscal. El importador debe estar habilitado, la mercadería no debe ser peligrosa y la documentación debe estar completa.</li>
+            <li><strong>P2 (1p) – Frase Falsa (valoración aduanera determina ubicación en NCM):</strong> → <span style="color:#f87171;font-weight:700;">FALSO</span>. La valoración aduanera determina el <em>valor en aduana</em> (base imponible). La posición NCM la determina la <em>clasificación arancelaria</em>.</li>
+            <li><strong>P3 (1p) – Instrumentos de política promocional de exportaciones:</strong> <strong>a) Recupero del IVA · b) Cupos · c) Reintegro impositivo · d) Seguro de crédito a la exportación · e) Depósito de almacenamiento</strong>.</li>
+            <li><strong>P4 (1p) – Opciones de transporte acuático:</strong> Charter (buque completo), Liner (líneas regulares), Tramper (buque irregular), FCL (contenedor completo), LCL (grupaje/consolidado).</li>
+            <li><strong>P5 (1p) – Proceso de arribo:</strong> Mercadería arriba → zona primaria aduanera → intervienen: Agente Marítimo, Agente de Tally, Despachante de Aduana, ATA. El importador solicita la destinación aduanera.</li>
+            <li><strong>P6 (1,5p) – INCOTERM herramientas China → Exolgan, exportador no asume costos/riesgos hasta arribo, importador contrata seguro:</strong> → <code>CPT Exolgan, Buenos Aires – INCOTERMS 2020</code></li>
+            <li><strong>P7 (1p) – INCOTERM zapatillas Paraguay, entrega en depósito importador, sin riesgos ni costos de nacionalización, con carga sin descarga:</strong> → <code>DAP</code> (Delivered at Place). Entrega en destino acordado sin descarga; importador asume descarga y despacho.</li>
+            <li><strong>P8 (1p) – Contenedor para Arsenito en solución acuosa (granel líquido peligroso):</strong> Tipo: <strong>ISO Tank</strong>. Marcas: <em>IMDG</em> (clase de peligrosidad, número ONU). Las establece la <strong>OMI/IMO</strong> mediante el Código IMDG.</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color:var(--accent-3);margin-bottom:10px;">🧮 P9 — Cotización Importación FOB Alemania (1,5p)</h4>
+          <div class="highlight">
+            <strong>Caso:</strong> Compra corrugado desde Alemania. FOB: 125.000 U$S. Embalaje exportación: 230 U$S. Seguro propio: 250 U$S. Flete Alemania→Bs As: 1.000 U$S. Descarga Exolgan: 75 U$S. Agente de compra: 1%. Honor. despachante: 1,5%. SIM: 10 U$S. Carta de crédito banco: 0,85%.<br><br>
+            Tributos: AEC 10%, DII 0%, DIE 10%, PA 20%, DIEM 13.500 U$S/unid., DX 6%. T°C: 156/165.
+          </div>
+          <div class="table-wrap">
+            <table class="t">
+              <tr><th>Concepto</th><th>Valor (U$S)</th></tr>
+              <tr><td>FOB</td><td>125.000</td></tr>
+              <tr><td>+ Flete principal</td><td>1.000</td></tr>
+              <tr><td>+ Seguro internacional</td><td>250</td></tr>
+              <tr><td><strong>= CIF (base imponible)</strong></td><td><strong>126.250</strong></td></tr>
+              <tr><td>DII (0%)</td><td>0</td></tr>
+              <tr><td>DIE (10% × CIF)</td><td>12.625</td></tr>
+              <tr><td>AEC (10% × CIF)</td><td>12.625</td></tr>
+              <tr><td>PA – Percepción Anticipada (20% × CIF)</td><td>25.250</td></tr>
+              <tr><td>DIEM (13.500 U$S × 1 unidad)</td><td>13.500</td></tr>
+              <tr><td>+ SIM</td><td>10</td></tr>
+              <tr><td>+ Honor. despachante (1,5% CIF)</td><td>1.894</td></tr>
+              <tr><td>+ Agente de compra (1% FOB)</td><td>1.250</td></tr>
+              <tr><td>+ Carta de crédito (0,85% FOB)</td><td>1.063</td></tr>
+              <tr><td>+ Descarga Exolgan</td><td>75</td></tr>
+              <tr><td>+ Transp. Puerto→Planta + Custodia</td><td>en $</td></tr>
+              <tr><td style="color:var(--accent-4);font-weight:700;">COSTO TOTAL aprox.</td><td style="color:var(--accent-4);font-weight:700;">~193.542 U$S + $ arg.</td></tr>
+            </table>
+          </div>
+          <div class="danger-box" style="margin-top:10px;">
+            <strong>⚠️ PA (Percepción Anticipada):</strong> Es una percepción a cuenta de Ganancias, calculada sobre el CIF. DIEM aquí = por unidad (no por kg). DX = derecho de exportación, no aplica en importación.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── PARCIAL 4: 2017 · Tema 1 ── -->
+    <div class="card info fade-in" style="margin-bottom:28px;">
+      <div class="card-header">
+        <span class="card-tag tag-exam">📅 03/07/2017 · Tema 1</span>
+        <h3>Parcial 1° — Comercio Exterior · 03/07/2017 — Mara Prado (8/10)</h3>
+      </div>
+      <div class="warn-box">
+        <strong>Contexto:</strong> Parcial de opción múltiple y desarrollo breve. Temas: supuestos de comercio internacional, auxiliares, procesos de integración, destinaciones, carta de crédito, posición arancelaria, territorio aduanero, balanza de pagos, organismos internacionales, exportación en consignación.
+      </div>
+      <div class="table-wrap">
+        <table class="t" style="margin-top:12px;">
+          <tr><th>#</th><th>Pregunta</th><th>Respuesta ✓</th><th>Concepto clave</th></tr>
+          <tr><td>1</td><td>¿Cuáles supuestos simplificadores son correctos?</td><td><strong>b) No existe costo de transporte · c) No existen barreras proteccionistas</strong></td><td>Supuestos del modelo clásico eliminan distorsiones. No asume factores móviles internacionalmente ni paridades variables.</td></tr>
+          <tr><td>2</td><td>Son auxiliares del comercio exterior:</td><td><strong>c) ATA · d) Surveyor</strong></td><td>ATA = Agente de Transporte Aduanero. Surveyor = perito verificador. El exportador y el agente de porte NO son auxiliares.</td></tr>
+          <tr><td>3</td><td>En un Mercado Común cada país mantiene su régimen frente a terceros. ¿V o F?</td><td><span style="color:#f87171;font-weight:700;">FALSO</span></td><td>El Mercado Común adopta libre circulación de factores + AEC. El que mantiene régimen propio frente a terceros es la <strong>ZLC</strong>.</td></tr>
+          <tr><td>4</td><td>¿Cuáles destinaciones son definitivas?</td><td><strong>a) Importación para consumo · d) Despacho directo a plaza</strong></td><td>Definitivas = sin plazo, libre circulación. Tránsito, depósito, admisión temporaria = suspensivas.</td></tr>
+          <tr><td>5</td><td>La carta de crédito es confirmada cuando:</td><td><strong>d) Un tercer banco paga si no lo hace el importador o su banco</strong></td><td>Confirmada = banco corresponsal adiciona garantía al exportador, protegiendo del riesgo del banco emisor extranjero.</td></tr>
+          <tr><td>6</td><td>Con la posición arancelaria se determina:</td><td><strong>b) El tratamiento arancelario de importación y exportación</strong></td><td>La posición NCM determina tributos (DII, DIE, AEC, DIEM) y restricciones. NO determina medio de pago ni embalaje.</td></tr>
+          <tr><td>7</td><td>¿Cuáles espacios forman parte del territorio aduanero?</td><td>Mar territorial, ríos, espacio aéreo, lecho submarino. Zonas francas → NO son TAG</td><td>Zonas francas = extraaduaneras. No forman parte del TAG aunque estén en suelo argentino.</td></tr>
+          <tr><td>8</td><td>La BdP registra transacciones de residentes, con independencia de su nacionalidad. ¿V o F?</td><td><span style="color:#34d399;font-weight:700;">VERDADERO</span></td><td>La BdP usa RESIDENCIA (no nacionalidad). Un extranjero que vive en Argentina ES residente argentino. La independencia de la nacionalidad es el punto clave.</td></tr>
+          <tr><td>9</td><td>Son organismos de cooperación internacional:</td><td><strong>a) OEA · c) BIRD · d) CEPAL</strong></td><td>CARICOM es un proceso de integración. OEA (político), BIRD (financiero/desarrollo), CEPAL (económico latinoamericano).</td></tr>
+          <tr><td>10</td><td>Tres características de exportación en consignación:</td><td>a) Merch. que <em>puede</em> venderse en el exterior · b) Hecho imponible al momento de la consignación, no de la venta · c) Plazo máximo de permanencia en el exterior</td><td>En consignación el exportador envía sin precio fijo; los tributos se calculan al momento de la exportación, no de la venta final.</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- ── PARCIAL 5: 2017 · Tema 2 ── -->
+    <div class="card info fade-in" style="margin-bottom:28px;">
+      <div class="card-header">
+        <span class="card-tag tag-exam">📅 02/07/2017 · Tema 2</span>
+        <h3>Parcial 1° — Comercio Exterior · 02/07/2017 — Javier Petinnicha (6/10)</h3>
+      </div>
+      <div class="warn-box">
+        <strong>Contexto:</strong> Parcial de opción múltiple y desarrollo, 10 preguntas. Temas: Unión Aduanera, supuestos simplificadores, destinaciones definitivas exportación, destinaciones suspensivas, auxiliares, carta de crédito, valor en aduana, territorio aduanero, balanza de pagos, procesos de integración.
+      </div>
+      <div class="table-wrap">
+        <table class="t" style="margin-top:12px;">
+          <tr><th>#</th><th>Pregunta</th><th>Respuesta ✓</th><th>Concepto clave</th></tr>
+          <tr><td>1</td><td>En una UA se eliminan restricciones y cada país mantiene régimen propio frente a terceros. ¿V o F?</td><td><span style="color:#f87171;font-weight:700;">FALSO</span></td><td>En la UA se adopta un <strong>AEC</strong> común. La ZLC es donde cada país mantiene su propio régimen frente a terceros.</td></tr>
+          <tr><td>2</td><td>¿Cuáles supuestos simplificadores NO son correctos?</td><td><strong>a) Intercambio solo entre dos países</strong> (SÍ es supuesto clásico) y <strong>e) Paridades no permanecen fijas</strong> (el modelo clásico SÍ las asume fijas)</td><td>El modelo clásico asume: intercambio bilateral, sin costos, sin barreras, paridades fijas, factores inmóviles internacionalmente.</td></tr>
+          <tr><td>3</td><td>Tres características de destinación definitiva de exportación:</td><td>a) Plazo <strong>INDETERMINADO</strong> · b) Fin <strong>INDETERMINADO</strong> · c) <strong>Libre circulación</strong> en territorio de destino</td><td>Definitivas = sin plazo ni fin limitado. Suspensivas = plazo y fin determinados. La diferencia fundamental: permanencia indefinida vs. temporal.</td></tr>
+          <tr><td>4</td><td>¿Cuáles destinaciones son suspensivas?</td><td><strong>b) Tránsito directo · c) Removido · e) Depósito de almacenamiento</strong></td><td>Suspensivas importación: tránsito, removido, depósito fiscal, admisión temporaria, rancho y provisiones.</td></tr>
+          <tr><td>5</td><td>Son auxiliares del comercio exterior:</td><td><strong>a) Forwarder · b) ATA · c) Armador</strong></td><td>Armador = propietario/operador del buque, es auxiliar del transporte marítimo. El Surveyor puede no clasificarse según el CA.</td></tr>
+          <tr><td>6</td><td>La carta de crédito es confirmada cuando:</td><td>Ninguna opción era correcta. Real: el banco corresponsal garantiza el pago al exportador independientemente del banco emisor.</td><td>LC Confirmada: un banco (generalmente en el país del exportador) garantiza el pago además del banco emisor extranjero.</td></tr>
+          <tr><td>7</td><td>El valor en aduana del producto determina:</td><td><strong>b) El tratamiento arancelario de importación y exportación</strong></td><td>El valor en aduana (CIF = base imponible) determina sobre qué monto se calculan los tributos ad-valorem.</td></tr>
+          <tr><td>8</td><td>¿Cuáles espacios NO forman parte del territorio aduanero?</td><td><strong>b) Los exclaves · d) Las zonas francas</strong></td><td>Zonas francas = fuera del TAG. El lecho y subsuelo submarino nacional SÍ forma parte del TAG. El mar territorial SÍ es TAG.</td></tr>
+          <tr><td>9</td><td>La BdP registra tomando como referencia la <em>nacionalidad</em>. ¿V o F?</td><td><span style="color:#f87171;font-weight:700;">FALSO</span></td><td>La BdP toma como referencia la <strong>RESIDENCIA</strong>, no la nacionalidad. Un argentino que vive en España no es residente argentino para la BdP.</td></tr>
+          <tr><td>10</td><td>Son procesos de integración:</td><td><strong>b) CARICOM</strong> es proceso de integración. OEA y BIRD son organismos de cooperación, no procesos.</td><td>Procesos de integración: MERCOSUR, UE, CARICOM, ALADI. Organismos de cooperación: OEA, ONU, FMI, BIRD, CEPAL.</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- ── PARCIAL 6: GluFre · Chile Terrestre ── -->
+    <div class="card info fade-in" style="margin-bottom:28px;">
+      <div class="card-header">
+        <span class="card-tag tag-exam">📅 GluFre · Tema 2 · Chile</span>
+        <h3>Parcial 1° — Comercio Exterior · GluFre (Alfajores → Viñas del Mar, Chile — Terrestre)</h3>
+      </div>
+      <div class="warn-box">
+        <strong>Contexto:</strong> Parte conceptual: organismos de cooperación, documentos de transporte, Unión Aduanera, carta de crédito, leasing. Ejercicio: GluFre presupuesta 2.000 cajas de alfajores de arroz (12 unid./caja) → Viñas del Mar, Chile, vía terrestre.
+      </div>
+      <div class="grid-2" style="margin-top:16px;">
+        <div>
+          <h4 style="color:var(--accent-warn);margin-bottom:10px;">🔑 Preguntas conceptuales</h4>
+          <ul>
+            <li><strong>P1 – ¿Qué es un organismo de cooperación?</strong> Entidad supranacional que facilita la cooperación entre países sin cesión de soberanía. Ej: ONU, OEA, FMI, BIRD (Banco Mundial), OMC, CEPAL.</li>
+            <li><strong>P2 – Importancia de documentos de transporte (2 ejemplos):</strong> Acreditan recepción de carga, son base para reclamo de seguros, necesarios para despacho aduanero. <strong>BL</strong> = marítimo, título valor negociable. <strong>Carta de Porte</strong> = terrestre, nominativa, no es título valor.</li>
+            <li><strong>P3 – Frase falsa sobre Unión Aduanera:</strong> → <span style="color:#f87171;font-weight:700;">FALSO</span>. En la UA se adopta un <strong>AEC</strong>; no cada país mantiene su régimen frente a terceros. La frase también es incorrecta al relacionar la UA con países en vías de desarrollo.</li>
+            <li><strong>P4 – "Carta de crédito": revocabilidad, transferibilidad, confirmación, divisibilidad:</strong>
+              <ul style="margin-top:6px;">
+                <li><em>Revocabilidad:</em> Revocable vs. <strong>Irrevocable</strong> (estándar actual, no se cancela sin acuerdo)</li>
+                <li><em>Transferibilidad:</em> Transferible (beneficiario puede ceder) vs. No transferible</li>
+                <li><em>Confirmación:</em> Confirmada (banco corresponsal garantiza) vs. No confirmada</li>
+                <li><em>Divisibilidad:</em> Divisible (múltiples pagos parciales) vs. Indivisible (pago único)</li>
+              </ul>
+            </li>
+            <li><strong>P5 – Financiamiento no-tradicional y "leasing":</strong> Alternativas al crédito bancario convencional. <em>Leasing:</em> arrendamiento con opción de compra al finalizar el plazo. El arrendatario usa el bien pagando un canon; al vencer puede comprarlo por el valor residual pactado. Ventaja: sin inmovilizar capital propio.</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color:var(--accent-3);margin-bottom:10px;">🧮 P6 — GluFre Exportación a Chile (Terrestre)</h4>
+          <div class="highlight">
+            <strong>Datos principales:</strong> 2.000 cajas × 12 unid. = 24.000 unid. MO: $10/unid. GP: $3/unid. MP nacional: $15/unid +IVA. MP importada CIF: U$D10/caja. Arancel MP importada: U$D3/caja. Envoltorio: $200/caja +IVA. Etiquetado: U$D0,10/caja. Certif. alimentarias: $600/caja +IVA. Certif. origen: U$D30/embarque. Draw Back: U$D3/caja. Gastos aduan./portuarios: U$D300. Honor. despachante: 1% valor venta +$200+IVA. Bancarios cobro: 1% venta. Utilidad: U$D0,5/unid. AEC:15%, DII:0%, DIE:5%, X:6%, R:4%. Cotiz.: U$D 180/190.
+          </div>
+          <div class="highlight" style="border-color:var(--accent-4);">
+            <strong>a) Valor en aduana (para Chile):</strong> Es el precio FOB de exportación desde Argentina (base imponible del DX argentino y punto de referencia para que Chile calcule sus tributos sumando flete y seguro).<br><br>
+            <em>Estructura del FOB GluFre (Chile):</em><br>
+            — Costos de producción (MP + MO + GP + embalaje) sin IVA<br>
+            — + MP importada CIF + aranceles pagados<br>
+            — + Certificaciones sin IVA<br>
+            — + Gastos aduaneros y portuarios<br>
+            — <strong>− Draw Back</strong> (U$D3/caja × 2.000 = U$D6.000 de recupero)<br>
+            — + Honorarios despachante + gastos bancarios<br>
+            — + Transporte terrestre + acondicionamiento<br>
+            — + Utilidad neta: U$D0,5 × 24.000 = U$D12.000<br>
+            — = <strong>Precio de venta FOB (valor en aduana)</strong><br><br>
+            <strong>b) Si el exportador paga U$D adicional de 20% por embarque:</strong> Se agrega a los costos de exportación, incrementando el precio FOB necesario para mantener la utilidad esperada.
+          </div>
+          <div class="danger-box" style="margin-top:10px;">
+            <strong>⚠️ Draw Back:</strong> Recupero de tributos pagados sobre insumos importados usados en bienes exportados → <em>descuenta</em> del costo. <strong>X (6%)</strong> = Derecho de Exportación sobre FOB. <strong>R (Reintegro 4%)</strong> = beneficio devuelto al exportador. El IVA no grava las exportaciones (se recupera el pagado en insumos).
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── PARCIAL 7: 01/11/2022 · GluFre → Vera Cruz México ── -->
+    <div class="card info fade-in" style="margin-bottom:28px;">
+      <div class="card-header">
+        <span class="card-tag tag-exam">📅 01/11/2022 · Tema 3</span>
+        <h3>Parcial 1° — Comercio Exterior · 01/11/2022 · GluFre (Alfajores → Vera Cruz, México — Marítimo)</h3>
+      </div>
+      <div class="warn-box">
+        <strong>Contexto:</strong> Parte conceptual: proceso de integración, financiamiento tradicional/factoraje, concepto de residente, cobranza, documentos de transporte. Ejercicio: GluFre exporta 500 cajas de alfajores (24 unid./caja) → Vera Cruz, México, vía marítima.
+      </div>
+      <div class="grid-2" style="margin-top:16px;">
+        <div>
+          <h4 style="color:var(--accent-warn);margin-bottom:10px;">🔑 Preguntas conceptuales</h4>
+          <ul>
+            <li><strong>P1 – ¿Qué es un proceso de integración?</strong> Acuerdo entre países para facilitar el comercio eliminando barreras progresivamente. Etapas: ZLC → Unión Aduanera → Mercado Común → Unión Económica → Unión Política. Ejemplos: MERCOSUR (UA+), UE (Unión Económica), CARICOM, ALADI.</li>
+            <li><strong>P2 – Financiamiento tradicional. Define "factoraje":</strong> Financiamiento tradicional = crédito bancario convencional (préstamos, líneas de crédito). <em>Factoraje (Factoring):</em> la empresa cede sus créditos comerciales (facturas) a un factor a cambio de liquidez inmediata. El factor gestiona el cobro y puede asumir el riesgo crediticio.</li>
+            <li><strong>P3 – Frase falsa sobre concepto de residente:</strong> La frase dice que los que cursan estudios o reciben tratamiento médico en el exterior NO son residentes → <span style="color:#f87171;font-weight:700;">FALSO</span>. Quienes permanecen >1 año en el exterior (incluso por estudios o tratamiento médico) son considerados residentes del país donde están.</li>
+            <li><strong>P4 – Medio de pago "cobranza". Simples y documentarias "a la vista":</strong> La cobranza es un instrumento donde el exportador cobra al importador via bancos, contra entrega de documentos. <em>Cobranza simple:</em> solo documentos financieros. <em>Cobranza documentaria:</em> documentos financieros + comerciales. <em>A la vista (D/P):</em> pago al presentar documentos. <em>A plazo (D/A):</em> acepta letra y paga al vencimiento.</li>
+            <li><strong>P5 – Importancia documentos de transporte (2 ejemplos):</strong> Vitales para: acreditar entrega al transportista, habilitar retiro de carga, tramitar seguros, realizar despacho aduanero. <strong>BL</strong> = marítimo, título valor transferible ("a bordo" / "embarcado"). <strong>AWB</strong> = aéreo, nominativo, no negociable.</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color:var(--accent-3);margin-bottom:10px;">🧮 P6 — GluFre Exportación a Vera Cruz (Marítimo)</h4>
+          <div class="highlight">
+            <strong>Datos principales:</strong> 500 cajas × 24 unid. = 12.000 unid. MO: $100/unid. GP: $300/caja. MP nacional: $1.500/caja +IVA. MP importada CIF: U$D90/caja. Arancel MP importada: U$D25/caja. Envoltorio: $500/caja +IVA. Etiquetado: $150/caja +IVA. Certif. alimentarias: U$D50/emb. Certif. origen: U$D30/emb. Draw Back: U$D0,4/unid. Gastos aduan./portuarios: U$D250. Honor. despachante: 1% FOB. Bancarios cobro: 2% FOB. Transp. depósito→Puerto: $5.000+IVA. Utilidad: U$D2/unid. AEC:15%, DII:0%, DIE:5%, X:6%, R:4%. Cotiz.: U$D 180/190.
+          </div>
+          <div class="highlight" style="border-color:var(--accent-4);">
+            <strong>a) Valor en aduana (para México):</strong> El valor FOB de exportación desde Argentina. México suma flete y seguro para llegar al CIF (su base imponible).<br><br>
+            <em>Estructura del FOB GluFre (México, simplificada):</em><br>
+            — MO: $100 × 12.000 = $1.200.000<br>
+            — GP: $300 × 500 = $150.000<br>
+            — MP nacional (sin IVA): $1.500 × 500 = $750.000<br>
+            — MP importada: U$D90 × 500 × T°C compra<br>
+            — Aranceles MP importada: U$D25 × 500 = U$D12.500<br>
+            — Envoltorio + etiquetado (sin IVA)<br>
+            — Certif. alimentarias + origen: U$D80<br>
+            — Gastos aduaneros/portuarios: U$D250<br>
+            — Transp. depósito→Puerto: $5.000 (sin IVA, no recupera)<br>
+            — <strong>− Draw Back:</strong> U$D0,4 × 12.000 = U$D4.800<br>
+            — + Honorarios (1% FOB) + Bancarios (2% FOB)<br>
+            — + Utilidad: U$D2 × 12.000 = U$D24.000<br>
+            — = <strong>Precio FOB = Valor en Aduana</strong><br><br>
+            <strong>b) Si Honor. despachante = "1% FOB o U$D900, el mayor":</strong> Comparar 1% FOB vs. U$D900. Si 1% FOB &lt; U$D900, se usa U$D900. Esto incrementa el costo total y el precio FOB necesario.
+          </div>
+          <div class="danger-box" style="margin-top:10px;">
+            <strong>⚠️ GluFre Chile vs. México:</strong> Chile = terrestre (Carta de Porte) · México = marítimo (Bill of Lading). El Draw Back siempre es un beneficio/descuento del costo. El IVA no grava exportaciones pero SÍ los insumos locales (se recupera después). TC compra para costos en U$D; TC venta para convertir ingresos.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── RESUMEN COMPARATIVO ── -->
+    <div class="card med fade-in" style="margin-top:12px;">
+      <div class="card-header">
+        <span class="card-tag tag-med">📊 Comparativo</span>
+        <h3>Patrones repetidos en todos los parciales — Lo que siempre entra</h3>
+      </div>
+      <div class="table-wrap">
+        <table class="t">
+          <tr><th>Tema</th><th>Frecuencia</th><th>Tip clave</th></tr>
+          <tr><td>INCOTERMS – Identificar el correcto</td><td>⭐⭐⭐⭐⭐ Siempre</td><td>Leer quién contrata transporte, dónde pasa el riesgo, si incluye carga/descarga y certificados</td></tr>
+          <tr><td>Cotización de importación/exportación</td><td>⭐⭐⭐⭐⭐ Siempre</td><td>CIF = FOB + Flete + Seguro. Tributos sobre CIF. DIEM vs DIE → siempre el mayor</td></tr>
+          <tr><td>Territorio aduanero – Zonas</td><td>⭐⭐⭐⭐⭐ Siempre</td><td>Zonas francas = fuera del TAG. Mar territorial, lecho, espacio aéreo = dentro del TAG</td></tr>
+          <tr><td>V/F sobre procesos de integración (UA vs ZLC)</td><td>⭐⭐⭐⭐ Muy frecuente</td><td>UA = AEC. ZLC = sin AEC (cada país mantiene su régimen). MC = libre circulación de factores</td></tr>
+          <tr><td>Destinaciones aduaneras – definitivas vs suspensivas</td><td>⭐⭐⭐⭐ Muy frecuente</td><td>Definitivas = sin plazo, libre circulación. Suspensivas = plazo y fin determinado, no circulan libremente</td></tr>
+          <tr><td>Auxiliares del comercio exterior</td><td>⭐⭐⭐⭐ Muy frecuente</td><td>Forwarder, ATA, Despachante, Agente marítimo, Tally, Armador. NO son auxiliares: exportador, importador</td></tr>
+          <tr><td>Balanza de Pagos – residencia vs. nacionalidad</td><td>⭐⭐⭐ Frecuente</td><td>La BdP usa RESIDENCIA (no nacionalidad). Residentes = quienes permanecen y realizan actividades &gt;1 año</td></tr>
+          <tr><td>Carta de crédito – confirmada</td><td>⭐⭐⭐ Frecuente</td><td>Confirmada = banco corresponsal adiciona garantía. Irrevocable = no se cancela unilateralmente</td></tr>
+          <tr><td>Seguros en transporte internacional</td><td>⭐⭐⭐ Frecuente</td><td>TLO, Avería gruesa, Avería particular, FPA. Prima = precio del seguro. Solo CIF y CIP obligan al vendedor</td></tr>
+          <tr><td>Documentos de transporte</td><td>⭐⭐⭐ Frecuente</td><td>BL = marítimo, título valor. AWB = aéreo, nominativo. Carta de Porte = terrestre, no título valor</td></tr>
+          <tr><td>GluFre / ejercicio de exportación</td><td>⭐⭐⭐ Frecuente</td><td>Costos − Draw Back + utilidad = FOB. TC compra para costos en U$D, TC venta para ingresos</td></tr>
+          <tr><td>Organismos cooperación vs. procesos integración</td><td>⭐⭐⭐ Frecuente</td><td>Cooperación: OEA, ONU, FMI, BIRD, CEPAL. Integración: MERCOSUR, UE, CARICOM, ALADI</td></tr>
+          <tr><td>Financiamiento no-tradicional (Leasing, Factoring)</td><td>⭐⭐ Moderado</td><td>Leasing = arrendamiento con opción compra. Factoring = cesión de facturas por liquidez</td></tr>
+          <tr><td>Clasificación arancelaria – qué determina</td><td>⭐⭐ Moderado</td><td>Determina posición NCM y tributos. NO determina el medio de pago ni el embalaje ni el INCOTERM</td></tr>
+        </table>
+      </div>
+    </div>
+
+  </section>
+
 </main>
 
 <footer>
-  <p>📚 Guía preparada en base a los módulos 1, 2 y 3 de Comercio Exterior UTN · Parciales resueltos B, C, H · 2026</p>
-  <p style="margin-top:6px; color:var(--text-muted);">Revisá también los apuntes de clase y los parciales resueltos que tenés guardados.</p>
+  <p>📚 Guía preparada en base a los módulos 1, 2 y 3 de Comercio Exterior UTN · 7 parciales reales resueltos (2017, 2022, 2023) · 2026</p>
+  <p style="margin-top:6px; color:var(--text-muted);">Incluye resoluciones completas de I5053 / I5054 con cotizaciones GluFre (Chile terrestre y México marítimo).</p>
 </footer>
 
 <script>
