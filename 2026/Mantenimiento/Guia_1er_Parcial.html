@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Guía Completa 1er Parcial – Mantenimiento UTN</title>
-  <meta name="description" content="Guía teórica y práctica para el primer parcial de Mantenimiento UTN. Aprigliano." />
+  <meta name="description" content="Guía teórica y práctica para el primer parcial de Mantenimiento UTN. Aprigliano. Sigue el orden del apunte completo." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     :root {
@@ -18,6 +18,7 @@
       --accent-4:      #10b981;
       --accent-warn:   #f59e0b;
       --accent-danger: #ef4444;
+      --accent-pink:   #ec4899;
       --text-primary:  #f1f5f9;
       --text-secondary:#94a3b8;
       --text-muted:    #64748b;
@@ -45,9 +46,10 @@
       animation: blobFloat 12s ease-in-out infinite alternate;
     }
     body::before { width: 600px; height: 600px; background: var(--accent-1); top: -200px; left: -200px; }
-    body::after { width: 500px; height: 500px; background: var(--accent-2); bottom: -200px; right: -200px; animation-delay: -6s; }
+    body::after  { width: 500px; height: 500px; background: var(--accent-2); bottom: -200px; right: -200px; animation-delay: -6s; }
     @keyframes blobFloat { from { transform: translate(0,0) scale(1); } to { transform: translate(40px,30px) scale(1.08); } }
 
+    /* ── HEADER ── */
     header {
       position: relative; z-index: 10; text-align: center; padding: 70px 24px 50px;
       background: linear-gradient(180deg, rgba(99,102,241,0.08) 0%, transparent 100%);
@@ -56,34 +58,35 @@
     .badge {
       display: inline-flex; align-items: center; gap: 6px; background: rgba(99,102,241,0.15);
       border: 1px solid var(--border-glow); color: var(--accent-1); padding: 5px 14px;
-      border-radius: 999px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 20px;
+      border-radius: 999px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em;
+      text-transform: uppercase; margin-bottom: 20px;
     }
     .badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent-1); animation: pulse 2s ease-in-out infinite; }
-    @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.4); } }
+    @keyframes pulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.5; transform:scale(1.4); } }
     h1 {
-      font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 800;
+      font-size: clamp(2rem, 5vw, 3.6rem); font-weight: 800;
       background: linear-gradient(135deg, #f1f5f9 0%, var(--accent-1) 50%, var(--accent-3) 100%);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.15; margin-bottom: 16px;
     }
-    .subtitle { color: var(--text-secondary); font-size: 1.05rem; max-width: 600px; margin: 0 auto 28px; }
+    .subtitle { color: var(--text-secondary); font-size: 1rem; max-width: 620px; margin: 0 auto 28px; }
 
+    /* ── NAV ── */
     nav {
       position: sticky; top: 0; z-index: 100; background: rgba(10,14,26,0.92);
       backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); padding: 0 24px;
     }
     .nav-inner {
-      max-width: 1200px; margin: 0 auto; display: flex; gap: 3px; overflow-x: auto; scrollbar-width: none; padding: 8px 0; align-items: center;
+      max-width: 1200px; margin: 0 auto; display: flex; gap: 3px;
+      overflow-x: auto; scrollbar-width: none; padding: 8px 0; align-items: center;
     }
     .nav-inner::-webkit-scrollbar { display: none; }
     .nav-btn {
-      white-space: nowrap; padding: 0; border: 1px solid transparent; background: transparent; color: var(--text-secondary);
-      font-family: 'Inter', sans-serif; border-radius: var(--radius-sm); cursor: pointer; transition: all 0.22s;
-      display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 6px 12px; line-height: 1;
+      white-space: nowrap; border: 1px solid transparent; background: transparent;
+      color: var(--text-secondary); font-family: 'Inter', sans-serif; border-radius: var(--radius-sm);
+      cursor: pointer; transition: all 0.22s; display: flex; flex-direction: column;
+      align-items: center; gap: 2px; padding: 6px 12px; line-height: 1;
     }
-    .nav-btn .nav-unit {
-      font-size: 0.58rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 1px 6px;
-      border-radius: 999px; background: rgba(255,255,255,0.06); color: var(--text-muted); transition: all 0.22s;
-    }
+    .nav-btn .nav-unit { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 1px 6px; border-radius: 999px; background: rgba(255,255,255,0.06); color: var(--text-muted); transition: all 0.22s; }
     .nav-btn .nav-label { font-size: 0.8rem; font-weight: 500; }
     .nav-btn:hover { background: rgba(99,102,241,0.12); border-color: rgba(99,102,241,0.2); color: var(--accent-1); }
     .nav-btn:hover .nav-unit { background: rgba(99,102,241,0.2); color: var(--accent-1); }
@@ -91,8 +94,10 @@
     .nav-btn.active .nav-unit { background: rgba(99,102,241,0.3); color: #c7d2fe; }
     .nav-sep { width: 1px; height: 28px; background: var(--border); flex-shrink: 0; margin: 0 4px; }
 
+    /* ── MAIN ── */
     main { max-width: 1100px; margin: 0 auto; padding: 40px 24px 80px; position: relative; z-index: 1; }
 
+    /* ── SECTION TITLES ── */
     .section-title { display: flex; align-items: center; gap: 12px; margin: 56px 0 24px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
     .section-icon { width: 42px; height: 42px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
     .section-title h2 { font-size: 1.55rem; font-weight: 700; color: var(--text-primary); }
@@ -103,10 +108,30 @@
     .ic-green  { background: rgba(16,185,129,0.15); }
     .ic-amber  { background: rgba(245,158,11,0.15); }
     .ic-pink   { background: rgba(236,72,153,0.15); }
+    .ic-red    { background: rgba(239,68,68,0.15); }
 
+    /* ── CRITICIDAD TAGS ── */
+    .crit-tag {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 3px 10px; border-radius: 999px; font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase; border: 1px solid; margin-bottom: 10px;
+    }
+    .tag-alta   { background: rgba(239,68,68,0.12); color: #fca5a5; border-color: rgba(239,68,68,0.35); }
+    .tag-media  { background: rgba(245,158,11,0.12); color: #fcd34d; border-color: rgba(245,158,11,0.35); }
+    .tag-baja   { background: rgba(16,185,129,0.12); color: #6ee7b7; border-color: rgba(16,185,129,0.35); }
+    .tag-examen { background: rgba(236,72,153,0.12); color: #f9a8d4; border-color: rgba(236,72,153,0.35); }
+
+    .crit-tag::before { content: '●'; font-size: 0.55rem; }
+    .tag-alta::before   { color: #ef4444; }
+    .tag-media::before  { color: #f59e0b; }
+    .tag-baja::before   { color: #10b981; }
+    .tag-examen::before { color: #ec4899; }
+
+    /* ── CARDS ── */
     .card {
-      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px 26px;
-      margin-bottom: 18px; transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s; position: relative; overflow: hidden;
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 22px 24px; margin-bottom: 18px; transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+      position: relative; overflow: hidden;
     }
     .card::before {
       content: ''; position: absolute; top: 0; left: 0; height: 3px; width: 100%;
@@ -117,52 +142,100 @@
     .card.info::before  { background: linear-gradient(90deg, var(--accent-1), transparent); }
     .card.cyan::before  { background: linear-gradient(90deg, var(--accent-3), transparent); }
     .card.green::before { background: linear-gradient(90deg, var(--accent-4), transparent); }
+    .card.amber::before { background: linear-gradient(90deg, var(--accent-warn), transparent); }
+    .card.danger::before { background: linear-gradient(90deg, var(--accent-danger), transparent); }
 
-    .card-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
-    .card h3 { font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0; }
+    .card h3 { font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin-bottom: 10px; }
     .card p, .card li { color: var(--text-secondary); font-size: 0.93rem; line-height: 1.7; }
     .card ul { padding-left: 20px; }
     .card li { margin-bottom: 6px; }
     .card li::marker { color: var(--accent-1); }
 
-    .highlight { background: rgba(99,102,241,0.08); border-left: 3px solid var(--accent-1); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 14px 18px; margin: 12px 0; font-size: 0.91rem; color: var(--text-secondary); }
+    /* ── HIGHLIGHT BOXES ── */
+    .highlight  { background: rgba(99,102,241,0.08); border-left: 3px solid var(--accent-1); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 13px 16px; margin: 10px 0; font-size: 0.91rem; color: var(--text-secondary); }
+    .warn-box   { background: rgba(245,158,11,0.08); border-left: 3px solid var(--accent-warn); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 13px 16px; margin: 10px 0; font-size: 0.91rem; color: var(--text-secondary); }
+    .danger-box { background: rgba(239,68,68,0.08); border-left: 3px solid var(--accent-danger); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 13px 16px; margin: 10px 0; font-size: 0.91rem; color: var(--text-secondary); }
+    .green-box  { background: rgba(16,185,129,0.08); border-left: 3px solid var(--accent-4); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 13px 16px; margin: 10px 0; font-size: 0.91rem; color: var(--text-secondary); }
     .highlight strong { color: var(--accent-1); }
-    .warn-box { background: rgba(245,158,11,0.08); border-left: 3px solid var(--accent-warn); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 14px 18px; margin: 12px 0; font-size: 0.91rem; color: var(--text-secondary); }
-    .warn-box strong { color: var(--accent-warn); }
-    .danger-box { background: rgba(239,68,68,0.08); border-left: 3px solid var(--accent-danger); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 14px 18px; margin: 12px 0; font-size: 0.91rem; color: var(--text-secondary); }
+    .warn-box strong  { color: var(--accent-warn); }
     .danger-box strong { color: var(--accent-danger); }
+    .green-box strong { color: var(--accent-4); }
 
-    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+    /* ── GRIDS ── */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
     @media (max-width: 768px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } }
 
-    .faq-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 12px; overflow: hidden; transition: border-color 0.25s; }
-    .faq-item:hover { border-color: var(--border-glow); }
-    .faq-q { display: flex; justify-content: space-between; align-items: center; padding: 18px 22px; cursor: pointer; gap: 16px; }
-    .faq-q h4 { font-size: 0.97rem; font-weight: 600; color: var(--text-primary); display: flex; gap: 10px; align-items: flex-start; }
-    .faq-q h4 .q-icon { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: rgba(99,102,241,0.2); color: var(--accent-1); font-size: 0.8rem; display: flex; align-items: center; justify-content: center; font-weight: 700; margin-top: 2px; }
-    .faq-arrow { font-size: 0.9rem; color: var(--text-muted); transition: transform 0.3s; flex-shrink: 0; }
-    .faq-item.open .faq-arrow { transform: rotate(180deg); }
-    .faq-a { display: none; padding: 0 22px 18px; }
-    .faq-a p, .faq-a li { color: var(--text-secondary); font-size: 0.91rem; line-height: 1.7; }
-    .faq-item.open .faq-a { display: block; }
-    
-    .repeat-badge { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em; border: 1px solid; margin-bottom: 8px;}
-
-    code { font-family: 'JetBrains Mono', monospace; background: rgba(99,102,241,0.12); color: var(--accent-1); padding: 2px 7px; border-radius: 5px; font-size: 0.85em; }
-
-    table.t { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin-top: 14px; }
+    /* ── TABLES ── */
+    .table-wrap { overflow-x: auto; }
+    table.t { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin-top: 12px; }
     table.t th { background: rgba(99,102,241,0.12); color: var(--accent-1); font-weight: 700; padding: 10px 14px; text-align: left; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
     table.t td { padding: 9px 14px; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary); vertical-align: top; }
     table.t tr:last-child td { border-bottom: none; }
     table.t tr:hover td { background: rgba(255,255,255,0.02); }
     table.t td:first-child { color: var(--text-primary); font-weight: 600; }
-    .table-wrap { overflow-x: auto; }
 
-    .formula-block { font-family: 'JetBrains Mono', monospace; background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.05); color: #e2b8ff; padding: 16px; border-radius: var(--radius-sm); margin: 10px 0; white-space: pre-wrap; font-size: 0.9rem; }
+    /* ── FAQ ── */
+    .faq-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 12px; overflow: hidden; transition: border-color 0.25s; }
+    .faq-item:hover { border-color: var(--border-glow); }
+    .faq-q { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; cursor: pointer; gap: 14px; }
+    .faq-q h4 { font-size: 0.95rem; font-weight: 600; color: var(--text-primary); display: flex; gap: 10px; align-items: flex-start; }
+    .faq-q h4 .q-icon { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: rgba(99,102,241,0.2); color: var(--accent-1); font-size: 0.8rem; display: flex; align-items: center; justify-content: center; font-weight: 700; margin-top: 1px; }
+    .faq-arrow { font-size: 0.9rem; color: var(--text-muted); transition: transform 0.3s; flex-shrink: 0; }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-a { display: none; padding: 0 20px 16px; }
+    .faq-a p, .faq-a li { color: var(--text-secondary); font-size: 0.91rem; line-height: 1.7; }
+    .faq-a ul { padding-left: 18px; margin-top: 8px; }
+    .faq-item.open .faq-a { display: block; }
+    .verdict { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em; border: 1px solid; margin-bottom: 8px; }
+    .v-true   { background: rgba(16,185,129,0.15); color: #6ee7b7; border-color: rgba(16,185,129,0.3); }
+    .v-false  { background: rgba(239,68,68,0.15); color: #fca5a5; border-color: rgba(239,68,68,0.3); }
+    .v-dev    { background: rgba(99,102,241,0.15); color: #a5b4fc; border-color: rgba(99,102,241,0.3); }
 
-    footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 0.82rem; border-top: 1px solid var(--border); position: relative; z-index: 1; }
+    /* ── FORMULA BLOCK ── */
+    .formula-block {
+      font-family: 'JetBrains Mono', monospace; background: var(--bg-secondary);
+      border: 1px solid rgba(255,255,255,0.06); color: #e2b8ff;
+      padding: 16px; border-radius: var(--radius-sm); margin: 10px 0;
+      white-space: pre-wrap; font-size: 0.88rem; line-height: 1.6;
+    }
+    code { font-family: 'JetBrains Mono', monospace; background: rgba(99,102,241,0.12); color: var(--accent-1); padding: 2px 7px; border-radius: 5px; font-size: 0.85em; }
+
+    /* ── CHECKLIST ── */
+    .checklist { list-style: none; padding: 0; }
+    .checklist li {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 11px 0; border-bottom: 1px solid rgba(255,255,255,0.04);
+      font-size: 0.93rem; color: var(--text-secondary); transition: color 0.2s;
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist li.checked { color: var(--text-muted); text-decoration: line-through; }
+    .check-box {
+      flex-shrink: 0; width: 21px; height: 21px; border-radius: 6px;
+      border: 2px solid var(--text-muted); background: transparent;
+      cursor: pointer; transition: all 0.2s; position: relative; margin-top: 2px;
+    }
+    .check-box.done { background: var(--accent-1); border-color: var(--accent-1); }
+    .check-box.done::after {
+      content: '✓'; position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%); color: white; font-size: 0.75rem; font-weight: 700;
+    }
+    .checklist-group-title {
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--text-muted); margin: 18px 0 6px;
+    }
+    .progress-bar-wrap { background: rgba(255,255,255,0.06); border-radius: 999px; height: 8px; margin: 16px 0 6px; overflow: hidden; }
+    .progress-bar-fill { height: 100%; background: linear-gradient(90deg, var(--accent-1), var(--accent-3)); border-radius: 999px; transition: width 0.4s ease; }
+    .progress-label { font-size: 0.8rem; color: var(--text-muted); text-align: right; }
+
+    /* ── SCROLL BAR ── */
     #scroll-bar { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--accent-1), var(--accent-3)); z-index: 9999; width: 0%; transition: width 0.1s linear; }
+
+    /* ── FOOTER ── */
+    footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 0.82rem; border-top: 1px solid var(--border); position: relative; z-index: 1; }
+
+    /* ── MINI BADGE ── */
+    .mini-label { font-size: 0.75rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; display: block; }
   </style>
 </head>
 <body>
@@ -172,32 +245,47 @@
 <header>
   <div class="badge"><span class="badge-dot"></span> UTN · Mantenimiento · 2026</div>
   <h1>Guía Completa 1er Parcial<br/>Mantenimiento</h1>
-  <p class="subtitle">Estructura rediseñada: Toda la <strong>teoría y fundamentos</strong> al principio, seguida de las <strong>fórmulas prácticas</strong> y coronada con el <strong>Simulador de Parciales</strong>.</p>
+  <p class="subtitle">Sigue el orden del <strong>Apunte Completo de Tonon / Aprigliano</strong>. Tags de criticidad según lo que entra al parcial.</p>
 </header>
 
 <nav>
   <div class="nav-inner">
-    <button class="nav-btn active" onclick="navScroll(this,'teo-u1')">
-      <span class="nav-unit">Unidad 1</span>
-      <span class="nav-label">📖 Teoría Base</span>
+    <button class="nav-btn active" id="nb-u1" onclick="navScroll(this,'sec-empresa')">
+      <span class="nav-unit">Bloque 1</span>
+      <span class="nav-label">🏭 Empresa & Mto</span>
     </button>
-    <button class="nav-btn" onclick="navScroll(this,'teo-u2')">
-      <span class="nav-unit">Unidad 2</span>
-      <span class="nav-label">📖 SIM & Stock</span>
+    <button class="nav-btn" id="nb-u2" onclick="navScroll(this,'sec-sim')">
+      <span class="nav-unit">Bloque 2</span>
+      <span class="nav-label">📋 SIM & OT</span>
     </button>
-    <button class="nav-btn" onclick="navScroll(this,'teo-u3')">
-      <span class="nav-unit">Unidad 3</span>
-      <span class="nav-label">📖 Confiabilidad</span>
+    <button class="nav-btn" id="nb-u3" onclick="navScroll(this,'sec-materiales')">
+      <span class="nav-unit">Bloque 3</span>
+      <span class="nav-label">📦 Materiales & Stock</span>
+    </button>
+    <button class="nav-btn" id="nb-u4" onclick="navScroll(this,'sec-kpi')">
+      <span class="nav-unit">Bloque 4</span>
+      <span class="nav-label">📊 KPIs & Presupuesto</span>
+    </button>
+    <button class="nav-btn" id="nb-u5" onclick="navScroll(this,'sec-tecnicas')">
+      <span class="nav-unit">Bloque 5</span>
+      <span class="nav-label">🔧 Técnicas de Mto</span>
+    </button>
+    <button class="nav-btn" id="nb-u6" onclick="navScroll(this,'sec-fallas')">
+      <span class="nav-unit">Bloque 6</span>
+      <span class="nav-label">⚡ Fallas & Curva</span>
+    </button>
+    <button class="nav-btn" id="nb-u7" onclick="navScroll(this,'sec-confiabilidad')">
+      <span class="nav-unit">Bloque 7</span>
+      <span class="nav-label">🔬 Confiabilidad</span>
     </button>
     <div class="nav-sep"></div>
-    <button class="nav-btn" onclick="navScroll(this,'prac')">
-      <span class="nav-unit">U2 - U3</span>
-      <span class="nav-label">📝 Práctica</span>
-    </button>
-    <div class="nav-sep"></div>
-    <button class="nav-btn" onclick="navScroll(this,'faq')">
+    <button class="nav-btn" id="nb-faq" onclick="navScroll(this,'sec-faq')">
       <span class="nav-unit">Examen</span>
       <span class="nav-label">❓ Simulador</span>
+    </button>
+    <button class="nav-btn" id="nb-cl" onclick="navScroll(this,'sec-checklist')">
+      <span class="nav-unit">Repaso</span>
+      <span class="nav-label">✅ Checklist</span>
     </button>
   </div>
 </nav>
@@ -205,315 +293,677 @@
 <main>
 
   <!-- ══════════════════════════════════════
-       TEORIA UNIDAD 1
+       BLOQUE 1: Empresa Industrial y Mantenimiento
   ══════════════════════════════════════ -->
-  <section id="teo-u1">
+  <section id="sec-empresa">
     <div class="section-title">
-      <div class="section-icon ic-violet">📖</div>
+      <div class="section-icon ic-violet">🏭</div>
       <div>
-        <h2>Teoría Unidad 1</h2>
-        <div class="sec-sub">Fundamentos, Organización y Tipos de Mantenimiento</div>
+        <h2>Empresa Industrial y Mantenimiento</h2>
+        <div class="sec-sub">Definición, objetivos, estructura empresaria y organización</div>
       </div>
     </div>
 
     <div class="card info">
-      <h3>Empresa Industrial y Mantenimiento</h3>
-      <p><strong>Mantenimiento:</strong> Actividad multidisciplinaria de servicio destinada a la conservación y reparación de los activos de la empresa. Su objetivo es <strong>conservar los activos para maximizar el tiempo de producción</strong>, manteniendo funciones previamente definidas, no solo equipos físicos.</p>
-      
+      <span class="crit-tag tag-alta">🔴 Criticidad Alta – Siempre entra</span>
+      <h3>¿Qué es el Mantenimiento?</h3>
+      <p><em>"Actividad multidisciplinaria de servicio destinada a la <strong>conservación y reparación de los activos</strong> de la empresa."</em></p>
+      <p style="margin-top:10px;">El objetivo no es mantener equipos sino <strong>mantener funciones previamente definidas</strong>. La meta es <strong>maximizar el tiempo de producción</strong>, no lograr disponibilidad máxima (el sobre-mantenimiento también tiene costos).</p>
       <div class="grid-2" style="margin-top:14px;">
         <div class="highlight">
           <strong>Estado Teórico</strong><br>
-          Es el estado del fabricante una vez instalado el equipo. Actúa como patrón de comparación.
+          Parámetros del fabricante una vez instalado el equipo. Es el patrón de comparación. Los datos del fabricante se obtienen en vacío por lo que son mayores al estado teórico real.
         </div>
         <div class="warn-box">
           <strong>Estado Real</strong><br>
-          Estado actual medido en planta (siempre menor por estrés operativo). Si difiere mucho del teórico, exige mantenimiento.
+          Estado actual medido en planta (siempre menor al teórico por el estrés productivo). Si difiere mucho → exige mantenimiento.
         </div>
       </div>
-
-      <p style="margin-top:14px;"><strong>Estructura Empresaria:</strong> Mantenimiento depende de Ingeniería de Planta (que maneja tiempos, costos y lucro cesante). Puede organizarse de tres formas:</p>
-      <ul style="margin-top:8px;">
-        <li><strong>Centralizado:</strong> Oficina única. Mejor uso de recursos pero alto tiempo de respuesta.</li>
-        <li><strong>Descentralizado (Por áreas):</strong> Una unidad de mantenimiento en cada línea de producción. Respuesta muy rápida, pero requiere mucho personal (alto costo fijo).</li>
-        <li><strong>Mixto:</strong> Oficina central que comanda áreas específicas. Coordina y estandariza.</li>
-      </ul>
+      <div class="green-box" style="margin-top:12px;">
+        <strong>Definición formal:</strong> "Proceso de gestión que debe asegurar el nivel de disponibilidad previamente establecido para las funciones de los activos, en un contexto operacional dado; administrando de forma óptima los recursos de la organización."
+      </div>
     </div>
 
     <div class="card cyan">
-      <h3>Tipos de Mantenimiento</h3>
-      <p>Se dividen fundamentalmente en dos ramas: <strong>Reactivo</strong> (tras la falla) y <strong>Proactivo</strong> (antes de la falla).</p>
-      
-      <div class="table-wrap">
-        <table class="t">
-          <tr><th>Acciones Reactivas</th><th>Descripción</th></tr>
-          <tr><td><strong>Correctivo (Trabajo a falla)</strong></td><td>Acción no planificada, ocurre en momento aleatorio. Se justifica si su costo total (reparación + lucro cesante) es menor al costo de aplicar un plan preventivo/predictivo, y si no afecta seguridad ni ambiente. Aprovecha el 100% de la vida útil, pero expone a paradas imprevistas.</td></tr>
-          <tr><td><strong>Restaurativo / Sustitutivo</strong></td><td>Acción reactiva <em>programada</em> (basada en resultados de rutinas predictivas/preventivas o fallas sintomáticas). Evita perder tiempo en adquirir repuestos en el momento.</td></tr>
-          <tr><td><strong>Mejorativo (Rediseño)</strong></td><td>Para modificar condiciones originales y corregir errores de diseño. Debe ser siempre la última opción por su complejidad.</td></tr>
-          <tr><td><strong>Reacondicionamiento</strong></td><td>Acción planificada al final de la vida útil (zona de deterioro). Dejar la máquina pelada y cambiar todo el interior.</td></tr>
-        </table>
-      </div>
-
+      <span class="crit-tag tag-alta">🔴 Criticidad Alta – Pregunta frecuente</span>
+      <h3>Mantenimiento en la Estructura Empresaria</h3>
+      <p>Depende de <strong>Ingeniería de Planta</strong> (Oficina Técnica) que gestiona: costos, tiempos, lucro cesante. Interactúa con Producción (conflicto), Gerencia Económica y Compras.</p>
       <div class="table-wrap" style="margin-top:14px;">
         <table class="t">
-          <tr><th>Acciones Proactivas</th><th>Descripción</th></tr>
-          <tr><td><strong>Preventivo</strong></td><td>Intervenciones sistemáticas por tiempo o uso (estadística). <strong>Principal desventaja:</strong> el desarme innecesario que introduce fallas (mortalidad infantil) y no aprovecha el 100% de vida útil.</td></tr>
-          <tr><td><strong>Predictivo (A Condición)</strong></td><td>Monitoreo de variables (vibraciones, termografía) con la máquina <strong>en funcionamiento</strong>. Solo interviene si hay síntoma. Aprovecha más la vida útil y baja la mortalidad infantil, pero requiere instrumental caro.</td></tr>
-          <tr><td><strong>Detectivo</strong></td><td>Búsqueda de fallas ocultas (ej: probar equipos redundantes o de backup).</td></tr>
-          <tr><td><strong>Imperativo / Legal</strong></td><td>Piso mínimo obligatorio por ley (ej: ascensores, calderas).</td></tr>
+          <tr><th>Tipo</th><th>Descripción</th><th>Ventaja</th><th>Desventaja</th></tr>
+          <tr>
+            <td>Centralizado</td>
+            <td>Una sola oficina de mantenimiento coordina todo</td>
+            <td>Mejor uso de recursos, estandarización</td>
+            <td>Tiempo de respuesta elevado</td>
+          </tr>
+          <tr>
+            <td>Descentralizado (Por áreas)</td>
+            <td>Una unidad de mto. por cada línea productiva</td>
+            <td>Respuesta rápida, operarios conocen la línea</td>
+            <td>Necesita mucho personal → alto costo fijo</td>
+          </tr>
+          <tr>
+            <td>Mixto</td>
+            <td>Oficina central que comanda áreas específicas</td>
+            <td>Coordinación + velocidad</td>
+            <td>Complejidad organizacional</td>
+          </tr>
         </table>
       </div>
     </div>
 
     <div class="card info">
-      <h3>Costos de Mantenimiento y Curva de la Bañera</h3>
-      <p><strong>Costo Total = Costo Fijo (Reparaciones, MO, Repuestos) + Lucro Cesante (Tiempo de máquina detenida, penalizaciones).</strong></p>
-      <p style="margin-top:10px;">Para el preventivo, se cruza la curva del costo preventivo (que sube a más intervenciones) con la del correctivo/fallas (que baja). El punto de <strong>Costo Total Mínimo</strong> define la frecuencia óptima de mantenimiento preventivo.</p>
-      
-      <p style="margin-top:14px;"><strong>Curva de la Bañera:</strong> Representa la probabilidad de fallas en el ciclo de vida.</p>
+      <span class="crit-tag tag-media">🟡 Criticidad Media</span>
+      <h3>Plan de Mantenimiento Básico (contexto: electrobomba)</h3>
+      <p>Se elabora considerando el <strong>contexto operacional</strong> de cada equipo. No se puede replicar el mismo plan a todos. Ejemplo con bomba + backup:</p>
       <ul>
-        <li><strong>Inicio (Mortalidad Infantil):</strong> Alta tasa de fallas por errores de instalación, mal uso u operaciones de mantenimiento previas invasivas. Predomina mantenimiento correctivo.</li>
-        <li><strong>Vida Normal:</strong> Tasa constante de fallas aleatorias. Entra el mantenimiento preventivo y predictivo.</li>
-        <li><strong>Deterioro (Desgaste):</strong> La tasa de fallas sube abruptamente. Se analiza reemplazo o reacondicionamiento total.</li>
+        <li><strong>Predictivo:</strong> Determinar fallas sintomáticas midiendo variables (vibraciones, etc.)</li>
+        <li><strong>Preventivo:</strong> Medir nivel de líquidos y aceites para detectar fallas por envejecimiento.</li>
+        <li><strong>Correctivo:</strong> Para fallas que no cubre preventivo ni predictivo.</li>
       </ul>
+      <div class="warn-box" style="margin-top:10px;">
+        <strong>Caso especial (redundancia):</strong> Si hay una segunda electrobomba de backup, NO conviene hacer predictivo: se paga el instrumento y al romperse la primera entra la segunda. Aplica: detectivo + correctivo.
+      </div>
     </div>
   </section>
 
   <!-- ══════════════════════════════════════
-       TEORIA UNIDAD 2
+       BLOQUE 2: SIM y Planeamiento
   ══════════════════════════════════════ -->
-  <section id="teo-u2">
+  <section id="sec-sim">
     <div class="section-title">
-      <div class="section-icon ic-cyan">📖</div>
+      <div class="section-icon ic-cyan">📋</div>
       <div>
-        <h2>Teoría Unidad 2</h2>
-        <div class="sec-sub">Sistema Integral de Mantenimiento (SIM) y Stock</div>
+        <h2>Sistema Integral de Mantenimiento (SIM)</h2>
+        <div class="sec-sub">Planeamiento, documentación, órdenes de trabajo</div>
       </div>
     </div>
 
     <div class="card cyan">
-      <h3>Planeamiento y SIM</h3>
-      <p>El planeamiento requiere dos tipos de información:</p>
-      <ul>
-        <li><strong>Información Estática:</strong> Inalterable. Manuales, planos, catálogos del fabricante.</li>
-        <li><strong>Información Dinámica:</strong> Se actualiza. Órdenes de trabajo, historial de equipos, reportes de fallas.</li>
-      </ul>
-      <p style="margin-top:10px;">Todo se basa en el <strong>Árbol de Equipos</strong> (posición lógica o funcional en la planta, ej: "Bomba Sistema de Enfriamiento") y el <strong>Maestro de Especificaciones</strong> (ID o activo físico que ocupa esa posición actualmente, ej: "B-405").</p>
-    </div>
-
-    <div class="card cyan">
-      <h3>Órdenes de Trabajo (OT)</h3>
-      <p>La OT es el documento principal que vincula mantenimiento con producción. Al ejecutarse, alimenta el Historial del Equipo. Se catalogan en tres niveles si son imprevistas:</p>
-      <ul>
-        <li><strong>Emergencia:</strong> Afecta una máquina imprescindible. Paraliza producción. Exige correctivo inmediato.</li>
-        <li><strong>Urgente:</strong> Desperfecto que afecta producción pero no es imprescindible arreglar en el acto (Sustitutivo programable).</li>
-        <li><strong>Normal:</strong> Desperfecto menor que no detiene producción y puede agruparse.</li>
-      </ul>
-    </div>
-
-    <div class="card cyan">
-      <h3>Función Materiales (Administración de Stock)</h3>
-      <p>El objetivo del Almacén es asegurar la provisión de repuestos en cantidad, calidad, tiempo y lugar, asumiendo el <strong>menor costo de inmovilización (stock) posible</strong>. Interactúa mediante: Vales de Retiro (hacia Mantenimiento), Solicitud de Compra (hacia Compras) y Remito de Recepción (hacia Proveedores).</p>
-      
-      <p style="margin-top:14px;"><strong>Clasificación de Inventarios:</strong></p>
-      <ul>
-        <li><strong>Estratégicos / Específicos:</strong> Dedicados a una máquina puntual, diseño de fabricante. Gran demora de entrega.</li>
-        <li><strong>Universales (Alta rotación):</strong> Instalados en múltiples máquinas (rodamientos, válvulas). Son intercambiables y bajan el MTTR. Para estos se calcula el Lote Óptimo.</li>
-        <li><strong>Repuestos Críticos (Stock de Seguro):</strong> Baja rotación, pero su falta paraliza la planta. Se tienen "por si acaso". No se les calcula lote óptimo de Wilson.</li>
-        <li><strong>Generales:</strong> Insumos ferreteros de bajo costo (WD-40, arandelas).</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       TEORIA UNIDAD 3
-  ══════════════════════════════════════ -->
-  <section id="teo-u3">
-    <div class="section-title">
-      <div class="section-icon ic-green">📖</div>
-      <div>
-        <h2>Teoría Unidad 3</h2>
-        <div class="sec-sub">Confiabilidad, Mantenibilidad y Tipos de Fallas</div>
-      </div>
-    </div>
-
-    <div class="card green">
-      <h3>Pilares de la Disponibilidad</h3>
-      <p>La Disponibilidad (D0) es la combinación de la Confiabilidad y la Mantenibilidad.</p>
-      <div class="grid-2" style="margin-top:10px;">
+      <span class="crit-tag tag-alta">🔴 Criticidad Alta</span>
+      <h3>Información Estática vs. Dinámica</h3>
+      <div class="grid-2">
         <div class="highlight">
-          <strong>Confiabilidad (Asociado a MTBF)</strong><br>
-          Probabilidad de que el equipo satisfaga sus funciones sin fallas durante un tiempo dado. Diseño robusto.
+          <strong>Estática (inalterable)</strong><br>
+          Manuales, planos, catálogos, fichas técnicas del fabricante. Ya existe en la planta.
         </div>
         <div class="warn-box">
-          <strong>Mantenibilidad (Asociado a MTTR)</strong><br>
-          Probabilidad (estadística) de ser diagnosticado y reparado con éxito en un tiempo t. Mejora con Poka-Yoke y manuales.
+          <strong>Dinámica (se actualiza)</strong><br>
+          Órdenes de Trabajo, historial de equipos, reportes de fallas. La genera mantenimiento con el tiempo.
         </div>
+      </div>
+      <div class="table-wrap" style="margin-top:14px;">
+        <table class="t">
+          <tr><th>Documento</th><th>¿Qué es?</th></tr>
+          <tr><td>Árbol de Equipos</td><td>Posición <strong>lógica/funcional</strong> del equipo en la planta (ej: "Bomba Sistema de Enfriamiento"). Es el lugar donde se instala el activo.</td></tr>
+          <tr><td>Maestro de Especificaciones</td><td>Identificador del activo <strong>físico</strong> (ej: "B-405"). Contiene todas las especificaciones técnicas. Indica en qué posición lógica está instalado.</td></tr>
+          <tr><td>Historial de Equipos</td><td>Registro cronológico de todo lo que pasó al equipo: fallas, intervenciones, costos, tiempos fuera de servicio. Se nutre de las OT.</td></tr>
+        </table>
+      </div>
+      <div class="danger-box" style="margin-top:10px;">
+        <strong>⚠️ Trampas de examen frecuentes:</strong><br>
+        • El árbol de equipos tiene posición LÓGICA, el maestro de especificaciones es el activo FÍSICO (chapa ID).<br>
+        • El estado real NO es el del fabricante → ese es el TEÓRICO.
       </div>
     </div>
 
-    <div class="card green">
-      <h3>Fallas y Gráfico Paramétrico</h3>
-      <p>La falla es la pérdida parcial o total de la capacidad de cumplir funciones (estado teórico).</p>
-      <ul>
-        <li><strong>Falla Funcional:</strong> El componente deja de satisfacer parcial o totalmente su función.</li>
-        <li><strong>Falla Sintomática (Potencial):</strong> Condición de estado verificable que indica que la falla funcional está en proceso de ocurrencia. El componente "avisa".</li>
-        <li><strong>Falla Simultánea:</strong> Ocurre falla en el equipo y en su redundancia al mismo tiempo (se evita con detectivo).</li>
-      </ul>
-      <p style="margin-top:10px;"><strong>Gráfico Paramétrico:</strong> Al degradarse el estado del equipo cruzando el <em>Punto de Quiebre</em>, comienza la Falla Sintomática Incipiente (reversible). En este punto se aplica mantenimiento Proactivo/Condicional. Si se deja avanzar, se vuelve irreversible y requerirá Mantenimiento Predictivo programado o terminará en Falla Funcional (Avería).</p>
+    <div class="card cyan">
+      <span class="crit-tag tag-alta">🔴 Criticidad Alta</span>
+      <h3>Órdenes de Trabajo (OT)</h3>
+      <p>Documento que vincula Mantenimiento con Producción. Al ejecutarse, alimenta el <strong>Historial del Equipo</strong>. Clasificación de OT <em>eventuales</em> (no planificadas):</p>
+      <div class="grid-3" style="margin-top:12px;">
+        <div class="danger-box">
+          <strong>🔴 Emergencia</strong><br>
+          Máquina imprescindible que <strong>para producción</strong>. → Correctivo INMEDIATO.
+        </div>
+        <div class="warn-box">
+          <strong>🟡 Urgente</strong><br>
+          Afecta producción pero NO imprescindible arreglar ahora. → Sustitutivo programable.
+        </div>
+        <div class="green-box">
+          <strong>🟢 Normal</strong><br>
+          No afecta producción momentáneamente. Se agrupa con otras.
+        </div>
+      </div>
+      <p style="margin-top:10px; font-size:0.88rem; color:var(--text-muted);">Las OT <em>de mantenimiento</em> (preventivo/reacondicionamiento) se catalogan solo como <strong>Normales</strong>.</p>
     </div>
 
-    <div class="card green">
-      <h3>Fiabilidad de Sistemas (Redundancias)</h3>
-      <p>La forma en que se estructuran los componentes dicta la confiabilidad final:</p>
+    <div class="card info">
+      <span class="crit-tag tag-baja">🟢 Criticidad Baja – Contexto</span>
+      <h3>Presupuesto de Mantenimiento – Generalidades</h3>
+      <p>La contabilidad de costos es la que usa la dirección para decisiones. Se pueden usar dos enfoques:</p>
       <ul>
-        <li><strong>Relación Serie:</strong> Si falla uno, falla todo el sistema. La fiabilidad del sistema siempre es MENOR que la del artículo menos fiable.</li>
-        <li><strong>Relación Paralelo (Redundancia):</strong> Mejora drásticamente la fiabilidad del sistema. Puede ser:
-          <ul>
-            <li><em>Redundancia Cargada:</em> Todos trabajan a la misma intensidad (ej: bimotor).</li>
-            <li><em>Redundancia Aligerada:</em> Uno es el principal y los otros a régimen menor. Si falla el principal, aceleran.</li>
-            <li><em>Redundancia No Cargada (Stand-By):</em> Los demás descansan hasta que el principal falla (ej: electrobomba de emergencia).</li>
-          </ul>
-        </li>
+        <li><strong>Presupuesto año anterior:</strong> Base del año pasado + % de ajuste. Rápido pero poco preciso.</li>
+        <li><strong>Presupuesto base cero:</strong> Tabla en blanco que se va llenando consultando todos los sectores. Es calendarizado y revisable cada 3 meses.</li>
       </ul>
+      <p style="margin-top:8px;">El presupuesto incluye acuerdo con Producción sobre: <strong>rendimiento en horas</strong> (% disponible) y <strong>rendimiento técnico</strong> (calidad en rango ±).</p>
     </div>
   </section>
 
   <!-- ══════════════════════════════════════
-       SECCION PRACTICA
+       BLOQUE 3: Materiales y Administración de Stock
   ══════════════════════════════════════ -->
-  <section id="prac">
+  <section id="sec-materiales">
     <div class="section-title">
-      <div class="section-icon ic-amber">📝</div>
+      <div class="section-icon ic-amber">📦</div>
       <div>
-        <h2>Práctica (Unidad 2 y 3)</h2>
-        <div class="sec-sub">Fórmulas, Ejercicios y Justificaciones Teóricas Obligatorias</div>
+        <h2>Materiales – Almacén y Administración de Stock</h2>
+        <div class="sec-sub">Clasificación de inventarios, lote óptimo, punto de pedido</div>
       </div>
     </div>
 
-    <div class="grid-2">
-      <div class="card crit">
-        <div class="card-header">
-          <span class="card-tag tag-crit">Paso 1</span>
-          <h3>Dotación: Horas Netas Anuales</h3>
-        </div>
-        <p>Se restan los descuentos a las horas brutas anuales:</p>
-        <div class="formula-block">Horas Brutas Anuales (Ej: 8.5 hs x 6 días x 52 sem)
-- Vacaciones (En horas)
-- Feriados (Si no son laborables)
-- Descanso diario (Hs/día x Días reales útiles)
----------------------------------------------
-= Subtotal de Horas Útiles
-- Ausentismo (2% a 5% sobre el Subtotal)
----------------------------------------------
-= Horas Netas Reales (Suele dar ~1900-2000 hs)</div>
-      </div>
-
-      <div class="card crit">
-        <div class="card-header">
-          <span class="card-tag tag-exam">OBLIGATORIO</span>
-          <h3>Dotación: División y Redondeo</h3>
-        </div>
-        <p>Dotación = Horas Demandadas por Planta / Horas Netas Operario.</p>
-        <div class="danger-box">
-          <strong>Regla de Examen: Redondeo Trunco</strong><br>
-          Si el resultado es 5,85, se asignan <strong>5 operarios</strong>.
-        </div>
-        <p><strong>Justificación (Escribir esto textual):</strong> "Se redondea hacia abajo para no asumir costos fijos estructurales innecesarios por fracciones de empleado. Las horas remanentes (0,85) se absorben jerárquicamente mediante: 1) Reasignación de tareas, 2) Horas extras, o 3) Tercerización eventual".</p>
-      </div>
+    <div class="card amber">
+      <span class="crit-tag tag-alta">🔴 Criticidad Alta</span>
+      <h3>Función del Almacén</h3>
+      <p>Objetivo: suministrar repuestos en <strong>cantidad, calidad, tiempo y lugar</strong> asumiendo el menor costo de inmovilización posible.</p>
+      <p style="margin-top:8px;">Documentos de interacción:</p>
+      <ul>
+        <li><strong>Vale de Retiro:</strong> Operario → Almacén (solicita repuesto)</li>
+        <li><strong>Solicitud de Compra:</strong> Almacén → Compras (con especificación técnica + sugerencia de proveedor)</li>
+        <li><strong>Remito de Recepción:</strong> Proveedor → Almacén (verificado por Oficina Técnica si hay duda técnica)</li>
+      </ul>
     </div>
 
-    <div class="card crit">
-      <div class="card-header">
-        <span class="card-tag tag-exam">Frecuente</span>
-        <h3>Presupuesto y Llaves de Transferencia</h3>
-      </div>
-      <p>El Presupuesto Base se compone de: Jefatura + Planificación + Operaciones (MOD) + Almacén (Incluye <strong>Interés sobre Stock = Tasa x Stock Promedio</strong>). Al total se le suma el <strong>% de Imprevistos</strong> (8% si es planta Predictiva, 15% si es planta Correctiva).</p>
-      
+    <div class="card amber">
+      <span class="crit-tag tag-alta">🔴 Criticidad Alta – Definiciones clave</span>
+      <h3>Clasificación de Inventarios</h3>
       <div class="table-wrap">
-        <table class="t" style="margin-top:14px;">
-          <tr><th>Tarifa (Llave)</th><th>Fórmula</th><th>Para qué sirve (Pregunta de Examen)</th></tr>
+        <table class="t">
+          <tr><th>Tipo</th><th>Descripción</th><th>¿Lote Óptimo Wilson?</th></tr>
           <tr>
-            <td><strong>HH Sin Mat.</strong></td>
-            <td><code>Presup. SIN Mat. / Hs Totales Operaciones</code></td>
-            <td><strong>Control Calendarizado.</strong> Sirve para costear OTs y máquinas individualmente a lo largo del año. Ayuda a tomar decisiones de reemplazo tecnológico o <em>make-or-buy</em>. (Para costear una reparación específica, siempre se usa esta llave + repuestos gastados).</td>
+            <td>Estratégicos / Específicos</td>
+            <td>Solo para una máquina, diseño propio del fabricante, demora grande de entrega. Muy caros.</td>
+            <td>❌ No. Se tiene "por si acaso"</td>
           </tr>
           <tr>
-            <td><strong>HH Con Mat.</strong></td>
-            <td><code>Presup. TOTAL / Hs Totales Operaciones</code></td>
-            <td><strong>Control Global.</strong> Se utiliza exclusivamente a fin de año (31/12) para cierre presupuestario total del sector. <em>NO</em> sirve para individualizar costos por máquina porque prorratea el material equitativamente.</td>
+            <td>Universales (Alta rotación)</td>
+            <td>Instalados en varias máquinas, intercambiables. Ej: rodamientos, juntas, válvulas. Bajan el MTTR.</td>
+            <td>✅ Sí. Se les aplica Wilson y sistema de cantidad fija.</td>
+          </tr>
+          <tr>
+            <td>Repuestos Críticos (Stock de Seguro)</td>
+            <td>Baja rotación, pero su falta paraliza la planta. No tienen demanda previsible.</td>
+            <td>❌ No. Son un "seguro de vida".</td>
+          </tr>
+          <tr>
+            <td>Generales</td>
+            <td>Artículos ferreteros de bajo costo: WD-40, arandelas, teflón, tornillos. Se reponen cuando baja el stock.</td>
+            <td>❌ No necesario (bajo costo).</td>
+          </tr>
+          <tr>
+            <td>Conjuntos</td>
+            <td>Motor completo u otros ensambles que vienen armados. Permiten bajar el MTTR drásticamente.</td>
+            <td>Depende del caso.</td>
+          </tr>
+        </table>
+      </div>
+      <div class="danger-box" style="margin-top:12px;">
+        <strong>⚠️ Regla clave:</strong> Previo a calcular lote óptimo siempre se hace un <strong>Estudio ABC</strong> para clasificar los ítems por importancia económica.
+      </div>
+    </div>
+
+    <div class="card amber">
+      <span class="crit-tag tag-alta">🔴 Criticidad Alta – Fórmulas numéricas</span>
+      <h3>Fórmulas de Administración de Stock</h3>
+      <p style="margin-bottom:8px;">Se aplican a repuestos <strong>universales</strong> con demanda probabilística (sistema de cantidad fija).</p>
+      <div class="formula-block">
+─── LOTE ÓPTIMO DE WILSON ───────────────────────────────────
+Q* (Lote Óptimo) = √ [ 2 · D_anual · K / (b · i) ]
+
+─── COSTOS ──────────────────────────────────────────────────
+Costo Adquisición (Cadq) = (D / Q) · K        → costo de emitir n órdenes/año
+Costo Almacenaje  (Calm) = (Q / 2) · b · i    → costo de tener stock promedio
+
+Costo Stock de Seguridad (Css) = SS · b · i
+  donde: SS = C_max − C_prom
+
+Costo del Ítem (C_ítem)  = b · D_anual
+
+Costo Total Stock (CTS) = Cadq + Calm + Css + C_ítem
+
+─── PUNTO DE PEDIDO ──────────────────────────────────────────
+PP = [ SS + (Tp · C_prom) ] · α
+  α = 1,1  → ítem Crítico
+  α = 1,2  → ítem Muy Crítico
+
+─── REFERENCIAS ──────────────────────────────────────────────
+K = costo de emitir 1 orden de compra
+b = precio unitario del repuesto
+i = tasa anual de inmovilización
+D = demanda anual
+Tp = tiempo de entrega/procuración
+</div>
+      <div class="warn-box">
+        <strong>Pregunta de examen:</strong> ¿Qué pasa si se aumenta el lote por encima del óptimo?<br>
+        → El Costo de Almacenaje SUBE linealmente → el CTS SUBE, alejándose del mínimo de Wilson. Se inmoviliza capital innecesario.
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       BLOQUE 4: KPIs, Presupuesto y Dotación
+  ══════════════════════════════════════ -->
+  <section id="sec-kpi">
+    <div class="section-title">
+      <div class="section-icon ic-green">📊</div>
+      <div>
+        <h2>KPIs, Presupuesto y Dotación de Personal</h2>
+        <div class="sec-sub">Indicadores de clase mundial, tarifas, cálculo de dotación</div>
+      </div>
+    </div>
+
+    <div class="card green">
+      <span class="crit-tag tag-alta">🔴 Criticidad Alta – Numéricas obligatorias</span>
+      <h3>Indicadores de Clase Mundial (KPIs)</h3>
+      <div class="formula-block">
+─── MTBF (Mean Time Between Failures) ──────────────────────
+              TO - ΣTnp
+MTBF = ─────────────────────
+               ΣCf
+
+Para equipos REPARABLES. Mide CONFIABILIDAD.
+Uso: programar acciones preventivas (un instante antes de que se cumpla).
+
+─── MTTF (Mean Time To Failure) ────────────────────────────
+              TO
+MTTF = ──────────────────────
+               ΣCf
+
+Para elementos DESCARTABLES (se sustituyen ante la falla: ej: focos).
+El tiempo de parada tiende a 0 → no se resta.
+
+─── MTTR (Mean Time To Repair) ─────────────────────────────
+              ΣTtr
+MTTR = ──────────────────────
+               ΣCr
+
+Duración promedio de reparaciones. Mide MANTENIBILIDAD.
+Desde que la máquina sale hasta que vuelve a operar.
+
+─── DISPONIBILIDAD (D₀) ─────────────────────────────────────
+           TO - ΣTnp
+D₀ = ────────────────── × 100
+               TO
+
+─── CMVR (Costo Mto / Valor de Reposición) ─────────────────
+           ΣCT_mto
+CMVR = ──────────────── × 100
+               VLR
+
+Si CMVR acumulado supera el valor del equipo → analizar reemplazo.
+También se puede comparar vs. costo de reacondicionamiento.
+</div>
+      <div class="grid-2" style="margin-top:14px;">
+        <div class="highlight">
+          <strong>MTBF</strong> → Confiabilidad → relacionado al diseño robusto.<br>
+          <strong>MTTR</strong> → Mantenibilidad → se baja con poka-yokes, repuestos universales, manuales.
+        </div>
+        <div class="warn-box">
+          <strong>Disponibilidad (D₀):</strong> Si un equipo está muy por debajo de estándares → candidato a reemplazo, reacondicionamiento o rediseño.
+        </div>
+      </div>
+    </div>
+
+    <div class="card green">
+      <span class="crit-tag tag-alta">🔴 Criticidad Alta – Ejercicio tipo parcial</span>
+      <h3>Confección del Presupuesto y Llaves de Transferencia</h3>
+      <p>Estructura del Presupuesto Base:</p>
+      <div class="formula-block">
+PRESUPUESTO TOTAL
+────────────────────────────────────────────────
+  Jefatura         =  1 Gerente + 1 Asistente
+  Planificación    =  1 Jefe + 2 Técnicos + 1 Empleado
+  Almacén          =  1 Encargado + 1 Tec. + 2 Op.
+                      + Interés sobre Stock = Tasa × Stock Promedio
+  Operaciones      =  1 Jefe + 2 Supervisores + Op. de Taller + Op. de Mto. (MOD)
+────────────────────────────────────────────────
+  Subtotal (sin repuestos)
+  + % Imprevistos:  8% si planta Predictiva / 15% si planta Correctiva
+────────────────────────────────────────────────
+  Presupuesto Total SIN materiales
+  + Consumo de repuestos (materiales)
+  = Presupuesto Total CON materiales
+</div>
+      <div class="table-wrap" style="margin-top:14px;">
+        <table class="t">
+          <tr><th>Llave (Tarifa HH)</th><th>Fórmula</th><th>¿Para qué sirve?</th></tr>
+          <tr>
+            <td>HH Sin Materiales</td>
+            <td><code>Presup. SIN Mat. ÷ Hs Totales Operaciones</code></td>
+            <td><strong>Control calendarizado a lo largo del año.</strong> Costear OTs individuales y asignar costo a cada máquina. Sirve para decisiones de reemplazo (make-or-buy). Para costear una reparación específica: <em>HH sin mat. × horas + repuestos reales</em>.</td>
+          </tr>
+          <tr>
+            <td>HH Con Materiales</td>
+            <td><code>Presup. TOTAL ÷ Hs Totales Operaciones</code></td>
+            <td><strong>Control global.</strong> Solo se usa al 31/12 para cierre presupuestario total del sector. NO sirve para individualizar costos porque proratea el material equitativamente (genera inexactitud).</td>
           </tr>
         </table>
       </div>
     </div>
 
-    <div class="grid-2">
-      <div class="card crit">
-        <div class="card-header">
-          <span class="card-tag tag-crit">Fórmulas</span>
-          <h3>Administración de Stock</h3>
-        </div>
-        <p>Solo se aplica Lote Óptimo a repuestos universales/consumibles de demanda previsible.</p>
-        <div class="formula-block">1. Lote (Q) = √ [ (2 * D_anual * K) / (b * i) ]
-2. Costo Adquisición (Cadq) = (D/Q) * K
-3. Costo Almacenamiento (Calm) = (Q/2) * b * i
-4. Costo Stock Seguridad = S_s * b * i</div>
-        <p style="font-size: 0.85rem; color:var(--text-muted); margin-top:8px;">K=Costo Emitir OC, b=Precio unitario, i=Tasa anual, D=Demanda.</p>
+    <div class="card green">
+      <span class="crit-tag tag-alta">🔴 Criticidad Alta – Sale siempre</span>
+      <h3>Cálculo de Dotación de Personal</h3>
+      <div class="formula-block">
+─── PASO 1: Horas Brutas Anuales por Operario ────────────────
+  Hs/día × días/sem × sem/año = Hs Brutas
+
+─── PASO 2: Descuentos ───────────────────────────────────────
+  − Vacaciones:   semanas_vac × días_sem × Hs/día
+  − Feriados:     días_feriados × Hs/día   (si son no laborables)
+  − Descanso:     días_reales_útiles × Hs_descanso/día
+  ──────────────────────────────────────────
+  = Subtotal
+  − Ausentismo:   Subtotal × % ausentismo
+  ──────────────────────────────────────────
+  = Horas Netas Anuales por Operario (≈ 1900–2050 hs)
+
+─── PASO 3: Dotación ─────────────────────────────────────────
+  Dotación = Hs demandadas anuales ÷ Hs Netas por Operario
+</div>
+      <div class="danger-box">
+        <strong>⚠️ Regla del Redondeo Trunco (siempre preguntan esto):</strong><br>
+        Si el resultado es 5,85 → se asignan <strong>5 operarios</strong> (trunco hacia abajo).<br>
+        <strong>Justificación textual que hay que escribir:</strong> "Se redondea hacia abajo para no asumir costos fijos estructurales innecesarios por fracciones de empleado. Las horas remanentes (0,85) se absorben jerárquicamente mediante: 1) Reasignación de tareas, 2) Horas extras, o 3) Tercerización eventual."
       </div>
-
-      <div class="card crit">
-        <div class="card-header">
-          <span class="card-tag tag-exam">Teoría Práctica</span>
-          <h3>Stock: Aumento de Lote Óptimo</h3>
-        </div>
-        <p><strong>Pregunta:</strong> ¿Qué sucede técnica y económicamente si se aumenta arbitrariamente el Lote Óptimo?</p>
-        <p style="margin-top:10px;"><strong>Respuesta:</strong> Al aumentar la cantidad comprada por encima del óptimo sugerido por Wilson, se inmoviliza capital innecesario, lo que provoca que el <strong>Costo de Almacenamiento AUMENTE</strong> linealmente. Como consecuencia directa, el <strong>Costo Total de Inventario (CTS) también AUMENTA</strong>, alejándose del punto de equilibrio inferior (donde la derivada es cero).</p>
+      <div class="highlight" style="margin-top:10px;">
+        <strong>Opciones para cubrir exceso de trabajo (en orden de preferencia):</strong><br>
+        1. Reprogramar tareas (gratis) → 2. Horas extra ($ +50% o +100%) → 3. Tercerizar ($ y no conoce las máquinas) → 4. Contratar personal (última opción, incrementa costo fijo permanente)
       </div>
-    </div>
-
-    <div class="card info">
-      <h3>Indicadores (KPIs)</h3>
-      <div class="formula-block">MTBF (Mean Time Between Failures) = (Tiempo Operativo Total - Tiempo Paradas) / Cantidad Fallas</div>
-      <p style="margin-top:8px;">Para equipos reparables. Mide <strong>Confiabilidad</strong>.</p>
-      
-      <div class="formula-block">MTTR (Mean Time To Repair) = Tiempo Total Reparaciones / Cantidad de Reparaciones</div>
-      <p style="margin-top:8px;">Tiempo promedio por reparación. Mide <strong>Mantenibilidad</strong>.</p>
-
-      <div class="formula-block">MTTF (Mean Time To Failure) = Tiempo Operativo Total / Cantidad Fallas</div>
-      <p style="margin-top:8px;">Exclusivo para componentes descartables (ej: foco de luz). Elimina los tiempos de paradas porque se sustituye de inmediato.</p>
     </div>
   </section>
 
   <!-- ══════════════════════════════════════
-       SIMULADOR DE PARCIAL (FAQ)
+       BLOQUE 5: Técnicas de Mantenimiento – Reactivas y Proactivas
   ══════════════════════════════════════ -->
-  <section id="faq">
+  <section id="sec-tecnicas">
+    <div class="section-title">
+      <div class="section-icon ic-pink">🔧</div>
+      <div>
+        <h2>Técnicas de Mantenimiento</h2>
+        <div class="sec-sub">Reactivas y Proactivas — Costo-Beneficio — Tipos en detalle</div>
+      </div>
+    </div>
+
+    <div class="card info">
+      <span class="crit-tag tag-alta">🔴 Criticidad Alta</span>
+      <h3>Relación Costo-Beneficio (Gráfico Costo Falla vs Costo Mto)</h3>
+      <div class="grid-2">
+        <div class="highlight">
+          <strong>Costo "a" (Fijo de la falla):</strong> Materia prima inutilizada, envase, reproceso, repuestos. No depende del tiempo de detención.
+        </div>
+        <div class="warn-box">
+          <strong>Costo "b" (Variable = Lucro Cesante):</strong> Horas máquina detenida + HH producción ociosa + penalizaciones por atrasos. Depende del tiempo.
+        </div>
+      </div>
+      <p style="margin-top:12px;">Al cruzar la curva de costo preventivo (sube con más intervenciones) con la de costo correctivo/fallas (baja), el punto más bajo de la curva resultante es la <strong>zona de mantenimiento óptimo</strong>. Alta tecnología → más a la izquierda (todo predictivo). Baja tecnología → más a la derecha (correctivo).</p>
+      <div class="green-box" style="margin-top:10px;">
+        <strong>Para bajar el Costo de Mantenimiento:</strong> Repuestos Universales/Conjuntos → bajar MTTR → subir Mantenibilidad → eficiencia del presupuesto.
+      </div>
+    </div>
+
+    <div class="card danger">
+      <span class="crit-tag tag-alta">🔴 Acciones Reactivas</span>
+      <h3>Tipos de Mantenimiento Reactivo</h3>
+      <div class="table-wrap">
+        <table class="t">
+          <tr><th>Tipo</th><th>Descripción</th><th>Ventaja</th><th>Desventaja clave</th></tr>
+          <tr>
+            <td>Correctivo</td>
+            <td>Acción <strong>no planificada</strong>, ocurre en momento aleatorio. Para falla funcional inmediata.</td>
+            <td>Aprovecha 100% de la vida útil. Poca planificación.</td>
+            <td>Alta incertidumbre, riesgo de accidentes, improvisación, aumenta stock y personal fijo.</td>
+          </tr>
+          <tr>
+            <td>Restaurativo / Sustitutivo</td>
+            <td>Acción reactiva <strong>programada</strong>. Surge de rutinas preventivas/predictivas/detectivas que detectaron desviación.</td>
+            <td>Se puede programar MO y repuestos sin perder tiempo.</td>
+            <td>Requiere buen diagnóstico previo.</td>
+          </tr>
+          <tr>
+            <td>Mejorativo (Rediseño)</td>
+            <td>Reingeniería para corregir errores de diseño o configuración. Siempre <strong>última opción</strong>.</td>
+            <td>Elimina fallas recurrentes, aumenta mantenibilidad.</td>
+            <td>Alto tiempo de implementación, puede generar nuevos problemas.</td>
+          </tr>
+          <tr>
+            <td>Reacondicionamiento</td>
+            <td>Al final de la vida útil: dejar solo la bancada y cambiar todo el interior. Planificado, lo hace el fabricante, personal propio o un 3°.</td>
+            <td>Extiende la vida útil como si fuera máquina nueva.</td>
+            <td>Muy costoso (a veces va fuera del presupuesto).</td>
+          </tr>
+        </table>
+      </div>
+      <div class="danger-box" style="margin-top:10px;">
+        <strong>¿Cuándo se justifica el correctivo puro?</strong> Cuando el costo total de la falla (reparación + lucro cesante) es MENOR al costo de aplicar preventivo/predictivo, Y no afecta seguridad ni medio ambiente.
+      </div>
+    </div>
+
+    <div class="card green">
+      <span class="crit-tag tag-alta">🔴 Acciones Proactivas</span>
+      <h3>Tipos de Mantenimiento Proactivo</h3>
+      <div class="table-wrap">
+        <table class="t">
+          <tr><th>Tipo</th><th>Descripción</th><th>Principal Desventaja</th></tr>
+          <tr>
+            <td>Preventivo</td>
+            <td>Intervenciones sistemáticas a <strong>frecuencia fija</strong> (por tiempo o uso). Usa historial de fallas y especificaciones del fabricante. Inspecciones: <em>RIE</em> (estáticas, máquina parada) y <em>RID</em> (dinámicas, en funcionamiento).</td>
+            <td>El desarme introduce fallas (mortalidad infantil). No aprovecha 100% vida útil. Alto stock inmovilizado.</td>
+          </tr>
+          <tr>
+            <td>Predictivo (A Condición)</td>
+            <td>Monitoreo de variables con la máquina <strong>en funcionamiento</strong>. Herramientas: termografía, análisis de vibraciones, ultrasonido, sensores, amperímetro, tintas penetrantes. Solo interviene ante síntoma.</td>
+            <td>Inversión inicial alta. Falla sintomática puede ser irreversible. No reemplaza totalmente al preventivo.</td>
+          </tr>
+          <tr>
+            <td>Detectivo</td>
+            <td>Búsqueda de <strong>fallas ocultas</strong> en equipos que están detenidos (backups, redundancias). Ej: probar electrobomba de emergencia.</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Imperativo / Legal</td>
+            <td>Piso mínimo obligatorio por ley. Ej: ascensores, calderas, matafuegos.</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Curativo</td>
+            <td>El fabricante detecta falla recurrente en múltiples equipos y lo corrige de forma mandatoria.</td>
+            <td>—</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="card cyan">
+      <span class="crit-tag tag-media">🟡 Criticidad Media</span>
+      <h3>Predictivo – Herramientas Detalladas</h3>
+      <p>Variables que deben ser representativas del estado del equipo:</p>
+      <div class="grid-2" style="margin-top:10px;">
+        <ul>
+          <li><strong>Termografía:</strong> Cámara a distancia → mide temperaturas. Detecta sobrecalentamiento. (Externo)</li>
+          <li><strong>Análisis de Vibraciones:</strong> Frecuencia = origen de la falla, Amplitud = gravedad. Lo hace un 3°. (Externo)</li>
+          <li><strong>Ultrasonido:</strong> Grietas internas por desgaste. Costoso. (Externo)</li>
+          <li><strong>Tintas Penetrantes:</strong> Grietas superficiales en piezas metálicas. (Externo)</li>
+        </ul>
+        <ul>
+          <li><strong>Sensores / PLC:</strong> Caudal, presión, temperatura. Si está en lazo continuo → Predictivo.</li>
+          <li><strong>Análisis de Muestras:</strong> Extracción de fluido para ver partículas suspendidas.</li>
+          <li><strong>Nivel de Ruido:</strong> Comparación de evolución con horas de marcha.</li>
+          <li><strong>Pinza Amperímetro:</strong> Si es medición puntual → Preventivo. Si es en lazo continuo → Predictivo.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       BLOQUE 6: Fallas, Curva de la Bañera y Gráfico Paramétrico
+  ══════════════════════════════════════ -->
+  <section id="sec-fallas">
+    <div class="section-title">
+      <div class="section-icon ic-red">⚡</div>
+      <div>
+        <h2>Fallas, Curva de la Bañera y Gráfico Paramétrico</h2>
+        <div class="sec-sub">Tipos de falla, ciclo de vida, mantenimiento según zona</div>
+      </div>
+    </div>
+
+    <div class="card danger">
+      <span class="crit-tag tag-alta">🔴 Criticidad Alta – Definiciones clave</span>
+      <h3>Definición y Tipos de Falla</h3>
+      <p><strong>Falla:</strong> Pérdida total o parcial de la capacidad de un equipo de cumplir sus funciones (estado teórico). Si es parcial = anda mal. Si es total = Avería.</p>
+      <p style="margin-top:10px;"><strong>Modo de Falla:</strong> La causa que tiene como consecuencia la falla. Un modo puede causar varias fallas y una falla puede tener varios modos.</p>
+      <div class="table-wrap" style="margin-top:12px;">
+        <table class="t">
+          <tr><th>Tipo de Falla</th><th>Descripción</th><th>¿Cómo se previene?</th></tr>
+          <tr>
+            <td>Funcional</td>
+            <td>El componente deja de satisfacer parcial o totalmente su función. Es la avería.</td>
+            <td>Mto. preventivo/predictivo antes de que ocurra.</td>
+          </tr>
+          <tr>
+            <td>Sintomática (Potencial)</td>
+            <td>El componente "avisa". Estado verificable que indica que la falla funcional está en proceso. El componente aún funciona.</td>
+            <td>Mto. predictivo o a condición. Permite programar restaurativo.</td>
+          </tr>
+          <tr>
+            <td>Simultánea</td>
+            <td>Falla en el equipo principal Y en la redundancia al mismo tiempo.</td>
+            <td>Mto. <strong>Detectivo</strong> (probar periodicamente el equipo de backup).</td>
+          </tr>
+          <tr>
+            <td>Recurrente</td>
+            <td>Falla funcional repetitiva fuera del MTBF aceptable. Puede indicar error de diseño.</td>
+            <td>Mto. Mejorativo (rediseño). Análisis causa raíz.</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="card danger">
+      <span class="crit-tag tag-alta">🔴 Criticidad Alta – Conceptual clásico de parcial</span>
+      <h3>Curva de la Bañera</h3>
+      <p>Representa la <strong>tasa de fallas vs. tiempo de vida</strong> del equipo. Tiene tres zonas:</p>
+      <div class="grid-3" style="margin-top:14px;">
+        <div class="danger-box">
+          <strong>🔴 Inicio (Mortalidad Infantil)</strong><br>
+          Alta tasa de fallas. Causa: problemas de instalación, operarios sin capacitación, malas acciones de mto. previas (desarme invasivo).<br>
+          <strong>Mto. predominante:</strong> Correctivo.
+        </div>
+        <div class="highlight">
+          <strong>🟣 Vida Normal</strong><br>
+          Tasa constante de fallas aleatorias. Operarios y mto. conocen la máquina. Se trabaja con MTBF y probabilidades.<br>
+          <strong>Mto.:</strong> Preventivo + Predictivo → dan lugar a Restaurativo.
+        </div>
+        <div class="warn-box">
+          <strong>🟡 Deterioro (Desgaste)</strong><br>
+          Tasa de fallas sube abruptamente por desgaste natural. Correcto el momento de reacondicionar (idealmente cuando el equipo está amortizado).<br>
+          <strong>Mto.:</strong> Predictivo sofisticado + Reacondicionamiento.
+        </div>
+      </div>
+      <div class="green-box" style="margin-top:12px;">
+        <strong>Bañera más profunda (punteada):</strong> Se logra cuidando mucho la máquina durante la vida normal (lubricación correcta, repuestos de calidad). Se extiende la vida útil antes del reacondicionamiento.
+      </div>
+    </div>
+
+    <div class="card info">
+      <span class="crit-tag tag-media">🟡 Criticidad Media</span>
+      <h3>Gráfico de Estado Paramétrico</h3>
+      <p>Muestra la degradación del estado del equipo en el tiempo:</p>
+      <ol style="padding-left:20px; margin-top:10px;">
+        <li style="margin-bottom:8px; color:var(--text-secondary);"><strong>Punto de Quiebre:</strong> Al cruzarlo el equipo pasa de "bueno" a falla sintomática incipiente (aún reversible). Aquí se aplica mto. proactivo/condicional para evitar que progrese.</li>
+        <li style="margin-bottom:8px; color:var(--text-secondary);"><strong>Zona Reversible:</strong> Se puede corregir con mto. restaurativo/predictivo programado.</li>
+        <li style="color:var(--text-secondary);"><strong>Zona Irreversible:</strong> La degradación no se puede revertir solo con mto. convencional → Falla Funcional inminente (Avería).</li>
+      </ol>
+      <div class="highlight" style="margin-top:10px;">
+        <strong>Gráficos X-R:</strong> Gráficos de control de calidad o producción donde se monitorea el desempeño del equipo y su tendencia dentro de límites. Si sale del límite → intervenir.
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       BLOQUE 7: Confiabilidad, Mantenibilidad, Fiabilidad de Sistemas
+  ══════════════════════════════════════ -->
+  <section id="sec-confiabilidad">
+    <div class="section-title">
+      <div class="section-icon ic-green">🔬</div>
+      <div>
+        <h2>Confiabilidad, Mantenibilidad y Fiabilidad de Sistemas</h2>
+        <div class="sec-sub">Conceptos de Disponibilidad, redundancias y configuraciones en serie/paralelo</div>
+      </div>
+    </div>
+
+    <div class="card green">
+      <span class="crit-tag tag-alta">🔴 Criticidad Alta</span>
+      <h3>Los 3 Pilares de la Disponibilidad</h3>
+      <div class="grid-3" style="margin-top:10px;">
+        <div class="highlight">
+          <strong>Confiabilidad</strong><br>
+          Probabilidad de que el equipo satisfaga sus funciones SIN FALLAS durante un tiempo dado en un contexto definido. Medida por <strong>MTBF</strong>. Mejora con buen diseño.
+        </div>
+        <div class="warn-box">
+          <strong>Mantenibilidad</strong><br>
+          Probabilidad de ser diagnosticado y reparado con éxito en un tiempo t. Medida por <strong>MTTR</strong>. Se mejora con: poka-yokes, repuestos universales, conjuntos, manuales, repuestos de fácil acceso.
+        </div>
+        <div class="green-box">
+          <strong>Disponibilidad (D₀)</strong><br>
+          La combinación apropiada de ambas. Si Confiabilidad ↑ y Mantenibilidad ↑ → D₀ ↑. Se mide con la fórmula de D₀.
+        </div>
+      </div>
+    </div>
+
+    <div class="card green">
+      <span class="crit-tag tag-alta">🔴 Criticidad Alta – Fórmulas y conceptos</span>
+      <h3>Fiabilidad de Sistemas – Serie y Paralelo</h3>
+      <div class="grid-2" style="margin-top:12px;">
+        <div class="danger-box">
+          <strong>Sistema en SERIE</strong><br>
+          Si falla un componente, falla TODO el sistema.<br>
+          R_sistema = R₁ × R₂ × … × Rn<br>
+          La confiabilidad del sistema siempre es MENOR que la del componente menos fiable.
+        </div>
+        <div class="green-box">
+          <strong>Sistema en PARALELO (Redundancia)</strong><br>
+          Para que falle el sistema deben fallar TODOS los componentes a la vez.<br>
+          R_sistema = 1 − (1−R₁) × (1−R₂) × …<br>
+          La confiabilidad del sistema es MAYOR que la de cualquier componente individual.
+        </div>
+      </div>
+      <div class="table-wrap" style="margin-top:14px;">
+        <table class="t">
+          <tr><th>Tipo de Redundancia</th><th>Descripción</th><th>Ejemplo</th></tr>
+          <tr>
+            <td>Cargada (Activa)</td>
+            <td>Todos los componentes trabajan a la misma intensidad simultáneamente.</td>
+            <td>Avión bimotor: ambos motores operan siempre.</td>
+          </tr>
+          <tr>
+            <td>Aligerada</td>
+            <td>Uno es el principal, los otros trabajan a menor régimen. Si falla el principal, los otros aceleran.</td>
+            <td>Sistema de bombas con una principal y otras a régimen reducido.</td>
+          </tr>
+          <tr>
+            <td>No Cargada (Stand-By)</td>
+            <td>Los demás descansan completamente hasta que el principal falla. Luego entran en funcionamiento.</td>
+            <td>Electrobomba de emergencia, generador de emergencia.</td>
+          </tr>
+        </table>
+      </div>
+      <div class="highlight" style="margin-top:10px;">
+        <strong>Mto. Detectivo y Redundancias:</strong> Para las redundancias Stand-By se aplica mto. Detectivo para evitar la <strong>falla simultánea</strong> (que fallen el equipo principal Y el backup al mismo tiempo sin que nadie lo note).
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SIMULADOR DE PARCIAL
+  ══════════════════════════════════════ -->
+  <section id="sec-faq">
     <div class="section-title">
       <div class="section-icon ic-pink">❓</div>
       <div>
         <h2>Simulador de Parcial</h2>
-        <div class="sec-sub">Preguntas trampa textuales tomadas en exámenes (2020-2023)</div>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">
-        <h4><span class="q-icon">?</span> "Las acciones de mantenimiento preventivo pueden dar lugar a la realización de acciones reactivas de mantenimiento"</h4>
-        <span class="faq-arrow">▼</span>
-      </div>
-      <div class="faq-a">
-        <span class="repeat-badge" style="background: rgba(16,185,129,0.15); color: #6ee7b7; border-color: rgba(16,185,129,0.3);">VERDADERO</span>
-        <p style="margin-top:10px;"><strong>Justificación:</strong> Durante una inspección sistemática o desarme preventivo, el técnico puede detectar una falla oculta o un daño incipiente grave. Esto obliga a lanzar inmediatamente una acción correctiva (reactiva) no planeada originalmente. Además, el desarme preventivo puede inducir un mal armado o ingreso de suciedad, provocando una falla inmediata (mortalidad infantil) que requerirá correctivo.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">
-        <h4><span class="q-icon">?</span> "En las inspecciones de mantenimiento preventivo se utilizan solo los sentidos"</h4>
-        <span class="faq-arrow">▼</span>
-      </div>
-      <div class="faq-a">
-        <span class="repeat-badge" style="background: rgba(239,68,68,0.15); color: #fca5a5; border-color: rgba(239,68,68,0.3);">FALSO</span>
-        <p style="margin-top:10px;">Además de los sentidos, la inspección va guiada estrictamente por la <strong>hoja de ruta / checklist</strong> documentada (qué y dónde inspeccionar, valores de tolerancia) y respaldada por el <strong>historial de la máquina</strong> en el SIM.</p>
+        <div class="sec-sub">Preguntas V/F y desarrollo tomadas en exámenes — Hacé clic para ver la respuesta</div>
       </div>
     </div>
 
@@ -523,30 +973,41 @@
         <span class="faq-arrow">▼</span>
       </div>
       <div class="faq-a">
-        <span class="repeat-badge" style="background: rgba(239,68,68,0.15); color: #fca5a5; border-color: rgba(239,68,68,0.3);">FALSO</span>
-        <p style="margin-top:10px;">Ese es el estado <strong>teórico</strong>. El estado real son los valores de condición que se miden y cuantifican dinámicamente en planta (el equipo sometido al estrés productivo real), los cuales siempre serán inferiores al teórico.</p>
+        <span class="verdict v-false">FALSO</span>
+        <p style="margin-top:8px;">Eso describe el <strong>estado teórico</strong>. El estado real es el que se mide dinámicamente en planta en condiciones de operación. Siempre es inferior al teórico por el estrés productivo.</p>
       </div>
     </div>
 
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">
-        <h4><span class="q-icon">?</span> "En Árbol de Equipos, la posición es lógica y el ID refiere a algo físico"</h4>
+        <h4><span class="q-icon">?</span> "Las acciones de mantenimiento preventivo pueden dar lugar a la realización de acciones reactivas de mantenimiento"</h4>
         <span class="faq-arrow">▼</span>
       </div>
       <div class="faq-a">
-        <span class="repeat-badge" style="background: rgba(16,185,129,0.15); color: #6ee7b7; border-color: rgba(16,185,129,0.3);">VERDADERO</span>
-        <p style="margin-top:10px;">El árbol marca la ubicación (ej: "Bomba Sistema de Enfriamiento"), que es una posición lógica/abstracta en el proceso productivo. El ID (ej: Chapa "B-405") corresponde al activo físico específico que hoy está instalado prestando servicio en esa posición lógica.</p>
+        <span class="verdict v-true">VERDADERO</span>
+        <p style="margin-top:8px;">Durante una inspección sistemática o desarme preventivo el técnico puede detectar una falla oculta o daño incipiente grave → obliga a correctivo inmediato. Además, el desarme puede inducir mal armado/suciedad → mortalidad infantil → correctivo.</p>
       </div>
     </div>
 
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">
-        <h4><span class="q-icon">?</span> "¿Cómo se compone el vínculo entre Mantenimiento y Producción?"</h4>
+        <h4><span class="q-icon">?</span> "En las inspecciones de mantenimiento preventivo se utilizan solo los sentidos"</h4>
         <span class="faq-arrow">▼</span>
       </div>
       <div class="faq-a">
-        <span class="repeat-badge" style="background: rgba(99,102,241,0.15); color: #a5b4fc; border-color: rgba(99,102,241,0.3);">DESARROLLO</span>
-        <p style="margin-top:10px;">Se realiza de forma documental mediante la <strong>Orden de Trabajo (OT)</strong>. La OT ejecutada genera información dinámica valiosa (tiempos, repuestos, modos de fallas encontradas) que se vuelca obligatoriamente al <strong>Historial de Equipos</strong> del SIM, permitiendo la mejora continua y actualización del plan estático.</p>
+        <span class="verdict v-false">FALSO</span>
+        <p style="margin-top:8px;">Además de los sentidos, la inspección está guiada por la <strong>hoja de ruta / checklist documentada</strong> (qué y dónde inspeccionar, valores de tolerancia) y respaldada por el <strong>historial de la máquina</strong> en el SIM.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <h4><span class="q-icon">?</span> "En el Árbol de Equipos, la posición es lógica y el ID refiere a algo físico"</h4>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        <span class="verdict v-true">VERDADERO</span>
+        <p style="margin-top:8px;">El árbol marca la <em>ubicación lógica/funcional</em> (ej: "Bomba Sistema de Enfriamiento"). El ID/chapa (ej: B-405) corresponde al activo físico específico que hoy está instalado en esa posición.</p>
       </div>
     </div>
 
@@ -556,37 +1017,197 @@
         <span class="faq-arrow">▼</span>
       </div>
       <div class="faq-a">
-        <span class="repeat-badge" style="background: rgba(239,68,68,0.15); color: #fca5a5; border-color: rgba(239,68,68,0.3);">FALSO</span>
-        <p style="margin-top:10px;">El reacondicionamiento (alcanzada la etapa de deterioro al final de la vida útil) es una acción planificada que puede realizarla tanto personal <strong>propio</strong> capacitado, <strong>terceros</strong>, o el mismo <strong>fabricante</strong> del equipo.</p>
+        <span class="verdict v-false">FALSO</span>
+        <p style="margin-top:8px;">El reacondicionamiento puede realizarlo: el fabricante, personal propio capacitado o un tercero especializado. La elección depende del tipo de equipo, complejidad y disponibilidad.</p>
       </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <h4><span class="q-icon">?</span> "El mantenimiento preventivo aumenta la disponibilidad del equipo"</h4>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        <span class="verdict v-false">FALSO</span>
+        <p style="margin-top:8px;">En el 90% de los casos la máquina está detenida para hacer preventivo. Se pasa de paradas NO programadas a paradas programadas. La disponibilidad no aumenta, pero se elimina la <strong>incertidumbre</strong> del correctivo. La ventaja es la previsibilidad.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <h4><span class="q-icon">?</span> "¿Cómo se vinculan Mantenimiento y Producción?"</h4>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        <span class="verdict v-dev">DESARROLLO</span>
+        <p style="margin-top:8px;">Se realiza documentalmente mediante la <strong>Orden de Trabajo (OT)</strong>. La OT ejecutada genera información dinámica valiosa (tiempos reales, repuestos usados, modos de falla encontrados) que se vuelca al <strong>Historial de Equipos</strong> del SIM, permitiendo la mejora continua.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <h4><span class="q-icon">?</span> "¿Cuál es la diferencia entre MTBF y MTTF?"</h4>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        <span class="verdict v-dev">DESARROLLO</span>
+        <ul style="margin-top:8px;">
+          <li><strong>MTBF:</strong> Para equipos <em>reparables</em>. Se resta el tiempo de paradas porque el equipo vuelve a operar. Mide Confiabilidad.</li>
+          <li><strong>MTTF:</strong> Para elementos <em>descartables</em> (se sustituyen ante la falla, no se reparan). El tiempo de parada tiende a 0 → no se resta. Ej: focos, fusibles.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <h4><span class="q-icon">?</span> "¿Por qué el mantenimiento mejorativo debe ser la ÚLTIMA opción?"</h4>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        <span class="verdict v-dev">DESARROLLO</span>
+        <p style="margin-top:8px;">Porque: (1) tiene alto tiempo de implementación, (2) puede generar nuevos problemas inesperados al modificar el diseño original, (3) funciona por prueba y error, lo que genera incertidumbre y costos extras. Antes de rediseñar se deben agotar las alternativas de mto. convencional (preventivo, predictivo, restaurativo).</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <h4><span class="q-icon">?</span> "¿Para qué sirve la Llave HH Sin Materiales y cuándo usar la HH Con Materiales?"</h4>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        <span class="verdict v-dev">DESARROLLO</span>
+        <ul style="margin-top:8px;">
+          <li><strong>HH Sin Materiales:</strong> Para costear OTs individuales y asignar costos a cada máquina a lo largo del año (control calendarizado). Permite tomar decisiones de reemplazo o make-or-buy. Para costear una reparación específica: HH sin mat. × horas + repuestos reales.</li>
+          <li><strong>HH Con Materiales:</strong> Solo se usa al 31/12 para cierre presupuestario global del sector. NO sirve para individualizar porque el material se proratea equitativamente generando inexactitud.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <h4><span class="q-icon">?</span> "¿Qué son los Repuestos Críticos o Stock de Seguro y por qué no se les aplica el Lote Óptimo de Wilson?"</h4>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        <span class="verdict v-dev">DESARROLLO</span>
+        <p style="margin-top:8px;">Son repuestos de baja rotación cuya falta paraliza la planta. Se tienen "por si acaso". El Lote de Wilson requiere una <strong>demanda previsible/regular</strong>. Los repuestos críticos no tienen demanda previsible (pueden no usarse por años), por lo que la fórmula no aplica. La decisión es organizacional: tenerlo o no tenerlo, como un seguro de vida.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <h4><span class="q-icon">?</span> "El mantenimiento predictivo reemplaza totalmente al mantenimiento preventivo"</h4>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        <span class="verdict v-false">FALSO</span>
+        <p style="margin-top:8px;">El predictivo <strong>no reemplaza totalmente al preventivo</strong>. Existen elementos y variables que no se pueden monitorear continuamente o cuyo costo de instrumentación no se justifica. El preventivo sigue siendo necesario para lubricación, limpiezas, ajustes básicos y componentes de bajo costo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       CHECKLIST FINAL
+  ══════════════════════════════════════ -->
+  <section id="sec-checklist">
+    <div class="section-title">
+      <div class="section-icon ic-green">✅</div>
+      <div>
+        <h2>Checklist del Parcial</h2>
+        <div class="sec-sub">Marcá lo que ya sabés antes de rendir — Se guarda en el navegador</div>
+      </div>
+    </div>
+
+    <div class="card info">
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-fill" id="progress-fill" style="width:0%"></div>
+      </div>
+      <div class="progress-label" id="progress-label">0 / 0 conceptos dominados</div>
+
+      <p class="checklist-group-title" style="margin-top:20px;">🏭 Bloque 1 — Empresa y Fundamentos</p>
+      <ul class="checklist" id="checklist-items">
+        <li id="ci-1"><span class="check-box" onclick="toggleCheck('ci-1')"></span>Definición de Mantenimiento (textual) y por qué se mantienen funciones, no equipos</li>
+        <li id="ci-2"><span class="check-box" onclick="toggleCheck('ci-2')"></span>Diferencia entre Estado Teórico y Estado Real (cuál es el patrón, cuál mide la planta)</li>
+        <li id="ci-3"><span class="check-box" onclick="toggleCheck('ci-3')"></span>Tres tipos de organización: Centralizado / Descentralizado / Mixto — ventajas y desventajas</li>
+        <li id="ci-4"><span class="check-box" onclick="toggleCheck('ci-4')"></span>Definición formal del proceso de gestión de mantenimiento (contexto operacional, disponibilidad, recursos)</li>
+
+        <p class="checklist-group-title">📋 Bloque 2 — SIM y OT</p>
+        <li id="ci-5"><span class="check-box" onclick="toggleCheck('ci-5')"></span>Información estática vs. dinámica (ejemplos de cada una)</li>
+        <li id="ci-6"><span class="check-box" onclick="toggleCheck('ci-6')"></span>Árbol de Equipos = posición LÓGICA / Maestro de Especificaciones = activo FÍSICO (ID)</li>
+        <li id="ci-7"><span class="check-box" onclick="toggleCheck('ci-7')"></span>Historial de Equipos: qué registra y cómo se alimenta (de las OT)</li>
+        <li id="ci-8"><span class="check-box" onclick="toggleCheck('ci-8')"></span>Clasificación OT eventuales: Emergencia (correctivo inmediato) / Urgente (sustitutivo) / Normal</li>
+
+        <p class="checklist-group-title">📦 Bloque 3 — Materiales y Stock</p>
+        <li id="ci-9"><span class="check-box" onclick="toggleCheck('ci-9')"></span>4 categorías de inventario: Estratégicos / Universales / Críticos / Generales (+ Conjuntos)</li>
+        <li id="ci-10"><span class="check-box" onclick="toggleCheck('ci-10')"></span>¿A cuáles se aplica Wilson? Solo a UNIVERSALES (demanda previsible, alta rotación)</li>
+        <li id="ci-11"><span class="check-box" onclick="toggleCheck('ci-11')"></span>Fórmula de Lote Óptimo Wilson: Q* = √(2·D·K / b·i)</li>
+        <li id="ci-12"><span class="check-box" onclick="toggleCheck('ci-12')"></span>Fórmulas de Cadq, Calm, Css, CTS y Punto de Pedido con α crítico/muy crítico</li>
+        <li id="ci-13"><span class="check-box" onclick="toggleCheck('ci-13')"></span>¿Qué pasa si se aumenta el lote por encima del óptimo? (CTS sube, Calm sube)</li>
+
+        <p class="checklist-group-title">📊 Bloque 4 — KPIs y Presupuesto</p>
+        <li id="ci-14"><span class="check-box" onclick="toggleCheck('ci-14')"></span>MTBF: fórmula + para qué tipo de equipo + qué mide (Confiabilidad)</li>
+        <li id="ci-15"><span class="check-box" onclick="toggleCheck('ci-15')"></span>MTTF: fórmula + diferencia con MTBF (descartables, parada tiende a 0)</li>
+        <li id="ci-16"><span class="check-box" onclick="toggleCheck('ci-16')"></span>MTTR: fórmula + qué mide (Mantenibilidad)</li>
+        <li id="ci-17"><span class="check-box" onclick="toggleCheck('ci-17')"></span>Disponibilidad D₀: fórmula y para qué sirve (identificar equipos candidatos a reemplazo)</li>
+        <li id="ci-18"><span class="check-box" onclick="toggleCheck('ci-18')"></span>CMVR: fórmula y decisión de reemplazo/reacondicionamiento</li>
+        <li id="ci-19"><span class="check-box" onclick="toggleCheck('ci-19')"></span>Estructura del presupuesto: Jefatura + Planificación + Almacén + Operaciones + % Imprevistos (8% pred / 15% corr)</li>
+        <li id="ci-20"><span class="check-box" onclick="toggleCheck('ci-20')"></span>Llave HH Sin Materiales: control calendarizado, costear OTs individuales y máquinas</li>
+        <li id="ci-21"><span class="check-box" onclick="toggleCheck('ci-21')"></span>Llave HH Con Materiales: cierre anual 31/12 — NO individualiza costos por máquina</li>
+        <li id="ci-22"><span class="check-box" onclick="toggleCheck('ci-22')"></span>Cálculo de horas netas y dotación: pasos (feriados, vacaciones, descanso, ausentismo)</li>
+        <li id="ci-23"><span class="check-box" onclick="toggleCheck('ci-23')"></span>Regla del redondeo TRUNCO en dotación + justificación textual completa</li>
+
+        <p class="checklist-group-title">🔧 Bloque 5 — Técnicas de Mantenimiento</p>
+        <li id="ci-24"><span class="check-box" onclick="toggleCheck('ci-24')"></span>Gráfico costo-beneficio: costo "a" (fijo) vs costo "b" (lucro cesante) y punto de mantenimiento óptimo</li>
+        <li id="ci-25"><span class="check-box" onclick="toggleCheck('ci-25')"></span>Correctivo: cuándo se justifica, ventajas y desventajas</li>
+        <li id="ci-26"><span class="check-box" onclick="toggleCheck('ci-26')"></span>Restaurativo/Sustitutivo: definición y ventaja vs. correctivo</li>
+        <li id="ci-27"><span class="check-box" onclick="toggleCheck('ci-27')"></span>Mejorativo: objetivos y por qué debe ser ÚLTIMA opción</li>
+        <li id="ci-28"><span class="check-box" onclick="toggleCheck('ci-28')"></span>Reacondicionamiento: cuándo se hace, quién lo hace, cuánto se deja (solo la bancada)</li>
+        <li id="ci-29"><span class="check-box" onclick="toggleCheck('ci-29')"></span>Preventivo: frecuencia fija, desventajas (mortalidad infantil, stock alto)</li>
+        <li id="ci-30"><span class="check-box" onclick="toggleCheck('ci-30')"></span>Predictivo: en funcionamiento, no frecuencia fija, herramientas (termografía, vibraciones, etc.)</li>
+        <li id="ci-31"><span class="check-box" onclick="toggleCheck('ci-31')"></span>Detectivo: fallas ocultas, equipos de backup, evita falla simultánea</li>
+        <li id="ci-32"><span class="check-box" onclick="toggleCheck('ci-32')"></span>Imperativo/Legal: piso mínimo legal (ascensores, calderas)</li>
+
+        <p class="checklist-group-title">⚡ Bloque 6 — Fallas y Curva de la Bañera</p>
+        <li id="ci-33"><span class="check-box" onclick="toggleCheck('ci-33')"></span>Definición de Falla vs. Avería</li>
+        <li id="ci-34"><span class="check-box" onclick="toggleCheck('ci-34')"></span>Modo de Falla: definición y relación con la falla</li>
+        <li id="ci-35"><span class="check-box" onclick="toggleCheck('ci-35')"></span>Falla Funcional / Sintomática (potencial) / Simultánea / Recurrente — definiciones</li>
+        <li id="ci-36"><span class="check-box" onclick="toggleCheck('ci-36')"></span>Curva de la bañera: 3 zonas, tasa de fallas, tipo de mto. en cada zona</li>
+        <li id="ci-37"><span class="check-box" onclick="toggleCheck('ci-37')"></span>Gráfico paramétrico: punto de quiebre, zona reversible e irreversible</li>
+
+        <p class="checklist-group-title">🔬 Bloque 7 — Confiabilidad y Sistemas</p>
+        <li id="ci-38"><span class="check-box" onclick="toggleCheck('ci-38')"></span>Confiabilidad (MTBF) vs Mantenibilidad (MTTR) — definiciones y cómo se mejora cada una</li>
+        <li id="ci-39"><span class="check-box" onclick="toggleCheck('ci-39')"></span>Sistema en Serie: fórmula, la fiabilidad del sistema < componente menos fiable</li>
+        <li id="ci-40"><span class="check-box" onclick="toggleCheck('ci-40')"></span>Sistema en Paralelo (Redundancia): fórmula, fiabilidad mejora respecto a cualquier componente</li>
+        <li id="ci-41"><span class="check-box" onclick="toggleCheck('ci-41')"></span>3 tipos de redundancia: Cargada / Aligerada / No Cargada (Stand-By) + ejemplos</li>
+      </ul>
     </div>
   </section>
 
 </main>
 
 <footer>
-  <p>Guía Maestra 1er Parcial · Cátedra Aprigliano · UTN FRBA 2026</p>
+  <p>Guía 1er Parcial · Apunte Lucas Tonon / Cátedra Aprigliano · UTN FRBA 2026</p>
 </footer>
 
 <script>
+  /* ── SCROLL PROGRESS BAR ── */
   window.addEventListener('scroll', () => {
     const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (winScroll / height) * 100;
-    document.getElementById('scroll-bar').style.width = scrolled + '%';
+    const height    = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    document.getElementById('scroll-bar').style.width = ((winScroll / height) * 100) + '%';
   });
 
+  /* ── NAV ACTIVE STATE ── */
   const sections = document.querySelectorAll('section');
-  const navBtns = document.querySelectorAll('.nav-btn');
+  const navBtns  = document.querySelectorAll('.nav-btn');
   window.addEventListener('scroll', () => {
     let current = '';
     sections.forEach(sec => {
-      const secTop = sec.offsetTop;
-      if (pageYOffset >= secTop - 200) current = sec.getAttribute('id');
+      if (pageYOffset >= sec.offsetTop - 220) current = sec.getAttribute('id');
     });
     navBtns.forEach(btn => {
       btn.classList.remove('active');
-      if (btn.getAttribute('onclick').includes(current)) {
+      if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(current)) {
         btn.classList.add('active');
         btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
       }
@@ -597,10 +1218,52 @@
     document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
   }
 
+  /* ── FAQ TOGGLE ── */
   function toggleFaq(el) {
-    const parent = el.parentElement;
-    parent.classList.toggle('open');
+    el.parentElement.classList.toggle('open');
   }
+
+  /* ── CHECKLIST + LOCALSTORAGE ── */
+  const STORAGE_KEY = 'mto_checklist_v2';
+
+  function getState() {
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch { return {}; }
+  }
+  function saveState(state) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  }
+
+  function toggleCheck(liId) {
+    const li  = document.getElementById(liId);
+    const box = li.querySelector('.check-box');
+    const isDone = box.classList.toggle('done');
+    li.classList.toggle('checked', isDone);
+    const state = getState();
+    state[liId] = isDone;
+    saveState(state);
+    updateProgress();
+  }
+
+  function updateProgress() {
+    const items  = document.querySelectorAll('#checklist-items li[id]');
+    const done   = document.querySelectorAll('#checklist-items li[id] .check-box.done');
+    const pct    = items.length ? Math.round((done.length / items.length) * 100) : 0;
+    document.getElementById('progress-fill').style.width  = pct + '%';
+    document.getElementById('progress-label').textContent = `${done.length} / ${items.length} conceptos dominados`;
+  }
+
+  /* restore state on load */
+  (function restoreChecklist() {
+    const state = getState();
+    Object.entries(state).forEach(([liId, isDone]) => {
+      if (!isDone) return;
+      const li = document.getElementById(liId);
+      if (!li) return;
+      li.querySelector('.check-box').classList.add('done');
+      li.classList.add('checked');
+    });
+    updateProgress();
+  })();
 </script>
 
 </body>
