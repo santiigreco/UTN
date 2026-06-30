@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Guía 1er Parcial – Manejo de Materiales y Distribución de Planta UTN</title>
+  <meta name="description" content="Guía teórica y práctica para el primer parcial de Manejo de Materiales y Distribución de Planta UTN. Sigue el orden del apunte completo con simulador de parcial y checklist interactivo." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-primary:    #0a0e1a;
+      --bg-secondary:  #111827;
+      --bg-card:       #161d2e;
+      --bg-card-hover: #1c2540;
+      --accent-1:      #6366f1;
+      --accent-2:      #8b5cf6;
+      --accent-3:      #06b6d4;
+      --accent-4:      #10b981;
+      --accent-warn:   #f59e0b;
+      --accent-danger: #ef4444;
+      --accent-pink:   #ec4899;
+      --text-primary:  #f1f5f9;
+      --text-secondary:#94a3b8;
+      --text-muted:    #64748b;
+      --border:        rgba(99,102,241,0.18);
+      --border-glow:   rgba(99,102,241,0.4);
+      --shadow-lg:     0 20px 60px rgba(0,0,0,0.5);
+      --radius:        12px;
+      --radius-sm:     8px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      overflow-x: hidden;
+      font-size: 16px;
+    }
+
+    body::before, body::after {
+      content: ''; position: fixed; border-radius: 50%; filter: blur(120px);
+      opacity: 0.12; pointer-events: none; z-index: 0;
+      animation: blobFloat 12s ease-in-out infinite alternate;
+    }
+    body::before { width: 600px; height: 600px; background: var(--accent-1); top: -200px; left: -200px; }
+    body::after  { width: 500px; height: 500px; background: var(--accent-3); bottom: -200px; right: -200px; animation-delay: -6s; }
+    @keyframes blobFloat { from { transform: translate(0,0) scale(1); } to { transform: translate(40px,30px) scale(1.08); } }
+
+    /* ── HEADER ── */
+    header {
+      position: relative; z-index: 10; text-align: center; padding: 70px 24px 50px;
+      background: linear-gradient(180deg, rgba(99,102,241,0.08) 0%, transparent 100%);
+      border-bottom: 1px solid var(--border);
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 6px; background: rgba(99,102,241,0.15);
+      border: 1px solid var(--border-glow); color: var(--accent-1); padding: 5px 14px;
+      border-radius: 999px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em;
+      text-transform: uppercase; margin-bottom: 20px;
+    }
+    .badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent-1); animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.5; transform:scale(1.4); } }
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.6rem); font-weight: 800;
+      background: linear-gradient(135deg, #f1f5f9 0%, var(--accent-1) 50%, var(--accent-3) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.15; margin-bottom: 16px;
+    }
+    .subtitle { color: var(--text-secondary); font-size: 1rem; max-width: 620px; margin: 0 auto 28px; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100; background: rgba(10,14,26,0.92);
+      backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); padding: 0 24px;
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto; display: flex; gap: 3px;
+      overflow-x: auto; scrollbar-width: none; padding: 8px 0; align-items: center;
+    }
+    .nav-inner::-webkit-scrollbar { display: none; }
+    .nav-btn {
+      white-space: nowrap; border: 1px solid transparent; background: transparent;
+      color: var(--text-secondary); font-family: 'Inter', sans-serif; border-radius: var(--radius-sm);
+      cursor: pointer; transition: all 0.22s; display: flex; flex-direction: column;
+      align-items: center; gap: 2px; padding: 6px 12px; line-height: 1;
+    }
+    .nav-btn .nav-unit { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 1px 6px; border-radius: 999px; background: rgba(255,255,255,0.06); color: var(--text-muted); transition: all 0.22s; }
+    .nav-btn .nav-label { font-size: 0.8rem; font-weight: 500; }
+    .nav-btn:hover { background: rgba(99,102,241,0.12); border-color: rgba(99,102,241,0.2); color: var(--accent-1); }
+    .nav-btn:hover .nav-unit { background: rgba(99,102,241,0.2); color: var(--accent-1); }
+    .nav-btn.active { background: rgba(99,102,241,0.18); border-color: rgba(99,102,241,0.35); color: var(--accent-1); }
+    .nav-btn.active .nav-unit { background: rgba(99,102,241,0.3); color: #c7d2fe; }
+    .nav-sep { width: 1px; height: 28px; background: var(--border); flex-shrink: 0; margin: 0 4px; }
+
+    /* ── MAIN ── */
+    main { max-width: 1100px; margin: 0 auto; padding: 40px 24px 80px; position: relative; z-index: 1; }
+
+    /* ── SECTION TITLES ── */
+    .section-title { display: flex; align-items: center; gap: 12px; margin: 56px 0 24px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+    .section-icon { width: 42px; height: 42px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
+    .section-title h2 { font-size: 1.55rem; font-weight: 700; color: var(--text-primary); }
+    .section-title .sec-sub { font-size: 0.85rem; color: var(--text-muted); margin-top: 2px; }
+
+    .ic-violet { background: rgba(99,102,241,0.15); }
+    .ic-cyan   { background: rgba(6,182,212,0.15); }
+    .ic-green  { background: rgba(16,185,129,0.15); }
+    .ic-amber  { background: rgba(245,158,11,0.15); }
+    .ic-pink   { background: rgba(236,72,153,0.15); }
+    .ic-red    { background: rgba(239,68,68,0.15); }
+
+    /* ── CRITICIDAD TAGS ── */
+    .crit-tag {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 3px 10px; border-radius: 999px; font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase; border: 1px solid; margin-bottom: 10px;
+    }
+    .tag-alta   { background: rgba(239,68,68,0.12); color: #fca5a5; border-color: rgba(239,68,68,0.35); }
+    .tag-media  { background: rgba(245,158,11,0.12); color: #fcd34d; border-color: rgba(245,158,11,0.35); }
+    .tag-baja   { background: rgba(16,185,129,0.12); color: #6ee7b7; border-color: rgba(16,185,129,0.35); }
+    .tag-examen { background: rgba(236,72,153,0.12); color: #f9a8d4; border-color: rgba(236,72,153,0.35); }
+
+    .crit-tag::before { content: '●'; font-size: 0.55rem; }
+    .tag-alta::before   { color: #ef4444; }
+    .tag-media::before  { color: #f59e0b; }
+    .tag-baja::before   { color: #10b981; }
+    .tag-examen::before { color: #ec4899; }
+
+    /* ── CARDS ── */
+    .card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 22px 24px; margin-bottom: 18px; transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+      position: relative; overflow: hidden;
+    }
+    .card::before {
+      content: ''; position: absolute; top: 0; left: 0; height: 3px; width: 100%;
+      border-radius: var(--radius) var(--radius) 0 0; opacity: 0; transition: opacity 0.3s;
+    }
+    .card:hover { transform: translateY(-3px); border-color: var(--border-glow); box-shadow: var(--shadow-lg); background: var(--bg-card-hover); }
+    .card:hover::before { opacity: 1; }
+    .card.info::before  { background: linear-gradient(90deg, var(--accent-1), transparent); }
+    .card.cyan::before  { background: linear-gradient(90deg, var(--accent-3), transparent); }
+    .card.green::before { background: linear-gradient(90deg, var(--accent-4), transparent); }
+    .card.amber::before { background: linear-gradient(90deg, var(--accent-warn), transparent); }
+    .card.danger::before { background: linear-gradient(90deg, var(--accent-danger), transparent); }
+
+    .card h3 { font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin-bottom: 10px; }
+    .card p, .card li { color: var(--text-secondary); font-size: 0.93rem; line-height: 1.7; }
+    .card ul, .card ol { padding-left: 20px; }
+    .card li { margin-bottom: 6px; }
+    .card li::marker { color: var(--accent-1); }
+
+    /* ── HIGHLIGHT BOXES ── */
+    .highlight  { background: rgba(99,102,241,0.08); border-left: 3px solid var(--accent-1); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 13px 16px; margin: 10px 0; font-size: 0.91rem; color: var(--text-secondary); }
+    .warn-box   { background: rgba(245,158,11,0.08); border-left: 3px solid var(--accent-warn); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 13px 16px; margin: 10px 0; font-size: 0.91rem; color: var(--text-secondary); }
+    .danger-box { background: rgba(239,68,68,0.08); border-left: 3px solid var(--accent-danger); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 13px 16px; margin: 10px 0; font-size: 0.91rem; color: var(--text-secondary); }
+    .green-box  { background: rgba(16,185,129,0.08); border-left: 3px solid var(--accent-4); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 13px 16px; margin: 10px 0; font-size: 0.91rem; color: var(--text-secondary); }
+    .highlight strong { color: var(--accent-1); }
+    .warn-box strong  { color: var(--accent-warn); }
+    .danger-box strong { color: var(--accent-danger); }
+    .green-box strong { color: var(--accent-4); }
+
+    /* ── GRIDS ── */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+    @media (max-width: 768px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } }
+
+    /* ── TABLES ── */
+    .table-wrap { overflow-x: auto; }
+    table.t { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin-top: 12px; }
+    table.t th { background: rgba(99,102,241,0.12); color: var(--accent-1); font-weight: 700; padding: 10px 14px; text-align: left; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    table.t td { padding: 9px 14px; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary); vertical-align: top; }
+    table.t tr:last-child td { border-bottom: none; }
+    table.t tr:hover td { background: rgba(255,255,255,0.02); }
+    table.t td:first-child { color: var(--text-primary); font-weight: 600; }
+
+    /* ── FAQ ── */
+    .faq-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 12px; overflow: hidden; transition: border-color 0.25s; }
+    .faq-item:hover { border-color: var(--border-glow); }
+    .faq-q { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; cursor: pointer; gap: 14px; }
+    .faq-q h4 { font-size: 0.95rem; font-weight: 600; color: var(--text-primary); display: flex; gap: 10px; align-items: flex-start; }
+    .faq-q h4 .q-icon { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: rgba(99,102,241,0.2); color: var(--accent-1); font-size: 0.8rem; display: flex; align-items: center; justify-content: center; font-weight: 700; margin-top: 1px; }
+    .faq-arrow { font-size: 0.9rem; color: var(--text-muted); transition: transform 0.3s; flex-shrink: 0; }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-a { display: none; padding: 0 20px 16px; }
+    .faq-a p, .faq-a li { color: var(--text-secondary); font-size: 0.91rem; line-height: 1.7; }
+    .faq-a ul { padding-left: 18px; margin-top: 8px; }
+    .faq-item.open .faq-a { display: block; }
+    .verdict { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em; border: 1px solid; margin-bottom: 8px; }
+    .v-true   { background: rgba(16,185,129,0.15); color: #6ee7b7; border-color: rgba(16,185,129,0.3); }
+    .v-false  { background: rgba(239,68,68,0.15); color: #fca5a5; border-color: rgba(239,68,68,0.3); }
+    .v-dev    { background: rgba(99,102,241,0.15); color: #a5b4fc; border-color: rgba(99,102,241,0.3); }
+
+    /* ── FORMULA BLOCK ── */
+    .formula-block {
+      font-family: 'JetBrains Mono', monospace; background: var(--bg-secondary);
+      border: 1px solid rgba(255,255,255,0.06); color: #e2b8ff;
+      padding: 16px; border-radius: var(--radius-sm); margin: 10px 0;
+      white-space: pre-wrap; font-size: 0.88rem; line-height: 1.6;
+    }
+    code { font-family: 'JetBrains Mono', monospace; background: rgba(99,102,241,0.12); color: var(--accent-1); padding: 2px 7px; border-radius: 5px; font-size: 0.85em; }
+
+    /* ── CHECKLIST ── */
+    .checklist { list-style: none; padding: 0; }
+    .checklist li {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 11px 0; border-bottom: 1px solid rgba(255,255,255,0.04);
+      font-size: 0.93rem; color: var(--text-secondary); transition: color 0.2s;
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist li.checked { color: var(--text-muted); text-decoration: line-through; }
+    .check-box {
+      flex-shrink: 0; width: 21px; height: 21px; border-radius: 6px;
+      border: 2px solid var(--text-muted); background: transparent;
+      cursor: pointer; transition: all 0.2s; position: relative; margin-top: 2px;
+    }
+    .check-box.done { background: var(--accent-1); border-color: var(--accent-1); }
+    .check-box.done::after {
+      content: '✓'; position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%); color: white; font-size: 0.75rem; font-weight: 700;
+    }
+    .checklist-group-title {
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--text-muted); margin: 18px 0 6px;
+    }
+    .progress-bar-wrap { background: rgba(255,255,255,0.06); border-radius: 999px; height: 8px; margin: 16px 0 6px; overflow: hidden; }
+    .progress-bar-fill { height: 100%; background: linear-gradient(90deg, var(--accent-1), var(--accent-3)); border-radius: 999px; transition: width 0.4s ease; }
+    .progress-label { font-size: 0.8rem; color: var(--text-muted); text-align: right; }
+
+    /* ── SCROLL BAR ── */
+    #scroll-bar { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--accent-1), var(--accent-3)); z-index: 9999; width: 0%; transition: width 0.1s linear; }
+
+    /* ── FOOTER ── */
+    footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 0.82rem; border-top: 1px solid var(--border); position: relative; z-index: 1; }
+
+    /* ── MINI BADGE ── */
+    .mini-label { font-size: 0.75rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; display: block; }
+
+    /* ── NUMBERED STEPS ── */
+    .steps { counter-reset: step; list-style: none; padding: 0; }
+    .steps li { counter-increment: step; display: flex; gap: 14px; margin-bottom: 14px; align-items: flex-start; }
+    .steps li::before {
+      content: counter(step); flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%;
+      background: rgba(99,102,241,0.2); border: 1px solid var(--accent-1); color: var(--accent-1);
+      font-size: 0.78rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 3px;
+    }
+    .steps li span { color: var(--text-secondary); font-size: 0.93rem; line-height: 1.6; }
+    .steps li strong { color: var(--text-primary); }
+  </style>
+</head>
+<body>
+
+<div id="scroll-bar"></div>
+
+<header>
+  <div class="badge"><span class="badge-dot"></span> UTN · Manejo de Materiales y Distribución de Planta · 2026</div>
+  <h1>Guía Completa 1er Parcial<br/>Manejo de Materiales</h1>
+  <p class="subtitle">Sigue el orden del <strong>Resumen BR</strong> completo. Tags de criticidad según lo que entra al parcial. 7 Unidades temáticas.</p>
+</header>
+
+<nav>
+  <div class="nav-inner">
+    <button class="nav-btn active" id="nb-u1" onclick="navScroll(this,'sec-u1')">
+      <span class="nav-unit">U1</span>
+      <span class="nav-label">🔗 Intralogística</span>
+    </button>
+    <button class="nav-btn" id="nb-u2" onclick="navScroll(this,'sec-u2')">
+      <span class="nav-unit">U2</span>
+      <span class="nav-label">📦 Materiales</span>
+    </button>
+    <button class="nav-btn" id="nb-u3" onclick="navScroll(this,'sec-u3')">
+      <span class="nav-unit">U3</span>
+      <span class="nav-label">📍 Localización</span>
+    </button>
+    <button class="nav-btn" id="nb-u4" onclick="navScroll(this,'sec-u4')">
+      <span class="nav-unit">U4</span>
+      <span class="nav-label">🌿 Gestión Ambiental</span>
+    </button>
+    <button class="nav-btn" id="nb-u5" onclick="navScroll(this,'sec-u5')">
+      <span class="nav-unit">U5</span>
+      <span class="nav-label">🏙️ Códigos Urbanos</span>
+    </button>
+    <button class="nav-btn" id="nb-u6" onclick="navScroll(this,'sec-u6')">
+      <span class="nav-unit">U6</span>
+      <span class="nav-label">🏗️ Edificios Ind.</span>
+    </button>
+    <button class="nav-btn" id="nb-u7" onclick="navScroll(this,'sec-u7')">
+      <span class="nav-unit">U7</span>
+      <span class="nav-label">🏭 Distribución Planta</span>
+    </button>
+    <div class="nav-sep"></div>
+    <button class="nav-btn" id="nb-faq" onclick="navScroll(this,'sec-faq')">
+      <span class="nav-unit">Examen</span>
+      <span class="nav-label">❓ Simulador</span>
+    </button>
+    <button class="nav-btn" id="nb-cl" onclick="navScroll(this,'sec-checklist')">
+      <span class="nav-unit">Repaso</span>
+      <span class="nav-label">✅ Checklist</span>
+    </button>
+  </div>
+</nav>
+
+<main>
+
+<!-- ══════════════════════════════════════
+     UNIDAD 1: Introducción a la Intralogística
+══════════════════════════════════════ -->
+<section id="sec-u1">
+  <div class="section-title">
+    <div class="section-icon ic-violet">🔗</div>
+    <div>
+      <h2>Unidad 1 — Introducción a la Intralogística</h2>
+      <div class="sec-sub">Orígenes, planeamiento de instalaciones, ciclo de planificación, marco legal</div>
+    </div>
+  </div>
+
+  <div class="card info">
+    <span class="crit-tag tag-alta">🔴 Criticidad Alta – Siempre entra</span>
+    <h3>¿Qué es la Intralogística? Definición y orígenes</h3>
+    <p>La materia evolucionó en tres etapas:</p>
+    <div class="table-wrap" style="margin-top:12px;">
+      <table class="t">
+        <tr><th>Época</th><th>Nombre</th><th>Alcance</th></tr>
+        <tr><td>90s</td><td>Manejo de Materiales</td><td>Movimiento y manejo dentro de planta</td></tr>
+        <tr><td>00s</td><td>+ Distribución en Planta</td><td>Se integra la distribución física</td></tr>
+        <tr><td>2016+</td><td>Intralogística</td><td>Todos los procesos internos + eslabón de la cadena de suministro</td></tr>
+      </table>
+    </div>
+    <div class="highlight" style="margin-top:14px;">
+      <strong>Definición formal:</strong> Se refiere a todos los procesos y movimientos de materias primas, insumos, semi elaborados, productos terminados y residuos que tienen lugar dentro de una planta industrial o centro de servicios, desde su ingreso, traslado a las líneas de producción hasta el despacho a los clientes.
+    </div>
+    <div class="grid-2" style="margin-top:14px;">
+      <div class="green-box">
+        <strong>Procesos de la Intralogística:</strong><br>
+        • Almacenamiento<br>• Gestión de stocks<br>• Sistemas de automatización<br>• Manejo de materiales, equipos y tecnologías
+      </div>
+      <div class="warn-box">
+        <strong>Planeamiento de Instalaciones:</strong><br>
+        • Localización de planta<br>• Diseño de instalaciones<br>• Distribución de planta<br>• Selección de equipos de movimiento
+      </div>
+    </div>
+  </div>
+
+  <div class="card cyan">
+    <span class="crit-tag tag-alta">🔴 Criticidad Alta – Pregunta frecuente</span>
+    <h3>Planeamiento de Instalaciones — Definición y tareas</h3>
+    <p>Elaborar métodos holísticos para <strong>optimizar y potenciar la cadena de suministro</strong>. Analiza, dimensiona, diseña y selecciona:</p>
+    <ul style="margin-top:10px;">
+      <li><strong>Emplazamiento:</strong> Selección física específica del terreno</li>
+      <li><strong>Dimensionado:</strong> Dimensiona las instalaciones según necesidades</li>
+      <li><strong>Distribución:</strong> Realiza la distribución de la planta</li>
+      <li><strong>Equipos:</strong> Selecciona equipos para movimiento de PT, MP y scrap</li>
+    </ul>
+    <div class="warn-box" style="margin-top:12px;">
+      <strong>Indicadores clave del Planeamiento:</strong> ROA y ROI (maximizar) · Costo de manejo de materiales (minimizar) · Velocidad de entrega · Satisfacción del cliente · Seguridad y medio ambiente
+    </div>
+  </div>
+
+  <div class="card info">
+    <span class="crit-tag tag-alta">🔴 Criticidad Alta</span>
+    <h3>Características del Planeamiento de Instalaciones</h3>
+    <div class="grid-3" style="margin-top:10px;">
+      <div class="highlight"><strong>Flexibilidad</strong><br>Manejar requerimientos sin alterar instalaciones</div>
+      <div class="highlight"><strong>Modularidad</strong><br>Facilitar el crecimiento de la planta</div>
+      <div class="highlight"><strong>Facilidad de actualización</strong><br>Incorporar nuevas máquinas y tecnologías</div>
+      <div class="highlight"><strong>Operatividad selectiva</strong><br>Planes de contingencia por módulo</div>
+      <div class="highlight"><strong>Integración total</strong><br>Desde el cliente hasta lo particular</div>
+      <div class="highlight"><strong>Confiabilidad</strong><br>Sistemas robustos con poca tolerancia a la falla</div>
+    </div>
+  </div>
+
+  <div class="card green">
+    <span class="crit-tag tag-alta">🔴 Criticidad Alta – Sale en orden al examen</span>
+    <h3>Ciclo de Planeación — 9 Etapas</h3>
+    <ol class="steps">
+      <li><span><strong>Definir objetivos estratégicos:</strong> Visión (10 años), misión, factores clave, valores e indicadores de performance</span></li>
+      <li><span><strong>Compromiso de la dirección:</strong> Soporte y liderazgo de la dirección para el equipo de planeación</span></li>
+      <li><span><strong>Formación del equipo de planeación:</strong> Equipo multidisciplinario con personas con capacidad de decisión</span></li>
+      <li><span><strong>Relevamiento de actividades y tareas:</strong> Posicionamiento en la cadena de valor, detalle de MO, MP y equipos</span></li>
+      <li><span><strong>Determinar criterios de planeación:</strong> Criterios de diseño para alcanzar la Visión</span></li>
+      <li><span><strong>Generar el Plan de Instalación:</strong> Plan detallado (costo y tiempo) + planes alternativos</span></li>
+      <li><span><strong>Revisión de planes:</strong> Análisis crítico de los planes</span></li>
+      <li><span><strong>Verificación con la dirección:</strong> La dirección evalúa y aprueba el plan más alineado a la Visión</span></li>
+      <li><span><strong>Implementar la instalación:</strong> Equipos de trabajo, cronograma de compras, sistema de control, ejecución de obra</span></li>
+    </ol>
+    <div class="green-box" style="margin-top:12px;">
+      <strong>Monitoreo y Mejora Continua:</strong> Equipo de planificación da seguimiento; equipo de proyecto da el cierre. Se genera documentación para operación y mantenimiento + plan de mejora continua.
+    </div>
+    <div class="warn-box">
+      <strong>Costos de modificaciones:</strong> Cuanto más exacta sea la planificación, menores modificaciones serán necesarias. Los costos de cambio son mayores cuanto más avanzada esté la obra.
+    </div>
+  </div>
+
+  <div class="card amber">
+    <span class="crit-tag tag-media">🟡 Criticidad Media</span>
+    <h3>Marco Legal y Técnico</h3>
+    <div class="table-wrap">
+      <table class="t">
+        <tr><th>Concepto</th><th>Definición</th><th>Jerarquía</th></tr>
+        <tr><td>Ley</td><td>Precepto dictado por autoridad competente que manda o prohíbe algo</td><td>Máxima (nacionales > provinciales)</td></tr>
+        <tr><td>Cuerpo normativo / Código</td><td>Conjunto de normas que regula una actividad (urbanístico, edificación, tránsito)</td><td>Alta</td></tr>
+        <tr><td>Norma técnica (IRAM)</td><td>Documento que establece reglas y criterios para usos comunes y repetidos</td><td>Media</td></tr>
+        <tr><td>Norma interna</td><td>Igual que norma técnica pero establecida por el propio establecimiento</td><td>Interna</td></tr>
+        <tr><td>Especificación técnica</td><td>Acuerdo entre partes para la fabricación de un bien</td><td>Contractual</td></tr>
+      </table>
+    </div>
+    <div class="danger-box" style="margin-top:10px;">
+      <strong>⚠️ Trampas de examen:</strong> La <em>normalización</em> es la actividad que establece disposiciones para usos comunes y repetidos (definición ISO). No confundir con norma técnica (definición IRAM).
+    </div>
+  </div>
+
+  <div class="card danger">
+    <span class="crit-tag tag-examen">💗 Trampa de Examen</span>
+    <h3>Preguntas tipo de la Unidad 1</h3>
+    <ul>
+      <li>¿Defina planeación de instalaciones e indique al menos cuatro tareas que realiza?</li>
+      <li>¿Cuáles son las etapas que definen la planeación de instalaciones?</li>
+      <li>¿Por qué el estudio de la Intralogística reemplaza al tratado de Manejo de Materiales y Distribución de Planta?</li>
+      <li>¿Indique al menos cuatro objetivos de la planeación de instalaciones?</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     UNIDAD 2: Materiales a mover / Manejo manual de cargas
+══════════════════════════════════════ -->
+<section id="sec-u2">
+  <div class="section-title">
+    <div class="section-icon ic-cyan">📦</div>
+    <div>
+      <h2>Unidad 2 — Materiales a Mover / Manejo Manual de Cargas</h2>
+      <div class="sec-sub">Cadena de valor, principios del manejo, manejo manual, ergonomía</div>
+    </div>
+  </div>
+
+  <div class="card info">
+    <span class="crit-tag tag-alta">🔴 Criticidad Alta</span>
+    <h3>Cadena de Valor y Sistema de Valor (Porter)</h3>
+    <p>El <strong>valor</strong> de un producto es la cantidad (en unidades monetarias) que los compradores están dispuestos a pagar. El éxito de una organización = valor del producto > costo de generarlo. La diferencia es el <strong>margen</strong>.</p>
+    <div class="grid-2" style="margin-top:12px;">
+      <div class="highlight">
+        <strong>Sistema PUSH:</strong> La producción empuja al mercado. Se produce basado en una previsión de demanda y se almacena hasta la venta.
+      </div>
+      <div class="warn-box">
+        <strong>Sistema PULL:</strong> El mercado tira de la producción. Se produce únicamente cuando existe una demanda real del cliente.
+      </div>
+    </div>
+    <div class="green-box" style="margin-top:12px;">
+      <strong>Cadena de Suministro:</strong> Comprar, contratar y distribuir productos a clientes internos y externos, con el mayor nivel de servicio compatible con un buen control de activos, optimización de inventarios y costos de distribución.
+    </div>
+  </div>
+
+  <div class="card cyan">
+    <span class="crit-tag tag-alta">🔴 Criticidad Alta</span>
+    <h3>Manejo de Materiales — Conceptos Básicos y Costos</h3>
+    <div class="danger-box">
+      <strong>⚡ Concepto CLAVE:</strong> El manejo de materiales <strong>NO genera valor</strong>. Es una actividad soporte. Optimizar su costo = optimizar la cadena de valor del producto.
+    </div>
+    <p style="margin-top:12px;">El costo del manejo de materiales puede variar entre el <strong>30 y 85%</strong> del costo total de colocar un producto en el mercado en toda la cadena de suministros.</p>
+    <div class="highlight" style="margin-top:10px;">
+      <strong>Manejar ≠ Mover:</strong> Manejar materiales es más complejo. La diferencia radica en la optimización económica del resultado deseado.
+    </div>
+    <p style="margin-top:12px;"><strong>Bases para reducir costos:</strong></p>
+    <ul>
+      <li>Optimizar el flujo de materiales: <em>mover una vez por tarea</em></li>
+      <li>Utilizar sistemas automatizados</li>
+      <li>Optimizar las unidades de carga</li>
+      <li>Optimizar los espacios (usar la altura)</li>
+      <li>Mecanizar y automatizar los movimientos</li>
+    </ul>
+  </div>
+
+  <div class="card info">
+    <span class="crit-tag tag-alta">🔴 Criticidad Alta – Los 10 Principios</span>
+    <h3>Principios del Manejo de Materiales (MHI)</h3>
+    <p style="margin-bottom:12px;">Se basan en: el <strong>material (QUÉ)</strong>, el movimiento <strong>(CUÁNDO Y DÓNDE)</strong> y los métodos <strong>(CÓMO Y QUIÉN)</strong>.</p>
+    <div class="table-wrap">
+      <table class="t">
+        <tr><th>Principio</th><th>Descripción</th><th>Puntos Clave</th></tr>
+        <tr><td>a) Planeamiento</td><td>Todo manejo debe ser resultado de un plan general (QUÉ, CUÁNDO/DÓNDE, CÓMO/QUIÉN)</td><td>Refleja objetivos estratégicos · Equipo interdisciplinario · Documentado · Alineado con ingeniería de productos</td></tr>
+        <tr><td>b) Estandarización</td><td>Métodos, equipos, controles y software deben estandarizarse</td><td>Aplica a medidas, pesos, procedimientos y equipamientos ⚠️</td></tr>
+        <tr><td>c) Trabajo</td><td>Minimizar el trabajo de manejo sin atentar contra la productividad</td><td>Medición: flujo × distancia · Eliminar movimientos innecesarios · Usar gravedad · Línea recta</td></tr>
+        <tr><td>d) Ergonomía</td><td>Reconocer capacidades y limitaciones humanas al diseñar tareas</td><td>Minimizar trabajo manual · Equipo intrínsecamente seguro · Esfuerzo físico Y mental</td></tr>
+        <tr><td>e) Unidad de carga</td><td>Tamaño y peso adecuados para un flujo correcto</td><td>Evitar movimiento individual · El tamaño puede cambiar · Consistente con estrategia de manufactura</td></tr>
+        <tr><td>f) Utilización del espacio</td><td>Uso efectivo y eficiente de todo el espacio disponible</td><td>Considerar espacio cúbico · Eliminar desorden · Usar espacio aéreo</td></tr>
+        <tr><td>g) Sistema</td><td>Movimiento, almacenamiento y embalaje integrados al sistema productivo</td><td>Integrado con CS y logística inversa · Inventario mínimo · Sistema informativo integrado</td></tr>
+        <tr><td>h) Automatización</td><td>Automatizar siempre que sea posible para eliminar MO repetitiva o insegura</td><td>Reingeniería previa a la automatización · Integrar con ERP · Minimizar interfaces</td></tr>
+        <tr><td>i) Ambiental</td><td>Considerar impacto ambiental y consumo energético</td><td>Cumplir normas locales · Pallets/contenedores reutilizables · Contemplar riesgos de contaminación</td></tr>
+        <tr><td>j) Ciclo de vida ⚠️</td><td>Análisis técnico-económico del ciclo de vida del equipamiento</td><td>Pregunta de examen frecuente</td></tr>
+      </table>
+    </div>
+    <div class="danger-box" style="margin-top:12px;">
+      <strong>⚠️ Pregunta examen — Principio de Estandarización:</strong> La estandarización aplica a <em>medidas, pesos, procedimientos operativos y equipamientos</em>.
+    </div>
+  </div>
+
+  <div class="card green">
+    <span class="crit-tag tag-alta">🔴 Criticidad Alta</span>
+    <h3>Industria 4.0 / Intralogística 4.0</h3>
+    <div class="table-wrap">
+      <table class="t">
+        <tr><th>Revolución</th><th>Período</th><th>Característica</th></tr>
+        <tr><td>1ª RI</td><td>~1760</td><td>Energía de vapor, mecanización</td></tr>
+        <tr><td>2ª RI</td><td>1875–1914</td><td>Gas, electricidad, acero, petróleo, teléfono, radio</td></tr>
+        <tr><td>3ª RI</td><td>2006</td><td>Energías renovables, edificios sustentables, redes inteligentes</td></tr>
+        <tr><td>Industria 4.0</td><td>~2014/16</td><td>IA, robótica, IoT, analítica, nanotecnología, cognitivas</td></tr>
+      </table>
+    </div>
+    <div class="highlight" style="margin-top:12px;">
+      <strong>Ciclo PDP (Physical-Digital-Physical):</strong><br>
+      1. Físico → Digital: Captura información y crea registro digital<br>
+      2. Digital → Digital: Analítica avanzada e IA para descubrir información relevante<br>
+      3. Digital → Físico: Algoritmos traducen decisiones en acciones reales
+    </div>
+    <p style="margin-top:10px;"><strong>Herramientas de Intralogística 4.0:</strong> IoT · WMS · Robótica colaborativa · Big Data · Sistemas de mantenimiento predictivo de equipos</p>
+  </div>
+
+  <div class="card amber">
+    <span class="crit-tag tag-alta">🔴 Criticidad Alta</span>
+    <h3>Manejo Manual de Cargas — Seguridad Laboral</h3>
+    <div class="grid-2" style="margin-top:10px;">
+      <div class="danger-box">
+        <strong>Leyes aplicables:</strong><br>
+        • Ley 19.587 — Higiene y Seguridad en el Trabajo<br>
+        • Ley 24.557 — Riesgos del Trabajo
+      </div>
+      <div class="table-wrap">
+        <table class="t">
+          <tr><th>Tipo de Accidente</th><th>Definición</th></tr>
+          <tr><td>AT (Accidente de Trabajo)</td><td>Ocurrido en el curso o relación con el trabajo</td></tr>
+          <tr><td>EP (Enfermedad Profesional)</td><td>Contraída por exposición a factores de riesgo laborales</td></tr>
+          <tr><td>IT (Accidente Itinere)</td><td>En el recorrido directo entre trabajo y: casa / lugar donde come / lugar donde cobra</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="warn-box" style="margin-top:12px;">
+      <strong>Tipos de movimiento de cargas:</strong><br>
+      • <strong>Manual:</strong> Realizado por el trabajador con su propia energía<br>
+      • <strong>Mecanizado:</strong> Mediante máquinas operadas por el trabajador o automáticamente<br>
+      • <strong>Por gravedad:</strong> Dispositivos que aprovechan la fuerza gravitatoria
+    </div>
+  </div>
+
+  <div class="card cyan">
+    <span class="crit-tag tag-alta">🔴 Criticidad Alta – Sale en examen</span>
+    <h3>Carga de Trabajo y Trabajo Muscular</h3>
+    <div class="grid-2" style="margin-top:10px;">
+      <div class="highlight">
+        <strong>Trabajo muscular ESTÁTICO:</strong><br>
+        Contracción muscular continua mantenida durante un tiempo. Ej: sostener un balde cargado. Presiona todos los músculos continuamente.
+      </div>
+      <div class="warn-box">
+        <strong>Trabajo muscular DINÁMICO:</strong><br>
+        Sucesión periódica de tensiones y relajamientos musculares. Ej: hachar un tronco. El dinámico es entre <strong>10 y 15 veces más que el estático</strong>.
+      </div>
+    </div>
+    <div class="table-wrap" style="margin-top:14px;">
+      <table class="t">
+        <tr><th>Tipo de Trabajo</th><th>Descripción</th><th>Ejemplos</th><th>Efectos en el cuerpo</th></tr>
+        <tr><td>Ligero</td><td>Poco movimiento físico, realizado sentado o con mínimos desplazamientos</td><td>Oficina, atención al cliente, tareas administrativas</td><td>Bajo impacto cardiovascular y muscular; problemas posturales si es prolongado</td></tr>
+        <tr><td>Moderado</td><td>Más movimiento: caminar, levantar objetos ligeros, esfuerzo continuo pero no excesivo</td><td>Comercio, enfermería, fábrica (operaciones sin cargas pesadas), jardinería</td><td>Mayor uso muscular y leve demanda cardiovascular; fatiga moderada con el tiempo</td></tr>
+        <tr><td>Pesado</td><td>Gran esfuerzo físico con movimientos repetitivos y manipulación de cargas moderadas a pesadas</td><td>Construcción, carpintería, agricultura, almacenes, carga y descarga</td><td>Alta demanda cardiovascular y muscular sostenida; fatiga frecuente en jornadas largas</td></tr>
+      </table>
+    </div>
+    <div class="highlight" style="margin-top:12px;">
+      <strong>Determinación de la carga física:</strong><br>
+      MB (Metabolismo Basal) = energía mínima para funciones básicas<br>
+      MO (Metabolismo de Ocio) = actividades como aseo, vestirse<br>
+      MT (Metabolismo por Trabajo) = trabajo manual estático (postura) + muscular dinámico (desplazamiento, esfuerzos, sostenimiento)
+    </div>
+    <div class="warn-box" style="margin-top:10px;">
+      <strong>Convenio OIT C127/67:</strong> Define "transporte manual de carga" como aquel en que el peso es <em>totalmente soportado por un trabajador</em>, incluyendo levantamiento y colocación. Joven trabajador = menor de 18 años. Se aplica a TODOS los sectores de actividad económica.
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     UNIDAD 3: Localización de la Planta
+══════════════════════════════════════ -->
+<section id="sec-u3">
+  <div class="section-title">
+    <div class="section-icon ic-amber">📍</div>
+    <div>
+      <h2>Unidad 3 — Localización de la Planta</h2>
+      <div class="sec-sub">Factores, métodos cualitativos y cuantitativos, modelos de decisión</div>
+    </div>
+  </div>
+
+  <div class="card amber">
+    <span class="crit-tag tag-alta">🔴 Criticidad Alta</span>
+    <h3>Conceptos Fundamentales de Localización</h3>
+    <div class="danger-box">
+      <strong>⚠️ Concepto clave:</strong> La ubicación de la planta industrial es una <strong>decisión a largo plazo</strong> que siempre tendrá un impacto económico.
+    </div>
+    <div class="highlight" style="margin-top:12px;">
+      <strong>Factor de localización:</strong> Variable que influye en la localización de una planta industrial y que puede ser medida, permitiendo ser utilizada en una matriz de decisión.
+    </div>
+    <div class="grid-2" style="margin-top:12px;">
+      <div class="warn-box">
+        <strong>Macro localización:</strong> Selección de la región / zona geográfica donde se instalará la planta. Va de lo general a lo particular.
+      </div>
+      <div class="highlight">
+        <strong>Micro localización:</strong> Selección del sitio específico (terreno) dentro de la macro localización elegida.
+      </div>
+    </div>
+    <div class="green-box" style="margin-top:12px;">
+      <strong>Globalización (pregunta de examen):</strong> Es el intercambio <em>balanceado</em> de productos entre países. Lo hizo posible el manejo de materiales y los sistemas de transporte modernos. Desde 2007, incorporó nuevos factores de localización.
+    </div>
+  </div>
+
+  <div class="card info">
+    <span class="crit-tag tag-alta">🔴 Criticidad Alta</span>
+    <h3>Restricciones para la Localización</h3>
+    <p>Las principales restricciones a considerar:</p>
+    <ul style="margin-top:10px;">
+      <li><strong>Producto:</strong> Las características del producto pueden definir la ubicación (ej: explotación de gas → la planta debe estar donde está el recurso)</li>
+      <li><strong>Políticas:</strong> Leyes locales, provinciales o nacionales que regulan la actividad</li>
+      <li><strong>Mercado:</strong> Proximidad a los clientes o puntos de distribución</li>
+      <li><strong>Materias Primas:</strong> Cercanía a proveedores de insumos críticos</li>
+      <li><strong>Mano de Obra:</strong> Disponibilidad y costo de la MO calificada</li>
+    </ul>
+  </div>
+
+  <div class="card cyan">
+    <span class="crit-tag tag-alta">🔴 Criticidad Alta – Métodos cuantitativos obligatorios</span>
+    <h3>Métodos de Localización</h3>
+    <div class="grid-2" style="margin-bottom:14px;">
+      <div class="highlight">
+        <strong>Métodos NO cuantificables:</strong><br>
+        • Antecedentes industriales<br>
+        • Factor preferencial<br>
+        • Factor dominante
+      </div>
+      <div class="warn-box">
+        <strong>Métodos CUANTIFICABLES:</strong><br>
+        • Selección de factores<br>
+        • Relevamiento y validación de datos<br>
+        • Matriz de decisión<br>
+        • Localización de la planta
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table class="t">
+        <tr><th>Método</th><th>Funcionamiento</th><th>Criterio de selección</th><th>Subjetividad</th></tr>
+        <tr><td>Cribado</td><td>Dibujar en plano las mejores áreas por factor y superponer. No se usa en práctica.</td><td>Superposición visual</td><td>🔴 Muy Subjetivo</td></tr>
+        <tr><td>Cuantitativo de Puntos</td><td>Factores con peso específico relacionados al costo; se convierten a índices. Se elige el menor.</td><td>Menor puntaje ponderado</td><td>🟡 Medio</td></tr>
+        <tr><td>Análisis Funcional</td><td>Compara A/B y B/C por factor; entre opciones iguales se ajustan los subjetivos.</td><td>Menor índice funcional</td><td>🟡 Medio</td></tr>
+        <tr><td>Brown Gibson</td><td>Separa factores objetivos (costos) y subjetivos (calificaciones). Los combina con K (70%/30%).</td><td>Mayor MPL (Medida Preferencial de Localización)</td><td>🟢 Menor</td></tr>
+        <tr><td>Costo/Volumen</td><td>Compara costo total vs. demanda para cada localización. Se elige la de menor costo a cada volumen.</td><td>Menor costo total</td><td>🟢 Muy Objetivo</td></tr>
+        <tr><td>Ambiente de Incertidumbre</td><td>Compara costo del producto contra la demanda y elige la menor</td><td>Menor costo esperado</td><td>🟢 Objetivo</td></tr>
+        <tr><td>Ambiente de Riesgo</td><td>Suma la probabilidad de ocurrencia por costo (Ci × Ni)</td><td>Menor valor esperado</td><td>🟢 Objetivo</td></tr>
+      </table>
+    </div>
+
+    <div class="danger-box" style="margin-top:12px;">
+      <strong>⚠️ Pregunta de examen — Brown Gibson:</strong><br>
+      • <strong>W:</strong> Se compara bajo criterio; si es MENOR → va 0; si es MAYOR O IGUAL → va 1. (Factores subjetivos por comparación de pares)<br>
+      • <strong>R:</strong> Se compara por locación<br>
+      • <strong>K:</strong> Peso específico de valores objetivos vs. subjetivos (generalmente 70%/30%)<br>
+      • <strong>MPL:</strong> Medida Preferencial de Localización. Se elige la <em>MAYOR</em>.<br>
+      • El método siempre busca <strong>disminuir la subjetividad</strong> del proceso de decisión.
+    </div>
+    <div class="warn-box" style="margin-top:10px;">
+      <strong>Centros de Servicio:</strong> Un centro de servicio NO se comporta como una planta porque <em>no tiene un proceso productivo</em> ni evalúa su cercanía al mercado de la misma forma.
+    </div>
+  </div>
+
+  <div class="card danger">
+    <span class="crit-tag tag-examen">💗 Trampa de Examen</span>
+    <h3>Conceptos Trampa — Localización</h3>
+    <ul>
+      <li>¿Qué es un valor <strong>subjetivo</strong>? → Una calificación que no puede medirse en términos monetarios objetivos (ej: clima, calidad de vida, gestión ambiental)</li>
+      <li>¿Qué es un valor <strong>objetivo</strong>? → Un valor medido en costos reales y comparables ($/ton, costos de transporte, costos de MO)</li>
+      <li>¿Qué es la <strong>ponderación</strong>? → El peso específico asignado a cada factor en la matriz de decisión según su importancia relativa para el proyecto</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     UNIDAD 4: Instrumento de Gestión Ambiental
+══════════════════════════════════════ -->
+<section id="sec-u4">
+  <div class="section-title">
+    <div class="section-icon ic-green">🌿</div>
+    <div>
+      <h2>Unidad 4 — Instrumento de Gestión Ambiental</h2>
+      <div class="sec-sub">Impacto ambiental, EIA, categorización, certificados ambientales</div>
+    </div>
+  </div>
+
+  <div class="card green">
+    <span class="crit-tag tag-alta">🔴 Criticidad Alta</span>
+    <h3>Impacto Ambiental y Evaluación (EIA)</h3>
+    <div class="highlight">
+      <strong>Impacto ambiental:</strong> Cualquier cambio neto (positivo o negativo) que se provoca sobre el ambiente como consecuencia de acciones antrópicas que puedan afectar la salud, la calidad de vida, la capacidad productiva de los recursos naturales y los procesos ecológicos esenciales.
+    </div>
+    <div class="green-box" style="margin-top:12px;">
+      <strong>EIA (Evaluación de Impacto Ambiental):</strong> Procedimiento técnico-administrativo para identificar, interpretar y prevenir los efectos de corto, mediano y largo plazo que una actividad, proyecto o emprendimiento pueda causar en el ambiente. Es un <em>instrumento / herramienta de política ambiental</em> que le permite al Estado conocer, valorar y prevenir los impactos.
+    </div>
+  </div>
+
+  <div class="card cyan">
+    <span class="crit-tag tag-alta">🔴 Criticidad Alta – Sale el orden de pasos</span>
+    <h3>Etapas del Procedimiento de Evaluación de Impacto Ambiental</h3>
+    <ol class="steps">
+      <li><span><strong>Inicio del trámite:</strong> En CABA → Agencia de Protección Ambiental. En PBA → OPDS + autoridades municipales. A veces se requiere primero un "Certificado de Uso Conforme" ante autoridades urbanísticas.</span></li>
+      <li><span><strong>Categorización de la actividad:</strong> Define el status o grado de complejidad ambiental del proyecto. Optimiza tiempos, transparenta la gestión y define procedimientos y exigencias según complejidad.</span></li>
+      <li><span><strong>Manifiesto de Impacto Ambiental (MIA):</strong> Documento con síntesis descriptiva de las acciones a realizar. Permite a la Autoridad de Aplicación evaluar si el impacto se ajusta a las normas. Puede incluir compromisos voluntarios.</span></li>
+      <li><span><strong>Estudio de Impacto Ambiental (EsIA):</strong> Herramienta fundamental para asegurar el cuidado del ambiente. Proporciona metodología sistemática para identificar alteraciones y proponer modificaciones o mitigaciones.</span></li>
+      <li><span><strong>Dictamen Técnico:</strong> La Autoridad de Aplicación analiza el EsIA y elabora el dictamen técnico.</span></li>
+      <li><span><strong>Participación Ciudadana:</strong> Audiencia pública convocada mediante acto administrativo publicado en el boletín oficial y medios masivos.</span></li>
+      <li><span><strong>Declaración de Impacto Ambiental (DIA):</strong> La autoridad puede: otorgar autorización / negar la autorización / otorgar autorización condicional.</span></li>
+      <li><span><strong>Certificado de Aptitud Ambiental:</strong> Se extiende cuando se aprueba la actividad. Acredita cumplimiento de la normativa. Incluye: nombre del titular, ubicación/superficie, rubro, categoría y plazo de vigencia.</span></li>
+    </ol>
+  </div>
+
+  <div class="card amber">
+    <span class="crit-tag tag-alta">🔴 Criticidad Alta</span>
+    <h3>Nivel de Complejidad Ambiental (NCA) — Categorización</h3>
+    <div class="table-wrap">
+      <table class="t">
+        <tr><th>Sigla</th><th>Factor</th><th>Descripción</th></tr>
+        <tr><td>Ru</td><td>Rubro</td><td>Índole de materias primas, materiales que manipulen, elaboren o almacenen, y el proceso que desarrollen</td></tr>
+        <tr><td>ER</td><td>Efluentes y Residuos</td><td>Calidad de los efluentes y residuos que genere</td></tr>
+        <tr><td>Ri</td><td>Riesgos</td><td>Potenciales: incendio, explosión, químico, acústico, aparatos a presión</td></tr>
+        <tr><td>Di</td><td>Dimensionamiento</td><td>Dotación de personal, potencia instalada y superficie</td></tr>
+        <tr><td>Lo</td><td>Localización</td><td>Zonificación municipal e infraestructura de servicios</td></tr>
+      </table>
+    </div>
+    <div class="grid-3" style="margin-top:14px;">
+      <div class="green-box" style="text-align:center;">
+        <strong>1ª Categoría</strong><br>Hasta 15 puntos<br><small>Impacto bajo</small>
+      </div>
+      <div class="warn-box" style="text-align:center;">
+        <strong>2ª Categoría</strong><br>Más de 15 y hasta 25 puntos<br><small>Impacto moderado</small>
+      </div>
+      <div class="danger-box" style="text-align:center;">
+        <strong>3ª Categoría</strong><br>Mayor a 25 puntos<br><small>Peligrosas: inflamables, corrosivas, radioactivas, etc.</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     UNIDAD 5: Códigos Urbanísticos y de Edificación
+══════════════════════════════════════ -->
+<section id="sec-u5">
+  <div class="section-title">
+    <div class="section-icon ic-amber">🏙️</div>
+    <div>
+      <h2>Unidad 5 — Códigos Urbanísticos y de Edificación</h2>
+      <div class="sec-sub">CABA, FOS, FOT, usos de suelo, permisos de obra, PBA, parques industriales</div>
+    </div>
+  </div>
+
+  <div class="card amber">
+    <span class="crit-tag tag-alta">🔴 Criticidad Alta</span>
+    <h3>Código Urbanístico CABA — FOS y FOT</h3>
+    <div class="grid-2" style="margin-top:12px;">
+      <div class="highlight">
+        <strong>FOS — Factor de Ocupación del Suelo:</strong><br>
+        Porcentaje de la superficie total del terreno que se puede ocupar con la proyección <em>horizontal</em> de las construcciones de todos los niveles. = <strong>% de mi parcela que puedo ocupar en el plano</strong>.
+      </div>
+      <div class="warn-box">
+        <strong>FOT — Factor de Ocupación Total:</strong><br>
+        Número que, multiplicado por la superficie total de la parcela, determina la superficie <em>edificable</em> total. = <strong>Cuántos pisos puedo edificar</strong>.
+      </div>
+    </div>
+    <div class="table-wrap" style="margin-top:14px;">
+      <table class="t">
+        <tr><th>Área</th><th>Tipo</th><th>Usos admitidos</th></tr>
+        <tr><td>A1</td><td>Baja mixtura</td><td>Residencial con comercios minoristas y servicios personales de baja afluencia (menor densidad)</td></tr>
+        <tr><td>A2</td><td>Media mixtura A</td><td>Residencia, servicios y comercios de mediana afluencia</td></tr>
+        <tr><td>B3</td><td>Media mixtura B</td><td>Residencia, depósito con local de venta, servicios y comercios de mediana afluencia</td></tr>
+        <tr><td>4</td><td>Alta mixtura</td><td>Residencia, depósitos con local de venta, servicios y comercios de afluencia metropolitana (mayor densidad)</td></tr>
+        <tr><td>Otros</td><td>Portuario, UP, ARE, APH, U, UF, RU</td><td>Usos específicos según plancheta</td></tr>
+      </table>
+    </div>
+    <div class="green-box" style="margin-top:10px;">
+      <strong>Planchetas:</strong> Cada manzana de la ciudad fue categorizada con mixturas de usos de suelo. El cuadro de usos permite, por actividad y tipo de mixtura, establecer el permiso o no de construcción y sus limitaciones.
+    </div>
+  </div>
+
+  <div class="card info">
+    <span class="crit-tag tag-alta">🔴 Criticidad Alta</span>
+    <h3>Código de Edificación CABA — Permisos de Obra</h3>
+    <div class="table-wrap">
+      <table class="t">
+        <tr><th>Tipo</th><th>Alcance</th><th>Responsable mínimo</th></tr>
+        <tr><td>Aviso de Obra</td><td>Reparar, limpiar, pintar fachadas; ejecutar solados; revoques; instalar vidrieras y toldos; modificaciones menores de instalaciones</td><td>Sin profesional obligatorio</td></tr>
+        <tr><td>Permiso de Micro Obra</td><td>Demoliciones no estructurales, modificaciones e instalaciones sin límite de superficie; demoliciones estructurales, obra nueva y ampliaciones hasta 30 m²</td><td>Profesional responsable mínimo</td></tr>
+        <tr><td>Permiso de Obra Menor</td><td>Demoliciones no estructurales, modificaciones de obras e instalaciones de hasta 1000 m²</td><td>Un profesional director</td></tr>
+        <tr><td>Permiso de Obra Mayor</td><td>Demoliciones estructurales, obra nueva y ampliaciones mayores a 1000 m²</td><td>Múltiples profesionales por incumbencia</td></tr>
+      </table>
+    </div>
+    <div class="danger-box" style="margin-top:12px;">
+      <strong>⚠️ Cartel de Obra (OBLIGATORIO):</strong> Toda obra nueva debe exponer: N° de expediente · Nombre del titular · Profesionales involucrados con matrícula · Tipo de obra · Superficie a construir/demoler. La falta de cumplimiento causa la <strong>caducidad automática del permiso y clausura</strong> de la obra.
+    </div>
+  </div>
+
+  <div class="card green">
+    <span class="crit-tag tag-media">🟡 Criticidad Media</span>
+    <h3>Código de Ordenamiento Urbano PBA — Zonas Industriales</h3>
+    <div class="grid-2" style="margin-top:10px;">
+      <div class="highlight">
+        <strong>Zona Industrial:</strong> Destinada a la localización de industrias agrupadas. Se establecerá en cualquiera de las áreas, teniendo en cuenta: efectos sobre el medio ambiente, conexiones con red vial principal, provisión de energía eléctrica, desagüe industrial y agua potable.
+      </div>
+      <div class="green-box">
+        <strong>Parque Industrial:</strong> Sector de zona industrial dotado de <em>infraestructura, equipamiento y servicios públicos necesarios</em> para el asentamiento de industrias agrupadas. Debe estar circundado por cortinas forestales. Objetivo: mejorar situación económica y <strong>minimizar impacto ambiental</strong>.
+      </div>
+    </div>
+    <div class="warn-box" style="margin-top:12px;">
+      <strong>Clasificación de áreas en PBA:</strong> Áreas Rurales · Áreas Urbanas · Áreas Complementarias. En cada área pueden localizarse zonas: residencial, comercial, industrial, agropecuaria, de esparcimiento, transporte, etc.
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     UNIDAD 6: Edificios Industriales
+══════════════════════════════════════ -->
+<section id="sec-u6">
+  <div class="section-title">
+    <div class="section-icon ic-red">🏗️</div>
+    <div>
+      <h2>Unidad 6 — Edificios Industriales</h2>
+      <div class="sec-sub">Construcción sustentable, LEED, tipos de edificios, pisos industriales, cabreadas</div>
+    </div>
+  </div>
+
+  <div class="card danger">
+    <span class="crit-tag tag-alta">🔴 Criticidad Alta</span>
+    <h3>Definición y Principios de los Edificios Industriales</h3>
+    <p>Un Edificio Industrial (EI) es una estructura abierta o cerrada que en su interior ofrece <strong>bienestar y seguridad</strong> para máquinas, equipos industriales y las actividades que en él se realicen.</p>
+    <div class="grid-2" style="margin-top:12px;">
+      <div>
+        <p><strong>Principios de diseño:</strong></p>
+        <ul>
+          <li>Cumplir necesidades del proceso productivo</li>
+          <li>Soportar elementos climáticos por mínimo <strong>20 años</strong></li>
+          <li>Diseño interior/exterior agradable y confortable</li>
+          <li>Condiciones de seguridad y salud</li>
+          <li>Sistema para minimizar riesgos de emergencia</li>
+          <li>Menor consumo de energía</li>
+          <li>El costo de vida debe repagarse en la duración del proyecto</li>
+        </ul>
+      </div>
+      <div>
+        <p><strong>Características deseadas:</strong></p>
+        <ul>
+          <li>Sustentabilidad</li>
+          <li>Cuidado del medio ambiente</li>
+          <li>Flexibilidad a los cambios</li>
+          <li>Menor mantenimiento</li>
+          <li>Muy buen aspecto</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card green">
+    <span class="crit-tag tag-alta">🔴 Criticidad Alta – Sale en examen</span>
+    <h3>Construcción Sustentable y Normas LEED</h3>
+    <div class="highlight">
+      <strong>Construcción Sustentable:</strong> Características constructivas y de diseño destinadas a minimizar los impactos ambientales negativos, promoviendo sustentabilidad y mitigando el cambio climático. Incluye etapas de planificación, diseño, construcción, mantenimiento, renovación, utilización y eliminación.
+    </div>
+    <div class="grid-2" style="margin-top:12px;">
+      <div class="warn-box">
+        <strong>Criterios constructivos relacionados con:</strong><br>
+        • Consumo de energía y agua<br>
+        • Uso de fuentes renovables<br>
+        • Materiales más amigables con el MA<br>
+        • Gestión de residuos
+      </div>
+      <div class="green-box">
+        <strong>Consumo de energía (aspecto ambiental más relevante):</strong><br>
+        • Acondicionamiento térmico<br>
+        • Calentamiento de agua<br>
+        • Electrodomésticos<br>
+        • Iluminación<br>
+        • Factor potencia
+      </div>
+    </div>
+    <div class="table-wrap" style="margin-top:14px;">
+      <table class="t">
+        <tr><th>Norma</th><th>País</th></tr>
+        <tr><td>HQE</td><td>Francia</td></tr>
+        <tr><td>DGNB</td><td>Alemania</td></tr>
+        <tr><td>BREEAM</td><td>Inglaterra</td></tr>
+        <tr><td>LEED</td><td>EEUU (Aplicada en Argentina)</td></tr>
+      </table>
+    </div>
+    <div class="highlight" style="margin-top:12px;">
+      <strong>Normas LEED — Mide y monitorea:</strong> Localización sostenible · Ahorros de agua · Eficiencia energética · Selección de materiales y recursos · Calidad ambiental interior · Innovación y diseño. Nueva construcción reduce emisiones hasta un <strong>40%</strong>.
+    </div>
+  </div>
+
+  <div class="card cyan">
+    <span class="crit-tag tag-alta">🔴 Criticidad Alta</span>
+    <h3>Elementos Estructurales</h3>
+    <div class="table-wrap">
+      <table class="t">
+        <tr><th>Material</th><th>Características</th><th>Uso principal</th></tr>
+        <tr><td>Hormigón Simple</td><td>Buena resistencia a la compresión; poca resistencia a la tracción; fractura frágil</td><td>Solo elementos comprimidos</td></tr>
+        <tr><td>Hormigón Armado</td><td>Acero + hormigón: acero aumenta resistencia a la tracción y ductilidad (10:1 mecánico)</td><td>Estructuras en flexión, columnas, vigas</td></tr>
+        <tr><td>Hormigón Pretensado</td><td>Acero tensado comprime el hormigón (armaduras activas); reduce trabajo en tracción y fisuras</td><td>Grandes luces, losas de gran resistencia</td></tr>
+        <tr><td>Hormigón Avanzado</td><td>Incorpora otros elementos para mejorar prestaciones: resistencia, fluidez, etc.</td><td>Aplicaciones especiales de alta exigencia</td></tr>
+        <tr><td>Perfiles Laminados Caliente</td><td>Laminado a >926°C. Alta resistencia y flexión. Tratamiento anticorrosivo obligatorio.</td><td>Elementos estructurales, guías, canales, soportes</td></tr>
+        <tr><td>Perfiles Laminados Frío</td><td>Por debajo de temperatura de recristalización. Resistencia +20% por deformación. Mejor acabado.</td><td>Cargas livianas, cerramientos, cascara del edificio</td></tr>
+        <tr><td>Mallas Electrosoldadas</td><td>Alambres de acero IRAM-IAS 500-26. Tensión fluencia 500 MPa.</td><td>Losas, fundaciones, muros, pavimentos, pisos industriales</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card info">
+    <span class="crit-tag tag-alta">🔴 Criticidad Alta</span>
+    <h3>Tipos de Edificios según Construcción</h3>
+    <div class="grid-3" style="margin-top:10px;">
+      <div class="highlight">
+        <strong>Estructura de Acero</strong><br>
+        Techo parabólico/plano: almacenaje de mercadería, diseño económico.<br>
+        <strong>Naves Industriales:</strong> Grandes luces entre columnas, importantes instalaciones, suspensión de equipos en cabreadas/cerchas.
+      </div>
+      <div class="warn-box">
+        <strong>Hormigón Armado Prefabricado</strong><br>
+        Diseños estándares y montaje rápido. Alta rigidez a sismos y viento. Bajo costo de mantenimiento. <em>Desventaja:</em> Modificaciones tienen alto costo (paneles estandarizados).
+      </div>
+      <div class="green-box">
+        <strong>Construcción Híbrida</strong><br>
+        Acero + hormigón trabajando conjuntamente. <em>Ventajas:</em> Estructuras más livianas, mayores luces libres, menor costo y mayor rapidez de construcción.
+      </div>
+    </div>
+  </div>
+
+  <div class="card amber">
+    <span class="crit-tag tag-alta">🔴 Criticidad Alta – Sale en examen</span>
+    <h3>Pisos Industriales — Formación y Capas</h3>
+    <p>Para su diseño considerar: uso del piso, magnitud de carga, tipo de cargas (móviles, puntuales o distribuidas), terminado superficial y estética.</p>
+    <div class="table-wrap" style="margin-top:12px;">
+      <table class="t">
+        <tr><th>Capa</th><th>Nombre</th><th>Descripción</th></tr>
+        <tr><td>I</td><td>Subrasante</td><td>El terreno natural graduado y compactado. Soporte base para el piso.</td></tr>
+        <tr><td>II</td><td>Base y Sub-Base</td><td>Arenas, gravas-arenas, rocas trituradas o combinaciones. Mejora distribución de cargas.</td></tr>
+        <tr><td>III</td><td>Barrera de vapor</td><td>Requerida cuando el subrasante es muy húmedo. Láminas de polietileno negro (&lt;0.25mm).</td></tr>
+        <tr><td>IV</td><td>Losa de concreto</td><td>Hormigón simple, armado (mallas), especiales de rápido secado y baja dilatación. Tipo SOLUXA para losas mayores con menos juntas.</td></tr>
+        <tr><td>V</td><td>Acabado especial</td><td>Para pisos de alta calidad: allanado intenso + losa de mayor resistencia.</td></tr>
+        <tr><td>VI</td><td>Juntas</td><td>Evitar grietas por cambios volumétricos (contracción por secado o dilatación térmica).</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card cyan">
+    <span class="crit-tag tag-media">🟡 Criticidad Media</span>
+    <h3>Cabreadas (Cerchas) y Vigas de Repartición</h3>
+    <p>Parámetros básicos de un edificio industrial: <code>L</code> = distancia entre columnas · <code>H</code> = altura libre de piso a cabreadas · <code>Q</code> = carga portante · <code>P</code> = tipo de piso</p>
+    <div class="highlight" style="margin-top:12px;">
+      <strong>Cabreadas/Cerchas:</strong> Sistema coplanar de elementos estructurales (perfiles tipo L, acero ADN 420 o SAE 1010) conectado por sus extremos. Deben tener tratamiento anticorrosivo. Sus nodos están sometidos a esfuerzos axiales (no cambian posición relativa).
+    </div>
+    <div class="grid-2" style="margin-top:12px;">
+      <div class="warn-box">
+        <strong>Montaje 1er Nivel (Abulonado):</strong><br>
+        Uniones desmontables mediante grampas abulonadas. Placas de acero ADN 420 agujeradas fijadas con bulones de alta resistencia (SAE J429 Grado 8 o DIN 10.8). <em>Ventaja: permite modificaciones futuras.</em>
+      </div>
+      <div class="danger-box">
+        <strong>Montaje 2do Nivel (Soldado):</strong><br>
+        Se recorta la viga transversal y se encastra en la longitudinal, soldándose al alma y las alas. Perpendicular al primer nivel. <em>Se usa cuando NO se requieren modificaciones.</em>
+      </div>
+    </div>
+    <div class="green-box" style="margin-top:10px;">
+      <strong>Vigas de Repartición de Cargas:</strong> Perfiles metálicos anclados a los nodos de las cabreadas, que permiten la sujeción en posiciones NO coincidentes con los nodos. Su propio peso debe contabilizarse como carga.
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     UNIDAD 7: Distribución en Planta
+══════════════════════════════════════ -->
+<section id="sec-u7">
+  <div class="section-title">
+    <div class="section-icon ic-violet">🏭</div>
+    <div>
+      <h2>Unidad 7 — Distribución en Planta</h2>
+      <div class="sec-sub">Objetivos, principios, tipos de distribución, factores de distribución</div>
+    </div>
+  </div>
+
+  <div class="card info">
+    <span class="crit-tag tag-alta">🔴 Criticidad Alta</span>
+    <h3>Definición y Objetivos de la Distribución en Planta</h3>
+    <div class="highlight">
+      <strong>Definición:</strong> La distribución de planta comprende la organización física de plantas industriales y centros de servicios, nuevos o reingeniería. Es un instrumento para lograr los objetivos de la cadena de valor: eficientizar la producción, reducir costos, mejorar la cadena logística y la satisfacción del cliente.
+    </div>
+    <div class="grid-2" style="margin-top:12px;">
+      <div>
+        <p><strong>Objetivos:</strong></p>
+        <ul>
+          <li>Integración de los factores de producción</li>
+          <li>Minimizar el movimiento de materiales</li>
+          <li>Utilización del espacio cúbico</li>
+          <li>Seguridad a las personas y medio ambiente</li>
+          <li>Flexibilidad ante cambios tecnológicos y productivos</li>
+        </ul>
+      </div>
+      <div>
+        <p><strong>Espacios a considerar:</strong></p>
+        <ul>
+          <li>Movimiento de materiales</li>
+          <li>Almacenamiento (mínimo posible)</li>
+          <li>Equipos o líneas de producción</li>
+          <li>Administración</li>
+          <li>Servicios para el personal</li>
+          <li>Sistemas y servicios de planta (luz, gas, aire)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card cyan">
+    <span class="crit-tag tag-alta">🔴 Criticidad Alta</span>
+    <h3>Principios para la Distribución en Planta</h3>
+    <div class="table-wrap">
+      <table class="t">
+        <tr><th>Principio</th><th>Descripción</th></tr>
+        <tr><td>1. Satisfacción y Seguridad</td><td>Hacer la distribución más satisfactoria y segura para los trabajadores y el medio ambiente</td></tr>
+        <tr><td>2. Integración de Conjunto</td><td>La mejor distribución integra hombres, materiales, maquinaria, actividades auxiliares y demás factores</td></tr>
+        <tr><td>3. Mínima Distancia Recorrida</td><td>Reducir al mínimo posible los movimientos de materiales entre operaciones</td></tr>
+        <tr><td>4. Circulación o Flujo de Materiales</td><td>Ordenar las áreas de trabajo en el mismo orden en que se transforman o montan los materiales</td></tr>
+        <tr><td>5. Espacio Cúbico</td><td>Utilizar todo el espacio disponible, tanto horizontal como vertical</td></tr>
+        <tr><td>6. Flexibilidad</td><td>A igualdad de condiciones, es más efectiva la distribución que puede ajustarse con menor costo e inconvenientes</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card green">
+    <span class="crit-tag tag-alta">🔴 Criticidad Alta – Los 4 Tipos</span>
+    <h3>Tipos de Distribución en Planta</h3>
+    <div class="table-wrap">
+      <table class="t">
+        <tr><th>Tipo</th><th>Descripción</th><th>Características</th><th>Cuándo se usa</th></tr>
+        <tr>
+          <td>1. Posición Fija del Material</td>
+          <td>El componente principal permanece fijo. Las estaciones de trabajo llegan al material.</td>
+          <td>Bajo volumen · Control de calidad centralizado · Costo de movimiento del producto elevado · Montaje in situ</td>
+          <td>Productos grandes: aeronaves, barcos, grandes equipos (astilleros)</td>
+        </tr>
+        <tr>
+          <td>2. Por Proceso (Funcional)</td>
+          <td>Procesos similares agrupados en departamentos. Alto flujo entre departamentos.</td>
+          <td>Muy versátil · Fabricación de gran variedad · Demanda variable · Operaciones con tiempos diferentes · Máquinas no trasladables</td>
+          <td>Cuando el volumen no justifica distribución por producto. Producción intermitente o por pedido.</td>
+        </tr>
+        <tr>
+          <td>3. Por Familia de Productos</td>
+          <td>Agrupamiento de piezas similares que forman una "familia" (mismo proceso productivo). Celda de fabricación.</td>
+          <td>Flujo intenso INTRA departamento, bajo ENTRE departamentos · Seudo-producto</td>
+          <td>Variedad moderada, volumen medio. Productos con similitudes en proceso.</td>
+        </tr>
+        <tr>
+          <td>4. Por Producto (En Línea)</td>
+          <td>El producto se mueve según la secuencia de operaciones. Puestos ordenados según el proceso.</td>
+          <td>Grandes volúmenes · Producto estandarizado · Demanda estable · Equilibrio de flujo obligatorio · Alta automatización</td>
+          <td>Producción masiva continua. Avería → parada total (a menos que se duplique la máquina).</td>
+        </tr>
+      </table>
+    </div>
+    <div class="danger-box" style="margin-top:12px;">
+      <strong>⚠️ Trampa de examen — Distribución por Producto:</strong> Cualquier avería en la instalación causa una parada TOTAL de la línea, a menos que se duplique la máquina. El equilibrio del flujo es indispensable (todos los puestos con el mismo tiempo de actividad).
+    </div>
+  </div>
+
+  <div class="card amber">
+    <span class="crit-tag tag-alta">🔴 Criticidad Alta – Los 8 Factores</span>
+    <h3>Factores de Distribución en Planta</h3>
+    <div class="table-wrap">
+      <table class="t">
+        <tr><th>#</th><th>Factor</th><th>Comprende</th><th>Punto clave</th></tr>
+        <tr><td>1</td><td>Material</td><td>Forma, variedad, cantidad, operaciones y secuencias</td><td>Características físicas y químicas impactan en métodos de producción y almacenamiento. Lote óptimo de producción.</td></tr>
+        <tr><td>2</td><td>Maquinarias</td><td>Maquinaria, utilaje y equipos auxiliares</td><td>Factor de ocupación óptimo: <strong>80%</strong>. Los procesos determinan qué máquina usar. Costo-beneficio.</td></tr>
+        <tr><td>3</td><td>Hombre</td><td>MO directa, indirecta, supervisión y servicios auxiliares</td><td>Considerar: seguridad, confort (luminosidad, ventilación, temperatura, ruido) y cualificación del personal</td></tr>
+        <tr><td>4</td><td>Movimiento</td><td>Movimiento inter/intra departamental, almacenamiento, entrada/salida</td><td>NO agrega valor al producto. Minimizar eliminando manejos innecesarios. Correcto: material identificado + ruta determinada + envases adecuados + equipos adecuados.</td></tr>
+        <tr><td>5</td><td>Espera</td><td>Almacenamiento temporario y permanente, demoras</td><td>Inmovilización de materiales que no genera valor. Costos: espacio físico, guarda, financiero, manejo, oportunidad.</td></tr>
+        <tr><td>6</td><td>Servicios</td><td>Relativos al personal, material, maquinaria, salud y MA</td><td>Su ubicación debe asegurar eficiencia. Los costos indirectos deben minimizarse.</td></tr>
+        <tr><td>7</td><td>Edificio</td><td>Tipos interiores/exteriores, distribución e instalaciones</td><td>El edificio es parte integrante de la distribución. Limita las operaciones. Debe considerar expansiones y ciclo de vida.</td></tr>
+        <tr><td>8</td><td>Cambio</td><td>Versatilidad, flexibilidad y expansión</td><td>El cambio en procesos productivos es constante. Reglas: definir horizonte de tiempo, aceptar imponderables, diseñar con flexibilidad.</td></tr>
+      </table>
+    </div>
+    <div class="highlight" style="margin-top:12px;">
+      <strong>Clasificación del proceso de producción:</strong><br>
+      • <strong>Fabricación:</strong> Cambio de forma del material<br>
+      • <strong>Tratamiento:</strong> Cambio de las características del material<br>
+      • <strong>Montaje:</strong> Adición de otros materiales a uno inicial
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SIMULADOR DE PARCIAL
+══════════════════════════════════════ -->
+<section id="sec-faq">
+  <div class="section-title">
+    <div class="section-icon ic-pink">❓</div>
+    <div>
+      <h2>Simulador de Parcial</h2>
+      <div class="sec-sub">Preguntas tipo V/F y desarrollo — clickeá para revelar la respuesta</div>
+    </div>
+  </div>
+
+  <div class="card info" style="margin-bottom:24px;">
+    <p>Las siguientes preguntas replican el estilo del parcial de Manejo de Materiales. Incluyen preguntas de desarrollo, V/F y trampas conceptuales frecuentes.</p>
+  </div>
+
+  <!-- V/F -->
+  <div class="faq-item" id="faq1">
+    <div class="faq-q" onclick="toggleFaq('faq1')">
+      <h4><span class="q-icon">1</span>V/F: El manejo de materiales es una actividad que agrega valor al producto y por eso debe maximizarse.</h4>
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a">
+      <span class="verdict v-false">❌ FALSO</span>
+      <p>El manejo de materiales es una <strong>actividad soporte que NO genera valor</strong>. Precisamente por esto se busca minimizarlo y optimizar su costo. El objetivo es lograr el movimiento necesario con el menor esfuerzo y costo posibles. Optimizar el costo del manejo de materiales = optimizar la cadena de valor del producto.</p>
+    </div>
+  </div>
+
+  <div class="faq-item" id="faq2">
+    <div class="faq-q" onclick="toggleFaq('faq2')">
+      <h4><span class="q-icon">2</span>V/F: La Intralogística y el Manejo de Materiales son conceptos equivalentes y sinónimos.</h4>
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a">
+      <span class="verdict v-false">❌ FALSO</span>
+      <p>La Intralogística es un concepto más amplio e integrador que reemplaza al tratado de Manejo de Materiales y Distribución de Planta. Incluye además la gestión de stocks, sistemas de automatización y la relación con la cadena de suministro externa. La Intralogística también considera los medios de transporte externos a la planta como eslabón de la CS.</p>
+    </div>
+  </div>
+
+  <div class="faq-item" id="faq3">
+    <div class="faq-q" onclick="toggleFaq('faq3')">
+      <h4><span class="q-icon">3</span>V/F: El Principio de Estandarización del Manejo de Materiales aplica solo a los equipos y maquinarias utilizados.</h4>
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a">
+      <span class="verdict v-false">❌ FALSO</span>
+      <p>El Principio de Estandarización aplica a <strong>medidas, pesos, procedimientos operativos Y equipamientos</strong>. No se limita solo a los equipos. Además, la estandarización, flexibilidad y modularidad no siempre son compatibles entre sí, pero se debe maximizar la racionalización en todos los procesos.</p>
+    </div>
+  </div>
+
+  <div class="faq-item" id="faq4">
+    <div class="faq-q" onclick="toggleFaq('faq4')">
+      <h4><span class="q-icon">4</span>V/F: En el método Brown Gibson, se elige la localización con la MENOR Medida Preferencial de Localización (MPL).</h4>
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a">
+      <span class="verdict v-false">❌ FALSO</span>
+      <p>En el método Brown Gibson, la MPL (Medida Preferencial de Localización) representa la preferencia combinada de factores objetivos y subjetivos. Se elige la localización con la <strong>MAYOR MPL</strong>, ya que representa la opción más favorable en la combinación de factores. En los demás métodos cuantitativos se elige el menor índice (menor costo).</p>
+    </div>
+  </div>
+
+  <div class="faq-item" id="faq5">
+    <div class="faq-q" onclick="toggleFaq('faq5')">
+      <h4><span class="q-icon">5</span>V/F: El trabajo muscular dinámico consume entre 10 y 15 veces más energía que el estático.</h4>
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a">
+      <span class="verdict v-true">✅ VERDADERO</span>
+      <p>El trabajo muscular dinámico (sucesión periódica de tensiones y relajamientos musculares) es entre 10 y 15 veces más demandante en términos energéticos que el trabajo muscular estático (contracción continua mantenida). Ejemplo de estático: sostener un balde cargado. Ejemplo de dinámico: hachar un tronco.</p>
+    </div>
+  </div>
+
+  <div class="faq-item" id="faq6">
+    <div class="faq-q" onclick="toggleFaq('faq6')">
+      <h4><span class="q-icon">6</span>V/F: El FOS (Factor de Ocupación del Suelo) determina cuántos pisos puedo construir en una parcela.</h4>
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a">
+      <span class="verdict v-false">❌ FALSO</span>
+      <p>El <strong>FOS</strong> determina el porcentaje de la superficie del terreno que puede ocuparse en la proyección horizontal (planta baja). Es el "% de mi parcela que puedo ocupar en el plano". El que determina cuántos pisos puedo construir es el <strong>FOT</strong> (Factor de Ocupación Total), que multiplicado por la superficie de la parcela da la superficie edificable total.</p>
+    </div>
+  </div>
+
+  <div class="faq-item" id="faq7">
+    <div class="faq-q" onclick="toggleFaq('faq7')">
+      <h4><span class="q-icon">7</span>DESARROLLO: Explique qué es una distribución por Familia de Productos y en qué se diferencia de la distribución por Proceso.</h4>
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a">
+      <span class="verdict v-dev">📝 DESARROLLO</span>
+      <p><strong>Distribución por Familia de Productos:</strong> Agrupa piezas o productos que comparten similitudes en su proceso productivo (mismas máquinas, herramientas y manejo de materiales). Esto forma una "célula de fabricación". El flujo es intenso <em>dentro</em> de la celda pero bajo entre celdas.</p>
+      <p style="margin-top:8px;"><strong>Diferencia clave con Distribución por Proceso:</strong> En la distribución por proceso, se agrupan máquinas o equipos del mismo tipo en departamentos (tornos, fresadoras, etc.) y el flujo es alto <em>entre</em> departamentos. Es más versátil para gran variedad de productos, mientras que la distribución por familia requiere identificar previamente la "familia" de productos. La familia de productos se denomina "seudo-producto".</p>
+    </div>
+  </div>
+
+  <div class="faq-item" id="faq8">
+    <div class="faq-q" onclick="toggleFaq('faq8')">
+      <h4><span class="q-icon">8</span>DESARROLLO: ¿Qué es la EIA y cuáles son sus etapas principales?</h4>
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a">
+      <span class="verdict v-dev">📝 DESARROLLO</span>
+      <p>La <strong>Evaluación de Impacto Ambiental (EIA)</strong> es un instrumento de política ambiental que permite al Estado conocer, valorar y prevenir los impactos que una actividad u obra causará en el ambiente, antes de que sea ejecutada.</p>
+      <p style="margin-top:8px;"><strong>Etapas (en orden):</strong></p>
+      <ul>
+        <li>1) Inicio del trámite ante la Autoridad de Aplicación</li>
+        <li>2) Categorización de la actividad (define grado de complejidad ambiental)</li>
+        <li>3) Manifiesto de Impacto Ambiental (MIA)</li>
+        <li>4) Estudio de Impacto Ambiental (EsIA)</li>
+        <li>5) Dictamen Técnico de la autoridad</li>
+        <li>6) Participación Ciudadana (audiencia pública)</li>
+        <li>7) Declaración de Impacto Ambiental (DIA): aprueba, niega o condiciona</li>
+        <li>8) Certificado de Aptitud Ambiental (si se aprueba)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="faq-item" id="faq9">
+    <div class="faq-q" onclick="toggleFaq('faq9')">
+      <h4><span class="q-icon">9</span>DESARROLLO: Indique las etapas del Ciclo de Planeación de Instalaciones y explique brevemente cada una.</h4>
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a">
+      <span class="verdict v-dev">📝 DESARROLLO</span>
+      <p>El Ciclo de Planeación comprende <strong>9 etapas secuenciales</strong>:</p>
+      <ul>
+        <li><strong>1)</strong> Definir objetivos estratégicos (visión, misión, factores clave, valores, KPIs)</li>
+        <li><strong>2)</strong> Compromiso de la dirección con el proyecto</li>
+        <li><strong>3)</strong> Formación del equipo de planeación (multidisciplinario)</li>
+        <li><strong>4)</strong> Relevamiento de actividades y tareas (MO, MP, equipos)</li>
+        <li><strong>5)</strong> Determinar los criterios de la planeación</li>
+        <li><strong>6)</strong> Generar el Plan de Instalación (+ planes alternativos)</li>
+        <li><strong>7)</strong> Revisión de planes (análisis crítico)</li>
+        <li><strong>8)</strong> Verificación con la dirección (aprueba el plan)</li>
+        <li><strong>9)</strong> Implementar la instalación (equipos, cronograma, control, ejecución)</li>
+      </ul>
+      <p style="margin-top:8px;">Luego se activa el proceso de Monitoreo, Control y Mejora Continua.</p>
+    </div>
+  </div>
+
+  <div class="faq-item" id="faq10">
+    <div class="faq-q" onclick="toggleFaq('faq10')">
+      <h4><span class="q-icon">10</span>V/F: En el Código Urbanístico de CABA, un Aviso de Obra autoriza la demolición de estructuras existentes.</h4>
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a">
+      <span class="verdict v-false">❌ FALSO</span>
+      <p>El <strong>Aviso de Obra</strong> solo autoriza tareas menores: reparar/limpiar/pintar fachadas, ejecutar solados, revoques, revestimientos, instalar vidrieras y toldos, modificaciones menores de instalaciones. La demolición (estructural o no estructural) requiere al menos un <strong>Permiso de Micro Obra</strong> o superior, dependiendo de la escala.</p>
+    </div>
+  </div>
+
+  <div class="faq-item" id="faq11">
+    <div class="faq-q" onclick="toggleFaq('faq11')">
+      <h4><span class="q-icon">11</span>DESARROLLO: ¿Qué es un Parque Industrial y cuáles son sus objetivos?</h4>
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a">
+      <span class="verdict v-dev">📝 DESARROLLO</span>
+      <p>Un <strong>Parque Industrial</strong> es el sector de la zona industrial dotado de la infraestructura, el equipamiento y los servicios públicos necesarios para el asentamiento de industrias agrupadas, debiendo estar circundado por cortinas forestales.</p>
+      <p style="margin-top:8px;"><strong>Objetivos:</strong></p>
+      <ul>
+        <li>Mejorar la situación económica de las compañías participantes (compartir infraestructura y servicios)</li>
+        <li>Minimizar el impacto ambiental de las actividades industriales</li>
+        <li>Aplicar principios ecológicos en las actividades industriales</li>
+        <li>Facilitar el diseño de comunidades industriales ordenadas</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="faq-item" id="faq12">
+    <div class="faq-q" onclick="toggleFaq('faq12')">
+      <h4><span class="q-icon">12</span>DESARROLLO: ¿Cuáles son las ventajas y desventajas de un sistema de vigas de repartición soldadas vs. abulonadas?</h4>
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a">
+      <span class="verdict v-dev">📝 DESARROLLO</span>
+      <div class="grid-2">
+        <div>
+          <p><strong>Sistema SOLDADO:</strong></p>
+          <ul>
+            <li>✅ Mayor resistencia estructural</li>
+            <li>✅ Sin elementos sueltos</li>
+            <li>❌ No desmontable: cualquier modificación requiere corte y nuevas soldaduras</li>
+            <li>❌ Se usa cuando la distribución es DEFINITIVA y no se prevén cambios</li>
+          </ul>
+        </div>
+        <div>
+          <p><strong>Sistema ABULONADO:</strong></p>
+          <ul>
+            <li>✅ Desmontable y modificable</li>
+            <li>✅ Permite relocalización de equipos</li>
+            <li>❌ Requiere correcta especificación de bulones (calidad SAE J429 Grado 8 o DIN 10.8)</li>
+            <li>❌ Se usa en 1er nivel, cuando se prevén cambios futuros en la distribución</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item" id="faq13">
+    <div class="faq-q" onclick="toggleFaq('faq13')">
+      <h4><span class="q-icon">13</span>V/F: El Principio de Ciclo de Vida del Manejo de Materiales se refiere al ciclo de vida del producto fabricado.</h4>
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a">
+      <span class="verdict v-false">❌ FALSO</span>
+      <p>El Principio de Ciclo de Vida (j) se refiere al ciclo de vida del <strong>equipamiento utilizado para el manejo de materiales</strong> (grúas, transpaletas, sistemas de almacenamiento, etc.). Es importante realizar un análisis técnico-económico que tenga en cuenta este ciclo de vida al seleccionar los equipos de manejo, no del producto fabricado.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     CHECKLIST
+══════════════════════════════════════ -->
+<section id="sec-checklist">
+  <div class="section-title">
+    <div class="section-icon ic-green">✅</div>
+    <div>
+      <h2>Checklist del Parcial</h2>
+      <div class="sec-sub">Tachá cada concepto que ya dominás — se guarda automáticamente</div>
+    </div>
+  </div>
+
+  <div class="card green">
+    <div class="progress-bar-wrap">
+      <div class="progress-bar-fill" id="progress-fill" style="width:0%"></div>
+    </div>
+    <div class="progress-label" id="progress-label">0 / 0 conceptos dominados</div>
+  </div>
+
+  <div class="card info">
+    <p class="checklist-group-title">📗 Unidad 1 — Intralogística y Planeamiento</p>
+    <ul class="checklist" id="checklist">
+      <li data-id="cl1"><div class="check-box" onclick="toggleCheck(this)"></div>Definición de Intralogística y sus procesos relacionados</li>
+      <li data-id="cl2"><div class="check-box" onclick="toggleCheck(this)"></div>Diferencia entre Intralogística y Planeamiento de Instalaciones</li>
+      <li data-id="cl3"><div class="check-box" onclick="toggleCheck(this)"></div>4 tareas del Planeamiento de Instalaciones</li>
+      <li data-id="cl4"><div class="check-box" onclick="toggleCheck(this)"></div>Las 9 etapas del Ciclo de Planeación (en orden)</li>
+      <li data-id="cl5"><div class="check-box" onclick="toggleCheck(this)"></div>Características del Planeamiento: Flexibilidad, Modularidad, Confiabilidad, etc.</li>
+      <li data-id="cl6"><div class="check-box" onclick="toggleCheck(this)"></div>Diferencia entre Ley, Norma Técnica y Especificación Técnica</li>
+      <li data-id="cl7"><div class="check-box" onclick="toggleCheck(this)"></div>Indicadores del Planeamiento (ROA, ROI, costo, velocidad)</li>
+
+      <p class="checklist-group-title">📘 Unidad 2 — Materiales y Manejo Manual</p>
+      <li data-id="cl8"><div class="check-box" onclick="toggleCheck(this)"></div>Cadena de Valor de Porter y Sistema de Valor</li>
+      <li data-id="cl9"><div class="check-box" onclick="toggleCheck(this)"></div>Diferencia entre PUSH y PULL</li>
+      <li data-id="cl10"><div class="check-box" onclick="toggleCheck(this)"></div>Manejo de materiales NO agrega valor — costo del 30 al 85%</li>
+      <li data-id="cl11"><div class="check-box" onclick="toggleCheck(this)"></div>Los 10 Principios del Manejo de Materiales (a–j)</li>
+      <li data-id="cl12"><div class="check-box" onclick="toggleCheck(this)"></div>Principio de Estandarización: aplica a medidas, pesos, procedimientos y equipamientos</li>
+      <li data-id="cl13"><div class="check-box" onclick="toggleCheck(this)"></div>Principio de Ciclo de Vida: del EQUIPAMIENTO de manejo, no del producto</li>
+      <li data-id="cl14"><div class="check-box" onclick="toggleCheck(this)"></div>Industria 4.0 y ciclo PDP (Physical-Digital-Physical)</li>
+      <li data-id="cl15"><div class="check-box" onclick="toggleCheck(this)"></div>Diferencia Trabajo Muscular Estático vs. Dinámico (10-15x)</li>
+      <li data-id="cl16"><div class="check-box" onclick="toggleCheck(this)"></div>Tipos de trabajo: Ligero, Moderado, Pesado (descripción, ejemplos, efectos)</li>
+      <li data-id="cl17"><div class="check-box" onclick="toggleCheck(this)"></div>MB, MO, MT — Metabolismo y determinación de carga física</li>
+      <li data-id="cl18"><div class="check-box" onclick="toggleCheck(this)"></div>Convenio OIT C127/67: definición de transporte manual, joven trabajador</li>
+      <li data-id="cl19"><div class="check-box" onclick="toggleCheck(this)"></div>Leyes 19.587 y 24.557 — AT, EP, IT (definiciones)</li>
+
+      <p class="checklist-group-title">📙 Unidad 3 — Localización de Planta</p>
+      <li data-id="cl20"><div class="check-box" onclick="toggleCheck(this)"></div>Localización = decisión a largo plazo con impacto económico</li>
+      <li data-id="cl21"><div class="check-box" onclick="toggleCheck(this)"></div>Macro vs. Micro localización</li>
+      <li data-id="cl22"><div class="check-box" onclick="toggleCheck(this)"></div>5 Restricciones fundamentales para la localización</li>
+      <li data-id="cl23"><div class="check-box" onclick="toggleCheck(this)"></div>Métodos no cuantificables: antecedentes, preferencial, dominante</li>
+      <li data-id="cl24"><div class="check-box" onclick="toggleCheck(this)"></div>Método de Puntos: el menor puntaje es el mejor</li>
+      <li data-id="cl25"><div class="check-box" onclick="toggleCheck(this)"></div>Método Brown Gibson: W (comparación de criterio), R, K (70/30), MPL (elegir el MAYOR)</li>
+      <li data-id="cl26"><div class="check-box" onclick="toggleCheck(this)"></div>Método Costo/Volumen: el más objetivo, sin factores subjetivos</li>
+      <li data-id="cl27"><div class="check-box" onclick="toggleCheck(this)"></div>Centro de servicio ≠ planta: no tiene proceso productivo ni evalúa cercanía al mercado igual</li>
+      <li data-id="cl28"><div class="check-box" onclick="toggleCheck(this)"></div>Globalización: intercambio BALANCEADO de productos</li>
+
+      <p class="checklist-group-title">🟢 Unidad 4 — Gestión Ambiental</p>
+      <li data-id="cl29"><div class="check-box" onclick="toggleCheck(this)"></div>Definición de Impacto Ambiental</li>
+      <li data-id="cl30"><div class="check-box" onclick="toggleCheck(this)"></div>EIA: definición y propósito como instrumento de política ambiental</li>
+      <li data-id="cl31"><div class="check-box" onclick="toggleCheck(this)"></div>Las 8 etapas del procedimiento de EIA (en orden)</li>
+      <li data-id="cl32"><div class="check-box" onclick="toggleCheck(this)"></div>NCA: Ru, ER, Ri, Di, Lo (factores de categorización)</li>
+      <li data-id="cl33"><div class="check-box" onclick="toggleCheck(this)"></div>Rangos de categorías: 1ª (≤15), 2ª (15–25), 3ª (>25 puntos)</li>
+      <li data-id="cl34"><div class="check-box" onclick="toggleCheck(this)"></div>DIA: puede otorgar / negar / otorgar condicionalmente</li>
+
+      <p class="checklist-group-title">🟠 Unidad 5 — Códigos Urbanísticos</p>
+      <li data-id="cl35"><div class="check-box" onclick="toggleCheck(this)"></div>FOS: % de parcela que puedo ocupar en el plano horizontal</li>
+      <li data-id="cl36"><div class="check-box" onclick="toggleCheck(this)"></div>FOT: determina la superficie edificable total (cuántos pisos)</li>
+      <li data-id="cl37"><div class="check-box" onclick="toggleCheck(this)"></div>4 áreas de mixtura en CABA (A1, A2, B3, 4)</li>
+      <li data-id="cl38"><div class="check-box" onclick="toggleCheck(this)"></div>Tipos de permiso: Aviso, Micro Obra, Menor, Mayor</li>
+      <li data-id="cl39"><div class="check-box" onclick="toggleCheck(this)"></div>Cartel de Obra: obligatorio, su falta causa caducidad del permiso</li>
+      <li data-id="cl40"><div class="check-box" onclick="toggleCheck(this)"></div>Zona Industrial vs. Parque Industrial (diferencias)</li>
+      <li data-id="cl41"><div class="check-box" onclick="toggleCheck(this)"></div>PBA: Áreas rurales, urbanas y complementarias</li>
+
+      <p class="checklist-group-title">🔴 Unidad 6 — Edificios Industriales</p>
+      <li data-id="cl42"><div class="check-box" onclick="toggleCheck(this)"></div>Definición y principios de los Edificios Industriales (mínimo 20 años)</li>
+      <li data-id="cl43"><div class="check-box" onclick="toggleCheck(this)"></div>Construcción Sustentable: criterios y normativas internacionales</li>
+      <li data-id="cl44"><div class="check-box" onclick="toggleCheck(this)"></div>LEED: qué mide (6 parámetros)</li>
+      <li data-id="cl45"><div class="check-box" onclick="toggleCheck(this)"></div>Tipos estructurales: Hormigón Simple, Armado, Pretensado, Avanzado</li>
+      <li data-id="cl46"><div class="check-box" onclick="toggleCheck(this)"></div>Perfiles laminados en caliente vs. en frío</li>
+      <li data-id="cl47"><div class="check-box" onclick="toggleCheck(this)"></div>3 Tipos de edificios: acero, HA prefabricado, híbrido (ventajas/desventajas)</li>
+      <li data-id="cl48"><div class="check-box" onclick="toggleCheck(this)"></div>6 capas del piso industrial (Subrasante → Juntas)</li>
+      <li data-id="cl49"><div class="check-box" onclick="toggleCheck(this)"></div>Cabreadas: L, H, Q, P — parámetros básicos del edificio</li>
+      <li data-id="cl50"><div class="check-box" onclick="toggleCheck(this)"></div>Vigas de repartición: montaje abulonado (1er nivel) vs. soldado (2do nivel)</li>
+
+      <p class="checklist-group-title">🟣 Unidad 7 — Distribución en Planta</p>
+      <li data-id="cl51"><div class="check-box" onclick="toggleCheck(this)"></div>Definición y objetivos de la Distribución en Planta</li>
+      <li data-id="cl52"><div class="check-box" onclick="toggleCheck(this)"></div>6 Principios de la Distribución en Planta</li>
+      <li data-id="cl53"><div class="check-box" onclick="toggleCheck(this)"></div>4 Tipos de distribución: fija, proceso, familia, producto</li>
+      <li data-id="cl54"><div class="check-box" onclick="toggleCheck(this)"></div>Distribución por Producto: avería = parada total; demanda estable</li>
+      <li data-id="cl55"><div class="check-box" onclick="toggleCheck(this)"></div>Distribución por Proceso: alta variedad, demanda variable</li>
+      <li data-id="cl56"><div class="check-box" onclick="toggleCheck(this)"></div>Familia de Productos: seudo-producto, celda de fabricación</li>
+      <li data-id="cl57"><div class="check-box" onclick="toggleCheck(this)"></div>Los 8 Factores de Distribución (material, maquinarias, hombre, movimiento, espera, servicios, edificio, cambio)</li>
+      <li data-id="cl58"><div class="check-box" onclick="toggleCheck(this)"></div>Factor Maquinarias: factor de ocupación óptimo = 80%</li>
+      <li data-id="cl59"><div class="check-box" onclick="toggleCheck(this)"></div>Clasificación del proceso productivo: fabricación, tratamiento, montaje</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Guía 1er Parcial · Manejo de Materiales y Distribución de Planta · UTN 2026</p>
+  <p style="margin-top:6px; font-size:0.75rem;">Tags de criticidad estimados según el apunte BR. No sustituye el estudio del material completo.</p>
+</footer>
+
+<script>
+  // ── SCROLL BAR ──
+  window.addEventListener('scroll', () => {
+    const el = document.getElementById('scroll-bar');
+    const total = document.documentElement.scrollHeight - window.innerHeight;
+    el.style.width = (window.scrollY / total * 100) + '%';
+    updateActiveNav();
+  });
+
+  // ── NAV SCROLL ──
+  function navScroll(btn, id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // ── ACTIVE NAV ──
+  const sectionMap = [
+    ['sec-u1','nb-u1'],['sec-u2','nb-u2'],['sec-u3','nb-u3'],['sec-u4','nb-u4'],
+    ['sec-u5','nb-u5'],['sec-u6','nb-u6'],['sec-u7','nb-u7'],['sec-faq','nb-faq'],['sec-checklist','nb-cl']
+  ];
+  function updateActiveNav() {
+    let current = sectionMap[0][1];
+    for (const [secId, btnId] of sectionMap) {
+      const sec = document.getElementById(secId);
+      if (sec && sec.getBoundingClientRect().top <= 140) current = btnId;
+    }
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    const activeBtn = document.getElementById(current);
+    if (activeBtn) {
+      activeBtn.classList.add('active');
+      activeBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+  }
+
+  // ── FAQ ACCORDION ──
+  function toggleFaq(id) {
+    const item = document.getElementById(id);
+    item.classList.toggle('open');
+  }
+
+  // ── CHECKLIST + localStorage ──
+  const LS_KEY = 'manmat_utn_2026_checklist';
+
+  function loadChecklist() {
+    const saved = JSON.parse(localStorage.getItem(LS_KEY) || '{}');
+    document.querySelectorAll('#checklist li[data-id]').forEach(li => {
+      const id = li.dataset.id;
+      if (saved[id]) {
+        li.classList.add('checked');
+        li.querySelector('.check-box').classList.add('done');
+      }
+    });
+    updateProgress();
+  }
+
+  function toggleCheck(box) {
+    const li = box.closest('li');
+    const id = li.dataset.id;
+    const isDone = box.classList.toggle('done');
+    li.classList.toggle('checked', isDone);
+    const saved = JSON.parse(localStorage.getItem(LS_KEY) || '{}');
+    if (isDone) saved[id] = true; else delete saved[id];
+    localStorage.setItem(LS_KEY, JSON.stringify(saved));
+    updateProgress();
+  }
+
+  function updateProgress() {
+    const items = document.querySelectorAll('#checklist li[data-id]');
+    const done = document.querySelectorAll('#checklist li[data-id].checked');
+    const pct = items.length ? (done.length / items.length * 100) : 0;
+    document.getElementById('progress-fill').style.width = pct + '%';
+    document.getElementById('progress-label').textContent = `${done.length} / ${items.length} conceptos dominados`;
+  }
+
+  loadChecklist();
+</script>
+</body>
+</html>
