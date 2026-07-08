@@ -1,0 +1,92 @@
+﻿Area 1,Area 2,Codigo,Descripcion codigo,Motivo,Descripcion motivo
+Recepcion MP,Lab. / Calidad,E,Especialmente importante,2,"Calidad, inocuidad y trazabilidad sin TACC"
+Recepcion MP,Deposito MP,A,Absolutamente necesario,3,"Logistica, almacenamiento o despacho"
+Recepcion MP,Pesado,O,Ordinario / conveniente,3,"Logistica, almacenamiento o despacho"
+Recepcion MP,Amasado / Batido,U,No importante,6,Sin vinculo directo; no requiere cercania
+Recepcion MP,Formado / Dosif.,U,No importante,6,Sin vinculo directo; no requiere cercania
+Recepcion MP,Horneado / Panif.,U,No importante,6,Sin vinculo directo; no requiere cercania
+Recepcion MP,Enfriado,U,No importante,6,Sin vinculo directo; no requiere cercania
+Recepcion MP,Envasado / Pack.,U,No importante,6,Sin vinculo directo; no requiere cercania
+Recepcion MP,Deposito PT,U,No importante,6,Sin vinculo directo; no requiere cercania
+Recepcion MP,Expedicion,X,No deseable,7,"Evitar cruces, contaminacion o contacto con rechazos"
+Recepcion MP,Higiene / Personal,U,No importante,6,Sin vinculo directo; no requiere cercania
+Recepcion MP,Mantenimiento,U,No importante,6,Sin vinculo directo; no requiere cercania
+Recepcion MP,Scrap / Residuos,X,No deseable,7,"Evitar cruces, contaminacion o contacto con rechazos"
+Lab. / Calidad,Deposito MP,I,Importante,2,"Calidad, inocuidad y trazabilidad sin TACC"
+Lab. / Calidad,Pesado,E,Especialmente importante,2,"Calidad, inocuidad y trazabilidad sin TACC"
+Lab. / Calidad,Amasado / Batido,I,Importante,2,"Calidad, inocuidad y trazabilidad sin TACC"
+Lab. / Calidad,Formado / Dosif.,U,No importante,6,Sin vinculo directo; no requiere cercania
+Lab. / Calidad,Horneado / Panif.,U,No importante,6,Sin vinculo directo; no requiere cercania
+Lab. / Calidad,Enfriado,U,No importante,6,Sin vinculo directo; no requiere cercania
+Lab. / Calidad,Envasado / Pack.,I,Importante,2,"Calidad, inocuidad y trazabilidad sin TACC"
+Lab. / Calidad,Deposito PT,I,Importante,2,"Calidad, inocuidad y trazabilidad sin TACC"
+Lab. / Calidad,Expedicion,U,No importante,6,Sin vinculo directo; no requiere cercania
+Lab. / Calidad,Higiene / Personal,I,Importante,5,Ingreso de personal e higiene de zona limpia
+Lab. / Calidad,Mantenimiento,U,No importante,6,Sin vinculo directo; no requiere cercania
+Lab. / Calidad,Scrap / Residuos,U,No importante,6,Sin vinculo directo; no requiere cercania
+Deposito MP,Pesado,A,Absolutamente necesario,1,Flujo secuencial de producto/proceso
+Deposito MP,Amasado / Batido,I,Importante,1,Flujo secuencial de producto/proceso
+Deposito MP,Formado / Dosif.,U,No importante,6,Sin vinculo directo; no requiere cercania
+Deposito MP,Horneado / Panif.,U,No importante,6,Sin vinculo directo; no requiere cercania
+Deposito MP,Enfriado,U,No importante,6,Sin vinculo directo; no requiere cercania
+Deposito MP,Envasado / Pack.,U,No importante,6,Sin vinculo directo; no requiere cercania
+Deposito MP,Deposito PT,U,No importante,6,Sin vinculo directo; no requiere cercania
+Deposito MP,Expedicion,X,No deseable,7,"Evitar cruces, contaminacion o contacto con rechazos"
+Deposito MP,Higiene / Personal,U,No importante,6,Sin vinculo directo; no requiere cercania
+Deposito MP,Mantenimiento,U,No importante,6,Sin vinculo directo; no requiere cercania
+Deposito MP,Scrap / Residuos,X,No deseable,7,"Evitar cruces, contaminacion o contacto con rechazos"
+Pesado,Amasado / Batido,A,Absolutamente necesario,1,Flujo secuencial de producto/proceso
+Pesado,Formado / Dosif.,I,Importante,1,Flujo secuencial de producto/proceso
+Pesado,Horneado / Panif.,U,No importante,6,Sin vinculo directo; no requiere cercania
+Pesado,Enfriado,U,No importante,6,Sin vinculo directo; no requiere cercania
+Pesado,Envasado / Pack.,U,No importante,6,Sin vinculo directo; no requiere cercania
+Pesado,Deposito PT,U,No importante,6,Sin vinculo directo; no requiere cercania
+Pesado,Expedicion,U,No importante,6,Sin vinculo directo; no requiere cercania
+Pesado,Higiene / Personal,E,Especialmente importante,5,Ingreso de personal e higiene de zona limpia
+Pesado,Mantenimiento,U,No importante,6,Sin vinculo directo; no requiere cercania
+Pesado,Scrap / Residuos,U,No importante,6,Sin vinculo directo; no requiere cercania
+Amasado / Batido,Formado / Dosif.,A,Absolutamente necesario,1,Flujo secuencial de producto/proceso
+Amasado / Batido,Horneado / Panif.,I,Importante,1,Flujo secuencial de producto/proceso
+Amasado / Batido,Enfriado,U,No importante,6,Sin vinculo directo; no requiere cercania
+Amasado / Batido,Envasado / Pack.,U,No importante,6,Sin vinculo directo; no requiere cercania
+Amasado / Batido,Deposito PT,U,No importante,6,Sin vinculo directo; no requiere cercania
+Amasado / Batido,Expedicion,U,No importante,6,Sin vinculo directo; no requiere cercania
+Amasado / Batido,Higiene / Personal,E,Especialmente importante,5,Ingreso de personal e higiene de zona limpia
+Amasado / Batido,Mantenimiento,I,Importante,4,"Servicios, mantenimiento u operacion de equipos"
+Amasado / Batido,Scrap / Residuos,U,No importante,6,Sin vinculo directo; no requiere cercania
+Formado / Dosif.,Horneado / Panif.,A,Absolutamente necesario,1,Flujo secuencial de producto/proceso
+Formado / Dosif.,Enfriado,O,Ordinario / conveniente,6,Sin vinculo directo; no requiere cercania
+Formado / Dosif.,Envasado / Pack.,U,No importante,6,Sin vinculo directo; no requiere cercania
+Formado / Dosif.,Deposito PT,U,No importante,6,Sin vinculo directo; no requiere cercania
+Formado / Dosif.,Expedicion,U,No importante,6,Sin vinculo directo; no requiere cercania
+Formado / Dosif.,Higiene / Personal,E,Especialmente importante,5,Ingreso de personal e higiene de zona limpia
+Formado / Dosif.,Mantenimiento,I,Importante,4,"Servicios, mantenimiento u operacion de equipos"
+Formado / Dosif.,Scrap / Residuos,I,Importante,7,"Evitar cruces, contaminacion o contacto con rechazos"
+Horneado / Panif.,Enfriado,A,Absolutamente necesario,1,Flujo secuencial de producto/proceso
+Horneado / Panif.,Envasado / Pack.,O,Ordinario / conveniente,6,Sin vinculo directo; no requiere cercania
+Horneado / Panif.,Deposito PT,U,No importante,6,Sin vinculo directo; no requiere cercania
+Horneado / Panif.,Expedicion,U,No importante,6,Sin vinculo directo; no requiere cercania
+Horneado / Panif.,Higiene / Personal,U,No importante,6,Sin vinculo directo; no requiere cercania
+Horneado / Panif.,Mantenimiento,E,Especialmente importante,4,"Servicios, mantenimiento u operacion de equipos"
+Horneado / Panif.,Scrap / Residuos,O,Ordinario / conveniente,7,"Evitar cruces, contaminacion o contacto con rechazos"
+Enfriado,Envasado / Pack.,A,Absolutamente necesario,1,Flujo secuencial de producto/proceso
+Enfriado,Deposito PT,I,Importante,8,"Packaging, empaque, detector de metales o liberacion final"
+Enfriado,Expedicion,U,No importante,6,Sin vinculo directo; no requiere cercania
+Enfriado,Higiene / Personal,U,No importante,6,Sin vinculo directo; no requiere cercania
+Enfriado,Mantenimiento,I,Importante,4,"Servicios, mantenimiento u operacion de equipos"
+Enfriado,Scrap / Residuos,I,Importante,7,"Evitar cruces, contaminacion o contacto con rechazos"
+Envasado / Pack.,Deposito PT,A,Absolutamente necesario,8,"Packaging, empaque, detector de metales o liberacion final"
+Envasado / Pack.,Expedicion,O,Ordinario / conveniente,3,"Logistica, almacenamiento o despacho"
+Envasado / Pack.,Higiene / Personal,I,Importante,5,Ingreso de personal e higiene de zona limpia
+Envasado / Pack.,Mantenimiento,I,Importante,4,"Servicios, mantenimiento u operacion de equipos"
+Envasado / Pack.,Scrap / Residuos,X,No deseable,7,"Evitar cruces, contaminacion o contacto con rechazos"
+Deposito PT,Expedicion,A,Absolutamente necesario,3,"Logistica, almacenamiento o despacho"
+Deposito PT,Higiene / Personal,U,No importante,6,Sin vinculo directo; no requiere cercania
+Deposito PT,Mantenimiento,U,No importante,6,Sin vinculo directo; no requiere cercania
+Deposito PT,Scrap / Residuos,X,No deseable,7,"Evitar cruces, contaminacion o contacto con rechazos"
+Expedicion,Higiene / Personal,U,No importante,6,Sin vinculo directo; no requiere cercania
+Expedicion,Mantenimiento,U,No importante,6,Sin vinculo directo; no requiere cercania
+Expedicion,Scrap / Residuos,U,No importante,6,Sin vinculo directo; no requiere cercania
+Higiene / Personal,Mantenimiento,U,No importante,6,Sin vinculo directo; no requiere cercania
+Higiene / Personal,Scrap / Residuos,U,No importante,6,Sin vinculo directo; no requiere cercania
+Mantenimiento,Scrap / Residuos,U,No importante,6,Sin vinculo directo; no requiere cercania
