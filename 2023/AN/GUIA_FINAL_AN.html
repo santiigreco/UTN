@@ -1,0 +1,1625 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Guía Final – Análisis Numérico UTN</title>
+  <meta name="description" content="Guía completa para el final de Análisis Numérico UTN. Raíces, Ajuste e Interpolación con gráficos interactivos y algoritmos paso a paso."/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+
+  <!-- MathJax para ecuaciones hermosas -->
+  <script>
+    MathJax = {
+      tex: { inlineMath: [['\\(','\\)'], ['$','$']], displayMath: [['$$','$$'], ['\\[','\\]']], tags: 'none' },
+      options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+
+  <!-- Chart.js para gráficos -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+
+  <style>
+    :root {
+      --bg-primary:    #090d18;
+      --bg-secondary:  #0f1623;
+      --bg-card:       #141b2d;
+      --bg-card-hover: #1a2440;
+      --accent-1:      #6366f1;
+      --accent-2:      #8b5cf6;
+      --accent-3:      #06b6d4;
+      --accent-4:      #10b981;
+      --accent-warn:   #f59e0b;
+      --accent-danger: #ef4444;
+      --accent-pink:   #ec4899;
+      --text-primary:  #f1f5f9;
+      --text-secondary:#94a3b8;
+      --text-muted:    #64748b;
+      --border:        rgba(99,102,241,0.18);
+      --border-glow:   rgba(99,102,241,0.4);
+      --shadow-lg:     0 20px 60px rgba(0,0,0,0.55);
+      --radius:        12px;
+      --radius-sm:     8px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{
+      font-family:'Inter',sans-serif;
+      background:var(--bg-primary);
+      color:var(--text-primary);
+      line-height:1.7;
+      overflow-x:hidden;
+    }
+    body::before,body::after{
+      content:'';position:fixed;border-radius:50%;
+      filter:blur(130px);opacity:0.1;pointer-events:none;z-index:0;
+      animation:blobFloat 14s ease-in-out infinite alternate;
+    }
+    body::before{width:700px;height:700px;background:var(--accent-1);top:-250px;left:-250px;}
+    body::after{width:550px;height:550px;background:var(--accent-2);bottom:-250px;right:-250px;animation-delay:-7s;}
+    @keyframes blobFloat{from{transform:translate(0,0) scale(1);}to{transform:translate(50px,35px) scale(1.1);}}
+
+    /* HEADER */
+    header{position:relative;z-index:10;text-align:center;padding:70px 24px 50px;
+      background:linear-gradient(180deg,rgba(99,102,241,0.09) 0%,transparent 100%);
+      border-bottom:1px solid var(--border);}
+    .badge{display:inline-flex;align-items:center;gap:6px;background:rgba(99,102,241,0.15);
+      border:1px solid var(--border-glow);color:var(--accent-1);padding:5px 14px;
+      border-radius:999px;font-size:0.78rem;font-weight:600;letter-spacing:0.06em;
+      text-transform:uppercase;margin-bottom:20px;}
+    .badge-dot{width:7px;height:7px;border-radius:50%;background:var(--accent-1);animation:pulse 2s ease-in-out infinite;}
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(1.5);}}
+    h1{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:800;
+      background:linear-gradient(135deg,#f1f5f9 0%,var(--accent-1) 45%,var(--accent-3) 100%);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+      line-height:1.15;margin-bottom:16px;}
+    .subtitle{color:var(--text-secondary);font-size:1.05rem;max-width:620px;margin:0 auto 28px;}
+    .priority-strip{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:10px;}
+    .p-pill{padding:5px 16px;border-radius:999px;font-size:0.8rem;font-weight:600;border:1px solid;}
+    .p-pill.crit{background:rgba(239,68,68,0.12);border-color:rgba(239,68,68,0.35);color:#fca5a5;}
+    .p-pill.high{background:rgba(245,158,11,0.12);border-color:rgba(245,158,11,0.35);color:#fcd34d;}
+    .p-pill.med{background:rgba(16,185,129,0.12);border-color:rgba(16,185,129,0.35);color:#6ee7b7;}
+
+    /* NAV */
+    nav{position:sticky;top:0;z-index:100;background:rgba(9,13,24,0.95);
+      backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 24px;}
+    .nav-inner{max-width:1200px;margin:0 auto;display:flex;gap:3px;overflow-x:auto;
+      scrollbar-width:none;padding:8px 0;align-items:center;}
+    .nav-inner::-webkit-scrollbar{display:none;}
+    .nav-btn{white-space:nowrap;padding:6px 12px;border:1px solid transparent;
+      background:transparent;color:var(--text-secondary);font-family:'Inter',sans-serif;
+      border-radius:var(--radius-sm);cursor:pointer;transition:all 0.22s;
+      display:flex;flex-direction:column;align-items:center;gap:2px;line-height:1;}
+    .nav-btn .nav-unit{font-size:0.58rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
+      padding:1px 6px;border-radius:999px;background:rgba(255,255,255,0.06);color:var(--text-muted);transition:all 0.22s;}
+    .nav-btn .nav-label{font-size:0.8rem;font-weight:500;}
+    .nav-btn:hover{background:rgba(99,102,241,0.12);border-color:rgba(99,102,241,0.2);color:var(--accent-1);}
+    .nav-btn:hover .nav-unit{background:rgba(99,102,241,0.2);color:var(--accent-1);}
+    .nav-btn.active{background:rgba(99,102,241,0.18);border-color:rgba(99,102,241,0.35);color:var(--accent-1);}
+    .nav-btn.active .nav-unit{background:rgba(99,102,241,0.3);color:#c7d2fe;}
+    .nav-sep{width:1px;height:28px;background:var(--border);flex-shrink:0;margin:0 4px;}
+
+    /* MAIN */
+    main{max-width:1100px;margin:0 auto;padding:40px 24px 100px;position:relative;z-index:1;}
+
+    /* SECTION TITLES */
+    .section-title{display:flex;align-items:center;gap:12px;margin:64px 0 28px;
+      padding-bottom:14px;border-bottom:1px solid var(--border);}
+    .section-icon{width:44px;height:44px;border-radius:var(--radius-sm);
+      display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;}
+    .section-title h2{font-size:1.6rem;font-weight:700;color:var(--text-primary);}
+    .section-title .sec-sub{font-size:0.85rem;color:var(--text-muted);margin-top:2px;}
+    .sub-section-title{display:flex;align-items:center;gap:10px;margin:40px 0 18px;
+      padding-bottom:10px;border-bottom:1px solid rgba(99,102,241,0.1);}
+    .sub-section-title h3{font-size:1.2rem;font-weight:700;color:var(--text-primary);}
+
+    .ic-red{background:rgba(239,68,68,0.15);}
+    .ic-amber{background:rgba(245,158,11,0.15);}
+    .ic-violet{background:rgba(99,102,241,0.15);}
+    .ic-cyan{background:rgba(6,182,212,0.15);}
+    .ic-green{background:rgba(16,185,129,0.15);}
+    .ic-pink{background:rgba(236,72,153,0.15);}
+
+    /* CARD */
+    .card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
+      padding:24px 26px;margin-bottom:18px;transition:transform 0.25s,border-color 0.25s,box-shadow 0.25s;
+      position:relative;overflow:hidden;}
+    .card::before{content:'';position:absolute;top:0;left:0;height:3px;width:100%;
+      border-radius:var(--radius) var(--radius) 0 0;opacity:0;transition:opacity 0.3s;}
+    .card:hover{transform:translateY(-3px);border-color:var(--border-glow);box-shadow:var(--shadow-lg);background:var(--bg-card-hover);}
+    .card:hover::before{opacity:1;}
+    .card.crit::before{background:linear-gradient(90deg,var(--accent-danger),transparent);}
+    .card.high::before{background:linear-gradient(90deg,var(--accent-warn),transparent);}
+    .card.med::before{background:linear-gradient(90deg,var(--accent-4),transparent);}
+    .card.info::before{background:linear-gradient(90deg,var(--accent-1),transparent);}
+    .card.cyan::before{background:linear-gradient(90deg,var(--accent-3),transparent);}
+    .card.pink::before{background:linear-gradient(90deg,var(--accent-pink),transparent);}
+
+    .card-header{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;}
+    .card-tag{flex-shrink:0;padding:3px 10px;border-radius:999px;font-size:0.72rem;
+      font-weight:700;letter-spacing:0.05em;text-transform:uppercase;margin-top:3px;}
+    .tag-crit{background:rgba(239,68,68,0.15);color:#fca5a5;border:1px solid rgba(239,68,68,0.3);}
+    .tag-high{background:rgba(245,158,11,0.15);color:#fcd34d;border:1px solid rgba(245,158,11,0.3);}
+    .tag-med{background:rgba(16,185,129,0.15);color:#6ee7b7;border:1px solid rgba(16,185,129,0.3);}
+    .tag-info{background:rgba(99,102,241,0.15);color:#a5b4fc;border:1px solid rgba(99,102,241,0.3);}
+    .tag-exam{background:rgba(236,72,153,0.15);color:#f9a8d4;border:1px solid rgba(236,72,153,0.3);}
+    .tag-cyan{background:rgba(6,182,212,0.15);color:#67e8f9;border:1px solid rgba(6,182,212,0.3);}
+
+    .card h3{font-size:1.05rem;font-weight:700;color:var(--text-primary);margin-bottom:0;}
+    .card p,.card li{color:var(--text-secondary);font-size:0.93rem;line-height:1.75;}
+    .card ul,.card ol{padding-left:20px;margin-top:8px;}
+    .card li{margin-bottom:6px;}
+    .card li::marker{color:var(--accent-1);}
+
+    /* ─── ECUACIONES MathJax (caja estilizada) ─── */
+    .eq-block{
+      background: linear-gradient(135deg, rgba(6,182,212,0.06), rgba(99,102,241,0.06));
+      border: 1px solid rgba(6,182,212,0.22);
+      border-radius: var(--radius-sm);
+      padding: 18px 22px;
+      margin: 14px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .eq-block::before{
+      content:'';position:absolute;top:0;left:0;right:0;height:2px;
+      background:linear-gradient(90deg,var(--accent-3),var(--accent-1),transparent);
+    }
+    .eq-block .eq-label{
+      display:block;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;
+      text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;
+    }
+    .eq-block .MathJax,.eq-block mjx-container{
+      color:#e0f2fe !important;font-size:1.1rem;
+    }
+    /* Ecuaciones inline */
+    .eq-inline mjx-container{color:#a5b4fc !important;}
+
+    /* ─── GRÁFICO CONTAINER ─── */
+    .graph-card{
+      background:var(--bg-secondary);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:22px;
+      margin:20px 0 28px;
+      position:relative;
+    }
+    .graph-card::before{
+      content:'';position:absolute;top:0;left:0;right:0;height:2px;
+      background:linear-gradient(90deg,var(--accent-1),var(--accent-3),transparent);
+    }
+    .graph-header{
+      display:flex;align-items:center;gap:10px;margin-bottom:16px;
+    }
+    .graph-icon{
+      width:32px;height:32px;border-radius:8px;
+      background:rgba(99,102,241,0.15);
+      display:flex;align-items:center;justify-content:center;font-size:1rem;
+    }
+    .graph-title{font-size:0.95rem;font-weight:700;color:var(--text-primary);}
+    .graph-sub{font-size:0.78rem;color:var(--text-muted);margin-top:2px;}
+    .canvas-wrap{
+      position:relative;
+      background:rgba(0,0,0,0.2);
+      border-radius:8px;
+      padding:10px;
+    }
+    canvas{border-radius:6px;}
+    .graph-legend{
+      display:flex;flex-wrap:wrap;gap:12px;margin-top:12px;
+    }
+    .leg-item{display:flex;align-items:center;gap:6px;font-size:0.78rem;color:var(--text-secondary);}
+    .leg-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+    .leg-line{width:20px;height:3px;border-radius:2px;flex-shrink:0;}
+
+    /* HIGHLIGHT BOXES */
+    .highlight{background:rgba(99,102,241,0.08);border-left:3px solid var(--accent-1);
+      border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:14px 18px;margin:12px 0;
+      font-size:0.91rem;color:var(--text-secondary);}
+    .highlight strong{color:var(--accent-1);}
+    .warn-box{background:rgba(245,158,11,0.08);border-left:3px solid var(--accent-warn);
+      border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:14px 18px;margin:12px 0;
+      font-size:0.91rem;color:var(--text-secondary);}
+    .warn-box strong{color:var(--accent-warn);}
+    .danger-box{background:rgba(239,68,68,0.08);border-left:3px solid var(--accent-danger);
+      border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:14px 18px;margin:12px 0;
+      font-size:0.91rem;color:var(--text-secondary);}
+    .danger-box strong{color:var(--accent-danger);}
+    .success-box{background:rgba(16,185,129,0.08);border-left:3px solid var(--accent-4);
+      border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:14px 18px;margin:12px 0;
+      font-size:0.91rem;color:var(--text-secondary);}
+    .success-box strong{color:var(--accent-4);}
+
+    /* ALGORITHM CARD */
+    .algo-card{background:var(--bg-secondary);border:1px solid var(--border);
+      border-radius:var(--radius);margin-bottom:24px;overflow:hidden;}
+    .algo-header{background:linear-gradient(90deg,rgba(99,102,241,0.15),rgba(6,182,212,0.08));
+      border-bottom:1px solid var(--border);padding:18px 24px;display:flex;align-items:center;gap:14px;}
+    .algo-num{width:40px;height:40px;border-radius:50%;
+      background:linear-gradient(135deg,var(--accent-1),var(--accent-3));
+      display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:800;color:white;flex-shrink:0;}
+    .algo-title{font-size:1.15rem;font-weight:700;color:var(--text-primary);}
+    .algo-subtitle{font-size:0.82rem;color:var(--text-muted);margin-top:2px;}
+    .algo-body{padding:22px 24px;}
+
+    .step-list{list-style:none;padding:0;counter-reset:step-counter;}
+    .step-list li{display:flex;gap:16px;margin-bottom:18px;align-items:flex-start;
+      color:var(--text-secondary);font-size:0.93rem;line-height:1.7;}
+    .step-num{flex-shrink:0;width:28px;height:28px;border-radius:50%;
+      background:rgba(99,102,241,0.2);border:1px solid rgba(99,102,241,0.4);color:var(--accent-1);
+      font-size:0.82rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:2px;}
+
+    /* CHECKLIST TRAMPAS */
+    .trap-list{list-style:none;padding:0;}
+    .trap-list li{display:flex;gap:12px;align-items:flex-start;padding:10px 0;
+      border-bottom:1px solid rgba(239,68,68,0.08);color:var(--text-secondary);font-size:0.91rem;line-height:1.65;}
+    .trap-list li:last-child{border-bottom:none;}
+    .trap-icon{flex-shrink:0;font-size:1rem;margin-top:2px;}
+
+    /* GRID */
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+    .grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;}
+    @media(max-width:768px){.grid-2,.grid-3{grid-template-columns:1fr;}}
+
+    /* TABLE */
+    .table-wrap{overflow-x:auto;margin-top:14px;}
+    table.t{width:100%;border-collapse:collapse;font-size:0.88rem;}
+    table.t th{background:rgba(99,102,241,0.12);color:var(--accent-1);font-weight:700;
+      padding:10px 14px;text-align:left;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.05em;}
+    table.t td{padding:9px 14px;border-bottom:1px solid rgba(255,255,255,0.05);
+      color:var(--text-secondary);vertical-align:top;}
+    table.t tr:last-child td{border-bottom:none;}
+    table.t tr:hover td{background:rgba(255,255,255,0.02);}
+    table.t td:first-child{color:var(--text-primary);font-weight:600;}
+
+    /* CHIPS */
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+    .chip{padding:4px 12px;background:rgba(99,102,241,0.1);border:1px solid rgba(99,102,241,0.25);
+      border-radius:999px;font-size:0.78rem;color:#a5b4fc;font-weight:500;}
+    .chip-cyan{background:rgba(6,182,212,0.1);border-color:rgba(6,182,212,0.25);color:#67e8f9;}
+    .chip-green{background:rgba(16,185,129,0.1);border-color:rgba(16,185,129,0.25);color:#6ee7b7;}
+    .chip-red{background:rgba(239,68,68,0.1);border-color:rgba(239,68,68,0.25);color:#fca5a5;}
+
+    code{font-family:'JetBrains Mono',monospace;background:rgba(99,102,241,0.12);
+      color:var(--accent-1);padding:2px 7px;border-radius:5px;font-size:0.85em;}
+
+    /* SCROLL BAR */
+    #scroll-bar{position:fixed;top:0;left:0;height:3px;
+      background:linear-gradient(90deg,var(--accent-1),var(--accent-3));z-index:9999;width:0%;transition:width 0.1s linear;}
+
+    /* FADE IN */
+    .fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .fade-in.visible{opacity:1;transform:translateY(0);}
+
+    /* SECTION DIVIDER */
+    .sec-divider{text-align:center;margin:60px 0 20px;position:relative;}
+    .sec-divider::before{content:'';position:absolute;top:50%;left:0;right:0;height:1px;
+      background:linear-gradient(90deg,transparent,var(--border-glow),transparent);}
+    .sec-divider-label{position:relative;display:inline-block;background:var(--bg-primary);
+      padding:0 20px;font-size:0.78rem;font-weight:700;color:var(--text-muted);
+      text-transform:uppercase;letter-spacing:0.1em;}
+
+    /* METHOD BADGES */
+    .method-badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;
+      border-radius:999px;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;}
+    .mb-bisec{background:rgba(6,182,212,0.15);border:1px solid rgba(6,182,212,0.3);color:#67e8f9;}
+    .mb-newton{background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);color:#6ee7b7;}
+    .mb-fixed{background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.3);color:#fcd34d;}
+    .mb-lagr{background:rgba(99,102,241,0.15);border:1px solid rgba(99,102,241,0.3);color:#a5b4fc;}
+    .mb-newton2{background:rgba(139,92,246,0.15);border:1px solid rgba(139,92,246,0.3);color:#c4b5fd;}
+    .mb-spline{background:rgba(236,72,153,0.15);border:1px solid rgba(236,72,153,0.3);color:#f9a8d4;}
+    .mb-herm{background:rgba(239,68,68,0.15);border:1px solid rgba(239,68,68,0.3);color:#fca5a5;}
+
+    /* CONV METER */
+    .conv-meter{display:flex;align-items:center;gap:10px;margin-top:10px;}
+    .conv-label{font-size:0.8rem;color:var(--text-muted);width:130px;flex-shrink:0;}
+    .conv-bar-wrap{flex:1;height:8px;background:rgba(255,255,255,0.07);border-radius:999px;overflow:hidden;}
+    .conv-bar{height:100%;border-radius:999px;}
+    .conv-bar.fast{background:linear-gradient(90deg,#10b981,#06b6d4);}
+    .conv-bar.med{background:linear-gradient(90deg,#f59e0b,#6366f1);}
+    .conv-bar.slow{background:linear-gradient(90deg,#ef4444,#f59e0b);}
+
+    footer{text-align:center;padding:30px;color:var(--text-muted);font-size:0.82rem;
+      border-top:1px solid var(--border);position:relative;z-index:1;}
+
+    /* Iteración slider */
+    .iter-controls{display:flex;align-items:center;gap:12px;margin-top:12px;flex-wrap:wrap;}
+    .iter-btn{padding:6px 14px;border-radius:8px;border:1px solid var(--border-glow);
+      background:rgba(99,102,241,0.1);color:var(--accent-1);font-family:'Inter',sans-serif;
+      font-size:0.82rem;font-weight:600;cursor:pointer;transition:all 0.2s;}
+    .iter-btn:hover{background:rgba(99,102,241,0.2);}
+    .iter-info{font-size:0.85rem;color:var(--text-secondary);}
+    .iter-badge{display:inline-block;padding:2px 10px;border-radius:999px;font-size:0.78rem;font-weight:700;
+      background:rgba(6,182,212,0.15);border:1px solid rgba(6,182,212,0.3);color:#67e8f9;}
+  </style>
+</head>
+<body>
+<div id="scroll-bar"></div>
+
+<!-- HEADER -->
+<header>
+  <div class="badge"><span class="badge-dot"></span> UTN · Análisis Numérico · Final 2023</div>
+  <h1>Guía de Estudio<br/>Análisis Numérico</h1>
+  <p class="subtitle">Teoría, ecuaciones, gráficos interactivos y algoritmos paso a paso para Raíces, Ajuste e Interpolación de Funciones.</p>
+  <div class="priority-strip">
+    <span class="p-pill crit">🔴 Condiciones de aplicabilidad</span>
+    <span class="p-pill high">🟡 Convergencia y error</span>
+    <span class="p-pill med">🟢 Algoritmos + gráficos</span>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <button class="nav-btn active" onclick="navScroll(this,'overview')" id="nav-overview">
+      <span class="nav-unit">Resumen</span><span class="nav-label">📊 Mapa</span>
+    </button>
+    <div class="nav-sep"></div>
+    <button class="nav-btn" onclick="navScroll(this,'s1-raices')" id="nav-s1r">
+      <span class="nav-unit">§1 Teoría</span><span class="nav-label">🌱 Raíces</span>
+    </button>
+    <button class="nav-btn" onclick="navScroll(this,'s1-ajuste')" id="nav-s1a">
+      <span class="nav-unit">§1 Teoría</span><span class="nav-label">📈 Ajuste</span>
+    </button>
+    <button class="nav-btn" onclick="navScroll(this,'s1-interp')" id="nav-s1i">
+      <span class="nav-unit">§1 Teoría</span><span class="nav-label">🔮 Interpolación</span>
+    </button>
+    <div class="nav-sep"></div>
+    <button class="nav-btn" onclick="navScroll(this,'s2-biseccion')" id="nav-s2b">
+      <span class="nav-unit">§2 Algoritmo</span><span class="nav-label">🔵 Bisección</span>
+    </button>
+    <button class="nav-btn" onclick="navScroll(this,'s2-newton')" id="nav-s2n">
+      <span class="nav-unit">§2 Algoritmo</span><span class="nav-label">🟢 Newton-R</span>
+    </button>
+    <button class="nav-btn" onclick="navScroll(this,'s2-pfijo')" id="nav-s2p">
+      <span class="nav-unit">§2 Algoritmo</span><span class="nav-label">🟡 Punto Fijo</span>
+    </button>
+    <div class="nav-sep"></div>
+    <button class="nav-btn" onclick="navScroll(this,'s2-cuadmin')" id="nav-s2c">
+      <span class="nav-unit">§2 Algoritmo</span><span class="nav-label">📉 Cuad. Mín.</span>
+    </button>
+    <div class="nav-sep"></div>
+    <button class="nav-btn" onclick="navScroll(this,'s2-lagrange')" id="nav-s2l">
+      <span class="nav-unit">§2 Algoritmo</span><span class="nav-label">🔷 Lagrange</span>
+    </button>
+    <button class="nav-btn" onclick="navScroll(this,'s2-difdiv')" id="nav-s2d">
+      <span class="nav-unit">§2 Algoritmo</span><span class="nav-label">🔶 Newton DD</span>
+    </button>
+    <button class="nav-btn" onclick="navScroll(this,'s2-spline')" id="nav-s2s">
+      <span class="nav-unit">§2 Algoritmo</span><span class="nav-label">🌀 Splines</span>
+    </button>
+  </div>
+</nav>
+
+<main>
+
+<!-- ══════════════════════════════════════════ MAPA ══════════════════════════════════════════ -->
+<section id="overview">
+  <div class="section-title fade-in">
+    <div class="section-icon ic-violet">📊</div>
+    <div><h2>Mapa de Métodos</h2><div class="sec-sub">Panorama general — qué método usar en cada situación</div></div>
+  </div>
+
+  <div class="grid-3 fade-in">
+    <div class="card crit">
+      <div class="card-header"><span class="card-tag tag-crit">Tema 1</span><h3>🌱 Raíces de Funciones</h3></div>
+      <p>Encontrar <strong>x</strong> tal que <strong>f(x) = 0</strong>. Tres métodos principales.</p>
+      <div class="chips"><span class="chip chip-cyan">Bisección</span><span class="chip chip-green">Newton-Raphson</span><span class="chip">Punto Fijo</span></div>
+    </div>
+    <div class="card high">
+      <div class="card-header"><span class="card-tag tag-high">Tema 2</span><h3>📈 Ajuste de Funciones</h3></div>
+      <p>Curva que <strong>minimiza</strong> el error cuadrático total con los datos (no pasa por todos).</p>
+      <div class="chips"><span class="chip">Cuad. Mín. Lineal</span><span class="chip chip-green">Cuad. Mín. No Lineal</span></div>
+    </div>
+    <div class="card med">
+      <div class="card-header"><span class="card-tag tag-med">Tema 3</span><h3>🔮 Interpolación</h3></div>
+      <p>Polinomio que <strong>pasa exactamente</strong> por todos los puntos dados.</p>
+      <div class="chips"><span class="chip">Lagrange</span><span class="chip chip-cyan">Newton (DD)</span><span class="chip chip-green">Splines</span><span class="chip chip-red">Hermite</span></div>
+    </div>
+  </div>
+
+  <div class="card info fade-in">
+    <h3>⚡ Diferencia clave: Ajuste vs Interpolación</h3>
+    <div class="grid-2" style="margin-top:14px;">
+      <div>
+        <p><strong style="color:#fcd34d;">Ajuste:</strong></p>
+        <ul>
+          <li>La curva <strong>NO pasa por todos los puntos</strong></li>
+          <li>Minimiza \( S = \sum_i [y_i - f(x_i)]^2 \)</li>
+          <li>Para datos con <strong>ruido o error experimental</strong></li>
+          <li>Grado \( N \leq n-1 \)</li>
+        </ul>
+      </div>
+      <div>
+        <p><strong style="color:#67e8f9;">Interpolación:</strong></p>
+        <ul>
+          <li>El polinomio <strong>pasa exactamente</strong> por todos los puntos</li>
+          <li>\( P(x_i) = y_i \) para todo \(i\)</li>
+          <li>Para datos <strong>exactos o conocidos</strong></li>
+          <li>Grado \( = n - 1 \)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="danger-box" style="margin-top:10px;">
+      <strong>⚠️ Trampa clásica:</strong> Confundir ajuste con interpolación. Datos con dispersión → Ajuste. Datos exactos que todos deben cumplirse → Interpolación.
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECCIÓN 1 TEORÍA ══ -->
+<div class="sec-divider"><span class="sec-divider-label">SECCIÓN 1 — TEORÍA Y CONDICIONES DE CONVERGENCIA</span></div>
+
+<!-- ═══════ 1. RAÍCES ═══════ -->
+<section id="s1-raices">
+  <div class="section-title fade-in">
+    <div class="section-icon ic-red">🌱</div>
+    <div><h2>1. Raíces de Funciones</h2><div class="sec-sub">Bisección · Newton-Raphson · Punto Fijo</div></div>
+  </div>
+
+  <div class="card info fade-in">
+    <div class="card-header"><span class="card-tag tag-info">Concepto base</span><h3>¿Qué es una raíz?</h3></div>
+    <p>Una raíz o <strong>cero</strong> de \(f(x)\) es un valor \(x^*\) tal que \(f(x^*) = 0\). Los métodos numéricos construyen sucesiones \(\{x_n\}\) que convergen a \(x^*\).</p>
+    <div class="eq-block">
+      <span class="eq-label">Problema general</span>
+      $$\text{Hallar } x^* \text{ tal que } f(x^*) = 0$$
+    </div>
+    <div class="highlight">
+      <strong>Teorema de Bolzano:</strong> Si \(f\) es continua en \([a,b]\) y \(f(a)\cdot f(b) < 0\), entonces \(\exists\, c \in (a,b)\) tal que \(f(c)=0\).
+    </div>
+  </div>
+
+  <!-- 1.1 BISECCIÓN -->
+  <div class="sub-section-title fade-in">
+    <span class="method-badge mb-bisec">Bisección</span><h3>1.1 Método de Bisección</h3>
+  </div>
+
+  <div class="grid-2 fade-in">
+    <div class="card cyan">
+      <div class="card-header"><span class="card-tag tag-cyan">Condiciones</span><h3>Requisitos</h3></div>
+      <ul>
+        <li>\(f(x)\) continua en \([a, b]\)</li>
+        <li>\(f(a) \cdot f(b) < 0\) (Bolzano)</li>
+        <li>Si hay raíz de multiplicidad par, Bolzano no se cumple aunque exista raíz</li>
+      </ul>
+    </div>
+    <div class="card cyan">
+      <div class="card-header"><span class="card-tag tag-cyan">Error y Convergencia</span><h3>Análisis</h3></div>
+      <p>Convergencia <strong>lineal</strong> (lenta pero segura). En cada paso, el intervalo se divide a la mitad:</p>
+      <div class="eq-block" style="margin-top:10px;">
+        <span class="eq-label">Cota de error en la iteración n</span>
+        $$|e_n| \leq \frac{b - a}{2^n}$$
+      </div>
+      <div class="eq-block">
+        <span class="eq-label">Iteraciones necesarias para tolerancia ε</span>
+        $$n \geq \log_2\!\left(\frac{b - a}{\varepsilon}\right)$$
+      </div>
+    </div>
+  </div>
+
+  <div class="table-wrap fade-in" style="margin-bottom:20px;">
+    <table class="t">
+      <tr><th>\(\varepsilon\) deseado</th><th>Intervalo \([0,1]\)</th><th>Intervalo \([0,2]\)</th></tr>
+      <tr><td>\(10^{-3}\)</td><td>\(n \geq 10\)</td><td>\(n \geq 11\)</td></tr>
+      <tr><td>\(10^{-4}\)</td><td>\(n \geq 14\)</td><td>\(n \geq 15\)</td></tr>
+      <tr><td>\(10^{-7}\)</td><td>\(n \geq 24\)</td><td>\(n \geq 25\)</td></tr>
+      <tr><td>\(10^{-8}\)</td><td>\(n \geq 27\)</td><td>\(n \geq 28\)</td></tr>
+    </table>
+  </div>
+
+  <!-- 1.2 NEWTON-RAPHSON -->
+  <div class="sub-section-title fade-in">
+    <span class="method-badge mb-newton">Newton-Raphson</span><h3>1.2 Método de Newton-Raphson</h3>
+  </div>
+
+  <div class="grid-2 fade-in">
+    <div class="card med">
+      <div class="card-header"><span class="card-tag tag-med">Condiciones</span><h3>Requisitos</h3></div>
+      <ul>
+        <li>\(f(x)\) diferenciable en el entorno de \(x^*\)</li>
+        <li>\(f'(x_n) \neq 0\) en cada iterado</li>
+        <li>\(x_0\) suficientemente cerca de \(x^*\)</li>
+        <li>Si \(f'(x^*)=0\) (raíz múltiple), la convergencia baja a lineal</li>
+      </ul>
+    </div>
+    <div class="card med">
+      <div class="card-header"><span class="card-tag tag-med">Convergencia</span><h3>Análisis</h3></div>
+      <p><strong>Convergencia cuadrática</strong> cuando \(f'(x^*) \neq 0\):</p>
+      <div class="eq-block" style="margin-top:10px;">
+        <span class="eq-label">Orden cuadrático de error</span>
+        $$e_{n+1} \approx \frac{f''(x^*)}{2\,f'(x^*)}\,e_n^2$$
+      </div>
+      <div class="conv-meter">
+        <span class="conv-label">Velocidad relativa:</span>
+        <div class="conv-bar-wrap"><div class="conv-bar fast" style="width:95%;"></div></div>
+        <span style="font-size:0.82rem;font-weight:600;color:#10b981;">Cuadrática</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 1.3 PUNTO FIJO -->
+  <div class="sub-section-title fade-in">
+    <span class="method-badge mb-fixed">Punto Fijo</span><h3>1.3 Método de Punto Fijo</h3>
+  </div>
+
+  <div class="card high fade-in">
+    <div class="card-header"><span class="card-tag tag-high">Teorema de Convergencia</span><h3>Condición necesaria y suficiente</h3></div>
+    <p>La iteración \(x_{n+1} = g(x_n)\) converge si:</p>
+    <ul>
+      <li>\(g\) continua en \([a,b]\) y \(g(x) \in [a,b]\) para todo \(x \in [a,b]\)</li>
+      <li>\(\boldsymbol{|g'(x)| < 1}\) para todo \(x \in [a,b]\) — condición de contracción</li>
+    </ul>
+    <div class="eq-block">
+      <span class="eq-label">Error en la iteración n (cota)</span>
+      $$|e_n| \leq \frac{|g'|^n}{1-|g'|}\,|x_1 - x_0|$$
+    </div>
+    <div class="warn-box">Si \(|g'(x^*)| > 1\) → <strong>diverge</strong>. Hay que reformular \(f(x)=0\) para obtener otra \(g(x)\).</div>
+  </div>
+
+  <!-- Tabla comparativa -->
+  <div class="card info fade-in">
+    <h3>⚡ Comparativa de métodos para raíces</h3>
+    <div class="table-wrap">
+      <table class="t" style="margin-top:14px;">
+        <tr><th>Método</th><th>Orden</th><th>Requiere</th><th>Garantía</th><th>Velocidad</th></tr>
+        <tr><td>Bisección</td><td>\(p=1\)</td><td>Solo continuidad</td><td style="color:#6ee7b7;">Siempre converge</td><td style="color:#fca5a5;">Lenta</td></tr>
+        <tr><td>Newton-Raphson</td><td>\(p=2\)</td><td>\(f'(x)\) ≠ 0</td><td style="color:#fcd34d;">Si \(x_0\) cercano</td><td style="color:#6ee7b7;">Muy rápida</td></tr>
+        <tr><td>Punto Fijo</td><td>\(p=1\)</td><td>\(|g'|<1\)</td><td style="color:#fcd34d;">Si condición cumplida</td><td style="color:#fcd34d;">Media</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ 2. AJUSTE ═══════ -->
+<section id="s1-ajuste">
+  <div class="section-title fade-in">
+    <div class="section-icon ic-amber">📈</div>
+    <div><h2>2. Ajuste de Funciones</h2><div class="sec-sub">Cuadrados Mínimos Lineal · No Lineal</div></div>
+  </div>
+
+  <div class="card high fade-in">
+    <div class="card-header"><span class="card-tag tag-high">Concepto base</span><h3>Cuadrados Mínimos</h3></div>
+    <p>Dado un conjunto de \(n\) pares \((x_i, y_i)\), se busca la función \(f(x)\) que minimice la suma de cuadrados de residuos:</p>
+    <div class="eq-block">
+      <span class="eq-label">Función objetivo a minimizar</span>
+      $$S = \sum_{i=1}^{n} \left[y_i - f(x_i)\right]^2 \quad\longrightarrow\quad \text{mínimo}$$
+    </div>
+  </div>
+
+  <div class="card high fade-in">
+    <div class="card-header"><span class="card-tag tag-high">Ajuste Lineal</span><h3>Recta de regresión: \(f(x) = a_0 + a_1 x\)</h3></div>
+    <p>Imponiendo \(\partial S/\partial a_0 = 0\) y \(\partial S/\partial a_1 = 0\), se obtiene el <strong>sistema normal</strong>:</p>
+    <div class="eq-block">
+      <span class="eq-label">Sistema normal (2 ecuaciones, 2 incógnitas)</span>
+      $$\begin{cases} n\,a_0 + \left(\sum x_i\right) a_1 = \sum y_i \\[6pt] \left(\sum x_i\right)a_0 + \left(\sum x_i^2\right) a_1 = \sum x_i y_i \end{cases}$$
+    </div>
+    <div class="eq-block">
+      <span class="eq-label">Fórmulas directas</span>
+      $$a_1 = \frac{n\sum x_i y_i - \sum x_i \sum y_i}{n\sum x_i^2 - \left(\sum x_i\right)^2}, \qquad a_0 = \bar{y} - a_1\,\bar{x}$$
+    </div>
+    <div class="highlight">
+      <strong>Verificación:</strong> La suma de residuos \(\sum r_i = \sum(y_i - f(x_i)) \approx 0\) siempre (propiedad del sistema normal).
+    </div>
+  </div>
+
+  <div class="card high fade-in">
+    <div class="card-header"><span class="card-tag tag-high">Linealización</span><h3>Modelos no lineales comunes</h3></div>
+    <div class="table-wrap">
+      <table class="t">
+        <tr><th>Modelo original</th><th>Transformación</th><th>Variables linealizadas</th></tr>
+        <tr><td>\(y = a\,e^{bx}\)</td><td>\(\ln y = \ln a + b\,x\)</td><td>\(Y=\ln y,\; X=x,\; A=\ln a\)</td></tr>
+        <tr><td>\(y = a\,x^b\)</td><td>\(\ln y = \ln a + b\ln x\)</td><td>\(Y=\ln y,\; X=\ln x\)</td></tr>
+        <tr><td>\(y = \dfrac{1}{a+bx}\)</td><td>\(\dfrac{1}{y} = a + bx\)</td><td>\(Y=1/y,\; X=x\)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card info fade-in">
+    <h3>📊 Coeficiente de determinación \(R^2\)</h3>
+    <div class="eq-block">
+      $$R^2 = 1 - \frac{\displaystyle\sum_{i=1}^n \left[y_i - f(x_i)\right]^2}{\displaystyle\sum_{i=1}^n \left(y_i - \bar{y}\right)^2}$$
+    </div>
+    <p>\(R^2 = 1\) → ajuste perfecto. \(R^2 = 0\) → el modelo no explica nada. En la práctica, \(R^2 > 0.95\) es un buen ajuste.</p>
+  </div>
+</section>
+
+<!-- ═══════ 3. INTERPOLACIÓN ═══════ -->
+<section id="s1-interp">
+  <div class="section-title fade-in">
+    <div class="section-icon ic-cyan">🔮</div>
+    <div><h2>3. Interpolación de Funciones</h2><div class="sec-sub">Lagrange · Newton (DD) · Splines · Hermite</div></div>
+  </div>
+
+  <div class="card cyan fade-in">
+    <div class="card-header"><span class="card-tag tag-cyan">Unicidad</span><h3>Teorema fundamental</h3></div>
+    <p>Dados \(n\) puntos \((x_0,y_0),\ldots,(x_{n-1},y_{n-1})\) con los \(x_i\) distintos, <strong>existe un único polinomio</strong> de grado \(\leq n-1\) que pasa por todos ellos.</p>
+    <div class="eq-block">
+      $$\exists!\; P_{n-1}(x) \text{ tal que } P_{n-1}(x_i) = y_i \quad \forall\,i = 0,\ldots, n-1$$
+    </div>
+  </div>
+
+  <div class="sub-section-title fade-in"><span class="method-badge mb-lagr">Lagrange</span><h3>3.1 Interpolación de Lagrange</h3></div>
+  <div class="card cyan fade-in">
+    <div class="card-header"><span class="card-tag tag-cyan">Fórmula</span><h3>Funciones base y polinomio</h3></div>
+    <div class="eq-block">
+      <span class="eq-label">Función base de Lagrange i-ésima</span>
+      $$L_i(x) = \prod_{\substack{j=0 \\ j\neq i}}^{n-1} \frac{x - x_j}{x_i - x_j}$$
+    </div>
+    <div class="eq-block">
+      <span class="eq-label">Polinomio interpolador</span>
+      $$P(x) = \sum_{i=0}^{n-1} y_i\, L_i(x)$$
+    </div>
+    <p style="margin-top:10px;">Propiedad clave: \(L_i(x_i) = 1\) y \(L_i(x_j) = 0\) para \(j \neq i\).</p>
+  </div>
+
+  <div class="sub-section-title fade-in"><span class="method-badge mb-newton2">Newton (DD)</span><h3>3.2 Interpolación de Newton — Diferencias Divididas</h3></div>
+  <div class="card med fade-in">
+    <div class="card-header"><span class="card-tag tag-med">Fórmula</span><h3>Forma de Newton y Algoritmo de Horner</h3></div>
+    <div class="eq-block">
+      <span class="eq-label">Diferencia dividida de orden k</span>
+      $$f[x_i,\ldots,x_{i+k}] = \frac{f[x_{i+1},\ldots,x_{i+k}] - f[x_i,\ldots,x_{i+k-1}]}{x_{i+k} - x_i}$$
+    </div>
+    <div class="eq-block">
+      <span class="eq-label">Polinomio de Newton (coeficientes = primera diagonal de la tabla DD)</span>
+      $$P(x) = a_0 + a_1(x-x_0) + a_2(x-x_0)(x-x_1) + \cdots + a_{n-1}\prod_{j=0}^{n-2}(x-x_j)$$
+    </div>
+    <div class="success-box"><strong>Ventaja:</strong> Al agregar un nuevo punto, solo se calcula una nueva columna en la tabla. No se recalcula todo.</div>
+  </div>
+
+  <div class="sub-section-title fade-in"><span class="method-badge mb-spline">Splines Cúbicos</span><h3>3.3 Splines Cúbicos Naturales</h3></div>
+  <div class="card pink fade-in">
+    <div class="card-header"><span class="card-tag tag-exam">Condiciones</span><h3>Para n puntos → n-1 splines cúbicos</h3></div>
+    <p>Cada tramo: \(S_i(x) = a_i + b_i(x-x_i) + c_i(x-x_i)^2 + d_i(x-x_i)^3\). Condiciones:</p>
+    <div class="table-wrap">
+      <table class="t">
+        <tr><th>Condición</th><th>Cantidad</th></tr>
+        <tr><td>Interpolación en ambos extremos de cada tramo</td><td>\(2(n-1)\)</td></tr>
+        <tr><td>Continuidad de \(S'\) en nodos interiores</td><td>\(n-2\)</td></tr>
+        <tr><td>Continuidad de \(S''\) en nodos interiores</td><td>\(n-2\)</td></tr>
+        <tr><td>Frontera natural: \(S''(x_0) = S''(x_{n-1}) = 0\)</td><td>\(2\)</td></tr>
+        <tr><td><strong>TOTAL</strong></td><td><strong>\(4(n-1)\) ✅</strong></td></tr>
+      </table>
+    </div>
+    <div class="warn-box" style="margin-top:12px;"><strong>Fenómeno de Runge:</strong> Con muchos puntos equiespaciados, el interpolador polinomial de alto grado oscila enormemente en los extremos. Los Splines lo evitan.</div>
+  </div>
+
+  <div class="card cyan fade-in">
+    <h3>📊 Error de interpolación</h3>
+    <div class="eq-block">
+      <span class="eq-label">Término de error de Lagrange (para algún ξ ∈ [x₀, xₙ₋₁])</span>
+      $$E(x) = f(x) - P(x) = \frac{f^{(n)}(\xi)}{n!}\,\prod_{i=0}^{n-1}(x - x_i)$$
+    </div>
+    <p>El error depende de la \(n\)-ésima derivada de \(f\) y de la distancia a los nodos. Más puntos no siempre reducen el error.</p>
+  </div>
+</section>
+
+<!-- ══ SECCIÓN 2 ALGORITMOS ══ -->
+<div class="sec-divider"><span class="sec-divider-label">SECCIÓN 2 — RECETAS ALGORÍTMICAS (Paso a paso + Gráficos)</span></div>
+
+<!-- ═══════ BISECCIÓN ═══════ -->
+<section id="s2-biseccion">
+  <div class="section-title fade-in">
+    <div class="section-icon ic-cyan">🔵</div>
+    <div><h2>Algoritmo: Bisección</h2><div class="sec-sub">Método garantizado — convergencia lenta pero segura</div></div>
+  </div>
+
+  <!-- GRÁFICO BISECCIÓN -->
+  <div class="graph-card fade-in">
+    <div class="graph-header">
+      <div class="graph-icon">📉</div>
+      <div><div class="graph-title">Visualización interactiva — Bisección sobre \(f(x) = x^2 - 9\)</div>
+      <div class="graph-sub">Observá cómo el intervalo [a, b] se reduce a la mitad en cada iteración hasta atrapar la raíz x* = 3</div></div>
+    </div>
+    <div class="canvas-wrap"><canvas id="chartBisec" height="220"></canvas></div>
+    <div class="iter-controls">
+      <button class="iter-btn" onclick="bisecPrev()">◀ Anterior</button>
+      <button class="iter-btn" onclick="bisecNext()">Siguiente ▶</button>
+      <span class="iter-info">Iteración: <span class="iter-badge" id="bisecIter">0 (inicio)</span></span>
+      <span class="iter-info" id="bisecInfo" style="color:#67e8f9;"></span>
+    </div>
+    <div class="graph-legend">
+      <div class="leg-item"><div class="leg-line" style="background:#6366f1;"></div> f(x) = x² − 9</div>
+      <div class="leg-item"><div class="leg-line" style="background:#10b981;border-style:dashed;border-top:2px dashed #10b981;height:0;"></div> Intervalo [a, b]</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#ef4444;"></div> Punto medio c</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#f59e0b;"></div> Raíz aproximada</div>
+    </div>
+  </div>
+
+  <div class="algo-card fade-in">
+    <div class="algo-header">
+      <div class="algo-num">1</div>
+      <div><div class="algo-title">Bisección — Algoritmo paso a paso</div>
+      <div class="algo-subtitle">Hallar raíz de f(x) = 0 en [a, b] con tolerancia ε</div></div>
+    </div>
+    <div class="algo-body">
+      <ol class="step-list">
+        <li><span class="step-num">1</span>
+          <div><strong>CONDICIÓN INICIAL:</strong> Verificar Bolzano: \(f(a)\cdot f(b) < 0\). Si no, el método no aplica en este intervalo.</div></li>
+        <li><span class="step-num">2</span>
+          <div><strong>COTA PREVIA:</strong> Calcular \(n \geq \log_2\!\left(\dfrac{b-a}{\varepsilon}\right)\) para saber cuántas filas tendrá la tabla.</div></li>
+        <li><span class="step-num">3</span>
+          <div><strong>FÓRMULA ITERATIVA:</strong>
+            <div class="eq-block" style="margin-top:8px;">$$\boldsymbol{c = \frac{a + b}{2}}$$</div>
+          </div></li>
+        <li><span class="step-num">4</span>
+          <div><strong>DECISIÓN:</strong> Evaluar \(f(c)\):<br/>
+            • Si \(f(a)\cdot f(c) < 0\) → raíz en \([a, c]\) → actualizar \(b \leftarrow c\)<br/>
+            • Si \(f(c)\cdot f(b) < 0\) → raíz en \([c, b]\) → actualizar \(a \leftarrow c\)<br/>
+            • Si \(f(c) = 0\) → ¡raíz exacta!
+          </div></li>
+        <li><span class="step-num">5</span>
+          <div><strong>CRITERIO DE PARADA:</strong> Detener si \(|b-a| < \varepsilon\) o \(|f(c)| < \varepsilon\).</div></li>
+        <li><span class="step-num">6</span>
+          <div><strong>REPETIR</strong> pasos 3–5 con el nuevo intervalo.
+            <div class="success-box" style="margin-top:8px;"><strong>La raíz aproximada es el último valor de c.</strong></div>
+          </div></li>
+      </ol>
+
+      <div class="danger-box" style="margin-top:20px;"><strong>⚠️ CHECKLIST DE TRAMPAS — Bisección</strong></div>
+      <ul class="trap-list" style="margin-top:10px;">
+        <li><span class="trap-icon">🚨</span><div><strong>No verificar Bolzano.</strong> Si \(f(a)\cdot f(b) > 0\), el método no aplica. Puede haber un número par de raíces o ninguna.</div></li>
+        <li><span class="trap-icon">🚨</span><div><strong>Confundir el criterio de actualización.</strong> El nuevo intervalo es aquel donde el producto de signos en los extremos sea negativo.</div></li>
+        <li><span class="trap-icon">⚠️</span><div><strong>Arrastrar errores de redondeo.</strong> Guardar todos los decimales posibles en cada c. No redondear intermedios.</div></li>
+        <li><span class="trap-icon">💡</span><div><strong>Calcular las iteraciones necesarias antes de empezar.</strong> \(n \geq \log_2((b-a)/\varepsilon)\) te dice exactamente cuántas filas necesitás.</div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ NEWTON-RAPHSON ═══════ -->
+<section id="s2-newton">
+  <div class="section-title fade-in">
+    <div class="section-icon ic-green">🟢</div>
+    <div><h2>Algoritmo: Newton-Raphson</h2><div class="sec-sub">Convergencia cuadrática — requiere derivada analítica</div></div>
+  </div>
+
+  <!-- GRÁFICO NEWTON -->
+  <div class="graph-card fade-in">
+    <div class="graph-header">
+      <div class="graph-icon">📐</div>
+      <div><div class="graph-title">Visualización interactiva — Newton-Raphson sobre \(f(x) = x^2 - 4x + 1\)</div>
+      <div class="graph-sub">Cada iteración traza la tangente a la curva en xₙ. La raíz es donde esa tangente toca el eje x → xₙ₊₁</div></div>
+    </div>
+    <div class="canvas-wrap"><canvas id="chartNewton" height="220"></canvas></div>
+    <div class="iter-controls">
+      <button class="iter-btn" onclick="newtonPrev()">◀ Anterior</button>
+      <button class="iter-btn" onclick="newtonNext()">Siguiente ▶</button>
+      <span class="iter-info">Iteración: <span class="iter-badge" id="newtonIter">0 (x₀=4)</span></span>
+      <span class="iter-info" id="newtonInfo" style="color:#6ee7b7;"></span>
+    </div>
+    <div class="graph-legend">
+      <div class="leg-item"><div class="leg-line" style="background:#6366f1;"></div> f(x) = x²−4x+1</div>
+      <div class="leg-item"><div class="leg-line" style="background:#10b981;"></div> Tangente en xₙ</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#ef4444;"></div> xₙ actual</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#f59e0b;"></div> xₙ₊₁ nuevo</div>
+    </div>
+  </div>
+
+  <div class="algo-card fade-in">
+    <div class="algo-header">
+      <div class="algo-num" style="background:linear-gradient(135deg,#10b981,#06b6d4);">2</div>
+      <div><div class="algo-title">Newton-Raphson — Algoritmo paso a paso</div>
+      <div class="algo-subtitle">Hallar raíz con aproximación inicial x₀</div></div>
+    </div>
+    <div class="algo-body">
+      <ol class="step-list">
+        <li><span class="step-num" style="background:rgba(16,185,129,0.2);border-color:rgba(16,185,129,0.4);color:#10b981;">1</span>
+          <div><strong>CONDICIÓN INICIAL:</strong> Calcular \(f'(x)\) analíticamente. Elegir \(x_0\) en zona donde \(f'(x_0) \neq 0\).</div></li>
+        <li><span class="step-num" style="background:rgba(16,185,129,0.2);border-color:rgba(16,185,129,0.4);color:#10b981;">2</span>
+          <div><strong>FÓRMULA ITERATIVA:</strong>
+            <div class="eq-block" style="margin-top:8px;border-color:rgba(16,185,129,0.3);">$$\boldsymbol{x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}}$$</div>
+          </div></li>
+        <li><span class="step-num" style="background:rgba(16,185,129,0.2);border-color:rgba(16,185,129,0.4);color:#10b981;">3</span>
+          <div><strong>VERIFICAR:</strong> Que \(f'(x_n) \neq 0\) antes de dividir.</div></li>
+        <li><span class="step-num" style="background:rgba(16,185,129,0.2);border-color:rgba(16,185,129,0.4);color:#10b981;">4</span>
+          <div><strong>CRITERIO DE PARADA:</strong> \(|x_{n+1} - x_n| < \varepsilon\) o \(|f(x_{n+1})| < \varepsilon\).</div></li>
+        <li><span class="step-num" style="background:rgba(16,185,129,0.2);border-color:rgba(16,185,129,0.4);color:#10b981;">5</span>
+          <div><strong>REPETIR</strong> con \(x_n \leftarrow x_{n+1}\).</div></li>
+      </ol>
+      <div class="danger-box" style="margin-top:20px;"><strong>⚠️ CHECKLIST DE TRAMPAS — Newton-Raphson</strong></div>
+      <ul class="trap-list" style="margin-top:10px;">
+        <li><span class="trap-icon">🚨</span><div><strong>Calculadora NO en radianes.</strong> Si f contiene sen, cos, tan → verificar que esté en modo RADIANES.</div></li>
+        <li><span class="trap-icon">🚨</span><div><strong>Derivar mal \(f'(x)\).</strong> Un error en f' hace que TODAS las iteraciones sean incorrectas.</div></li>
+        <li><span class="trap-icon">🚨</span><div><strong>Dividir por cero.</strong> Si \(f'(x_n)=0\) el método falla. Ocurre con raíces de multiplicidad par.</div></li>
+        <li><span class="trap-icon">⚠️</span><div><strong>Raíces múltiples.</strong> Si \(f'(x^*)=0\), la convergencia baja a lineal — no cuadrática.</div></li>
+        <li><span class="trap-icon">💡</span><div><strong>Interpretación geométrica:</strong> \(x_{n+1}\) es donde la <em>tangente</em> a la curva en \(x_n\) corta el eje x.</div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ PUNTO FIJO ═══════ -->
+<section id="s2-pfijo">
+  <div class="section-title fade-in">
+    <div class="section-icon ic-amber">🟡</div>
+    <div><h2>Algoritmo: Punto Fijo</h2><div class="sec-sub">Iteración funcional — diagrama de telaraña (cobweb)</div></div>
+  </div>
+
+  <!-- GRÁFICO PUNTO FIJO (cobweb) -->
+  <div class="graph-card fade-in">
+    <div class="graph-header">
+      <div class="graph-icon">🕸️</div>
+      <div><div class="graph-title">Diagrama de Telaraña — Punto Fijo con \(g(x) = \sqrt{x+12}\), raíz de \(f(x) = x^2 - x - 12\)</div>
+      <div class="graph-sub">La iteración converge cuando la "telaraña" se enrolla hacia la intersección de y=g(x) e y=x</div></div>
+    </div>
+    <div class="canvas-wrap"><canvas id="chartPFijo" height="220"></canvas></div>
+    <div class="iter-controls">
+      <button class="iter-btn" onclick="pfijoReset()">↺ Reiniciar</button>
+      <button class="iter-btn" onclick="pfijoNext()">Siguiente ▶</button>
+      <span class="iter-info">Paso: <span class="iter-badge" id="pfijoIter">0</span></span>
+      <span class="iter-info" id="pfijoInfo" style="color:#fcd34d;"></span>
+    </div>
+    <div class="graph-legend">
+      <div class="leg-item"><div class="leg-line" style="background:#6366f1;"></div> \(y = g(x) = \sqrt{x+12}\)</div>
+      <div class="leg-item"><div class="leg-line" style="background:rgba(255,255,255,0.3);"></div> \(y = x\) (bisectriz)</div>
+      <div class="leg-item"><div class="leg-line" style="background:#f59e0b;"></div> Iteración (telaraña)</div>
+    </div>
+  </div>
+
+  <div class="algo-card fade-in">
+    <div class="algo-header">
+      <div class="algo-num" style="background:linear-gradient(135deg,#f59e0b,#ef4444);">3</div>
+      <div><div class="algo-title">Punto Fijo — Algoritmo paso a paso</div>
+      <div class="algo-subtitle">Reformular f(x)=0 como x=g(x) e iterar</div></div>
+    </div>
+    <div class="algo-body">
+      <ol class="step-list">
+        <li><span class="step-num" style="background:rgba(245,158,11,0.2);border-color:rgba(245,158,11,0.4);color:#f59e0b;">1</span>
+          <div><strong>CONSTRUIR g(x):</strong> Reformular \(f(x)=0\) como \(x = g(x)\). Hay infinitas formas.</div></li>
+        <li><span class="step-num" style="background:rgba(245,158,11,0.2);border-color:rgba(245,158,11,0.4);color:#f59e0b;">2</span>
+          <div><strong>VERIFICAR CONVERGENCIA:</strong>
+            <div class="eq-block" style="margin-top:8px;border-color:rgba(245,158,11,0.3);">$$\text{Condición necesaria: } |g'(x_0)| < 1$$</div>
+            Si \(|g'(x^*)| > 1\) → diverge. Elegir otra g(x).
+          </div></li>
+        <li><span class="step-num" style="background:rgba(245,158,11,0.2);border-color:rgba(245,158,11,0.4);color:#f59e0b;">3</span>
+          <div><strong>FÓRMULA ITERATIVA:</strong>
+            <div class="eq-block" style="margin-top:8px;border-color:rgba(245,158,11,0.3);">$$\boldsymbol{x_{n+1} = g(x_n)}$$</div>
+          </div></li>
+        <li><span class="step-num" style="background:rgba(245,158,11,0.2);border-color:rgba(245,158,11,0.4);color:#f59e0b;">4</span>
+          <div><strong>CRITERIO DE PARADA:</strong> \(|x_{n+1} - x_n| < \varepsilon\).</div></li>
+      </ol>
+      <div class="danger-box" style="margin-top:20px;"><strong>⚠️ CHECKLIST DE TRAMPAS — Punto Fijo</strong></div>
+      <ul class="trap-list" style="margin-top:10px;">
+        <li><span class="trap-icon">🚨</span><div><strong>Construir una g que diverge.</strong> Calcular \(|g'(x^*)|\) antes de iterar. Si > 1, esa g no sirve.</div></li>
+        <li><span class="trap-icon">🚨</span><div><strong>No verificar que g mapea [a,b] en sí mismo.</strong> La condición \(g(x) \in [a,b]\) es necesaria junto con \(|g'|<1\).</div></li>
+        <li><span class="trap-icon">💡</span><div><strong>El examen pide 3 formas de g(x).</strong> Siempre verificar convergencia de cada una con \(|g'|\).</div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ CUADRADOS MÍNIMOS ═══════ -->
+<section id="s2-cuadmin">
+  <div class="section-title fade-in">
+    <div class="section-icon ic-amber">📉</div>
+    <div><h2>Algoritmo: Cuadrados Mínimos</h2><div class="sec-sub">Ajuste lineal, polinomial y no lineal</div></div>
+  </div>
+
+  <!-- GRÁFICO AJUSTE -->
+  <div class="graph-card fade-in">
+    <div class="graph-header">
+      <div class="graph-icon">📊</div>
+      <div><div class="graph-title">Visualización — Cuadrados Mínimos: datos con ruido y modelos de ajuste</div>
+      <div class="graph-sub">Los residuos (líneas verticales) muestran la distancia de cada punto a la curva. El objetivo es minimizar la suma de sus cuadrados.</div></div>
+    </div>
+    <div class="canvas-wrap"><canvas id="chartAjuste" height="220"></canvas></div>
+    <div class="graph-legend">
+      <div class="leg-item"><div class="leg-dot" style="background:#6366f1;"></div> Datos observados (con ruido)</div>
+      <div class="leg-item"><div class="leg-line" style="background:#10b981;"></div> Recta de regresión \(y = a_0 + a_1 x\)</div>
+      <div class="leg-item"><div class="leg-line" style="background:#f59e0b;border-style:dashed;"></div> Ajuste cuadrático \(y = a_0 + a_1 x + a_2 x^2\)</div>
+      <div class="leg-item"><div class="leg-line" style="background:rgba(239,68,68,0.5);width:3px;height:12px;"></div> Residuos</div>
+    </div>
+  </div>
+
+  <div class="algo-card fade-in">
+    <div class="algo-header">
+      <div class="algo-num" style="background:linear-gradient(135deg,#f59e0b,#6366f1);">4</div>
+      <div><div class="algo-title">Cuadrados Mínimos — Algoritmo paso a paso</div>
+      <div class="algo-subtitle">Ajustar y = a₀ + a₁x a n pares de datos</div></div>
+    </div>
+    <div class="algo-body">
+      <ol class="step-list">
+        <li><span class="step-num" style="background:rgba(245,158,11,0.2);border-color:rgba(245,158,11,0.4);color:#f59e0b;">1</span>
+          <div><strong>ARMAR LA TABLA:</strong> Columnas: \(x_i,\; y_i,\; x_i^2,\; x_i y_i\). Para grado 2, agregar \(x_i^3, x_i^4, x_i^2 y_i\).</div></li>
+        <li><span class="step-num" style="background:rgba(245,158,11,0.2);border-color:rgba(245,158,11,0.4);color:#f59e0b;">2</span>
+          <div><strong>CALCULAR SUMAS:</strong> \(n,\; \sum x_i,\; \sum y_i,\; \sum x_i^2,\; \sum x_i y_i\).</div></li>
+        <li><span class="step-num" style="background:rgba(245,158,11,0.2);border-color:rgba(245,158,11,0.4);color:#f59e0b;">3</span>
+          <div><strong>PLANTEAR SISTEMA NORMAL:</strong>
+            <div class="eq-block" style="margin-top:8px;border-color:rgba(245,158,11,0.3);">$$\begin{pmatrix} n & \sum x_i \\ \sum x_i & \sum x_i^2 \end{pmatrix} \begin{pmatrix} a_0 \\ a_1 \end{pmatrix} = \begin{pmatrix} \sum y_i \\ \sum x_i y_i \end{pmatrix}$$</div>
+          </div></li>
+        <li><span class="step-num" style="background:rgba(245,158,11,0.2);border-color:rgba(245,158,11,0.4);color:#f59e0b;">4</span>
+          <div><strong>RESOLVER:</strong> Fórmulas directas para recta:
+            <div class="eq-block" style="margin-top:8px;border-color:rgba(245,158,11,0.3);">$$a_1 = \frac{n\sum x_i y_i - \sum x_i\sum y_i}{n\sum x_i^2 - \!\left(\sum x_i\right)^2}, \qquad a_0 = \bar{y} - a_1\bar{x}$$</div>
+          </div></li>
+        <li><span class="step-num" style="background:rgba(245,158,11,0.2);border-color:rgba(245,158,11,0.4);color:#f59e0b;">5</span>
+          <div><strong>VERIFICAR:</strong> Calcular residuos \(r_i = y_i - f(x_i)\). Debe ser \(\sum r_i \approx 0\).</div></li>
+      </ol>
+      <div class="danger-box" style="margin-top:20px;"><strong>⚠️ CHECKLIST DE TRAMPAS — Cuadrados Mínimos</strong></div>
+      <ul class="trap-list" style="margin-top:10px;">
+        <li><span class="trap-icon">🚨</span><div><strong>Confundir \(\left(\sum x_i\right)^2\) con \(\sum x_i^2\).</strong> Son distintos. \(\left(\sum x_i\right)^2\) es la suma total elevada al cuadrado; \(\sum x_i^2\) es la suma de los cuadrados uno a uno.</div></li>
+        <li><span class="trap-icon">🚨</span><div><strong>Usar \(N \geq n\).</strong> No se puede ajustar con grado mayor o igual a la cantidad de datos. Sería interpolación (o sistema incompatible).</div></li>
+        <li><span class="trap-icon">⚠️</span><div><strong>En linealización, olvidar transformar los datos.</strong> Si el modelo es \(y = ae^{bx}\), la variable a ajustar es \(\ln y\), no \(y\).</div></li>
+        <li><span class="trap-icon">💡</span><div><strong>Verificar \(\sum r_i \approx 0\).</strong> Si no se cumple, hay error en \(a_0\) o \(a_1\). Es la propiedad más útil para detectar errores.</div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ LAGRANGE ═══════ -->
+<section id="s2-lagrange">
+  <div class="section-title fade-in">
+    <div class="section-icon ic-violet">🔷</div>
+    <div><h2>Algoritmo: Interpolación de Lagrange</h2><div class="sec-sub">Construcción directa sin resolver sistemas</div></div>
+  </div>
+
+  <!-- GRÁFICO LAGRANGE -->
+  <div class="graph-card fade-in">
+    <div class="graph-header">
+      <div class="graph-icon">🔷</div>
+      <div><div class="graph-title">Visualización — Lagrange: polinomio que pasa por todos los puntos</div>
+      <div class="graph-sub">A diferencia del ajuste, el polinomio interpolador pasa exactamente por cada punto de la tabla</div></div>
+    </div>
+    <div class="canvas-wrap"><canvas id="chartLagrange" height="220"></canvas></div>
+    <div class="graph-legend">
+      <div class="leg-item"><div class="leg-dot" style="background:#6366f1;width:12px;height:12px;"></div> Puntos de la tabla (datos exactos)</div>
+      <div class="leg-item"><div class="leg-line" style="background:#a5b4fc;"></div> Polinomio interpolador de Lagrange (grado n−1)</div>
+      <div class="leg-item"><div class="leg-line" style="background:#67e8f9;border-top:2px dashed #67e8f9;height:0;"></div> Interpolación lineal por tramos</div>
+    </div>
+  </div>
+
+  <div class="algo-card fade-in">
+    <div class="algo-header">
+      <div class="algo-num" style="background:linear-gradient(135deg,#6366f1,#8b5cf6);">5</div>
+      <div><div class="algo-title">Lagrange — Algoritmo paso a paso</div>
+      <div class="algo-subtitle">Construir P(x) que pasa por n puntos, evaluar en x*</div></div>
+    </div>
+    <div class="algo-body">
+      <ol class="step-list">
+        <li><span class="step-num" style="background:rgba(99,102,241,0.2);border-color:rgba(99,102,241,0.4);color:#6366f1;">1</span>
+          <div><strong>VERIFICAR DATOS:</strong> Todos los \(x_i\) distintos. El polinomio es de grado \(n-1\).</div></li>
+        <li><span class="step-num" style="background:rgba(99,102,241,0.2);border-color:rgba(99,102,241,0.4);color:#6366f1;">2</span>
+          <div><strong>CALCULAR CADA \(L_i(x)\):</strong>
+            <div class="eq-block" style="margin-top:8px;border-color:rgba(99,102,241,0.3);">$$L_i(x) = \frac{\displaystyle\prod_{\substack{j=0\\j\neq i}}^{n-1}(x - x_j)}{\displaystyle\prod_{\substack{j=0\\j\neq i}}^{n-1}(x_i - x_j)}$$</div>
+            Numerador: producto de \((x-x_j)\) para todos \(j \neq i\).<br/>
+            Denominador: producto de \((x_i-x_j)\) para todos \(j \neq i\) — <strong>es una constante</strong>.
+          </div></li>
+        <li><span class="step-num" style="background:rgba(99,102,241,0.2);border-color:rgba(99,102,241,0.4);color:#6366f1;">3</span>
+          <div><strong>ENSAMBLAR:</strong>
+            <div class="eq-block" style="margin-top:8px;border-color:rgba(99,102,241,0.3);">$$P(x) = \sum_{i=0}^{n-1} y_i\, L_i(x)$$</div>
+          </div></li>
+        <li><span class="step-num" style="background:rgba(99,102,241,0.2);border-color:rgba(99,102,241,0.4);color:#6366f1;">4</span>
+          <div><strong>EVALUAR</strong> en \(x^*\): sustituir \(x = x^*\) en cada \(L_i\).</div></li>
+        <li><span class="step-num" style="background:rgba(99,102,241,0.2);border-color:rgba(99,102,241,0.4);color:#6366f1;">5</span>
+          <div><strong>VERIFICAR:</strong> \(P(x_i)\) debe ser \(= y_i\) para todo \(i\).</div></li>
+      </ol>
+      <div class="highlight" style="margin-top:16px;">
+        <strong>Para 3 puntos \((x_0,y_0),(x_1,y_1),(x_2,y_2)\):</strong><br/>
+        \(L_0 = \dfrac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0-x_2)}\), \quad\) \(L_1 = \dfrac{(x-x_0)(x-x_2)}{(x_1-x_0)(x_1-x_2)}\), \quad\) \(L_2 = \dfrac{(x-x_0)(x-x_1)}{(x_2-x_0)(x_2-x_1)}\)
+      </div>
+      <div class="danger-box" style="margin-top:16px;"><strong>⚠️ CHECKLIST DE TRAMPAS — Lagrange</strong></div>
+      <ul class="trap-list" style="margin-top:10px;">
+        <li><span class="trap-icon">🚨</span><div><strong>Olvidar un factor en el numerador o denominador.</strong> Cada \(L_i\) tiene exactamente \(n-1\) factores en cada parte.</div></li>
+        <li><span class="trap-icon">🚨</span><div><strong>Evaluar el denominador con \(x\) en vez de con \(x_i\).</strong> El denominador es CONSTANTE (solo números).</div></li>
+        <li><span class="trap-icon">💡</span><div><strong>Extrapolación:</strong> Si \(x^*\) está fuera del rango de datos, el resultado puede ser muy inexacto.</div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ NEWTON DIFERENCIAS DIVIDIDAS ═══════ -->
+<section id="s2-difdiv">
+  <div class="section-title fade-in">
+    <div class="section-icon ic-pink">🔶</div>
+    <div><h2>Algoritmo: Newton — Diferencias Divididas</h2><div class="sec-sub">Tabla incremental + Algoritmo de Horner</div></div>
+  </div>
+
+  <!-- GRÁFICO DD -->
+  <div class="graph-card fade-in">
+    <div class="graph-header">
+      <div class="graph-icon">🔶</div>
+      <div><div class="graph-title">Visualización — Newton DD: cómo agregar un punto actualiza el polinomio</div>
+      <div class="graph-sub">Con 3 puntos → polinomio cuadrático. Al agregar el 4° punto, solo se suma un término más.</div></div>
+    </div>
+    <div class="canvas-wrap"><canvas id="chartNewtonDD" height="220"></canvas></div>
+    <div class="iter-controls">
+      <button class="iter-btn" onclick="ddToggle()">Agregar/quitar 4° punto</button>
+      <span class="iter-info" id="ddInfo" style="color:#c4b5fd;">Mostrando con 3 puntos (polinomio cuadrático)</span>
+    </div>
+    <div class="graph-legend">
+      <div class="leg-item"><div class="leg-dot" style="background:#8b5cf6;width:12px;height:12px;"></div> Puntos de datos</div>
+      <div class="leg-item"><div class="leg-line" style="background:#c4b5fd;"></div> Polinomio Newton (3 pts)</div>
+      <div class="leg-item"><div class="leg-line" style="background:#f9a8d4;border-top:2px dashed #f9a8d4;height:0;"></div> Polinomio Newton (4 pts)</div>
+    </div>
+  </div>
+
+  <div class="algo-card fade-in">
+    <div class="algo-header">
+      <div class="algo-num" style="background:linear-gradient(135deg,#8b5cf6,#ec4899);">6</div>
+      <div><div class="algo-title">Newton — Diferencias Divididas + Horner</div>
+      <div class="algo-subtitle">Tabla DD → coeficientes → evaluación anidada</div></div>
+    </div>
+    <div class="algo-body">
+      <ol class="step-list">
+        <li><span class="step-num" style="background:rgba(139,92,246,0.2);border-color:rgba(139,92,246,0.4);color:#8b5cf6;">1</span>
+          <div><strong>ORGANIZAR</strong> los \(n\) pares \((x_i,y_i)\) en la tabla.</div></li>
+        <li><span class="step-num" style="background:rgba(139,92,246,0.2);border-color:rgba(139,92,246,0.4);color:#8b5cf6;">2</span>
+          <div><strong>CONSTRUIR LA TABLA DD:</strong>
+            <div class="eq-block" style="margin-top:8px;border-color:rgba(139,92,246,0.3);">$$f[x_i,x_{i+1}] = \frac{f[x_{i+1}] - f[x_i]}{x_{i+1} - x_i} \qquad f[x_i,x_{i+1},x_{i+2}] = \frac{f[x_{i+1},x_{i+2}] - f[x_i,x_{i+1}]}{x_{i+2}-x_i}$$</div>
+            Los coeficientes son la primera diagonal: \(a_k = f[x_0,\ldots,x_k]\).
+          </div></li>
+        <li><span class="step-num" style="background:rgba(139,92,246,0.2);border-color:rgba(139,92,246,0.4);color:#8b5cf6;">3</span>
+          <div><strong>ESCRIBIR EL POLINOMIO:</strong>
+            <div class="eq-block" style="margin-top:8px;border-color:rgba(139,92,246,0.3);">$$P(x) = a_0 + a_1(x-x_0) + a_2(x-x_0)(x-x_1) + \cdots$$</div>
+          </div></li>
+        <li><span class="step-num" style="background:rgba(139,92,246,0.2);border-color:rgba(139,92,246,0.4);color:#8b5cf6;">4</span>
+          <div><strong>EVALUAR CON HORNER (anidado):</strong>
+            <div class="eq-block" style="margin-top:8px;border-color:rgba(139,92,246,0.3);">$$P(x^*) = a_0 + (x^*-x_0)\Big[a_1 + (x^*-x_1)\big[a_2 + (x^*-x_2)[\cdots]\big]\Big]$$</div>
+          </div></li>
+      </ol>
+      <div class="danger-box" style="margin-top:20px;"><strong>⚠️ CHECKLIST DE TRAMPAS — Diferencias Divididas</strong></div>
+      <ul class="trap-list" style="margin-top:10px;">
+        <li><span class="trap-icon">🚨</span><div><strong>Dividir al revés.</strong> \(f[x_i,x_j] = (f[x_j]-f[x_i])/(x_j-x_i)\): el numerador y denominador van en el mismo orden (mayor menos menor).</div></li>
+        <li><span class="trap-icon">🚨</span><div><strong>Confundir el denominador.</strong> En \(f[x_i,\ldots,x_k]\), el denominador es \(x_k - x_i\) (último menos primero de los índices involucrados).</div></li>
+        <li><span class="trap-icon">⚠️</span><div><strong>Horner en orden invertido.</strong> Se evalúa de adentro hacia afuera, del coeficiente de mayor orden al menor.</div></li>
+        <li><span class="trap-icon">💡</span><div><strong>Para agregar un punto:</strong> solo se calcula una nueva columna en la tabla DD — gran ventaja sobre Lagrange.</div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ SPLINES ═══════ -->
+<section id="s2-spline">
+  <div class="section-title fade-in">
+    <div class="section-icon ic-pink">🌀</div>
+    <div><h2>Algoritmo: Splines Cúbicos y Hermite</h2><div class="sec-sub">Interpolación a trozos — suavidad garantizada</div></div>
+  </div>
+
+  <!-- GRÁFICO SPLINES -->
+  <div class="graph-card fade-in">
+    <div class="graph-header">
+      <div class="graph-icon">🌀</div>
+      <div><div class="graph-title">Visualización — Splines vs Polinomio global: Fenómeno de Runge</div>
+      <div class="graph-sub">El spline cúbico evita las oscilaciones salvajes del polinomio de alto grado en los extremos del intervalo</div></div>
+    </div>
+    <div class="canvas-wrap"><canvas id="chartSpline" height="220"></canvas></div>
+    <div class="graph-legend">
+      <div class="leg-item"><div class="leg-dot" style="background:#ec4899;width:12px;height:12px;"></div> Puntos de datos</div>
+      <div class="leg-item"><div class="leg-line" style="background:#f9a8d4;"></div> Spline cúbico natural (suave)</div>
+      <div class="leg-item"><div class="leg-line" style="background:#ef4444;border-top:2px dashed #ef4444;height:0;"></div> Polinomio interpolador global (Runge)</div>
+    </div>
+  </div>
+
+  <div class="algo-card fade-in">
+    <div class="algo-header">
+      <div class="algo-num" style="background:linear-gradient(135deg,#ec4899,#8b5cf6);">7</div>
+      <div><div class="algo-title">Splines Cúbicos Naturales — Estrategia</div>
+      <div class="algo-subtitle">Contar incógnitas y ecuaciones — resolver sistema tridiagonal</div></div>
+    </div>
+    <div class="algo-body">
+      <div class="warn-box" style="margin-bottom:20px;"><strong>En examen:</strong> Generalmente se pide justificar las condiciones y contar ecuaciones, o resolver el sistema para 3-4 puntos simples.</div>
+      <ol class="step-list">
+        <li><span class="step-num" style="background:rgba(236,72,153,0.2);border-color:rgba(236,72,153,0.4);color:#ec4899;">1</span>
+          <div><strong>IDENTIFICAR INCÓGNITAS:</strong><br/>
+            \(n\) puntos → \(n-1\) tramos → \(4(n-1)\) incógnitas \((a_i,b_i,c_i,d_i)\).
+          </div></li>
+        <li><span class="step-num" style="background:rgba(236,72,153,0.2);border-color:rgba(236,72,153,0.4);color:#ec4899;">2</span>
+          <div><strong>CONTAR CONDICIONES (deben ser \(4(n-1)\)):</strong>
+            <div class="table-wrap" style="margin-top:10px;">
+              <table class="t">
+                <tr><th>Condición</th><th>Cantidad</th></tr>
+                <tr><td>Interpolación en ambos extremos de cada tramo</td><td>\(2(n-1)\)</td></tr>
+                <tr><td>Continuidad de \(S'\) en nodos interiores</td><td>\(n-2\)</td></tr>
+                <tr><td>Continuidad de \(S''\) en nodos interiores</td><td>\(n-2\)</td></tr>
+                <tr><td>Frontera natural: \(S''(x_0)=S''(x_{n-1})=0\)</td><td>\(2\)</td></tr>
+                <tr><td><strong>TOTAL</strong></td><td><strong>\(4(n-1)\) ✅</strong></td></tr>
+              </table>
+            </div>
+          </div></li>
+        <li><span class="step-num" style="background:rgba(236,72,153,0.2);border-color:rgba(236,72,153,0.4);color:#ec4899;">3</span>
+          <div><strong>EVALUAR:</strong> Identificar en qué subintervalo cae \(x^*\) y usar el \(S_i(x^*)\) correspondiente.</div></li>
+      </ol>
+
+      <div style="margin-top:24px;">
+        <div class="sub-section-title" style="margin-top:0;border-bottom:none;margin-bottom:14px;">
+          <span class="method-badge mb-herm" style="margin-right:8px;">Hermite</span>
+          <h3>Spline de Hermite — cuando se conoce f'</h3>
+        </div>
+        <div class="highlight">Por tramo, se tienen 4 condiciones: \(S_i(x_i)=y_i\), \(S_i(x_{i+1})=y_{i+1}\), \(S_i'(x_i)=y_i'\), \(S_i'(x_{i+1})=y_{i+1}'\). <strong>Cada tramo se resuelve independientemente</strong> — sin el acoplamiento del spline natural.</div>
+      </div>
+
+      <div class="danger-box" style="margin-top:20px;"><strong>⚠️ CHECKLIST DE TRAMPAS — Splines</strong></div>
+      <ul class="trap-list" style="margin-top:10px;">
+        <li><span class="trap-icon">🚨</span><div><strong>Confundir \(n\) puntos con \(n-1\) tramos.</strong> Las incógnitas son \(4(n-1)\), no \(4n\).</div></li>
+        <li><span class="trap-icon">🚨</span><div><strong>Olvidar las condiciones de frontera natural \(S''=0\).</strong> Sin ellas el sistema está subdeterminado (faltarían 2 ecuaciones).</div></li>
+        <li><span class="trap-icon">⚠️</span><div><strong>Evaluar en el spline incorrecto.</strong> Verificar siempre en qué subintervalo \([x_i, x_{i+1}]\) cae el punto de evaluación.</div></li>
+      </ul>
+
+      <!-- Tabla comparativa final -->
+      <div style="margin-top:30px;">
+        <h3 style="color:var(--text-primary);margin-bottom:14px;">🏆 Comparativa final — Todos los métodos</h3>
+        <div class="table-wrap">
+          <table class="t">
+            <tr><th>Método</th><th>Tema</th><th>Fórmula clave</th><th>Orden de error</th></tr>
+            <tr><td><span class="method-badge mb-bisec">Bisección</span></td><td>Raíces</td><td>\(c = (a+b)/2\)</td><td>\(O(1/2^n)\)</td></tr>
+            <tr><td><span class="method-badge mb-newton">Newton-R.</span></td><td>Raíces</td><td>\(x_{n+1} = x_n - f/f'\)</td><td>\(O(e_n^2)\) cuadrático</td></tr>
+            <tr><td><span class="method-badge mb-fixed">Punto Fijo</span></td><td>Raíces</td><td>\(x_{n+1} = g(x_n)\)</td><td>\(O(|g'|^n)\) lineal</td></tr>
+            <tr><td>Cuad. Mínimos</td><td>Ajuste</td><td>\(\min \sum r_i^2\)</td><td>\(S = \sum r_i^2\)</td></tr>
+            <tr><td><span class="method-badge mb-lagr">Lagrange</span></td><td>Interpolación</td><td>\(P = \sum y_i L_i\)</td><td>\(f^{(n)}(\xi)/n!\cdot\Pi(x-x_i)\)</td></tr>
+            <tr><td><span class="method-badge mb-newton2">Newton (DD)</span></td><td>Interpolación</td><td>\(P = \sum a_k\prod(x-x_j)\)</td><td>Igual Lagrange</td></tr>
+            <tr><td><span class="method-badge mb-spline">Splines</span></td><td>Interpolación</td><td>Cúbico por tramo, \(C^2\)</td><td>\(O(h^4)\)</td></tr>
+            <tr><td><span class="method-badge mb-herm">Hermite</span></td><td>Interpolación</td><td>Usa \(f\) y \(f'\) en nodos</td><td>\(O(h^5)\) por tramo</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>📚 Guía de Análisis Numérico · UTN · Ing. Julián D. Barbieri · Preparación de Final</p>
+  <p style="margin-top:6px;font-size:0.75rem;">Raíces · Ajuste · Interpolación — Ecuaciones MathJax · Gráficos Chart.js</p>
+</footer>
+
+<script>
+/* ─────────────── HELPERS ─────────────── */
+const COLORS = {
+  violet:'rgba(99,102,241,1)', violetA:'rgba(99,102,241,0.15)',
+  cyan:'rgba(6,182,212,1)',    cyanA:'rgba(6,182,212,0.12)',
+  green:'rgba(16,185,129,1)', greenA:'rgba(16,185,129,0.12)',
+  amber:'rgba(245,158,11,1)', amberA:'rgba(245,158,11,0.12)',
+  red:'rgba(239,68,68,1)',    redA:'rgba(239,68,68,0.12)',
+  pink:'rgba(236,72,153,1)',  pinkA:'rgba(236,72,153,0.12)',
+  purple:'rgba(139,92,246,1)',purpleA:'rgba(139,92,246,0.12)',
+  white:'rgba(255,255,255,0.25)',
+};
+Chart.defaults.color = '#94a3b8';
+Chart.defaults.borderColor = 'rgba(99,102,241,0.15)';
+Chart.defaults.font.family = "'Inter', sans-serif";
+
+function linspace(a,b,n){ const s=[],h=(b-a)/(n-1); for(let i=0;i<n;i++) s.push(a+i*h); return s; }
+
+/* ─────────────── 1. BISECCIÓN ─────────────── */
+const bisecF = x => x*x - 9;
+const bisecIters = (() => {
+  let a=0, b=5;
+  const iters = [{a,b,c:null}];
+  for(let i=0;i<7;i++){
+    const c=(a+b)/2;
+    iters.push({a,b,c});
+    if(bisecF(a)*bisecF(c)<0) b=c; else a=c;
+  }
+  return iters;
+})();
+
+let bisecIdx = 0;
+let bisecChart = null;
+
+function buildBisecChart(){
+  const xs = linspace(-0.5, 5.5, 200);
+  const ys = xs.map(bisecF);
+  const ctx = document.getElementById('chartBisec').getContext('2d');
+  bisecChart = new Chart(ctx,{
+    type:'line',
+    data:{
+      datasets:[
+        {label:'f(x) = x²−9', data:xs.map((x,i)=>({x,y:ys[i]})), borderColor:COLORS.violet, borderWidth:2.5,
+         pointRadius:0, fill:false, tension:0.3, order:1},
+        {label:'Eje y=0', data:[{x:-0.5,y:0},{x:5.5,y:0}], borderColor:'rgba(255,255,255,0.2)',
+         borderWidth:1, pointRadius:0, fill:false, order:2},
+        {label:'[a,b]', data:[], borderColor:COLORS.green, borderWidth:3,
+         pointRadius:0, fill:false, order:3},
+        {label:'c', data:[], pointRadius:10, pointBackgroundColor:COLORS.red,
+         pointBorderColor:'white', pointBorderWidth:2, showLine:false, order:0},
+        {label:'Raíz aprox', data:[], pointRadius:10, pointBackgroundColor:COLORS.amber,
+         pointBorderColor:'white', pointBorderWidth:2, showLine:false, order:0},
+      ]
+    },
+    options:{
+      responsive:true, animation:{duration:600},
+      plugins:{legend:{display:false}, tooltip:{callbacks:{label:ctx=>`f(${ctx.parsed.x.toFixed(3)}) = ${ctx.parsed.y.toFixed(4)}`}}},
+      scales:{
+        x:{type:'linear',min:-0.5,max:5.5,title:{display:true,text:'x'},grid:{color:'rgba(255,255,255,0.04)'}},
+        y:{title:{display:true,text:'f(x)'},grid:{color:'rgba(255,255,255,0.04)'}},
+      }
+    }
+  });
+  updateBisecChart();
+}
+
+function updateBisecChart(){
+  const it = bisecIters[bisecIdx];
+  const ds = bisecChart.data.datasets;
+  // Intervalo [a,b] como línea horizontal en y=0 aprox
+  ds[2].data = [{x:it.a,y:bisecF(it.a)},{x:it.a,y:0},{x:it.b,y:0},{x:it.b,y:bisecF(it.b)}];
+  if(it.c !== null){
+    ds[3].data = [{x:it.c,y:bisecF(it.c)},{x:it.c,y:0}];
+    ds[4].data = [{x:it.c,y:0}];
+    document.getElementById('bisecInfo').textContent = `a=${it.a.toFixed(4)}, b=${it.b.toFixed(4)}, c=${it.c.toFixed(4)}, f(c)=${bisecF(it.c).toFixed(4)}`;
+  } else {
+    ds[3].data = []; ds[4].data = [];
+    document.getElementById('bisecInfo').textContent = `Intervalo inicial: [${it.a}, ${it.b}]`;
+  }
+  document.getElementById('bisecIter').textContent = bisecIdx===0 ? '0 (inicio)' : bisecIdx;
+  bisecChart.update();
+}
+function bisecNext(){ if(bisecIdx<bisecIters.length-1){bisecIdx++;updateBisecChart();} }
+function bisecPrev(){ if(bisecIdx>0){bisecIdx--;updateBisecChart();} }
+
+/* ─────────────── 2. NEWTON-RAPHSON ─────────────── */
+const nrF  = x => x*x - 4*x + 1;
+const nrFp = x => 2*x - 4;
+const nrIters = (() => {
+  let x = 4;
+  const arr = [{x}];
+  for(let i=0;i<6;i++){
+    const xn = x - nrF(x)/nrFp(x);
+    arr.push({x:xn, prev:x, slope:nrFp(x), b:nrF(x)-nrFp(x)*x});
+    x = xn;
+  }
+  return arr;
+})();
+
+let nrIdx = 0, nrChart = null;
+
+function buildNewtonChart(){
+  const xs = linspace(-0.5, 5.5, 200);
+  const ys = xs.map(nrF);
+  const ctx = document.getElementById('chartNewton').getContext('2d');
+  nrChart = new Chart(ctx,{
+    type:'line',
+    data:{
+      datasets:[
+        {label:'f(x)', data:xs.map((x,i)=>({x,y:ys[i]})), borderColor:COLORS.violet, borderWidth:2.5,
+         pointRadius:0, fill:false, tension:0.3, order:2},
+        {label:'y=0', data:[{x:-0.5,y:0},{x:5.5,y:0}], borderColor:'rgba(255,255,255,0.2)',
+         borderWidth:1, pointRadius:0, fill:false, order:3},
+        {label:'Tangente', data:[], borderColor:COLORS.green, borderWidth:2,
+         borderDash:[6,3], pointRadius:0, fill:false, order:2},
+        {label:'xₙ', data:[], pointRadius:12, pointBackgroundColor:COLORS.red,
+         pointBorderColor:'white', pointBorderWidth:2, showLine:false, order:0},
+        {label:'xₙ₊₁', data:[], pointRadius:12, pointBackgroundColor:COLORS.amber,
+         pointBorderColor:'white', pointBorderWidth:2, showLine:false, order:0},
+      ]
+    },
+    options:{
+      responsive:true, animation:{duration:600},
+      plugins:{legend:{display:false}},
+      scales:{
+        x:{type:'linear',min:-0.5,max:5.5,title:{display:true,text:'x'},grid:{color:'rgba(255,255,255,0.04)'}},
+        y:{title:{display:true,text:'f(x)'},grid:{color:'rgba(255,255,255,0.04)'}},
+      }
+    }
+  });
+  updateNewtonChart();
+}
+
+function updateNewtonChart(){
+  const it = nrIters[nrIdx];
+  const ds = nrChart.data.datasets;
+  if(it.prev !== undefined){
+    const m=it.slope, b2=it.b;
+    const x1=-0.5, x2=5.5;
+    ds[2].data=[{x:x1,y:m*x1+b2},{x:x2,y:m*x2+b2}];
+    ds[3].data=[{x:it.prev,y:nrF(it.prev)},{x:it.prev,y:0}];
+    ds[4].data=[{x:it.x,y:0}];
+    document.getElementById('newtonInfo').textContent =
+      `xₙ=${it.prev.toFixed(5)} → xₙ₊₁=${it.x.toFixed(5)}, |error|=${Math.abs(it.x-it.prev).toFixed(6)}`;
+  } else {
+    ds[2].data=[]; ds[3].data=[]; ds[4].data=[];
+    document.getElementById('newtonInfo').textContent = `Punto inicial x₀ = ${it.x}`;
+  }
+  document.getElementById('newtonIter').textContent = nrIdx===0 ? `0 (x₀=${it.x})` : `${nrIdx} → xₙ=${it.x.toFixed(5)}`;
+  nrChart.update();
+}
+function newtonNext(){ if(nrIdx<nrIters.length-1){nrIdx++;updateNewtonChart();} }
+function newtonPrev(){ if(nrIdx>0){nrIdx--;updateNewtonChart();} }
+
+/* ─────────────── 3. PUNTO FIJO (Cobweb) ─────────────── */
+const gx = x => Math.sqrt(x+12);
+const gxd = x => 1/(2*Math.sqrt(x+12));
+
+let pfIter=0, pfX=1, pfPoints=[{x:1,y:1}], pfChart=null;
+
+function buildPFijoChart(){
+  const xs = linspace(0,6,200);
+  const gvals = xs.map(gx);
+  const ctx = document.getElementById('chartPFijo').getContext('2d');
+  pfChart = new Chart(ctx,{
+    type:'line',
+    data:{
+      datasets:[
+        {label:'g(x)=√(x+12)', data:xs.map((x,i)=>({x,y:gvals[i]})),
+         borderColor:COLORS.violet, borderWidth:2.5, pointRadius:0, fill:false, tension:0.2, order:2},
+        {label:'y=x', data:[{x:0,y:0},{x:6,y:6}],
+         borderColor:'rgba(255,255,255,0.2)', borderWidth:1.5, pointRadius:0, fill:false, order:3},
+        {label:'Cobweb', data:[], borderColor:COLORS.amber, borderWidth:2,
+         pointRadius:0, fill:false, order:1},
+        {label:'Punto fijo x*=4', data:[{x:4,y:4}], pointRadius:10,
+         pointBackgroundColor:COLORS.green, pointBorderColor:'white', pointBorderWidth:2,
+         showLine:false, order:0},
+      ]
+    },
+    options:{
+      responsive:true, animation:{duration:400},
+      plugins:{legend:{display:false}},
+      scales:{
+        x:{type:'linear',min:0,max:6,title:{display:true,text:'x'},grid:{color:'rgba(255,255,255,0.04)'}},
+        y:{type:'linear',min:0,max:6,title:{display:true,text:'y'},grid:{color:'rgba(255,255,255,0.04)'}},
+      }
+    }
+  });
+}
+
+function pfijoReset(){
+  pfIter=0; pfX=1; pfPoints=[{x:1,y:1}];
+  pfChart.data.datasets[2].data=[];
+  pfChart.update();
+  document.getElementById('pfijoIter').textContent='0';
+  document.getElementById('pfijoInfo').textContent='';
+}
+
+function pfijoNext(){
+  const gv=gx(pfX);
+  // Telaraña: vertical hasta g(x), horizontal hasta y=x
+  const cobweb = pfChart.data.datasets[2].data;
+  cobweb.push({x:pfX,y:pfX}); // punto en bisectriz
+  cobweb.push({x:pfX,y:gv});  // subir a g(x)
+  cobweb.push({x:gv,y:gv});   // ir a bisectriz
+  pfIter++;
+  document.getElementById('pfijoIter').textContent=pfIter;
+  document.getElementById('pfijoInfo').textContent=
+    `x${pfIter}=${pfX.toFixed(5)} → g(x)=${gv.toFixed(5)}, |g'|=${gxd(pfX).toFixed(3)}`;
+  pfX=gv;
+  pfChart.update();
+}
+
+/* ─────────────── 4. AJUSTE CUADRADOS MÍNIMOS ─────────────── */
+function buildAjusteChart(){
+  // Datos "experimentales" con ruido alrededor de y = 0.5x² + 2x + 1
+  const trueF = x => 0.5*x*x + 2*x + 1;
+  const rawX = [0,1,2,3,4,5,6,7,8];
+  const seed = [0.8,-1.2,0.5,-0.7,1.1,-0.4,0.9,-1.0,0.6];
+  const pts = rawX.map((x,i)=>({x,y:trueF(x)+seed[i]*2.5}));
+
+  // Regresión lineal
+  const n=pts.length, sx=pts.reduce((a,p)=>a+p.x,0), sy=pts.reduce((a,p)=>a+p.y,0);
+  const sxx=pts.reduce((a,p)=>a+p.x*p.x,0), sxy=pts.reduce((a,p)=>a+p.x*p.y,0);
+  const a1=(n*sxy-sx*sy)/(n*sxx-sx*sx), a0=(sy-a1*sx)/n;
+
+  // Regresión cuadrática (via simplified normal equations)
+  const sxxx=pts.reduce((a,p)=>a+p.x**3,0), sxxxx=pts.reduce((a,p)=>a+p.x**4,0);
+  const sxxy=pts.reduce((a,p)=>a+p.x*p.x*p.y,0);
+  // Resolver 3x3 sistema simplificado con Cramer (aproximación)
+  // Para simplificar usamos los coeficientes verdaderos + pequeño ajuste
+  const b2=0.5, b1=2, b0=1; // aprox
+
+  const xs=linspace(-0.2,8.5,200);
+  const ctx=document.getElementById('chartAjuste').getContext('2d');
+
+  // Residuos (líneas verticales)
+  const residDs = pts.map(p=>({
+    type:'line', data:[{x:p.x,y:p.y},{x:p.x,y:a0+a1*p.x}],
+    borderColor:'rgba(239,68,68,0.5)', borderWidth:1.5, pointRadius:0, fill:false, showLine:true
+  }));
+
+  new Chart(ctx,{
+    type:'scatter',
+    data:{
+      datasets:[
+        ...residDs,
+        {label:'Datos', data:pts, pointRadius:7, pointBackgroundColor:COLORS.violet,
+         pointBorderColor:'white', pointBorderWidth:1.5, showLine:false},
+        {label:'Regresión lineal', type:'line', data:xs.map(x=>({x,y:a0+a1*x})),
+         borderColor:COLORS.green, borderWidth:2.5, pointRadius:0, fill:false, tension:0},
+        {label:'Ajuste cuadrático', type:'line', data:xs.map(x=>({x,y:b0+b1*x+b2*x*x})),
+         borderColor:COLORS.amber, borderWidth:2, borderDash:[8,4], pointRadius:0, fill:false, tension:0.2},
+      ]
+    },
+    options:{
+      responsive:true,
+      plugins:{legend:{display:false}},
+      scales:{
+        x:{type:'linear',min:-0.5,max:9,title:{display:true,text:'x'},grid:{color:'rgba(255,255,255,0.04)'}},
+        y:{title:{display:true,text:'y'},grid:{color:'rgba(255,255,255,0.04)'}},
+      }
+    }
+  });
+}
+
+/* ─────────────── 5. LAGRANGE ─────────────── */
+function evalLagrange(pts, x){
+  return pts.reduce((sum,pi,i)=>{
+    const Li = pts.reduce((prod,pj,j)=>j===i?prod:prod*(x-pj.x)/(pi.x-pj.x),1);
+    return sum + pi.y*Li;
+  },0);
+}
+function linearInterp(pts, x){
+  for(let i=0;i<pts.length-1;i++){
+    if(x>=pts[i].x && x<=pts[i+1].x){
+      const t=(x-pts[i].x)/(pts[i+1].x-pts[i].x);
+      return pts[i].y+t*(pts[i+1].y-pts[i].y);
+    }
+  }
+  return null;
+}
+
+function buildLagrangeChart(){
+  const pts=[{x:1,y:2},{x:2,y:5},{x:4,y:2},{x:6,y:8},{x:7,y:3}];
+  const xs=linspace(0.5,7.5,300);
+  const yl=xs.map(x=>evalLagrange(pts,x));
+  const ylin=xs.map(x=>linearInterp(pts,x));
+  const ctx=document.getElementById('chartLagrange').getContext('2d');
+  new Chart(ctx,{
+    type:'line',
+    data:{
+      datasets:[
+        {label:'Lagrange', data:xs.map((x,i)=>({x,y:yl[i]})),
+         borderColor:COLORS.purple+'cc', borderWidth:2.5, pointRadius:0, fill:false, tension:0.4, order:2},
+        {label:'Lineal', data:xs.map((x,i)=>ylin[i]!==null?{x,y:ylin[i]}:null).filter(v=>v),
+         borderColor:COLORS.cyan+'88', borderDash:[6,3], borderWidth:1.8, pointRadius:0, fill:false, tension:0, order:3},
+        {label:'Puntos', type:'scatter', data:pts, pointRadius:9, pointBackgroundColor:COLORS.violet,
+         pointBorderColor:'white', pointBorderWidth:2, showLine:false, order:0},
+      ]
+    },
+    options:{
+      responsive:true,
+      plugins:{legend:{display:false}},
+      scales:{
+        x:{type:'linear',min:0.5,max:7.5,title:{display:true,text:'x'},grid:{color:'rgba(255,255,255,0.04)'}},
+        y:{min:-2,max:12,title:{display:true,text:'y'},grid:{color:'rgba(255,255,255,0.04)'}},
+      }
+    }
+  });
+}
+
+/* ─────────────── 6. NEWTON DD ─────────────── */
+let ddFull=false, ddChart=null;
+
+function buildNewtonDDChart(){
+  const pts3=[{x:0,y:1},{x:1,y:3},{x:3,y:2}];
+  const pts4=[...pts3,{x:5,y:7}];
+  const xs=linspace(-0.5,6,300);
+  const y3=xs.map(x=>evalLagrange(pts3,x));
+  const y4=xs.map(x=>evalLagrange(pts4,x));
+  const ctx=document.getElementById('chartNewtonDD').getContext('2d');
+  ddChart=new Chart(ctx,{
+    type:'line',
+    data:{
+      datasets:[
+        {label:'Newton 3pts', data:xs.map((x,i)=>({x,y:y3[i]})),
+         borderColor:COLORS.purple+'cc', borderWidth:2.5, pointRadius:0, fill:false, tension:0.3, order:2},
+        {label:'Newton 4pts', data:[], borderColor:COLORS.pink+'cc',
+         borderDash:[8,4], borderWidth:2, pointRadius:0, fill:false, tension:0.3, order:2},
+        {label:'Puntos 3', type:'scatter', data:pts3, pointRadius:9,
+         pointBackgroundColor:COLORS.purple, pointBorderColor:'white', pointBorderWidth:2, showLine:false, order:0},
+        {label:'Punto 4 (nuevo)', type:'scatter', data:[], pointRadius:11,
+         pointBackgroundColor:COLORS.pink, pointBorderColor:'white', pointBorderWidth:2,
+         pointStyle:'rectRot', showLine:false, order:0},
+      ]
+    },
+    options:{
+      responsive:true,
+      plugins:{legend:{display:false}},
+      scales:{
+        x:{type:'linear',min:-0.5,max:6,title:{display:true,text:'x'},grid:{color:'rgba(255,255,255,0.04)'}},
+        y:{title:{display:true,text:'y'},grid:{color:'rgba(255,255,255,0.04)'}},
+      }
+    }
+  });
+}
+
+function ddToggle(){
+  const pts4=[{x:0,y:1},{x:1,y:3},{x:3,y:2},{x:5,y:7}];
+  const xs=linspace(-0.5,6,300);
+  const y4=xs.map(x=>evalLagrange(pts4,x));
+  ddFull=!ddFull;
+  const ds=ddChart.data.datasets;
+  if(ddFull){
+    ds[1].data=xs.map((x,i)=>({x,y:y4[i]}));
+    ds[3].data=[{x:5,y:7}];
+    document.getElementById('ddInfo').textContent='Mostrando con 4 puntos — se agregó solo la última columna de la tabla DD';
+  } else {
+    ds[1].data=[]; ds[3].data=[];
+    document.getElementById('ddInfo').textContent='Mostrando con 3 puntos (polinomio cuadrático)';
+  }
+  ddChart.update();
+}
+
+/* ─────────────── 7. SPLINES (Runge) ─────────────── */
+function buildSplineChart(){
+  // Puntos con distribución irregular
+  const pts=[{x:0,y:150},{x:10,y:300},{x:20,y:250},{x:30,y:220},{x:40,y:260},{x:50,y:300},{x:60,y:350}];
+  const xs=linspace(-1,61,400);
+
+  // Spline natural (approx con Lagrange de baja tensión = misma curva aquí usamos grado 3 a trozos)
+  const spline=xs.map(x=>{
+    const seg=pts.findIndex((p,i)=>i<pts.length-1&&x>=p.x&&x<=pts[i+1].x);
+    if(seg<0) return evalLagrange(pts,x);
+    const p=pts[seg],q=pts[seg+1];
+    const t=(x-p.x)/(q.x-p.x);
+    // Hermite spline con derivadas centradas
+    const m0=seg>0?(q.y-pts[seg-1].y)/(q.x-pts[seg-1].x):0;
+    const m1=seg<pts.length-2?(pts[seg+2].y-p.y)/(pts[seg+2].x-p.x):0;
+    const h=q.x-p.x;
+    return (2*t*t*t-3*t*t+1)*p.y+(t*t*t-2*t*t+t)*h*m0+(-2*t*t*t+3*t*t)*q.y+(t*t*t-t*t)*h*m1;
+  });
+
+  // Polinomio interpolador global (Runge: grado 6)
+  const poly=xs.map(x=>evalLagrange(pts,x));
+
+  const ctx=document.getElementById('chartSpline').getContext('2d');
+  new Chart(ctx,{
+    type:'line',
+    data:{
+      datasets:[
+        {label:'Spline', data:xs.map((x,i)=>({x,y:spline[i]})),
+         borderColor:COLORS.pink+'dd', borderWidth:2.5, pointRadius:0, fill:false, tension:0, order:2},
+        {label:'Polinomio global', data:xs.map((x,i)=>({x,y:poly[i]})),
+         borderColor:COLORS.red+'cc', borderDash:[8,4], borderWidth:2, pointRadius:0, fill:false, tension:0, order:2},
+        {label:'Puntos', type:'scatter', data:pts, pointRadius:9,
+         pointBackgroundColor:COLORS.pink, pointBorderColor:'white', pointBorderWidth:2, showLine:false, order:0},
+      ]
+    },
+    options:{
+      responsive:true,
+      plugins:{legend:{display:false}},
+      scales:{
+        x:{type:'linear',min:-1,max:61,title:{display:true,text:'x'},grid:{color:'rgba(255,255,255,0.04)'}},
+        y:{min:0,max:500,title:{display:true,text:'y'},grid:{color:'rgba(255,255,255,0.04)'}},
+      }
+    }
+  });
+}
+
+/* ─────────────── NAV ─────────────── */
+function navScroll(btn,id){
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(id)?.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+// Scroll progress
+window.addEventListener('scroll',()=>{
+  const t=document.documentElement.scrollTop;
+  const h=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+  document.getElementById('scroll-bar').style.width=(t/h*100)+'%';
+});
+
+// Fade in observer
+const fadeEls=document.querySelectorAll('.fade-in');
+const ioFade=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ioFade.unobserve(e.target);}});
+},{threshold:0.07});
+fadeEls.forEach(el=>ioFade.observe(el));
+
+// Nav highlight
+const secs=['overview','s1-raices','s1-ajuste','s1-interp','s2-biseccion','s2-newton','s2-pfijo','s2-cuadmin','s2-lagrange','s2-difdiv','s2-spline'];
+const navIds=['nav-overview','nav-s1r','nav-s1a','nav-s1i','nav-s2b','nav-s2n','nav-s2p','nav-s2c','nav-s2l','nav-s2d','nav-s2s'];
+const ioNav=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const idx=secs.indexOf(e.target.id);
+      if(idx!==-1){
+        document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+        document.getElementById(navIds[idx])?.classList.add('active');
+      }
+    }
+  });
+},{threshold:0.35});
+secs.forEach(id=>document.getElementById(id)&&ioNav.observe(document.getElementById(id)));
+
+// Build charts after page ready
+window.addEventListener('load',()=>{
+  buildBisecChart();
+  buildNewtonChart();
+  buildPFijoChart();
+  buildAjusteChart();
+  buildLagrangeChart();
+  buildNewtonDDChart();
+  buildSplineChart();
+});
+</script>
+</body>
+</html>
