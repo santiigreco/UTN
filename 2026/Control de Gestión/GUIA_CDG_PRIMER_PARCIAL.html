@@ -1,0 +1,2046 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guía 1er Parcial – Control de Gestión UTN</title>
+  <meta name="description" content="Guía estratégica de estudio para el primer parcial de Control de Gestión UTN. Teoría priorizada, recetas de presupuestos y ajuste por inflación, checklist de errores comunes." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-primary:    #080c18;
+      --bg-secondary:  #0e1525;
+      --bg-card:       #121a2e;
+      --bg-card-hover: #182038;
+      --accent-1:      #6366f1;
+      --accent-2:      #a855f7;
+      --accent-3:      #06b6d4;
+      --accent-4:      #10b981;
+      --accent-warn:   #f59e0b;
+      --accent-danger: #ef4444;
+      --accent-pink:   #ec4899;
+      --text-primary:  #f1f5f9;
+      --text-secondary:#94a3b8;
+      --text-muted:    #64748b;
+      --border:        rgba(99,102,241,0.15);
+      --border-glow:   rgba(99,102,241,0.4);
+      --shadow-lg:     0 20px 60px rgba(0,0,0,0.6);
+      --radius:        14px;
+      --radius-sm:     8px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ANIMATED BLOBS */
+    body::before, body::after {
+      content: '';
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(130px);
+      opacity: 0.10;
+      pointer-events: none;
+      z-index: 0;
+      animation: blobFloat 14s ease-in-out infinite alternate;
+    }
+    body::before {
+      width: 700px; height: 700px;
+      background: var(--accent-1);
+      top: -250px; left: -250px;
+    }
+    body::after {
+      width: 600px; height: 600px;
+      background: var(--accent-2);
+      bottom: -250px; right: -200px;
+      animation-delay: -7s;
+    }
+    @keyframes blobFloat {
+      from { transform: translate(0,0) scale(1); }
+      to   { transform: translate(50px,40px) scale(1.1); }
+    }
+
+    /* SCROLL PROGRESS */
+    #scroll-bar {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-1), var(--accent-3));
+      z-index: 9999;
+      width: 0%;
+      transition: width 0.1s linear;
+    }
+
+    /* HEADER */
+    header {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      padding: 80px 24px 60px;
+      background: linear-gradient(180deg, rgba(99,102,241,0.09) 0%, transparent 100%);
+      border-bottom: 1px solid var(--border);
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(99,102,241,0.12);
+      border: 1px solid var(--border-glow);
+      color: #a5b4fc;
+      padding: 6px 18px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .badge-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--accent-4);
+      animation: pulse 2s ease-in-out infinite;
+      box-shadow: 0 0 8px var(--accent-4);
+    }
+    @keyframes pulse {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50%      { opacity: 0.5; transform: scale(1.5); }
+    }
+    h1 {
+      font-size: clamp(2.4rem, 5.5vw, 4rem);
+      font-weight: 800;
+      background: linear-gradient(135deg, #f1f5f9 0%, var(--accent-1) 45%, var(--accent-3) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.12;
+      margin-bottom: 18px;
+    }
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      max-width: 620px;
+      margin: 0 auto 30px;
+    }
+    .priority-strip {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .p-pill {
+      padding: 6px 18px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border: 1px solid;
+    }
+    .p-pill.crit  { background: rgba(239,68,68,0.12); border-color: rgba(239,68,68,0.4); color: #fca5a5; }
+    .p-pill.high  { background: rgba(245,158,11,0.12); border-color: rgba(245,158,11,0.4); color: #fcd34d; }
+    .p-pill.med   { background: rgba(16,185,129,0.12); border-color: rgba(16,185,129,0.4); color: #6ee7b7; }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8,12,24,0.93);
+      backdrop-filter: blur(24px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      gap: 3px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding: 8px 0;
+      align-items: center;
+    }
+    .nav-inner::-webkit-scrollbar { display: none; }
+    .nav-btn {
+      white-space: nowrap;
+      padding: 6px 14px;
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--text-secondary);
+      font-family: 'Inter', sans-serif;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.22s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      line-height: 1;
+    }
+    .nav-btn .nav-unit {
+      font-size: 0.57rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 1px 6px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      color: var(--text-muted);
+      transition: all 0.22s;
+    }
+    .nav-btn .nav-label { font-size: 0.8rem; font-weight: 500; }
+    .nav-btn:hover {
+      background: rgba(99,102,241,0.12);
+      border-color: rgba(99,102,241,0.25);
+      color: #a5b4fc;
+    }
+    .nav-btn.active {
+      background: rgba(99,102,241,0.18);
+      border-color: rgba(99,102,241,0.4);
+      color: #a5b4fc;
+    }
+    .nav-sep { width: 1px; height: 28px; background: var(--border); flex-shrink: 0; margin: 0 4px; }
+
+    /* MAIN */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 24px 100px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* SECTION TITLES */
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 64px 0 28px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-icon {
+      width: 46px; height: 46px;
+      border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .section-title h2 {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+    .section-title .sec-sub {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .ic-red    { background: rgba(239,68,68,0.15); }
+    .ic-amber  { background: rgba(245,158,11,0.15); }
+    .ic-violet { background: rgba(99,102,241,0.15); }
+    .ic-cyan   { background: rgba(6,182,212,0.15); }
+    .ic-green  { background: rgba(16,185,129,0.15); }
+    .ic-pink   { background: rgba(236,72,153,0.15); }
+
+    /* CARD */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px 28px;
+      margin-bottom: 18px;
+      transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      height: 3px; width: 100%;
+      border-radius: var(--radius) var(--radius) 0 0;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: var(--border-glow);
+      box-shadow: var(--shadow-lg);
+      background: var(--bg-card-hover);
+    }
+    .card:hover::before { opacity: 1; }
+    .card.crit::before  { background: linear-gradient(90deg, var(--accent-danger), transparent); }
+    .card.high::before  { background: linear-gradient(90deg, var(--accent-warn), transparent); }
+    .card.med::before   { background: linear-gradient(90deg, var(--accent-4), transparent); }
+    .card.info::before  { background: linear-gradient(90deg, var(--accent-1), transparent); }
+    .card.cyan::before  { background: linear-gradient(90deg, var(--accent-3), transparent); }
+    .card.pink::before  { background: linear-gradient(90deg, var(--accent-pink), transparent); }
+
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .card-tag {
+      flex-shrink: 0;
+      padding: 3px 11px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+    .tag-crit   { background: rgba(239,68,68,0.15); color: #fca5a5; border: 1px solid rgba(239,68,68,0.3); }
+    .tag-high   { background: rgba(245,158,11,0.15); color: #fcd34d; border: 1px solid rgba(245,158,11,0.3); }
+    .tag-med    { background: rgba(16,185,129,0.15); color: #6ee7b7; border: 1px solid rgba(16,185,129,0.3); }
+    .tag-info   { background: rgba(99,102,241,0.15); color: #a5b4fc; border: 1px solid rgba(99,102,241,0.3); }
+    .tag-exam   { background: rgba(236,72,153,0.15); color: #f9a8d4; border: 1px solid rgba(236,72,153,0.3); }
+    .tag-cyan   { background: rgba(6,182,212,0.15); color: #67e8f9; border: 1px solid rgba(6,182,212,0.3); }
+
+    .card h3 {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    .card p, .card li {
+      color: var(--text-secondary);
+      font-size: 0.93rem;
+      line-height: 1.75;
+    }
+    .card ul, .card ol { padding-left: 22px; }
+    .card li { margin-bottom: 6px; }
+    .card li::marker { color: var(--accent-1); }
+
+    /* HIGHLIGHT / WARN / DANGER BOXES */
+    .highlight {
+      background: rgba(99,102,241,0.08);
+      border-left: 3px solid var(--accent-1);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 14px 18px;
+      margin: 14px 0;
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+    }
+    .highlight strong { color: #a5b4fc; }
+
+    .warn-box {
+      background: rgba(245,158,11,0.08);
+      border-left: 3px solid var(--accent-warn);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 14px 18px;
+      margin: 14px 0;
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+    }
+    .warn-box strong { color: var(--accent-warn); }
+
+    .danger-box {
+      background: rgba(239,68,68,0.08);
+      border-left: 3px solid var(--accent-danger);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 14px 18px;
+      margin: 14px 0;
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+    }
+    .danger-box strong { color: #fca5a5; }
+
+    .green-box {
+      background: rgba(16,185,129,0.08);
+      border-left: 3px solid var(--accent-4);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 14px 18px;
+      margin: 14px 0;
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+    }
+    .green-box strong { color: #6ee7b7; }
+
+    /* GRID */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+    @media (max-width: 768px) {
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    }
+
+    /* FAQ ACCORDION */
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 10px;
+      overflow: hidden;
+      transition: border-color 0.25s;
+    }
+    .faq-item:hover { border-color: var(--border-glow); }
+    .faq-q {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 24px;
+      cursor: pointer;
+      gap: 16px;
+      user-select: none;
+    }
+    .faq-q h4 {
+      font-size: 0.97rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .q-icon {
+      flex-shrink: 0;
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      background: rgba(99,102,241,0.18);
+      color: #a5b4fc;
+      font-size: 0.78rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      margin-top: 1px;
+    }
+    .faq-arrow {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      transition: transform 0.3s;
+      flex-shrink: 0;
+    }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-item.open { border-color: rgba(99,102,241,0.35); }
+    .faq-a {
+      display: none;
+      padding: 0 24px 20px;
+    }
+    .faq-a p, .faq-a li {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      line-height: 1.75;
+    }
+    .faq-a ul, .faq-a ol { padding-left: 22px; }
+    .faq-a li { margin-bottom: 5px; }
+    .faq-a li::marker { color: var(--accent-3); }
+    .faq-item.open .faq-a { display: block; }
+    .repeat-badge {
+      display: inline-block;
+      padding: 2px 9px;
+      background: rgba(236,72,153,0.15);
+      border: 1px solid rgba(236,72,153,0.35);
+      color: #f9a8d4;
+      border-radius: 999px;
+      font-size: 0.63rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      flex-shrink: 0;
+    }
+
+    /* RECIPE STEPS */
+    .step-list { list-style: none; padding: 0; counter-reset: step-cnt; }
+    .step-item {
+      counter-increment: step-cnt;
+      display: flex;
+      gap: 18px;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .step-item:last-child { border-bottom: none; }
+    .step-num {
+      flex-shrink: 0;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      color: white;
+      font-weight: 800;
+      font-size: 0.9rem;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 12px rgba(99,102,241,0.35);
+    }
+    .step-body { flex: 1; }
+    .step-body strong {
+      display: block;
+      color: var(--text-primary);
+      font-size: 0.97rem;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+    .step-body p, .step-body li {
+      color: var(--text-secondary);
+      font-size: 0.91rem;
+      line-height: 1.7;
+    }
+    .step-body ul { padding-left: 18px; margin-top: 6px; }
+    .step-body li::marker { color: var(--accent-3); }
+
+    /* FORMULA BOX */
+    .formula {
+      background: rgba(6,182,212,0.07);
+      border: 1px solid rgba(6,182,212,0.25);
+      border-radius: var(--radius-sm);
+      padding: 12px 18px;
+      margin: 10px 0;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.88rem;
+      color: #67e8f9;
+    }
+
+    /* TABLE */
+    .table-wrap { overflow-x: auto; margin: 14px 0; }
+    table.t {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    table.t th {
+      background: rgba(99,102,241,0.12);
+      color: #a5b4fc;
+      font-weight: 700;
+      padding: 10px 14px;
+      text-align: left;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    table.t td {
+      padding: 10px 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      color: var(--text-secondary);
+      vertical-align: top;
+    }
+    table.t tr:last-child td { border-bottom: none; }
+    table.t tr:hover td { background: rgba(255,255,255,0.02); }
+    table.t td:first-child { color: var(--text-primary); font-weight: 600; }
+    table.t .num { font-family: 'JetBrains Mono', monospace; color: #6ee7b7; }
+
+    /* CHIPS */
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .chip {
+      padding: 4px 12px;
+      background: rgba(99,102,241,0.1);
+      border: 1px solid rgba(99,102,241,0.25);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      color: #a5b4fc;
+      font-weight: 500;
+    }
+    .chip.cyan { background: rgba(6,182,212,0.1); border-color: rgba(6,182,212,0.25); color: #67e8f9; }
+    .chip.green { background: rgba(16,185,129,0.1); border-color: rgba(16,185,129,0.25); color: #6ee7b7; }
+    .chip.red { background: rgba(239,68,68,0.1); border-color: rgba(239,68,68,0.25); color: #fca5a5; }
+
+    /* STARS */
+    .stars { color: #fbbf24; font-size: 0.95rem; letter-spacing: 2px; }
+
+    /* TRAP LIST */
+    .trap-list { list-style: none; padding: 0; }
+    .trap-item {
+      display: flex;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .trap-item:last-child { border-bottom: none; }
+    .trap-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 1px; }
+    .trap-body { flex: 1; }
+    .trap-body strong { color: #fca5a5; font-size: 0.93rem; display: block; margin-bottom: 3px; }
+    .trap-body p { color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6; }
+
+    /* FADE IN */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* CODE */
+    code {
+      font-family: 'JetBrains Mono', monospace;
+      background: rgba(99,102,241,0.12);
+      color: #a5b4fc;
+      padding: 2px 7px;
+      border-radius: 5px;
+      font-size: 0.85em;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 36px;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      border-top: 1px solid var(--border);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* FREQ METER */
+    .freq-bar-wrap { margin: 8px 0; }
+    .freq-label { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 4px; }
+    .freq-bar-bg { background: rgba(255,255,255,0.06); border-radius: 999px; height: 6px; }
+    .freq-bar-fill { height: 6px; border-radius: 999px; }
+    .freq-bar-fill.f5 { background: linear-gradient(90deg, #ef4444, #f97316); width: 100%; }
+    .freq-bar-fill.f4 { background: linear-gradient(90deg, #f59e0b, #eab308); width: 80%; }
+    .freq-bar-fill.f3 { background: linear-gradient(90deg, #6366f1, #8b5cf6); width: 60%; }
+    .freq-bar-fill.f2 { background: linear-gradient(90deg, #10b981, #06b6d4); width: 40%; }
+
+    /* TIMELINE */
+    .timeline { position: relative; padding-left: 28px; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 9px; top: 8px; bottom: 8px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--accent-1), var(--accent-3));
+      border-radius: 2px;
+    }
+    .tl-item { position: relative; margin-bottom: 20px; }
+    .tl-dot {
+      position: absolute;
+      left: -24px; top: 4px;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--accent-1);
+      border: 2px solid var(--bg-card);
+      box-shadow: 0 0 8px var(--accent-1);
+    }
+    .tl-item strong { color: var(--text-primary); font-size: 0.93rem; display: block; }
+    .tl-item p { color: var(--text-secondary); font-size: 0.88rem; margin-top: 2px; }
+
+  </style>
+</head>
+<body>
+
+<div id="scroll-bar"></div>
+
+<!-- HEADER -->
+<header>
+  <div class="badge"><span class="badge-dot"></span> UTN · Control de Gestión · 1er Parcial · 2026</div>
+  <h1>Guía Estratégica<br/>Control de Gestión</h1>
+  <p class="subtitle">Análisis de 9 parciales reales. Teoría priorizada por frecuencia, recetas paso a paso para presupuestos e inflación, y checklist de trampas del examen.</p>
+  <div class="priority-strip">
+    <span class="p-pill crit">🔴 Crítico — entra seguro</span>
+    <span class="p-pill high">🟡 Alta prioridad</span>
+    <span class="p-pill med">🟢 Importante conocer</span>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <button class="nav-btn active" onclick="navScroll(this,'mapa')">
+      <span class="nav-unit">Resumen</span>
+      <span class="nav-label">📊 Mapa</span>
+    </button>
+    <div class="nav-sep"></div>
+    <button class="nav-btn" onclick="navScroll(this,'presupuestos-teoria')">
+      <span class="nav-unit">Teoría</span>
+      <span class="nav-label">📋 Presupuestos</span>
+    </button>
+    <button class="nav-btn" onclick="navScroll(this,'planeamiento')">
+      <span class="nav-unit">Teoría</span>
+      <span class="nav-label">🏹 Planeamiento</span>
+    </button>
+    <button class="nav-btn" onclick="navScroll(this,'leasing-gif')">
+      <span class="nav-unit">Teoría</span>
+      <span class="nav-label">📂 Leasing & GIF</span>
+    </button>
+    <button class="nav-btn" onclick="navScroll(this,'impuestos')">
+      <span class="nav-unit">Teoría</span>
+      <span class="nav-label">💰 Impuestos</span>
+    </button>
+    <button class="nav-btn" onclick="navScroll(this,'factoring')">
+      <span class="nav-unit">Teoría</span>
+      <span class="nav-label">🔄 Factoring</span>
+    </button>
+    <div class="nav-sep"></div>
+    <button class="nav-btn" onclick="navScroll(this,'receta-presupuesto')">
+      <span class="nav-unit">Receta</span>
+      <span class="nav-label">🧮 Presupuesto</span>
+    </button>
+    <button class="nav-btn" onclick="navScroll(this,'receta-inflacion')">
+      <span class="nav-unit">Receta</span>
+      <span class="nav-label">📈 Inflación</span>
+    </button>
+    <div class="nav-sep"></div>
+    <button class="nav-btn" onclick="navScroll(this,'preguntas')">
+      <span class="nav-unit">Examen</span>
+      <span class="nav-label">❓ Preguntas</span>
+    </button>
+  </div>
+</nav>
+
+<main>
+
+<!-- ══════════════════════════════════════
+     MAPA DE PRIORIDADES
+══════════════════════════════════════ -->
+<section id="mapa">
+  <div class="section-title fade-in">
+    <div class="section-icon ic-red">📊</div>
+    <div>
+      <h2>Mapa de Prioridades</h2>
+      <div class="sec-sub">Basado en análisis de 9 parciales reales (2019–2024)</div>
+    </div>
+  </div>
+
+  <div class="grid-3 fade-in">
+    <div class="card crit">
+      <div class="card-header">
+        <span class="card-tag tag-crit">🔴 Crítico</span>
+        <h3>Presupuestos (Práctico)</h3>
+      </div>
+      <p>Aparece en el <strong style="color:#fca5a5">100%</strong> de los parciales. Siempre se pide: Flujo de Fondos · Estado de Resultados · Balance Proyectado.</p>
+      <div class="freq-bar-wrap" style="margin-top:12px">
+        <div class="freq-label">Frecuencia: 9/9 parciales</div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill f5"></div></div>
+      </div>
+      <div class="chips"><span class="chip">Flujo de Fondos</span><span class="chip">EERR</span><span class="chip">Balance</span></div>
+    </div>
+
+    <div class="card crit">
+      <div class="card-header">
+        <span class="card-tag tag-crit">🔴 Crítico</span>
+        <h3>Ajuste por Inflación (AXI)</h3>
+      </div>
+      <p>Aparece en el <strong style="color:#fca5a5">~90%</strong> de los parciales. Siempre se pide RECPAM/REI + Balance en Moneda Heterogénea y Homogénea.</p>
+      <div class="freq-bar-wrap" style="margin-top:12px">
+        <div class="freq-label">Frecuencia: 8/9 parciales</div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill f5"></div></div>
+      </div>
+      <div class="chips"><span class="chip">RECPAM</span><span class="chip">REI</span><span class="chip">M.Heterogénea</span><span class="chip">M.Homogénea</span></div>
+    </div>
+
+    <div class="card high">
+      <div class="card-header">
+        <span class="card-tag tag-high">🟡 Alta</span>
+        <h3>Teoría — Presupuestos</h3>
+      </div>
+      <p>¿Qué es un presupuesto? Diferencia económico vs financiero. Control presupuestario. Balance Proyectado. Estados financieros proyectados. Aparece en 8/9 parciales.</p>
+      <div class="freq-bar-wrap" style="margin-top:12px">
+        <div class="freq-label">Frecuencia: 8/9 parciales</div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill f4"></div></div>
+      </div>
+    </div>
+
+    <div class="card high">
+      <div class="card-header">
+        <span class="card-tag tag-high">🟡 Alta</span>
+        <h3>Planeamiento Estratégico vs Táctico</h3>
+      </div>
+      <p>Diferencia entre ambos, cómo se complementan con los presupuestos anuales. Pregunta que aparece en 7/9 parciales.</p>
+      <div class="freq-bar-wrap" style="margin-top:12px">
+        <div class="freq-label">Frecuencia: 7/9 parciales</div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill f4"></div></div>
+      </div>
+    </div>
+
+    <div class="card high">
+      <div class="card-header">
+        <span class="card-tag tag-high">🟡 Alta</span>
+        <h3>Leasing Operativo vs Financiero</h3>
+      </div>
+      <p>Diferencias, ventajas, desventajas, modalidades de elección. Aparece en 7/9 parciales. GIF–Cuota también muy frecuente.</p>
+      <div class="freq-bar-wrap" style="margin-top:12px">
+        <div class="freq-label">Frecuencia: 7/9 parciales</div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill f4"></div></div>
+      </div>
+    </div>
+
+    <div class="card high">
+      <div class="card-header">
+        <span class="card-tag tag-high">🟡 Alta</span>
+        <h3>Imp. Ganancias — Categorías</h3>
+      </div>
+      <p>Criterio de imputación. Gastos deducibles por categoría (1°, 2°, 3°). Bienes Personales. Monotributo. Aparece en 6–7/9 parciales.</p>
+      <div class="freq-bar-wrap" style="margin-top:12px">
+        <div class="freq-label">Frecuencia: 6/9 parciales</div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill f3"></div></div>
+      </div>
+    </div>
+
+    <div class="card med">
+      <div class="card-header">
+        <span class="card-tag tag-med">🟢 Importante</span>
+        <h3>Factoring</h3>
+      </div>
+      <p>Concepto, ventajas, desventajas. Diferencia entre con y sin responsabilidad. Aparece en 5/9 parciales.</p>
+      <div class="freq-bar-wrap" style="margin-top:12px">
+        <div class="freq-label">Frecuencia: 5/9 parciales</div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill f2"></div></div>
+      </div>
+    </div>
+
+    <div class="card med">
+      <div class="card-header">
+        <span class="card-tag tag-med">🟢 Importante</span>
+        <h3>Bienes Personales</h3>
+      </div>
+      <p>Hecho imponible, sujetos alcanzados, bienes en el país y en el exterior. Aparece en 5/9 parciales.</p>
+      <div class="freq-bar-wrap" style="margin-top:12px">
+        <div class="freq-label">Frecuencia: 5/9 parciales</div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill f2"></div></div>
+      </div>
+    </div>
+
+    <div class="card med">
+      <div class="card-header">
+        <span class="card-tag tag-med">🟢 Importante</span>
+        <h3>Impacto en Estados Proyectados</h3>
+      </div>
+      <p>"Una empresa estima comprar/liquidar X, ¿cómo impacta en los estados contables proyectados?" Aparece en 4/9 parciales.</p>
+      <div class="freq-bar-wrap" style="margin-top:12px">
+        <div class="freq-label">Frecuencia: 4/9 parciales</div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill f2"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SECCIÓN 1 – TEORÍA PRIORIZADA
+══════════════════════════════════════ -->
+<section id="presupuestos-teoria">
+  <div class="section-title fade-in">
+    <div class="section-icon ic-violet">📋</div>
+    <div>
+      <h2>SECCIÓN 1 — Teoría Priorizada</h2>
+      <div class="sec-sub">Respuestas ideales ordenadas por frecuencia de aparición en exámenes</div>
+    </div>
+  </div>
+
+  <!-- TEMA 1: PRESUPUESTOS -->
+  <div class="card info fade-in">
+    <div class="card-header">
+      <span class="card-tag tag-crit">🔴 Crítico · 8/9 parciales</span>
+      <h3>TEMA 1 — Presupuestos: Definiciones y Diferencias Clave</h3>
+    </div>
+
+    <div class="faq-item open" style="background:transparent; border:none; margin:0;">
+      <div class="faq-q" onclick="toggleFaq(this.parentElement)">
+        <h4><span class="q-icon">Q</span> ¿Qué es un Presupuesto? Defínalo.</h4>
+        <span class="repeat-badge">8× examen</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        <p>Un presupuesto es la <strong>cuantificación monetaria y física de un plan de acción</strong>, elaborado para un período determinado futuro, que sirve de guía para la gestión empresarial. Implica:</p>
+        <ul>
+          <li>Proyectar ingresos, costos y resultados esperados.</li>
+          <li>Coordinar todas las áreas funcionales de la empresa.</li>
+          <li>Servir como instrumento de <strong>control de gestión</strong>: permite comparar lo presupuestado contra lo real y analizar desvíos.</li>
+          <li>Facilitar la toma de decisiones preventiva (no reactiva).</li>
+        </ul>
+        <div class="highlight"><strong>Frase clave para el examen:</strong> "El presupuesto es la expresión cuantitativa de los objetivos de la empresa para un período futuro, coordinando los planes de todas sus áreas."</div>
+      </div>
+    </div>
+
+    <div class="faq-item" style="background:transparent; border:none; margin:0;">
+      <div class="faq-q" onclick="toggleFaq(this.parentElement)">
+        <h4><span class="q-icon">Q</span> Diferencia entre Presupuesto Económico y Presupuesto Financiero.</h4>
+        <span class="repeat-badge">8× examen</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        <div class="table-wrap">
+          <table class="t">
+            <tr>
+              <th>Aspecto</th>
+              <th>Presupuesto Económico</th>
+              <th>Presupuesto Financiero</th>
+            </tr>
+            <tr>
+              <td>¿Qué mide?</td>
+              <td>Rentabilidad — ganancias o pérdidas</td>
+              <td>Liquidez — entradas y salidas de efectivo</td>
+            </tr>
+            <tr>
+              <td>Criterio</td>
+              <td>Devengado (cuando se genera el hecho económico)</td>
+              <td>Percibido/Pagado (cuando entra o sale el dinero)</td>
+            </tr>
+            <tr>
+              <td>Resultado</td>
+              <td>Estado de Resultados Proyectado (EERR)</td>
+              <td>Flujo de Fondos o Presupuesto de Caja</td>
+            </tr>
+            <tr>
+              <td>Incluye</td>
+              <td>Amortizaciones, devengamiento de intereses</td>
+              <td>Cobros, pagos, préstamos, inversiones</td>
+            </tr>
+            <tr>
+              <td>Excluye</td>
+              <td>No incluye movimientos de caja puros</td>
+              <td>No incluye resultados no cobrados/pagados</td>
+            </tr>
+          </table>
+        </div>
+        <div class="highlight"><strong>Ejemplo de trampa:</strong> Las amortizaciones aparecen en el EERR (económico) pero NO salen del flujo de fondos porque no son erogaciones reales de caja.</div>
+      </div>
+    </div>
+
+    <div class="faq-item" style="background:transparent; border:none; margin:0;">
+      <div class="faq-q" onclick="toggleFaq(this.parentElement)">
+        <h4><span class="q-icon">Q</span> ¿Qué es el Control Presupuestario? ¿Cuál es su función?</h4>
+        <span class="repeat-badge">7× examen</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        <p>El <strong>control presupuestario</strong> es el proceso mediante el cual se comparan los resultados reales obtenidos con los valores presupuestados (planificados), con el fin de:</p>
+        <ul>
+          <li>Detectar y cuantificar los <strong>desvíos</strong> (diferencias entre lo real y lo esperado).</li>
+          <li>Analizar las causas de esos desvíos.</li>
+          <li>Tomar <strong>acciones correctivas</strong> para re-encauzar la gestión.</li>
+          <li>Evaluar la performance de cada área responsable.</li>
+        </ul>
+        <p>Los desvíos pueden tener un <strong>componente físico</strong> (cantidad) y un <strong>componente monetario</strong> (precio). Ambos deben analizarse por separado para diagnosticar correctamente la causa raíz.</p>
+        <div class="highlight"><strong>Función del control presupuestario:</strong> "Medir la eficiencia de la gestión comparando lo planificado con lo ejecutado, identificando responsabilidades y habilitando la toma de decisiones correctivas."</div>
+      </div>
+    </div>
+
+    <div class="faq-item" style="background:transparent; border:none; margin:0;">
+      <div class="faq-q" onclick="toggleFaq(this.parentElement)">
+        <h4><span class="q-icon">Q</span> ¿Qué son los Estados Contables Proyectados? ¿Cuáles son?</h4>
+        <span class="repeat-badge">5× examen</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        <p>Los estados contables/financieros proyectados son la representación cuantitativa del futuro esperado de la empresa. Son el <strong>resultado de consolidar todos los presupuestos parciales</strong>. Comprenden:</p>
+        <ul>
+          <li><strong>Estado de Resultados Proyectado:</strong> Muestra la rentabilidad esperada del período (Ventas − CMV = Utilidad Bruta − Gastos Op. = BAII − Intereses = BAI − Impuestos = Utilidad Neta).</li>
+          <li><strong>Flujo de Fondos / Presupuesto de Caja:</strong> Muestra los movimientos de efectivo esperados mes a mes. Permite detectar déficits o excedentes de caja.</li>
+          <li><strong>Balance Proyectado:</strong> Fotografía del patrimonio esperado al cierre del período. Activo = Pasivo + Patrimonio Neto.</li>
+        </ul>
+        <div class="warn-box"><strong>Pregunta tricky:</strong> "Una empresa estima comprar maquinarias con fondos propios. ¿Cómo impacta en los estados proyectados?" → En el Flujo de Fondos: salida de caja. En el EERR: afecta amortizaciones (no el precio de compra). En el Balance: sube Bienes de Uso, baja Caja.</div>
+      </div>
+    </div>
+
+    <div class="faq-item" style="background:transparent; border:none; margin:0;">
+      <div class="faq-q" onclick="toggleFaq(this.parentElement)">
+        <h4><span class="q-icon">Q</span> ¿Qué es el Presupuesto de Caja? ¿Cuál es su función?</h4>
+        <span class="repeat-badge">4× examen</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        <p>El <strong>Presupuesto de Caja</strong> (o Flujo de Fondos) es un presupuesto financiero que registra todas las <em>entradas</em> y <em>salidas de efectivo</em> esperadas para un período, estructuradas por mes. Su función:</p>
+        <ul>
+          <li>Anticipar períodos de <strong>déficit de caja</strong> (necesidad de financiamiento) o <strong>superávit</strong> (posibilidad de inversión).</li>
+          <li>Planificar el uso de excedentes (e.g., colocar en plazo fijo).</li>
+          <li>Programar la obtención de crédito antes de necesitarlo.</li>
+        </ul>
+        <div class="highlight"><strong>Estructura básica:</strong> Saldo inicial + Cobros de clientes + Cobro intereses = Disponible → Menos pagos (compras, gastos, impuestos, inversiones) = Saldo final.</div>
+      </div>
+    </div>
+
+    <div class="faq-item" style="background:transparent; border:none; margin:0;">
+      <div class="faq-q" onclick="toggleFaq(this.parentElement)">
+        <h4><span class="q-icon">Q</span> ¿Qué es un Presupuesto Base Cero? ¿Qué es un Presupuesto Flexible?</h4>
+        <span class="repeat-badge">3× examen</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        <p><strong>Presupuesto Base Cero (PBC):</strong> Cada período se elabora desde cero, sin tomar como punto de partida el presupuesto anterior. Cada área debe justificar cada gasto como si fuera nuevo. Ventaja: elimina ineficiencias acumuladas. Desventaja: muy costoso y demandante en tiempo.</p>
+        <p style="margin-top:10px"><strong>Presupuesto Flexible:</strong> Se elabora para distintos niveles de actividad (volumen de producción/ventas). A diferencia del presupuesto fijo (estático), permite comparar el real con el presupuesto correspondiente al nivel de actividad que efectivamente se alcanzó, haciendo el control más justo y significativo.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" style="background:transparent; border:none; margin:0;">
+      <div class="faq-q" onclick="toggleFaq(this.parentElement)">
+        <h4><span class="q-icon">Q</span> ¿Qué es un Presupuesto de Capital? Etapas de un Presupuesto.</h4>
+        <span class="repeat-badge">3× examen</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        <p><strong>Presupuesto de Capital:</strong> Planifica las inversiones en activos de larga vida útil (bienes de uso, maquinaria, instalaciones). Implica análisis de proyectos de inversión (VAN, TIR). Tiene horizonte temporal de mediano/largo plazo.</p>
+        <p style="margin-top:10px"><strong>Etapas del proceso presupuestario:</strong></p>
+        <ol>
+          <li><strong>Preasupuestación:</strong> Definición de premisas, objetivos y políticas.</li>
+          <li><strong>Formulación:</strong> Elaboración de cada presupuesto parcial (ventas, compras, gastos, etc.).</li>
+          <li><strong>Aprobación:</strong> Revisión y aprobación por la dirección.</li>
+          <li><strong>Ejecución:</strong> Implementación del plan.</li>
+          <li><strong>Control:</strong> Comparación real vs. presupuestado y análisis de desvíos.</li>
+          <li><strong>Retroalimentación:</strong> Ajustes y aprendizaje para el próximo ciclo.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="faq-item" style="background:transparent; border:none; margin:0;">
+      <div class="faq-q" onclick="toggleFaq(this.parentElement)">
+        <h4><span class="q-icon">Q</span> ¿Qué es un Informe de Gestión o de Desempeño?</h4>
+        <span class="repeat-badge">3× examen</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        <p>Un <strong>informe de gestión o de desempeño</strong> es un documento que presenta los resultados reales de la empresa en un período, comparándolos con los objetivos presupuestados. Incluye:</p>
+        <ul>
+          <li>Análisis de desvíos (favorables y desfavorables).</li>
+          <li>Identificación de causas (componente físico y monetario).</li>
+          <li>Responsables de cada área.</li>
+          <li>Recomendaciones para acciones correctivas.</li>
+        </ul>
+        <p>Es la herramienta concreta del control de gestión: sin él, el presupuesto sería solo un ejercicio académico.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANEAMIENTO -->
+<section id="planeamiento">
+  <div class="section-title fade-in">
+    <div class="section-icon ic-amber">🏹</div>
+    <div>
+      <h2>TEMA 2 — Planeamiento Estratégico vs Táctico</h2>
+      <div class="sec-sub">Frecuencia: 7/9 parciales — muy probable que entre</div>
+    </div>
+  </div>
+
+  <div class="card high fade-in">
+    <div class="faq-item" style="background:transparent; border:none; margin:0;">
+      <div class="faq-q" onclick="toggleFaq(this.parentElement)">
+        <h4><span class="q-icon">Q</span> ¿Qué diferencias encuentras entre Planeamiento Estratégico y Planeamiento Táctico?</h4>
+        <span class="repeat-badge">7× examen</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        <div class="table-wrap">
+          <table class="t">
+            <tr>
+              <th>Dimensión</th>
+              <th>Planeamiento Estratégico</th>
+              <th>Planeamiento Táctico</th>
+            </tr>
+            <tr>
+              <td>Horizonte temporal</td>
+              <td>Largo plazo (3–5 años o más)</td>
+              <td>Corto/mediano plazo (1 año, trimestral)</td>
+            </tr>
+            <tr>
+              <td>Nivel jerárquico</td>
+              <td>Alta dirección (Directorio, CEO)</td>
+              <td>Mandos medios (gerentes de área)</td>
+            </tr>
+            <tr>
+              <td>Alcance</td>
+              <td>Toda la organización; visión global</td>
+              <td>Área funcional específica</td>
+            </tr>
+            <tr>
+              <td>Tipo de decisiones</td>
+              <td>Estructurales, difícilmente reversibles</td>
+              <td>Operativas, más fácilmente reversibles</td>
+            </tr>
+            <tr>
+              <td>Grado de detalle</td>
+              <td>Bajo (lineamientos generales)</td>
+              <td>Alto (cifras, plazos, responsables)</td>
+            </tr>
+            <tr>
+              <td>Instrumentos</td>
+              <td>Análisis FODA, misión, visión, objetivos</td>
+              <td>Presupuestos anuales, planes operativos</td>
+            </tr>
+          </table>
+        </div>
+        <div class="highlight"><strong>¿Cómo se complementan con los presupuestos anuales?</strong> El plan estratégico fija el rumbo y los objetivos de largo plazo. El presupuesto anual (táctico) es la <em>traducción cuantitativa y monetaria</em> del plan estratégico para el año siguiente. El presupuesto desglosa en cifras concretas lo que la estrategia establece en términos cualitativos.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEASING Y GIF -->
+<section id="leasing-gif">
+  <div class="section-title fade-in">
+    <div class="section-icon ic-cyan">📂</div>
+    <div>
+      <h2>TEMA 3 — Leasing & GIF (Cuota)</h2>
+      <div class="sec-sub">Frecuencia: 7/9 parciales — COMBO que casi siempre aparece junto</div>
+    </div>
+  </div>
+
+  <div class="card cyan fade-in">
+    <div class="faq-item" style="background:transparent; border:none; margin:0;">
+      <div class="faq-q" onclick="toggleFaq(this.parentElement)">
+        <h4><span class="q-icon">Q</span> Diferencia entre Leasing Operativo y Leasing Financiero. Características de cada uno.</h4>
+        <span class="repeat-badge">7× examen</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        <div class="table-wrap">
+          <table class="t">
+            <tr>
+              <th>Dimensión</th>
+              <th>Leasing Operativo</th>
+              <th>Leasing Financiero</th>
+            </tr>
+            <tr>
+              <td>¿Quién es el dador?</td>
+              <td>Fabricante o proveedor del bien</td>
+              <td>Entidad financiera o banco</td>
+            </tr>
+            <tr>
+              <td>Plazo</td>
+              <td>Corto a mediano plazo (menor a vida útil del bien)</td>
+              <td>Largo plazo (cercano o igual a la vida útil del bien)</td>
+            </tr>
+            <tr>
+              <td>Opción de compra</td>
+              <td>Generalmente NO incluye</td>
+              <td>Siempre incluye opción de compra al final</td>
+            </tr>
+            <tr>
+              <td>Mantenimiento</td>
+              <td>Lo realiza el dador (incluido en la cuota)</td>
+              <td>Lo realiza el tomador (a su cargo)</td>
+            </tr>
+            <tr>
+              <td>Cancelación anticipada</td>
+              <td>Puede cancelarse (más flexible)</td>
+              <td>Generalmente irrevocable</td>
+            </tr>
+            <tr>
+              <td>Riesgo de obsolescencia</td>
+              <td>Lo asume el dador</td>
+              <td>Lo asume el tomador</td>
+            </tr>
+            <tr>
+              <td>Registro contable</td>
+              <td>Gasto operativo (no activa el bien)</td>
+              <td>Se activa el bien y se registra deuda</td>
+            </tr>
+          </table>
+        </div>
+        <div class="highlight"><strong>Ventajas del Leasing en general:</strong> No inmoviliza capital propio · Facilita la renovación tecnológica · Permite deducir la cuota como gasto impositivo · Facilidad de acceso respecto a un crédito bancario puro.</div>
+        <div class="warn-box"><strong>Desventajas:</strong> Costo total mayor que la compra directa · Restricciones de uso · En leasing financiero, el tomador asume todos los riesgos.</div>
+      </div>
+    </div>
+
+    <div class="faq-item" style="background:transparent; border:none; margin:0;">
+      <div class="faq-q" onclick="toggleFaq(this.parentElement)">
+        <h4><span class="q-icon">Q</span> G.I.F. — ¿Qué es la Cuota? Concepto, sub-aplicación, sobre-aplicación.</h4>
+        <span class="repeat-badge">6× examen</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        <p><strong>GIF (Gastos Indirectos de Fabricación):</strong> Son todos los costos de producción que no pueden asignarse directamente a un producto específico (e.g., alquiler de fábrica, energía, supervisión, amortización de maquinarias).</p>
+        <p style="margin-top:10px"><strong>La Cuota de GIF:</strong> Dado que los GIF no son directamente medibles por unidad, se distribuyen a los productos mediante una <em>tasa o cuota predeterminada</em>:</p>
+        <div class="formula">Cuota GIF = GIF Presupuestados / Base de Aplicación Presupuestada</div>
+        <p>La <strong>Base de Aplicación</strong> puede ser: horas-hombre de mano de obra directa, horas-máquina, costo de MOD, unidades producidas, etc.</p>
+        <div class="table-wrap" style="margin-top:12px">
+          <table class="t">
+            <tr><th>Situación</th><th>Definición</th><th>Efecto en resultado</th></tr>
+            <tr>
+              <td>Sub-aplicación</td>
+              <td>GIF Real &gt; GIF Aplicado (produje menos de lo esperado)</td>
+              <td>Pérdida adicional (el CMV absorbió menos GIF que los reales)</td>
+            </tr>
+            <tr>
+              <td>Sobre-aplicación</td>
+              <td>GIF Real &lt; GIF Aplicado (produje más de lo esperado)</td>
+              <td>Ganancia adicional (se cargó de más al costo)</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPUESTOS -->
+<section id="impuestos">
+  <div class="section-title fade-in">
+    <div class="section-icon ic-amber">💰</div>
+    <div>
+      <h2>TEMA 4 — Impuestos: Ganancias, BP, Monotributo</h2>
+      <div class="sec-sub">Frecuencia: 6/9 parciales</div>
+    </div>
+  </div>
+
+  <div class="grid-2 fade-in">
+    <div class="card high">
+      <div class="faq-item" style="background:transparent; border:none; margin:0;">
+        <div class="faq-q" onclick="toggleFaq(this.parentElement)">
+          <h4><span class="q-icon">Q</span> Imp. a las Ganancias: Criterio de Imputación por categoría.</h4>
+          <span class="repeat-badge">6× examen</span>
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-a">
+          <p><strong>Criterio de imputación:</strong> Define en qué período fiscal se reconoce el ingreso o gasto.</p>
+          <ul>
+            <li><strong>1ª Categoría (Renta del suelo / Inmuebles):</strong> Criterio <em>devengado</em>. Se imputan al año en que se devenga el alquiler, independientemente de si se cobró.</li>
+            <li><strong>2ª Categoría (Renta del capital):</strong> Criterio <em>percibido</em>. Se imputan al año en que efectivamente se cobra el ingreso.</li>
+            <li><strong>3ª Categoría (Empresas / Personas jurídicas):</strong> Criterio <em>devengado</em>. Ingresos y gastos se imputan al período en que se generan.</li>
+            <li><strong>4ª Categoría (Trabajo personal):</strong> Criterio <em>percibido</em>. Sueldos, honorarios, etc., se imputan cuando se cobran.</li>
+          </ul>
+          <div class="highlight"><strong>Gastos deducibles comunes a todas las categorías:</strong> Intereses de deudas · Impuestos y tasas que gravan el negocio · Seguros · Pérdidas extraordinarias.</div>
+          <div class="warn-box"><strong>Gastos deducibles 1ª categoría:</strong> Gastos de mantenimiento del inmueble · Amortización del edificio (no del terreno) · Impuesto inmobiliario.</div>
+          <div class="warn-box"><strong>Gastos deducibles 3ª categoría:</strong> Gastos necesarios para mantener la fuente · Amortizaciones · Previsiones por deudas incobrables · Sueldos del personal · Honorarios a directores (hasta el 25% de la utilidad contable).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card high">
+      <div class="faq-item" style="background:transparent; border:none; margin:0;">
+        <div class="faq-q" onclick="toggleFaq(this.parentElement)">
+          <h4><span class="q-icon">Q</span> Bienes Personales: Hecho Imponible, Sujetos, Bienes alcanzados.</h4>
+          <span class="repeat-badge">5× examen</span>
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-a">
+          <p><strong>Hecho Imponible (¿Qué grava?):</strong> La <em>posesión</em> de bienes personales al <strong>31 de diciembre</strong> de cada año. No grava ingresos sino la tenencia de patrimonio de las personas físicas y sucesiones indivisas.</p>
+          <p style="margin-top:8px"><strong>Sujetos alcanzados:</strong></p>
+          <ul>
+            <li>Personas físicas domiciliadas en Argentina → tributan por bienes en el país Y en el exterior.</li>
+            <li>Personas físicas domiciliadas en el exterior → tributan solo por bienes situados en Argentina.</li>
+            <li>Sucesiones indivisas radicadas en Argentina.</li>
+          </ul>
+          <p style="margin-top:8px"><strong>Bienes alcanzados en el país:</strong> Inmuebles · Automotores · Embarcaciones y aeronaves · Cuentas bancarias · Acciones y participaciones societarias · Dinero en efectivo · Joyas, obras de arte, objetos de valor.</p>
+          <p style="margin-top:8px"><strong>Bienes alcanzados en el exterior:</strong> Cuentas bancarias · Inmuebles en el exterior · Participaciones en sociedades del exterior · Créditos y derechos en el exterior.</p>
+          <div class="highlight"><strong>Quienes ejercen actividad en más de una jurisdicción:</strong> Están alcanzados por el <em>Convenio Multilateral</em>, que distribuye la base imponible de Ingresos Brutos entre las jurisdicciones donde desarrollan su actividad, según coeficientes de gastos e ingresos.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" style="background:transparent; border:none; margin:0; margin-top:12px">
+        <div class="faq-q" onclick="toggleFaq(this.parentElement)">
+          <h4><span class="q-icon">Q</span> Monotributo: Componentes de la cuota mensual. Recategorización.</h4>
+          <span class="repeat-badge">4× examen</span>
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-a">
+          <p>El <strong>Monotributo</strong> es un régimen simplificado que reemplaza el pago de IVA e Impuesto a las Ganancias para pequeños contribuyentes. La cuota mensual tiene <strong>3 componentes</strong>:</p>
+          <ul>
+            <li><strong>Componente Impositivo:</strong> Sustituye Ganancias + IVA. Varía según la categoría.</li>
+            <li><strong>Componente Previsional (Jubilación):</strong> Aporte al SIPA (Sistema Integrado Previsional).</li>
+            <li><strong>Componente de Obra Social:</strong> Aporte a la obra social elegida.</li>
+          </ul>
+          <p style="margin-top:8px"><strong>Recategorización:</strong> El monotributista debe recategorizarse cada <em>4 meses</em> (cuatrimestral), en enero, mayo y septiembre. Se analiza si los ingresos brutos acumulados, la superficie afectada o los alquileres devengados superan los límites de la categoría actual. Si corresponde, cambia de categoría hacia arriba o hacia abajo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card med fade-in" style="margin-top:4px">
+    <div class="faq-item" style="background:transparent; border:none; margin:0;">
+      <div class="faq-q" onclick="toggleFaq(this.parentElement)">
+        <h4><span class="q-icon">Q</span> Teoría de la Fuente vs Teoría del Balance (Ganancias).</h4>
+        <span class="repeat-badge">3× examen</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        <div class="table-wrap">
+          <table class="t">
+            <tr><th>Aspecto</th><th>Teoría de la Fuente</th><th>Teoría del Balance</th></tr>
+            <tr>
+              <td>¿Qué grava?</td>
+              <td>Rendimientos habituales de una fuente permanente</td>
+              <td>Todo aumento de riqueza en el período, sea habitual o no</td>
+            </tr>
+            <tr>
+              <td>Incluye ganancias de capital</td>
+              <td>No (e.g., venta de inmueble personal)</td>
+              <td>Sí (cualquier incremento patrimonial)</td>
+            </tr>
+            <tr>
+              <td>Aplica a</td>
+              <td>Personas físicas (cat. 1°, 2°, 4°)</td>
+              <td>Empresas (3ª categoría)</td>
+            </tr>
+            <tr>
+              <td>Principio</td>
+              <td>"La gallina pone huevos, no la matan"</td>
+              <td>"Todo incremento neto de riqueza es ganancia"</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FACTORING -->
+<section id="factoring">
+  <div class="section-title fade-in">
+    <div class="section-icon ic-pink">🔄</div>
+    <div>
+      <h2>TEMA 5 — Factoring</h2>
+      <div class="sec-sub">Frecuencia: 5/9 parciales</div>
+    </div>
+  </div>
+
+  <div class="card pink fade-in">
+    <div class="faq-item" style="background:transparent; border:none; margin:0;">
+      <div class="faq-q" onclick="toggleFaq(this.parentElement)">
+        <h4><span class="q-icon">Q</span> Factoring: Concepto, Ventajas y Desventajas.</h4>
+        <span class="repeat-badge">5× examen</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        <p><strong>Concepto:</strong> El factoring es un contrato por el cual una empresa (<em>cedente</em>) transfiere a una entidad financiera (<em>factor</em>) sus créditos comerciales (facturas a cobrar), recibiendo a cambio liquidez inmediata, descontando una comisión e intereses.</p>
+        <ul>
+          <li><strong>Con recurso (con responsabilidad):</strong> Si el deudor no paga, el riesgo vuelve a la empresa cedente. El factor puede reclamarle el monto.</li>
+          <li><strong>Sin recurso (sin responsabilidad):</strong> El factor asume el riesgo de incobrabilidad. La empresa cedente queda libre de responsabilidad, pero paga mayor costo.</li>
+        </ul>
+        <div class="grid-2" style="margin-top:12px">
+          <div>
+            <p><strong style="color:#6ee7b7">✅ Ventajas:</strong></p>
+            <ul>
+              <li>Liquidez inmediata sin necesidad de crédito bancario clásico.</li>
+              <li>Reduce el riesgo crediticio (modalidad sin recurso).</li>
+              <li>Permite al área administrativa tercerizar la gestión de cobros.</li>
+              <li>No genera deuda en el balance (no es un préstamo).</li>
+              <li>Mejora el flujo de fondos.</li>
+            </ul>
+          </div>
+          <div>
+            <p><strong style="color:#fca5a5">❌ Desventajas:</strong></p>
+            <ul>
+              <li>Costo elevado (comisiones + tasas de descuento).</li>
+              <li>El factor puede rechazar créditos de mala calidad.</li>
+              <li>Puede afectar la relación con los clientes (el cobro lo gestiona un tercero).</li>
+              <li>En modalidad con recurso, el riesgo no desaparece.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SECCIÓN 2 – RECETAS PRÁCTICAS
+══════════════════════════════════════ -->
+<section id="receta-presupuesto">
+  <div class="section-title fade-in">
+    <div class="section-icon ic-green">🧮</div>
+    <div>
+      <h2>SECCIÓN 2 — Receta: Presupuestos</h2>
+      <div class="sec-sub">Algoritmo paso a paso para resolver desde cero. Presente en el 100% de los parciales.</div>
+    </div>
+  </div>
+
+  <div class="card info fade-in">
+    <div class="card-header">
+      <span class="card-tag tag-crit">🔴 Crítico</span>
+      <h3>Qué datos buscar primero en el enunciado</h3>
+    </div>
+    <div class="grid-2">
+      <div>
+        <p style="font-weight:600; color:#a5b4fc; margin-bottom:8px">📥 Datos de Apertura (Balance al 31/12):</p>
+        <ul>
+          <li>Saldo inicial de Caja</li>
+          <li>Deudores por Ventas (cuándo se cobra)</li>
+          <li>Mercaderías en stock (¿mantienen nivel?)</li>
+          <li>Inversiones Financieras (PF: capital + intereses, cuándo vence)</li>
+          <li>Proveedores (cuándo se pagan)</li>
+          <li>Deudas impositivas (cuándo vencen)</li>
+          <li>Bienes de Uso + Amortización Acumulada</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-weight:600; color:#a5b4fc; margin-bottom:8px">📊 Datos Proyectados (tabla mes a mes):</p>
+        <ul>
+          <li>Ventas proyectadas por mes</li>
+          <li>Política de cobranzas (% contado, % a 30, % a 60 días)</li>
+          <li>Margen bruto sobre ventas o sobre costo</li>
+          <li>Política de pago a proveedores</li>
+          <li>Gastos fijos mensuales (Adm., Comerc., Amort.)</li>
+          <li>Comisiones sobre ventas</li>
+          <li>Alícuota de Ganancias (35%)</li>
+          <li>Política de plazo fijo (umbral y tasa)</li>
+          <li>Política de descubierto bancario (tasa)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card info fade-in">
+    <div class="card-header">
+      <span class="card-tag tag-info">📋 Algoritmo</span>
+      <h3>Orden exacto de construcción — 6 pasos</h3>
+    </div>
+
+    <ul class="step-list">
+      <li class="step-item">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <strong>Calcular las VENTAS y las COMPRAS DE MERCADERÍA</strong>
+          <p>Con el margen bruto y las ventas, obtenés el CMV. Con la política de inventarios, obtenés las compras:</p>
+          <div class="formula">CMV = Ventas × (1 − Margen Bruto sobre Ventas)
+  — o —
+CMV = Ventas / (1 + Margen Bruto sobre Costo)</div>
+          <div class="formula">Compras del mes = CMV del mes + Stock final deseado − Stock inicial</div>
+          <p style="margin-top:6px">⚠️ Atención: si la política dice "se compra con un mes de anticipación a la venta", las compras de enero = CMV de febrero, etc.</p>
+        </div>
+      </li>
+
+      <li class="step-item">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <strong>Armar el FLUJO DE FONDOS (Presupuesto de Caja) — mes a mes</strong>
+          <p><strong>Entradas de caja:</strong></p>
+          <ul>
+            <li>Cobros de ventas = aplicar política de cobranzas a cada mes de venta</li>
+            <li>Cobro de saldo inicial de Deudores por Ventas (según nota del balance)</li>
+            <li>Cobro de vencimiento de PF + intereses</li>
+            <li>Cobro de intereses de PF constituido en meses anteriores</li>
+          </ul>
+          <p style="margin-top:8px"><strong>Salidas de caja:</strong></p>
+          <ul>
+            <li>Pagos de compras de mercadería = aplicar política de pago a proveedores a cada mes de compra</li>
+            <li>Pago de saldo inicial de Proveedores (según nota del balance)</li>
+            <li>Gastos de administración y comercialización (solo los que se pagan en caja, no amortizaciones)</li>
+            <li>Comisiones (generalmente se pagan al mes siguiente)</li>
+            <li>Pago de impuesto a las ganancias (¡atención: si dice "sin pagos previstos durante el trimestre" no salida!)</li>
+            <li>Pago de impuestos vencidos del balance inicial</li>
+            <li>Constitución de plazo fijo (si el saldo supera el umbral)</li>
+          </ul>
+          <div class="formula">Saldo de Caja = Saldo Anterior + Total Entradas − Total Salidas</div>
+          <p style="margin-top:6px">🔁 Si el saldo supera el umbral → colocar excedente en PF. Si es negativo → financiar con descubierto bancario.</p>
+        </div>
+      </li>
+
+      <li class="step-item">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <strong>Calcular los INTERESES DE PLAZO FIJO y de DESCUBIERTO</strong>
+          <p><strong>Plazo Fijo:</strong> Los intereses se devengan en el mes de constitución pero generalmente se perciben (cobran) en el mes siguiente.</p>
+          <div class="formula">Interés PF = Capital × TEM
+  (donde TEM es la tasa mensual del enunciado)</div>
+          <p style="margin-top:6px"><strong>Descubierto bancario:</strong> Los intereses se devengan en el mes del déficit y se pagan al mes siguiente junto con la devolución del capital.</p>
+          <div class="formula">Interés Descubierto = Monto Financiado × TEM_descubierto</div>
+          <p style="margin-top:6px">⚠️ Si la tasa es anual: <code>TEM = TNA / 12</code> (año comercial) o <code>TEM = (1+TEA)^(1/12) - 1</code></p>
+        </div>
+      </li>
+
+      <li class="step-item">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <strong>Armar el ESTADO DE RESULTADOS PROYECTADO (EERR)</strong>
+          <p>Consolidar los 3 meses del trimestre:</p>
+          <div class="formula">Ventas Netas (total trimestre)
+  − CMV (total trimestre)
+  = UTILIDAD BRUTA
+  − Gastos de Administración
+  − Gastos de Comercialización (incluye comisiones)
+  = UTILIDAD OPERATIVA (BAII)
+  − Amortizaciones
+  = BAII (si no se dedujo antes)
+  + Intereses ganados (de PF)
+  − Intereses perdidos (de descubierto)
+  = BAI (Resultado antes de impuestos)
+  − Impuesto a las Ganancias (35% × BAI)
+  = UTILIDAD NETA</div>
+          <div class="warn-box"><strong>Cuidado:</strong> Las amortizaciones van en el EERR pero NO en el flujo de fondos. Los intereses van en ambos (uno devengado, el otro cobrado/pagado).</div>
+        </div>
+      </li>
+
+      <li class="step-item">
+        <div class="step-num">5</div>
+        <div class="step-body">
+          <strong>Armar el BALANCE PROYECTADO al cierre del período</strong>
+          <p>Partir del balance al 31/12 y aplicar todos los movimientos:</p>
+          <ul>
+            <li><strong>Caja:</strong> Saldo final del flujo de fondos del último mes</li>
+            <li><strong>Inversiones Financieras:</strong> PF que aún no vencieron al cierre + intereses devengados a cobrar</li>
+            <li><strong>Deudores por Ventas:</strong> Ventas del último mes no cobradas aún (a 30 y 60 días)</li>
+            <li><strong>Mercaderías:</strong> Stock final (si se mantiene el nivel)</li>
+            <li><strong>Bienes de Uso:</strong> Valor anterior + Incorporaciones − Ventas</li>
+            <li><strong>Amortización Acumulada:</strong> Anterior + Amortizaciones del período</li>
+            <li><strong>Proveedores:</strong> Compras del último/s mes/es no pagadas aún</li>
+            <li><strong>Deuda bancaria:</strong> Descubierto pendiente + intereses</li>
+            <li><strong>Comisiones a pagar:</strong> Si se pagan al mes siguiente</li>
+            <li><strong>Impuesto a las ganancias a pagar:</strong> Devengado − Pagado</li>
+            <li><strong>Patrimonio Neto:</strong> Capital + Resultados Acumulados anteriores + Utilidad Neta del período</li>
+          </ul>
+          <div class="formula">TOTAL ACTIVO = TOTAL PASIVO + PATRIMONIO NETO ← siempre debe cuadrar</div>
+        </div>
+      </li>
+
+      <li class="step-item">
+        <div class="step-num">6</div>
+        <div class="step-body">
+          <strong>Verificación Final</strong>
+          <ul>
+            <li>¿El balance cuadra? Activo = Pasivo + PN.</li>
+            <li>¿La utilidad neta del EERR coincide con el incremento de PN (PN final − Capital)?</li>
+            <li>¿Las amortizaciones figuran solo en el EERR y en el Balance, nunca en el flujo de fondos?</li>
+            <li>¿Los intereses de PF están devengados en el EERR y cobrados en el flujo del mes siguiente?</li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- TRAMPAS PRESUPUESTOS -->
+  <div class="card crit fade-in">
+    <div class="card-header">
+      <span class="card-tag tag-crit">⚠️ TRAMPAS</span>
+      <h3>Checklist de Errores Más Comunes — Presupuestos</h3>
+    </div>
+
+    <ul class="trap-list">
+      <li class="trap-item">
+        <div class="trap-icon">❌</div>
+        <div class="trap-body">
+          <strong>Confundir Margen sobre Ventas con Margen sobre Costo</strong>
+          <p>Si dice "margen bruto sobre ventas = 40%": CMV = Ventas × 60%. Si dice "margen sobre costo = 40%": CMV = Ventas / 1.40. Son fórmulas distintas y dan valores muy diferentes.</p>
+        </div>
+      </li>
+      <li class="trap-item">
+        <div class="trap-icon">❌</div>
+        <div class="trap-body">
+          <strong>Incluir amortizaciones en el Flujo de Fondos</strong>
+          <p>Las amortizaciones son un costo devengado sin salida de caja. Van en el EERR, en el Balance (Amort. Acumulada), pero JAMÁS en el presupuesto de caja como salida de efectivo.</p>
+        </div>
+      </li>
+      <li class="trap-item">
+        <div class="trap-icon">❌</div>
+        <div class="trap-body">
+          <strong>Olvidar el cobro del saldo inicial de Deudores por Ventas</strong>
+          <p>El balance de apertura tiene Créditos por Ventas. La nota del enunciado dice cuándo se cobra (e.g., "50% en enero y 50% en febrero"). Eso es plata que entra en los primeros meses y es fácil omitirla.</p>
+        </div>
+      </li>
+      <li class="trap-item">
+        <div class="trap-icon">❌</div>
+        <div class="trap-body">
+          <strong>Olvidar el pago del saldo inicial de Proveedores</strong>
+          <p>Lo mismo aplica al pasivo: el saldo de Proveedores al inicio tiene una fecha de pago indicada en las notas. No olvidarlo en el flujo de enero o febrero.</p>
+        </div>
+      </li>
+      <li class="trap-item">
+        <div class="trap-icon">❌</div>
+        <div class="trap-body">
+          <strong>Devengar intereses en el mes equivocado</strong>
+          <p>En el EERR los intereses se devengan cuando el capital está invertido/adeudado. En el flujo de fondos se registran cuando se cobran/pagan (generalmente al mes siguiente). Separá siempre devengo vs percibo.</p>
+        </div>
+      </li>
+      <li class="trap-item">
+        <div class="trap-icon">❌</div>
+        <div class="trap-body">
+          <strong>Mal cálculo de las compras cuando hay anticipación de un mes</strong>
+          <p>Si "las compras se realizan con un mes de anticipación a la venta", las compras de enero corresponden al CMV de febrero, las de febrero al de marzo, etc. Es fácil confundirlas.</p>
+        </div>
+      </li>
+      <li class="trap-item">
+        <div class="trap-icon">❌</div>
+        <div class="trap-body">
+          <strong>No aplicar el umbral de plazo fijo en el mes correcto</strong>
+          <p>El plazo fijo se constituye cuando el saldo ANTES de colocarlo supera el umbral. Hay que verificar el saldo disponible al final de cada mes y si supera el límite, el excedente va a PF y los intereses llegan el mes siguiente.</p>
+        </div>
+      </li>
+      <li class="trap-item">
+        <div class="trap-icon">❌</div>
+        <div class="trap-body">
+          <strong>Confundir la tasa mensual con la anual</strong>
+          <p>Si el enunciado da TNA, TEM = TNA/12. Si da TEA, TEM = (1+TEA)^(1/12) − 1. En AXI, si dice "48% anual por 90 días" → tasa por el plazo = 48% × 90/360 (año comercial) = 12%.</p>
+        </div>
+      </li>
+      <li class="trap-item">
+        <div class="trap-icon">❌</div>
+        <div class="trap-body">
+          <strong>No incluir las comisiones en el EERR ni en el flujo de fondos</strong>
+          <p>Las comisiones sobre ventas se devengan en el mes de la venta (van en el EERR) pero suelen pagarse al mes siguiente (van en el flujo del mes siguiente). No olvidarlas en ninguno de los dos estados.</p>
+        </div>
+      </li>
+      <li class="trap-item">
+        <div class="trap-icon">❌</div>
+        <div class="trap-body">
+          <strong>Omitir el impuesto a las ganancias del balance inicial en el flujo</strong>
+          <p>Si el balance inicial tiene "Deudas impositivas" o "Impuestos a pagar", la nota indica en qué mes se pagan. Esa salida debe estar en el flujo del mes correspondiente.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     RECETA: AJUSTE POR INFLACIÓN (AXI)
+══════════════════════════════════════ -->
+<section id="receta-inflacion">
+  <div class="section-title fade-in">
+    <div class="section-icon ic-red">📈</div>
+    <div>
+      <h2>SECCIÓN 2 — Receta: Ajuste por Inflación (AXI)</h2>
+      <div class="sec-sub">Aparece en ~90% de los parciales. Siempre piden RECPAM y REI con justificación.</div>
+    </div>
+  </div>
+
+  <!-- MAPA CONCEPTUAL AXI -->
+  <div class="card info fade-in">
+    <div class="card-header">
+      <span class="card-tag tag-info">📖 Conceptos clave</span>
+      <h3>Marco Conceptual del AXI antes de resolver</h3>
+    </div>
+    <div class="grid-2">
+      <div>
+        <p style="font-weight:700; color:#a5b4fc; margin-bottom:8px">Moneda Heterogénea (M.Het):</p>
+        <ul>
+          <li>Balance con las cuentas a sus valores <strong>históricos originales</strong> (sin ajustar).</li>
+          <li>Los pesos del día 1 y los pesos del día 90 "pesan lo mismo", lo cual es <em>incorrecto económicamente</em> en un contexto inflacionario.</li>
+          <li>Resultado = <strong>REI</strong> (Resultado por Exposición a la Inflación): diferencia generada por las cuentas monetarias.</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-weight:700; color:#67e8f9; margin-bottom:8px">Moneda Homogénea (M.Hom):</p>
+        <ul>
+          <li>Balance con todos los rubros ajustados a <strong>moneda de cierre</strong> (todos en pesos del mismo poder adquisitivo).</li>
+          <li>Se usa el índice de inflación para reexpresar cada cuenta.</li>
+          <li>Resultado = <strong>RECPAM</strong> (Resultado por Exposición a los Cambios en el Poder Adquisitivo de la Moneda): mide ganancia o pérdida por tener activos/pasivos monetarios.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="highlight" style="margin-top:14px">
+      <strong>Clasificación CLAVE de cuentas:</strong><br/>
+      <span style="color:#6ee7b7">✅ NO MONETARIAS (se ajustan con inflación):</span> Mercaderías · Bienes de Uso · Capital · Resultados Acumulados · Cuentas de Patrimonio Neto · Inventarios en pesos · Anticipos.<br/>
+      <span style="color:#fca5a5">❌ MONETARIAS (quedan a valor histórico en M.Het, se ajustan en M.Hom pero generan RECPAM):</span> Caja en pesos · Créditos en pesos · Deudas en pesos · Plazo Fijo en pesos.
+    </div>
+    <div class="warn-box">
+      <strong>Cuentas en MONEDA EXTRANJERA:</strong> No son monetarias en el sentido del ajuste por inflación. Se expresan al tipo de cambio del cierre en M.Het y también al tipo de cambio de cierre en M.Hom. El ajuste que les aplica es el de tipo de cambio (diferencia de cambio), no el de inflación.
+    </div>
+  </div>
+
+  <!-- PASOS AXI -->
+  <div class="card info fade-in">
+    <div class="card-header">
+      <span class="card-tag tag-crit">🔴 Algoritmo AXI</span>
+      <h3>Pasos para construir el Balance en Moneda Heterogénea y Homogénea</h3>
+    </div>
+
+    <ul class="step-list">
+      <li class="step-item">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <strong>Leer y organizar los datos del enunciado</strong>
+          <ul>
+            <li>Fecha de constitución de la sociedad y fecha de cierre del ejercicio.</li>
+            <li>Aportes iniciales (pesos, dólares, créditos en pesos, mercaderías).</li>
+            <li>Operaciones realizadas durante el período con fecha exacta.</li>
+            <li>Tabla de índices de inflación (INDICE, no tasa %) por mes.</li>
+            <li>Cotización del dólar (tipo de cambio) por fecha.</li>
+            <li>Valor de reposición de la mercadería al cierre.</li>
+            <li>Datos de plazo fijo en pesos (tasa) y en dólares (tasa).</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="step-item">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <strong>Calcular el coeficiente de actualización (inflación del período)</strong>
+          <div class="formula">Coeficiente = Índice del cierre / Índice de la fecha de la operación</div>
+          <p>Con los ÍNDICES (no tasas): si el índice al 31/03 es 47745 y el índice al 31/01 es 45689:</p>
+          <div class="formula">Coef = 47745 / 45689 = 1,045 (aprox. 4,5% de inflación acumulada)</div>
+          <p style="margin-top:6px">Con tasas mensuales: si la inflación de abril fue 2,9% y mayo 3,1%:</p>
+          <div class="formula">Coef_total = (1+0,029) × (1+0,031) = 1,061 (período 2 meses)</div>
+        </div>
+      </li>
+
+      <li class="step-item">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <strong>Construir el BALANCE EN MONEDA HETEROGÉNEA</strong>
+          <p>Registrar cada cuenta a su <strong>valor histórico original</strong> (sin ajustar por inflación). Solo se aplican:</p>
+          <ul>
+            <li>Diferencias de cambio para cuentas en divisas (a tipo de cambio de cierre).</li>
+            <li>Intereses devengados sobre PF y deudas (a la tasa pactada).</li>
+            <li>Valor de mercado para mercaderías (valor de reposición al cierre en Activo, comparar con costo histórico).</li>
+          </ul>
+          <p style="margin-top:8px"><strong>Capital en M.Het:</strong> suma directa de los aportes originales convertidos al tipo de cambio de la fecha de aporte.</p>
+          <p><strong>Resultado del ejercicio en M.Het = REI:</strong> diferencia que surge para cuadrar el balance.</p>
+          <div class="formula">REI = Total Activo (MH) − Total Pasivo (MH) − Capital (MH)</div>
+        </div>
+      </li>
+
+      <li class="step-item">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <strong>Construir el BALANCE EN MONEDA HOMOGÉNEA</strong>
+          <p>Re-expresar todas las cuentas <strong>NO MONETARIAS</strong> a moneda de cierre multiplicando por el coeficiente de actualización. Las cuentas <strong>MONETARIAS</strong> en pesos quedan a su valor nominal (ya están en pesos de cierre por definición).</p>
+          <div class="table-wrap">
+            <table class="t">
+              <tr><th>Cuenta</th><th>¿Monetaria?</th><th>Tratamiento en M.Hom</th></tr>
+              <tr>
+                <td>Caja en Pesos</td>
+                <td class="num">SÍ</td>
+                <td>Valor nominal (no se ajusta)</td>
+              </tr>
+              <tr>
+                <td>PF en Pesos</td>
+                <td class="num">SÍ</td>
+                <td>Capital + intereses devengados (nominal)</td>
+              </tr>
+              <tr>
+                <td>Caja en Dólares</td>
+                <td class="num">NO mon. (divisa)</td>
+                <td>Unidades × TC cierre</td>
+              </tr>
+              <tr>
+                <td>PF en Dólares</td>
+                <td class="num">NO mon. (divisa)</td>
+                <td>(Capital u$s + Intereses u$s) × TC cierre</td>
+              </tr>
+              <tr>
+                <td>Mercaderías</td>
+                <td class="num">NO</td>
+                <td>Costo histórico × Coef. inflación (o valor de reposición si es menor → criterio prudencia)</td>
+              </tr>
+              <tr>
+                <td>Proveedores en pesos</td>
+                <td class="num">SÍ</td>
+                <td>Valor nominal (deuda original + intereses)</td>
+              </tr>
+              <tr>
+                <td>Capital</td>
+                <td class="num">NO</td>
+                <td>Aportes × Coef. inflación desde fecha de aporte</td>
+              </tr>
+            </table>
+          </div>
+          <p style="margin-top:10px"><strong>Resultado del ejercicio en M.Hom = RECPAM:</strong></p>
+          <div class="formula">RECPAM = Total Activo (M.Hom) − Total Pasivo (M.Hom) − Capital (M.Hom)</div>
+        </div>
+      </li>
+
+      <li class="step-item">
+        <div class="step-num">5</div>
+        <div class="step-body">
+          <strong>Justificar el REI y el RECPAM (abrirlos por cuenta)</strong>
+          <p>El examen siempre pide <strong>"justificar con apertura"</strong>. Para cada cuenta monetaria calcular su exposición a la inflación:</p>
+          <div class="formula">Resultado por cuenta = Valor M.Hom − Valor M.Het</div>
+          <p>Para cuentas monetarias activas (Caja, PF en pesos): si hay inflación, el poder adquisitivo cae → <strong>PÉRDIDA</strong> (tener pesos durante la inflación te hace perder).</p>
+          <p>Para cuentas monetarias pasivas (Proveedores en pesos, Deudas en pesos): si hay inflación, la deuda se licúa → <strong>GANANCIA</strong> (deber pesos durante la inflación te beneficia).</p>
+          <div class="formula">RECPAM / REI total = Suma algebraica de todos los resultados por cuenta</div>
+          <p style="margin-top:6px">El RECPAM de M.Hom debe coincidir con la suma de justificaciones individuales. Lo mismo para REI en M.Het.</p>
+        </div>
+      </li>
+
+      <li class="step-item">
+        <div class="step-num">6</div>
+        <div class="step-body">
+          <strong>Verificaciones finales AXI</strong>
+          <ul>
+            <li>¿Balance M.Het cuadra? Activo = Pasivo + Capital + REI.</li>
+            <li>¿Balance M.Hom cuadra? Activo = Pasivo + Capital (ajustado) + RECPAM.</li>
+            <li>¿Se indicó si el RECPAM/REI es GANANCIA (+) o PÉRDIDA (−)?</li>
+            <li>¿El Capital en M.Hom es siempre mayor que en M.Het? (Efecto inflacionario sobre patrimonio.)</li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- TRAMPAS AXI -->
+  <div class="card crit fade-in">
+    <div class="card-header">
+      <span class="card-tag tag-crit">⚠️ TRAMPAS</span>
+      <h3>Checklist de Errores Más Comunes — Ajuste por Inflación</h3>
+    </div>
+
+    <ul class="trap-list">
+      <li class="trap-item">
+        <div class="trap-icon">❌</div>
+        <div class="trap-body">
+          <strong>Cruzar los índices de inflación (usar el del inicio en lugar del cierre, o viceversa)</strong>
+          <p>El coeficiente siempre es: Índice CIERRE ÷ Índice FECHA DE LA OPERACIÓN. Si lo invertís, el resultado sale exactamente al revés de lo que debería ser.</p>
+        </div>
+      </li>
+      <li class="trap-item">
+        <div class="trap-icon">❌</div>
+        <div class="trap-body">
+          <strong>Tratar cuentas en dólares como cuentas monetarias en pesos</strong>
+          <p>Las cuentas en moneda extranjera NO se ajustan con el índice de inflación en pesos. Se expresan al tipo de cambio de cierre. El RECPAM no aplica directamente sobre ellas; lo que aplica es diferencia de cambio.</p>
+        </div>
+      </li>
+      <li class="trap-item">
+        <div class="trap-icon">❌</div>
+        <div class="trap-body">
+          <strong>Olvidar ajustar el Capital en Moneda Homogénea</strong>
+          <p>El Capital es NO monetario. Si se aportó en fecha de inicio, debe multiplicarse por el coeficiente de inflación del período completo. Dejarlo sin ajustar infla el RECPAM artificialmente.</p>
+        </div>
+      </li>
+      <li class="trap-item">
+        <div class="trap-icon">❌</div>
+        <div class="trap-body">
+          <strong>Confundir "año comercial" con "año civil"</strong>
+          <p>Año comercial: todos los meses tienen 30 días, el año tiene 360. Año civil: usa días calendario. El enunciado siempre especifica cuál usar. Cambiar uno por el otro afecta todos los cálculos de tasas proporcionales.</p>
+        </div>
+      </li>
+      <li class="trap-item">
+        <div class="trap-icon">❌</div>
+        <div class="trap-body">
+          <strong>Olvidar incluir los intereses devengados del PF en el cálculo del RECPAM</strong>
+          <p>Los intereses de un PF en pesos son una cuenta monetaria activa nueva que también se expone a la inflación en el período que van desde que se devengan hasta el cierre. Deben incluirse en la justificación.</p>
+        </div>
+      </li>
+      <li class="trap-item">
+        <div class="trap-icon">❌</div>
+        <div class="trap-body">
+          <strong>Usar el valor de reposición de la mercadería sin compararlo con el costo ajustado</strong>
+          <p>En M.Hom, la mercadería va al <em>menor</em> valor entre: costo histórico × coeficiente inflación vs. valor de reposición. Es el criterio del costo o mercado el menor (prudencia). Si el valor de reposición es menor, la diferencia es pérdida (REI/RECPAM).</p>
+        </div>
+      </li>
+      <li class="trap-item">
+        <div class="trap-icon">❌</div>
+        <div class="trap-body">
+          <strong>No distinguir REI (M.Het) de RECPAM (M.Hom)</strong>
+          <p>REI es el resultado que surge de la exposición a la inflación en el balance heterogéneo (valor histórico). RECPAM es el resultado ajustado en moneda homogénea. El enunciado siempre pide justificar ambos. No confundirlos.</p>
+        </div>
+      </li>
+      <li class="trap-item">
+        <div class="trap-icon">❌</div>
+        <div class="trap-body">
+          <strong>Calcular mal la tasa proporcional para el plazo fijo en moneda extranjera</strong>
+          <p>Si la TNA es 3,6% anual por 60 días (año comercial): Tasa = 3,6% × 60/360 = 0,6%. Multiplicar la TNA directamente sin prorratear por el plazo es un error clásico.</p>
+        </div>
+      </li>
+      <li class="trap-item">
+        <div class="trap-icon">❌</div>
+        <div class="trap-body">
+          <strong>No incluir el recargo/financiación del proveedor de mercaderías en el pasivo</strong>
+          <p>Cuando la mercadería se compra y se financia a 120 días con un recargo del X%, ese recargo forma parte del costo financiero (no del costo de la mercadería). El pasivo inicial es el importe del bien, el recargo es interés a pagar.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- TABLA RESUMEN RECPAM -->
+  <div class="card cyan fade-in">
+    <div class="card-header">
+      <span class="card-tag tag-cyan">📊 Referencia Rápida</span>
+      <h3>Tabla de Referencia: ¿Ganancia o Pérdida?</h3>
+    </div>
+    <div class="table-wrap">
+      <table class="t">
+        <tr>
+          <th>Situación</th>
+          <th>Inflación</th>
+          <th>Efecto RECPAM</th>
+          <th>Lógica</th>
+        </tr>
+        <tr>
+          <td>Tenés pesos en Caja</td>
+          <td>🔴 Sube</td>
+          <td><span style="color:#fca5a5; font-weight:700">PÉRDIDA</span></td>
+          <td>El poder adquisitivo del efectivo cae</td>
+        </tr>
+        <tr>
+          <td>Tenés PF en pesos</td>
+          <td>🔴 Sube</td>
+          <td><span style="color:#fca5a5; font-weight:700">PÉRDIDA parcial</span></td>
+          <td>Los intereses compensan parte de la inflación</td>
+        </tr>
+        <tr>
+          <td>Debés pesos a proveedores</td>
+          <td>🔴 Sube</td>
+          <td><span style="color:#6ee7b7; font-weight:700">GANANCIA</span></td>
+          <td>La deuda en pesos se licúa</td>
+        </tr>
+        <tr>
+          <td>Tenés Mercaderías</td>
+          <td>🔴 Sube</td>
+          <td><span style="color:#6ee7b7; font-weight:700">GANANCIA (cobertura)</span></td>
+          <td>Activo no monetario: mantiene valor real</td>
+        </tr>
+        <tr>
+          <td>Tenés dólares o PF en u$s</td>
+          <td>🔴 Sube + Devalúa</td>
+          <td><span style="color:#6ee7b7; font-weight:700">GANANCIA (diferencia de cambio)</span></td>
+          <td>Si el dólar sube más que la inflación, doble ganancia</td>
+        </tr>
+        <tr>
+          <td>Tenés créditos a cobrar en pesos</td>
+          <td>🔴 Sube</td>
+          <td><span style="color:#fca5a5; font-weight:700">PÉRDIDA</span></td>
+          <td>Igual que la caja: los créditos se licúan en términos reales</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     PREGUNTAS FRECUENTES DE EXAMEN
+══════════════════════════════════════ -->
+<section id="preguntas">
+  <div class="section-title fade-in">
+    <div class="section-icon ic-pink">❓</div>
+    <div>
+      <h2>Banco de Preguntas de Examen</h2>
+      <div class="sec-sub">Todas las preguntas teóricas identificadas en los 9 parciales, con respuesta ideal</div>
+    </div>
+  </div>
+
+  <div class="card med fade-in">
+    <div class="card-header">
+      <span class="card-tag tag-exam">📝 Pregunta Estilo Examen</span>
+      <h3>Una empresa estima comprar maquinarias con fondos propios durante el próximo año. ¿Cómo impactará en los estados contables proyectados?</h3>
+    </div>
+    <p style="color:var(--text-secondary); font-size:0.92rem; margin-top:8px">Esta pregunta apareció textualmente en 4 parciales distintos.</p>
+    <div class="highlight" style="margin-top:12px">
+      <strong>Respuesta ideal:</strong>
+      <ul style="margin-top:8px">
+        <li><strong>Flujo de Fondos:</strong> Salida de caja por el monto total de la maquinaria en el mes de pago.</li>
+        <li><strong>Estado de Resultados:</strong> No impacta en el período de compra. A partir del período siguiente se devenga la <em>amortización</em> (cuota de amortización = Valor / Vida útil), que sí reduce la utilidad operativa.</li>
+        <li><strong>Balance:</strong> Sube Bienes de Uso por el valor de compra. Baja Caja por el mismo monto. A medida que se amortizan, sube Amortización Acumulada (cuenta regularizadora de Bienes de Uso).</li>
+        <li><strong>Patrimonio Neto:</strong> No cambia en el momento de la compra (es un intercambio activo-activo). Se reduce gradualmente a través de las amortizaciones que afectan la utilidad neta.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card med fade-in">
+    <div class="card-header">
+      <span class="card-tag tag-exam">📝 Pregunta Estilo Examen</span>
+      <h3>Una empresa estima liquidar sus Inversiones Transitorias para destinarlas a la compra de un Bien de Uso. ¿Cómo impacta en los estados proyectados?</h3>
+    </div>
+    <div class="highlight" style="margin-top:12px">
+      <strong>Respuesta ideal:</strong>
+      <ul style="margin-top:8px">
+        <li><strong>Flujo de Fondos:</strong> Entrada de caja por cobro del PF (capital + intereses al vencimiento), luego salida de caja por la compra del bien.</li>
+        <li><strong>Estado de Resultados:</strong> Intereses ganados del PF (hasta el momento de liquidación). Amortizaciones del bien nuevo en períodos futuros.</li>
+        <li><strong>Balance:</strong> Baja Inversiones Transitorias (activo financiero) → Sube Bienes de Uso (activo fijo). El total del activo puede cambiar levemente por los intereses devengados.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="grid-2 fade-in">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this.parentElement)">
+        <h4><span class="q-icon">Q</span> ¿Qué es el Hecho Imponible del IVA?</h4>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        <p>El Hecho Imponible del IVA es el <strong>acto o situación que da origen a la obligación tributaria</strong>. En el IVA comprende:</p>
+        <ul>
+          <li>La <strong>venta de cosas muebles</strong> en el país (cuando el transmitente es habitualista).</li>
+          <li>Las <strong>obras, locaciones y prestaciones de servicios</strong>.</li>
+          <li>Las <strong>importaciones definitivas</strong> de bienes.</li>
+        </ul>
+        <p>El hecho imponible se configura en el momento de la <em>entrega del bien</em> o de la <em>emisión de la factura</em>, lo que ocurra primero.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this.parentElement)">
+        <h4><span class="q-icon">Q</span> ¿Qué es el Convenio Multilateral? ¿Cómo funciona?</h4>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        <p>El <strong>Convenio Multilateral</strong> es un acuerdo entre las jurisdicciones provinciales (y CABA) para distribuir la base imponible del <em>Impuesto a los Ingresos Brutos</em> entre aquellas provincias donde un contribuyente ejerce su actividad.</p>
+        <p style="margin-top:8px">El régimen <strong>general</strong> distribuye la base en partes iguales según:</p>
+        <ul>
+          <li>50% según los <strong>gastos</strong> incurridos en cada jurisdicción.</li>
+          <li>50% según los <strong>ingresos</strong> obtenidos en cada jurisdicción.</li>
+        </ul>
+        <p>Así se evita la doble imposición sobre el mismo ingreso.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this.parentElement)">
+        <h4><span class="q-icon">Q</span> Ingresos Brutos: Quienes ejercen actividad en más de una jurisdicción.</h4>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        <p>Quien ejerce actividad en más de una jurisdicción queda alcanzado por el <strong>Convenio Multilateral</strong>. El Impuesto a los Ingresos Brutos no se paga en su totalidad en una sola provincia, sino que se distribuye proporcionalmente entre todas las jurisdicciones donde se desarrolla la actividad, usando coeficientes calculados sobre gastos e ingresos de cada lugar.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this.parentElement)">
+        <h4><span class="q-icon">Q</span> Definir componente físico y monetario del desvío presupuestario.</h4>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        <p>En el análisis de desvíos del control presupuestario:</p>
+        <ul>
+          <li><strong>Componente físico:</strong> La diferencia entre la cantidad real y la cantidad presupuestada, valorizada al precio estándar/presupuestado. Revela si se vendió/produjo más o menos de lo esperado.</li>
+          <li><strong>Componente monetario (precio):</strong> La diferencia entre el precio real y el precio presupuestado, multiplicada por la cantidad real. Revela si los precios de venta o de compra variaron respecto a lo planificado.</li>
+        </ul>
+        <div class="formula">Desvío Total = Desvío Físico + Desvío Monetario</div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<div style="margin-top:60px"></div>
+
+</main>
+
+<footer>
+  <p>📚 Guía elaborada a partir del análisis de <strong>9 parciales reales</strong> de Control de Gestión — UTN (2019–2024) · Docentes: Gatti / Rago</p>
+  <p style="margin-top:6px; color:var(--text-muted)">Generada con IA · Verificar con el material de cátedra antes del examen · Suerte 🍀</p>
+</footer>
+
+<script>
+  // SCROLL PROGRESS
+  window.addEventListener('scroll', () => {
+    const scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+    document.getElementById('scroll-bar').style.width = scrolled + '%';
+  });
+
+  // NAV SCROLL
+  function navScroll(btn, id) {
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // NAV ACTIVE ON SCROLL
+  const sections = document.querySelectorAll('section[id]');
+  const navBtns = document.querySelectorAll('.nav-btn');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(sec => {
+      if (window.scrollY >= sec.offsetTop - 120) current = sec.id;
+    });
+    navBtns.forEach(btn => {
+      btn.classList.remove('active');
+      if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(`'${current}'`)) {
+        btn.classList.add('active');
+      }
+    });
+  });
+
+  // FAQ TOGGLE
+  function toggleFaq(item) {
+    item.classList.toggle('open');
+  }
+  // Open all by default on load for the main theory card
+  document.querySelectorAll('.faq-item').forEach(item => {
+    if (!item.classList.contains('open')) {
+      // keep closed by default
+    }
+  });
+
+  // FADE IN OBSERVER
+  const fadeEls = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  fadeEls.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
