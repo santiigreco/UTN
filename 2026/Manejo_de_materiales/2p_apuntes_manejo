@@ -1,0 +1,22 @@
+03/08/26
+
+U7- Sistemas de almacenamieto
+
+
+Por tiempo de permanencia -> cross docking  -> directo o pre distribuido (ejemplo: supermercados)
+                                            -> con preclasificación (ejemplo: e-commerce)
+
+En bloque   -> bloques sobre piso -> tiene capacidad limtiada de apilamiento debido al peso
+            -> bloques de estanterias    -> drive 
+                                        -> push back LIFO, angulo de 2°a 3°, referencias unicas
+                                        -> sistema dinamico (parecido a push back pero doble pasillo, por un lado cargo y por el otro descargo)
+                                        -> sistema pallet shuttle (indice de utilizacion hasta el 85%)
+
+Dimensionamiento-> alto, tengo como limitante el techo (hasta 0.5m desde el techo) , el costo de los elevadores (post +4m los elevadores son mas caros y + sofisticados),
+
+De acceso directo   -> estanterias de base fija
+                    -> estanterias de base móvil
+                    -> estanterias para pequeñas piezas-      -> sistema hombre a producto
+                                                            -> sistema producto a hombre
+
+
