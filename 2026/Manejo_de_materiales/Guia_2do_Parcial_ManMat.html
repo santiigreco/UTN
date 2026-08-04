@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Guía 2do Parcial – Manejo de Materiales y Distribución de Planta UTN</title>
+  <meta name="description" content="Guía teórica y práctica para el segundo parcial de Manejo de Materiales y Distribución de Planta UTN (2do Cuatrimestre). Incluye U7.5 Sistemas de Almacenaje, gráficos explicativos, simuladores y preguntas súper críticas de finales GrimoLisi." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-primary:    #0a0e1a;
+      --bg-secondary:  #111827;
+      --bg-card:       #161d2e;
+      --bg-card-hover: #1c2540;
+      --accent-1:      #6366f1; /* Violeta */
+      --accent-2:      #8b5cf6; /* Púrpura */
+      --accent-3:      #06b6d4; /* Cian */
+      --accent-4:      #10b981; /* Verde */
+      --accent-warn:   #f59e0b; /* Ámbar */
+      --accent-danger: #ef4444; /* Rojo */
+      --accent-pink:   #ec4899; /* Rosa */
+      --text-primary:  #f1f5f9;
+      --text-secondary:#94a3b8;
+      --text-muted:    #64748b;
+      --border:        rgba(99,102,241,0.18);
+      --border-glow:   rgba(99,102,241,0.4);
+      --shadow-lg:     0 20px 60px rgba(0,0,0,0.5);
+      --radius:        12px;
+      --radius-sm:     8px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      overflow-x: hidden;
+      font-size: 16px;
+    }
+
+    /* Luces de fondo dinámicas */
+    body::before, body::after {
+      content: ''; position: fixed; border-radius: 50%; filter: blur(120px);
+      opacity: 0.14; pointer-events: none; z-index: 0;
+      animation: blobFloat 14s ease-in-out infinite alternate;
+    }
+    body::before { width: 650px; height: 650px; background: var(--accent-1); top: -200px; left: -200px; }
+    body::after  { width: 550px; height: 550px; background: var(--accent-3); bottom: -200px; right: -200px; animation-delay: -7s; }
+    @keyframes blobFloat { from { transform: translate(0,0) scale(1); } to { transform: translate(45px,35px) scale(1.1); } }
+
+    /* ── SCROLL BAR ── */
+    #scroll-bar {
+      position: fixed; top: 0; left: 0; height: 4px;
+      background: linear-gradient(90deg, var(--accent-1), var(--accent-3), var(--accent-pink));
+      z-index: 9999; width: 0%; transition: width 0.1s linear;
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: relative; z-index: 10; text-align: center; padding: 75px 24px 50px;
+      background: linear-gradient(180deg, rgba(99,102,241,0.12) 0%, transparent 100%);
+      border-bottom: 1px solid var(--border);
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px; background: rgba(99,102,241,0.15);
+      border: 1px solid var(--border-glow); color: #c7d2fe; padding: 6px 16px;
+      border-radius: 999px; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em;
+      text-transform: uppercase; margin-bottom: 20px;
+    }
+    .badge-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent-pink); animation: pulse 1.8s ease-in-out infinite; }
+    @keyframes pulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.4; transform:scale(1.4); } }
+    
+    h1 {
+      font-size: clamp(2.1rem, 5.5vw, 3.8rem); font-weight: 900;
+      background: linear-gradient(135deg, #ffffff 0%, var(--accent-1) 45%, var(--accent-3) 85%, #e0e7ff 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      line-height: 1.15; margin-bottom: 18px; letter-spacing: -0.02em;
+    }
+    .subtitle { color: var(--text-secondary); font-size: 1.05rem; max-width: 720px; margin: 0 auto 28px; font-weight: 400; }
+
+    .header-pills { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 15px; }
+    .header-pill {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+      padding: 6px 14px; border-radius: 8px; font-size: 0.82rem; color: var(--text-secondary);
+      display: flex; align-items: center; gap: 6px;
+    }
+    .header-pill strong { color: var(--text-primary); }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100; background: rgba(10,14,26,0.94);
+      backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); padding: 0 24px;
+    }
+    .nav-inner {
+      max-width: 1240px; margin: 0 auto; display: flex; gap: 4px;
+      overflow-x: auto; scrollbar-width: none; padding: 10px 0; align-items: center;
+    }
+    .nav-inner::-webkit-scrollbar { display: none; }
+    .nav-btn {
+      white-space: nowrap; border: 1px solid transparent; background: transparent;
+      color: var(--text-secondary); font-family: 'Inter', sans-serif; border-radius: var(--radius-sm);
+      cursor: pointer; transition: all 0.22s; display: flex; flex-direction: column;
+      align-items: center; gap: 2px; padding: 6px 14px; line-height: 1.1;
+    }
+    .nav-btn .nav-unit { font-size: 0.6rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 7px; border-radius: 999px; background: rgba(255,255,255,0.06); color: var(--text-muted); transition: all 0.22s; }
+    .nav-btn .nav-label { font-size: 0.83rem; font-weight: 600; }
+    .nav-btn:hover { background: rgba(99,102,241,0.14); border-color: rgba(99,102,241,0.25); color: var(--accent-1); }
+    .nav-btn:hover .nav-unit { background: rgba(99,102,241,0.25); color: #c7d2fe; }
+    .nav-btn.active { background: rgba(99,102,241,0.2); border-color: rgba(99,102,241,0.4); color: var(--accent-1); }
+    .nav-btn.active .nav-unit { background: var(--accent-1); color: white; }
+    .nav-btn.disabled { opacity: 0.45; cursor: not-allowed; }
+    .nav-btn.disabled:hover { background: transparent; border-color: transparent; color: var(--text-muted); }
+    .nav-sep { width: 1px; height: 30px; background: var(--border); flex-shrink: 0; margin: 0 6px; }
+
+    /* ── MAIN ── */
+    main { max-width: 1160px; margin: 0 auto; padding: 40px 24px 90px; position: relative; z-index: 1; }
+
+    /* ── SECTION TITLES ── */
+    .section-title { display: flex; align-items: center; gap: 14px; margin: 60px 0 26px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+    .section-icon { width: 46px; height: 46px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 1.35rem; flex-shrink: 0; }
+    .section-title h2 { font-size: 1.65rem; font-weight: 800; color: var(--text-primary); letter-spacing: -0.01em; }
+    .section-title .sec-sub { font-size: 0.88rem; color: var(--text-muted); margin-top: 2px; }
+
+    .ic-violet { background: rgba(99,102,241,0.18); color: #a5b4fc; }
+    .ic-cyan   { background: rgba(6,182,212,0.18); color: #67e8f9; }
+    .ic-green  { background: rgba(16,185,129,0.18); color: #6ee7b7; }
+    .ic-amber  { background: rgba(245,158,11,0.18); color: #fcd34d; }
+    .ic-pink   { background: rgba(236,72,153,0.18); color: #f9a8d4; }
+    .ic-red    { background: rgba(239,68,68,0.18); color: #fca5a5; }
+
+    /* ── TAGS DE CRITICIDAD Y SUPERCRÍTICO ── */
+    .crit-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 4px 12px; border-radius: 999px; font-size: 0.72rem; font-weight: 800;
+      letter-spacing: 0.06em; text-transform: uppercase; border: 1px solid; margin-bottom: 12px;
+    }
+    .tag-supercritico {
+      background: linear-gradient(135deg, rgba(236,72,153,0.25), rgba(168,85,247,0.25));
+      color: #f472b6; border-color: rgba(236,72,153,0.6);
+      box-shadow: 0 0 14px rgba(236,72,153,0.25); animation: pulseGlow 2.5s infinite alternate;
+    }
+    @keyframes pulseGlow { 0% { box-shadow: 0 0 8px rgba(236,72,153,0.2); } 100% { box-shadow: 0 0 18px rgba(236,72,153,0.45); } }
+    
+    .tag-alta   { background: rgba(239,68,68,0.14); color: #fca5a5; border-color: rgba(239,68,68,0.38); }
+    .tag-media  { background: rgba(245,158,11,0.14); color: #fcd34d; border-color: rgba(245,158,11,0.38); }
+    .tag-baja   { background: rgba(16,185,129,0.14); color: #6ee7b7; border-color: rgba(16,185,129,0.38); }
+    .tag-examen { background: rgba(236,72,153,0.14); color: #f9a8d4; border-color: rgba(236,72,153,0.38); }
+
+    .crit-tag::before { content: '●'; font-size: 0.6rem; }
+    .tag-supercritico::before { content: '🔥'; font-size: 0.75rem; }
+    .tag-alta::before   { color: #ef4444; }
+    .tag-media::before  { color: #f59e0b; }
+    .tag-baja::before   { color: #10b981; }
+    .tag-examen::before { color: #ec4899; }
+
+    /* ── CARDS ── */
+    .card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 24px 26px; margin-bottom: 22px; transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+      position: relative; overflow: hidden;
+    }
+    .card::before {
+      content: ''; position: absolute; top: 0; left: 0; height: 4px; width: 100%;
+      border-radius: var(--radius) var(--radius) 0 0; opacity: 0; transition: opacity 0.3s;
+    }
+    .card:hover { transform: translateY(-3px); border-color: var(--border-glow); box-shadow: var(--shadow-lg); background: var(--bg-card-hover); }
+    .card:hover::before { opacity: 1; }
+    
+    .card.info::before      { background: linear-gradient(90deg, var(--accent-1), transparent); }
+    .card.cyan::before      { background: linear-gradient(90deg, var(--accent-3), transparent); }
+    .card.green::before     { background: linear-gradient(90deg, var(--accent-4), transparent); }
+    .card.amber::before     { background: linear-gradient(90deg, var(--accent-warn), transparent); }
+    .card.danger::before    { background: linear-gradient(90deg, var(--accent-danger), transparent); }
+    .card.supercrit::before { background: linear-gradient(90deg, var(--accent-pink), var(--accent-2), transparent); }
+
+    .card h3 { font-size: 1.15rem; font-weight: 800; color: var(--text-primary); margin-bottom: 12px; letter-spacing: -0.01em; }
+    .card p, .card li { color: var(--text-secondary); font-size: 0.94rem; line-height: 1.75; }
+    .card ul, .card ol { padding-left: 22px; }
+    .card li { margin-bottom: 7px; }
+    .card li::marker { color: var(--accent-1); font-weight: bold; }
+
+    /* ── BOTÓN REDIRECCIÓN A FINAL GRIMOLISSI ── */
+    .btn-to-final {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: linear-gradient(135deg, rgba(236,72,153,0.18), rgba(168,85,247,0.18));
+      border: 1px solid rgba(236,72,153,0.45); color: #f472b6;
+      padding: 7px 15px; border-radius: 8px; font-size: 0.81rem; font-weight: 700;
+      cursor: pointer; transition: all 0.22s ease; margin-top: 14px; text-decoration: none;
+    }
+    .btn-to-final:hover {
+      background: linear-gradient(135deg, rgba(236,72,153,0.38), rgba(168,85,247,0.38));
+      border-color: rgba(236,72,153,0.75); color: #ffffff;
+      transform: translateY(-2px); box-shadow: 0 4px 14px rgba(236,72,153,0.3);
+    }
+    .btn-to-final::after { content: ' ➔'; font-size: 0.85rem; }
+
+    /* ── HIGHLIGHT BOXES ── */
+    .highlight  { background: rgba(99,102,241,0.09); border-left: 4px solid var(--accent-1); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 14px 18px; margin: 12px 0; font-size: 0.93rem; color: var(--text-secondary); }
+    .warn-box   { background: rgba(245,158,11,0.09); border-left: 4px solid var(--accent-warn); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 14px 18px; margin: 12px 0; font-size: 0.93rem; color: var(--text-secondary); }
+    .danger-box { background: rgba(239,68,68,0.09); border-left: 4px solid var(--accent-danger); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 14px 18px; margin: 12px 0; font-size: 0.93rem; color: var(--text-secondary); }
+    .green-box  { background: rgba(16,185,129,0.09); border-left: 4px solid var(--accent-4); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 14px 18px; margin: 12px 0; font-size: 0.93rem; color: var(--text-secondary); }
+    .super-box  { background: linear-gradient(135deg, rgba(236,72,153,0.1), rgba(168,85,247,0.08)); border-left: 4px solid var(--accent-pink); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 16px 20px; margin: 14px 0; font-size: 0.94rem; color: var(--text-primary); }
+    
+    .highlight strong { color: #a5b4fc; }
+    .warn-box strong  { color: #fcd34d; }
+    .danger-box strong { color: #fca5a5; }
+    .green-box strong { color: #6ee7b7; }
+    .super-box strong { color: #f472b6; }
+
+    /* ── GRIDS ── */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    @media (max-width: 900px) { .grid-4 { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 768px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } }
+
+    /* ── TABLES ── */
+    .table-wrap { overflow-x: auto; margin-top: 12px; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.08); }
+    table.t { width: 100%; border-collapse: collapse; font-size: 0.89rem; text-align: left; }
+    table.t th { background: rgba(99,102,241,0.15); color: #c7d2fe; font-weight: 700; padding: 12px 16px; text-transform: uppercase; font-size: 0.78rem; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); }
+    table.t td { padding: 11px 16px; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary); vertical-align: top; line-height: 1.6; }
+    table.t tr:last-child td { border-bottom: none; }
+    table.t tr:nth-child(even) td { background: rgba(255,255,255,0.015); }
+    table.t tr:hover td { background: rgba(99,102,241,0.07); color: var(--text-primary); }
+    table.t td:first-child { color: var(--text-primary); font-weight: 600; }
+
+    /* ── FORMULA BLOCK ── */
+    .formula-block {
+      font-family: 'JetBrains Mono', monospace; background: #0c1222;
+      border: 1px solid rgba(99,102,241,0.3); color: #e2b8ff;
+      padding: 16px 20px; border-radius: var(--radius-sm); margin: 12px 0;
+      white-space: pre-wrap; font-size: 0.9rem; line-height: 1.65; box-shadow: inset 0 2px 6px rgba(0,0,0,0.4);
+    }
+    code { font-family: 'JetBrains Mono', monospace; background: rgba(99,102,241,0.15); color: #c7d2fe; padding: 2px 8px; border-radius: 5px; font-size: 0.86em; font-weight: 500; }
+
+    /* ── GRAPHICS & GRAPHIC CONTAINERS ── */
+    .graphic-container {
+      background: #0d1322; border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 20px; margin: 18px 0; text-align: center; position: relative; overflow: hidden;
+    }
+    .graphic-title { font-size: 0.88rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-3); margin-bottom: 14px; text-align: center; }
+    .graphic-svg { width: 100%; max-width: 100%; height: auto; display: block; margin: 0 auto; }
+
+    /* ── FAQ / SIMULADOR DE FINALES ── */
+    .faq-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 14px; overflow: hidden; transition: all 0.25s; }
+    .faq-item:hover { border-color: var(--border-glow); box-shadow: var(--shadow-lg); }
+    .faq-item.is-super { border-color: rgba(236,72,153,0.35); }
+    .faq-item.is-super:hover { border-color: rgba(236,72,153,0.7); box-shadow: 0 0 20px rgba(236,72,153,0.2); }
+    .faq-item.highlight-pulse { animation: flashPulse 2s ease-in-out; }
+    @keyframes flashPulse { 0%,100% { box-shadow: 0 0 0 rgba(236,72,153,0); } 50% { box-shadow: 0 0 30px rgba(236,72,153,0.8); border-color: #ec4899; } }
+
+    .faq-q { display: flex; justify-content: space-between; align-items: center; padding: 18px 22px; cursor: pointer; gap: 16px; background: rgba(255,255,255,0.01); }
+    .faq-q h4 { font-size: 0.98rem; font-weight: 700; color: var(--text-primary); display: flex; gap: 12px; align-items: flex-start; line-height: 1.5; }
+    .faq-q h4 .q-icon { flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: rgba(99,102,241,0.2); color: var(--accent-1); font-size: 0.85rem; display: flex; align-items: center; justify-content: center; font-weight: 800; margin-top: 1px; }
+    .faq-item.is-super .q-icon { background: rgba(236,72,153,0.25); color: var(--accent-pink); }
+    .faq-arrow { font-size: 0.9rem; color: var(--text-muted); transition: transform 0.3s; flex-shrink: 0; }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-a { display: none; padding: 0 22px 20px; border-top: 1px solid rgba(255,255,255,0.04); background: rgba(0,0,0,0.15); }
+    .faq-a p, .faq-a li { color: var(--text-secondary); font-size: 0.93rem; line-height: 1.75; margin-top: 10px; }
+    .faq-item.open .faq-a { display: block; }
+    
+    .verdict { display: inline-block; padding: 4px 12px; border-radius: 999px; font-size: 0.73rem; font-weight: 800; letter-spacing: 0.05em; border: 1px solid; margin-top: 12px; margin-bottom: 6px; }
+    .v-true    { background: rgba(16,185,129,0.15); color: #6ee7b7; border-color: rgba(16,185,129,0.35); }
+    .v-false   { background: rgba(239,68,68,0.15); color: #fca5a5; border-color: rgba(239,68,68,0.35); }
+    .v-dev     { background: rgba(99,102,241,0.15); color: #a5b4fc; border-color: rgba(99,102,241,0.35); }
+    .v-grimolizzi { background: linear-gradient(90deg, rgba(236,72,153,0.2), rgba(168,85,247,0.2)); color: #f472b6; border-color: rgba(236,72,153,0.5); font-weight: 800; }
+
+    /* ── INTERACTIVE CALCULATOR / SELECTOR ── */
+    .interactive-box {
+      background: #0f172a; border: 1px solid var(--border-glow); border-radius: var(--radius);
+      padding: 24px; margin: 24px 0; box-shadow: var(--shadow-lg);
+    }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 0.85rem; font-weight: 700; color: var(--accent-3); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .form-control {
+      width: 100%; background: #162032; border: 1px solid var(--border); border-radius: var(--radius-sm);
+      color: var(--text-primary); padding: 10px 14px; font-size: 0.92rem; font-family: 'Inter', sans-serif; transition: border-color 0.2s;
+    }
+    .form-control:focus { outline: none; border-color: var(--accent-1); box-shadow: 0 0 10px rgba(99,102,241,0.3); }
+    .calc-btn {
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2)); color: white;
+      border: none; padding: 12px 24px; border-radius: var(--radius-sm); font-weight: 700;
+      font-size: 0.92rem; cursor: pointer; transition: transform 0.2s, opacity 0.2s; width: 100%; margin-top: 10px;
+    }
+    .calc-btn:hover { opacity: 0.95; transform: translateY(-2px); }
+    .calc-result { margin-top: 20px; padding: 18px; border-radius: var(--radius-sm); background: rgba(99,102,241,0.12); border: 1px solid var(--accent-1); display: none; }
+
+    /* ── CHECKLIST ── */
+    .checklist { list-style: none; padding: 0; }
+    .checklist li {
+      display: flex; align-items: flex-start; gap: 14px;
+      padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.94rem; color: var(--text-secondary); transition: color 0.2s;
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist li.checked { color: var(--text-muted); text-decoration: line-through; }
+    .check-box {
+      flex-shrink: 0; width: 22px; height: 22px; border-radius: 6px;
+      border: 2px solid var(--text-muted); background: transparent;
+      cursor: pointer; transition: all 0.22s; position: relative; margin-top: 2px;
+    }
+    .check-box.done { background: var(--accent-4); border-color: var(--accent-4); }
+    .check-box.done::after {
+      content: '✓'; position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%); color: #0a0e1a; font-size: 0.85rem; font-weight: 900;
+    }
+    .checklist-group-title {
+      font-size: 0.82rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase;
+      color: var(--accent-3); margin: 22px 0 8px; border-bottom: 1px solid rgba(6,182,212,0.2); padding-bottom: 4px;
+    }
+    .progress-bar-wrap { background: rgba(255,255,255,0.06); border-radius: 999px; height: 10px; margin: 18px 0 8px; overflow: hidden; }
+    .progress-bar-fill { height: 100%; background: linear-gradient(90deg, var(--accent-1), var(--accent-3), var(--accent-4)); border-radius: 999px; transition: width 0.4s ease; }
+    .progress-label { font-size: 0.85rem; color: var(--text-muted); text-align: right; font-weight: 600; }
+
+    /* ── FOOTER ── */
+    footer { text-align: center; padding: 35px 24px; color: var(--text-muted); font-size: 0.84rem; border-top: 1px solid var(--border); position: relative; z-index: 1; }
+  </style>
+</head>
+<body>
+
+<div id="scroll-bar"></div>
+
+<header>
+  <div class="badge"><span class="badge-dot"></span> UTN · Manejo de Materiales y Distribución de Planta · 2º Parcial / 2º Cuatrimestre (2026)</div>
+  <h1>Guía Completa 2do Parcial<br/>Manejo de Materiales</h1>
+  <p class="subtitle">Guía de estudio integral para el <strong>segundo cuatrimestre</strong>. Se irá ampliando clase a clase con cada apunte temático. Unidad activa actual: <strong>U7.5 Sistemas de Almacenaje</strong> (Ing. Grimolizzi, Ing. Stifter, Ing. Lassave) con gráficos y botones directos a las preguntas supercríticas de final.</p>
+  
+  <div class="header-pills">
+    <div class="header-pill">📚 Modalidad: <strong>Actualizable Clase a Clase</strong></div>
+    <div class="header-pill">📘 Inicio 2° Cuatrimestre: <strong>U7.5 Sistemas de Almacenaje</strong></div>
+    <div class="header-pill">🔥 Exámenes: <strong>Finales GrimoLisi 2024–2026</strong></div>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-inner">
+    <button class="nav-btn active" id="nb-u75" onclick="navScroll(this,'sec-u75')">
+      <span class="nav-unit">U7.5</span>
+      <span class="nav-label">🧱 Sistemas Almacenaje</span>
+    </button>
+
+    <button class="nav-btn disabled" id="nb-u8" title="Próximamente">
+      <span class="nav-unit">U8+</span>
+      <span class="nav-label">⏳ Próximas Clases</span>
+    </button>
+
+    <div class="nav-sep"></div>
+
+    <button class="nav-btn" id="nb-grimolizzi" onclick="navScroll(this,'sec-grimolizzi')">
+      <span class="nav-unit">Examen</span>
+      <span class="nav-label">🔥 Finales GrimoLisi</span>
+    </button>
+    <button class="nav-btn" id="nb-calc" onclick="navScroll(this,'sec-calc')">
+      <span class="nav-unit">Tool</span>
+      <span class="nav-label">🧮 Selector Racks</span>
+    </button>
+    <button class="nav-btn" id="nb-cl" onclick="navScroll(this,'sec-checklist')">
+      <span class="nav-unit">Repaso</span>
+      <span class="nav-label">✅ Checklist</span>
+    </button>
+  </div>
+</nav>
+
+<main>
+
+<!-- ══════════════════════════════════════
+     UNIDAD 7.5: SISTEMAS DE ALMACENAJE (INICIO 2° CUATRIMESTRE)
+══════════════════════════════════════ -->
+<section id="sec-u75">
+  <div class="section-title">
+    <div class="section-icon ic-violet">🧱</div>
+    <div>
+      <h2>Unidad 7.5 — Sistemas de Almacenaje</h2>
+      <div class="sec-sub">Inicio del Segundo Cuatrimestre · Apunte oficial de cátedra (Ing. G. Grimolizzi, Ing. R. Stifter, Ing. P. Lassave)</div>
+    </div>
+  </div>
+
+  <!-- CLASIFICACIÓN GENERAL -->
+  <div class="card info">
+    <span class="crit-tag tag-supercritico">🔥 Supercrítico – Pregunta de Final Frecuente</span>
+    <h3>Los 3 Grandes Grupos de Sistemas de Almacenamiento</h3>
+    <p>Según la cátedra de Manejo de Materiales e Intralogística UTN, los sistemas de almacenamiento se clasifican de forma taxativa en <strong>tres grandes categorías</strong>:</p>
+    
+    <div class="table-wrap">
+      <table class="t">
+        <tr>
+          <th>Categoría</th>
+          <th>Criterio Principal</th>
+          <th>Sistemas Incluidos</th>
+          <th>Ejemplo de Aplicación</th>
+        </tr>
+        <tr>
+          <td><strong>1. Por Tiempo de Permanencia</strong></td>
+          <td>Función de la actividad logística y tiempo de residencia nulo o mínimo de la carga.</td>
+          <td>• Cross Docking Directo (Predistribuido)<br>• Cross Docking con Preclasificación</td>
+          <td>Centros de distribución regional de bebidas, plataformas e-commerce (Mercado Libre).</td>
+        </tr>
+        <tr>
+          <td><strong>2. Almacenamiento en Bloque (Alta Densidad)</strong></td>
+          <td>Agrupamiento compacto de pallets sacrificando selectividad para maximizar volumen.</td>
+          <td>• Bloques sobre piso<br>• Drive-In / Drive-Through<br>• Push-Back (carros/rodillos)<br>• Dinámicas a rodillos (FIFO)<br>• Pallet Shuttle (carro eléctrico)</td>
+          <td>Productos de alta rotación con pocas referencias (SKUs), cámaras frigoríficas, productos embotellados.</td>
+        </tr>
+        <tr>
+          <td><strong>3. De Acceso Directo (Selectivos)</strong></td>
+          <td>Acceso inmediato a cualquier unidad de carga (100% selectividad) o para piezas pequeñas.</td>
+          <td>• Base fija (Rack convencional / Doble profundidad)<br>• Base móvil (sobre rieles)<br>• Cantilever (cargas largas)<br>• Piezas pequeñas (Hombre a producto / Producto a hombre / Lanzaderas)</td>
+          <td>Almacenes multireferencia, repuestos, caños/perfiles metálicos, depósitos de farmacia.</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- BOTÓN A PREGUNTA DE FINAL -->
+    <button class="btn-to-final" onclick="goToFinal('g4')">🔥 Ver Pregunta de Final: Los 3 Grandes Grupos de Almacenamiento</button>
+
+    <!-- GRÁFICO SVG 1: MAPA CONCEPTUAL DE CLASIFICACIÓN -->
+    <div class="graphic-container">
+      <div class="graphic-title">📊 Gráfico 1: Árbol de Clasificación Taxonómica de Almacenes (UTN)</div>
+      <svg class="graphic-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg">
+        <rect width="900" height="360" fill="#0b101d" rx="10"/>
+        
+        <rect x="320" y="20" width="260" height="45" rx="8" fill="url(#grad1)" stroke="#6366f1" stroke-width="2"/>
+        <text x="450" y="48" fill="#ffffff" font-size="15" font-weight="bold" text-anchor="middle">SISTEMAS DE ALMACENAMIENTO</text>
+        
+        <defs>
+          <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#4f46e5" />
+            <stop offset="100%" stop-color="#7c3aed" />
+          </linearGradient>
+          <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0284c7" />
+            <stop offset="100%" stop-color="#06b6d4" />
+          </linearGradient>
+          <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#059669" />
+            <stop offset="100%" stop-color="#10b981" />
+          </linearGradient>
+          <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#d97706" />
+            <stop offset="100%" stop-color="#f59e0b" />
+          </linearGradient>
+        </defs>
+
+        <path d="M 450 65 L 450 90 L 150 90 L 150 110" stroke="#6366f1" stroke-width="2" fill="none"/>
+        <path d="M 450 65 L 450 110" stroke="#6366f1" stroke-width="2" fill="none"/>
+        <path d="M 450 65 L 450 90 L 750 90 L 750 110" stroke="#6366f1" stroke-width="2" fill="none"/>
+
+        <rect x="50" y="110" width="200" height="40" rx="6" fill="url(#grad2)" stroke="#38bdf8" stroke-width="1.5"/>
+        <text x="150" y="135" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">1. Tiempo de Permanencia</text>
+
+        <rect x="350" y="110" width="200" height="40" rx="6" fill="url(#grad3)" stroke="#34d399" stroke-width="1.5"/>
+        <text x="450" y="135" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">2. Almacenamiento en Bloque</text>
+
+        <rect x="650" y="110" width="200" height="40" rx="6" fill="url(#grad4)" stroke="#fbbf24" stroke-width="1.5"/>
+        <text x="750" y="135" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">3. Acceso Directo</text>
+
+        <path d="M 150 150 L 150 180" stroke="#38bdf8" stroke-width="1.5" fill="none"/>
+        <rect x="30" y="180" width="240" height="60" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-dasharray="3 3"/>
+        <text x="150" y="202" fill="#7dd3fc" font-size="12" font-weight="bold" text-anchor="middle">Cross Docking</text>
+        <text x="150" y="222" fill="#94a3b8" font-size="11" text-anchor="middle">• Directo / Predistribuido</text>
+        <text x="150" y="234" fill="#94a3b8" font-size="11" text-anchor="middle">• Con Preclasificación</text>
+
+        <path d="M 450 150 L 450 180" stroke="#34d399" stroke-width="1.5" fill="none"/>
+        <rect x="320" y="180" width="260" height="155" rx="6" fill="#1e293b" stroke="#34d399" stroke-dasharray="3 3"/>
+        <text x="450" y="202" fill="#6ee7b7" font-size="12" font-weight="bold" text-anchor="middle">Alta Densidad (Bloques)</text>
+        <text x="450" y="222" fill="#94a3b8" font-size="11" text-anchor="middle">• Bloques sobre Piso (Límite apilado)</text>
+        <text x="450" y="240" fill="#94a3b8" font-size="11" text-anchor="middle">• Drive-In / Drive-Through (LIFO/FIFO)</text>
+        <text x="450" y="258" fill="#94a3b8" font-size="11" text-anchor="middle">• Push-Back (Carros 4p / Rodillos 6p)</text>
+        <text x="450" y="276" fill="#94a3b8" font-size="11" text-anchor="middle">• Dinámico a Rodillos (FIFO, 20m)</text>
+        <text x="450" y="294" fill="#94a3b8" font-size="11" text-anchor="middle">• Pallet Shuttle (Carro elec, 40m, 1.5tn)</text>
+
+        <path d="M 750 150 L 750 180" stroke="#fbbf24" stroke-width="1.5" fill="none"/>
+        <rect x="620" y="180" width="260" height="155" rx="6" fill="#1e293b" stroke="#fbbf24" stroke-dasharray="3 3"/>
+        <text x="750" y="202" fill="#fde047" font-size="12" font-weight="bold" text-anchor="middle">100% Selectivos / Especiales</text>
+        <text x="750" y="222" fill="#94a3b8" font-size="11" text-anchor="middle">• Base Fija Convencional / Doble Prof.</text>
+        <text x="750" y="240" fill="#94a3b8" font-size="11" text-anchor="middle">• Base Móvil (Rieles automatizados)</text>
+        <text x="750" y="258" fill="#94a3b8" font-size="11" text-anchor="middle">• Cantilever (Cargas largas, caños)</text>
+        <text x="750" y="276" fill="#94a3b8" font-size="11" text-anchor="middle">• Piezas Pequeñas (Hombre/Prod. vs Prod/Hombre)</text>
+        <text x="750" y="294" fill="#94a3b8" font-size="11" text-anchor="middle">• Autoportantes (&gt;15m, Transelevadores)</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- CROSS DOCKING -->
+  <div class="card cyan">
+    <span class="crit-tag tag-alta">🔴 Criticidad Alta</span>
+    <h3>Cross Docking (Tiempo de Permanencia Mínimo)</h3>
+    <p>En función de la actividad realizada dentro del almacén, el sistema de <strong>Cross Docking</strong> minimiza o elimina el tiempo de almacenamiento intermedio. Las unidades de carga se recepcionan e inminentemente se consolidan y despachan.</p>
+    
+    <div class="grid-2" style="margin-top:14px;">
+      <div class="highlight">
+        <strong>a) Cross Docking Directo (Predistribuido):</strong><br>
+        Las unidades de carga ya vienen preparadas y embaladas desde el proveedor para su destino final. No sufren ninguna manipulación ni fraccionamiento interno en el almacén; solo transitan del camión de recepción al de despacho.<br>
+        <em>Ejemplo de apunte:</em> <strong>Centro de distribución regional de bebidas de consumo masivo</strong>.
+      </div>
+      
+      <div class="warn-box">
+        <strong>b) Cross Docking con Preclasificación:</strong><br>
+        Las unidades de carga ingresan al almacén, se recepcionan, se fraccionan o desglosan, se clasifican en sectores de acondicionamiento rápido según destino y se reconsolidan para su despacho inmediato.<br>
+        <em>Ejemplo de apunte:</em> <strong>Centro de distribución de una plataforma de e-commerce</strong> (ej: Mercado Libre, Amazon).
+      </div>
+    </div>
+
+    <!-- BOTÓN A PREGUNTA DE FINAL -->
+    <button class="btn-to-final" onclick="goToFinal('g4')">🔥 Ver Pregunta de Final sobre Cross Docking</button>
+
+    <!-- GRÁFICO SVG 2: CROSS DOCKING -->
+    <div class="graphic-container">
+      <div class="graphic-title">📊 Gráfico 2: Flujo Comparativo Cross Docking Directo vs Con Preclasificación</div>
+      <svg class="graphic-svg" viewBox="0 0 850 220" xmlns="http://www.w3.org/2000/svg">
+        <rect width="850" height="220" fill="#0b101d" rx="8"/>
+        
+        <text x="210" y="30" fill="#38bdf8" font-size="14" font-weight="bold" text-anchor="middle">CROSS DOCKING DIRECTO</text>
+        <rect x="40" y="50" width="100" height="50" rx="6" fill="#1e293b" stroke="#0284c7"/>
+        <text x="90" y="80" fill="#ffffff" font-size="11" text-anchor="middle">🚚 Recepción</text>
+
+        <path d="M 140 75 L 280 75" stroke="#38bdf8" stroke-width="3" fill="none"/>
+        
+        <rect x="280" y="50" width="100" height="50" rx="6" fill="#1e293b" stroke="#0284c7"/>
+        <text x="330" y="80" fill="#ffffff" font-size="11" text-anchor="middle">🚛 Despacho Directo</text>
+
+        <text x="640" y="30" fill="#f59e0b" font-size="14" font-weight="bold" text-anchor="middle">CROSS DOCKING CON PRECLASIFICACIÓN</text>
+        <rect x="470" y="50" width="90" height="50" rx="6" fill="#1e293b" stroke="#d97706"/>
+        <text x="515" y="80" fill="#ffffff" font-size="11" text-anchor="middle">🚚 Recepción</text>
+
+        <path d="M 560 75 L 610 75" stroke="#f59e0b" stroke-width="2" fill="none"/>
+        
+        <rect x="610" y="50" width="110" height="50" rx="6" fill="#312e81" stroke="#818cf8"/>
+        <text x="665" y="73" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">Fraccionamiento &amp;</text>
+        <text x="665" y="88" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">Preclasificación</text>
+
+        <path d="M 720 75 L 760 75" stroke="#f59e0b" stroke-width="2" fill="none"/>
+
+        <rect x="760" y="50" width="75" height="50" rx="6" fill="#1e293b" stroke="#d97706"/>
+        <text x="797" y="80" fill="#ffffff" font-size="11" text-anchor="middle">🚛 Despacho</text>
+        
+        <rect x="40" y="140" width="340" height="50" rx="6" fill="rgba(6,182,212,0.1)" stroke="rgba(6,182,212,0.3)"/>
+        <text x="210" y="162" fill="#7dd3fc" font-size="11" text-anchor="middle">Tiempo de permanencia: &lt; 2 a 4 horas (Cero almacén)</text>
+        <text x="210" y="178" fill="#94a3b8" font-size="10" text-anchor="middle">Sin fraccionamiento ni picking en planta</text>
+
+        <rect x="470" y="140" width="365" height="50" rx="6" fill="rgba(245,158,11,0.1)" stroke="rgba(245,158,11,0.3)"/>
+        <text x="652" y="162" fill="#fcd34d" font-size="11" text-anchor="middle">Tiempo de permanencia: &lt; 12 a 24 horas</text>
+        <text x="652" y="178" fill="#94a3b8" font-size="10" text-anchor="middle">Clasificación automatizada / Sorters para e-commerce</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ALMACENAMIENTO EN BLOQUE -->
+  <div class="card green">
+    <span class="crit-tag tag-supercritico">🔥 Supercrítico – Pregunta Obligada de Examen</span>
+    <h3>Bloques sobre Piso vs Bloques de Estanterías de Base Fija</h3>
+    <p>El almacenamiento en bloque busca maximizar el factor de ocupación del volumen disponible comprimiendo pasillos.</p>
+    
+    <div class="grid-2" style="margin-top:12px;">
+      <div class="warn-box">
+        <strong>Bloques sobre Piso:</strong><br>
+        • Apilamiento directo de pallets unos sobre otros sin estanterías.<br>
+        • <strong>Limitante técnica fundamental:</strong> Depende exclusivamente de la resistencia mecánica y estabilidad de los embalajes/envases, y de la capacidad de apilado del pallet (carga nominal de apilado).<br>
+        • Desaprovecha la altura si los bultos no son rígidos.
+      </div>
+      
+      <div class="green-box">
+        <strong>Bloques de Estanterías de Base Fija:</strong><br>
+        • Estructuras metálicas pesadas que absorben el peso de la carga.<br>
+        • La altura de apilamiento <strong>NO depende de la resistencia del embalaje</strong>, sino de la altura útil del edificio y del alcance/costo de los equipos de movimiento.<br>
+        • Incluye los 4 sistemas de alta densidad (Drive, Push Back, Dinámico, Shuttle).
+      </div>
+    </div>
+
+    <!-- BOTÓN A PREGUNTA DE FINAL -->
+    <button class="btn-to-final" onclick="goToFinal('g5')">🔥 Ver Pregunta de Final: Pallets sobre Piso vs Estanterías</button>
+  </div>
+
+  <!-- SISTEMAS HIGH DENSITY -->
+  <div class="card info">
+    <span class="crit-tag tag-supercritico">🔥 Supercrítico – Pregunta de Final GrimoLisi</span>
+    <h3>Detalle de Sistemas de Alta Densidad (Drive, Push-Back, Dinámicas, Pallet Shuttle)</h3>
+    
+    <div class="grid-2" style="margin-top:12px;">
+      <div class="highlight">
+        <strong>1. Sistema Tipo Drive (In / Through):</strong><br>
+        • Permite el ingreso del apilador dentro del bloque de estanterías.<br>
+        • <strong>Es el más económico de todas las estanterías de base fija.</strong><br>
+        • <em>Drive-In:</em> 1 acceso, apoyo a pared, LIFO.<br>
+        • <em>Drive-Through:</em> 2 accesos, en isla, FIFO.
+        <br><br>
+        <button class="btn-to-final" onclick="goToFinal('g2')">🔥 Ver Pregunta de Final sobre Racks Drive</button>
+      </div>
+
+      <div class="warn-box">
+        <strong>2. Sistema Push-Back (Empuje):</strong><br>
+        • Apiladores NO entran a la estantería.<br>
+        • Carros anidados (profundidad hasta 4 pallets) o Rodillos (hasta 6 pallets).<br>
+        • Inclinación 2° a 3°. Al retirar pallet, el resto avanza por gravedad.<br>
+        • Referencias únicas por canal. Gestión LIFO. Utilización &gt;85%.
+        <br><br>
+        <button class="btn-to-final" onclick="goToFinal('g3')">🔥 Ver Pregunta de Final sobre Push-Back</button>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-top:12px;">
+      <div class="green-box">
+        <strong>3. Dinámico a Rodillos (Gravedad):</strong><br>
+        • Carga por la parte posterior, descarga por el frente.<br>
+        • Inclinación 2°. Longitud hasta 20 metros.<br>
+        • Gestión <span class="verdict v-true">FIFO</span> estricto. Ideal para picking de pallets completos.<br>
+        • Utilización &gt;85%.
+      </div>
+
+      <div class="super-box">
+        <strong>4. Pallet Shuttle (Carro Automatizado):</strong><br>
+        • Carro accionado por motor eléctrico con sistema de elevación de pallet.<br>
+        • Longitud del canal: <strong>hasta 40 metros</strong>. Capacidad del carro: <strong>hasta 1.500 kg</strong>.<br>
+        • Configurable en FIFO o LIFO. Utilización &gt;85%.
+        <br><br>
+        <button class="btn-to-final" onclick="goToFinal('g14')">🔥 Ver Pregunta de Final sobre Pallet Shuttle</button>
+      </div>
+    </div>
+
+    <!-- GRÁFICO SVG 3: COMPARATIVA DE RACKS DE ALTA DENSIDAD -->
+    <div class="graphic-container">
+      <div class="graphic-title">📊 Gráfico 3: Comparativa de Mecanismos Racks Alta Densidad</div>
+      <svg class="graphic-svg" viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg">
+        <rect width="900" height="260" fill="#0b101d" rx="10"/>
+
+        <!-- Drive-In -->
+        <g transform="translate(20, 20)">
+          <rect width="190" height="220" fill="#161e2e" rx="6" stroke="#3b82f6" stroke-width="1.5"/>
+          <text x="95" y="25" fill="#60a5fa" font-size="13" font-weight="bold" text-anchor="middle">DRIVE-IN</text>
+          <text x="95" y="45" fill="#94a3b8" font-size="10" text-anchor="middle">Apilador entra al canal</text>
+          
+          <rect x="30" y="65" width="130" height="100" fill="#1e293b" stroke="#3b82f6" stroke-dasharray="2 2"/>
+          <text x="95" y="110" fill="#93c5fd" font-size="11" text-anchor="middle">🚜 Entra Maquina</text>
+          <text x="95" y="130" fill="#ef4444" font-size="11" font-weight="bold" text-anchor="middle">LIFO (1 Pasillo)</text>
+          <rect x="25" y="180" width="140" height="25" rx="4" fill="#1e40af"/>
+          <text x="95" y="196" fill="#ffffff" font-size="10" text-anchor="middle">El más Económico</text>
+        </g>
+
+        <!-- Push Back -->
+        <g transform="translate(235, 20)">
+          <rect width="190" height="220" fill="#161e2e" rx="6" stroke="#f59e0b" stroke-width="1.5"/>
+          <text x="95" y="25" fill="#fcd34d" font-size="13" font-weight="bold" text-anchor="middle">PUSH-BACK</text>
+          <text x="95" y="45" fill="#94a3b8" font-size="10" text-anchor="middle">Empuje por Carros/Rodillos</text>
+          
+          <line x1="30" y1="75" x2="160" y2="105" stroke="#f59e0b" stroke-width="3"/>
+          <circle cx="50" cy="85" r="8" fill="#f59e0b"/>
+          <circle cx="95" cy="95" r="8" fill="#f59e0b"/>
+          <circle cx="140" cy="105" r="8" fill="#f59e0b"/>
+
+          <text x="95" y="135" fill="#fde047" font-size="11" text-anchor="middle">Carros: prof. 4p</text>
+          <text x="95" y="152" fill="#fde047" font-size="11" text-anchor="middle">Rodillos: prof. 6p</text>
+          <text x="95" y="172" fill="#ef4444" font-size="11" font-weight="bold" text-anchor="middle">LIFO (Pendiente 2°-3°)</text>
+          <rect x="25" y="185" width="140" height="25" rx="4" fill="#78350f"/>
+          <text x="95" y="201" fill="#ffffff" font-size="10" text-anchor="middle">Utilización &gt; 85%</text>
+        </g>
+
+        <!-- Dinámico -->
+        <g transform="translate(450, 20)">
+          <rect width="190" height="220" fill="#161e2e" rx="6" stroke="#10b981" stroke-width="1.5"/>
+          <text x="95" y="25" fill="#6ee7b7" font-size="13" font-weight="bold" text-anchor="middle">DINÁMICO RODILLOS</text>
+          <text x="95" y="45" fill="#94a3b8" font-size="10" text-anchor="middle">Carga Atras / Descarga Frente</text>
+          
+          <line x1="30" y1="75" x2="160" y2="100" stroke="#10b981" stroke-width="3"/>
+          <path d="M 160 100 L 145 95" stroke="#10b981" stroke-width="2"/>
+
+          <text x="95" y="125" fill="#a7f3d0" font-size="11" text-anchor="middle">Longitud hasta 20m</text>
+          <text x="95" y="145" fill="#a7f3d0" font-size="11" text-anchor="middle">Pendiente 2°</text>
+          <text x="95" y="168" fill="#10b981" font-size="11" font-weight="bold" text-anchor="middle">FIFO Estricto</text>
+          <rect x="25" y="185" width="140" height="25" rx="4" fill="#065f46"/>
+          <text x="95" y="201" fill="#ffffff" font-size="10" text-anchor="middle">Ideal Picking Pallet Compl.</text>
+        </g>
+
+        <!-- Pallet Shuttle -->
+        <g transform="translate(665, 20)">
+          <rect width="215" height="220" fill="#161e2e" rx="6" stroke="#ec4899" stroke-width="1.5"/>
+          <text x="107" y="25" fill="#f472b6" font-size="13" font-weight="bold" text-anchor="middle">PALLET SHUTTLE</text>
+          <text x="107" y="45" fill="#94a3b8" font-size="10" text-anchor="middle">Carro Eléctrico Motorizado</text>
+          
+          <rect x="30" y="80" width="155" height="15" rx="3" fill="#334155"/>
+          <rect x="75" y="70" width="45" height="12" rx="2" fill="#ec4899"/>
+
+          <text x="107" y="120" fill="#fbcfe8" font-size="11" text-anchor="middle">Longitud hasta 40m</text>
+          <text x="107" y="138" fill="#fbcfe8" font-size="11" text-anchor="middle">Carro hasta 1.500 kg</text>
+          <text x="107" y="158" fill="#38bdf8" font-size="11" font-weight="bold" text-anchor="middle">FIFO / LIFO configurable</text>
+          <rect x="25" y="185" width="165" height="25" rx="4" fill="#831843"/>
+          <text x="107" y="201" fill="#ffffff" font-size="10" text-anchor="middle">Elevación para despegar pallet</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="card info">
+    <span class="crit-tag tag-media">🟡 Criticidad Media – Apunte de Cátedra</span>
+    <h3>Dimensionamiento y Altura Limitante del Edificio</h3>
+    <div class="formula-block">
+Restricciones dimensionales clave en la altura útil del edificio:
+1. Luz libre al techo / rociadores (sprinklers): Mínimo 0.50 m libre desde el último nivel de carga.
+2. Costos de apiladores: Hasta 4.00 m de altura, los apiladores son estándar y económicos.
+   Por encima de 4.00 m, el costo de las máquinas crece geométricamente (requieren mástiles triplex, cámaras o trilaterales).
+    </div>
+  </div>
+
+  <!-- ESTANTERÍAS DE ACCESO DIRECTO -->
+  <div class="card amber">
+    <span class="crit-tag tag-supercritico">🔥 Supercrítico – Pregunta de Final GrimoLisi</span>
+    <h3>Sistemas Selectivos: Base Fija, Base Móvil, Doble Profundidad y Cantilever</h3>
+    
+    <div class="grid-2">
+      <div class="highlight">
+        <strong>1. Convencional Base Fija:</strong> 100% selectividad. Acceso directo a cualquier pallet.<br>
+        <strong>2. Base Móvil:</strong> Sobre rieles automatizados. Eliminan pasillos fijos (1 solo pasillo abierto a la vez).
+      </div>
+      <div class="warn-box">
+        <strong>3. Doble Profundidad:</strong> 2 pallets por canal. Opera en LIFO. Requiere obligatoriamente apiladores con <strong>horquillas telescópicas</strong>.
+        <br><br>
+        <button class="btn-to-final" onclick="goToFinal('g12')">🔥 Ver Pregunta de Final sobre Doble Profundidad</button>
+      </div>
+    </div>
+
+    <div class="danger-box" style="margin-top:14px;">
+      <strong>4. Cantilever (Cargas largas):</strong> Columnas con ménsulas voladizas en perfiles U o doble T soldados. Amuradas al piso mediante <strong>fijaciones mecánicas (brocas)</strong> y encadenadas con largueros. Separación entre columnas: <strong>1 metro</strong>, altura máxima habitual: <strong>6 metros</strong>.
+      <br><br>
+      <button class="btn-to-final" onclick="goToFinal('g11')">🔥 Ver Pregunta de Final sobre Cantilever</button>
+    </div>
+  </div>
+
+  <!-- PIEZAS PEQUEÑAS -->
+  <div class="card pink">
+    <span class="crit-tag tag-supercritico">🔥 Supercrítico – Pregunta de Final GrimoLisi</span>
+    <h3>Hombre a Producto vs Producto a Hombre (Lanzaderas)</h3>
+    <div class="grid-2">
+      <div class="highlight">
+        <strong>Hombre a Producto:</strong> Operario camina hacia la pieza (picking manual / estanterías dinámicas de picking con plataformas inclinadas y roldanas).
+        <br><br>
+        <button class="btn-to-final" onclick="goToFinal('g10')">🔥 Ver Pregunta de Final sobre Picking</button>
+      </div>
+      <div class="super-box">
+        <strong>Producto a Hombre — Lanzaderas (VLM):</strong> El producto se mueve hacia el operario.<br>
+        • <strong>Alto:</strong> 4 m a 15 m<br>
+        • <strong>Ancho:</strong> 2 m a 4 m<br>
+        • <strong>Profundidad:</strong> Hasta 2 m
+        <br><br>
+        <button class="btn-to-final" onclick="goToFinal('g13')">🔥 Ver Pregunta de Final sobre Lanzaderas</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ALMACÉN AUTOPORTANTE -->
+  <div class="card danger">
+    <span class="crit-tag tag-supercritico">🔥 Supercrítico – Pregunta de Final GrimoLisi</span>
+    <h3>Estructura y Ahorro en Obra Civil del Almacén Autoportante</h3>
+    <p>Aplicables a <strong>alturas superiores a los 15 metros</strong> (hasta 40m+). La estantería soporta las paredes, el techo, la carga de viento, lluvia, nieve, sismos y las fuerzas de los transelevadores.</p>
+    
+    <div class="green-box" style="margin-top:10px;">
+      <strong>Ahorro económico clave de apunte:</strong> El ahorro de costos de construcción en promedio para alturas comprendidas entre <strong>15 metros y 20 metros es de un 30%</strong> respecto a la edificación de una nave industrial convencional.
+    </div>
+
+    <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:14px;">
+      <button class="btn-to-final" onclick="goToFinal('g9')">🔥 Ver Pregunta de Final: Ahorro 30% Autoportante</button>
+      <button class="btn-to-final" onclick="goToFinal('g1')">🔥 Ver Pregunta de Final: Transelevador vs Trilateral</button>
+    </div>
+
+    <!-- GRÁFICO SVG 4: ALMACÉN AUTOPORTANTE -->
+    <div class="graphic-container">
+      <div class="graphic-title">📊 Gráfico 4: Estructura Autoportante (&gt;15m) con Transelevador</div>
+      <svg class="graphic-svg" viewBox="0 0 850 240" xmlns="http://www.w3.org/2000/svg">
+        <rect width="850" height="240" fill="#0b101d" rx="10"/>
+
+        <g transform="translate(50, 20)">
+          <polygon points="0,40 180,10 360,40" fill="#334155" stroke="#ef4444" stroke-width="2"/>
+          <text x="180" y="30" fill="#fca5a5" font-size="11" font-weight="bold" text-anchor="middle">Techo apoyado en Racks</text>
+          
+          <rect x="20" y="40" width="80" height="170" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+          <rect x="260" y="40" width="80" height="170" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+          
+          <line x1="180" y1="40" x2="180" y2="210" stroke="#f59e0b" stroke-width="4"/>
+          <rect x="155" y="110" width="50" height="30" rx="4" fill="#f59e0b"/>
+          <text x="180" y="130" fill="#000000" font-size="10" font-weight="bold" text-anchor="middle">Transelev.</text>
+
+          <text x="180" y="230" fill="#ef4444" font-size="12" font-weight="bold" text-anchor="middle">ALMACÉN AUTOPORTANTE (&gt;15m a 40m+)</text>
+        </g>
+
+        <g transform="translate(480, 40)">
+          <rect width="320" height="170" rx="8" fill="#161e2e" stroke="#38bdf8" stroke-width="1"/>
+          <text x="160" y="28" fill="#38bdf8" font-size="13" font-weight="bold" text-anchor="middle">Ventajas Económicas &amp; Técnicas</text>
+          
+          <text x="20" y="60" fill="#cbd5e1" font-size="11">✓ **Ahorro de construcción:** 30% (de 15m a 20m)</text>
+          <text x="20" y="85" fill="#cbd5e1" font-size="11">✓ **Sin columnas de nave:** Máximo aprovechamiento</text>
+          <text x="20" y="110" fill="#cbd5e1" font-size="11">✓ **Operación 100% Automática:** Transelevadores</text>
+          <text x="20" y="135" fill="#cbd5e1" font-size="11">✓ **Alta Velocidad &amp; Precisión:** Guiado superior/inferior</text>
+          <text x="20" y="155" fill="#f472b6" font-size="10" font-weight="bold">Soporta cargas de viento, lluvia, nieve y sismos.</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SECCIÓN: PREGUNTAS SUPERCRÍTICAS DE FINALES GRIMOLISSI
+══════════════════════════════════════ -->
+<section id="sec-grimolizzi">
+  <div class="section-title">
+    <div class="section-icon ic-pink">🔥</div>
+    <div>
+      <h2>Preguntas Supercríticas de Finales GrimoLisi (2024–2026)</h2>
+      <div class="sec-sub">Preguntas extraídas textualmente de los exámenes finales oficiales — Clickeá para revelar la respuesta</div>
+    </div>
+  </div>
+
+  <div class="card supercrit" style="margin-bottom:24px;">
+    <p>Las siguientes <strong>15 preguntas supercríticas</strong> corresponden a los enunciados tomados en los finales de <strong>Mayo 2026, Febrero 2026, Julio 2025 y Diciembre 2024</strong> por el Ing. Grimolizzi sobre el tema Sistemas de Almacenaje.</p>
+  </div>
+
+  <!-- P1 -->
+  <div class="faq-item is-super" id="g1">
+    <div class="faq-q" onclick="toggleFaq('g1')">
+      <h4><span class="q-icon">1</span>FINAL GRIMOLISSI: Indique al menos 2 diferencias entre un transelevador y un elevador trilateral.</h4>
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a">
+      <span class="verdict v-grimolizzi">🔥 PREGUNTA DE FINAL (16/12/2024 &amp; MAYO 2026)</span>
+      <p>Las diferencias estructurales y operativas clave son:</p>
+      <div class="table-wrap">
+        <table class="t">
+          <tr><th>Parámetro</th><th>Elevador Trilateral</th><th>Transelevador (AS/RS)</th></tr>
+          <tr><td><strong>Altura de elevación</strong></td><td>Alcanza hasta <strong>15 metros</strong> de altura.</td><td>Supera los <strong>40 metros</strong> de altura.</td></tr>
+          <tr><td><strong>Modo de operación</strong></td><td>Operado por un <strong>operador humano</strong> (Man-Up o Man-Down).</td><td>Es <strong>100% automático</strong> (comandado por WMS/SGA).</td></tr>
+          <tr><td><strong>Ancho de pasillo</strong></td><td>Pasillos angostos de entre <strong>1,5 m y 1,8 m</strong>.</td><td>Pasillos ultra estrechos: <strong>ancho de la carga + 100 mm por lado</strong>.</td></tr>
+          <tr><td><strong>Movilidad entre pasillos</strong></td><td>Puede cambiar de pasillo de forma autónoma.</td><td>Fijo a su pasillo (o mediante carro de transferencia).</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- P2 -->
+  <div class="faq-item is-super" id="g2">
+    <div class="faq-q" onclick="toggleFaq('g2')">
+      <h4><span class="q-icon">2</span>FINAL GRIMOLISSI: Describa el funcionamiento de las estanterías tipo Drive, el proceso de gestión de inventario y sus variantes.</h4>
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a">
+      <span class="verdict v-grimolizzi">🔥 PREGUNTA DE FINAL (FEBRERO 2026 &amp; MAYO 2026)</span>
+      <p>El sistema de estanterías tipo Drive es una solución de almacenamiento en bloque de base fija diseñada para maximizar el uso del espacio al permitir que el autoelevador <strong>ingrese físicamente al pasillo interior</strong> del bloque con la carga elevada por encima del nivel de apoyo. Es el <strong>más económico</strong> de los sistemas de base fija.</p>
+      <ul>
+        <li><strong>Drive-In:</strong> Posee un único extremo de acceso (generalmente apoyado contra pared). Gestión de stock <span class="verdict v-false">LIFO</span>.</li>
+        <li><strong>Drive-Through:</strong> Configurado en isla con acceso por ambos extremos (un lado para carga y otro para extracción). Gestión de stock <span class="verdict v-true">FIFO</span>.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- P3 -->
+  <div class="faq-item is-super" id="g3">
+    <div class="faq-q" onclick="toggleFaq('g3')">
+      <h4><span class="q-icon">3</span>FINAL GRIMOLISSI: Almacén Push-Back, funcionamiento y tipos de soportes por canal.</h4>
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a">
+      <span class="verdict v-grimolizzi">🔥 PREGUNTA DE FINAL (MAYO 2026 &amp; JULIO 2025)</span>
+      <p>Sistema de almacenamiento en bloque de base fija que permite <strong>referencias únicas por canal</strong> sin que la máquina deba ingresar al pasillo:</p>
+      <ul>
+        <li><strong>Dispositivos de apoyo y profundidad:</strong>
+          <br>• <strong>Cunas o carros anidados:</strong> permiten hasta <strong>4 pallets</strong> por canal.
+          <br>• <strong>Rodillos:</strong> alcanzan hasta <strong>6 pallets</strong> por canal (según el peso).
+        </li>
+        <li><strong>Funcionamiento:</strong> Posee una leve inclinación hacia el pasillo (2° a 3°). Al ingresar un nuevo pallet empuja al anterior hacia atrás. Al retirar un pallet, los demás avanzan por gravedad.</li>
+        <li><strong>Gestión &amp; Rendimiento:</strong> Sistema <span class="verdict v-false">LIFO</span>, rotación media, utilización mayor al <strong>85%</strong>. Alta seguridad.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- P4 -->
+  <div class="faq-item is-super" id="g4">
+    <div class="faq-q" onclick="toggleFaq('g4')">
+      <h4><span class="q-icon">4</span>FINAL GRIMOLISSI: Nombrar los 3 grandes grupos de almacenamiento. ¿Cuáles son? Ejemplos de cada uno.</h4>
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a">
+      <span class="verdict v-grimolizzi">🔥 PREGUNTA DE FINAL (JULIO 2025)</span>
+      <ol>
+        <li><strong>1. Por tiempo de permanencia:</strong> Cross Docking (Ej: Centro de distribución regional de bebidas o plataforma e-commerce).</li>
+        <li><strong>2. En bloque (Alta densidad):</strong> Sobre piso o Bloque de estanterías (Ej: Drive-In, Push-Back, Dinámicas, Pallet Shuttle).</li>
+        <li><strong>3. De acceso directo (Selectivos):</strong> Base fija convencional, base móvil, Cantilever y Piezas pequeñas (Ej: Racks selectivos en depósitos multireferencia).</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- P5 -->
+  <div class="faq-item is-super" id="g5">
+    <div class="faq-q" onclick="toggleFaq('g5')">
+      <h4><span class="q-icon">5</span>FINAL GRIMOLISSI: Para pallets sobre piso y estanterías, ¿cuáles son las limitaciones de altura y qué tipos de bloques de estanterías se utilizan?</h4>
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a">
+      <span class="verdict v-grimolizzi">🔥 PREGUNTA DE FINAL (FINALES VARIOS)</span>
+      <p><strong>Pallets sobre piso:</strong> La altura de apilamiento está estrictamente limitada por la <strong>resistencia mecánica y estabilidad del embalaje/envase</strong> y por la resistencia de la base del pallet (carga nominal de apilado sin deformarse o colapsar).</p>
+      <p><strong>Pallets en estanterías:</strong> La altura de apilamiento <strong>NO depende de la resistencia del embalaje</strong>, sino de la altura del edificio y del alcance de los equipos de movimiento. Los bloques de estanterías de alta densidad utilizados son: Drive-In / Drive-Through, Push-Back, Dinámicas a rodillos y Pallet Shuttle.</p>
+    </div>
+  </div>
+
+  <!-- P6 -->
+  <div class="faq-item is-super" id="g6">
+    <div class="faq-q" onclick="toggleFaq('g6')">
+      <h4><span class="q-icon">6</span>FINAL GRIMOLISSI: Zonas del almacén y desglose del porcentaje de costo operativo total.</h4>
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a">
+      <span class="verdict v-grimolizzi">🔥 PREGUNTA DE FINAL (MAYO 2026)</span>
+      <p>Las 6 zonas básicas del almacén son: 1) Zona de carga y descarga, 2) Recepción y logística inversa, 3) Almacenaje, 4) Preparación de pedidos (Picking), 5) Expedición (Despacho), 6) Oficinas y servicios.</p>
+      <div class="warn-box">
+        <strong>Distribución del Costo Operativo del Almacén:</strong><br>
+        • <strong>Picking (Preparación de pedidos):</strong> Representa el <strong>50% al 55% del costo operativo total</strong> (es la tarea más costosa; el 60% de este tiempo se va en recorridos).<br>
+        • <strong>Despacho:</strong> Representa el <strong>18% del costo operativo</strong>.<br>
+        • <strong>Almacenaje:</strong> Representa el <strong>15% del costo operativo</strong>.<br>
+        • <strong>Recepción:</strong> Es la menos costosa, con el <strong>12% del total</strong>.
+      </div>
+    </div>
+  </div>
+
+  <!-- P7 -->
+  <div class="faq-item is-super" id="g7">
+    <div class="faq-q" onclick="toggleFaq('g7')">
+      <h4><span class="q-icon">7</span>FINAL GRIMOLISSI: Explicar las zonas de carga y descarga de camiones (Integradas vs Independientes).</h4>
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a">
+      <span class="verdict v-grimolizzi">🔥 PREGUNTA DE FINAL (JULIO 2025)</span>
+      <p><strong>1. Zonas Integradas al Almacén:</strong> Directamente conectadas al edificio mediante un muelle de carga/descarga y portones seccionales (el camión acopla directamente a la puerta). Brinda protección total contra el clima, pero requiere maniobras de atraque más precisas.</p>
+      <p><strong>2. Zonas Independientes:</strong> La operación se realiza en una playa o campamento adyacente exterior. El tiempo de atraque del camión es menor y más simple, pero exige mayor recorrido de traslado de mercadería y queda expuesto a inclemencias climáticas.</p>
+    </div>
+  </div>
+
+  <!-- P8 -->
+  <div class="faq-item is-super" id="g8">
+    <div class="faq-q" onclick="toggleFaq('g8')">
+      <h4><span class="q-icon">8</span>FINAL GRIMOLISSI: Tipos de almacenamiento según su grado de protección contra el ambiente.</h4>
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a">
+      <span class="verdict v-grimolizzi">🔥 PREGUNTA DE FINAL (FINALES VARIOS)</span>
+      <ul>
+        <li><strong>1. Almacenamiento en Exteriores:</strong>
+          <br>• <em>Sin protección:</em> Materiales inmunes a la intemperie (árido, chatarra).
+          <br>• <em>Con envoltura:</em> Silos bolsa, fundas de film extensible.
+          <br>• <em>Con cobertura:</em> Tinglados abiertos sin cerramientos laterales (caños, perfiles).
+        </li>
+        <li><strong>2. Almacenamiento Cubierto:</strong> Edificios tradicionales o almacenes autoportantes que brindan protección total contra la intemperie.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- P9 -->
+  <div class="faq-item is-super" id="g9">
+    <div class="faq-q" onclick="toggleFaq('g9')">
+      <h4><span class="q-icon">9</span>FINAL GRIMOLISSI: ¿Qué es un Almacén Autoportante y cuál es su porcentaje de ahorro en construcción?</h4>
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a">
+      <span class="verdict v-grimolizzi">🔥 PREGUNTA DE FINAL (FINALES VARIOS)</span>
+      <p>Es una estructura aplicada a <strong>alturas superiores a los 15 metros</strong> donde las estanterías metálicas soportan las paredes, el techo, la carga del viento, nieve, sismos y las fuerzas de los transelevadores.</p>
+      <p>El ahorro de costos de construcción para alturas de entre 15m y 20m es en promedio del <strong>30% respecto a una nave convencional</strong>.</p>
+    </div>
+  </div>
+
+  <!-- P10 -->
+  <div class="faq-item is-super" id="g10">
+    <div class="faq-q" onclick="toggleFaq('g10')">
+      <h4><span class="q-icon">10</span>FINAL GRIMOLISSI: En la operación de un almacén, enumere las 3 posibilidades para la recolección en armado de pedidos (Picking).</h4>
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a">
+      <span class="verdict v-grimolizzi">🔥 PREGUNTA DE FINAL (FEBRERO 2026)</span>
+      <p><strong>Posibilidades de flujo:</strong> 1) Flujo hombre a producto, 2) Flujo producto a hombre, 3) Flujo mixto.</p>
+      <p><strong>Métodos básicos de extracción física:</strong> Extracción por cada pedido (orden individual), Extracción por referencias (batch picking), Extracción por zonas (zone picking).</p>
+    </div>
+  </div>
+
+  <!-- P11 -->
+  <div class="faq-item is-super" id="g11">
+    <div class="faq-q" onclick="toggleFaq('g11')">
+      <h4><span class="q-icon">11</span>FINAL GRIMOLISSI: Definición y características estructurales de las estanterías Cantilever.</h4>
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a">
+      <span class="verdict v-grimolizzi">🔥 PREGUNTA DE FINAL (FINALES VARIOS)</span>
+      <p>Estanterías compuestas por columnas con ménsulas (brazos en voladizo) construidas en perfiles U o doble T soldados. Se amuran al piso con <strong>fijaciones mecánicas (brocas)</strong> y se unen mediante largueros. Separación entre columnas ~1m, altura habitual hasta 6m. Para cargas largas (caños, tirantes).</p>
+    </div>
+  </div>
+
+  <!-- P12 -->
+  <div class="faq-item is-super" id="g12">
+    <div class="faq-q" onclick="toggleFaq('g12')">
+      <h4><span class="q-icon">12</span>FINAL GRIMOLISSI: Características del sistema de estanterías de Doble Profundidad.</h4>
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a">
+      <span class="verdict v-grimolizzi">🔥 PREGUNTA DE FINAL (FINALES VARIOS)</span>
+      <p>Permite ubicar dos pallets por canal reduciendo pasillos de maniobra. Opera en <span class="verdict v-false">LIFO</span>. Requiere autoelevadores equipados con <strong>horquillas telescópicas</strong> para alcanzar la posición posterior.</p>
+    </div>
+  </div>
+
+  <!-- P13 -->
+  <div class="faq-item is-super" id="g13">
+    <div class="faq-q" onclick="toggleFaq('g13')">
+      <h4><span class="q-icon">13</span>FINAL GRIMOLISSI: ¿Cuáles son las dimensiones y características de una Lanzadera Vertical (Producto a Hombre)?</h4>
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a">
+      <span class="verdict v-grimolizzi">🔥 PREGUNTA DE FINAL (FINALES VARIOS)</span>
+      <p>Las lanzaderas verticales (VLM) para piezas pequeñas responden al principio Producto a Hombre. Sus dimensiones estándar de apunte son: <strong>Alto: 4m a 15m</strong>, <strong>Ancho: 2m a 4m</strong>, <strong>Profundidad: Hasta 2m</strong>.</p>
+    </div>
+  </div>
+
+  <!-- P14 -->
+  <div class="faq-item is-super" id="g14">
+    <div class="faq-q" onclick="toggleFaq('g14')">
+      <h4><span class="q-icon">14</span>FINAL GRIMOLISSI: Parámetros del carro automatizado Pallet Shuttle.</h4>
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a">
+      <span class="verdict v-grimolizzi">🔥 PREGUNTA DE FINAL (FINALES VARIOS)</span>
+      <p>Longitud del canal hasta <strong>40 metros</strong>, capacidad de carga del carro hasta <strong>1.500 kg</strong>, posee sistema de elevación propio para despegar el pallet del apoyo, opera en FIFO o LIFO, utilización de espacio &gt; 85%.</p>
+    </div>
+  </div>
+
+  <!-- P15 -->
+  <div class="faq-item is-super" id="g15">
+    <div class="faq-q" onclick="toggleFaq('g15')">
+      <h4><span class="q-icon">15</span>FINAL GRIMOLISSI: Definir carga nominal útil vs carga nominal de apilado.</h4>
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a">
+      <span class="verdict v-grimolizzi">🔥 PREGUNTA DE FINAL (FINALES VARIOS)</span>
+      <p><strong>Carga nominal útil:</strong> Carga máxima que puede transportar un pallet durante su traslado.</p>
+      <p><strong>Carga nominal de apilado:</strong> Carga máxima que puede soportar el pallet inferior apoyado en el suelo durante el apilamiento estático. Es siempre mayor que la carga útil (ej: pallet soporta hasta 4.000 kg en apilamiento sólido sobre piso, pero 1.000–1.500 kg en movimiento o rack).</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SECCIÓN: SIMULADOR / SELECTOR INTERACTIVO DE SISTEMA DE RACK
+══════════════════════════════════════ -->
+<section id="sec-calc">
+  <div class="section-title">
+    <div class="section-icon ic-amber">🧮</div>
+    <div>
+      <h2>Selector Interactivo de Sistemas de Almacenamiento</h2>
+      <div class="sec-sub">Algoritmo de decisión según volumen, referencias, flujo FIFO/LIFO y presupuesto</div>
+    </div>
+  </div>
+
+  <div class="interactive-box">
+    <h3 style="color:var(--text-primary); margin-bottom:15px;">Asistente de Selección Técnica de Racks</h3>
+    
+    <div class="grid-2">
+      <div class="form-group">
+        <label>1. Cantidad de Referencias (SKUs) vs Volumen:</label>
+        <select id="sel-skus" class="form-control">
+          <option value="pocas">Pocas Referencias + Gran Volumen por SKU (Alta Densidad)</option>
+          <option value="muchas">Muchas Referencias + Bajo Volumen por SKU (Alta Selectividad)</option>
+          <option value="piezas">Piezas Pequeñas (Bultos menores a un pallet)</option>
+          <option value="largas">Cargas Largas (Tubos, caños, perfiles)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>2. Criterio de Rotación / Flujo de Inventario:</label>
+        <select id="sel-flujo" class="form-control">
+          <option value="fifo">FIFO (First In, First Out - Obligatorio perecederos)</option>
+          <option value="lifo">LIFO (Last In, First Out - Permitido no perecederos)</option>
+          <option value="indiferente">Indiferente / Mixto</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="form-group">
+        <label>3. Altura Disponible en Nave Industrial:</label>
+        <select id="sel-altura" class="form-control">
+          <option value="baja">Baja / Media (&lt; 6 a 8 metros)</option>
+          <option value="alta">Alta (8 a 15 metros)</option>
+          <option value="auto">Súper Alta (&gt; 15 metros a 40 metros)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>4. Presupuesto disponible para Equipamiento:</label>
+        <select id="sel-presu" class="form-control">
+          <option value="bajo">Económico (Inversión mínima)</option>
+          <option value="medio">Medio (Mecanizado estándar)</option>
+          <option value="alto">Alto (Semiautomatizado / Automatizado)</option>
+        </select>
+      </div>
+    </div>
+
+    <button class="calc-btn" onclick="evaluarRack()">Evaluar Sistema Recomendado por Cátedra</button>
+
+    <div id="calc-result" class="calc-result">
+      <h4 id="res-titulo" style="font-size:1.1rem; color:var(--accent-1); margin-bottom:8px;"></h4>
+      <p id="res-desc" style="color:var(--text-secondary); font-size:0.93rem; line-height:1.6;"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SECCIÓN: CHECKLIST INTERACTIVO DE ESTUDIO
+══════════════════════════════════════ -->
+<section id="sec-checklist">
+  <div class="section-title">
+    <div class="section-icon ic-green">✅</div>
+    <div>
+      <h2>Checklist Interactivo del 2do Parcial — Sistemas de Almacenaje</h2>
+      <div class="sec-sub">Tachá los conceptos dominados — El progreso se guarda automáticamente en tu navegador</div>
+    </div>
+  </div>
+
+  <div class="card green">
+    <div class="progress-bar-wrap">
+      <div class="progress-bar-fill" id="progress-fill" style="width:0%"></div>
+    </div>
+    <div class="progress-label" id="progress-label">0 / 0 conceptos dominados</div>
+  </div>
+
+  <div class="card info">
+    <p class="checklist-group-title">📌 1. Clasificación y Cross Docking</p>
+    <ul class="checklist" id="checklist">
+      <li data-id="u7-cl1"><div class="check-box" onclick="toggleCheck(this)"></div>Los 3 grandes grupos de almacenamiento (Tiempo permanencia, Bloque, Acceso directo)</li>
+      <li data-id="u7-cl2"><div class="check-box" onclick="toggleCheck(this)"></div>Diferencia entre Cross Docking Directo (Bebidas) vs Con Preclasificación (E-commerce)</li>
+      
+      <p class="checklist-group-title">📌 2. Almacenamiento en Bloque y Racks de Alta Densidad</p>
+      <li data-id="u7-cl3"><div class="check-box" onclick="toggleCheck(this)"></div>Bloques sobre piso: limitación por resistencia del embalaje y apilado del pallet</li>
+      <li data-id="u7-cl4"><div class="check-box" onclick="toggleCheck(this)"></div>Sistema Drive-In (1 pasillo, LIFO, apoyado contra pared) vs Drive-Through (2 pasillos, FIFO)</li>
+      <li data-id="u7-cl5"><div class="check-box" onclick="toggleCheck(this)"></div>Por qué Drive es el sistema MÁS ECONÓMICO de las estanterías de base fija</li>
+      <li data-id="u7-cl6"><div class="check-box" onclick="toggleCheck(this)"></div>Push-Back: mecanismo de empuje (carros prof. 4p, rodillos prof. 6p, LIFO, pendiente 2°-3°)</li>
+      <li data-id="u7-cl7"><div class="check-box" onclick="toggleCheck(this)"></div>Sistema Dinámico a rodillos: FIFO estricto, carga posterior, pendiente 2°, longitud 20m</li>
+      <li data-id="u7-cl8"><div class="check-box" onclick="toggleCheck(this)"></div>Pallet Shuttle: carro motorizado 1500kg, longitud 40m, despega pallet, FIFO/LIFO</li>
+      <li data-id="u7-cl9"><div class="check-box" onclick="toggleCheck(this)"></div>Dimensionamiento de altura: límite 0.5m a techo/sprinklers y salto de costo apiladores &gt; 4m</li>
+
+      <p class="checklist-group-title">📌 3. Acceso Directo, Piezas Pequeñas y Autoportantes</p>
+      <li data-id="u7-cl10"><div class="check-box" onclick="toggleCheck(this)"></div>Rack Selectivo Convencional (100% selectivo) vs Base Móvil (sobre rieles)</li>
+      <li data-id="u7-cl11"><div class="check-box" onclick="toggleCheck(this)"></div>Estanterías de Doble Profundidad: LIFO, 2 pallets/canal, horquillas telescópicas obligatorias</li>
+      <li data-id="u7-cl12"><div class="check-box" onclick="toggleCheck(this)"></div>Estanterías Cantilever: columnas perfiles U/doble T, brocas al piso, largueros, 1m separación</li>
+      <li data-id="u7-cl13"><div class="check-box" onclick="toggleCheck(this)"></div>Piezas Pequeñas: Hombre a Producto (dinámicas picking) vs Producto a Hombre (Lanzaderas VLM 4-15m)</li>
+      <li data-id="u7-cl14"><div class="check-box" onclick="toggleCheck(this)"></div>Almacén Autoportante: altura &gt;15m (hasta 40m+), estantería sostiene techo/viento, 30% ahorro en obra civil</li>
+
+      <p class="checklist-group-title">🔥 4. Preguntas Supercríticas de Finales GrimoLisi</p>
+      <li data-id="u7-cl15"><div class="check-box" onclick="toggleCheck(this)"></div>Diferencias entre Transelevador (&gt;40m, automático) y Elevador Trilateral (&lt;15m, operado)</li>
+      <li data-id="u7-cl16"><div class="check-box" onclick="toggleCheck(this)"></div>Desglose del Costo Operativo del Almacén (Picking 50-55%, Despacho 18%, Almacenaje 15%, Recepción 12%)</li>
+      <li data-id="u7-cl17"><div class="check-box" onclick="toggleCheck(this)"></div>Zonas de carga/descarga de camiones: Integradas (muelle/puerta) vs Independientes (playa exterior)</li>
+      <li data-id="u7-cl18"><div class="check-box" onclick="toggleCheck(this)"></div>Carga nominal útil vs Carga nominal de apilado</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Guía Completa 2do Parcial · Manejo de Materiales y Distribución de Planta · UTN 2026</p>
+  <p style="margin-top:6px; font-size:0.78rem;">Documento dinámico de preparación para el 2do parcial / cuatrimestre. Actualizable clase a clase.</p>
+</footer>
+
+<script>
+  // ── SCROLL BAR ──
+  window.addEventListener('scroll', () => {
+    const el = document.getElementById('scroll-bar');
+    const total = document.documentElement.scrollHeight - window.innerHeight;
+    el.style.width = (window.scrollY / total * 100) + '%';
+    updateActiveNav();
+  });
+
+  // ── NAV SCROLL ──
+  function navScroll(btn, id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // ── REDIRECCIÓN SUAVE A PREGUNTA DE FINAL CON DESPLEGADO Y PULSO ──
+  function goToFinal(questionId) {
+    const target = document.getElementById(questionId);
+    if (!target) return;
+    
+    // Abrir el acordeón si no está abierto
+    if (!target.classList.contains('open')) {
+      target.classList.add('open');
+    }
+    
+    // Scroll suave hacia la pregunta
+    target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    
+    // Efecto de pulso / resplandor
+    target.classList.remove('highlight-pulse');
+    void target.offsetWidth; // Force reflow
+    target.classList.add('highlight-pulse');
+  }
+
+  // ── ACTIVE NAV TRACKING ──
+  const sectionMap = [
+    ['sec-u75','nb-u75'],
+    ['sec-grimolizzi','nb-grimolizzi'],
+    ['sec-calc','nb-calc'],
+    ['sec-checklist','nb-cl']
+  ];
+  
+  function updateActiveNav() {
+    let current = sectionMap[0][1];
+    for (const [secId, btnId] of sectionMap) {
+      const sec = document.getElementById(secId);
+      if (sec && sec.getBoundingClientRect().top <= 150) current = btnId;
+    }
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    const activeBtn = document.getElementById(current);
+    if (activeBtn) {
+      activeBtn.classList.add('active');
+      activeBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+  }
+
+  // ── FAQ ACCORDION ──
+  function toggleFaq(id) {
+    const item = document.getElementById(id);
+    item.classList.toggle('open');
+  }
+
+  // ── EVALUADOR INTERACTIVO DE RACKS ──
+  function evaluarRack() {
+    const skus = document.getElementById('sel-skus').value;
+    const flujo = document.getElementById('sel-flujo').value;
+    const altura = document.getElementById('sel-altura').value;
+    const presu = document.getElementById('sel-presu').value;
+
+    const resBox = document.getElementById('calc-result');
+    const resTit = document.getElementById('res-titulo');
+    const resDesc = document.getElementById('res-desc');
+    resBox.style.display = 'block';
+
+    if (skus === 'largas') {
+      resTit.innerText = '🔩 Sistema Recomendado: Estanterías Cantilever';
+      resDesc.innerHTML = 'Para tubos, caños o perfiles largos. Estructura de columnas con ménsulas voladizas en perfiles U/doble T, amuradas al piso con brocas y unidas por largueros (separación 1m, altura habitual hasta 6m).';
+      return;
+    }
+
+    if (skus === 'piezas') {
+      if (presu === 'alto' || presu === 'medio') {
+        resTit.innerText = '📦 Sistema Recomendado: Producto a Hombre — Lanzadera Vertical (VLM)';
+        resDesc.innerHTML = 'Para piezas pequeñas automatizadas. Armario cerrado de 4m a 15m de alto por 2m a 4m de ancho. El extractor entrega automáticamente la bandeja en la ventana de picking.';
+      } else {
+        resTit.innerText = '📦 Sistema Recomendado: Hombre a Producto — Estantería Dinámica de Picking';
+        resDesc.innerHTML = 'Plataformas inclinadas con roldanas por donde se deslizan las cajas. Picking manual directo de alta velocidad.';
+      }
+      return;
+    }
+
+    if (altura === 'auto') {
+      resTit.innerText = '🏗️ Sistema Recomendado: Almacén Autoportante con Transelevador (&gt;15m a 40m+)';
+      resDesc.innerHTML = 'Para alturas mayores a 15m. La estantería soporta el propio edificio (techos y paredes). Permite un ahorro del 30% en costos de obra civil y opera 100% automatizado con Transelevadores.';
+      return;
+    }
+
+    if (skus === 'muchas') {
+      resTit.innerText = '🎯 Sistema Recomendado: Racks de Acceso Directo (Selectivos Convencionales)';
+      resDesc.innerHTML = 'Al tener muchas referencias con bajo volumen por SKU, se requiere 100% de selectividad. Acceso inmediato a cualquier pallet en cualquier nivel.';
+      return;
+    }
+
+    if (flujo === 'fifo') {
+      if (presu === 'alto') {
+        resTit.innerText = '🤖 Sistema Recomendado: Pallet Shuttle (o Carro Satélite)';
+        resDesc.innerHTML = 'Permite FIFO o LIFO con canales de hasta 40m de profundidad. Carro eléctrico de 1.500 kg que eleva el pallet y se comanda por radiofrecuencia. Utilización &gt; 85%.';
+      } else if (presu === 'medio') {
+        resTit.innerText = '🔄 Sistema Recomendado: Estanterías Dinámicas a Rodillos (FIFO)';
+        resDesc.innerHTML = 'Canales inclinados a 2° de hasta 20m de longitud. Carga por atrás y extracción por el frente por gravedad. Garantiza estricto FIFO e utilización &gt; 85%.';
+      } else {
+        resTit.innerText = '🚚 Sistema Recomendado: Estantería Drive-Through';
+        resDesc.innerHTML = 'El apilador entra al canal. Tiene acceso por ambos extremos, lo que permite operar en FIFO. Requiere 2 pasillos de maniobra.';
+      }
+    } else {
+      if (presu === 'bajo') {
+        resTit.innerText = '🚚 Sistema Recomendado: Estantería Drive-In (El más económico de base fija)';
+        resDesc.innerHTML = 'El apilador ingresa al canal. Apoyado contra pared con un único pasillo. Gestión LIFO. Máximo aprovechamiento volumétrico al menor costo inicial.';
+      } else {
+        resTit.innerText = '⬅️ Sistema Recomendado: Estanterías Push-Back (Carros o Rodillos)';
+        resDesc.innerHTML = 'Los apiladores NO entran al pasillo. Se empujan los pallets en canales inclinados 2°-3° (Carros hasta 4 pallets / Rodillos hasta 6 pallets). Gestión LIFO segura y rápida.';
+      }
+    }
+  }
+
+  // ── CHECKLIST + localStorage ──
+  const LS_KEY = 'manmat_utn_2026_u7_checklist';
+
+  function loadChecklist() {
+    const saved = JSON.parse(localStorage.getItem(LS_KEY) || '{}');
+    document.querySelectorAll('#checklist li[data-id]').forEach(li => {
+      const id = li.dataset.id;
+      if (saved[id]) {
+        li.classList.add('checked');
+        li.querySelector('.check-box').classList.add('done');
+      }
+    });
+    updateProgress();
+  }
+
+  function toggleCheck(box) {
+    const li = box.closest('li');
+    const id = li.dataset.id;
+    const isDone = box.classList.toggle('done');
+    li.classList.toggle('checked', isDone);
+    const saved = JSON.parse(localStorage.getItem(LS_KEY) || '{}');
+    if (isDone) saved[id] = true; else delete saved[id];
+    localStorage.setItem(LS_KEY, JSON.stringify(saved));
+    updateProgress();
+  }
+
+  function updateProgress() {
+    const items = document.querySelectorAll('#checklist li[data-id]');
+    const done = document.querySelectorAll('#checklist li.checked');
+    const pct = items.length ? Math.round((done.length / items.length) * 100) : 0;
+    const fill = document.getElementById('progress-fill');
+    const label = document.getElementById('progress-label');
+    if (fill) fill.style.width = pct + '%';
+    if (label) label.innerText = `${done.length} / ${items.length} conceptos dominados (${pct}%)`;
+  }
+
+  document.addEventListener('DOMContentLoaded', loadChecklist);
+</script>
+
+</body>
+</html>

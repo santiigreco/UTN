@@ -1,0 +1,52 @@
+=== Unidad 7\G-UT07-05 Sistemas de Almacenaje.pdf (Pages: 17) ===
+
+--- PAGE 1 ---
+Proceso de almacenesDiseño & Dimensionamiento
+Manejo de Materiales y Distribución en PlantaINTRALOGÍSTICAIng. G. GrimolizziIng. R. StifterIng. P. Lassave
+--- PAGE 2 ---
+Sistemas de almacenamientoClasificación
+
+--- PAGE 3 ---
+Sistemas de almacenamientoCross DockingEn función de la actividad realizada dentro del almacén podemos clasificar a este sistema en:a)El proceso de cross docking directo o pre distribuido. Ejemplo: Centro de distribución regional de bebidas de consumo masivob)En el cross docking con preclasificación. Ejemplo: centro de distribución de una plataforma de e-comerce
+
+--- PAGE 4 ---
+Sistemas de almacenamientoAlmacenamiento en bloqueSe clasifican en:Bloques sobre pisoBloques de estanterías de base fijaTipo driveTipo push backTipo dinámicas a rodillosTipo pallet shuttle
+
+--- PAGE 5 ---
+Sistemas de almacenamientoBloque de estanterías de base fijaSistema tipo DriveEste sistema de estanterías forma pasillos interiores de carga de manera que permiten el ingreso del apilador en estos con la carga por encima del nivel donde se va a depositarEl más económico de los sistemas de estantería de base fijaExisten dos sistemasDrive inDrive Throught
+
+--- PAGE 6 ---
+Sistemas de almacenamientoBloque de estanterías de base fijaSistema Push BackPermite referencias únicas por canalLos apiladores no se introducen en los pasillos de la estantería.El primer pallet se apoya sobre en un dispositivo de carros o rodillos del canal, con el segundo pallet se empuja al primero y se apoya en otro carro o el mismo dispositivo de rodillosPara los dispositivos tipo carro la profundidad es de cuatro pallets por canalPara los dispositivos a rodillos la profundidad puede alcanzar seis pallets dependiendo del peso de estosTienen un pequeño ángulo de inclinación de esta manera que en la descarga de un pallet del canal el resto adelante una posición por efecto de la gravedad.Gestión de almacenamiento del tipo LIFORotación media Índice de utilización mayor al 85%.
+
+--- PAGE 7 ---
+Sistemas de almacenamientoBloque de estanterías de base fijaSistema DinámicoPermite referencias únicas por canalLa carga se realiza en la parte posteriorEl canal tiene un dispositivo de rodillos, con una inclinación de 2°El pallet del canal avanza por efecto de la gravedad.La longitud de los canales alcanza hasta 20mGestión de almacenamiento del tipo FIFOIdeal para el pickeo de pallets completosÍndice de utilización mayor al 85%.
+
+--- PAGE 8 ---
+Sistemas de almacenamientoBloque de estanterías de base fijaSistema Pallet ShuttleUn carro accionado por un motor eléctrico, se desplaza ubicando a dichos pallets en las posiciones disponiblesPuede alcanzar hasta 40m de longitudLa capacidad de estos carros es de hasta 1.500kg.El carro tiene un sistema de elevación de pallet de manera de despegarlo de la guía de apoyo de la estanteríaGestión de almacenamiento del tipo FIFO / LIFOÍndice de utilización mayor al 85%.
+
+--- PAGE 9 ---
+Sistemas de almacenamientoBloque de estanterías de base fijaDimensionamientoEl número de alturas de apilamiento n se define en función de las necesidades de espacio y altura del edificio, porque los pallets se apoyarán directamente sobre las estanterías. 
+
+--- PAGE 10 ---
+Sistemas de almacenamientoEstanterías de acceso directo de base móvil
+
+--- PAGE 11 ---
+Sistemas de almacenamientoEstanterías de acceso directo de base fija
+
+--- PAGE 12 ---
+Sistemas de almacenamientoEstanterías de acceso directo doble profundidadEste sistema permite tener dos pallets por canal de cada pasilloDisminuye el número de pasillosCasi siempre se trabaja en un sistema LIFO.Las máquinas para el manejo de pallets deberán contar con horquillas telescópicas para estibar y acceder al segundo pallet.
+
+--- PAGE 13 ---
+Sistemas de almacenamientoEstanterías de acceso directo CantiliverConstruidos por un conjunto de columnas con ménsulas a uno o ambos lados de estaLas columnas y ménsulas se construyen en perfiles U o doble T que se sueldan entre sí.Las columnas se amuran al piso mediante fijaciones mecánicas (brocas) y se encadenan mediante largueros. La separación entre columnas es de 1m y el conjunto generalmente no supera los 6m
+
+--- PAGE 14 ---
+Sistemas de almacenamientoEstanterías para piezas pequeñasSe utilizan para unidades de carga menores a un palletSe clasifican según el proceso de carga y extracción de la unidad de cargaHombre a producto: es decir el operario se mueve haca la pieza.Producto a hombre: el producto se mueve hacia el operarioLa selección procesos está asociado a la selección del sistema de estantería a utilizar.
+
+--- PAGE 15 ---
+Sistemas de almacenamientoEstanterías para piezas pequeñasProceso hombre / producto – dinámicas para pickingCuando se procesan gran variedad de referencias con altos consumos es conveniente utilizar estanterías dinámicas para picking, Estas tienen las mismas características estructurales que la de base fija, pero en lugar de estantes, tienen plataformas inclinadas con roldanas o ruedas por donde la mercadería se desliza al extremo de salida
+
+--- PAGE 16 ---
+Sistemas de almacenamientoEstanterías para piezas pequeñasProceso producto / hombre – almacenamiento vertical - LanzaderasAlto: 4m a 15mAncho: 2m a 4mProfundidad: Hasta 2m
+
+--- PAGE 17 ---
+Sistemas de almacenamientoAlmacén autoportanteAplicables a alturas superiores a los 15mLas estanterías actúan como estructura soporte del edificio del almacén, de manera que además de su función propia se las calcula para soportar la cubierta del almacén, el impacto de los elementos (viento, lluvia y nieve) y el esfuerzo generado por el sistema de movimiento de materialesEn este caso son en la mayoría de los casos los sistema de movimiento son transelevadoresEl ahorro de costos de construcción en promedio para alturas entre 15m y 20m es del 30% respecto de una construcción convencional.

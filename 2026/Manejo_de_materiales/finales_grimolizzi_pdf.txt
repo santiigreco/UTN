@@ -1,0 +1,3885 @@
+=== Finales\FINALES GRIMOLIZZI 2024,2025,2026.pdf (Pages: 142) ===
+
+--- PAGE 1 ---
+1 
+ 
+Finales Grimolizzi – Hechos mayo 2026 
+Final 22/4/2026 
+1) Cohesión que es tipo y ejemplos. 
+No cohesivos: fluyen fácilmente a través de un orificio. Arena, granos y plástico. 
+Cohesivos: no fluyen fácilmente a través de un orificio. Arsillas húmedas. 
+2) Autoridades para pedir permiso de volcado de efluentes en CABA:  
+a) Cloacal: permiso lo otorga AySA. 
+b) Red pluvial: permiso lo otorga GCABA (con exigencias normativas propias, de 
+ACUMAR y de la Nación). 
+Para PBA: 
+a) Cloacal: Los otorga, según cada municipio, AySA, ACUMAR y/o autoridades 
+del gobierno provincial (ADA) y la Nación (INA). 
+b) Red pluvial: los otorga según cada municipio, ACUMAR y/o autoridades del 
+Gobierno Provincial (ADA) y la Nación (INA). 
+3) Transportador trilateral, descripción, que tipos hay. 
+Es un equipo especializado para el movimiento de materiales en depósitos, 
+diseñado específicamente para optimizar el espacio mediante la operación en 
+pasillos muy angostos y el aprovechamiento de la altura. 
+• Altura de elevación: alcanza alturas de hasta 15 metros. 
+• Ancho de pasillo: pasillos angostos de entre 1,5 metros y 1,8 metros. 
+• Cabezal de carga: posee un sistema de rotación y desplazamiento de las 
+horquillas que les permite tomar o dejar un pallet en 3 posiciones (frente, 
+izquierda y derecha) sin necesidad que el vehículo gire o rote. 
+Tipos: 
+• Man down: la cabina del operador permanece fija en la base del equipo 
+y solo se eleva el cabezal con la carga. 
+• Man up: la cabina del operador se eleva juntamente con la carga. Esta 
+configuración es ideal para realizar tareas de picking (recolección de 
+pedidos) a diferentes alturas. 
+--- PAGE 2 ---
+2 
+ 
+ 
+4) Angulo de escurrimiento, que es y cómo se determina. 
+Angulo de reposo: es el ángulo que forma una pila de granel con respecto a la 
+horizontal. Se calcula midiendo el ángulo que existe entre la pila y la superficie 
+horizontal. 
+Este ángulo es una característica propia de cada material en estado de reposo. 
+5) 5 parámetros para definir la capacidad de carga de una banda transportadora. 
+• Ancho de la banda. 
+• Velocidad de transporte. 
+• Disposición de la cuna de desplazamiento. 
+• Inclinación del equipo. 
+• Características del material a transportar. 
+6) 3 parámetros para definir la cinta transportadora. 
+• Lay out de la instalación. 
+• Material transportado. 
+• Capacidad máxima de transporte. 
+• Ambiente de trabajo. 
+• Tiempo de trabajo diario. 
+• Desnivel entre la carga y la descarga. 
+• Distancia de transporte. 
+• Potencia requerida. 
+7) Qué tipo de transportadores aéreos se utilizan para cadenas forjadas y 
+cadenas unibilt. 
+Cadenas forjadas:  se utilizan en transportadores aéreos diseñados para 
+trabajos pesados y condiciones robustas. Son aptas para sistemas Power y 
+Power & Free. 
+
+--- PAGE 3 ---
+3 
+ 
+Cadenas unibilt:  son del tipo estampadas y se consideran cadenas livianas 
+dentro de la categoría de transporte de materiales. Son aptas para sistemas 
+Power y Power & Free. 
+  
+8) Estructura del piso, descripción. 
+I. Subrasante: terreno natural nivelado y compactado que sirve como 
+soporte base para toda la estructura. 
+II. Base y subbase: capas conformadas por materiales como gravas, 
+arenas, rocas trituradas o mezclas de estos. 
+III. Barrera de vapor:  se utilizan láminas de polietileno (menores a 0,25 
+mm) cuando la subrasante es muy húmeda. 
+IV. Losa de concreto:  es el elemento estructural principal. Puede ser de 
+hormigón simple (baja resistencia), hormigón armado con mallas 
+electrosoldadas (mayor resistencia). 
+V. Acabado especial: para pisos que requieren alta calidad, se realiza un 
+allanado intenso o se aplica una sobre losa. Puede aumentar la 
+resistencia en un 56%. 
+Juntas: se incorporan para evitar grietas causadas por la contracción y 
+cambios volumétricos del concreto.  
+
+--- PAGE 4 ---
+4 
+ 
+ 
+9) Zonas del almacén. 
+a) Zona de carga y descarga (1) 
+b) Zona de recepción y logística inversa (2) 
+c) Zona de almacenaje (3) 
+d) Zona de preparación de pedidos (4) 
+e) Zona de expedición (5) 
+f) Zona de oficina y servicios (6) 
+ 
+
+--- PAGE 5 ---
+5 
+ 
+ 
+10) Sistema Power, parámetros para determinar el tiro vertical, tiro horizontal y tiro 
+total. 
+• Tiro horizontal: peso total del sistema y coeficiente de fricción. 
+• Tiro vertical: desnivel máximo, peso de la carga y paso del transporte. 
+• Tiro total: suma de tiro horizontal y tiro vertical. 
+ 
+ 
+11) Contaminantes físicos. 
+• Ruidos y vibraciones. 
+• Radiaciones ionizantes. 
+• Radiaciones no ionizantes. 
+12) Plásticos biodegradables y oxo-biodegradables. 
+
+--- PAGE 6 ---
+6 
+ 
+Biodegradables: pueden derivar tanto de fuentes renovables como no 
+renovables, se degradan por la acción de microorganismos aeróbicos y 
+anaeróbicos presentes en el ambiente. 
+Oxo-biodegradables: se obtienen a partir de un polímero derivado del petróleo, 
+se degradan mediante procesos de oxidación y biodegradación, ya sea de forma 
+simultánea o secuencial. Se añade un catalizador químico que es el que 
+permite y activa el proceso de oxidación. 
+13) Tipos de pallets según su uso. 
+• Descartables. 
+• Retornables. 
+• Intercambiables. 
+• De consorcio. 
+ 
+14) Índices del método Brown Gibson y que significan. 
+K: Constante de Ponderación. Es un índice definido por el equipo evaluador que 
+varía entre 0 y 1, define el peso relativo que se le otorga a los factores objetivos 
+frente a los subjetivos. 
+W: determina la preponderancia de un factor subjetivo sobre los demás (por 
+ejemplo, si el clima es más importante que la educación). 
+R: es la calificación que recibe cada localización específica respecto a un factor 
+subjetivo determinado. 
+15) Almacen push back, funcionamiento y tipos. 
+Sistema de almacenamiento de bloque de estanterías. Las estanterías poseen 
+una inclinación con un dispositivo de apoyo que pueden ser: 
+
+--- PAGE 7 ---
+7 
+ 
+• Cunas o carros: Permiten una profundidad de hasta 4 pallets por 
+canal. 
+• Rodillos: pueden alcanzar una profundidad de hasta 6 pallets, 
+dependiendo del peso de la unidad de carga 
+Este dispositivo de apoyo permite el desplazamiento de los pallets hacia atrás 
+cuando ingresa uno nuevo, asimismo cuando se retira un pallet, los pallets que 
+están detrás se desplazan hacia adelante automáticamente por acción de la 
+gravedad. 
+- Permite referencias por canal.  
+- Se utiliza para sistemas de inventario de rotación media. 
+- Se trabaja con sistema LIFO.  
+- Es seguro debido a que los auto elevadores no necesitan introducirse  al 
+pasillo del bloque de estanterías.  
+- Se utilizan auto elevadores convencionales o retractiles. 
+Final 23/2/2026 
+1) ¿Qué es o que significa el numero MESH de una malla? ¿Para que se lo utiliza y 
+como se calcula? 
+Mesh: valor numérico que indica la cantidad de aberturas por pulgada lineal que 
+posee una malla o tela de alambre tejido.  
+Se utiliza para medir y clasificar el tamaño de partícula de los materiales a 
+granel (áridos). 
+Se calcula: 
+25,4 mm = (Numero Mesh × Abertura de malla) + (Numero Mesh × Diámetro del alambre)  
+2) ¿Por qué algunas cintas transportadoras se fabrican en artesa? 
+La configuración en artesa se utiliza fundamentalmente para el transporte de 
+materiales a granel (sólidos áridos).  
+Sus funciones principales son: 
+• Maximizar la capacidad de transporte: Al inclinar los rodillos laterales 
+(habitualmente en estaciones de 3 rodillos a 35° o 45°), se aumenta el 
+área de la sección transversal de la carga en comparación con una cinta 
+plana. Al aumentar la sección, aumenta proporcionalmente la 
+capacidad de carga (Q) según la fórmula:  
+𝐶𝑎𝑝𝑎𝑐𝑖𝑑𝑎𝑑 𝑑𝑒 𝑐𝑎𝑟𝑔𝑎 = 𝐶 ∗ 𝑃𝑒 ∗ 𝑉 ∗ 𝐾 
+𝐶 = 𝑎𝑟𝑒𝑎 𝑑𝑒 𝑙𝑎 𝑠𝑒𝑐𝑐𝑖𝑜𝑛 𝑡𝑟𝑎𝑛𝑠𝑣𝑒𝑟𝑠𝑎𝑙 
+𝑃𝑒 = 𝑝𝑒𝑠𝑜 𝑒𝑠𝑝𝑒𝑐𝑖𝑓𝑖𝑐𝑜 𝑑𝑒𝑙 𝑚𝑎𝑡𝑒𝑟𝑖𝑎𝑙 
+𝑉 = 𝑣𝑒𝑙𝑜𝑐𝑖𝑑𝑎𝑑 𝑑𝑒 𝑙𝑎 𝑏𝑎𝑛𝑑𝑎 
+𝐾 = 𝑓𝑎𝑐𝑡𝑜𝑟 𝑑𝑒 𝑐𝑜𝑟𝑟𝑒𝑐𝑐𝑖𝑜𝑛 𝑝𝑜𝑟 𝑖𝑛𝑐𝑙𝑖𝑛𝑎𝑐𝑖𝑜𝑛 
+--- PAGE 8 ---
+8 
+ 
+ 
+• Control de derrames:  La forma de "cuna" permite contener mejor el 
+material, evitando que se desparrame por los bordes durante el trayecto. 
+• Centrado de la carga:  Esta disposición obliga al material a conducirse 
+siempre centrado sobre la banda. 
+ 
+3) Nombre 2 tipos de sistemas transportadores a cadena para piso que utilizan 
+tablillas. Explique en que se diferencian justificando así sus pros y sus contras 
+principales. 
+Los dos tipos principales de sistemas transportadores de piso a cadena que 
+utilizan tablillas (o placas) son los Flat-Top Conveyors y los Slat Conveyors.  
+i. Flat-Top Conveyors (Transportadores de Placas Planas) 
+Consisten en placas articuladas accionadas por una cadena que forman 
+una superficie continua. Generalmente se utilizan para mover vehículos 
+terminados o productos de gran peso. 
+Diferenciación: se montan bajo la superficie para que las placas queden 
+al ras del piso. 
+Pros: 
+• Acceso ilimitado: Al estar al ras del suelo, permiten que operarios 
+y vehículos circulen libremente por encima de ellos sin 
+obstáculos. 
+• Alta capacidad: Son ideales para cargas muy pesadas y permiten 
+trabajar en ambientes tanto secos como húmedos. 
+• Versatilidad de carga: Permiten transportar una amplia gama de 
+productos con diferentes pesos y formas. 
+Contras: 
+
+--- PAGE 9 ---
+9 
+ 
+• Rigidez de trayecto: Su diseño suele estar limitado 
+exclusivamente a trayectorias rectas. 
+• Costo de instalación: Requieren obras civiles para quedar al ras 
+del piso. 
+ii. Slat Conveyors (Transportadores de Tablillas Separadas) 
+Este sistema utiliza tablillas (de madera, metal o plástico) montadas 
+sobre una o dos hileras de cadena. 
+Diferenciación: A diferencia del Flat -Top, este transportador se 
+encuentra por encima del suelo. 
+Pros: 
+• Flexibilidad espacial: Los diseños modulares y livianos permiten 
+realizar rutas complejas tridimensionales, incluyendo curvas y 
+cambios de nivel con un solo transportador. 
+• Funcionalidad: Permiten realizar desconexión de puntos, 
+transiciones y acumulaciones de manera eficiente. 
+Contras: 
+• Representan un obstáculo físico en la planta, impidiendo el 
+tránsito transversal de otros equipos. 
+• Limitación de Carga: no están diseñados para las cargas 
+pesadas. 
+ 
+4) Que significa ANR, cuáles son sus valores y para que se utiliza. 
+ANR: Atmosfera normal de referencia. Sus valores son: 
+• Temperatura: 20 °C. 
+• Presión: 1.013 bar. 
+• Humedad relativa: 65% 
+
+--- PAGE 10 ---
+10 
+ 
+Se utiliza para definir las especificaciones técnicas  de cualquier equipo que 
+genere o trabaje con aire comprimido. Salvo que se indique lo contrario, los 
+datos de los catálogos se expresan siempre en condiciones ANR. 
+Para indicar que un valor está expresado bajo estas condiciones, se acostumbra 
+a anteponer la letra "N" (de Normal) a la unidad de medida, por ejemplo: 
+Nm³/min (Normal metro cúbico por minuto). 
+5) Que es un refuerzo de cabreada, en qué casos se debe realizar y como se 
+practica. 
+El refuerzo de cabreadas es la modificación de la geometría  de la perfilería 
+metálica original de un edificio mediante la incorporación de perfiles 
+similares, con el objetivo de aumentar su capacidad portante. Se debe realizar 
+cuando la carga de trabajo supera la capacidad de carga del nodo de la 
+cabreada.  
+Como se practica: 
+1. Calculo previo. 
+2. Descarga de la estructura: la cabreada debe estar totalmente libre de cargas 
+con el objeto de lograr que el material agregado trabaje en conjunto con la 
+estructura original sumando capacidades de resistencia. 
+3. Union por soldadura: se adicionan perfiles de idéntica sección y material a 
+cada barra original mediante soldadura, conformando un perfil compuesto 
+resultante. 
+4. Tratamiento superficial: tratamiento anticorrosivo acorde al ambiente de 
+trabajo para garantizar su vida útil. 
+--- PAGE 11 ---
+11 
+ 
+ 
+6) Localización de plantas, como podríamos agrupar a grandes rasgos, los 
+factores intervinientes en la selección de una posible ubicación. 
+✓ Factores físicos: disponibilidad de materia prima, insumos, energía. 
+✓ Factores económicos: costos de transporte, opciones de financiación 
+y la variabilidad de costos de operación. 
+✓ Factores políticos: impuestos, leyes, regulaciones medioambientales. 
+✓ Factores demográficos: mercados, mano de obra y educación. 
+ 
+
+--- PAGE 12 ---
+12 
+ 
+7) En la operación de un almacén, enumere las 3 posibilidades que hay para la 
+recolección de productos en el armado de pedidos. 
+1. Flujo hombre – producto. 
+2. Flujo producto – hombre. 
+3. Flujo mixto. 
+Independientemente del flujo, la  extracción física de los productos puede 
+organizarse mediante tres métodos básicos: 
+➢ Extracción por cada pedido. 
+➢ Extracción por referencias: Se recolectan productos para varios pedidos a la 
+vez que comparten referencias comunes, aumentando la productividad. 
+➢ Extracción por zonas: El almacén se divide en sectores y el operario solo 
+recolecta los productos de su área asignada. 
+8) En lo que conocemos como Supply Chain o Cadena de Suministros, quienes 
+son los actores que lo conforman. 
+1- Proveedores. 
+2- Abastecimiento (logística de entrada). 
+3- Fabricación/producción. 
+4- Comercialización/ventas. 
+5- Distribución (logística de salida). 
+6- Clientes. 
+--- PAGE 13 ---
+13 
+ 
+ 
+9) Que es una brida, cuando se utiliza y que elementos la componen. 
+Una brida es un  elemento de unión de tuberías utilizado en la industria que 
+permite conectar cañerías con equipos y válvulas. Se utilizan cuando: 
+• Necesidad de desmontaje. 
+• Conexión con equipos y válvulas. 
+• Aplicaciones de alta presión y temperatura: son aptas para servicios 
+críticos que requieren un alto nivel de integridad. 
+Se compone de: 
+1. Bridas: discos metálicos que se acoplan entre sí. 
+2. Juntas: elemento que se coloca entre las bridas y asegura la estanqueidad 
+de la unión. 
+3. Elementos de fijación: bulones roscados, con sus respectivas tuercas y 
+arandelas, que mantienen la presión sobre la junta. 
+
+--- PAGE 14 ---
+14 
+ 
+ 
+10) En la determinación de la carga física de una actividad, se evalúa la actividad 
+física total. Diga la formula polinómica que lleva el valor de esa actividad física 
+total y explique brevemente sus miembros componentes. 
+𝑨𝑭𝑻 = 𝑴𝑩 + 𝑴𝑶 + 𝑴𝑻 
+Metabolismo Basal  (MB): la cantidad mínima de energía necesaria para 
+mantener las funciones vitales básicas (respiración, circulación, etc.). 
+Metabolismo de ocio (MO): energía consumida en actividades habituales fuera 
+del trabajo, como asearse o vestirse. 
+Metabolismo por trabajo  (MT): es el gasto energético derivado 
+específicamente de la actividad laboral. 
+ 
+El metabolismo por trabajo se calcula por medio del Método de Spitzer, 
+Hettinger y Guelaud y posee la siguiente formula: 
+𝑴𝑻𝑻 = 𝑬𝒆 + 𝑬𝒅𝟏 + 𝑬𝒅𝟐 
+Ee= energía por trabajo estático por posturas (principal y secundaria). 
+Ed1= energía por trabajo dinámico. 
+Ed2= energía por esfuerzos musculares (intensidad del esfuerzo). 
+11) Indicar las características comerciales de: a) los envases, b) los embalajes. 
+a) Representar la imagen de la empresa, atraer la atención de los 
+consumidores y facilitar el uso/consumo. 
+b) No aplica. 
+
+--- PAGE 15 ---
+15 
+ 
+ 
+12) Indicar: a) a que instalación/actividad se la denomina Puerto Hub, b) En que 
+consiste un sistema Hub & Spoke. 
+a) Un Puerto Hub, también llamado Puerto de Transbordo o de Transferencia , 
+es un puerto oceánico de gran capacidad diseñado para almacenar y 
+distribuir masivamente unidades de carga, principalmente contenedores . 
+Para ser considerado un Hub, el puerto debe contar con infraestructura 
+especializada (tamaño de muelles y calado) y una ubicación geográfica 
+estratégica que facilite la multimodalidad . Posee instalaciones para poder 
+operar gran variedad de buques (de gran tamaño) y contenedores.  
+b) Es un modelo de distribución de conexiones de tipo radial  que permite 
+optimizar el transporte de mercancías reduciendo el número de rutas  
+necesarias para comunicar múltiples puntos entre sí. 
+• El Hub (Núcleo): Es el centro logístico regional donde se concentra 
+el tráfico masivo. 
+• Los Spokes (Radios):  puertos de menor capacidad o importancia 
+que se enlazan con el Hub. 
+Este sistema permite generar economías de escala al traspasar 
+mercancías de buques de gran porte a naves más pequeñas 
+(Feeders), lo que agiliza el flujo y minimiza los costos operativos de la red 
+global. 
+
+--- PAGE 16 ---
+16 
+ 
+ 
+13) Mencionar rango de velocidad de funcionamiento de un elevador a cangilones 
+de descarga positiva y para que tipos de graneles se los recomienda emplear. 
+Rango de velocidad: 0.5 metros/segundo a 1 metros/segundo.  
+Se recomienda emplear para: 
+• Materiales frágiles: para evitar roturas al no haber dragado ni impactos 
+violentos en la descarga 
+• Materiales muy húmedos o cohesivos: como la arcilla húmeda, que no 
+fluye fácilmente. 
+• Materiales de alta granulometría:  graneles de gran tamaño que no 
+podrían ser dragados fácilmente. 
+  
+
+--- PAGE 17 ---
+17 
+ 
+14) Mencionar al menos 2 ventajas del motor neumático sobre el motor eléctrico. 
+• Seguridad: pudiendo usarse en ámbitos de alta inflamabilidad ya que no 
+genera chispa. 
+• Relación Potencia/Peso Superior: Son motores mucho más livianos y 
+pequeños que los elé ctricos, facilitando su integración en espacios 
+reducidos. 
+• Fácil regulación de la velocidad de giro.  
+• Son capaces de soportar trabajos muy exigentes y sobrecargas.  
+• Su construcción mecánica es muy sencilla, lo que facilita reparaciones 
+rápidas que pueden ser realizadas por personal con experiencia 
+mecánica básica, sin necesidad de especialistas en electrónica. 
+ 
+ 
+15) Indicar que cantidad de pallets tipo ARLOG (con carga) se pueden almacenar 
+(sin apilamiento alguno) en un camión cuya plataforma de carga dispone de una 
+superficie libre de 12,30 metros x 2,60 metros. 
+
+--- PAGE 18 ---
+18 
+ 
+Final 2/3/2026 
+1) Prerrequisitos leed. 
+Contar con un líder en comissioning. 
+Prevención de la contaminación en la construcción. 
+Reducción de uso de agua. 
+Eficiencia energética mínima. 
+Manejo de refrigerantes. 
+Depósito de materiales reciclables. 
+Calidad de aire interior. 
+Control de humo de tabaco. 
+2) Fuentes emisoras, clasificación. 
+Fuentes naturales.  
+Fuentes móviles.  
+Fuentes de área. 
+Fuentes fijas. 
+ 
+3) Ley AMBA residuos peligrosos para empresas y servicios. 
+No existe una única ley unificada, sino un marco normativo que depende de la 
+jurisdicción donde se encuentre la empresa o el servicio. 
+➢ En CABA: Rige la Ley N° 2.214 de Residuos Peligrosos. 
+➢ En la Provincia de Buenos Aires (PBA): Se aplica la Ley N° 11.720 de 
+Residuos Especiales (y su Decreto N° 806/97). 
+Obligaciones para Empresas y Servicios (Generadores) 
+
+--- PAGE 19 ---
+19 
+ 
+Las fuentes definen como generador a toda persona física o jurídica que, como 
+resultado de cualquier proceso, operación o actividad, produzca residuos 
+calificados como peligrosos o especiales. Sus obligaciones principales 
+incluyen: 
+➢ Registro Obligatorio: Deben inscribirse en el Registro de Generadores de 
+Residuos Peligrosos de su jurisdicción para obtener el Certificado 
+Ambiental (o Certificado de Gestión), que es el instrumento que habilita 
+legalmente el sistema de manipulación y transporte de sus residuos. 
+➢ Categorización: 
+✓ En CABA: se dividen en Pequeño Generador y Generador  
+mediante una fórmula polinómica que considera la cantidad y 
+peligrosidad del residuo. 
+✓ En PBA: No existe distinción, solo esta Generador. 
+✓ Gestión Interna: Las empresas deben separar las fracciones en 
+origen, envasar los residuos en recipientes resistentes e 
+identificarlos con etiquetas que indiquen la leyenda "Residuos 
+Peligrosos" , datos del generador y fecha de envasado 
+➢ Responsabilidad "de la cuna a la tumba": El generador es responsable 
+del impacto ambiental de sus residuos desde su producción hasta que 
+son transformados en materia inerte o dispuestos de forma segura. 
+4) Flat top conveyor. 
+Consisten en placas articuladas accionadas por una cadena que forman una 
+superficie continua. Generalmente se utilizan para mover vehículos terminados 
+o productos de gran peso. 
+Diferenciación: se montan bajo la superficie para que las placas queden al ras 
+del piso. 
+Pros: 
+• Acceso ilimitado: Al estar al ras del suelo, permiten que operarios 
+y vehículos circulen libremente por encima de ellos sin 
+obstáculos. 
+• Alta capacidad: Son ideales para cargas muy pesadas y permiten 
+trabajar en ambientes tanto secos como húmedos. 
+• Versatilidad de carga: Permiten transportar una amplia gama de 
+productos con diferentes pesos y formas. 
+Contras: 
+• Rigidez de trayecto: Su diseño suele estar limitado 
+exclusivamente a trayectorias rectas. 
+--- PAGE 20 ---
+20 
+ 
+• Costo de instalación: Requieren obras civiles para quedar al ras 
+del piso. 
+5) Eslinga de fibras. 
+Son confeccionadas con hilos de nylon o poliéster de alta tenacidad tratados 
+químicamente que le confieren a resistencia a la abrasión y previniendo el 
+envejecimiento de la fibra, proporcionando al producto una elevada vida útil. 
+➢ Eslingas de nylon son de bajo estiramiento, ya que no sobrepasa el 2% a 
+3% de su longitud. 
+➢ Eslingas de poliéster son de alto estiramiento ya que este alcanza el 10% 
+de su longitud. 
+➢ Las configuraciones son:  
+o Un ramal con ojales. 
+o Sin fin. 
+ 
+6) Terminación de tubos. 
+Extremos Biselados:  Se utilizan cuando las uniones se realizan mediante 
+soldadura a tope (butt welding). Es la terminación más común para tuberías de 
+grandes diámetros o para ductos de gran longitud.  
+Extremos Lisos:  Este tipo se emplea cuando se utilizan accesorios de 
+soldadura de tipo zócalo (socket weld). Están técnicamente indicados para 
+sistemas que operan bajo presiones interiores elevadas. 
+Extremos Roscados:  Es la terminación más frecuente en tuberías de bajo 
+diámetro. Sin embargo, no es recomendable en alta presión, ya que el tallado 
+de la rosca disminuye el espesor de la pared del tubo, reduciendo su resistencia 
+mecánica. 
+   
+7) Metodo de adyacencias. 
+
+--- PAGE 21 ---
+21 
+ 
+El método de adyacencias es un algoritmo de Distribución en Planta para 
+construcción nueva/inicial.  
+Se debe desarrollar una gráfica de adyacencias donde cada nodo represente 
+un departamento y la recta que los une indique adyacencia.  
+El objetivo es encontrar una disposición en bloques de máxima ponderación 
+obteniendo una gráfica de adyacencias con la suma máxima de las 
+ponderaciones de las uniones de los departamentos. 
+Consideraciones y Limitaciones   
+➢ No se consideran las distancias recorridas. 
+➢ No se toman en cuenta las dimensiones de los departamentos.  
+➢ Los gráficos son planos, los arcos o líneas no se interceptan. 
+ 
+ 
+
+--- PAGE 22 ---
+22 
+ 
+ 
+ 
+8) Construcción sustentable. 
+La construcción sustentable se refiere a diferentes características 
+constructivas y de diseño  destinadas fundamentalmente a minimizar los 
+impactos ambientales negativos, promueven la sustentabilidad y aportan a 
+la mitigación de los efectos del cambio climático. Siempre enmarcado en el 
+conceto de Gestión sustentable. 
+La construcción sustentable incluye a las etapas de planificación, diseño , 
+construcción, mantenimiento, renovación, utilización y eliminación o 
+reconstrucción. 
+
+--- PAGE 23 ---
+23 
+ 
+ 
+ 
+9) Diferencia entre buque petrolero y carga convencional. 
+Resistencia Estructural:  En un buque petrolero , la carga se apoya 
+directamente sobre el fondo, los laterales y los mamparos , a diferencia de 
+los buques convencionales donde el peso recae principalmente sobre las  
+cubiertas. Por esta razón, la estructura del petrolero debe ser 
+significativamente más resistente. 
+
+--- PAGE 24 ---
+24 
+ 
+Estanqueidad: Los tanques de un petrolero deben garantizar una 
+estanqueidad absoluta al petróleo líquido y los gases que  este produce , 
+para evitar riesgos de explosión o pérdida de carga. 
+Gestión del Volumen: Se debe considerar que el petróleo varía su volumen 
+según la temperatura (aumenta aproximadamente un 1% por cada 10 °C de 
+incremento), un fenómeno que no afecta de la misma manera a la carga seca o 
+fraccionada convencional. 
+Equipamiento de carga:  Los buques de carga general  suelen estar 
+configurados con grúas propias en el centro de la cubierta  para realizar sus 
+maniobras de carga y descarga de forma autónoma. 
+En cambio, los petroleros operan mediante un sistema de tuberías, válvulas 
+y mangueras que se conectan a una zona central llamada manifold. 
+Naturaleza del transporte:  Mientras que el petrolero es un buque 
+especializado únicamente en fluidos hidrocarburíferos, el de carga 
+convencional es versátil y puede adaptarse para transportar carga seca, bultos 
+de grandes dimensiones, sobrepeso e incluso contenedore s o carga 
+refrigerada en compartimentos específicos. 
+ 
+ 
+10) Principio de ergonomía. 
+Se deben las limitaciones y capacidades del personal al momento de diseñar y 
+planificar las actividades. 
+Puntos clave: 
+➢ El equipamiento elegido debe Minimizar el trabajo manual. 
+
+--- PAGE 25 ---
+25 
+ 
+➢ El equipamiento debe ser seguro para el operador. 
+➢ Este principio involucra tanto el esfuerzo físico como mental del 
+trabajador. 
+11) Factores críticos para la localización en planta. 
+Disponibilidad de Materia Prima, subcomponentes y envases.   
+Zonas de Consumo y/o Mercados.   
+Suministro de Energía y Combustibles.   
+Disponibilidad zonal de la Mano de Obra. 
+Ubicación geográfica: clima. 
+Infraestructura existente: servicios públicos. 
+Beneficios: impositivos. 
+Legislación y normas vigentes en el sitio.   
+ 
+12) Ruedas omnidireccionales. 
+La rueda está compuesta por dos llantas y rodillos que están montados en un 
+ángulo de 45 grados. Las ruedas se mueven con total independencia unas de  
+otras, de forma que el vehículo no solo puede desplazarse hacia delante y hacia 
+atrás, sino que también puede moverse en diagonal y en círculos. La rueda 
+completa se acciona mediante un motor eléctrico. 
+Ventajas: 
+Tecnología reducida y posibilidades de movimiento casi ilimitadas: Ahorran 
+espacio para la logística y ofrecen más espacio para la producción. Están 
+menos limitadas que las soluciones de movilidad convencionales y se adaptan 
+sin dificultades a la producción existente. 
+
+--- PAGE 26 ---
+26 
+ 
+Menores costes de construcción y conservación:  Para el uso de la rueda 
+omnidireccionales, no es necesario procesar el suelo y, además, este no se 
+deteriora de ninguna forma. 
+Gran precisión : La tecnología de accionamientos permite alcanzar una 
+precisión de +/-5mm. 
+Montaje y desmontaje rápidos : Es posible sustituir los rodillos individuales 
+directamente en el vehículo, sin desmontar la rueda completa. 
+ 
+13) Sistema de gestión, definir stock pull.  
+El sistema de gestión Pull es un método de producción y abastecimiento que se 
+basa en la demanda real del mercado, en contraposición al sistema Push, que 
+produce basándose en pronósticos de ventas. 
+Activación por Demanda: En este sistema, la producción se inicia únicamente 
+cuando se ha generado la venta efectiva del producto. 
+Lean Logistic:  Se focaliza en identificar y reducir los costos de todos los 
+procesos que no generan valor agregado dentro de la cadena. 
+Just in Time (JIT): busca que los materiales lleguen a las líneas de producción o 
+al cliente en el momento preciso en que se necesitan. 
+Aplicación: Es el método de elección para productos de elevado costo o que 
+son muy personalizados. 
+Gestión y Estado del Stock 
+Reducción de Necesidades de Almacenamiento:  Al producir solo lo que ya 
+está vendido. 
+Niveles Mínimos de Inventario: El objetivo es mantener los niveles de stock en 
+el mínimo compatible con los requerimientos de producción, evitando el capital 
+inmovilizado. 
+Flujo Sincronizado: Requiere que el flujo lógico (información) y el flujo físico 
+del material estén integrados en tiempo real a través de sistemas informáticos 
+(como ERP o SGA), para que la reposición sea inmediata ante cada consumo. 
+
+--- PAGE 27 ---
+27 
+ 
+Exigencia de Integración:  requiere una cadena de suministros altamente 
+eficiente e integrada con los proveedores. 
+Uso de Herramientas de Control: Se suelen utilizar métodos como Kanban. 
+14) Escurrimiento definición. 
+Es una característica de los materiales a granel que indica la mayor o menor 
+capacidad de fluir, acomodándose en la superficie de un equipo por el cual es 
+transportado. 
+Se clasifican como: Muy fácil, fácil, medio y difícil. 
+15) Parámetros para definir zona de recepción. 
+ 
+Julio 2025 (Grimolizzi) 
+1) Macro y micro localización. ¿Dónde se contemplan cada uno de ellos y en qué 
+orden se realizan?  
+Macro localización  en esta fase se busca determinar la región, país o zona 
+geográfica para el proyecto. Se analizan factores de orden general que afectan 
+la viabilidad a gran escala. 
+Se contemplan las variables: 
+• Proximidad a los mercados de consumo. 
+• Fuentes de materia prima. 
+• La disponibilidad de mano de obra. 
+• Las políticas y seguridad jurídica a nivel nacional. 
+
+--- PAGE 28 ---
+28 
+ 
+• La infraestructura de transporte y energía. 
+• Las condiciones climáticas regionales. 
+Micro localización 
+Una vez definida la macrozona, esta etapa se enfoca en el predio o parcela 
+específica donde se instalará la actividad. Define el municipio, barrio y, 
+finalmente, el terreno físico exacto. 
+Factores considerados: 
+• Zonificación municipal y Uso del suelo. 
+• Código de Edificación. 
+• Infraestructura específica: Disponibilidad y costos de conexión a redes 
+de agua potable, cloacas, desagües industriales y potencia eléctrica en 
+el punto exacto. 
+• Impacto Ambiental: Requisitos locales para la obtención del certificado 
+de aptitud ambiental. 
+• Logística local:  Acceso a redes de tránsito pesado y cercanía a vías 
+principales dentro del municipio. 
+2) Nombrar los 3 grandes grupos de almacenamiento. ¿Cuáles son? Ejemplos de 
+cada uno. 
+1. Por tiempo de permanencia: cross docking. 
+2. En bloque: sobre piso o bloque de estanterías. 
+3. De acceso directo: de base fija, base móvil, para pequeñas piezas. 
+3) Formula de Spitzer, Hettinger y Guelaud para esfuerzos por manejo manual de 
+cargas. 
+𝑀𝑇𝑇 = 𝐸𝑒 + 𝐸𝑑1 + 𝐸𝑑2 
+Ee = energía estática por posturas (principal y secundaria) 
+Ed1 = energía por carga de trabajo dinámico  
+Ed2 = energía por esfuerzos musculares (intensidad de trabajo) 
+4) La norma NIMF 15 define 2 métodos para el tratamiento de embalajes de 
+madera. Indique cuales son y haga una breve descripción de cada uno de ellos. 
+Tratamiento térmico: consiste en calentar la madera hasta una temperatura 
+mínima de  56°C durante 30 minutos  en el centro del material . Se realiza en 
+cámaras especiales de secado o estufado. 
+Fumigación con bromuro de metileno: consiste en exponer la madera al gas de 
+bromuro de metileno durante 16 horas, con parámetros específicos de 
+concentración y temperatura. La temperatura no debe ser menor a 10°C. 
+5) Explicar estanterías Push Back. 
+Es un sistema de almacenamiento en bloque de estanterías, trabaja con 
+sistema LIFO. Los canales de las estanterías poseen una inclinación  con un 
+--- PAGE 29 ---
+29 
+ 
+dispositivo por carro o rodillos que le permite desplazar los pallets hacia atrás 
+cuando ingresa uno nuevo o desplazar los pallets hacia adelante cuando se 
+retira uno. 
+Permite referencias por canal,  es ideal para productos con rotación media a 
+baja y se pueden utilizar auto elevadores para el manejo. 
+6) Explicar los modelos para la localización de plantas. 
+Modelo de ponderación de factores:  consiste en determinar cuales son los 
+factores críticos del proyecto y asignarles un costo y ponderación. 
+Modelo costo volumen: analiza los costos por locación. 
+Modelo de incertidumbre : analiza escenarios (optimista, pesimista, de igual 
+probabilidad). 
+Modelo de riesgo: analiza las variaciones de la demanda. 
+7) Nombrar los contaminantes orgánicos e inorgánicos de las aguas 
+residuales. 
+Orgánicos: aceites, grasas, detergentes y pesticidas. 
+Inorgánicos: acidez, alcalinidad, temperatura y solidos totales (en suspensión, 
+sediméntales, volátiles en suspensión). 
+ 
+8) Definir y explicar la fuerza de sustentación y cada término del colchón de aire. 
+Fuerza de sustentación: es la fuerza que permite mantener en suspensión una 
+carga por medio de la inyección de aire comprimido en una campana gracias al 
+llamado efecto suelo. La fuga de aire se produce a lo largo del perímetro de la 
+campana provoca la formación de un colchón cuya presión es intermedia entre 
+la presión de entrada y la presión de salida a la atmosfera. 
+𝐹 = 𝑝 ∗ 𝑆 
+F = fuerza de sustentación. 
+P = presión efectiva. 
+S = superficie del colchón. 
+𝑆𝑒𝑐𝑐𝑖𝑜𝑛 𝑑𝑒 𝑓𝑢𝑔𝑎 = ℎ ∗ 𝑙 
+H = distancia entre el suelo y la superficie inferior del colchón. 
+
+--- PAGE 30 ---
+30 
+ 
+L = perímetro del colchón. 
+9) Explicar el factor de relleno de un cable de acero. 
+Factor de relleno: indica cual es el % de la sección transversal del cable de 
+acero que está formado por metal con respecto al círculo que lo contiene. Este 
+porcentaje varia entre un 46% y un 80%. Para cables de acero que poseen un 
+alma de fibra este factor será menor con respecto a aquellos que poseen un 
+alma de cordón de acero. 
+ 
+10) Explicar las zonas de carga y descarga de camiones. 
+Integradas al almacén: están directamente conectadas al edificio del almacén 
+mediante un muelle de carga y descarga, donde el camión estaciona para la 
+operación directamente adjunto a una puerta del almacén, o a una plataforma 
+intermedia a la puerta del almacén. 
+Del tipo independiente:  la operación se realiza en una playa adyacente al 
+almacén. Dado que el procedimiento de atraque de los camiones es más 
+simple el tiempo total de carga y descarga de este tipo de distribución será 
+menor que en el caso de las zonas integradas, pero como contr apartida habrá 
+mayor flujo de productos hacia el almacén. 
+11) Explicar la semi matriz de relación de actividades (cuales pueden estar juntos, 
+cuales si o si y cuales no). 
+Es una metodología para calificar y valorar las relaciones de actividades y tareas 
+en forma gráfica mediante una semi matriz de nominada Gráfica de Relación 
+donde se registran las relaciones que guardan ent re ellas y el grado de 
+necesidad de cercanía. 
+¿Cuáles deben estar juntos?  Los calificados con A y E. En el diagrama de 
+relaciones, estos se representarán con mayor cantidad de líneas de unión (4 
+para A, 3 para E). 
+¿Cuáles pueden estar juntos? Los calificados con I y O. 
+
+--- PAGE 31 ---
+31 
+ 
+¿Cuáles no pueden estar juntos?  Los calificados con X. Estos suelen 
+representarse con una línea quebrada o de color rojo para indicar restricción. 
+12) Nombrar características y funcionamiento del transporte a rodillo por piso. 
+Existen 2 tipos de transporte a rodillo por piso: 
+Accionamiento por Cadena: Los rodillos cuentan con ruedas dentadas en un 
+extremo. Una cadena continua transmite el movimiento de un rodillo a otro 
+("rollo a rollo"), permitiendo mover cargas pesadas que no se podrían trasladar 
+en transportadores convencionales. 
+Rodillo con Motor Integrado:  Se utilizan rodillos que contienen el motor y 
+reductor internamente. Este sistema se divide en "zonas" (de 450 mm a 760 
+mm), donde uno o más rodillos motorizados impulsan a los rodillos esclavos de 
+esa sección. 
+13) Cuanto puede variar el ángulo de materiales a granel en reposo, variaciones en 
+ángulos y defina 3 características que producen estas variaciones. 
+El ángulo puede variar 15°, esta variación puede darse por: 
+• Tamaño de la partícula. 
+• Esfericidad de la partícula. 
+• Rugosidad de la partícula. 
+• Humedad de la pila. 
+• Homogeneidad de la pila. 
+14) Definir y diferenciar esfuerzos dinámicos y esfuerzos estáticos. 
+Trabajo muscular estático:  cuando la contracción de los músculos es 
+continua y se mantiene durante un cierto periodo de tiempo. Ejemplo: sostener 
+un balde cargado con un solo brazo, empujar algún elemento contra una pared. 
+Trabajo muscular dinámico: produce una sucesión periódica de tensiones y 
+relajamientos de los músculos activos, todos ellos de corta duración. Ejemplo: 
+hachar un tronco, tocar el piano. 
+15) Explicar y clasificar las estaciones superiores de las cintas transportadoras. 
+Normal: se encuentra luego de la estación de descarga hasta el tambor de 
+accionamiento. El espaciamiento d epende del ancho de la banda 
+transportadora y del peso específico del material. 
+Impacto: se encuentra en la zona de carga, los rodillos están recubiertos por 
+caucho para poder amortiguar la caída del material. Están espaciados entre 250 
+mm y 80 mm. 
+Autocentrante: cuenta con un dispositivo que impide que la banda se alabee. 
+Se utiliza para longitudes de cintas mayores a 50 metros.  Se alternan entre las 
+estaciones normales. 
+--- PAGE 32 ---
+32 
+ 
+ 
+Final 9/2/2026 
+1) Rosca transportadora para granos. Pe=8kg/m3; Angulo de reposo 28°; Angulo de 
+reacondicionamiento dinámico 19°.  Indicar tipo de cuna para posición 
+horizontal y vertical. 
+Posición Horizontal: Se utiliza una carcasa tipo "Canal U" 
+Este diseño es el estándar para transportadores horizontales, permitiendo el 
+acceso para limpieza y mantenimiento, y es donde estos equipos logran su 
+mayor eficiencia operativa. 
+Posición Vertical: Se debe utilizar obligatoriamente una carcasa de tipo 
+"Tubular" 
+Según las fuentes técnicas, cuando la inclinación supera los 20° o 30°, y 
+especialmente para el transporte vertical (90°), el diseño tubular es el sistema 
+eficiente para elevar materiales a granel. 
+2) Laminado en caliente y en frio, ventajas, ¿Cómo es la resistencia mecánica de 
+cada uno? 
+Comparativa de Resistencia Mecánica 
+Característica Laminado en caliente Laminado en frio 
+Temperatura Superior a la de 
+recristalización 926°C. 
+Inferior a la 
+recristalización. 
+Comportamiento Alta resistencia 
+estructural, resistencia a 
+la flexión y tracción. 
+Mayor dureza y 
+resistencia ganada por 
+deformación (20%). 
+Uso principal Cerramientos, guías, 
+canales y soportes. 
+Estructuras livianas y 
+precisión dimensional. 
+En resumen, mientras que el laminado en caliente es la base para la estructura 
+pesada de una nave industrial, el laminado en frío se prefiere para elementos 
+donde se busca precisión, mejor acabado y optimización de peso en cargas 
+menores. 
+3) Riesgo sistémico y no sistémico. 
+Riesgo sistémico: factores externos a la organización  sobre los cuales la 
+empresa no puede ejercer una influencia directa . Ejemplo: inflación, ciclos 
+macroeconómicos, clima. 
+
+--- PAGE 33 ---
+33 
+ 
+Riesgo no sistémico: es aquel que deriva de la propia actividad de la 
+compañía y de su interrelación con los eslabones de su cadena. Al ser interno 
+al proceso de negocio, la dirección puede y debe gestionar acciones para su 
+mitigación. Ejemplos: falta de sincronización entre el suministro y la demanda, 
+niveles y rotación de inventarios inadecuados, demoras en los plazos de entrega 
+(Lead Time). 
+4) Pallet shuttle. 
+Es un sistema de almacenamiento en bloque que puede trabajar por sistema 
+LIFO o FIFO. Consiste en un carro motorizado accionado por un motor eléctrico 
+que se mueve de forma autónoma entre los canales de las estanterías (perfiles 
+tipo L), el mismo cuenta con un sistema para elevar la carga y de sprenderla de 
+la guía de apoyo de la estantería.  
+• Capacidad de carga: hasta 1500kg.  
+• Velocidad: 40 m/min con carga y hasta 95 m/min en vacío 
+• Las estanterías puede n tener una longitud de hasta 40 metros de 
+profundidad.  
+• Control Remoto: el operario comanda el carro mediante un dispositivo 
+remoto con conexión Wi-Fi. 
+• Uso ideal en cámaras frigoríficas. 
+5) Método CRAFT: 2 parámetros para calcular el costo. 
+Flujo: representa la cantidad de materiales que se trasladan desde un 
+departamento i hacia un departamento j. 
+Estos datos se extraen habitualmente de una Tabla "Desde -Hacia" (From -To 
+Chart). 
+Distancia: distancia entre los departamentos involucrados. CRAFT calcula la 
+distancia rectilínea entre los centroides (puntos centrales) de cada área. 
+6) Definición de ángulo de inclinación máximo. 
+Es el ángulo de inclinación máximo recomendable en una cinta transportadora 
+para que el granel que es transportado no se desplace en sentido contrario al 
+buscado, lo que generara una pérdida de eficiencia o merma en el transporte . 
+Este ángulo varía según el granel a transportar, por lo general se encuentra entre 
+los 18° y 25°. 
+7) Manifiesto de residuos peligrosos. 
+El Manifiesto de Residuos Peligrosos es el instrumento legal y documento 
+fundamental para asegurar la trazabilidad de los residuos peligrosos (RP) desde 
+su generación hasta su disposición final. Su función principal es documentar la 
+naturaleza, cantidad, origen y el recorrido del residuo. 
+Ningún transporte de residuos peligrosos puede realizarse legalmente sin 
+este documento. 
+8) Indicar 2 parámetros para la selección del ángulo en un sistema de eslingas de 
+2 ramas. 
+Distancia entre los puntos de anclaje (enganche) de la carga: La separación 
+física entre los puntos donde se vinculan las eslingas a la carga determina 
+directamente qué tan abiertas quedarán las ramas. 
+--- PAGE 34 ---
+34 
+ 
+Longitud de los ramales de la eslinga:  Una eslinga con ramales más largos 
+permite trabajar con un ángulo menor respecto a la vertical (más cerrado), 
+mientras que ramales cortos obligan a un ángulo mayor (más abierto) para la 
+misma distancia entre anclajes. 
+La carga para levantar: cuanto mayor sea el peso, más crítico es seleccionar 
+un ángulo que no aumente excesivamente la tensión en cada rama de la eslinga. 
+9) Proceso de retractilado. 
+Es un proceso de fijación y estabilización de la Unidad de Carga Logística 
+(UCL) que consiste en envolver los elementos colocados sobre el pallet 
+mediante un film plástico para conformar un bloque sólido y seguro. 
+Actúa como barrera contra agentes externos como el agua, la humedad y, según 
+el tipo de film, contra los rayos UV. 
+Manual: Un operario utiliza un porta -rollo y aplica tensión manualmente 
+mientras rodea la carga. 
+Automático: Los equipos permiten programar la tensión del film, el número de 
+capas y la altura de envoltura. 
+Posee dos variantes: 
+• Carga fija: Un brazo con el rollo de film gira alrededor del pallet. Es el 
+sistema recomendado para unidades de carga muy pesadas. 
+• Mesa giratoria: La UCL se apoya sobre una plataforma que rota mientras 
+el brazo porta-rollo permanece en una posición fija. 
+10) Indicar y explicar 3 formas de uso de pallets según su ciclo de vida. 
+Descartables: están diseñados para ser desechados después de completar su 
+primer y único trayecto logístico. Son de 1 solo viaje. 
+Retornables: son aquellos destinados a cumplir múltiples ciclos de uso. 
+Intercambiables: Son pallets que, sobre la base de un acuerdo previo, pueden 
+ser reemplazados por otros de similares características en el momento de la 
+entrega o recepción de mercadería.  
+De consorcio: se definen como pallets intercambiables en un circuito abierto. 
+Su característica distintiva es que no existe un control de compensación entre 
+los pallets que se despachan y los que se reciben. 
+11) ¿Qué se tiene en cuenta para el calculo del costo de ciclo de vida? 
+De acuerdo con el Principio de Ciclo de Vida, un análisis técnico -económico 
+para la selección de equipos de manejo de materiales no debe limitarse al 
+precio de compra, sino que debe contemplar la totalidad de las erogaciones 
+desde la adquisición hasta su disposición final. 
+• Precio de compra. 
+• Costo de instalación. 
+• Costo de entrenamiento. 
+• Costo de puesta en marcha. 
+• Costo de operación (mano de obra, mantenimiento, combustible). 
+• Costo de desinstalación. 
+--- PAGE 35 ---
+35 
+ 
+12) Indicar los 5 parámetros para el cálculo de la capacidad de carga de una cinta 
+transportadora. 
+✓ Ancho de la banda. 
+✓ Peso específico. 
+✓ Velocidad de transporte. 
+✓ Inclinación del equipo. 
+✓ Disposición de la cuna de desplazamiento. 
+13) Tipos de proveedores. 
+Críticos: Se caracterizan porque la demanda suele ser mayor que la oferta y el 
+volumen de compra es bajo. La seguridad del suministro es un tema clave. 
+Requieren reuniones regulares, acuerdos de largo plazo. 
+No críticos: son aquellos que suministran materiales de bajo riesgo y bajo costo 
+con especificaciones estándar. La estrategia con ellos es transaccional y 
+automatizada. 
+Ventajosos: suministran productos estandarizados que se adquieren en 
+grandes cantidades, donde el riesgo de falta de suministro es de bajo a 
+moderado. 
+Estratégicos: Son los que aportan el mayor valor y representan la mayor parte 
+del costo del producto final. Se establecen alianzas o sociedades a largo plazo, 
+ya que su falta de suministro impactaría seriamente la producción. 
+14) Método SPL metodología a aplicar para la toma de decisión y desarrollo de 
+etapas. 
+Metodología para la Toma de Decisión 
+1- Planteamiento claro:  Definición precisa de todas las actividades y 
+sectores involucrados. 
+2- Recolección de datos:  Obtención de información objetiva (medible) y 
+datos subjetivos relevantes para el caso. 
+3- Análisis objetivo:  Procesamiento de la información recolectada para 
+fundamentar la toma de decisión. 
+4- Validación y aprobación:  Revisión de las alternativas elaboradas y 
+selección de la más adecuada. 
+5- Input: Los resultados de una fase sirven como entrada obligatoria para 
+la siguiente. 
+Desarrollo de las 4 Fases Principales 
+1- Fase I - Localización (Ubicación):  Se debe decidir la ubicación 
+geográfica de la planta. Esta fase debe integrarse con el proyecto general 
+y su decisión final suele aprobarse una vez que se tiene una idea de la 
+distribución de conjunto. 
+2- Fase II - Plan General de Distribución (Distribución de Conjunto):  Se 
+establece el patrón básico de flujo de materiales y se indica el tamaño y 
+configuración de las áreas de trabajo. El resultado es un plano o 
+bosquejo a escala de la futura planta. 
+--- PAGE 36 ---
+36 
+ 
+3- Fase III - Plan de Distribución Detallada:  Se planifica la ubicación 
+específica de cada maquinaria, equipo, puestos de trabajo, pasillos y 
+servicios auxiliares dentro de cada área definida en la Fase II. 
+4- Fase IV - Instalación: Consiste en planificar y ejecutar la materialización 
+física del proyecto. En esta etapa se realizan los ajustes finales según las 
+contingencias que puedan presentarse durante dicha instalación. 
+15) Factor máquina. 
+ 
+Final mayo 2025 (Grimolizzi) 
+1) Para el caso del diseño de una rosca transportadora para transportar granel con 
+las características de Pe=8 kg/cm3, ángulo de reposo 28° y ángulo de 
+reacomodamiento dinámico 19°. Se pide identificar que tipo de diseño de cuna 
+utilizaría en los siguientes casos de operación. Para usar en equipo en posición 
+vertical y para posición horizontal. 
+Posición Horizontal: se utiliza una carcasa de tipo "Canal U" . Este diseño es el 
+estándar para el transporte horizontal, permitiendo una operación eficiente y 
+facilidad de acceso para mantenimiento. 
+Posición Vertical:  Se debe utilizar obligatoriamente una carcasa de tipo 
+"Tubular" . Según las fuentes, para pendientes superiores a los (20°-30°), y 
+específicamente para el transporte vertical (90°), el diseño tubular es el sistema 
+eficiente para elevar graneles, ya que confina el material y evita el retroceso, a 
+pesar de la pérdida de eficiencia inherente a la gravedad. 
+ 
+2) Diferencia entre código de urbanización y código de edificación. ¿Cuál tiene 
+mayor jerarquía? 
+El Código Urbanístico se ocupa de qué se puede hacer y cuánto se puede 
+construir en un determinado sitio, el Código de Edificación regula cómo debe 
+ejecutarse técnica y constructivamente dicha obra. 
+
+--- PAGE 37 ---
+37 
+ 
+Diferencias Principales 
+Código Urbanístico (Ley 6099/2018): 
+Su función es ordenar el tejido urbano, los usos del suelo y las cargas públicas. 
+• Regula aspectos como la delimitación de distritos, el parcelamiento, los 
+indicadores de ocupación (FOS y FOT), las alturas máximas permitidas y 
+el sistema de movilidad. 
+• Determina si una actividad (industrial, comercial, residencial) es 
+"conforme" o apta para ser desarrollada en una parcela específica. 
+Código de Edificación (Ley 6100/2018): 
+Establece los requisitos y procedimientos para las etapas de proyecto, 
+ejecución, fiscalización y conservación de una obra. 
+• Define los estándares técnicos de construcción, habitabilidad, 
+seguridad, accesibilidad y sustentabilidad. 
+• Regula detalles como la calidad de los materiales, los medios de salida, 
+las condiciones de iluminación y ventilación de los locales, y las 
+medidas de seguridad en el trabajo. 
+Jerarquía y Prevalencia 
+El Código Urbanístico tiene una mayor jerarquía normativa respecto al Código 
+de Edificación. 
+De acuerdo con la legislación vigente, las disposiciones del Código de 
+Edificación (así como las de Habilitaciones, Tránsito y Transporte) quedan 
+subordinadas al Código Urbanístico 
+3) Perfiles laminados en caliente y frio. Diferencia entre métodos constructivos y 
+resistencia mecánica. 
+Comparativa de Resistencia Mecánica 
+Característica Laminado en caliente Laminado en frio 
+Temperatura Superior a la de 
+recristalización 926°C. 
+Inferior a la 
+recristalización. 
+Comportamiento Alta resistencia 
+estructural, resistencia 
+a la flexión y tracción. 
+Mayor dureza y 
+resistencia ganada por 
+deformación (20%). 
+Uso principal Cerramientos, guías, 
+canales y soportes. 
+Estructuras livianas y 
+precisión dimensional. 
+ 
+4) Cartel de peligro de incendio de camiones , ¿Qué representan las letras que 
+tiene atrás? ¿Qué características debe tener este cartel? 
+El cartel es de color naranja , altura 30 centímetros  y está dividido en 2 
+rectángulos, uno superior y otro inferior. 
+En el panel superior se indica  el tipo de riesgo (inflamabilidad, toxi cidad, 
+radiación, etc.). Altura 10 cm. 
+En el panel inferior se indica el residuo peligroso que se transporta por medio 
+de un código de 4 dígitos. Altura 10 cm. 
+--- PAGE 38 ---
+38 
+ 
+ 
+5) Pasillos de circulación. Como se identifican y estrechez o amplitud del pasillo 
+más allá de lo necesario trae inconvenientes. Indicar cuales son. 
+Departamentales: son aquellos que sirven para el flujo de personas o de 
+materiales físicos dentro de un departamento, son intradepartamentales. 
+Principales: son aquellos que sirven para el flujo de personas o de materiales 
+físicos entre departamentos.  
+Estrechez: p roblemas críticos de seguridad para el personal y riesgos de 
+colisión de equipos. Generan congestión y demoras en los flujos. 
+Muy anchos: desperdicio de espacio útil (fundamental según el principio del 
+espacio cúbico) y provocan un aumento innecesario en los gastos de 
+mantenimiento y limpieza. 
+6) Tipos de riesgos en cadena de suministros. Definirlos y dar 2 ejemplos. 
+Riesgo Sistémico : es aquel riesgo determinado por factores externos a la 
+organización. Se caracteriza porque la empresa no puede ejercer una influencia 
+directa sobre su ocurrencia.  
+Ejemplos: 
+• Factores climáticos o atmosféricos: Fenómenos naturales que pueden 
+interrumpir el transporte. 
+• Incertidumbres sanitarias: Como la pandemia de Covid-19. 
+• Problemas macroeconómicos: Como la inflación o ciclos económicos 
+inestables. 
+Riesgo No Sistémico 
+Son aquellos riesgos que derivan de la propia actividad de la empresa . A 
+diferencia de los sistémicos, la organización puede gestionar acciones para su 
+mitigación y control mediante políticas internas y herramientas de 
+planificación. 
+Ejemplos: 
+• Sincronización de Suministro y Demanda. 
+• Plazos de Entrega (Lead Time). 
+• Niveles y Rotación de Inventarios. 
+7) Decir 3 ventajas y 3 desventajas de producción por producto. 
+Ventajas Desventajas 
+
+--- PAGE 39 ---
+39 
+ 
+Corto tiempo de fabricación unitario. Baja flexibilidad a los cambios de 
+producto. 
+Menor manejo de materiales. Se detiene un sector y se detiene 
+toda la línea de producción. 
+Menor MP , SE en proceso. Supervisión general. 
+MO menos calificado. 
+ 
+Ventajas 
+✓ Corto tiempo de producción unitario. 
+✓ Mano de obra menos calificada. 
+✓ Menor manejo de materiales. 
+✓ Menor MP , SE en proceso. 
+Desventajas 
+ Baja flexibilidad a los cambios de producto. 
+ Se detiene un sector y se detiene toda la línea de producción. 
+ Supervisión general. 
+ Alta inversión inicial en el equipo de manejo de materiales. 
+8) Diseño de almacenes. ¿Qué es el factor L en el espacio frente real camión y 
+como varia? 
+Factor L: es un factor que está en función del ángulo de atraque al muelle. se 
+utiliza para determinar el espacio libre necesario delante del muelle de carga y 
+descarga. Este espacio es fundamental para permitir que los camiones realicen 
+las maniobras de atraque de forma segura y eficiente. 
+ 
+Espacio Libre = Largo del camión × Factor L 
+ 
+Angulo de atraque Factor L 
+10° 0,75 
+30° 1,20 
+45° 1,50 
+90° 2,00 
+9) ¿Para hacer una planta de tratamiento de efluentes  en Zarate con vuelvo en el 
+rio Parana, que información necesito? 
+La información necesaria se divide en los siguientes ejes fundamentales: 
+Parámetros Técnicos de Diseño 
+Para dimensionar las instalaciones de tratamiento de aguas residuales, es 
+indispensable contar con: 
+➢ Caudales (Cantidades generadas). 
+➢ Caracterización del efluente (Calidad). 
+Marco Legal y Permisos de Vuelco 
+--- PAGE 40 ---
+40 
+ 
+Permisos para PBA: 
+a) Cloacal: Los otorga, según cada municipio, AySA, ACUMAR y/o autoridades 
+del gobierno provincial (ADA) y la Nación (INA). 
+b) Red pluvial: los otorga según cada municipio, ACUMAR y/o autoridades del 
+Gobierno Provincial (ADA) y la Nación (INA). Documentación Técnica del INA. 
+Localización y Gestión Ambiental 
+➢ Zonificación Municipal  (Código Urbanismo) : Se debe verificar en el 
+municipio de Zárate si el Uso del Suelo de la parcela elegida es 
+"conforme" para una planta de tratamiento. 
+➢ Evaluación de Impacto Ambiental (EIA): Al ser una actividad de alto 
+impacto potencial, es obligatorio tramitar el Certificado de Aptitud 
+Ambiental (CAA). 
+10) ¿Qué tipo de cadena no se puede usar en un sistema Power? 
+- 2” acero forjado. 
+- 3” acero forjado. 
+- Unibilt. 
+- Ninguna de anteriores. 
+11) Describí las características del sistema pallet shuttle. 
+- Carro motorizado accionado por un motor eléctrico que se desplaza por 
+los perfiles de la estantería. 
+- Posee un dispositivo para desprender el pallet del perfil de la estantería. 
+- Soporta hasta 1500kg. 
+- Puede llegar a tener una profundidad de hasta 40 metros. 
+- Permite sistema FIFO y LIFO. 
+- % de ocupación superior al 85%. 
+- Sistema de alta automatización. 
+12) Describí los sistemas de carga y descarga de hidrocarburos mar adentro. 
+Sistema de Monoboya  
+Consiste en una boya anclada al fondo marino que sirve como punto de 
+conexión entre el oleoducto terrestre y el buque. 
+El buque tanque se amarra a la boya únicamente por su proa. El casco de la 
+boya cuenta con una plataforma o mesa giratoria montada sobre rodamientos. 
+Esto permite que el buque y las mangueras giren libremente (360°) 
+reaccionando a la acción combinada del v iento, las olas y las corrientes 
+marinas, lo que reduce las tensiones en el sistema. 
+La transferencia de hidrocarburos se realiza a través de un sistema dual de 
+mangueras: 
+--- PAGE 41 ---
+41 
+ 
+➢ Mangueras Submarinas: Vinculan la parte inferior de la boya con el 
+oleoducto (PLEM) que proviene de la terminal en tierra. 
+➢ Mangueras Flotantes: Conectan la plataforma giratoria de la boya con el 
+manifold del buque tanque para el bombeo del producto. 
+Sistema de Multiboyas 
+Es un sistema de amarre convencional donde el buque se mantiene en una 
+posición fija mediante un conjunto de varias boyas. 
+El sistema utiliza múltiples anclas principales, cadenas de fondeo y boyas de 
+amarre distribuidas alrededor del buque. 
+A diferencia de la monoboya, el buque queda en una posición estática mediante 
+cabos de amarre conectados a los grilletes de las boyas. 
+El producto se transfiere mediante líneas submarinas y mangueras que se 
+levantan desde el fondo del mar para conectarse a los costados del buque. 
+En el sistema multiboya las boyas tienen la función exclusiva de amarre. 
+13) Describí porque se da las interferencias en sistema Power y en qué punto del 
+diseño se debe pensar para evitarlas. 
+Las interferencias se producen debido al volumen y dimensiones de la carga 
+transportada en relación con la trayectoria del riel. 
+➢ En curvas horizontales:  Al girar, si las piezas son muy anchas o están 
+muy juntas, sus bordes pueden chocar entre sí. 
+➢ En curvas verticales: debido a la inclinación del riel, las piezas cambian 
+su posición relativa vertical. Si el espacio entre ellas no es suficiente, la 
+parte inferior de una carga puede tocar la parte superior o el soporte de 
+la carga siguiente 
+Se debe tener en cuenta en la etapa de diseño de layout del sistema. 
+14) Formula de Spitzer, Hettinger y Guelaud. 
+𝑀𝑇𝑇 = 𝐸𝑒 + 𝐸𝑑1 + 𝐸𝑑2 
+Ee = energía estática por posturas (principal y secundaria) 
+Ed1 = energía por carga de trabajo dinámico  
+Ed2 = energía por esfuerzos musculares (intensidad de trabajo) 
+Final abril 2025 (Fernandez) 
+1) Indicar, para un pallet del tipo ARLOG, lo siguiente a) ¿Cuál es el valor máximo 
+de apilamiento a la que se los puede someter?; b) Para que condición de carga 
+se admite dicho valor. 
+a) El valor máximo de carga al que se puede someter un pallet en condiciones 
+de apilamiento es de 4.000 kg. 
+--- PAGE 42 ---
+42 
+ 
+b) Se admite únicamente para la condición de Carga sólida . La carga sólida se 
+define como una unidad de carga compacta, rígida y homogénea, que se 
+encuentra apoyada por la totalidad de los tacos, tirantes y/o tablas del pallet. 
+ 
+2) Indicar, respecto al uso correspondiente , al menos 2 cosas relevantes que 
+diferencian a los caños de los tubos estructurales. 
+Por su uso:  los caños son elementos cilíndricos, huecos y herméticos 
+específicamente diseñados y normalizados para la conducción de fluidos  bajo 
+presión. Por el contrario, los caños o tubos estructurales no son utilizables para 
+la conducción de fluidos, ya que su aplicación se restringe a estructuras, 
+elementos de máquinas o equipos que no requieren transporte de sustancias 
+bajo presión. 
+Su identificación: los caños se identifican técnicamente mediante su Diámetro 
+Nominal y su Schedule . En cambio, los tubos se designan por su Diámetro 
+Exterior (D.E.) y su Espesor de Pared. 
+3) Indicar, para un Aire Comprimido, lo siguiente: a)  ¿Cuántas y cuáles son las 
+clases de calidad que definen las normas ISO para este tipo de fluido? b) ¿Cuál 
+es la norma en particular que lo hace? , c) ¿Cuál es la calidad que asegura la 
+inexistencia absoluta de aceite en el fluido líquido? 
+a) Son 11 clases de calidad de aire, siendo 0 al 9 numéricas y la ultima X que 
+son para concentraciones de impurezas mayores a la clase 9. 
+b) ISO 8573-1:2010. 
+c) La clase 0. 
+4) Indicar, respecto del término “Schedule” de una cañería, lo siguiente: a) ¿Qué 
+es? b) ¿Qué representa? c) ¿Cómo se calcula? 
+a) Numero adimensional que indica para un conjunto de caños la relación que 
+existe entre resistencia mecánica y presión interior.  
+b) Representa la relación entre la presión interior a la que estará sometido el 
+fluido y la resistencia mecánica (tensión admisible) del material con el que 
+está fabricado el caño. En la práctica, un número de Schedule mayor indica 
+
+--- PAGE 43 ---
+43 
+ 
+un espesor de pared más grueso para un mismo diámetro nominal, lo que 
+permite al caño soportar mayores presiones. 
+c) 𝑁° 𝑆𝐶𝐻 =
+𝑃𝑟𝑒𝑠𝑖𝑜𝑛 𝑖𝑛𝑡𝑒𝑟𝑖𝑜𝑟
+𝑇𝑒𝑛𝑠𝑖𝑜𝑛 𝑎𝑑𝑚𝑖𝑠𝑖𝑏𝑙𝑒 ∗ 1000 
+5) Indicar qué longitud máxima de Vigas de Repartición se puede lograr con 11 
+barras de IPN N°20 de 12 metros de longitud cada una, si se tienen en cuenta 
+las reglas del Buen Arte aplicables al caso. Justificar la respuesta.  
+Necesidad de Continuidad:  Las V .R.C. del primer y segundo nivel deben ser 
+continuas, lo cual se logra soldando las barras alineadas entre sí. 
+Método de Unión (Corte en "Z"): De acuerdo con las reglas del buen arte para 
+la unión soldada de perfiles de este tipo, se debe realizar un corte en "Z" para 
+garantizar la resistencia de la viga continua. 
+Longitud del Solape:  La geometría básica establecida para este encastre 
+define que la longitud del solape debe ser igual a 2h, siendo "h" la altura nominal 
+del perfil. 
+Dimensiones del Perfil: Para un perfil IPN N°20 (IPN 200), la altura "h" es de 200 
+mm (0,20 metros). 
+Cálculo del Descuento por Unión: 
+Solape por cada unión: 2×0,20 m=0,40 metros 
+Al tener 11 barras, se requieren 10 uniones para conformar una única viga 
+continua. 
+Pérdida total de longitud por solapes: 10 uniones×0,40 m/unidad=4,0 metros. 
+Resultado Final: 
+Longitud total bruta: 11 barras×12 metros=132 metros. 
+Longitud máxima efectiva: 132 m−4,0 m=128 metros. 
+ 
+6) Indicar conceptualmente qué es un transportador tipo Slat Conveyor y cuál es 
+su formato de instalación. 
+Los transportadores SLAT CONVEYORS son transportadores a tablillas. La 
+diferencia con los Flat Top es que no se encuentran rasantes del suelo, sino que 
+están elevados del mismo en versiones modulares o livianas, se instalan sobre 
+
+--- PAGE 44 ---
+44 
+ 
+estructuras de soporte elevadas y livianas. Estos modelos permiten rutas más 
+complejas en el espacio tridimensional y configuraciones flexibles. Se los utiliza 
+para el movimiento de partes o elementos en una producción continua.  
+Mientras la carga está siendo transportada, se puede ir trabajando a lo largo de 
+su recorrido.  
+Debido a su construcción compacta y flexible son muy utilizadas en industrias 
+tales como:  
+➢ Alimenticia  
+➢ Farmacéutica  
+➢ Ensamble y embalaje 
+7) Indicar, para una cañería de acero “Con Costura” bajo normas ASTM/ASME B36-
+10M, de 12” , 13” y 14” de Diámetro Nominal, lo siguiente: a) ¿Cuál es el 
+Diámetro exterior de cada una de ellas en mm?  b) Indicar los diámetros 
+exteriores en mm (se pide expresar conceptos, no datos de memoria) 
+➢ Para caños de 12” o menores, el Diámetro Nominal (DN o NPS) no 
+coincide exactamente con el diámetro exterior ni interior. Es un valor 
+nominal (una referencia estándar). 
+➢ A partir de 14” en adelante, el DN sí coincide con el diámetro exterior real 
+del caño en pulgadas. 
+➢ NPS 13” no está contemplado en la norma ASME B36.10M. 
+8) Indicar, para la metodología conocida como por sus siglas “SLP” (desarrollada 
+por Richard Muther) lo siguiente: a) ¿Qué procesos, cálculos o determinaciones 
+deben realizarse previo al desarrollo del llamado “Diagrama relacional de 
+espacios”? b) ¿Qué cuesti ones deben tenerse en cuenta, junto al diagrama 
+antes citado, para generar las alternativas de solución al lay-out buscado? 
+a) Previo al diagrama relacional de actividades: flujo de materiales y relación 
+de actividades. 
+Previo al diagrama relacional de espacios: espacio necesario, espacio 
+disponible. 
+Previo a generación de alternativas: factores influyentes y limitaciones 
+prácticas. 
+b) Una vez obtenido el diagrama relacional de espacios, no se pasa 
+directamente a la solución única, sino que se deben considerar los 
+siguientes elementos para generar diversas alternativas: 
+Factores Influyentes (Los 8 Factores de Muther): Se deben evaluar cómo 
+impactan en cada alternativa los elementos fundamentales de la 
+distribución: Material, Maquinaria, Trabajador, Movimiento, Espera 
+(almacenaje), Servicio, Edificio y Cambio (flexibilidad). 
+--- PAGE 45 ---
+45 
+ 
+9) Indicar qué tipo de equipo de impulsión/bombeo emplearía para casos de 
+desplazamiento de fluidos líquidos con un alto porcentaje de partículas sólidas 
+en suspensión. 
+Para el desplazamiento de fluidos líquidos con un alto porcentaje de partículas 
+sólidas en suspensión se recomienda emplear bombas de desplazamiento 
+positivo, ya que permiten transportar mezclas con elevada concentración de 
+sólidos, fluidos viscosos y abrasivos, manteniendo un caudal prácticamente 
+constante y reduciendo problemas de obstrucción o pérdida de rendimiento. 
+10) Indicar, para cadenas de acero forjado utilizadas en izaje de cargas, cuál es el 
+factor de seguridad mínimo exigido legalmente y cuál la norma nacional que lo 
+establece. 
+Factor de seguridad mínimo: No debe ser inferior a 5 para la carga máxima 
+admisible. 
+Decreto Nacional 351/79 (Reglamentario de la Ley 19.587 de Higiene y 
+Seguridad en el Trabajo). 
+11) Indicar: a) En qué caso en particular se utilizan los transportadores del tipo 
+Power & Free con tres carros 10, b) Indicar para qué se utiliza específicamente 
+cada uno de los tres citados carros. Dibuje el esquema correspondiente a la 
+respuesta. 
+Se utiliza cuando se requiere transportar cargas pesadas o voluminosas que no 
+pueden colgarse de un solo punto. Mejora la estabilidad del producto durante 
+el traslado o cuando se necesita mayor capacidad de carga que la que ofrecen 
+dos carros. 
+➢ Carro delantero: tracciona y guía el sistema en la dirección del 
+movimiento. 
+➢ Carro trasero: acompaña al carro delantero y distribuye la carga. 
+➢ Carro central: sostiene directamente la carga suspendida y la transmite 
+a los otros dos mediante una lanza distanciadora, mejorando el 
+equilibrio. 
+12) Indicar, a) Para la Provincia de Bs. As., ¿Qué tipo de Residuos exigen un manejo 
+respetando el marco regulatorio de orden nacional?; b) ¿Cuáles en CABA? 
+Radioactivos. 
+De operación de buques. 
+De operación de aeronaves. 
+--- PAGE 46 ---
+46 
+ 
+ 
+13) Indicar, para Codificación de graneles, cuántas características del tipo mixtas 
+y/o propiedades diversas permiten incluir “como máximo” las normas ANSI -
+CEMA 550. 
+No tiene límite. 
+14) La norma NIMF 15 define 2 métodos para el tratamiento de embalajes de 
+madera. Indique cuales son y haga una breve descripción de cada uno de ellos. 
+Tratamiento térmico: consiste en calentar la madera hasta una temperatura 
+mínima de 56°C durante 30 minutos en el centro del material. Se realiza en 
+cámaras especiales de secado o estufado. 
+Fumigación con bromuro de metileno:  consiste en exponer la madera al gas 
+de bromuro de metileno durante 16 horas, con parámetros específicos de 
+concentración y temperatura. La temperatura no debe ser menor a 10°C. 
+15) Indicar para el caso de hacer un vertido de efluentes líquidos en una planta 
+industrial ubicada en el norte de la Ciudad de Buenos Aires , lo siguiente: a)  
+¿Frente a que autoridad se debe tramitar el vuelco al sistema pluvial? b) ¿Frente 
+a que autoridad se debe tramitar el vuelco al sistema cloacal? 
+a) GCABA. 
+b) AySA. 
+Final 25/2/2025 (Grimolizzi) 
+1) Para el caso del diseño de una rosca transportadora para transportar granel con 
+las características de Pe=8 kg/cm3, ángulo de reposo 28° y ángulo de 
+reacomodamiento dinámico 19°. Se pide identificar qué tipo de diseño de cuña 
+utilizaría en los siguientes c asos de operación. A) para usar en equipo en 
+posición vertical b) en posición horizontal. 
+Posición Horizontal: Se utiliza una carcasa tipo "Canal U" 
+
+--- PAGE 47 ---
+47 
+ 
+Este diseño es el estándar para transportadores horizontales, permitiendo el 
+acceso para limpieza y mantenimiento, y es donde estos equipos logran su 
+mayor eficiencia operativa. 
+Posición Vertical: Se debe utilizar obligatoriamente una carcasa de tipo 
+"Tubular" 
+Cuando la inclinación supera los 20° o 30°, y especialmente para el transporte 
+vertical (90°), el diseño tubular es el sistema eficiente para elevar materiales a 
+granel. 
+2) ¿Qué métodos se utilizan para tratamiento de pallets y embalajes ? A) 
+tratamientos b) Que norma. 
+a) Tratamiento térmico:  consiste en calentar la madera hasta una 
+temperatura mínima de 56°C durante 30 minutos en el centro del material. 
+Se realiza en cámaras especiales de secado o estufado. 
+Fumigación con bromuro de metileno:  consiste en exponer la madera al 
+gas de bromuro de metileno durante 16 horas, con parámetros específicos 
+de concentración y temperatura. La temperatura no debe ser menor a 10°C. 
+b) La norma NIMF 15. 
+3) En el código de edificación CABA 6100, ¿Cuándo es obligatorio el diseño 
+sustentable? 
+Toda obra nueva o ampliación mayor a 1.000 m² debe cumplir las soluciones de  
+diseño que se establecen frente a la prevención de riesgos hídricos, prevención 
+de la isla de calor y restauración de biodiversidad. 
+4) Diferencia entre código de urbanización y código de edificación. ¿Cuál tiene 
+mayor jerarquía? 
+El Código Urbanístico se ocupa de qué se puede hacer y cuánto se puede 
+construir en un determinado sitio, el Código de Edificación regula cómo debe 
+ejecutarse técnica y constructivamente dicha obra. 
+Diferencias Principales 
+Código Urbanístico (Ley 6099/2018): 
+Su función es ordenar el tejido urbano, los usos del suelo y las cargas públicas. 
+• Regula aspectos como la delimitación de distritos, el parcelamiento, los 
+indicadores de ocupación (FOS y FOT), las alturas máximas permitidas y 
+el sistema de movilidad. 
+• Determina si una actividad (industrial, comercial, residencial) es 
+"conforme" o apta para ser desarrollada en una parcela específica. 
+Código de Edificación (Ley 6100/2018): 
+Establece los requisitos y procedimientos para las etapas de proyecto, 
+ejecución, fiscalización y conservación de una obra. 
+• Define los estándares técnicos de construcción, habitabilidad, 
+seguridad, accesibilidad y sustentabilidad. 
+--- PAGE 48 ---
+48 
+ 
+• Regula detalles como la calidad de los materiales, los medios de salida, 
+las condiciones de iluminación y ventilación de los locales, y las 
+medidas de seguridad en el trabajo. 
+Jerarquía y Prevalencia 
+El Código Urbanístico tiene una mayor jerarquía normativa respecto al Código 
+de Edificación. 
+De acuerdo con la legislación vigente, las disposiciones del Código de 
+Edificación (así como las de Habilitaciones, Tránsito y Transporte) quedan 
+subordinadas al Código Urbanístico 
+5) Perfiles laminados en caliente y frio. A) diferencia entre métodos constructivos 
+b) resistencia mecánica. 
+Característica Laminado en caliente Laminado en frio 
+Temperatura Superior a la de 
+recristalización 926°C. 
+Inferior a la 
+recristalización. 
+Comportamiento Alta resistencia 
+estructural, resistencia a 
+la flexión y tracción. 
+Mayor dureza y 
+resistencia ganada por 
+deformación (20%). 
+Uso principal Cerramientos, guías, 
+canales y soportes. 
+Estructuras livianas y 
+precisión dimensional. 
+6) Macro y micro localización. ¿Dónde se contemplan cada uno de ellos y en qué 
+orden se realizan?  
+Macro localización  en esta fase se busca determinar la región, país o zona 
+geográfica para el proyecto. Se analizan factores de orden general que afectan 
+la viabilidad a gran escala. 
+Se contemplan las variables: 
+• Proximidad a los mercados de consumo. 
+• Fuentes de materia prima. 
+• La disponibilidad de mano de obra. 
+• Las políticas y seguridad jurídica a nivel nacional. 
+• La infraestructura de transporte y energía. 
+• Las condiciones climáticas regionales. 
+Micro localización 
+Una vez definida la macrozona, esta etapa se enfoca en el predio o parcela 
+específica donde se instalará la actividad. Define el municipio, barrio y, 
+finalmente, el terreno físico exacto. 
+Factores considerados: 
+• Zonificación municipal y Uso del suelo. 
+• Código de Edificación. 
+--- PAGE 49 ---
+49 
+ 
+• Infraestructura específica: Disponibilidad y costos de conexión a redes 
+de agua potable, cloacas, desagües industriales y potencia eléctrica en 
+el punto exacto. 
+• Impacto Ambiental: Requisitos locales para la obtención del certificado 
+de aptitud ambiental. 
+• Logística local:  Acceso a redes de tránsito pesado y cercanía a vías 
+principales dentro del municipio. 
+7) Factor máquina. ¿Qué comprende? Nombrar 2 características. 
+Este factor comprende los siguientes elementos críticos para el proceso 
+productivo: 
+➢ Maquinaria de producción. 
+➢ Utillaje (herramental y plantillas necesarias para la operación). 
+➢ Equipos auxiliares que brindan soporte a la maquinaria principal. 
+Características: 
+➢ Determinación de Necesidades de Espacio: El factor máquina no solo 
+considera el volumen físico del equipo, sino que define el espacio total 
+requerido sumando el espacio para la operación (movimientos del 
+operario), el área necesaria para el mantenimiento de las máquinas y el 
+espacio destinado a los materiales entrantes y salientes de la estación 
+de trabajo. 
+➢ Optimización del Factor de Ocupación:  Una característica del diseño 
+eficiente bajo este factor es buscar un balance óptimo de utilización, 
+recomendándose que el factor de ocupación de las máquinas sea 
+superior al 80% para justificar su ubicación y los servicios asociados en 
+la planta. 
+8) Pasillos de circulación. Como se identifican y estrechez o amplitud del pasillo 
+más allá de lo necesario trae inconvenientes. Indicar cuales son. 
+Departamentales: son aquellos que sirven para el flujo de personas o de 
+materiales físicos dentro de un departamento, son intradepartamentales. 
+Principales: son aquellos que sirven para el flujo de personas o de materiales 
+físicos entre departamentos.  
+Estrechez: p roblemas críticos de seguridad para el personal y riesgos de 
+colisión de equipos. Generan congestión y demoras en los flujos. 
+Muy anchos: desperdicio de espacio útil (fundamental según el principio del 
+espacio cúbico) y provocan un aumento innecesario en los gastos de 
+mantenimiento y limpieza. 
+9) Riesgos sistémicos y no sistémicos. A) definirlos b) dar 2 ejemplos. 
+--- PAGE 50 ---
+50 
+ 
+Riesgo Sistémico: es aquel riesgo determinado por factores externos a la 
+organización. Se caracteriza porque la empresa no puede ejercer una influencia 
+directa sobre su ocurrencia.  
+Ejemplos: 
+• Factores climáticos o atmosféricos: Fenómenos naturales que pueden 
+interrumpir el transporte. 
+• Incertidumbres sanitarias: Como la pandemia de Covid-19. 
+• Problemas macroeconómicos: Como la inflación o ciclos económicos 
+inestables. 
+Riesgo No Sistémico 
+Son aquellos riesgos que derivan de la propia actividad de la empresa. A 
+diferencia de los sistémicos, la organización puede gestionar acciones para su 
+mitigación y control mediante políticas internas y herramientas de 
+planificación. 
+Ejemplos: 
+• Sincronización de Suministro y Demanda. 
+• Plazos de Entrega (Lead Time). 
+• Niveles y Rotación de Inventarios. 
+10) 3 grandes grupos de almacenamientos. Cuales son y ejemplos de cada uno. 
+1. Por tiempo de permanencia: cross docking. 
+2. En bloque: sobre piso o bloque de estanterías. 
+3. De acceso directo: de base fija, base móvil, para pequeñas piezas. 
+11) Diseño de almacenes. Tipos de zona de carga/descarga. Indicar características. 
+Integradas al almacén: están directamente conectadas al edificio del almacén 
+mediante un muelle de carga y descarga, donde el camión estaciona para la 
+operación directamente adjunto a una puerta del almacén, o a una plataforma 
+intermedia a la puerta del almacén. 
+Del tipo independiente:  la operación se realiza en una playa adyacente al 
+almacén. Dado que el procedimiento de atraque de los camiones es más 
+simple el tiempo total de carga y descarga de este tipo de distribución será 
+menor que en el caso de las zonas integradas, pero como con trapartida habrá 
+mayor flujo de productos hacia el almacén. 
+12) Gestión de residuos peligrosos. Como se definen en CABA, PBA y Nación. 
+Nación: Tipo C, aquellos que pueden causar daño a la salud o al ambiente. 
+Requiere inscripción en el Registro Nacional y control federal, especialmente si 
+cruzan jurisdicciones. 
+CABA: Residuos Peligrosos, regidos por la Ley 2.214, que adhiere a la Ley 24.051 
+y establece controles locales a través de la APRA. Todo generador en CABA debe 
+inscribirse y cumplir con disposiciones específicas. 
+--- PAGE 51 ---
+51 
+ 
+PBA: Residuos Especiales , Regidos por la Ley 11.720, que define residuos 
+peligrosos en línea con la ley nacional, pero tiene su propio régimen provincial 
+a cargo del OPDS. También requiere registro y control dentro de la provincia. 
+ 
+ 
+13) ¿Qué relación existe entre fuerza/potencia transmitida por el tambor y el ángulo 
+de abrace? 
+A mayor ángulo de abrace mayor será la potencia transmitida. 
+
+--- PAGE 52 ---
+52 
+ 
+ 
+14) Atmosfera normal de referencia definir. B) para que se aplica. 
+La Atmósfera Normal de Referencia (A.N.R.)  se define como un estado 
+normalizado del aire atmosférico, establecido para servir como base de 
+comparación y referencia técnica, dado que las características del aire 
+(presión, temperatura y humedad) varían en límites muy amplios según el 
+entorno. 
+De acuerdo con las normas ISO R554, las condiciones exactas que definen a la 
+A.N.R. son las siguientes: 
+➢ Temperatura: 20 °C. 
+➢ Presión: 1,013 bares. 
+➢ Humedad relativa: 65 %. 
+Salvo que se indique lo contrario, todo aparato que trabaje con aire comprimido 
+se explicita en función de las condiciones de la A.N.R. 
+Final 30/7/2025 (Grimolizzi) 
+1) Nombre del trámite y nombre del documento de impacto ambiental en CABA. 
+El trámite es la  Evaluación de impacto ambiental  (EIA). Este procedimiento 
+está determinado por la Ley N° 123 de CABA y tiene como fin identificar, 
+interpretar y prevenir los efectos que una actividad o proyecto pueda causar al 
+ambiente. 
+El documento que acredita formalmente el cumplimiento de la normativa de 
+EIA y la aprobación de la actividad es el Certificado de Aptitud Ambiental 
+
+--- PAGE 53 ---
+53 
+ 
+(CAA). Este documento es un requisito necesario para proceder a la habilitación 
+de industrias o la obtención de permisos de obra. 
+➢ Caba: AGENCIA DE PROTECCION AMBIENTAL (APRA). 
+➢ PBA: Ministerio de Ambiente para las actividades de 3ra categoría y Las 
+Autoridades Ambientales de cada Municipio para 1er y 2da categoría. 
+2) Factor k del método Brown Gibson. Qué define el K en la fórmula Brown-Gibson. 
+Factor K: índice de ponderación o de importancia relativa que se les asigna a 
+los factores objetivos frente a los factores subjetivos.  
+El valor de K varía entre 0 y 1. 
+ 
+3) Definir factor de localización de planta (son 4) 
+Factor de localización: variable que influye directamente en la localización de 
+una planta industrial y que puede ser medida, permitiendo ser utilizada en una 
+matriz de decisión. 
+Factor económico: costos de transportes, la disponibilidad de financiación, la 
+variabilidad de los costos operativos y el capital inicial requerido. 
+Factor demográfico: mercado consumidor, mano de obra. 
+Factor físico: disponibilidad de MP , energía, agua. 
+Factor político: normativas legales, impuestos, normativa de medio ambiente y 
+políticas de incentivos gubernamentales. 
+4) Tipos de distribución de carga del pallet . Sistemas de colocación de pallets 
+(concentrado, trabado, etc.) 
+La distribución de la carga sobre un pallet es fundamental para determinar su 
+capacidad máxima de trabajo y su estabilidad durante el transporte y 
+almacenamiento. 
+➢ Carga concentrada:  Es aquella que se aplica sobre una superficie 
+menor al 50% del piso superior del pallet. Debido a que el peso no se 
+reparte en toda la estructura, la carga máxima permitida suele ser menor 
+en comparación con otros métodos de estibado. 
+➢ Carga no trabada uniformemente distribuida: La carga se distribuye en 
+toda la superficie del piso superior del pallet, pero los bultos o cajas que 
+la componen no están trabados, unidos ni conectados entre sí. Es decir, 
+las cajas se apilan verticalmente en columnas coincidentes. 
+➢ Carga trabada uniformemente distribuida:  Se distribuye en toda la 
+superficie del piso superior, pero el patrón de carga varía de capa en capa 
+para conseguir un trabado o "encastre" entre las unidades de carga. Este 
+
+--- PAGE 54 ---
+54 
+ 
+sistema es el más recomendado para lograr estabilidad mecánica sin 
+depender exclusivamente de elementos de fijación externos. 
+➢ Carga sólida:  Se trata de una carga unitaria compacta, rígida y 
+homogénea que es soportada por todos los elementos del pallet (tacos, 
+tirantes y tablas) de manera uniforme. Es el tipo de carga que permite 
+alcanzar los valores más altos de capacidad de trabajo del pallet. 
+5) Tipos de terminales petrolíferas. 
+Terminales de Muelle: se ubican en la costa, generalmente dispuestas cerca 
+de refinerías y centros de distribución. Utilizan dos sistemas principales para la 
+transferencia del producto: 
+➢ Sistema de mangueras (Antiguo):  Utiliza mangueras provenientes de 
+tierra que se conectan al manifold (zona de válvulas) en la cubierta del 
+buque. La conexión suele ser asistida por la grúa de la propia 
+embarcación. 
+➢ Brazo articulado o Hardarm (Moderno): Consiste en una estructura de 
+tuberías articuladas que se conecta directamente al buque. Este 
+sistema no requiere grúas externas y tiene la capacidad de acomodarse 
+automáticamente a los cambios de francobordo de la nave (la variación 
+de altura según la carga). 
+Terminales de Mar Adentro (Offshore) : debido al gran calado y tamaño de 
+algunos buques modernos, la carga y descarga no puede realizarse en muelles 
+costeros, por lo que se efectúa en mar abierto mediante sistemas de boyas 
+vinculadas a oleoductos submarinos. 
+➢ Sistema de Monoboya o SPM (Single Point Mooring):  Es el sistema de 
+amarre de punto único donde el buque se amarra únicamente por su 
+proa. La boya posee una plataforma giratoria con rodamientos que 
+permite que el buque rote libremente según la acción del viento, las olas 
+y las corrientes mientras transfie re el hidrocarburo a través de 
+mangueras flotantes y submarinas. 
+➢ Sistema de Multiboyas:  Es una configuración de amarre que utiliza 
+varias boyas para fijar la posición del buque en un punto determinado 
+para la operación de transferencia. 
+6) Escurrimiento definición. 
+Escurrimiento: la mayor o menor capacidad que poseen los materiales a granel 
+de escurrir o fluir, acomodándose a la superficie y geometría del equipo (o 
+partes del mismo) en el que deben ser transportados o almacenados . Se 
+clasifica en: 
+- Muy alta: igual o menor a 19°. 
+--- PAGE 55 ---
+55 
+ 
+- Alta: entre 20° y 29°. 
+- Media: entre 30° y 39°. 
+- Baja: mayor o igual a 40°. 
+El escurrimiento puede verse afectado por factores como la cohesión de los 
+granos y las condiciones físicas de la partícula, tales como su tamaño, 
+rugosidad, esfericidad y humedad. 
+7) Defina los parámetros para determinar el Número Schedule. 
+P (Presión Interior):  Representa la presión de diseño o de servicio a la que 
+estará sometida la cañería. Se debe expresar en PSI (libras por pulgada 
+cuadrada). 
+S (Tensión Admisible del Material):  Es la tensión máxima permitida para el 
+material del caño a la temperatura de operación. También se expresa en PSI. 
+ 
+8) 2 determinaciones para pasar de Producto-Cantidad a Relación de actividades 
+en SLP (SLP previo a relación de actividades). 
+Previo al diagrama relacional de actividades: flujo de materiales y relación de 
+actividades. 
+9) ¿Qué funciones tiene un trolley? 
+▪ Sustentación de la carga:  Actúa como el elemento del cual se 
+suspende el dispositivo porta carga y la mercadería a transportar. 
+▪ Desplazamiento: Permite el movimiento de la unidad a lo largo del riel 
+guía (perfil de soporte) mediante ruedas. 
+▪ Transmisión de fuerza: En los sistemas tipo Power, actúa como el nexo 
+físico que recibe la fuerza de tiro de la cadena motorizada para trasladar 
+la carga. 
+▪ Gestión de flujo (en sistemas Power & Free): 
+o Arrastre: El carro delantero engancha la cadena mediante un 
+gatillo retráctil. 
+o Acumulación: El carro trasero permite que, al detenerse una 
+carga, el trolley de la unidad siguiente se desconecte de la cadena 
+automáticamente para evitar colisiones. 
+10) Funcionamiento de cada parte del hormigón pretensado. 
+
+--- PAGE 56 ---
+56 
+ 
+Armaduras de Acero (Cables o barras):  función como "Armadura Activa", a 
+diferencia del hormigón armado convencional (donde el acero es pasivo). 
+Hormigón (Concreto): brinda resistencia a la compresión. El hormigón es un 
+material con altísima resistencia a ser comprimido, pero muy baja resistencia a 
+la tracción. 
+Al estar previamente comprimido por las armaduras, el hormigón puede 
+soportar cargas externas mucho mayores sin llegar a trabajar a tracción. 
+Control de fisuras:  la compresión interna reduce el tamaño de las fisuras , lo 
+que aumenta la impermeabilidad de la estructura. 
+11) Elementos para determinar la zona de almacenaje del almacenamiento  
+(factores de zona de almacenaje del almacenamiento). 
+En el cálculo del espacio de la zona de almacenaje intervienen tres variables 
+base: 
+▪ Número y cantidad de referencias (SKU) a almacenar: Define cuántos 
+artículos distintos existen y qué volumen total ocupa cada uno. 
+▪ Política de inventarios:  Determina la permanencia del producto 
+(rotación), los stocks de seguridad necesarios y los sistemas de 
+abastecimiento (como JIT o Kanban), los cuales exigen espacios 
+adicionales o específicos. 
+▪ Tipos de unidades de carga:  Define si se opera con pallets, 
+contenedores, cajas o racks. Se recomienda, en la medida de lo posible, 
+estandarizar para utilizar el mínimo de unidades de carga diferentes. 
+Principios de diseño del Lay-out 
+▪ Mínima distancia recorrida. 
+▪ Principio del espacio cúbico:  Utilizar de modo efectivo tanto la 
+superficie horizontal como la altura vertical del edificio. 
+▪ Flexibilidad y expansión:  Prever áreas para futuras expansiones y 
+capacidad de adaptación a cambios en los productos. 
+12) Indique 3 características que influyen en el flujo de materiales y equipos. 
+Tamaño de lote y unidades de carga: La definición de las cantidades a mover 
+y cómo se agrupan (pallets, contenedores o piezas individuales) condiciona la 
+frecuencia del movimiento, el tiempo requerido y el tipo de equipo de manejo 
+necesario. 
+Equipos de producción y movimiento:  La selección de la maquinaria y los 
+sistemas de transporte (como transelevadores o transportadores de recorrido 
+fijo) determina la velocidad del flujo y la capacidad de respuesta del sistema. 
+--- PAGE 57 ---
+57 
+ 
+Disposición y configuración del edificio (Lay -out): La ubicación física de los 
+departamentos, los almacenes y la secuencia de las tareas definen las rutas de 
+circulación. Una disposición óptima busca la mínima distancia recorrida y evita 
+congestionamientos en los pasillos. 
+Adicionalmente, las fuentes señalan que mientras más cercana sea la 
+secuencia de tareas, más se optimiza el flujo, lo que resulta en una mayor 
+velocidad de circulación y una menor cantidad de materiales en proceso. 
+Además de estas, otras características críticas mencionadas incluyen 
+secuencia de las operaciones, el tipo de material (su peso, forma y volumen) y 
+la estrategia de manejo de materiales adoptada. 
+13) Nombrar 4 prerrequisitos de la norma LEED. 
+1. Contar con un líder en comissioning. 
+2. Prevención de la contaminación durante la construcción. 
+3. Reducción en el uso del agua. 
+4. Eficiencia energética mínima. 
+5. Manejo de refrigerantes. 
+6. Deposito y recolección de materiales reciclables. 
+7. Calidad de aire interior. 
+8. Control de humo de tabaco. 
+14) Explicar tipos de cohesión de granos y ejemplos. 
+No cohesivos: fluyen fácilmente a través de un orificio. Arena, granos y plástico. 
+Cohesivos: no fluyen fácilmente a través de un orificio. Arsillas húmedas. 
+15) Definir categorización ambiental. 
+La categorización ambiental se define como el conjunto de instrumentos 
+diseñados por el Estado que permiten determinar el Grado de Complejidad 
+Ambiental de un proyecto, obra o actividad  de acuerdo a estándares 
+ambientales establecidos en el marco legal de un sitio. 
+En la Provincia de Buenos Aires (PBA):  Las industrias se clasifican mediante 
+el Nivel de Complejidad Ambiental (NCA), un valor numérico resultante de una 
+fórmula polinómica NCA= Ru + ER + Ri +Di + Lo que las divide en tres categorías:  
+➢ 1ra Categoría: Hasta 15 puntos (Baja complejidad). 
+➢ 2da Categoría: Entre 15 y 25 puntos (Media complejidad). 
+➢ 3ra Categoría: Más de 25 puntos o establecimientos considerados 
+peligrosos por ley (Alta complejidad) 
+En la Ciudad Autónoma de Buenos Aires (CABA):  Se utilizan niveles basados 
+en el efecto ambiental.  
+➢ Con Relevante Efecto (CRE). 
+➢ Sujetos a Categorización (s/C). 
+--- PAGE 58 ---
+58 
+ 
+➢ Sin Relevante Efecto (SRE) 
+➢ Sin Relevante Efecto con condiciones. 
+➢ Con declaración jurada del profesional. 
+Final octubre 2025 (Grimolizzi) 
+1) Actividades previas a diagrama de relación de actividades. 
+Previo al diagrama relacional de actividades: flujo de materiales y relación de 
+actividades. 
+2) Nombrar pallets según su uso. 
+Descartables. 
+Retornables. 
+Intercambiables. 
+De consorcio.  
+3) Buques roll on/roll off. Características. 
+Los buques Roll on / Roll off (Ro -Ro) son embarcaciones diseñadas 
+específicamente para el transporte de mercancías sobre ruedas. Sus 
+principales características, de acuerdo con las fuentes, son las siguientes: 
+Mecanismo de Carga y Descarga 
+▪ Acceso rodado:  La carga y descarga se realiza mediante vehículos 
+tractores que circulan directamente hacia el interior o exterior del buque. 
+▪ Puertas y rampas: El acceso se realiza a través de grandes compuertas 
+alojadas en la popa o en la proa que, al abatirse, funcionan como rampas 
+de acceso. 
+▪ Infraestructura interna:  El interior cuenta con varias cubiertas 
+comunicadas entre sí mediante un sistema de rampas internas o 
+ascensores para distribuir los vehículos. 
+Tipos: 
+▪ Car-carriers: Especializados exclusivamente en el transporte de 
+automóviles; se identifican por su característica forma cuadrada. 
+▪ Ro-Ro tradicionales: Tienen la capacidad de transportar tanto trailers 
+como vehículos industriales. 
+▪ Mixtos: Son buques de transbordo rodado que también están diseñados 
+para el transporte de pasajeros. 
+--- PAGE 59 ---
+59 
+ 
+ 
+4) Buques químicos clasificación. 
+De tipo 1: Este primer tipo de buque transporta carga de alta peligrosidad, por 
+esta razón el buque tiene máximas medidas de prevención. 
+De tipo 2:  Al igual que buque anterior este también transporta mercancía 
+peligrosa, pero en menor severidad que la anterior. De todas formas, el buque 
+previene cualquier tipo de fuga. 
+De tipo 3:  Este es el tipo de buque con carga de menor peligrosidad, aunque 
+esto no quiere decir que la carga que transporta no sea peligrosa. 
+ 
+5) Ecuación de espesor de cañería Factor E , ¿Cuál es el valor que toma en los 2 
+tipos de soldadura? 
+
+--- PAGE 60 ---
+60 
+ 
+E: Eficiencia de junta, indica la calidad de la soldadura para los caños con 
+costura. 
+Para caños sin costura su valor es igual a 1. 
+Para caños con costura su valor es menor a 1. 
+6) Valor K en Brown Gibson. 
+Es un índice de ponderación que define la importancia relativa de los factores 
+objetivos frente a los factores subjetivos. 
+7) Condiciones para un almacenamiento optimo. 
+Para lograr un almacenaje eficiente, es fundamental clasificar los materiales y 
+productos de manera que se optimice el uso del espacio, se minimice el 
+manejo, se preserve la integridad de los productos y se maximice la seguridad. 
+Los sistemas de gestión de  almacenes (SGA) son herramientas clave para 
+alcanzar un almacenamiento óptimo. 
+▪ Optimizar espacios:  Implica definir en primera instancia si los 
+materiales se pueden almacenar con o sin cobertura. Por otro lado, se 
+recomienda evitar la subutilización de los espacios cúbicos, es decir, 
+colocar unidades de carga en lugares de un volumen mayor al necesario.  
+▪ Minimizar el manejo:  La distribución dentro del local de 
+almacenamiento deberá hacerse por el sistema Pareto ABC de rotación 
+de los productos y materiales. Otro tipo de distribución es agrupar los 
+materiales por similitud de uso o de venta, de manera de facilitar 
+también la preparación de pedidos.  
+▪ Preservar la integridad:  Los materiales perecederos deben tener 
+especial locación dentro del almacén por la identificación y facilidad de 
+acceso. El sistema de almacenamiento debe garantizar la seguridad 
+patrimonial de los productos, lo que implica que debe minimizar los 
+riesgos de pérdida y deterioro de estos. 
+▪ Maximizar la seguridad : Los materiales pesados y voluminosos 
+deberán tener fácil acceso de los equipos de manejo y la mano de obra, 
+permitiendo que las maniobras se realicen con la máxima seguridad. 
+8) Power vs Power & Free diferencias en perfiles, trolleys y cadena. 
+Perfiles: 
+▪ Power: sistema monorriel, compuesto por un perfil doble T. 
+▪ Power & Free: sistema Birriel, cada perfil compuesto por 2 perfiles U. 
+Trolleys:  
+▪ Power: solo posee un único tipo trolley simple fijado al perfil que tiene la 
+función de sostener el porta carga y el tiro de la cadena. 
+--- PAGE 61 ---
+61 
+ 
+▪ Power & Free: 2 trolleys 
+➢ Empujador o de arrastre: es el que sostiene la cadena principal. 
+➢ Troley porta carga: son dos unidos por una load bar y el delantero 
+es el arrastrado y el trasero tiene el dispositivo para el 
+desenganche del arrastrador. 
+Cadena 
+▪ En Power & Free la cadena esta montada con empujadores que arrastran 
+al trolley porta carga. 
+9) Eslingas, ¿Cómo seleccionar la correcta?  
+➢ Longitud de la eslinga: se recomienda seleccionarla en intervalos de 0,5 
+m para eslingas menores a 4 m, y en intervalos de 1 m para longitudes 
+mayores. 
+➢ Diámetro y tipo del cable de acero : núcleo de fibra más flexible, núcleo 
+de acero más resistente. 
+➢ Carga de trabajo. 
+➢ Configuración de los extremos:  
+❖ Ojal simple o con guardacabo 
+❖ Gancho simple o gancho corredizo. 
+➢ Numero de ramales. 
+10) Métodos de estabilidad para pallets. 
+La estabilidad en un pallet se logra mediante: 
+Distribución y trabado de los embalajes entre sí: La correcta distribución de 
+los embalajes en cada altura del pallet, el  uso de accesorios antideslizantes 
+entre las alturas y una adecuada  selección del número de alturas son 
+condiciones importantes para la estabilización de la carga. 
+Fijación de los embalajes al pallet : El otro elemento que garantizará la 
+estabilidad del pallet es la fijación de los embalajes entre sí y a la plataforma.  
+➢ Retractilado: Es un proceso mediante el cual se envuelven los 
+elementos colocados en el pallet con un film plástico, fijándolos a este. 
+El film no solo estabiliza la carga, sino que además aporta protección 
+contra daños durante el transporte y frente a agentes ambientales como 
+el agua y la humedad. Pueden o no tener protección contra los rayos UV .  
+El proceso de retractilado puede hacerse de forma manual, donde el 
+operario, con un porta -rollo y aplicando cierta tensión al film, envuelve 
+la unidad de carga. 
+El sistema automático tiene dos variantes: una con carga fija, donde un 
+brazo con el rollo de film gira alrededor del pallet, recomendada para 
+--- PAGE 62 ---
+62 
+ 
+unidades de carga pesadas; y otra donde la UCL se apoya en una mesa 
+giratoria y el brazo porta-rollo permanece fijo. 
+ 
+❖ Flejado: Cuando la carga sobre el pallet es muy pesada o inestable, se 
+utiliza la sujeción de esta mediante el flejado. Se sujeta la carga al pallet 
+mediante flejes de nylon o acero para lograr un bloque homogéneo. La 
+sujeción, dependiendo del tipo de carga, puede hacerse entre alturas y 
+de forma completa, o directamente en una sola pasada. Por el mismo 
+motivo, los flejados pueden ser en paralelo o en cruz. Para proteger el 
+embalaje donde se apoya el fleje, se coloca entre ambos un dispositivo 
+protector llamado cantonera. 
+ 
+11) Principio de vida de un equipamiento. 
+1. Precio de compra. 
+2. Costo de instalación. 
+3. Costo de entrenamiento. 
+4. Costo de puesta de marcha. 
+5. Costo operativo. 
+
+--- PAGE 63 ---
+63 
+ 
+6. Costo de desinstalación. 
+12) Método CRAFT explicar los 4 parámetros que intervienen. 
+m (Número de departamentos):  Representa la cantidad total de sectores o 
+áreas de trabajo involucradas en el análisis de la distribución: 
+fij (Flujo de materiales): Es la intensidad del movimiento entre el departamento 
+i y el departamento j. Se expresa generalmente como la cantidad de cargas 
+unitarias desplazadas por unidad de tiempo. 
+cij (Costo unitario por distancia):  Es el costo de mover una carga unitaria a 
+través de una unidad de distancia desde el departamento i al j.  
+dij (Distancia entre departamentos): Representa la longitud del trayecto entre 
+el departamento i y el j. En CRAFT, esta distancia se mide técnicamente en 
+forma rectilínea y ortogonal entre los centroides (centros geométricos) de cada 
+departamento. 
+ 
+13) Plásticos oxobiodegradables. 
+Son materiales que se degradan mediante procesos de oxidación y 
+biodegradación, ya sea de forma simultánea o secuencial. 
+Composición: Se obtienen a partir de un polímero derivado del petróleo al cual 
+se le añade un catalizador específico que permite y facilita el proceso de 
+oxidación. 
+14) ¿Cómo genera el movimiento en una cinta transportadora el mando motriz? 
+El torque del motor se transforma en fuerza tangencial en la superficie del 
+tambor motriz. El tambor motriz produce una fuerza de tiro que arrastra a la 
+banda transportadora. 
+La tensión requerida por la banda para mover el material es la suma de: 
+➢ Peso del material. 
+➢ Peso de la banda. 
+➢ Rozamiento entre la banda y la cama de rodillos. 
+➢ Inclinación de la cinta transportadora. 
+Final 1 (PDF LU) 
+1) Contaminación atmosférica. Emisión e inmisión. 
+
+--- PAGE 64 ---
+64 
+ 
+Emisión: es la concentración de elementos contaminantes que vierte una 
+fuente determinada. Es decir , lo  que sale directamente de los procesos 
+productivos (fuentes fijas) o de escape (fuentes móviles) hacia la atmósfera. 
+Inmisión: es la  concentración de elementos contaminantes presentes en el 
+seno de una atmósfera determinada: Representa el valor de los contaminantes 
+a los que están efectivamente expuestos los seres vivos y los materiales en un 
+lugar dado.  
+Relación con la emisión : La calidad del aire ambiente (inmisión) tiene una 
+relación directa con la cantidad y calidad de las emisiones de las fuentes fijas y 
+móviles de un sitio. 
+ 
+2) Algoritmos de distribución de Planta  / Localización de plantas. Objetivos. 
+Describirlos. Parámetros. 
+Adyacencias: El método de adyacencias es un algoritmo de Distribución en 
+Planta para construcción nueva/inicial.  
+Se debe desarrollar una gráfica de adyacencias donde cada nodo represente 
+un departamento y la recta que los une indique adyacencia.  
+El objetivo es encontrar una disposición en bloques máximamente ponderada 
+obteniendo una gráfica de adyacencias con la suma máxima de las 
+ponderaciones de los arcos de unión. 
+Consideraciones y Limitaciones   
+➢ No se consideran las distancias recorridas. 
+➢ No se toman en cuenta las dimensiones de los departamentos.  
+➢ Los gráficos son planos, los arcos o líneas no se interceptan. 
+Parámetros: relación entre las actividades y flujo de materiales. 
+
+--- PAGE 65 ---
+65 
+ 
+Intercambio PAREADO:  El método de intercambio pareado es un algoritmo 
+utilizado para mejorar una distribución en planta existente, sustentado en las 
+adyacencias, distancias y el costo del transporte de los materiales involucrados 
+en el proceso en estudio. 
+Su meta es identificar los intercambios entre departamentos que produzcan la 
+reducción más grande en el costo total de la disposición. 
+Este costo se calcula habitualmente multiplicando el flujo de materiales por las 
+distancias y los costos unitarios de transporte. 
+Simplificaciones del método: 
+➢ Todos los departamentos deben tener áreas iguales. 
+➢ Todos los departamentos deben estar en línea. 
+➢ El costo entre dos departamentos adyacentes es 1 unidad monetaria y 
+se incrementa en 1 unidad monetaria por cada departamento 
+traspasado. 
+𝐶𝑜𝑠𝑡𝑜 𝑚𝑖𝑛𝑖𝑚𝑜= ∑ 𝑓𝑙𝑢𝑗𝑜 𝑥 𝑑𝑖𝑠𝑡𝑎𝑛𝑐𝑖𝑎
+𝑖
+𝑗
+ 
+Sistema CRAFT:  Es un algoritmo de disposición de áreas para casos de 
+mejoramiento de una distribución en planta.  
+El objetivo principal de este sistema computarizado es el de minimizar el costo 
+total de transporte de una distribución (tiempos unitarios por movimiento entre 
+departamentos). 
+Emplea una tabla “desde-hacia” como datos originales para el análisis del flujo. 
+El “costo” de la disposición se mide mediante una función con base en la 
+distancia, de acuerdo a la siguiente ecuación: 
+CRAFT los parámetros que intervienen en la función objetivo son: 
+➢ M: número total de departamentos involucrados. 
+➢ F: flujo entre el departamento i y j. 
+➢ C: costo de mover una carga unitaria. 
+➢ D: distancia entre los centroides de los departamentos. 
+ 
+3) Tanques para Hidrocarburos de 2 tipos. Techo Fijo. Techo Flotante. 
+
+--- PAGE 66 ---
+66 
+ 
+Tanques horizontales: se utilizan para volúmenes relativamente bajo y de gran 
+aplicación para el transporte. 
+Tanque cilíndrico vertical: Consisten en una estructura cilíndrica vertical con 
+una cubierta permanentemente unida al casco del tanque. Son adecuados para 
+almacenar líquidos que poseen una baja presión de vapor . Tipos de cubiertas 
+(API 650): 
+➢ Techos cónicos. 
+➢ Techos tipo domo. 
+➢ Techos tipo sombrilla. 
+Soporte del techo: 
+➢ Auto soportados: Las chapas se apoyan directamente sobre la pared 
+del tanque (usualmente para diámetros menores a 16 m). 
+➢ Soportados: Las chapas descansan sobre una estructura o marco 
+interno que se apoya en las paredes (para diámetros mayores a 16 m). 
+Tanques de Techo Flotante 
+Fueron desarrollados para reducir o anular el espacio libre (cámara de aire) 
+entre el líquido y el techo, evitando la formación de gases de evaporación . Se 
+emplean para productos con alto contenido de volátiles, como alcoholes, 
+gasolinas y combustibles en general. 
+Variantes: 
+Techo Flotante Externo: El techo flota directamente sobre el líquido en tanques 
+abiertos. Es ideal para un control básico de emisiones en tanques expuestos a 
+la intemperie. 
+Techo Flotante Interno:  Combina un techo fijo exterior con una cubierta 
+flotante interna. Ofrece una doble protección contra la evaporación y los 
+elementos climáticos. 
+✓ Ventajas: Reducción de la contaminación ambiental por venteo, mejora 
+en la seguridad operativa (menor riesgo de inflamabilidad) y 
+optimización de costos operativos. 
+Diseños específicos: Existen techos tipo Ponton (con flotadores) y de contacto 
+total (full contact). 
+4) Bitrenes. 
+Los bitrenes son vehículos de transporte de carga por carretera que se definen 
+técnicamente como una unidad tractora (camión) acoplada a dos unidades 
+articuladas de arrastre. 
+Estas unidades de gran porte utilizan tecnología de última generación para 
+aumentar la eficiencia logística y la seguridad vial. 
+Características Técnicas y Capacidades 
+--- PAGE 67 ---
+67 
+ 
+Los bitrenes superan significativamente las capacidades de los camiones 
+convencionales: 
+➢ Dimensiones: Pueden alcanzar una longitud máxima de 30,25 metros 
+entre paragolpes. 
+➢ Su ancho máximo es de 2,60 m y su altura de 4,30 m. 
+➢ Peso: El Peso Bruto Total Combinado (PBTC) máximo es de 75 toneladas. 
+➢ Potencia: Requieren una relación mínima de potencia -peso de 6,75 CV 
+por tonelada. 
+➢ Ejes: Se configuran habitualmente con 7 o 9 ejes 
+ 
+5) Cohesión que es tipo y ejemplos. 
+No cohesivos: fluyen fácilmente a través de un orificio. Arena, granos y plástico. 
+Cohesivos: no fluyen fácilmente a través de un orificio. Arsillas húmedas. 
+6) Embalajes sustentables. 3 materiales. 
+Bioplásticos (o Plásticos Verdes):  Son productos derivados de fuentes 
+renovables, como la caña de azúcar, el aceite de soja, el aceite de maíz y la 
+fécula de papa . Aunque son más amigables con el medio ambiente, 
+actualmente enfrentan desafíos técnicos como una menor resistencia 
+mecánica y un costo de producción más elevado en comparación con los 
+plásticos convencionales. 
+
+--- PAGE 68 ---
+68 
+ 
+Plásticos Biodegradables:  Son materiales, de origen renovable y no 
+renovables, que tienen la capacidad de degradarse por la acción de 
+microorganismos (aeróbicos o anaeróbicos) presentes en el entorno. 
+Para ser certificados como tales, deben cumplir con normas internacionales 
+específicas como la ASTM D6200 o la EN 13432, y el envase debe indicar 
+claramente el organismo certificador. 
+Plásticos Compostables:  Se definen como materiales que se degradan 
+microbiológicamente en un periodo muy corto (aproximadamente 12 
+semanas), similar a otros residuos orgánicos como el papel o la madera . Su 
+principal ventaja es que no dejan trazas tóxicas, metales pesados ni residuos 
+contaminantes tras su descomposición. 
+Oxo-biodegradables: se obtienen a partir de un polímero derivado del petróleo, 
+se degradan mediante procesos de oxidación y biodegradación, ya sea de forma 
+simultánea o secuencial. Se añade un catalizador químico que es el que 
+permite y activa el proceso de oxidación. 
+7) Tratamientos de la norma NIMF .  
+Tratamiento térmico: consiste en calentar la madera hasta una temperatura 
+mínima de 56°C durante 30 minutos en el centro del material. Se realiza en 
+cámaras especiales de secado o estufado. 
+Fumigación con bromuro de metileno:  consiste en exponer la madera al gas 
+de bromuro de metileno durante 16 horas, con parámetros específicos de 
+concentración y temperatura. La temperatura no debe ser menor a 10°C. 
+8) EOM (Electric Overhead Monorriel) comparación Power & Free con 3 carros. 
+Ventajas Comparativas del EOM sobre el Power & Free 
+Automatización: El EOM permite un grado de automatización del 100%, ya que 
+cada unidad toma decisiones basadas en su software interno 
+Flexibilidad de Velocidad: Mientras que en un tramo de P&F todos los carros 
+se mueven a la velocidad de la cadena, el EOM posee velocidades de transporte 
+regulables para cada unidad individual 
+Peso: El EOM tiene un menor peso de instalación por metro lineal y requiere 
+estructuras de soporte menos robustas que el P&F. 
+Ambiente de Trabajo: Produce un menor nivel de ruidos y vibraciones, lo que lo 
+hace ideal para líneas de ensamble de precisión. 
+Control de Posicionamiento: El sistema de control a bordo del EOM (similar a 
+un PLC tradicional) permite un posicionamiento mucho más exacto de la carga 
+en comparación con el arrastre por cadena del P&F . 
+9) Factor máquina. ¿Qué comprende? Nombrar 2 características. 
+--- PAGE 69 ---
+69 
+ 
+Este factor comprende los siguientes elementos críticos para el proceso 
+productivo: 
+➢ Maquinaria de producción. 
+➢ Utillaje (herramental y plantillas necesarias para la operación). 
+➢ Equipos auxiliares que brindan soporte a la maquinaria principal. 
+Características: 
+Determinación de Necesidades de Espacio:  El factor máquina no solo 
+considera el volumen físico del equipo, sino que define el espacio total 
+requerido sumando el espacio para la operación (movimientos del operario), el 
+área necesaria para el mantenimiento de las máquinas y el espacio destinado a 
+los materiales entrantes y salientes de la estación de trabajo. 
+Optimización del Factor de Ocupación:  Una característica del diseño 
+eficiente bajo este factor es buscar un balance óptimo de utilización, 
+recomendándose que el factor de ocupación de las máquinas sea superior al 
+80% para justificar su ubicación y los servicios asociados en la planta. 
+10) Edificios metálicos con Techo parabólico. 
+De una, dos o más aguas, utilizados en edificios para almacenaje de 
+mercancías sobre piso y o entrepisos internos. Sus diseños económicos 
+permiten que de sus estructuras solo puedan anclarse pequeñas cargas como 
+ser: cañerías de servicios, sistema de ilumi nación, cartelería, etc. Las alturas 
+libres, distancia entre columnas y resistencia de pisos dependerán más que del 
+diseño seleccionado y de los presupuestos disponibles 
+ 
+11) Dimensionamiento para muelles de carga y descarga. 
+
+--- PAGE 70 ---
+70 
+ 
+El espacio libre delante de los muelles se determinará con la siguiente fórmula: 
+  
+Espacio Libre = Largo del camión × Factor L 
+ 
+En la que L es un factor que está en función del ángulo de atraque al muelle. 
+➢ El ancho de los muelles recomendado para evitar incidentes entre los 
+camiones es de 4m.   
+➢ La altura recomendada de los muelles debe coincidir con la altura 
+estándar del piso de los camiones, que generalmente es de 
+aproximadamente 1.2 metros sobre el nivel del piso de circulación.  
+Dado que la altura de los camiones puede variar, se deben incorporar rampas 
+ajustables que permitan nivelar correctamente el muelle con el camión, 
+garantizando maniobras seguras para los equipos de manipulación y evitando 
+daños en los productos. 
+12) Parámetro para dimensionar la eslinga cable. 
+➢ Longitud de la eslinga: se recomienda seleccionarla en intervalos de 0,5 
+m para eslingas menores a 4 m, y en intervalos de 1 m para longitudes 
+mayores. 
+➢ Diámetro y tipo del cable de acero: núcleo de fibra más flexible, núcleo 
+de acero más resistente. 
+➢ Carga de trabajo. 
+➢ Configuración de los extremos:  
+❖ Ojal simple o con guardacabo. 
+❖ Gancho simple o gancho corredizo. 
+➢ Numero de ramales. 
+13) Elevadores Trilaterales.  
+Es un equipo especializado para el movimiento de materiales en depósitos, 
+diseñado específicamente para optimizar el espacio mediante la operación en 
+pasillos muy angostos y el aprovechamiento de la altura. 
+• Altura de elevación: alcanza alturas de hasta 15 metros. 
+• Ancho de pasillo: pasillos angostos de entre 1,5 metros y 1,8 metros. 
+• Cabezal de carga: posee un sistema de rotación y desplazamiento de las 
+horquillas que les permite tomar o dejar un pallet en 3 posiciones (frente, 
+izquierda y derecha) sin necesidad que el vehículo gire o rote. 
+Tipos: 
+• Man down: la cabina del operador permanece fija en la base del equipo 
+y solo se eleva el cabezal con la carga. 
+--- PAGE 71 ---
+71 
+ 
+• Man up: la cabina del operador se eleva juntamente con la carga. Esta 
+configuración es ideal para realizar tareas de picking (recolección de 
+pedidos) a diferentes alturas. 
+14) Propósitos básicos de la norma LEED. 
+1- Definir "Edificio Sustentable" estableciendo un estándar de medición 
+común.  
+2- Promover prácticas de proyecto integradoras para la totalidad del edificio.  
+3- Estimular la competencia en Sustentabilidad. 
+4- Elevar la apreciación del consumidor sobre los beneficios que aportan los 
+edificios sustentables. 
+5- Transformar el mercado del medio construido, y futuro, hacia la 
+sustentabilidad. 
+15) Transportadores Neumáticos - Fase Densa & Fluida. 
+El transporte neumático tiene como objetivo principal el desplazamiento de 
+materiales sólidos a granel desde un punto a otro mediante un flujo de gas (aire) 
+a presión, ya sea positiva o negativa, a través de una cañería. 
+Su mayor ventaja radica en ser un sistema cerrado y, por ende, no contaminante 
+para el entorno. 
+Característica Fase Densa Fase Fluida 
+Estado del solido No esta totalmente 
+suspendido, se mueve 
+en paquetes o dunas. 
+El solido se desplaza 
+totalmente suspendido 
+en la corriente de aire. 
+Velocidad Baja: 1 a 5 m/s. Alta: mayor a 20 m/s. 
+Concentración de 
+solidos 
+Alta: mayor a 30% en 
+volumen. 
+Baja: menor a 1% en 
+volumen. 
+Perdida de carga Alta: mayor a 20 
+mbar/m 
+Baja: menor a 5 
+mbar/m 
+Presión requerida Mayor presión para 
+impulsar el material. 
+Presiones bajas. 
+Uso principal Productos abrasivos, 
+frágiles o pesados. 
+Ejemplo: Azúcar 
+granulada, sal, café en 
+grano, legumbres, 
+cemento, bentonita y 
+arena de sílice 
+Productos de baja 
+densidad y no 
+abrasivos. Ejemplo: 
+Harina, malta, resinas 
+plásticas, óxido de 
+hierro y dióxido de 
+titanio. 
+--- PAGE 72 ---
+72 
+ 
+ 
+ 
+Presión Positiva: Un soplador o compresor introduce aire al inicio del sistema. 
+Es ideal para transportar desde un punto de alimentación a varios de descarga. 
+o En Fase Densa, se trabaja entre 3 y 7 Bar. 
+o En Fase Fluida, la presión suele ser de 1 Bar. 
+Vacío (Presión Negativa): El material es aspirado hacia el punto de destino. Se 
+utiliza frecuentemente para descargar vagones o camiones y llevar el producto 
+a silos. 
+o En Fase Densa, el vacío llega hasta 737 mmHg. 
+o En Fase Fluida, el vacío alcanza los 380 mmHg. 
+Presión y Vacío (Combinado):  Se utiliza cuando existen múltiples fuentes y 
+múltiples destinos, aprovechando las ventajas de ambos métodos. 
+ 
+Final 2 LU 
+1) Factor de máquinas en distribución en planta.  A que se refiere y 2 
+recomendaciones. 
+Este factor comprende los siguientes elementos críticos para el proceso 
+productivo: 
+➢ Maquinaria de producción. 
+➢ Utillaje (herramental y plantillas necesarias para la operación). 
+
+--- PAGE 73 ---
+73 
+ 
+➢ Equipos auxiliares que brindan soporte a la maquinaria principal. 
+Características: 
+➢ Determinación de Necesidades de Espacio: El factor máquina no solo 
+considera el volumen físico del equipo, sino que define el espacio total 
+requerido sumando el espacio para la operación (movimientos del 
+operario), el área necesaria para el mantenimiento de las máquinas y el 
+espacio destinado a los materiales entrantes y salientes de la estación 
+de trabajo. 
+➢ Optimización del Factor de Ocupación:  Una característica del diseño 
+eficiente bajo este factor es buscar un balance óptimo de utilización, 
+recomendándose que el factor de ocupación de las máquinas sea 
+superior al 80% para justificar su ubicación y los servicios asociados en 
+la planta. 
+2) En base a que factores se dimensiona el playón frente a las plataformas de 
+carga y descarga. 
+1. Geometría de Maniobra y Ángulo de Atraque 
+El factor más determinante para definir el espacio libre delante de los muelles 
+es la longitud del vehículo y el ángulo en el que se posicionará para atracar . Se 
+utiliza la fórmula: 
+Espacio Libre = Largo del camión × Factor L 
+Donde el Factor L varía según el ángulo 
+Angulo de atraque Factor L 
+10° 0,75 
+30° 1,20 
+45° 1,50 
+90° 2,00 
+2. Características de los Vehículos y Unidades de Carga 
+➢ Tipos de vehículos: se deben considerar al menos tres tipos de vehículos 
+de uso común para definir accesos, zonas de maniobra y alturas . Se 
+deben verificar sus dimensiones de largo, ancho y altura total. 
+➢ Unidad de Carga Logística (UCL): El tamaño, peso y cantidad de las 
+unidades. 
+3. Configuración de la Zona de Carga 
+➢ Integradas: El camión atraca directamente en una puerta del edificio. 
+Requiere mayor precisión en la nivelación y rampas de compensación. 
+➢ Independientes: La operación se realiza en una playa adyacente. Aunque 
+genera más flujo de productos hacia el almacén, el tiempo de atraque 
+suele ser menor por la simplicidad de la maniobra. 
+--- PAGE 74 ---
+74 
+ 
+4. Factores de Circulación y Seguridad 
+➢ Abertura de puertas de ingreso/salida: 8,5 m para doble mano y 4,2 m 
+para mano única. 
+➢ Ancho de vías de circulación: Entre 3,6 m y 4 m para una sola mano; el 
+doble para doble mano. 
+➢ Radio de giro en curvas: Se recomienda un estándar de 30 m. 
+➢ Aceras peatonales: Si hay tránsito de personas, deben tener un ancho 
+mínimo de 1 m. 
+5. Flujo Operativo y Colas de Espera 
+Es fundamental prever el espacio para la cola de espera de los transportes que 
+aguardan para cargar o descargar . El número de muelles necesarios, que 
+determina el ancho total del playón, se define mediante un estudio de tiempos 
+de carga y descarga por cada unidad de carga operada. 
+ 
+3) Funciones básicas de las válvulas. 
+Una válvula es un dispositivo mecánico montado en una cañería cuya función 
+principal es interrumpir, desviar o regular la circulación de un fluido. 
+
+--- PAGE 75 ---
+75 
+ 
+Su costo dentro de un sistema de conducción puede representar hasta un 30% 
+del costo total de la instalación. Se clasifican en: 
+➢ Obturación. 
+➢ Regulación. 
+➢ Seguridad. 
+4) Simplificaciones que se hacen para realizar método de intercambio pareado. 
+Método Intercambio Pareado / Algoritmos de Distribución de planta. 
+➢ Todos los departamentos deben tener áreas iguales. 
+➢ Todos los departamentos deben estar en línea. 
+➢ El costo entre dos departamentos adyacentes es 1 unidad monetaria y 
+se incrementa en 1 unidad monetaria por cada departamento 
+traspasado. 
+5) ¿Que son y en base a que se definen los prerrequisitos leed? Que puntaje 
+otorgan y que pasa si no se cumplen.  
+Requisitos mínimos obligatorios que exige el sistema normativo LEED para 
+poder certificar un edificio como sustentable. 
+Se definen en base a la sostenibilidad, edificios verdes, eficientes y 
+económicos, donde mide localización sostenible, ahorros de agua, eficiencia 
+energética, innovación y diseño. 
+Rangos de certificación:  
+➢ Platino > 80 puntos. 
+➢ Oro 60 - 79 puntos. 
+➢ Plata 50 - 59 puntos. 
+➢ Certificado 40 - 49 puntos. 
+6) Fuentes de generación de residuos patogénicos. 
+Son considerados Residuos Patogénicos todos aquellos desechos o elementos 
+materiales en estado sólido, semisólido, líquido o gaseoso que puedan 
+presentar características de infecciosidad, toxicidad o actividad biológica que 
+puedan afectar directa o indirec tamente a los seres vivos, o causar 
+contaminación del suelo, del agua o de la atmósfera. 
+Se considerarán también como Residuos Patogénicos (RPAT) a:  
+➢ Los provenientes de cultivos de laboratorio; restos de sangre y sus 
+derivados. 
+➢ Restos orgánicos del quirófano, anatomía patológica, morgue. 
+➢ Cuerpos y excremento de animales. 
+➢ Algodones, gasas y vendas usadas, jeringas, objetos cortantes o 
+punzantes, materiales descartables y elementos sin esterilizar.  
+--- PAGE 76 ---
+76 
+ 
+➢ Todos los residuos, cualesquiera sean sus características, que se 
+generen en áreas de alto riesgo infectocontagioso.  
+➢ Restos de animales provenientes de clínicas veterinarias, centros de  
+investigación y/o académicos. 
+7) Ventajas/particularidades de cinta transportadora tubular. 
+➢ La forma tubular previene la contaminación, dispersión de polvos y 
+derramamiento de productos que generan merma. Esto implica la 
+protección del medio ambiente y de los productos de los agentes 
+ambientales como la lluvia y el viento. 
+➢ Como el retorno también es en forma tubular evita el derramamiento de 
+los restos del producto que queda adherido a la banda. 
+➢ La forma tubular permite el transporte del material en curvas 
+horizontales que permiten acompañar el perfil del terreno, eliminando el 
+traspaso a otros transportadores. 
+➢ Permiten inclinaciones más pronunciadas que las cintas abiertas , 
+acortando las distancias necesarias para salvar los desniveles del 
+transporte. 
+8) Tipos de proveedores en la cadena de abastecimiento. 
+No críticos. 
+Ventajosos. 
+Críticos. 
+Estratégicos. 
+ 
+ 
+--- PAGE 77 ---
+77 
+ 
+ 
+9) Tipos de carga en un pallet por norma. 
+Distribución de cargas en el pallet: carga concentrada, carga no trabada 
+uniformemente distribuida, carga sólida, carga trabada uniformemente 
+distribuida.  
+10) Que son y donde se usan: "K" "Rij" y "Wij" en localización de planta por método 
+Brown y Gibson. 
+K (Índice de Ponderación):  Es el índice de ponderación que define la 
+importancia relativa de los factores objetivos frente a los factores subjetivos. Su 
+valor es adimensional y varía siempre en un rango entre 0 y 1. 
+Se utiliza en la ecuación final para calcular la Medida de Preferencia de 
+Localización (MPL). 
+
+--- PAGE 78 ---
+78 
+ 
+W (Índice de Importancia Relativa):  Es el índice asignado a cada factor 
+subjetivo j que determina su preponderancia o peso relativo en comparación 
+con los demás factores subjetivos. Se utiliza en el cálculo del Factor Subjetivo 
+(FSi) de cada localización. 
+Rij (Índice de Orden Jerárquico): Es el índice que determina el orden jerárquico 
+o calificación de una localización específica i respecto a un factor subjetivo 
+determinado j. Representa qué tan buena es una locación comparada con las 
+otras en un aspecto cualitativo particular. 
+Al igual que Wj, se utiliza para obtener el Factor Subjetivo (FSi) de cada sitio.  
+11) Materiales de embalaje alternativos a los estándares, basados en 
+sustentabilidad. Principales características de cada uno. 
+Final 16/12/2025 (Grimolizzi) solo las que no se repiten 
+1) Método de adyacencias. 
+El método de adyacencias es un algoritmo de Distribución en Planta para 
+construcción nueva/inicial.  
+Se debe desarrollar una gráfica de adyacencias donde cada nodo represente 
+un departamento y la recta que los une indique adyacencia.  
+El objetivo es encontrar una disposición en bloques máximamente ponderada 
+obteniendo una gráfica de adyacencias con la suma máxima de las 
+ponderaciones de los arcos de unión. 
+Consideraciones y Limitaciones   
+➢ No se consideran las distancias recorridas. 
+➢ No se toman en cuenta las dimensiones de los departamentos.  
+➢ Los gráficos son planos, los arcos o líneas no se interceptan. 
+2) Que es un alma de un cable y como esta hecha.  
+Es el elemento donde se arrollan los cordones para construir el cable. Se 
+construye en: 
+➢ De fibra sintética (polipropileno). 
+➢ De acero de un cordón, hasta diámetro de 6 mm. 
+➢ Acero de cable independiente. 
+Cuando debido a los esfuerzos de tracción sobre el cable, los cordones ejercen 
+sobre el alma grandes esfuerzos se utiliza el alma de acero (mayor resistencia), 
+evitando así deformaciones por aplastamiento. 
+3) Almacenamiento sobre piso. 
+Pallets sobre Piso (Almacenamiento en Bloque) 
+--- PAGE 79 ---
+79 
+ 
+Consiste en apilar las unidades de carga directamente unas sobre otras en filas 
+y columnas, dejando pasillos de acceso para las máquinas de movimiento. 
+➢ Alturas: Generalmente varía entre 3 y 5 alturas, recomendándose un 
+máximo de 6 niveles. 
+➢ Requisitos: Los pallets deben tener la capacidad de carga y la 
+estabilidad necesarias para soportar el peso de los niveles superiores sin 
+deformarse. 
+➢ Gestión: Sigue habitualmente el principio LIFO y es ideal para pocas 
+referencias con muchas unidades por cada una. 
+➢ Ventajas: Ocupación del bloque del 100%, mínima cantidad de pasillos 
+y nula inversión en estanterías. 
+4) Que implica cada uno de los aspectos del trabajo. 
+La carga de trabajo comprende los requerimientos psico-físicos a los que se 
+somete un trabajador durante su jornada laboral. 
+Aspecto Físico: Implica la ejecución de un trabajo muscular que conlleva un 
+consumo de energía proporcional al esfuerzo requerido. Compuesto por: 
+➢ Esfuerzo muscular: Puede ser estático o dinámico. 
+➢ Postura: La posición en la que se realiza la tarea. 
+➢ Movimientos repetitivos: La frecuencia con la que se realizan acciones 
+motrices similares. 
+Aspecto Menta l: Se refiere al esfuerzo cognitivo y emocional necesario para 
+desarrollar la actividad. Comprende: 
+➢ Estrés: La presión derivada de los requerimientos de la tarea o el 
+entorno. 
+➢ Concentración: El nivel de atención sostenida requerida. 
+➢ Toma de decisiones: La complejidad del juicio necesario para ejecutar 
+el trabajo. 
+5) Tipos de radiación en residuos radioactivos. 
+Las radiaciones se dividen en dos grandes grupos según su energía: 
+Ionizantes: Poseen suficiente energía para arrancar electrones de los átomos 
+(ionizar la materia), afectando el estado natural de los tejidos vivos. Incluyen los 
+rayos Gamma, Rayos X, partículas alfa, beta y neutrones. 
+No Ionizantes: Su energía es demasiado débil para romper enlaces atómicos y 
+difícilmente afectan los tejidos vivos (ej. luz visible, microondas, 
+radiofrecuencia). 
+6) Cuando analizamos el flujo de circulación dentro de un almacén, los 
+clasificamos en diferentes grupos según su complejidad . Describa las 
+características de cada uno de estos grupos. 
+--- PAGE 80 ---
+80 
+ 
+1. Flujo de Baja Complejidad: Se caracteriza principalmente porque la unidad 
+de carga logística (UCL) que ingresa al almacén sale de este en las mismas 
+condiciones. Es el tipo de flujo habitual en los centros de distribución donde 
+se manejan pallets completos. 
+2. Flujo de Complejidad Media:  la unidad de carga de los productos es 
+diferente en la entrada respecto de la salida, ya sea en su tamaño o en su 
+composición. Requiere de una zona de preparación de pedidos (picking) 
+para desconsolidar las cargas entrantes y conformar los nuevos pedidos de 
+salida. Se encuentra en almacenes que distribuyen al comercio minorista o 
+en centros de distribución de e-commerce. 
+3. Flujo Complejo: Representa el nivel más alto de dificultad operativa, ya que 
+combina la gestión de stock con la interacción directa con procesos de 
+fabricación. Además de la desconsolidación de unidades de carga, existe un 
+flujo bidireccional hacia y desde producción. Ma neja simultáneamente 
+materias primas, insumos, productos semielaborados y terminados, todos 
+con distintas configuraciones de unidades de carga. Es el esquema típico de 
+los almacenes de unidades productivas (fábricas). 
+Final 9/12/2025 (Grimolizzi) solo las que no se repiten 
+1) ¿Cuántos responsables de obra hay y cuáles son sus áreas de incumbencia 
+para una obra mayor? 
+1. Responsable de proyecto y dirección de obra : Es quien diseña, 
+dimensiona y documenta técnicamente la obra o instalación. Su obligación 
+es elaborar el proyecto conforme a las normas vigentes. 
+2. Responsable de la construcción.  
+3. Responsable de Seguridad e Higiene en el trabajo : asegura el 
+cumplimiento de las normas de prevención de riesgos para proteger la 
+integridad psicofísica de los trabajadores. 
+4. Empresa responsable de la construcción : persona jurídica con aptitud 
+técnica, fiscal y económica que asume la responsabilidad legal de la 
+ejecución y mantenimiento de la obra. 
+2) Caño con costura 3 métodos. Indicar cada uno y soldadura de estos. 
+Costura recta ERW:  El fleje de acero una vez cilindrado longitudinalmente 
+mediante la presión de rodillos se hace la unión mediante una soldadura 
+eléctrica por inducción.  Previo a la soldadura los bordes  laterales deben 
+ajustarse, para ERW borde plano. 
+Costura recta RSAW:  El fleje de acero una vez cilindrado longitudinalmente 
+mediante la presión de rodillos se hace la unión mediante una soldadura recta 
+--- PAGE 81 ---
+81 
+ 
+por arco eléctrico sumergido. Previo a la soldadura los bordes laterales deben 
+ajustarse, para RSAW borde biselado. 
+Costura helicoidal HSAW:  El fleje de acero se cilindra en forma helicoidal 
+longitudinalmente mediante un equipo de cilindrado de grandes diámetros, y se 
+hace la unión mediante una soldadura helicoidal eléctrica por inducción. Previo 
+a la soldadura los bordes laterales deben ajustarse, para HSAW borde biselado. 
+ 
+3) Lehman y Spitzer que define.  
+Definen el tiempo necesario de descanso  en relación con el consumo 
+energético que demanda una actividad física específica. El calculo de descanso 
+se realiza por medio de la formula: 
+𝑇𝑟𝑒𝑝𝑜𝑠𝑜 = (𝑀
+4 − 1) 𝑥100 
+ 
+M: representa el consumo energético de la actividad, expresado en Kcal/min. 
+ 
+Los límites de la ecuación son: 
+➢ 4 kcal/min representa que no necesita descanso. 
+➢ 8 kcal/min representa que necesita descanso toda la hora de trabajo. 
+
+--- PAGE 82 ---
+82 
+ 
+Por ejemplo, para una actividad que consume 5 Kcal/min, la fórmula arroja un 
+25% de descanso.  
+ 
+ 
+En una hora de 60 minutos, esto se traduce técnicamente en un esquema de 48 
+minutos de trabajo y 12 minutos de reposo. 
+4) Picking. Relación costo con otros 3 activos del almacén. 
+La preparación de pedidos (Picking) es la actividad más costosa, representando 
+el 52% del costo total de operación. 
+La relación de este costo con los otros tres procesos (activos operativos) del 
+almacén es la siguiente: 
+➢ Almacenaje: Representa el 18% del costo operativo total. 
+➢ Despacho: Representa también el 18% del costo operativo total.  
+➢ Recepción: Es la actividad menos costosa, con un 12% del total.  
+¿A que se debe el alto costo? 
+➢ Intensidad de Mano de Obra:  Es la tarea que mayores recursos 
+humanos demanda y tiende a manejarse de forma independiente por su 
+complejidad. 
+➢ Tiempos de Recorrido: El factor que más influye en el costo del picking 
+son los desplazamientos. El 45% del tiempo total de la actividad se 
+pierde en recorridos. 
+➢ Naturaleza Manual: A pesar de los sistemas informáticos (SGA), en un 
+alto porcentaje de almacenes las tareas de extracción (que representan 
+el 30% del tiempo) aún se realizan de forma manual. 
+
+--- PAGE 83 ---
+83 
+ 
+Para mitigar estos altos costos, se recomiendan estrategias de uso de mapas de 
+calor para ubicar productos de alta rotación cerca de las zonas de despacho y 
+así minimizar las distancias recorridas 
+ 
+5) Adyacencias. Calculo para evaluar mayor eficiencia entre 2 distribuciones. Que 
+valor resultado del calculo indica mayor eficiencia o menor recorrido del layout. 
+ 
+➢ El valor de Z varía siempre entre 0 y 1. 
+➢ Mayor Eficiencia: Cuanto más se acerque el valor de Z a 1, mayor es la 
+eficiencia lograda en la distribución. 
+➢ Relación con el recorrido: Un valor de Z cercano a 1 indica que los flujos 
+más importantes están situados de forma adyacente, lo cual tiende a 
+resultar en la mínima distancia recorrida por los materiales. 
+6) SLP . 2 determinaciones previas al pasar del diagrama relacional de espacio a 
+generación de alternativas. 
+Previo a generación de alternativas: factores influyentes y limitaciones 
+prácticas. 
+
+--- PAGE 84 ---
+84 
+ 
+ 
+7) Tratamiento de aguas residuales. Productos obtenidos y su disposición. 
+El tratamiento de las aguas residuales (o efluentes líquidos) consiste en una 
+serie de procesos físicos, químicos y biológicos  destinados a eliminar los 
+contaminantes para que el agua pueda ser reintegrada al medio ambiente  
+cumpliendo con los estándares de calidad exigidos. 
+Etapas del tratamiento: 
+1. Pretratamiento: rejas, tamices y ecualizadores. 
+2. Tratamiento primario : sedimentación o flotación, coagulación y 
+floculación. 
+
+--- PAGE 85 ---
+85 
+ 
+3. Tratamiento secundario : acción de microorganismos como barros 
+activados, lagunas de estabilización y laguna aireadas, procesos 
+anaeróbicos. 
+4. Tratamiento terciario: filtración, desinfección y remoción de nutrientes. 
+Productos obtenidos: 
+1. Efluente Tratado: Agua que ha sido purificada hasta alcanzar los niveles 
+guía de emisión permitidos por la normativa. 
+2. Barros o Lodos: Sedimentos que concentran los contaminantes sólidos 
+y la biomasa. 
+Disposición: 
+1. El efluente purificado se externaliza hacia los Cuerpos Receptores, 
+previa obtención de un Permiso de Vuelco ante las autoridades 
+competentes (como AySA, ACUMAR o ADA) 
+2. Para los barros las alternativas de disposición final son: 
+➢ Relleno Sanitario. 
+➢ Tratamiento biológico en suelo. 
+➢ Cobertura Final: clausura y vegetalización de rellenos sanitarios. 
+➢ Termo destrucción. 
+ 
+8) Residuos hospitales, 5 pasos. 
+Para la gestión integral de los residuos hospitalarios (técnicamente 
+denominados Residuos Patogénicos), se debe seguir  un proceso técnico 
+
+--- PAGE 86 ---
+86 
+ 
+obligatorio para garantizar la bioseguridad. Aunque el flujo completo incluye la 
+generación, las tareas de manejo operativo se agrupan en los siguientes 5 pasos 
+fundamentales: 
+1. Segregación en Origen: es la separación de los residuos en el momento 
+y lugar donde se generan. Se  utilizan bolsas de polietileno de color rojo 
+(espesor mínimo de 60 micrones) y recipientes rígidos de tipo "sharps" 
+para elementos cortopunzantes. 
+2. Envasado y Rotulado: Asegura la contención y trazabilidad del material 
+peligroso antes de su movimiento. Los recipientes deben ser resistentes, 
+estancos y con cierre hermético.  Es obligatorio colocar etiquetas 
+resistentes al agua que indiquen: nombre del establecimiento, fecha de 
+generación, símbolo internacional de riesgo biológico y la clase de 
+residuo. 
+3. Almacenamiento Transitorio: Es la conservación de los residuos dentro 
+del hospital hasta su retiro por el transportista autorizado. 
+➢ Condiciones: La sala debe estar ventilada, señalizada, con pisos 
+impermeables y acceso restringido. 
+➢ Tiempos: El tiempo máximo permitido es de 24 a 72 horas a 
+temperatura ambiente; si se cuenta con cámara de frío (≤4°C), 
+puede extenderse hasta 7 días. 
+4. Transporte (Interno y Externo):  Involucra el traslado seguro de las 
+unidades de carga. 
+➢ Interno: Se realiza mediante un circuito establecido,  utilizando 
+contenedores móviles de superficies lisas y con tapa. 
+➢ Externo: Solo puede realizarlo un operador habilitado en 
+vehículos cerrados, impermeables y con señalización de riesgo 
+biológico, acompañados siempre por un Manifiesto de 
+transporte. 
+5. Tratamiento y Disposición Final:  Es la etapa final donde se elimina la 
+peligrosidad del residuo. Se busca la neutralización del riesgo biológico 
+mediante métodos como Autoclave (vapor a presión), Incineración 
+controlada (prohibida en CABA para el ámbito público) o Radiación por 
+microondas. 
+Disposición: Una vez tratados e inocuos, se disponen como residuos 
+industriales comunes en rellenos sanitarios autorizados. 
+--- PAGE 87 ---
+87 
+ 
+ 
+ 
+9) Impacto ambiental. 
+Se define como todo cambio neto, positivo o negativo, que se provoca sobre el 
+ambiente como consecuencia directa o indirecta de acciones antrópicas. Estas 
+alteraciones puedan generar daño a los seres vivos,  a los suelos, la capacidad 
+productiva de los recursos naturales y los procesos ecológicos esenciales. 
+Final 9/12/2024 
+1) Que es categorización. 
+La categorización puede entenderse como el conjunto de instrumentos 
+diseñados por el Estado  que permiten definir el grado de complejidad 
+ambiental de un proyecto u obra, basándose en los estándares establecidos 
+por el marco legal de un sitio determinado. 
+Su fin principal es optimizar la obtención de permisos, transparentar la gestión 
+y definir procedimientos y exigencias particulares según el nivel de complejidad 
+del emprendimiento. 
+Para clasificar una actividad, se consideran fundamentalmente tres factores:  
+
+--- PAGE 88 ---
+88 
+ 
+➢ La superficie del establecimiento. 
+➢ Su zonificación según el cuadro de usos. 
+➢ Tipo de actividad según el Cuadro de Usos. 
+Factores intervinientes: Además del trípode, inciden el rubro, los riesgos 
+potenciales sobre recursos (suelo, agua, aire), la infraestructura de servicios a 
+utilizar, la cantidad de residuos generados y el uso de sustancias peligrosas 
+En CABA: Las actividades se clasifican en: 
+➢ Con Relevante Efecto (CRE). 
+➢ Sujetos a Categorización (s/C). 
+➢ Con Declaración Jurada del profesional (c/DDJJ). 
+➢ Sin Relevante Efecto con Condiciones (SRE c/C). 
+➢ Sin Relevante Efecto (SRE). 
+En la Provincia de Buenos Aires (PBA):  Se utiliza el Nivel de Complejidad 
+Ambiental (NCA), un valor numérico resultante de una ecuación que pondera 
+rubro, efluentes, riesgos, dimensión y localización. 
+➢ 1ra Categoría: Hasta 15 puntos. 
+➢ 2da Categoría: De 15 a 25 puntos. 
+➢ 3ra Categoría: Más de 25 puntos (incluye obligatoriamente a 
+establecimientos peligrosos por manejo de sustancias inflamables, 
+tóxicas o radioactivas). 
+ 
+
+--- PAGE 89 ---
+89 
+ 
+2) En CABA, a quien hay que pedir autorización para la descarga pluvial y cloacal. 
+Cloacal: AySA. 
+Pluvial: GCABA. Con exigencias normativas propias de ACUMAR y la Nación. 
+3) Indicar para el ámbito CABA , los nombres correspondientes de: El tramite y 
+documento que acreditan legalmente el haber dado cumplimiento de las 
+normas de orden ambiental para el desarrollo de las actividades industriales y/o 
+servicios, categorizadas como Relevante Efecto. 
+Evaluación de Impacto Ambiental (EIA ): Este es  un procedimiento técnico -
+administrativo destinado a identificar, interpretar y prevenir los efectos que un 
+proyecto puede causar al ambiente. 
+Para las actividades CRE, este trámite es de tramitación compleja e incluye 
+obligatoriamente una instancia de Audiencia Pública. 
+Nombre del Documento: Certificado de Aptitud Ambiental (CAA) : e s el 
+instrumento legal que acredita de forma exclusiva el cumplimiento de la 
+normativa de Evaluación de Impacto Ambiental. 
+Para CABA el trámite se gestiona ante la Agencia de Protección Ambiental 
+(APRA). 
+Para PBA se gestiona ante el Ministerio de Ambiente para las actividades y 
+Las Autoridades Ambientales de cada Municipio. 
+Vigencia: Para las actividades categorizadas como Con Relevante Efecto, el 
+Certificado de Aptitud Ambiental tiene una vigencia de 2 (dos) años. 
+Requisito previo: La obtención del CAA es una exigencia legal previa para que la 
+autoridad pueda proceder a la Habilitación de la Actividad y al otorgamiento del 
+Permiso de Obra. 
+4) Tipos de distribuciones de planta (fija, producto, proceso, familia de productos) 
+y unirlo con 11 ventajas y desventajas. 
+Distribución por Posición Fija 
+En este sistema, el componente principal permanece en un lugar fijo (como un 
+barco o un edificio) y son los trabajadores, herramientas y maquinaria los que 
+se desplazan hacia él. 
+ 
+ 
+--- PAGE 90 ---
+90 
+ 
+ 
+Distribución por Proceso 
+Agrupa procesos similares (como tornos, fresas o pintura) en departamentos 
+específicos. Es ideal para baja demanda y alta variedad de productos. 
+ 
+ 
+
+--- PAGE 91 ---
+91 
+ 
+Distribución por Familia de Productos 
+Consiste en agrupar máquinas y equipos en "celdas" destinadas a fabricar una 
+familia de piezas similares (pseudo-productos). 
+ 
+Distribución por Producto  
+El material se desplaza de una estación a otra siguiendo una secuencia fija. Es 
+propia de la producción en serie con alta demanda y poca variedad. 
+ 
+5) En la localización de plantas hay 5 restricciones fundamentales. Nombrar 3 y el 
+impacto que generan. 
+
+--- PAGE 92 ---
+92 
+ 
+ 
+6) Como se clasifican los sistemas de planificación de materiales basados en el 
+lead time y la incertidumbre de la demanda. 
+1- Planificación por Reposición Continua 
+Se aplica a productos o materiales que presentan una baja a media 
+incertidumbre de la demanda y un bajo a medio lead time . Dentro de esta 
+categoría, existen dos modelos técnicos: 
+✓ Modelo determinista (o abastecimiento por lote): Se utiliza cuando la 
+demanda es conocida, regular y los plazos de entrega son confiables. Se 
+basa en calcular un lote óptimo de compra y un punto de reposición. 
+✓ Modelo no determinista (o de demanda fluctuante): Se emplea cuando 
+la demanda no puede determinarse con certeza o fluctúa 
+significativamente. Este modelo requiere la definición de un stock de 
+seguridad para evitar quiebres de inventario ante variaciones 
+imprevistas 
+2- Planificación por Stocks Estratégicos (Reposición Estratégica) 
+Este sistema se reserva para materiales que presentan una incertidumbre de 
+demanda media-alta a alta y un lead time medio a alto. Debido a la complejidad 
+y al riesgo financiero de inmovilización de capital, este enfoque no puede 
+reducirse a modelos masivos de planificación. 
+Requiere definir la criticidad del material y suele gestionarse mediante 
+acuerdos estratégicos con proveedores para mitigar el riesgo derivado de la alta 
+variabilidad y los largos tiempos de espera. 
+7) Hormigón pretensado, que función tiene cada componente. 
+
+--- PAGE 93 ---
+93 
+ 
+La función principal del hormigón es proporcionar una elevada resistencia a la 
+compresión. 
+Cables o barras de acero:  a diferencia del hormigón armado convencional 
+(que usa armaduras pasivas), el pretensado utiliza cables o barras de acero que 
+son sometidos a tracción previa. 
+Función de resistencia: El acero suple la falta de resistencia a la tracción del 
+hormigón y le otorga ductilidad (evitando una fractura frágil). 
+Función de compresión:  Al estar tensados, estos elementos comprimen el 
+hormigón desde su interior. 
+Beneficios del sistema:  Esta compresión interna reduce el tamaño de las 
+fisuras (mejorando la impermeabilidad) y permite que la estructura soporte 
+mayores cargas o distancias más grandes entre apoyos. 
+8) ¿Cuándo y para que se usa un load bar? ¿Dónde se coloca?  
+Una load bar es un componente estructural utilizado en los sistemas de 
+transportadores aéreos de cadena (específicamente en sistemas Power  y 
+Power & Free) para gestionar cargas que superan la capacidad individual de un 
+solo carro o trolley. 
+Se utiliza cuando el peso de la unidad a mover es mayor a lo que un solo trolley 
+puede soportar. 
+Es fundamental para transportar objetos voluminosos o largos (como 
+carrocerías de automóviles) que requieren más de un punto de apoyo para 
+mantenerse estables durante el trayecto. 
+Se colocan conectados a 2 trolleys.  
+9) Prerrequisitos LEED. 
+Líder en comissioning. 
+Prevención de la contaminación durante la construcción. 
+Deposito y recolección de materiales reciclables. 
+Eficiencia energética mínima.  
+Reducción de uso del agua. 
+Manejo de refrigerantes. 
+Calidad de aire interior. 
+Control del humo del tabaco. 
+10) Describir conceptualmente los métodos de localización de plantas 
+cuantitativos. 
+Método de Cribado 
+Es una técnica fundamental que combina el análisis cartográfico con una 
+matriz de ponderación para filtrar las opciones de localización. 
+--- PAGE 94 ---
+94 
+ 
+Paso 1: Análisis Gráfico donde se utilizan mapas esquemáticos del territorio y 
+se sombrean las zonas indeseables para cada factor crítico . Al superponer 
+todos los mapas, las áreas en blanco representan las localizaciones factibles. 
+Paso 2:  Matriz de Ponderación . En las zonas factibles, se aplica una matriz 
+donde los factores se ponderan (sumando 1.000 puntos) y se les asigna un 
+Grado de Perfección (0 a 1) . El sitio con el mayor Grado de Conveniencia 
+(Ponderación x Perfección) resulta el ganador. 
+Método de Análisis Dimensional 
+Este modelo se distingue por utilizar una ponderación exponencial en su matriz 
+de decisión. Al usar exponentes en lugar de multiplicadores lineales, el efecto 
+de diferenciación entre los factores es mucho más agudo, resaltando 
+fuertemente las ventajas competitivas de un sitio sobre otro. 
+Comparación de a pares: La evaluación se realiza comparando dos locaciones 
+a la vez mediante una función objetivo (Fl). Si el resultado de la función es menor 
+a 1, la primera locación es la óptima; si es mayor a 1, la segunda es la mejor. 
+ 
+Método de Brown y Gibson 
+Es uno de los métodos más robustos porque logra integrar factores 
+cuantitativos (objetivos) con cualitativos (subjetivos) en una sola medida de 
+preferencia. Consta de cuatro etapas principales: 
+➢ Etapa 1: Factor Objetivo (FOi): Se calcula el valor relativo de los costos 
+anuales de cada sitio (el menor costo obtiene el mayor valor relativo) 
+➢ Etapa 2: Factor Subjetivo (FSi): Se determinan valores ponderados para 
+elementos cualitativos (clima, educación) mediante comparaciones 
+pareadas. 
+➢ Etapa 3:  Medida de Preferencia de Localización (MPL): Se combinan 
+ambos factores mediante la fórmula MPL = K x FOi + (1−K) x FSi, donde 
+K representa el peso dado a los costos frente a la subjetividad. 
+➢ Etapa 4: Selección: Se elige la ubicación que obtenga el máximo valor 
+de MPL. 
+
+--- PAGE 95 ---
+95 
+ 
+ 
+Método Cualitativo de Puntos 
+Es un modelo de matriz lineal simple, donde se identifican los factores críticos 
+y se les asigna un peso relativo (ponderación) que sume 1 (o 100%). 
+Cada locación se califica en una escala (por ejemplo, del 1 al 5) según su 
+desempeño en cada factor . Se multiplica el peso de cada factor por su 
+calificación y se suman los resultados (Lj) 
+Si la matriz se basa en una escala de costos, la locación óptima será la que 
+presente el mínimo valor ponderado; si es de beneficios, será la de valor 
+máximo. 
+ 
+11) Funciones técnicas y comerciales de los embalajes.  
+Los embalajes no poseen funciones comerciales. En cuanto a sus funciones 
+técnicas son: 
+- Facilitar el manejo y el movimiento. 
+- Proteger y conservar el envase en los procesos logísticos. 
+- Bajar el costo de las operaciones logísticas. 
+12) En la fórmula de lote optimo que compone al costo C1 costo unitario de 
+almacenamiento. 
+En la fórmula del lote óptimo de compra (Q0), el parámetro C1 representa el 
+costo unitario de almacenamiento anual. 
+✓ Capital inmovilizado y su costo financiero: Representa el impacto financiero 
+de mantener recursos económicos detenidos en forma de inventario. 
+✓ Costo de infraestructura de almacenaje:  Incluye los gastos derivados del 
+edificio, los servicios (como energía o mantenimiento) y la mano de obra 
+necesaria para la operación del almacén. 
+
+--- PAGE 96 ---
+96 
+ 
+✓ Obsolescencia y deterioro del producto: Contempla las pérdidas de valor que 
+sufre la mercadería por el paso del tiempo, ya sea porque se vuelve anticuada o 
+por daños físicos durante su estadía en el almacén. 
+Costo de pedido (C2) que implica: 
+➢ Costo de colocar una orden de compra (mano de obra, servicios e 
+infraestructura). 
+➢ Costos logísticos. 
+ 
+13) ¿Cuáles son las normas ISO que en su conjunto hacen un sistema sostenible? 
+- ISO 9001: Calidad. 
+- ISO 14001. Gestión Ambiental. 
+- ISO 50001: Gestión de la energía. 
+Final 16/12/2024 
+1) Describa la función de cada uno de los tipos de almacén clasificados según su 
+función logística.  
+Almacén Central:  se ubica generalmente en el centro de producción. Su 
+función es concentrar la salida de fábrica y encargarse de distribuir el producto 
+directamente al cliente o a otros centros de distribución de menor jerarquía 
+(regionales o locales). 
+Almacén Regional (Centro de Distribución): Se establece cuando los centros 
+de consumo se encuentran alejados del punto de producción, situándose en 
+puntos estratégicos respecto a dichos mercados. Cumplen una función crítica 
+
+--- PAGE 97 ---
+97 
+ 
+como amortiguadores de stock, permitiendo equilibrar las existencias durante 
+los períodos de alta y baja demanda (puntas y valles). 
+Almacén Local:  Se utiliza para atender puntos de consumo alejados que 
+poseen un volumen de compra importante. Sus características operativas son 
+similares a las del almacén regional, pero se diferencia por tener una escala 
+menor en sus dimensiones y capacidad. 
+Almacén Logístico: Representa la tercerización de la gestión. En este modelo, 
+las empresas de transporte asumen el almacenamiento y la distribución puerta 
+a puerta, reemplazando la necesidad de que la empresa productora gestione 
+sus propios almacenes regionales o locales. 
+2) Cuando analizamos el flujo de circulación dentro de un almacén, los 
+clasificamos en diferentes grupos según su complejidad. Describa las 
+características de cada uno de estos grupos. 
+Flujo de Baja Complejidad: Se caracteriza principalmente porque la unidad de 
+carga logística (UCL) que ingresa al almacén sale de este en las mismas 
+condiciones. Es el tipo de flujo habitual en los centros de distribución donde se 
+manejan pallets completos. 
+Flujo de Complejidad Media: la unidad de carga de los productos es diferente 
+en la entrada respecto de la salida, ya sea en su tamaño o en su composición. 
+Requiere de una zona de preparación de pedidos (picking) para desconsolidar 
+las cargas entrantes y conformar los nuevos pedidos de salida. Se encuentra en 
+almacenes que distribuyen al comercio minorista o en centros de distribución 
+de e-commerce. 
+Flujo Complejo:  Representa el nivel más alto de dificultad operativa, ya que 
+combina la gestión de stock con la interacción directa con procesos de 
+fabricación. Además de la desconsolidación de unidades de carga, existe un 
+flujo bidireccional hacia y desde producción. Ma neja simultáneamente 
+materias primas, insumos, productos semielaborados y terminados, todos con 
+distintas configuraciones de unidades de carga. Es el esquema típico de los 
+almacenes de unidades productivas (fábricas). 
+3) Describa el funcionamiento del sistema de estanterías Push Back y sus 
+características. 
+Sistema de almacenamiento de bloque de estanterías. Las estanterías poseen 
+una inclinación con un dispositivo de apoyo que pueden ser: 
+• Cunas o carros: Permiten una profundidad de hasta 4 pallets por 
+canal. 
+• Rodillos pueden alcanzar una profundidad de hasta 6 pallets, 
+dependiendo del peso de la unidad de carga 
+--- PAGE 98 ---
+98 
+ 
+Este dispositivo de apoyo permite el desplazamiento de los pallets hacia atrás 
+cuando ingresa uno nuevo, asimismo cuando se retira un pallet, los pallets 
+que están detrás se desplazan hacia adelante automáticamente por acción de 
+la gravedad. 
+- Permite referencias por canal.  
+- Se utiliza para sistemas de inventario de rotación media. 
+- Se trabaja con sistema LIFO.  
+- Es seguro debido a que los auto elevadores no necesitan introducirse al 
+pasillo del bloque de estanterías.  
+- Se utilizan auto elevadores convencionales o retractiles. 
+4) A que se denomina alma en un cable de acero y cuantos tipos de estas se 
+utilizan en la construcción de los cables. 
+Alma: es el elemento donde se enrollan los cordones para conformar el cable. 
+Se utilizan 3 tipos para su construcción. 
+- Fibras sintéticas (polipropileno). 
+- Acero de un cordón hasta diámetro de 6 milímetros. 
+- Acero de cable independiente. 
+5) Describa el transportador de piso tipo flat top liviano. 
+Es un transportador a tablillas (de madera, metal o plástico) accionadas por una 
+cadena. Su instalación se realiza sobre el piso, a diferencia del flat top pesado 
+que se instala al ras del suelo. 
+Pros: 
+• Flexibilidad espacial: Los diseños modulares y livianos permiten 
+realizar rutas complejas tridimensionales, incluyendo curvas y 
+cambios de nivel con un solo transportador. 
+• Funcionalidad: Permiten realizar desconexión de puntos, 
+transiciones y acumulaciones de manera eficiente. 
+Contras: 
+• Representan un obstáculo físico en la planta, impidiendo el 
+tránsito transversal de otros equipos. 
+• Limitación de Carga: no están diseñados para las cargas 
+pesadas. 
+6) Residuos patogénicos. 
+Se definen como Residuos Patogénicos a todos aquellos desechos o elementos 
+materiales, en estado sólido, semisólido, líquido o gaseoso, que 
+presumiblemente presentan o pueden presentar características de 
+infecciosidad, toxicidad o actividad biológica. Son capaces de afectar directa o 
+--- PAGE 99 ---
+99 
+ 
+indirectamente a los seres vivos o causar contaminación del suelo, el agua o la 
+atmósfera. 
+Cultivos y muestras:  Los provenientes de cultivos de laboratorio y restos de 
+sangre o sus derivados. 
+Restos orgánicos:  Elementos extraídos en quirófanos, servicios de 
+hemodiálisis, hemoterapia, anatomía patológica y morgues. 
+Materiales de curación y descarte: Algodones, gasas, vendas usadas, jeringas 
+y objetos cortopunzantes (agujas, hojas de bisturí) que hayan estado en 
+contacto con agentes patogénicos y no se esterilicen. 
+Residuos de áreas críticas:  Todos los desechos, sin importar su naturaleza, 
+que se generen en sectores de alto riesgo infectocontagioso. 
+Residuos animales:  Cuerpos, restos y excrementos de animales de 
+experimentación biomédica, o provenientes de clínicas veterinarias y centros 
+de investigación. 
+7) En los residuos radioactivos se habla de radiaciones ionizantes y no ionizantes 
+¿Cuál de estas difícilmente puede afectar el estado de los seres vivos? 
+Las NO ionizantes. 
+8) Describa los diferentes tipos de elevadores a cangilones. 
+ 
+
+--- PAGE 100 ---
+100 
+ 
+ 
+9) Indique los diferentes tipos de terminales portuarias para buques petroleros y 
+describa brevemente. 
+Terminales de Muelle: se ubican en la costa, generalmente dispuestas cerca 
+de refinerías y centros de distribución. Utilizan dos sistemas principales para la 
+transferencia del producto: 
+➢ Sistema de mangueras (Antiguo):  Utiliza mangueras provenientes de 
+tierra que se conectan al manifold (zona de válvulas) en la cubierta del 
+buque. La conexión suele ser asistida por la grúa de la propia 
+embarcación. 
+➢ Brazo articulado o Hardarm (Moderno): Consiste en una estructura de 
+tuberías articuladas que se conecta directamente al buque. Este 
+sistema no requiere grúas externas y tiene la capacidad de acomodarse 
+automáticamente a los cambios de francobordo de la nave (la variación 
+de altura según la carga). 
+Terminales de Mar Adentro (Offshore):  debido al gran calado y tamaño de 
+algunos buques modernos, la carga y descarga no puede realizarse en muelles 
+costeros, por lo que se efectúa en mar abierto mediante sistemas de boyas 
+vinculadas a oleoductos submarinos. 
+
+--- PAGE 101 ---
+101 
+ 
+➢ Sistema de Monoboya o SPM (Single Point Mooring):  Es el sistema de 
+amarre de punto único donde el buque se amarra únicamente por su 
+proa. La boya posee una plataforma giratoria con rodamientos que 
+permite que el buque rote libremente según la acción del viento, las olas 
+y las corrientes mientras transfie re el hidrocarburo a través de 
+mangueras flotantes y submarinas. 
+➢ Sistema de Multiboyas:  Es una configuración de amarre que utiliza 
+varias boyas para fijar la posición del buque en un punto determinado 
+para la operación de transferencia. 
+10) ¿Que implica cada uno de los aspectos de la carga de trabajo? 
+Aspecto mental: estrés, concentración y toma de decisiones.  
+Aspecto físico: trabajo muscular dinámico (intensidad muscular y movimientos 
+repetitivos) y estático (por posturas). 
+Finales Varios 
+1) Definir carga nominal útil, carga nominal de apilado y cual es mayor para un 
+pallet de madera. 
+Carga Nominal Útil (Carga de Elevación o de Trabajo): Es el peso máximo que 
+un pallet puede soportar de forma segura cuando es manipulado por equipos 
+de movimiento (como auto elevadores  o zorras) o cuando se encuentra 
+depositado en estanterías (racks). 
+En esta condición, el pallet está sujeto a esfuerzos de flexión, ya que los apoyos 
+(las uñas de la máquina o los largueros del rack) no cubren toda la superficie 
+inferior, dejando áreas en el aire que deben resistir el peso de la mercadería sin 
+quebrarse. 
+Carga Nominal de Apilado (Carga Estática) : Es la carga máxima que puede 
+soportar el pallet inferior de una columna cuando se colocan varias unidades 
+de carga una encima de otra sobre una superficie plana, horizontal y rígida 
+(habitualmente el suelo). 
+En este caso, el esfuerzo es predominantemente de compresión. La fuerza se 
+transmite de forma directa a través de los componentes verticales del pallet 
+(tacos o tirantes) hacia el suelo, lo que permite una resistencia estructural 
+mucho mayor. 
+La carga nominal de apilado es mayor que la carga nominal útil. 
+➢ Carga Sólida:  Un pallet puede resistir hasta 4.000 kg en apilamiento, 
+pero solo 2.200 kg en elevación. 
+➢ Carga Trabada Uniformemente Distribuida: Soporta hasta 3.500 kg en 
+apilamiento, frente a 1.900 kg en elevación. 
+--- PAGE 102 ---
+102 
+ 
+➢ Carga no Trabada Uniformemente Distribuida: Soporta hasta 3.000 kg 
+en apilamiento, frente a 1.600 kg en elevación. 
+2) En la identificación de los embalajes hay 2 tipos bien definidos de pictogramas. 
+Indicar que significa cada uno de ellos. 
+Pictogramas de Peligro (Mercancías Peligrosas): Informan sobre la clase de 
+peligro de la sustancia (por ejemplo: explosivo, gas inflamable, líquido tóxico, 
+corrosivo o radiactivo) 
+Identificación complementaria: En el transporte terrestre, suelen acompañarse 
+de paneles naranjas con el número ONU (que define el producto) y el código de 
+riesgo. 
+Pictogramas de Manipulación y Almacenaje (Preservación) 
+Su propósito es proporcionar instrucciones universales sobre la manera de 
+preservar, manipular y almacenar los bultos para evitar que la mercadería sufra 
+daños físicos . Son símbolos gráficos que representan recomendaciones de 
+cuidado. Al ser universales, permiten que cualquier operador entienda la 
+instrucción sin importar el idioma. 
+Ejemplos comunes: 
+➢ Copa: Indica que el contenido es "Frágil" 
+➢ Dos flechas hacia arriba: Indica la posición correcta ("Hacia arriba") 
+➢ Paraguas: Instruye "No exponer a la lluvia" 
+➢ Sol: Indica "Protegerse del calor" . 
+--- PAGE 103 ---
+103 
+ 
+ 
+
+--- PAGE 104 ---
+104 
+ 
+ 
+ 
+3) Indicar cuales son los 2 objetivos básicos que se pretenden alcanzar con la 
+creación y uso de parques industriales. 
+El objetivo de los Parques Industriales es mejorar la situación económica de las  
+compañías participantes y minimizar su impacto ambiental. 
+4) Para pallets sobre piso y estanterías cuales son las limitaciones de altura y que 
+tipo de bloques de estanterías se utilizan.  
+Pallets sobre Piso (Almacenamiento en Bloque) 
+Este sistema consiste en apilar unidades de carga en bloques homogéneos (una 
+sola referencia por bloque) con un pasillo principal de circulación 
+Limitaciones de altura: Las alturas de apilado varían entre 3 y 5 niveles, 
+recomendándose no superar las 6 alturas para garantizar la seguridad. 
+La altura máxima permitida (n) depende: 
+➢ Resistencia y estabilidad de los embalajes sin deformarse. 
+➢ Resistencia del pallet para ser apilados sin deformarse ni colapsar. 
+Pallets en Estanterías: la altura de apilamiento no depende de la resistencia del 
+producto (ya que cada pallet se apoya en la estructura), sino de la tecnología y 
+el edificio. 
+Tipos de Bloques de Estanterías que se utilizan. 
+
+--- PAGE 105 ---
+105 
+ 
+Bloques de Estanterías de Base Fija (Alta Densidad): Diseñados para minimizar 
+pasillos y maximizar el espacio. 
+Tipo Drive (Drive -In / Drive -Through): Los equipos de manejo entran en la 
+estructura. El Drive-In sigue sistema LIFO y el Drive-Through permite FIFO. 
+Tipo Push Back: Los pallets se desplazan hacia atrás por empuje sobre carros o 
+rodillos; funcionan por gravedad en sistema LIFO. 
+Tipo Dinámicas a rodillos: Los pallets se deslizan por gravedad desde la carga a 
+la descarga, permitiendo un sistema FIFO estricto. 
+Tipo Pallet Shuttle: Utiliza un carro automatizado (lanzadera) que se desplaza 
+dentro de los canales, permitiendo profundidades de hasta 40m. 
+5) Los algoritmos utilizados en la distancia de plantas pueden ser funciones 
+matemáticas o graficas, indicar: en que se basan las funciones objetivas , 
+describir brevemente las funciones objetivas y que parámetros intervienen. 
+Se fundamentan en el costo del movimiento de materiales entre departamentos 
+Su lógica principal es que, a mayor flujo de materiales entre dos áreas, menor 
+debe ser la distancia que las separe para reducir costos operativos. 
+CRAFT los parámetros que intervienen en la función objetivo son: 
+➢ M: numero total de departamentos involucrados. 
+➢ F: flujo entre el departamento i y j. 
+➢ C: costo de mover una carga unitaria. 
+➢ D: distancia entre los centroides de los departamentos. 
+ 
+Intercambio pareado 
+𝐶𝑜𝑠𝑡𝑜 𝑚𝑖𝑛𝑖𝑚𝑜= ∑ 𝑓𝑙𝑢𝑗𝑜 𝑥 𝑑𝑖𝑠𝑡𝑎𝑛𝑐𝑖𝑎
+𝑖
+𝑗
+ 
+6) Indicar para manejo manual de cargas de acuerdo con  Lemman. Peso de un 
+trabajador masculino, velocidad de desplazamiento. 
+25 kg → valor recomendado como límite manual frecuente en condiciones 
+ergonómicas adecuadas. 
+Velocidad de desplazamiento: 4 a 5 km/hora. 
+7) Tipos de almacenamiento según su grado de protección y describirlos. 
+
+--- PAGE 106 ---
+106 
+ 
+Almacenamiento en Exteriores:  Se utiliza generalmente para materiales que 
+no se ven afectados por las inclemencias climáticas o para unidades cuyo 
+tamaño y peso dificultan su ingreso a un edificio . Requieren pasillos amplios 
+para la circulación de equipos de grandes dimensiones. 
+Se identifican tres grados según el nivel de aislamiento 
+➢ Sin protección. 
+➢ Con protección por envoltura: Se utilizan elementos como los silos bolsa 
+para granos o forrajes, que aíslan el producto del entorno inmediato. 
+➢ Con protección por cobertura: Se emplean estructuras simples, como 
+techos o tinglados, para evitar el contacto directo con la lluvia o el sol 
+excesivo (ej. almacenamiento de tubos). 
+Almacenamiento Cubierto:  brinda una protección completa contra los 
+agentes atmosféricos (lluvia, humedad, rayos UV) y maximizar la seguridad 
+patrimonial. Permiten un control estricto sobre variables ambientales como la 
+iluminación y la temperatura. 
+Construcción: Se ejecutan mediante diversas estructuras (acero, hormigón o 
+sistemas autoportantes donde las estanterías sostienen el edificio) y 
+revestimientos de mampostería o chapas. 
+8) Grados en un material de cañerías, que representa. 
+Cuando hablamos de distintos grados para una misma base de acero estamos 
+hablando de formulaciones químicas diferentes. Llamamos formulaciones o 
+composiciones químicas al % de carbono y % de otros elementos de la aleación 
+constitutiva en el acero. El grado  B posee mayor % de carbono que el grado A, 
+por consecuencia el grado B tendrá una mayor resistencia mecánica. 
+9) ¿Qué sígnica que un Control Box de un EOM tenga 3 ejes? 
+Definición de Grado: El "grado" de un control box (ya sea de 1, 2, 3 o más ejes) 
+está definido directamente por el número de motores o mandos motrices que 
+tiene bajo su gestión directa. 
+Traslación (Movimiento Horizontal):  Es la función del primer mando motriz, 
+usualmente denominado Tractor. Este motor permite que la unidad se desplace 
+a lo largo del riel de aluminio a velocidades variables y regulables. 
+Elevación (Izaje):  El segundo mando motriz suele controlar un polipasto o 
+mecanismo de elevación integrado en el portador. Esto permite subir o bajar la 
+carga de forma vertical para interactuar con estaciones de trabajo, hornos o 
+tanques de proceso (como los "Dip Tanks"). 
+Movimientos Auxiliares (Rotación o Extensión):  Un tercer eje permite sumar 
+una funcionalidad adicional para el posicionado preciso de la carga, tales 
+como: 
+--- PAGE 107 ---
+107 
+ 
+➢ Giro: Rotar el dispositivo porta carga para orientar la pieza en 360° o 
+ángulos específicos. 
+➢ Telescópica: Accionar brazos o mesas telescópicas para transferir la 
+unidad de carga lateralmente hacia una estantería o un transportador de 
+piso. 
+En conjunto, estos tres mandos permiten que un solo equipo autónomo realice 
+una operación tridimensional completa (moverse, elevar y posicionar), todo 
+bajo la lógica programada en el PLC a bordo y coordinado por un PLC central o 
+"madre" que supervisa el tráfico de todo el sistema. 
+10) Clasificación de aguas residuales. 
+Domesticas. 
+De procesos productivos. 
+De precipitaciones.  
+Agropecuaria.  
+De acondicionamiento termino. 
+11) ¿Qué es un camión escalable? 
+Un camión escalable es un vehículo de transporte de cargas que ha sido 
+adaptado o diseñado para transportar un Peso Bruto Total Combinado (PBTC) 
+superior a las 45 toneladas tradicionales, pero sin exceder las dimensiones de 
+un camión estándar y sin llegar a ser un bitrén 
+Capacidad de Carga: Permiten transportar entre 45 y 55,5 toneladas de peso 
+bruto. 
+ 
+12) Etiquetado ambiental. 
+Definición de Etiquetado Ambiental (ISO 14020) 
+
+--- PAGE 108 ---
+108 
+ 
+Se define como un conjunto de herramientas voluntarias diseñadas para 
+estimular la demanda de productos y servicios que posean menores cargas 
+ambientales. 
+Su funcionamiento se basa en ofrecer información relevante sobre el ciclo de 
+vida del producto para satisfacer la necesidad de datos ambientales por parte 
+de los compradores. 
+13) Factor hombre. 
+Este factor comprende no solo a la mano de obra directa, sino también a la 
+indirecta, el personal de supervisión y los servicios auxiliares. 
+Se deben evaluar los siguientes puntos respecto al personal: 
+➢ Seguridad y Salud: Es un objetivo primario minimizar los riesgos para la 
+salud y velar por la integridad física de cada trabajador en su puesto 
+➢ Confort: La distribución debe garantizar condiciones ambientales 
+óptimas, lo que incluye niveles adecuados de luminosidad, ventilación, 
+temperatura y control de ruidos. 
+➢ Cualificación y Flexibilidad:  Se debe considerar el nivel de 
+especialización requerido para las tareas y la flexibilidad del personal 
+para adaptarse a diferentes funciones según el tipo de distribución (por 
+ejemplo, en distribuciones en línea se suele requerir mano de obra 
+menos calificada debido a la automatización). 
+14) Que significa un índice de piso 3 para un colchón de aire. 
+Un índice número 3 significa, por ejemplo, que hay que multiplicar por tres el 
+consumo de aire, respecto de la base. 
+15) Contenedores que mantienen una temperatura especifica. 
+Contenedor Refrigerado (Reefer):  Es el tipo de contenedor diseñado para 
+mantener una temperatura controlada de forma autónoma mediante un equipo 
+propio. Posee un sistema de refrigeración incorporado y un aislamiento de 
+poliuretano expandido en todos sus paneles (laterales, frente, piso y techo). 
+Rango de Temperatura: Su rango de trabajo estándar oscila entre -25ºC y +25ºC, 
+aunque existen equipos especiales capaces de alcanzar los -60ºC. El equipo 
+está diseñado para mantener la temperatura, no para enfriar la mercadería; por 
+ello, el producto debe estar pre -enfriado al momento de la carga . Requiere  
+conexión a la red de energía en buques, puertos y camiones. 
+Su aislamiento debe garantizar que, si el sistema se desconecta, la pérdida 
+térmica no supere 1ºC por día. 
+Contenedor Aislado (Porthole) 
+--- PAGE 109 ---
+109 
+ 
+Tiene un diseño similar al Reefer pero carece de unidad generadora de aire frío 
+propia. Depende de una fuente externa (la terminal portuaria o el sistema del 
+buque) que provee el aire a la temperatura deseada. 
+Dispone de dos aberturas en el panel frontal denominadas "portholes" por 
+donde se acopla al sistema de ventilación externo . Su rango operativo varía 
+entre +12ºC y -25ºC. 
+16) ¿Cuántas y cuáles son las categorías de generadores de residuos peligrosos 
+definidos en la Ciudad de Buenos Aires?  ¿Cómo se calcula y que factores 
+involucra la categorización de GRP? 
+ 
+ 
+17) Indicar cual es el objetivo básico y principal del sistema computarizado CRAFT 
+que se utiliza para diseño y distribución en planta. 
+Minimizar el costo de transporte de una distribución. Es un algoritmo para casos 
+de mejoramiento de distribución de plantas. 
+18) Principio de unidad de carga. 
+
+--- PAGE 110 ---
+110 
+ 
+  
+19) Indicar, respecto de los certificados de aptitud ambiental que se emiten en la 
+ciudad autónoma de buenos aires, cual es el plazo de vigencia de los mismos. 
+ 
+20) La clasificación de uso del suelo en la PBA define áreas y zonas. 
+
+--- PAGE 111 ---
+111 
+ 
+ 
+21) El armado de un buque interoceánico es 450000 dólares. ¿Cuál es el monto, en 
+conjunto, que les corresponde a los rubros de cargas portuarias, combustible y 
+mano de obra? 
+Cargas portuarias: 10%  
+Combustibles: 35% 
+Tripulación: 18,5% 
+ 
+
+--- PAGE 112 ---
+112 
+ 
+1er parcial Grimolizzi 
+1) Explicar que se entiende por proceso sostenible. 
+Se entiende fundamentalmente bajo el marco del Desarrollo Sostenible, un 
+concepto que busca satisfacer las necesidades de la generación presente sin 
+comprometer la capacidad de las generaciones futuras para satisfacer sus 
+propias necesidades. 
+Para que un proceso sea considerado sostenible, debe garantizar un equilibrio 
+entre tres pilares fundamentales: 
+➢ Crecimiento económico. 
+➢ Cuidado del ambiente. 
+➢ Bienestar social. 
+ 
+2) Indicar que cuestiones conceptuales y puntuales hacen que el estudio de la 
+intralogistica reemplace en la actualidad al tradicional tratado de Manejo de 
+materiales y distribución en planta. 
+El reemplazo del tradicional tratado de Manejo de Materiales y Distribución en 
+Planta por el estudio de la Intralogística se debe a un cambio de paradigma que 
+integra los movimientos físicos con el flujo de información y la estrategia global 
+de la cadena de suministros. 
+Cambio de Enfoque: Del Método Convencional al Sistémico : Método 
+Convencional ponía el foco únicamente en el transporte del material de un 
+punto A a un punto B. La Intralogística adopta un Método Sistémico, que 
+considera todas las actividades desde el proveedor de materia prima hasta el 
+consumidor final, integrando cada etapa productiva y de distribución como un 
+todo interconectado. 
+
+--- PAGE 113 ---
+113 
+ 
+Integración en la Cadena de Valor : Mientras que la organización tradicional 
+funcionaba en "silos" (por departamentos), la Intralogística propone una 
+organización integrada por procesos. 
+Gestión Integral de Residuos y Sustentabilidad : la Intralogística moderna 
+incorpora de forma obligatoria la gestión de residuos y desperdicios dentro de 
+la planta, bajo el principio de responsabilidad de "la cuna a la tumba" , algo que 
+no formaba parte del núcleo de los tratados clásicos de manejo de materiales. 
+3) Indicar los pasos (en secuencia ordenada) a cumplir para la localización de una 
+planta mediante el uso del método Cribado. 
+1. Primer Paso: Confección de Planos (Técnica Gráfica) 
+1) Definición de factores críticos. 
+2) Elaboración de mapas esquemáticos. 
+3) Sombreado de zonas indeseables: se sombrean las áreas definidas 
+como indeseables para el factor específico que se está analizando. 
+4) Superposición de mapas: permite identificar las zonas blancas, que son 
+los lugares donde que no existen inconvenientes para la localización del 
+conjunto de factores analizados. 
+2. Segundo Paso: Confección de la Matriz de Ponderaciones 
+1- Ponderación de factores: Se asigna un valor a cada factor interviniente 
+según su importancia real en los costos de la empresa. La sumatoria de 
+estas ponderaciones debe ser igual a 1.000 puntos 
+2- Asignación del Grado de Perfección: Para cada sitio seleccionado se 
+asigna una puntuación a cada factor. El valor es unitario (1 o 100%) para 
+el caso más favorable y de menor cuantía para los demás sitios. 
+3- Cálculo del Grado de Conveniencia: Se multiplica el valor de la 
+ponderación por el grado de perfección de cada factor en cada sitio bajo 
+estudio. 
+4- Selección del sitio: se realiza la sumatoria de los Grados de 
+Conveniencia de todos los factores para cada sitio. El valor total más alto 
+indica el sitio más adecuado para la localización de la planta. 
+15) Indicar cuales son los objetivos básicos que se pretenden alcanzar mediante la 
+creación y uso de Parques Industriales. 
+Minimizar el impacto ambiental y mejorar las economías de las empresas 
+participantes.  
+16) Indicar en que consiste la llamada distribución por posición fija  y en que 
+actividades se recomienda su utilización. 
+La distribución por posición fija es un tipo de organización física de la planta 
+donde el componente principal o material objeto del trabajo permanece en un 
+--- PAGE 114 ---
+114 
+ 
+lugar fijo durante todo el proceso de transformación. En este esquema, a 
+diferencia de otros tipos de distribución, son los trabajadores, la maquinaria, 
+las herramientas e insumos los que se trasladan y confluyen hacia el lugar 
+donde se encuentra el producto. 
+Se recomienda su uso principalmente en proyectos donde el producto presenta 
+características que hacen que su traslado sea complejo o incosteable. Las 
+actividades recomendadas incluyen: 
+➢ Grandes unidades de transporte: Construcción de barcos y aeronaves. 
+➢ Construcción civil y montajes a pie de obra: Edificios, puentes, represas 
+y torres de tendido eléctrico. 
+17) Explique, para una unión de piezas con diseño abulonado , que diferencias 
+existe entre torque y tensión indicando, además, como se lleva a cabo , sin el 
+uso de un torquímetro, el ajuste de una unión abulonada del tipo rígida. 
+Diferencias entre Torque y Tensión 
+➢ Torque (o Par de Apriete): Se define como el producto de la fuerza 
+aplicada por la distancia perpendicular desde el eje de rotación a la línea 
+de acción de dicha fuerza . Conceptualmente, el torque es el esfuerzo 
+relacionado con el giro o la rotación del elemento roscado. 
+➢ Tensión: Es el resultado del torque aplicado en la unión roscada . 
+Mientras que el torque se refiere al giro, la tensión se refiere al 
+estiramiento o elongación del perno . Esta tensión es la que genera la 
+"carga de sujeción" (clamp load) necesaria para mantener unidos los 
+componentes. 
+Ajuste de una Unión Rígida sin Torquímetro 
+Para llevar a cabo el ajuste en la unión rígida sin el uso de un torquímetro, se 
+utiliza el método basado en el giro del perno o tuerca. 
+Se procede al enroscado inicial hasta que se produzca la resistencia inicial en 
+la unió n. A partir de ese punto, el ajuste final se logra aplicando 
+aproximadamente 1/4 de giro (90°) adicional. 
+18) Explicar las ventajas y desventajas de un sistema de vigas de repartición de 
+cargas ancladas mediante sistemas soldados en vez de abulonados indicando, 
+además, cuando y por que motivo se utiliza este tipo de soluciones. 
+Ventajas del sistema soldado (V.R.C. fijas) 
+➢ Aprovechamiento del volumen espacial. 
+➢ Reducción de altura. 
+➢ Continuidad estructural. 
+➢ Integración de niveles. 
+Desventajas del sistema soldado 
+--- PAGE 115 ---
+115 
+ 
+➢ Carácter permanente. 
+➢ Dificultad de modificación. 
+➢ Exigencias técnicas en obra. 
+Se recurre a la solución de encastres y soldaduras específicamente cuando el 
+espacio vertical o volumen del edificio es limitado. 
+19) Indique el valor de resistencia (en N/mm2) a la rotura del material de un tornillo 
+en cuya cabeza se encuentra la siguiente inscripción: 10.9 
+Resistencia = 10 * 100 N/mm2 = 1000 N/mm2 
+20) ¿Cuál es el objetivo principal del método intercambio pareado? 
+El objetivo principal del método de intercambio pareado es mejorar u optimizar 
+una distribución en planta existente por medio de la minimización de los costos. 
+Su meta es identificar los intercambios entre departamentos que produzcan la 
+reducción más grande en el costo total de la disposición. 
+Este costo se calcula habitualmente multiplicando el flujo de materiales por las 
+distancias y los costos unitarios de transporte. 
+21) Calcular que superficie mínima de predio necesita adquirir el responsable de 
+una actividad para poder realizar allí la construcción de una planta industrial de 
+9.750 m2 de superficie techada, en una sola planta, si el distrito donde se halla 
+ubicado el terreno El código de urbanismo le definiera un FOS = 0,8 y FOT = 3,5. 
+ 
+22) Indicar para el ámbito de CABA ¿Para cuál de los residuos citados corresponde 
+utilizar marco regulatorio de orden nacional para su gestión? 
+A) PCBs 
+B) Asbestos 
+C) Los procedentes de operación en buques y aeronaves. 
+D) Especiales 
+
+--- PAGE 116 ---
+116 
+ 
+ 
+23) ¿Qué tipo de carga maneja una terminal portuaria polivalente? 
+Carga general, contenedores y carga sobre ruedas. 
+ 
+24) ¿Cómo se clasifican los contaminantes atmosféricos? 
+
+--- PAGE 117 ---
+117 
+ 
+ 
+25) Describa las características y maquinas utilizadas para un sistema de 
+estanterías de doble profundidad. 
+Máquinas Utilizadas:  Las máquinas deben estar provistas de horquillas 
+telescópicas que permitan alcanzar y estibar el segundo pallet en profundidad 
+dentro de la estructura. 
+Tipos de Equipos: Habitualmente se utilizan auto elevadores retráctiles 
+equipados con estos implementos telescópicos. 
+Capacidad de Almacenaje:  Permite ubicar dos pallets por canal en cada 
+pasillo, uno detrás del otro 
+Optimización del Espacio:  Al permitir mayor profundidad de carga, se 
+disminuye el número de pasillos necesarios en comparación con el sistema de 
+profundidad simple, maximizando la superficie útil del depósito. 
+Gestión de Inventario: Debido a que el pallet del fondo solo es accesible si se 
+retira el delantero, este sistema obliga casi siempre a una gestión del tipo LIFO 
+(último en entrar, primero en salir). 
+Productividad: Presenta una menor agilidad que el acceso directo estándar, ya 
+que el acceso al segundo pallet requiere reubicar el primero o enviarlo a 
+despacho, lo que genera movimientos adicionales. 
+
+--- PAGE 118 ---
+118 
+ 
+ 
+ 
+26) Indique al menos 2 diferencias entre un transelevador y un elevador trilateral. 
+Altura de trabajo: 
+➢ Trilateral: hasta 15 metros de altura. 
+
+--- PAGE 119 ---
+119 
+ 
+➢ Transelevador: supera los 40 metros de altura. 
+Automatización y manual: 
+➢ Trilateral: operado por un operador. 
+➢ Transelevador: automático. 
+Ancho de pasillo: 
+➢ Trilaterales entre 1,5 y 1,8 metros. 
+➢ Transelevadores la longitud de la carga + 100 milímetros por lado. 
+27) ¿Qué parámetros definen la selección de cada uno de los 3 componentes de 
+una banda transportadora? 
+Cobertura superior: material a transportar y condiciones de trabajo. 
+Cobertura inferior: disposición de la cuna (continua, rodillos de artesa). 
+Tela o malla: tensión de trabajo. 
+ 
+
+--- PAGE 120 ---
+120 
+ 
+ 
+ 
+28) Describa el funcionamiento de las estanterías tipo Drive, el proceso de gestión 
+de inventario y los niveles de ocupación óptimos 
+El sistema de estanterías tipo Drive es una solución de almacenamiento en 
+bloque de base fija diseñada para maximizar el uso del espacio al permitir que 
+
+--- PAGE 121 ---
+121 
+ 
+los vehículos apiladores ( auto elevadores) ingresen directamente dentro de la 
+estructura de la estantería. 
+1. Funcionamiento y Modelos 
+➢ Drive In: Es el modelo más común, donde el auto elevador entra por el 
+frente para depositar la carga y debe salir marcha atrás por el mismo 
+lugar. Generalmente, estas estanterías se apoyan contra una pared, 
+requiriendo un solo pasillo de maniobra frontal, lo que genera un gran 
+ahorro de superficie. 
+➢ Drive Through: En este caso, la estantería se configura como una "isla" 
+con pasillos de maniobra en ambos frentes. Esto permite que el vehículo 
+atraviese la estructura, realizando la carga por un extremo y la descarga 
+por el otro. 
+2. Proceso de Gestión de Inventario 
+➢ Gestión LIFO: Se aplica en las estanterías Drive In. 
+➢ Gestión FIFO: Es posible en las estanterías Drive Through. 
+29) Defina trabajo en altura. 
+Toda tarea que involucre circular o trabajar a un nivel cuya diferencia de cota 
+sea igual o mayor a dos metros (2 m) con respecto al plano horizontal inferior 
+más próximo. Se entiende formalmente como un trabajo con riesgo de caída a 
+distinto nivel. 
+El uso de cinturones de seguridad es obligatorio en todo trabajo en altura donde 
+exista peligro de caídas. 
+A - Anclajes: Son los puntos de unión (permanentes como líneas de vida o 
+temporales como trípodes) a la estructura del edificio. 
+B - Arnés (Body Wear):  Equipo de correas diseñado para sujetar el torso y 
+distribuir las fuerzas de detención por los muslos, pelvis, tórax y hombros. 
+C - Conexión: Dispositivos que unen el arnés con el punto de anclaje, pudiendo 
+ser de sujeción (evitan que el operario llegue a la zona de riesgo) o anticaídas 
+(protegen si la caída ya se ha producido). 
+3. Equipamiento de Elevación 
+Cuando el trabajo requiere elevar al operario de forma estable, se utilizan 
+equipos específicos como: 
+Plataformas de elevación: Pueden ser unipersonales, tipo tijera (para varias 
+personas), articuladas o telescópicas (que pueden superar los 40 m de 
+altura). 
+Andamios: Deben utilizarse para todos los trabajos en altura garantizando 
+siempre la seguridad y estabilidad. 
+--- PAGE 122 ---
+122 
+ 
+Canastos suspendidos: Diseñados para ser operados por grúas, cumpliendo 
+estrictos márgenes de seguridad respecto a la capacidad de carga del equipo 
+de izaje. 
+30) Indicar para la fórmula de cálculo de espesor de pared de cañerías según  
+normas ASME (y para el caso de uniones roscadas) con que factor de los citados 
+se resuelve la disminución de espesor que produce el roscado de la cañería. 
+Opciones: a) Coeficiente y b) Coeficiente A  c) (S. E + P . Y) d) ninguna de las 
+respuestas es correcta. 
+31) Costos operativos de un transporte por carretera. 
+ 
+32) Avion pasaje/carga, avión combi avión de carga. 
+
+--- PAGE 123 ---
+123 
+ 
+ 
+ 
+
+--- PAGE 124 ---
+124 
+ 
+ 
+33) Que parámetro se utiliza para definir el paso de una cadena 
+Capacidad portante. El paso de una cadena es el tamaño de los eslabones, será 
+mayor si es más robusta. 
+34) Que es un puerto seco 
+
+--- PAGE 125 ---
+125 
+ 
+ 
+35) Diferencia entre residuo y desperdicio. 
+ 
+36) Construcciones hibridas. 
+
+--- PAGE 126 ---
+126 
+ 
+ 
+ 
+37) Consideraciones para stock estratégico. 
+➢ El costo del material, por sus implicancias en el capital circulante 
+inmovilizado.  
+
+--- PAGE 127 ---
+127 
+ 
+➢ La disponibilidad del material en el mercado. 
+➢ Gestión con los proveedores de manera de lograr confiabilidad para los 
+acuerdos estratégicos de abastecimiento. 
+➢ Lead time de los proveedores. 
+38) Elementos de limpieza de la cinta transportadora  
+ 
+39) Que procedimiento se utiliza para aumentar el rozamiento entre la banda de 
+transporte y el tambor motriz. 
+➢ Recubrimiento del tambor (Engomado): Es uno de los métodos más 
+efectivos. Consiste en recubrir la superficie de acero del tambor con 
+caucho (habitualmente con una dureza Shore “A” de 60/70). Este 
+revestimiento permite un aumento significativo del coeficien te de 
+rozamiento en comparación con un tambor liso de acero. 
+➢ Aumentar el ángulo de abrace (Arco de contacto): La potencia 
+transmitida es función directa de este ángulo. Para incrementarlo, se 
+utilizan tambores de inflexión (o poleas desviadoras) que obligan a la 
+banda a rodear una mayor parte de la circunferencia de l tambor motriz, 
+pasando de un abrace estándar de 180° a valores de entre 210° y 230°. 
+
+--- PAGE 128 ---
+128 
+ 
+➢ Uso de tambores en Tándem: En sistemas de gran potencia, se utilizan 
+dos tambores motrices motorizados en serie. Esto permite lograr un arco 
+de contacto sumamente elevado, que oscila entre los 350° y 480°, 
+maximizando la fricción total. 
+➢ Chevronado o ranurado: El recubrimiento de caucho puede tener 
+grabados patrones (como el engomado en rombo o chevronado). Estos 
+dibujos no solo mejoran el agarre, sino que ayudan a eliminar el agua, el 
+polvo o restos de material que pudieran quedar entre l a banda y el 
+tambor, evitando el resbalamiento. 
+➢ Sistemas Tensores: Mantener una tensión adecuada mediante tensores 
+(de tornillo, contrapeso o automáticos) es fundamental. Si la banda 
+pierde tensión, disminuye la presión normal sobre el tambor y se 
+produce el resbalamiento. 
+40) Para las cañerías de acero inoxidable,  a) Indicar bajo que circunstancias se 
+utilizan. b) ¿Qué valores de espesor de pared expresados en SCH se utilizan? 
+a) El uso de acero inoxidable, cuyo costo es superior al del acero al carbono, 
+se justifica principalmente en las industrias de procesos por su excelente 
+resistencia a la corrosión. 
+Resistencia a la Corrosión:  debido a la formación de una película 
+protectora de óxido de cromo. 
+Temperaturas Extremas:  Se utiliza tanto para altas temperaturas 
+(superiores a 470°C y hasta 800°C en aceros austeníticos) como para bajas 
+temperaturas (inferiores a -30°C) debido a su alta resistencia al impacto en 
+condiciones criogénicas. 
+Condiciones Sanitarias:  Es el material de elección para el manejo de 
+alimentos, agua potable y productos químicos delicados debido a que es un 
+material sanitario que evita la contaminación del fluido. 
+Seguridad y Durabilidad:  Se emplea en situaciones de alta peligrosidad, 
+alta abrasión y ambientes agresivos. 
+b) La norma ANSI B36.19 define cuatro números Schedule (SCH) específicos 
+para representar sus distintos espesores de pared: 
+➢ 5S 
+➢ 10S 
+➢ 40S 
+➢ 80S 
+41) En el manejo de contaminantes en la atmosfera  las fuentes emisoras de 
+elementos contaminantes pueden dividirse en cuatro grandes grupos. Se pide 
+indicar los mismos. 
+--- PAGE 129 ---
+129 
+ 
+➢ Fuentes Naturales:  Comprenden fenómenos de la naturaleza que 
+aportan contaminantes al aire, tales como actividades volcánicas, 
+geotérmicas, relámpagos, incendios forestales, la niebla de origen 
+marino y la propia vida animal y vegetal. 
+➢ Fuentes Móviles:  Se define como toda máquina o dispositivo emisor 
+que no se halla en un lugar fijo de funcionamiento . Los ejemplos más 
+comunes son los vehículos automotores, las aeronaves y los navíos. 
+➢ Fuentes de Área:  Son fuentes de pequeña magnitud, pero muy 
+numerosas y dispersas en un territorio determinado . Debido a su gran 
+cantidad, en conjunto afectan seriamente la calidad del aire local . Un 
+ejemplo son las pequeñas factorías textiles o concentraciones de 
+frigoríficos en ciertos barrios. 
+➢ Fuentes Fijas o Estacionarias:  También llamadas fuentes puntuales, 
+son aquellas ubicadas en un punto fijo y georreferenciable. Incluyen 
+usinas de generación eléctrica, refinerías de petróleo, industrias 
+químicas, siderúrgicas y procesos de pintura industrial. 
+42) Indique los cinco tipos/clasificación de las aguas residuales. 
+➢ Domesticas. 
+➢ De precipitación  
+➢ De procesos productivos. 
+➢ De acondicionamiento térmico. 
+➢ Agropecuarias. 
+43) Manifiesto de impacto ambiental. 
+El Manifiesto de Impacto Ambiental (MIA) es el documento que debe contener 
+la síntesis descriptiva de las acciones  que se pretenden realizar o de las  
+modificaciones que se le introducirán a un proyecto  ya habilitado y cuyo 
+contenido le permite a la Autoridad de Aplicación, juntamente con el Estudio 
+Técnico de Impacto Ambiental, evaluar si su impacto ambiental se ajusta a 
+las normas ambientales vigentes.   
+El MIA puede contemplar compromisos ambientales voluntarios, no exigibles 
+por las normas ambientales. En tal caso, el titular está obligado a cumplirlos. 
+ 
+ 
+ 
+ 
+ 
+ 
+--- PAGE 130 ---
+130 
+ 
+ 
+ 
+
+--- PAGE 131 ---
+131 
+ 
+ 
+
+--- PAGE 132 ---
+132 
+ 
+ 
+
+--- PAGE 133 ---
+133 
+ 
+ 
+
+--- PAGE 134 ---
+134 
+ 
+ 
+
+--- PAGE 135 ---
+135 
+ 
+ 
+
+--- PAGE 136 ---
+136 
+ 
+ 
+
+--- PAGE 137 ---
+137 
+ 
+ 
+
+--- PAGE 138 ---
+138 
+ 
+ 
+
+--- PAGE 139 ---
+139 
+ 
+ 
+
+--- PAGE 140 ---
+140 
+ 
+ 
+
+--- PAGE 141 ---
+141 
+ 
+ 
+
+--- PAGE 142 ---
+142 
+ 
+ 
+ 
+ 
+ 
+ 
