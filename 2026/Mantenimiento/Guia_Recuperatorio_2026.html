@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Guía del Recuperatorio · Primer Parcial Mantenimiento 2026</title>
+<style>
+  :root{
+    --bg:#0a0e1a; --bg2:#111827; --card:#161d2e; --cardh:#1c2540;
+    --a1:#6366f1; --a2:#8b5cf6; --a3:#06b6d4; --a4:#10b981; --warn:#f59e0b; --dng:#ef4444; --pink:#ec4899;
+    --tx:#f1f5f9; --tx2:#94a3b8; --tx3:#64748b; --bd:rgba(99,102,241,.18); --bdg:rgba(99,102,241,.4);
+    --r:12px; --rs:8px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.7;font-size:16px;overflow-x:hidden}
+  header{text-align:center;padding:60px 24px 40px;background:linear-gradient(180deg,rgba(99,102,241,.10),transparent);border-bottom:1px solid var(--bd)}
+  .badge{display:inline-flex;gap:6px;align-items:center;background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.4);color:#fca5a5;padding:5px 14px;border-radius:999px;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:18px}
+  h1{font-size:clamp(1.9rem,5vw,3.2rem);font-weight:800;background:linear-gradient(135deg,#f1f5f9,var(--a1) 55%,var(--a3));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1.15;margin-bottom:14px}
+  .sub{color:var(--tx2);max-width:680px;margin:0 auto;font-size:1rem}
+  nav{position:sticky;top:0;z-index:100;background:rgba(10,14,26,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--bd);padding:0 16px}
+  .nav-in{max-width:1100px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:8px 0;scrollbar-width:none}
+  .nav-in::-webkit-scrollbar{display:none}
+  .nav-in button{white-space:nowrap;border:1px solid transparent;background:transparent;color:var(--tx2);border-radius:var(--rs);cursor:pointer;padding:7px 13px;font-size:.82rem;font-weight:500;transition:.2s;font-family:inherit}
+  .nav-in button:hover{background:rgba(99,102,241,.12);color:var(--a1)}
+  main{max-width:1040px;margin:0 auto;padding:36px 20px 90px}
+  .sec-t{display:flex;align-items:center;gap:12px;margin:52px 0 22px;padding-bottom:12px;border-bottom:1px solid var(--bd)}
+  .sec-ic{width:44px;height:44px;border-radius:var(--rs);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;background:rgba(99,102,241,.15)}
+  .sec-t h2{font-size:1.5rem;font-weight:700}
+  .sec-t .ss{font-size:.85rem;color:var(--tx3);margin-top:2px}
+  .card{background:var(--card);border:1px solid var(--bd);border-radius:var(--r);padding:22px 24px;margin-bottom:18px}
+  .card h3{font-size:1.08rem;font-weight:700;margin-bottom:10px;display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+  .card p,.card li{color:var(--tx2);font-size:.94rem}
+  .card ul,.card ol{padding-left:22px;margin:8px 0}
+  .card li{margin-bottom:6px}
+  .card li::marker{color:var(--a1)}
+  .pt-num{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--a1),var(--a2));color:#fff;font-weight:800;font-size:.95rem;flex-shrink:0}
+  .tag{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:999px;font-size:.68rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border:1px solid}
+  .t-alta{background:rgba(239,68,68,.12);color:#fca5a5;border-color:rgba(239,68,68,.35)}
+  .t-media{background:rgba(245,158,11,.12);color:#fcd34d;border-color:rgba(245,158,11,.35)}
+  .t-pts{background:rgba(139,92,246,.14);color:#c4b5fd;border-color:rgba(139,92,246,.4)}
+  .hl{background:rgba(99,102,241,.08);border-left:3px solid var(--a1);border-radius:0 var(--rs) var(--rs) 0;padding:12px 15px;margin:10px 0;font-size:.9rem;color:var(--tx2)}
+  .warn{background:rgba(245,158,11,.08);border-left:3px solid var(--warn);border-radius:0 var(--rs) var(--rs) 0;padding:12px 15px;margin:10px 0;font-size:.9rem;color:var(--tx2)}
+  .dng{background:rgba(239,68,68,.08);border-left:3px solid var(--dng);border-radius:0 var(--rs) var(--rs) 0;padding:12px 15px;margin:10px 0;font-size:.9rem;color:var(--tx2)}
+  .grn{background:rgba(16,185,129,.08);border-left:3px solid var(--a4);border-radius:0 var(--rs) var(--rs) 0;padding:12px 15px;margin:10px 0;font-size:.9rem;color:var(--tx2)}
+  .hl strong{color:#a5b4fc}.warn strong{color:var(--warn)}.dng strong{color:#fca5a5}.grn strong{color:#6ee7b7}
+  .rota{display:inline-block;background:rgba(6,182,212,.12);border:1px solid rgba(6,182,212,.3);color:#67e8f9;padding:2px 9px;border-radius:6px;font-size:.8rem;margin:3px 4px 3px 0}
+  .ans{background:rgba(16,185,129,.06);border:1px solid rgba(16,185,129,.25);border-radius:var(--rs);padding:12px 15px;margin-top:10px}
+  .ans .lbl{font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#6ee7b7;margin-bottom:6px}
+  .fx{font-family:'Consolas','JetBrains Mono',monospace;background:var(--bg2);border:1px solid rgba(255,255,255,.06);color:#e2b8ff;padding:14px 16px;border-radius:var(--rs);margin:10px 0;white-space:pre-wrap;font-size:.86rem;line-height:1.65;overflow-x:auto}
+  code{font-family:'Consolas',monospace;background:rgba(99,102,241,.12);color:#a5b4fc;padding:2px 7px;border-radius:5px;font-size:.85em}
+  table{width:100%;border-collapse:collapse;font-size:.87rem;margin-top:10px}
+  th{background:rgba(99,102,241,.12);color:var(--a1);font-weight:700;padding:9px 12px;text-align:left;font-size:.76rem;text-transform:uppercase;letter-spacing:.04em}
+  td{padding:9px 12px;border-bottom:1px solid rgba(255,255,255,.05);color:var(--tx2);vertical-align:top}
+  td:first-child{color:var(--tx);font-weight:600}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:760px){.grid2{grid-template-columns:1fr}}
+  footer{text-align:center;padding:30px;color:var(--tx3);font-size:.82rem;border-top:1px solid var(--bd)}
+  .kb{display:inline-block;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:5px;padding:1px 7px;font-size:.8rem;color:var(--tx)}
+  .fig{background:var(--bg2);border:1px solid rgba(255,255,255,.07);border-radius:var(--rs);padding:16px;margin:14px 0}
+  .fig svg{width:100%;height:auto;display:block}
+  .fig figcaption{color:var(--tx3);font-size:.8rem;text-align:center;margin-top:10px;line-height:1.5}
+  .fig figcaption b{color:var(--a3)}
+  .figs2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:760px){.figs2{grid-template-columns:1fr}}
+  .svg-ax{stroke:#64748b;stroke-width:2}
+  .svg-grid{stroke:rgba(255,255,255,.06);stroke-width:1}
+  .svg-lbl{fill:#94a3b8;font-size:13px;font-family:'Segoe UI',sans-serif}
+  .svg-lbl-sm{fill:#64748b;font-size:11px;font-family:'Segoe UI',sans-serif}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="badge">🎯 UTN · Mantenimiento · Recuperatorio 2026</div>
+  <h1>Guía del Recuperatorio<br/>Primer Parcial de Mantenimiento</h1>
+  <p class="sub">Reconstruida a partir del <strong>parcial real 2026</strong> (Temas 1, 2, 3 y 4, tomados el 06/07). El parcial tiene una <strong>estructura fija de 6 puntos</strong>: cambian los números y la redacción, pero se evalúa siempre lo mismo. Acá está el esqueleto, las variantes que rotan, las respuestas modelo y tus errores a corregir.</p>
+</header>
+
+<nav>
+  <div class="nav-in">
+    <button onclick="go('adn')">🧬 El ADN del parcial</button>
+    <button onclick="go('p1')">1 · Costo de Falla</button>
+    <button onclick="go('p2')">2 · Correctivo/MTTR</button>
+    <button onclick="go('p3')">3 · Wilson</button>
+    <button onclick="go('p4')">4 · Repuestos/OT</button>
+    <button onclick="go('p5')">5 · Preventivo</button>
+    <button onclick="go('p6')">6 · Dotación</button>
+    <button onclick="go('num')">🧮 Ejercicio numérico</button>
+    <button onclick="go('errores')">⚠️ Tus errores (nota 5)</button>
+    <button onclick="go('pred')">🔮 Predicción</button>
+  </div>
+</nav>
+
+<main>
+
+<!-- ADN -->
+<section id="adn">
+  <div class="sec-t"><div class="sec-ic">🧬</div><div><h2>El ADN del parcial 2026</h2><div class="ss">Lo que descubrí cruzando los 4 temas: el mismo molde en todos</div></div></div>
+  <div class="card">
+    <p>Comparé tu Tema 2 con los Temas 1, 3 y 4 de tus compañeros (mismo día, 06/07/2026). <strong>Los cuatro tienen exactamente los mismos 6 puntos</strong>, solo cambia el orden, la redacción y los números. Esto es enorme: <strong>no hay que estudiar "temas sueltos", hay que dominar 6 tipos de pregunta</strong>. El recuperatorio va a ser otro tema con el mismo molde.</p>
+    <table>
+      <tr><th>Punto</th><th>Qué evalúa siempre</th><th>Pts</th></tr>
+      <tr><td>1</td><td>Costo de Falla vs Costo de Mantenimiento (curva, componentes, "a" y "b")</td><td>2</td></tr>
+      <tr><td>2</td><td>Correctivo · Mantenibilidad · MTTR · Reingeniería ≠ Reacondicionamiento</td><td>1</td></tr>
+      <tr><td>3</td><td>Lote Óptimo de Wilson <em>o</em> Presupuesto + Tarifa HH (numérico)</td><td>1–2</td></tr>
+      <tr><td>4</td><td>Repuestos (estratégicos/universales) vs correctivo · OT Emergencia/Urgencia</td><td>1</td></tr>
+      <tr><td>5</td><td>Mantenimiento Preventivo (curva de dispersión, FF/FS, documentación)</td><td>2</td></tr>
+      <tr><td>6</td><td>Dotación de personal · las 4 herramientas para cubrir picos</td><td>2</td></tr>
+    </table>
+    <div class="warn" style="margin-top:14px"><strong>Regla de oro del profe (está escrita en la hoja):</strong> "Para aprobar debe demostrar conocimiento de los conceptos importantes de <u>todos</u> los puntos". No alcanza con clavar 3 puntos perfectos: hay que tocar los 6. Y <strong>corrige por procedimiento y justificación</strong>, no por el número final.</div>
+  </div>
+</section>
+
+<!-- PUNTO 1 -->
+<section id="p1">
+  <div class="sec-t"><div class="sec-ic">📉</div><div><h2>Punto 1 — Costo de Falla vs Costo de Mantenimiento</h2><div class="ss">Casi siempre 2 puntos · el que más pesa</div></div></div>
+  <div class="card">
+    <h3><span class="pt-num">1</span> Cómo se pregunta (variantes reales 2026) <span class="tag t-alta">Alta</span></h3>
+    <span class="rota">"¿Por qué es importante el Costo Variable del costo de falla?" (Tema 2)</span>
+    <span class="rota">"¿A medida que aumenta la automatización, qué pasa con el Costo Variable?" (Tema 1)</span>
+    <span class="rota">"Justifique económicamente el mantenimiento preventivo" (Tema 3)</span>
+    <span class="rota">V/F: "En algunos casos se puede trabajar a la falla" (Tema 4)</span>
+    <p style="margin-top:10px">Todas piden lo mismo: <strong>graficar, listar los componentes del Costo Variable, explicarlos y explicar la forma de la curva del Costo de Mantenimiento.</strong></p>
+    <div class="fx">Costo de Falla:   C_falla = a + b·t
+  a = COSTO FIJO   → material inutilizado, reproceso, envase, repuestos.
+                     NO depende del tiempo de parada.
+  b = COSTO VARIABLE (lucro cesante) → pendiente de la recta. Depende del tiempo:
+        • HH hombre perdidas (operarios parados esperando)
+        • HH / horas máquina paradas (no produce)
+        • Amortización de capital NO cubierta = costo de oportunidad
+        • Penalizaciones por atraso de entrega al cliente</div>
+    <div class="figs2">
+      <figure class="fig">
+        <svg viewBox="0 0 400 285" xmlns="http://www.w3.org/2000/svg">
+          <line class="svg-ax" x1="55" y1="30" x2="55" y2="235"/>
+          <line class="svg-ax" x1="55" y1="235" x2="375" y2="235"/>
+          <text class="svg-lbl" x="30" y="34">$</text>
+          <text class="svg-lbl" x="360" y="255">t</text>
+          <!-- costo fijo a -->
+          <line x1="55" y1="188" x2="350" y2="188" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="5,4"/>
+          <text class="svg-lbl-sm" x="300" y="182" fill="#f59e0b">a · costo fijo</text>
+          <!-- costo variable b·t -->
+          <line x1="55" y1="235" x2="350" y2="120" stroke="#06b6d4" stroke-width="2.5"/>
+          <text class="svg-lbl-sm" x="290" y="132" fill="#06b6d4">b·t · variable</text>
+          <!-- costo falla total -->
+          <line x1="55" y1="188" x2="350" y2="73" stroke="#818cf8" stroke-width="3"/>
+          <text class="svg-lbl-sm" x="150" y="95" fill="#a5b4fc">C.falla = a + b·t</text>
+          <circle cx="55" cy="188" r="3.5" fill="#f59e0b"/>
+        </svg>
+        <figcaption>El <b>Costo de Falla</b> es una recta <b>a + b·t</b>: arranca en el costo fijo <b>a</b> y sube con pendiente <b>b</b> (el lucro cesante). Mostrar los dos componentes por separado.</figcaption>
+      </figure>
+      <figure class="fig">
+        <svg viewBox="0 0 400 285" xmlns="http://www.w3.org/2000/svg">
+          <line class="svg-ax" x1="55" y1="30" x2="55" y2="235"/>
+          <line class="svg-ax" x1="55" y1="235" x2="375" y2="235"/>
+          <text class="svg-lbl" x="30" y="34">$</text>
+          <!-- costo mantenimiento (decreciente) -->
+          <path d="M60,60 Q150,150 350,205" fill="none" stroke="#10b981" stroke-width="3"/>
+          <text class="svg-lbl-sm" x="250" y="225" fill="#6ee7b7">Costo Mantenim.</text>
+          <!-- costo falla (creciente) -->
+          <path d="M60,205 Q250,150 350,60" fill="none" stroke="#ef4444" stroke-width="3"/>
+          <text class="svg-lbl-sm" x="270" y="70" fill="#fca5a5">Costo Falla</text>
+          <!-- optimo -->
+          <line x1="200" y1="140" x2="200" y2="235" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4"/>
+          <circle cx="200" cy="140" r="4" fill="#f1f5f9"/>
+          <text class="svg-lbl-sm" x="168" y="130">óptimo</text>
+          <text class="svg-lbl-sm" x="60" y="258">← + Proactivo</text>
+          <text class="svg-lbl-sm" x="270" y="258">+ Reactivo →</text>
+        </svg>
+        <figcaption>La curva de <b>mantenimiento es decreciente</b> (asíntota: nunca cero) y la de <b>falla creciente</b>. Donde se cruzan = <b>zona óptima</b>. Alta tecnología → óptimo a la izquierda (predictivo).</figcaption>
+      </figure>
+    </div>
+    <div class="ans">
+      <div class="lbl">Respuesta modelo</div>
+      <p>El costo variable importa porque <strong>es la parte que crece con el tiempo de detención</strong> (el lucro cesante): cuanto más tarda la reparación, más caro sale. Por eso su pendiente define si conviene invertir en mantenimiento o trabajar a la falla. <strong>A mayor automatización, la pendiente "b" aumenta</strong> (α ≪ β): más producción perdida por hora, más amortización sin cubrir → justifica más mantenimiento proactivo. La curva de <strong>Costo de Mantenimiento es decreciente</strong>: a más inversión en mantenimiento (inspecciones, predictivo) bajan las fallas y el tiempo de parada; tiene forma de <strong>asíntota</strong> (nunca llega a costo cero ni a tiempo de reparación cero).</p>
+    </div>
+    <figure class="fig">
+      <svg viewBox="0 0 620 260" xmlns="http://www.w3.org/2000/svg">
+        <line class="svg-ax" x1="55" y1="25" x2="55" y2="215"/>
+        <line class="svg-ax" x1="55" y1="215" x2="590" y2="215"/>
+        <text class="svg-lbl" x="30" y="30">$</text>
+        <text class="svg-lbl" x="575" y="235">t</text>
+        <!-- planta manual: pendiente chica -->
+        <line x1="55" y1="185" x2="560" y2="120" stroke="#06b6d4" stroke-width="3"/>
+        <text class="svg-lbl-sm" x="430" y="115" fill="#67e8f9">planta manual (α chico)</text>
+        <path d="M75,208 A28,28 0 0 1 95,193" fill="none" stroke="#94a3b8" stroke-width="1.2"/>
+        <text class="svg-lbl-sm" x="98" y="205">α</text>
+        <!-- planta automatizada: pendiente grande -->
+        <line x1="55" y1="185" x2="360" y2="40" stroke="#ef4444" stroke-width="3"/>
+        <text class="svg-lbl-sm" x="330" y="48" fill="#fca5a5">planta automatizada (β grande)</text>
+        <path d="M78,208 A30,30 0 0 1 100,183" fill="none" stroke="#94a3b8" stroke-width="1.2"/>
+        <text class="svg-lbl-sm" x="103" y="188">β</text>
+        <circle cx="55" cy="185" r="3.5" fill="#f1f5f9"/>
+        <text class="svg-lbl-sm" x="60" y="200">a</text>
+        <text class="svg-lbl" x="250" y="252" fill="#a5b4fc">α ≪ β  → más automatización, mayor lucro cesante por hora</text>
+      </svg>
+      <figcaption>Cuanto más automatizada la planta, <b>mayor la pendiente b</b> del costo de falla: cada hora parada cuesta muchísimo más, por eso conviene mantenimiento proactivo.</figcaption>
+    </figure>
+    <div class="hl"><strong>El gráfico que quiere el profe:</strong> eje Y = Costo ($), eje X = tiempo. Curva de <em>Costo de Falla</em> creciente (a + b·t) y curva de <em>Costo de Mantenimiento</em> decreciente. Donde se cruzan hacia la <strong>izquierda</strong> → conviene proactivo/preventivo; hacia la <strong>derecha</strong> → trabajar a la falla.</div>
+    <div class="grn"><strong>V/F "trabajar a la falla":</strong> VERDADERO. Cuando el costo de mantenimiento supera al costo de la falla (equipo barato, no crítico, no afecta seguridad), conviene trabajar a la falla y aprovechar el 100% de la vida útil.</div>
+  </div>
+</section>
+
+<!-- PUNTO 2 -->
+<section id="p2">
+  <div class="sec-t"><div class="sec-ic">🔧</div><div><h2>Punto 2 — Correctivo · Mantenibilidad · MTTR · Reingeniería</h2><div class="ss">1 punto · conceptual · te descontaron acá</div></div></div>
+  <div class="card">
+    <h3><span class="pt-num">2</span> Cómo se pregunta <span class="tag t-alta">Alta</span></h3>
+    <span class="rota">"Relación entre correctivo, mantenibilidad y MTTR. Justifique y EJEMPLIFIQUE" (Tema 2)</span>
+    <span class="rota">"¿El correctivo tiene alguna ventaja? ¿Ventaja de planificar una sustitutiva?" (Tema 4)</span>
+    <span class="rota">"¿Reingeniería es sinónimo de Reacondicionamiento?" (Tema 2)</span>
+    <div class="ans">
+      <div class="lbl">Respuesta modelo — correctivo / mantenibilidad / MTTR</div>
+      <p>La <strong>mantenibilidad</strong> es la probabilidad de diagnosticar y reparar un ítem en falla en un tiempo t. Es <strong>inversamente proporcional al MTTR</strong>: si sube la mantenibilidad, baja el MTTR. <strong style="color:#fca5a5">OJO (esto te lo marcó el profe): el mantenimiento correctivo PERJUDICA la mantenibilidad</strong>, porque se hace apurado, sin planificar, con riesgo de errores de montaje. Se mejora la mantenibilidad con repuestos universales, conjuntos listos, poka-yokes, manuales y buena capacitación. <em>Ejemplo:</em> si se rompe una válvula y es un repuesto universal, la reparación es simple → baja el MTTR → sube la mantenibilidad.</p>
+    </div>
+    <div class="ans">
+      <div class="lbl">Respuesta modelo — ¿reingeniería = reacondicionamiento?</div>
+      <p><strong>No son sinónimos.</strong> El <strong>reacondicionamiento</strong> deja solo la bancada y renueva el interior del equipo; <strong>debe hacerse una vez amortizada la máquina</strong> (al entrar en la etapa de deterioro) y no implica rediseño. La <strong>reingeniería / mejorativo</strong> modifica el diseño para eliminar fallas recurrentes o mejorar funciones, y es la <strong>última opción</strong>.</p>
+    </div>
+    <div class="grn"><strong>Ventaja del correctivo:</strong> aprovecha el 100% de la vida útil del equipo y requiere poca planificación. <strong>Ventaja de la sustitutiva/restaurativa (programada):</strong> permite conseguir el repuesto y la mano de obra con anticipación, evitando una parada no programada de producción.</div>
+  </div>
+</section>
+
+<!-- PUNTO 3 -->
+<section id="p3">
+  <div class="sec-t"><div class="sec-ic">📦</div><div><h2>Punto 3 — Lote Óptimo de Wilson</h2><div class="ss">1–2 pts · a veces cae acá el numérico de presupuesto (ver sección 🧮)</div></div></div>
+  <div class="card">
+    <h3><span class="pt-num">3</span> Cómo se pregunta <span class="tag t-alta">Alta</span></h3>
+    <span class="rota">"Si se AUMENTA arbitrariamente el lote óptimo de un repuesto universal, ¿qué pasa con el CT?" (Temas 2, 4)</span>
+    <span class="rota">"Si se DISMINUYE arbitrariamente el lote óptimo, ¿qué pasa con el CT?" (Tema 1)</span>
+    <div class="fx">Lote óptimo:      Lo = √( 2·K·D / (b·i) )
+Costo almacenaje: C_alm = (Lo/2)·b·i        (crece con el lote)
+Costo adquisición:C_adq = (D/Lo)·K          (decrece con el lote)
+Costo total:      CT = C_adq + C_alm + C_ss + C_ítem   →  forma de U
+
+K=costo de emitir 1 orden · D=demanda anual · b=precio unitario · i=tasa inmovilización</div>
+    <figure class="fig">
+      <svg viewBox="0 0 460 300" xmlns="http://www.w3.org/2000/svg">
+        <line class="svg-ax" x1="60" y1="25" x2="60" y2="245"/>
+        <line class="svg-ax" x1="60" y1="245" x2="435" y2="245"/>
+        <text class="svg-lbl" x="34" y="30">$</text>
+        <text class="svg-lbl" x="340" y="285">Cantidad (Q)</text>
+        <!-- costo almacenaje: recta creciente -->
+        <line x1="60" y1="245" x2="410" y2="70" stroke="#f59e0b" stroke-width="2.5"/>
+        <text class="svg-lbl-sm" x="335" y="72" fill="#fcd34d">C.almacenaje</text>
+        <!-- costo adquisicion: decreciente -->
+        <path d="M75,65 Q150,222 415,233" fill="none" stroke="#06b6d4" stroke-width="2.5"/>
+        <text class="svg-lbl-sm" x="330" y="245" fill="#67e8f9">C.adquisición</text>
+        <!-- costo total: U limpia -->
+        <path d="M72,80 Q232,240 412,72" fill="none" stroke="#818cf8" stroke-width="3.2"/>
+        <text class="svg-lbl-sm" x="160" y="50" fill="#a5b4fc">Costo Total (CT)</text>
+        <!-- Lo -->
+        <line x1="232" y1="160" x2="232" y2="245" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4"/>
+        <circle cx="232" cy="160" r="4.5" fill="#f1f5f9"/>
+        <text class="svg-lbl-sm" x="216" y="263" fill="#f1f5f9">Lo</text>
+        <!-- flechas desvio -->
+        <text class="svg-lbl-sm" x="78" y="128" fill="#fca5a5">↑ CT si Q &lt; Lo</text>
+        <text class="svg-lbl-sm" x="300" y="128" fill="#fca5a5">↑ CT si Q &gt; Lo</text>
+      </svg>
+      <figcaption>El <b>Costo Total tiene forma de U</b> con mínimo en <b>Lo</b>. Alejarse del óptimo (aumentar o disminuir) siempre sube el CT. <b>Este</b> es el gráfico que pide el profe para justificar — NO el de dientes de sierra del nivel de stock.</figcaption>
+    </figure>
+    <div class="ans">
+      <div class="lbl">Respuesta modelo (sirve para "aumenta" y "disminuye")</div>
+      <p>El CT tiene <strong>forma de U con mínimo en Lo</strong>. Cualquier desvío del óptimo <strong>sube el costo total</strong>:</p>
+      <ul>
+        <li><strong>Si AUMENTO el lote:</strong> sube el costo de almacenaje (más stock inmovilizado) por encima de lo que baja el de adquisición → CT sube.</li>
+        <li><strong>Si DISMINUYO el lote:</strong> sube el costo de adquisición (emito más órdenes al año) por encima de lo que baja el almacenaje → CT sube.</li>
+      </ul>
+    </div>
+    <div class="warn"><strong>Trampa (te la corrigió el profe a un compañero):</strong> el gráfico que pide es <strong>CT vs cantidad (la U con C_adq y C_alm)</strong>, NO el gráfico de dientes de sierra del nivel de stock. Y aclarar siempre: Wilson se aplica <strong>solo a repuestos universales</strong> (demanda previsible), y antes va el <strong>estudio ABC</strong>.</div>
+  </div>
+</section>
+
+<!-- PUNTO 4 -->
+<section id="p4">
+  <div class="sec-t"><div class="sec-ic">🗂️</div><div><h2>Punto 4 — Repuestos vs Correctivo · OT Emergencia/Urgencia</h2><div class="ss">1 punto · conceptual con ejemplo</div></div></div>
+  <div class="card">
+    <h3><span class="pt-num">4</span> Cómo se pregunta <span class="tag t-alta">Alta</span></h3>
+    <span class="rota">"¿Los repuestos ESTRATÉGICOS juegan a favor o en contra del correctivo?" (Tema 2)</span>
+    <span class="rota">"¿Los repuestos UNIVERSALES juegan a favor o en contra? Incluya el MTTR" (Tema 3)</span>
+    <span class="rota">"Producción emite una OT como EMERGENCIA en turno noche: ¿qué acción y qué pasa con la mantenibilidad?" (Tema 1)</span>
+    <span class="rota">"Producción emite una OT como URGENCIA en turno tarde: ¿qué acción? Ejemplifique" (Tema 3)</span>
+    <div class="grid2">
+      <div class="ans">
+        <div class="lbl">Repuestos vs correctivo</div>
+        <p><strong>Estratégicos → EN CONTRA</strong> del correctivo: son caros, de diseño propio y difíciles de conseguir (demora larga). <strong>Universales → A FAVOR</strong>: son intercambiables, fáciles de conseguir → <strong>bajan el MTTR y suben la mantenibilidad</strong>, ideal para el correctivo que se trabaja con urgencia.</p>
+      </div>
+      <div class="ans">
+        <div class="lbl">OT según tipo</div>
+        <p><strong>Emergencia</strong> (para producción, máquina imprescindible) → <strong>correctivo inmediato</strong>; la mantenibilidad baja (MTTR alto por la presión, operario apurado). <strong>Urgencia</strong> (afecta pero no imprescindible ya) → <strong>sustitutivo/restaurativo programable</strong>. Las OT eventuales <strong>las emite y cierra Producción</strong>.</p>
+      </div>
+    </div>
+    <div class="hl"><strong>Ejemplo listo para OT urgencia:</strong> se rompe uno de los balancines pero se puede seguir produciendo con otro momentáneamente → se emite OT urgente, se lleva al taller y se cambia el motor sin frenar la producción.</div>
+  </div>
+</section>
+
+<!-- PUNTO 5 -->
+<section id="p5">
+  <div class="sec-t"><div class="sec-ic">📊</div><div><h2>Punto 5 — Mantenimiento Preventivo (curva de dispersión)</h2><div class="ss">2 puntos · el de desarrollo largo · sale SIEMPRE</div></div></div>
+  <div class="card">
+    <h3><span class="pt-num">5</span> Cómo se pregunta <span class="tag t-alta">Alta</span></h3>
+    <span class="rota">"El elemento X1 tiene una curva de dispersión / un MTBF de 5000 hs. Explique los pasos para planificar la acción"</span>
+    <p style="margin-top:8px">Piden siempre: <strong>a)</strong> pasos para planificar (graficar dispersión, clasificar la OT, indicar FF y FS, documentación dinámica, estado teórico y real) · <strong>b)</strong> la gran desventaja · <strong>c)</strong> un ejemplo (lubricación o control de amperaje).</p>
+    <div class="figs2">
+      <figure class="fig">
+        <svg viewBox="0 0 400 265" xmlns="http://www.w3.org/2000/svg">
+          <line class="svg-ax" x1="55" y1="25" x2="55" y2="215"/>
+          <line class="svg-ax" x1="55" y1="215" x2="375" y2="215"/>
+          <text class="svg-lbl-sm" x="18" y="30">frec.</text>
+          <text class="svg-lbl" x="360" y="235">t</text>
+          <!-- campana angosta (baja dispersion) -->
+          <path d="M150,215 Q205,25 260,215" fill="none" stroke="#10b981" stroke-width="3"/>
+          <!-- FS -->
+          <circle cx="177" cy="138" r="4" fill="#f59e0b"/>
+          <text class="svg-lbl-sm" x="146" y="132" fill="#fcd34d">FS</text>
+          <!-- FF -->
+          <line x1="205" y1="118" x2="205" y2="215" stroke="#94a3b8" stroke-width="1.3" stroke-dasharray="4,4"/>
+          <circle cx="205" cy="118" r="4.5" fill="#ef4444"/>
+          <text class="svg-lbl-sm" x="212" y="112" fill="#fca5a5">FF</text>
+          <!-- MTBF bracket -->
+          <line x1="55" y1="232" x2="205" y2="232" stroke="#64748b" stroke-width="1.3"/>
+          <text class="svg-lbl-sm" x="105" y="247">MTBF</text>
+          <text class="svg-lbl-sm" x="268" y="150" fill="#6ee7b7">se interviene</text>
+          <text class="svg-lbl-sm" x="268" y="165" fill="#6ee7b7">antes de la FF</text>
+        </svg>
+        <figcaption><b>Baja dispersión</b> (campana angosta): el MTBF es confiable → se planifica el preventivo. <b>FS</b> = falla sintomática (avisa), <b>FF</b> = falla funcional (se interviene un instante antes).</figcaption>
+      </figure>
+      <figure class="fig">
+        <svg viewBox="0 0 400 265" xmlns="http://www.w3.org/2000/svg">
+          <line class="svg-ax" x1="55" y1="25" x2="55" y2="215"/>
+          <line class="svg-ax" x1="55" y1="215" x2="375" y2="215"/>
+          <text class="svg-lbl-sm" x="18" y="30">frec.</text>
+          <text class="svg-lbl" x="360" y="235">t</text>
+          <!-- campana ancha (alta dispersion) -->
+          <path d="M80,215 Q215,95 350,215" fill="none" stroke="#ef4444" stroke-width="3"/>
+          <text class="svg-lbl-sm" x="150" y="120" fill="#fca5a5">MTBF difícil</text>
+          <text class="svg-lbl-sm" x="150" y="135" fill="#fca5a5">de determinar</text>
+        </svg>
+        <figcaption><b>Alta dispersión</b> (campana ancha): no se puede fijar un MTBF confiable → hay que hacer <b>inspecciones periódicas</b> para bajar la dispersión antes de planificar.</figcaption>
+      </figure>
+    </div>
+    <div class="ans">
+      <div class="lbl">a) Pasos para planificar el preventivo</div>
+      <ol>
+        <li><strong>Graficar la dispersión</strong> y mirar los valores. <span style="color:#67e8f9">Baja dispersión</span> → MTBF confiable, se puede planificar. <span style="color:#fcd34d">Alta dispersión</span> → difícil determinar el MTBF, hay que hacer inspecciones periódicas para bajar la dispersión.</li>
+        <li>Indicar <strong>FS (Falla Sintomática)</strong> = punto donde el equipo "avisa" (aún funciona) y <strong>FF (Falla Funcional)</strong> = donde pierde la función. Se interviene un instante antes de la FF.</li>
+        <li>Clasificar la <strong>OT como planificada / Normal (o Urgente)</strong>, emitida por Mantenimiento.</li>
+        <li><strong>Documentación dinámica:</strong> Historial de equipos (se nutre de la OT), Registro Central de planificación de intervenciones, Hoja de Ruta.</li>
+        <li><strong>Estado teórico vs real:</strong> Estado del fabricante (en vacío) &gt; Estado teórico (en planta) &gt; Estado real (medido en inspección). Se busca mantener las funciones dentro del estado teórico.</li>
+      </ol>
+      <figure class="fig" style="margin-top:14px">
+        <svg viewBox="0 0 620 210" xmlns="http://www.w3.org/2000/svg">
+          <line class="svg-ax" x1="40" y1="20" x2="40" y2="165"/>
+          <line class="svg-ax" x1="40" y1="165" x2="590" y2="165"/>
+          <text class="svg-lbl-sm" x="10" y="26">estado</text>
+          <!-- barras descendentes -->
+          <rect x="70" y="40" width="90" height="125" fill="#6366f1" opacity="0.75" rx="3"/>
+          <text class="svg-lbl-sm" x="72" y="185">Fabricante</text>
+          <text class="svg-lbl-sm" x="88" y="199">(en vacío)</text>
+          <rect x="210" y="70" width="90" height="95" fill="#06b6d4" opacity="0.75" rx="3"/>
+          <text class="svg-lbl-sm" x="222" y="185">Teórico</text>
+          <text class="svg-lbl-sm" x="220" y="199">(en planta)</text>
+          <rect x="350" y="105" width="90" height="60" fill="#f59e0b" opacity="0.75" rx="3"/>
+          <text class="svg-lbl-sm" x="365" y="185">Real</text>
+          <text class="svg-lbl-sm" x="352" y="199">(inspección)</text>
+          <!-- flecha a historial -->
+          <line x1="450" y1="120" x2="500" y2="120" stroke="#94a3b8" stroke-width="2" marker-end="url(#ar)"/>
+          <defs><marker id="ar" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#94a3b8"/></marker></defs>
+          <rect x="505" y="95" width="95" height="50" fill="none" stroke="#10b981" stroke-width="2" rx="4"/>
+          <text class="svg-lbl-sm" x="512" y="117" fill="#6ee7b7">Historial de</text>
+          <text class="svg-lbl-sm" x="512" y="132" fill="#6ee7b7">reparaciones</text>
+        </svg>
+        <figcaption><b>Fabricante (vacío) &gt; Teórico (planta) &gt; Real (inspección)</b>. El estado real siempre es menor por el estrés productivo; todo se registra en el historial del equipo.</figcaption>
+      </figure>
+    </div>
+    <div class="ans">
+      <div class="lbl">b) Gran desventaja del preventivo</div>
+      <p><strong>No aprovecha el 100% de la vida útil</strong> (se cambian repuestos que todavía servían), requiere <strong>parar la máquina y la producción</strong>, mantiene <strong>alto stock inmovilizado</strong>, puede introducir <strong>fallas por mal armado</strong> (mortalidad infantil) y <strong>no aumenta la productividad</strong> (se hace con la máquina parada).</p>
+    </div>
+    <div class="ans">
+      <div class="lbl">c) Ejemplos (elegí uno)</div>
+      <p><strong>Lubricación:</strong> con el equipo parado, usando un <strong>alemite</strong>, los sentidos y la experiencia del operario; el plan indica cada cuántos días cambiar el aceite. <strong>Control de amperaje:</strong> el estado teórico se toma con la máquina nueva (ej: <strong>20 A</strong>); el estado real se mide en funcionamiento y es <strong>menor</strong> (ej: 12 A). Regla: <strong>(A) real &lt; (A) teórico</strong>.</p>
+    </div>
+    <div class="warn"><strong>Tu error en este punto (Tema 2):</strong> el profe anotó "¿qué quisiste decir?" en la parte de inspección. Sé explícito: "se inspecciona <u>periódicamente</u> midiendo el estado real y comparándolo con el teórico". No dejar frases a medias.</div>
+  </div>
+</section>
+
+<!-- PUNTO 6 -->
+<section id="p6">
+  <div class="sec-t"><div class="sec-ic">👷</div><div><h2>Punto 6 — Dotación · las 4 herramientas</h2><div class="ss">2 puntos · cae en TODOS los temas</div></div></div>
+  <div class="card">
+    <h3><span class="pt-num">6</span> Cómo se pregunta <span class="tag t-alta">Alta</span></h3>
+    <span class="rota">"La evaluación concluye que se necesitan 7,2 (ó 7,8) operarios y hay 7. ¿Qué decide?" (Temas 1, 4)</span>
+    <span class="rota">"Se prevé un incremento TEMPORAL de acciones del 15 al 30/07. ¿Qué decide respecto de la dotación?" (Temas 2, 3)</span>
+    <p style="margin-top:8px">Siempre piden <strong>listar y explicar las 4 herramientas</strong>. La clave: si el aumento es <strong>temporal</strong> o el número da con decimales bajos, <strong>NO se contrata</strong> — se redondea trunco hacia abajo.</p>
+    <div class="fx">Las 4 herramientas — SIEMPRE en este orden de preferencia:
+  1) REASIGNAR / REDISTRIBUIR TAREAS  → gratis. Riesgo: sobrecargar o personal no capacitado.
+  2) HORAS EXTRA                       → mismo personal. Cuesta +50% / +100%.
+  3) TERCERIZAR                        → no conocen la planta, sin motivación, pago margen a la consultora.
+  4) CONTRATAR NUEVO PERSONAL          → ÚLTIMA opción. Costo fijo permanente + capacitación (curva de aprendizaje).</div>
+    <div class="ans">
+      <div class="lbl">Justificación textual (esto es lo que puntúa)</div>
+      <p>"Como el incremento es temporal / la fracción es pequeña, <strong>no contrato personal nuevo</strong> para no asumir costos fijos estructurales permanentes por una necesidad transitoria. Cubro el exceso, en orden: reasignando tareas, luego con horas extra, y si no alcanza, tercerizando. Contratar queda como última opción."</p>
+    </div>
+    <div class="grn"><strong>Redondeo trunco:</strong> 7,2 → se mantienen 7 operarios · 7,8 → también 7 (se trunca hacia abajo). Las horas remanentes se absorben con las 3 primeras herramientas.</div>
+  </div>
+</section>
+
+<!-- NUMERICO -->
+<section id="num">
+  <div class="sec-t"><div class="sec-ic">🧮</div><div><h2>El ejercicio numérico — Presupuesto + Tarifa HH</h2><div class="ss">Aparece en casi todos los temas (P3 o P5) · acá perdiste puntos</div></div></div>
+  <div class="card">
+    <h3>Plantilla reutilizable (sirve para cualquier tema)</h3>
+    <p>Enunciado tipo: te dan Ppto base, stock promedio, tasa de interés, consumo de repuestos, hs netas por operario, cantidad de operarios de mantenimiento y de taller, y el tipo de organización (para los imprevistos).</p>
+    <div class="fx">1) COSTO FINANCIERO DEL STOCK = Stock promedio × tasa de interés
+2) SUBTOTAL = Ppto base + costo financiero del stock
+3) IMPREVISTOS:
+      • 8%  si la planta tiene MUCHO preventivo / muchas acciones proactivas
+      • 15% si la planta tiene MUCHO correctivo / pocas acciones proactivas
+4) PPTO SIN MATERIALES = SUBTOTAL × (1 + imprevistos)
+5) PPTO CON MATERIALES = PPTO SIN MATERIALES + consumo de repuestos
+
+6) TARIFA HH:
+      HH sin mat = Ppto SIN materiales / (hs netas × Nº operarios de MANTENIMIENTO)
+      HH con mat = Ppto CON materiales / (hs netas × Nº operarios de MANTENIMIENTO)
+   ⚠️ Los operarios de TALLER NO se cuentan. Solo mano de obra directa (mantenimiento).
+
+7) COSTO DE UNA REPARACIÓN:
+      • Si te dan cuánto material se usó → HH SIN mat × horas + repuestos reales
+      • Si NO te dan el material        → HH CON mat × horas</div>
+    <div class="ans">
+      <div class="lbl">Ejemplo resuelto (Tema 3 · 2026)</div>
+      <p>Ppto sin mat/stock/imprev = 80.000.000 · stock = 2.000.000 · tasa = 10% · repuestos = 700.000 · hs = 1.500 · operarios mant = 6, taller = 2 · mucho correctivo → 15%.</p>
+      <div class="fx">Int. stock = 2.000.000 × 0,10 = 200.000
+Subtotal   = 80.000.000 + 200.000 = 80.200.000
+Ppto s/mat = 80.200.000 × 1,15 = 92.230.000
+Ppto c/mat = 92.230.000 + 700.000 = 92.930.000
+HH c/mat   = 92.930.000 / (1.500 × 6) = 10.326 $/h
+a) reparación de 15 hs (sin dato de repuestos) = 10.326 × 15 = 154.890 $</div>
+    </div>
+    <div class="warn"><strong>Las 3 preguntas teóricas que acompañan el numérico (van SIEMPRE):</strong>
+      <ul style="margin-top:6px">
+        <li><strong>b) ¿Por qué esa tarifa HH?</strong> Si conocés cuánto material se usó → HH <u>sin</u> materiales (preciso). Con materiales prorratearías el consumo y perderías exactitud.</li>
+        <li><strong>c) ¿Qué decisiones permite / NO permite?</strong> HH sin mat: control <u>calendarizado</u>, costear cada máquina, decidir reemplazo. HH con mat: NO permite individualizar por máquina ni calendarizar.</li>
+        <li><strong>d) ¿A qué presupuesto se aproximan las reparaciones a fin de año?</strong> Al <strong>presupuesto anual CON materiales</strong> (suma de MO + materiales de todas las reparaciones).</li>
+      </ul>
+    </div>
+    <div class="hl"><strong>Si en vez de tarifa cae DOTACIÓN:</strong> Hs brutas (hs/día × días/sem × sem/año) − vacaciones − feriados − descanso − ausentismo (2–5%, aplicalo aunque no lo pidan) = hs netas. Dotación = hs demandadas / hs netas → <strong>redondeo trunco hacia abajo</strong> + justificar con las 4 herramientas (Punto 6).</div>
+  </div>
+</section>
+
+<!-- ERRORES -->
+<section id="errores">
+  <div class="sec-t"><div class="sec-ic">⚠️</div><div><h2>Tus errores del parcial (nota 5) — corregilos</h2><div class="ss">Sacado directo de las correcciones del profe en tu Tema 2</div></div></div>
+  <div class="card">
+    <table>
+      <tr><th>Punto</th><th>Qué te marcó</th><th>Cómo arreglarlo</th></tr>
+      <tr><td>P1</td><td>"¿y b qué significa? ¿cómo se compone?"</td><td>No solo nombrar "costo variable": <strong>listar y explicar</strong> los 4 componentes (HH, máquina, amortización, penalizaciones).</td></tr>
+      <tr><td>P2</td><td>"En realidad el correctivo perjudica la mantenibilidad"</td><td>Decir explícito que el <strong>correctivo BAJA la mantenibilidad</strong>. Y que el reacondicionamiento se hace <strong>una vez amortizada</strong> la máquina.</td></tr>
+      <tr><td>P3</td><td>Error en el subtotal + imprevistos mal (pusiste 8%)</td><td>Con <strong>muchas correctivas → 15%</strong>. No sumar el interés de stock dos veces. Revisar el arrastre.</td></tr>
+      <tr><td>P5</td><td>"¿qué quisiste decir? inspecciono por después?"</td><td>Redactar completo: "se inspecciona <strong>periódicamente</strong>, midiendo estado real vs teórico". No dejar frases cortadas.</td></tr>
+    </table>
+    <div class="dng" style="margin-top:14px"><strong>Patrón de tus descuentos:</strong> no fallaste por no saber, fallaste por <strong>respuestas incompletas y un error de arrastre en el numérico</strong>. En el recu: desarrollá cada justificación hasta el final y revisá dos veces la cuenta de imprevistos y la suma del subtotal.</div>
+  </div>
+</section>
+
+<!-- PREDICCION -->
+<section id="pred">
+  <div class="sec-t"><div class="sec-ic">🔮</div><div><h2>Qué esperar en el recuperatorio</h2><div class="ss">Mismo molde, otro tema · checklist final</div></div></div>
+  <div class="card">
+    <p>El recuperatorio va a ser <strong>otro tema con los mismos 6 puntos</strong>. Prácticamente seguro que caen:</p>
+    <div class="grn">
+      <strong>Casi garantizado:</strong>
+      <ul style="margin-top:6px">
+        <li>El <strong>numérico de Presupuesto + Tarifa HH</strong> (o Dotación) con sus 3 preguntas teóricas b/c/d.</li>
+        <li>El <strong>preventivo de la curva de dispersión</strong> (pasos, FF/FS, documentación, ejemplo).</li>
+        <li>Las <strong>4 herramientas de dotación</strong> con la justificación del "no contratar".</li>
+        <li>Costo de falla / costo variable con el <strong>gráfico</strong>.</li>
+      </ul>
+    </div>
+    <div class="hl">
+      <strong>Checklist antes de entrar:</strong>
+      <ul style="margin-top:6px">
+        <li>☐ Fórmulas de memoria: <code>C_falla = a + b·t</code>, <code>Lo = √(2KD/bi)</code>, tarifa HH, dotación.</li>
+        <li>☐ Imprevistos: 8% preventivo / 15% correctivo — y saber justificar cuál elijo.</li>
+        <li>☐ Solo operarios de <u>mantenimiento</u> en la tarifa HH, nunca los de taller.</li>
+        <li>☐ Estado fabricante &gt; teórico &gt; real. FF vs FS. Correctivo baja la mantenibilidad.</li>
+        <li>☐ Las 4 herramientas en orden y por qué contratar es lo último.</li>
+        <li>☐ Tocar los 6 puntos aunque sea corto — el profe exige "todos los puntos".</li>
+        <li>☐ Desarrollar cada justificación completa (tu talón de Aquiles) y revisar el numérico 2 veces.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Guía del Recuperatorio · Primer Parcial Mantenimiento · Reconstruida de los Temas 1–4 del parcial 2026 (Aprigliano) · UTN FRBA</p>
+</footer>
+
+<script>
+  function go(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});}
+</script>
+</body>
+</html>
