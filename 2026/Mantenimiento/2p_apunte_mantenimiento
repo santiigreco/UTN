@@ -9,4 +9,47 @@ Ejemplo: una electrobomba, Caudal, metros de columna de agua.
 -> maximizo vida util del equipo
 -> bajo el stock
 
+24/08 
+
+termografia -> la gran ventaja es que la hago a distancia. En funcion de una gama de colores puedo inferir la temperatura.
+
+Alineacion laser -> cuando tengo 2 elementos conectados por un eje tienen q estar perfectamente alineados
+
+particulas magnetizables -> se transforma la pieza de estudio en un iman. Se espolvorea con limadura de hierro y se va a orientar segun las lineas de campo
+
+analisis de amperaje
+
+analisis de desgaste
+
+
+examen -> analisis de vibraciones (grafico) donde es preventivo, donde predictivo, y diferencias
+
+Ventajas  predictivo: 
+
+- Se aplica con maquina en marcha
+- Mayor aprovechamiento de la vida util de elementos y componentes
+- Mayor seguimiento, da mejor analisis historico de fallas y aporta datos necesairo spara mentenimiento preventivo.
+- 
+-
+
+Desventajas
+- Gran desventaja: falla sintomatica de caracter irreversible
+- Mayor inversion inicial y adicional de equipamiento
+-Oblgacion de mediciones con mayor frecuencia (algunas son dificiles)
+- costos importantes de proveedores especializados y MO
+- No reemplaza totalmente al preventivo
+
+
+
+El predictivo se realiza cuando las curvas se crucen muy muy a la izquierda. Un tiempo de parada no programada corto tiene un costo altisimo. 
+
+
+Mantenimiento condicional: 
+
+propone la idea de llevar al limite de su utilizacion la vida remanente de los coponentes de un activo. Considera la condicion de las partes que estan bajo inspeccion y se dejan en funcionamiento en funcion de su estado en el momento del chequeo (si están bien siguen funcionando y sino se reemplazan o reparan)
+
+
+Mantenimiento condicional = predictivo + proactivo
+
+Se basa en estrategias de diagnostico en funcion del estado parametrico siempre que sea tecnicamente posible el monitoreo y el diagnostico
 
