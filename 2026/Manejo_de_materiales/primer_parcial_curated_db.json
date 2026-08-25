@@ -1,0 +1,799 @@
+[
+  {
+    "id": 1,
+    "title": "Área de Mixtura de Usos en CABA (Definición, Clasificación de Áreas 1 a 4 y Ejemplos)",
+    "question": "¿Qué define el área de mixtura según el Código Urbanístico de CABA? Indique ejemplos de cada una.",
+    "variants": [
+      "¿Qué define el área de mixtura según el Código Urbanístico de CABA? Indique ejemplos",
+      "En CABA, ¿qué define el área de Mixtura y dónde se aplica?",
+      "Definir mixtura de usos según el Código Urbanístico de CABA y describir las 4 áreas de mixtura."
+    ],
+    "occurrences": [
+      "1° Parcial 2026 (Recopilación reciente)",
+      "1° Parcial 26/06/2023 - Tema 2",
+      "1° Parcial 08/07/2024 - Tema 2",
+      "Recuperatorio 1° Parcial 09/12/2024",
+      "Recuperatorio 1° Parcial 09/12/2025",
+      "1° Parcial Fotos Temas 1 y 2",
+      "Preguntas-1P-Manejo-LC (Pág 3, 7)",
+      "Preguntas-a-desarrollar-1P-2023 (Pág 4, 12)"
+    ],
+    "unit": "Unidad 3: Códigos Urbanísticos",
+    "file": "G-UT08-31 Códigos Urbanisticos.pdf",
+    "slides": "13, 14",
+    "category": "u3_urbano",
+    "answer_html": "\n<p class=\"ans-lead\"><strong>Definición:</strong> Es la coexistencia planificada de distintas actividades (residenciales, comerciales, de servicios y productivas compatibles) en una misma zona o parcela, con el objetivo de promover una ciudad policéntrica, compacta y sustentable donde los traslados cotidianos sean mínimos.</p>\n\n<h4 class=\"ans-sub\">Clasificación de las 4 Áreas de Mixtura de Usos:</h4>\n<ul class=\"ans-list\">\n  <li><strong>Área de Mixtura 1 (Baja Intensidad):</strong> Zonas predominantemente residenciales con comercios minoristas básicos y servicios personales de escala barrial destinados a satisfacer las necesidades cotidianas inmediatas. <em>Ejemplo: Barrios residenciales de baja densidad (Villa Devoto residencial, Saavedra interior).</em></li>\n  <li><strong>Área de Mixtura 2 (Mediana-Baja Intensidad):</strong> Zonas residenciales combinadas con servicios y comercios minoristas de mediana intensidad y afluencia vecinal. <em>Ejemplo: Calles secundarias de barrios consolidados (Caballito norte, Villa Urquiza residencial).</em></li>\n  <li><strong>Área de Mixtura 3 (Alta Intensidad / Interurbana):</strong> Zonas con comercios y servicios de escala metropolitana e interurbana, de alta intensidad, que conviven armoniosamente con la vivienda colectiva. <em>Ejemplo: Avenidas principales y centros comerciales a cielo abierto (Av. Santa Fe, Av. Rivadavia, Av. Cabildo).</em></li>\n  <li><strong>Área de Mixtura 4 (Máxima Densidad e Institucional):</strong> Áreas destinadas a una alta densidad de actividades comerciales, corporativas, financieras, institucionales y productivas no contaminantes, con baja o nula presencia residencial. <em>Ejemplo: Macrocentro, Microcentro financiero, Puerto Madero Este.</em></li>\n</ul>\n"
+  },
+  {
+    "id": 2,
+    "title": "Gráfica de Relación de Actividades / Carta Muthed (SLP de Richard Muther)",
+    "question": "Para la gráfica de relación de actividades (Carta Muthed), indique qué representan los códigos de proximidad (A, E, I, O, U, X, X1/X2) y el código de razones numéricas (1 a 5).",
+    "variants": [
+      "Para la siguiente gráfica de relación de actividades, Indique qué representan: X1, X2, A y 1.",
+      "Para el análisis de relación de actividades en la distribución de plantas, explique el código de proximidad y las razones numéricas.",
+      "¿Qué significa A, E, I, O, U, X en una tabla de relaciones de Richard Muther?"
+    ],
+    "occurrences": [
+      "1° Parcial 2026",
+      "1° Parcial 13/06/2022 - Tema 2",
+      "1° Parcial 26/06/2023 - Tema 2",
+      "1° Parcial 08/07/2024 - Tema 2",
+      "1° Parcial Fotos Temas 1 y 2",
+      "Preguntas-1P-Manejo-LC (Pág 5, 12)",
+      "Preguntas-a-desarrollar-1P-2023 (Pág 7, 18)"
+    ],
+    "unit": "Unidad 9: Distribución en Planta",
+    "file": "G-UT0910-01 Distribución en planta.pdf",
+    "slides": "22, 23, 24",
+    "category": "u9_layout",
+    "answer_html": "\n<p class=\"ans-lead\"><strong>Definición:</strong> Es una matriz triangular estandarizada que cuantifica la importancia de ubicar dos áreas o departamentos cercanos entre sí dentro del layout de planta, justificando el motivo de dicha cercanía.</p>\n\n<h4 class=\"ans-sub\">1. Código de Letras (Grado de Proximidad / Cercanía Requerida):</h4>\n<ul class=\"ans-list\">\n  <li><strong>A (Absolutamente Necesario):</strong> Deben estar pegadas contiguamente (ej. por altísimo flujo de material directo o cintas continuas).</li>\n  <li><strong>E (Especialmente Importante):</strong> Muy alta conveniencia de cercanía (ej. control de calidad al lado de recepción).</li>\n  <li><strong>I (Importante):</strong> Cercanía conveniente para facilitar operaciones o supervisión común.</li>\n  <li><strong>O (Ordinario / Normal):</strong> Proximidad habitual sin criticidad operativa.</li>\n  <li><strong>U (Sin Importancia / Unimportant):</strong> Da exactamente igual si están cerca o lejos; no interactúan.</li>\n  <li><strong>X (No Deseable):</strong> No deben estar juntos (ej. oficinas limpias pegadas a zona de pulido con polvo).</li>\n  <li><strong>XX / X1, X2 (Extremadamente Indeseable):</strong> Deben estar totalmente aislados y separados físicamente (ej. almacenamiento de solventes inflamables junto a hornos o calderas por riesgo crítico de explosión/incendio).</li>\n</ul>\n\n<h4 class=\"ans-sub\">2. Código de Números (Razones o Justificación del Vínculo):</h4>\n<ul class=\"ans-list\">\n  <li><strong>1:</strong> Por intensidad de flujo de materiales (toneladas/hora, bultos/día).</li>\n  <li><strong>2:</strong> Por contacto frecuente de personal operativo o supervisores.</li>\n  <li><strong>3:</strong> Por intercambio de información, documentación o sistemas de control.</li>\n  <li><strong>4:</strong> Por compartir equipos, utilidades o personal de mantenimiento.</li>\n  <li><strong>5:</strong> Por conveniencia, ruidos, vibraciones, polvo o seguridad ambiental.</li>\n</ul>\n"
+  },
+  {
+    "id": 3,
+    "title": "Nivel de Complejidad Ambiental (NCA): Fórmula Polinómica, Parámetros y Categorías 1, 2 y 3",
+    "question": "¿Para qué se utiliza el Nivel de Complejidad Ambiental (NCA)? Indique su fórmula de cálculo, parámetros y las 3 categorías de industrias.",
+    "variants": [
+      "¿Para qué se utiliza el Nivel de Complejidad Ambiental? E indique además los rangos que este define.",
+      "NCA: ¿Para qué sirve, cómo se calcula y cuáles son las 3 categorías de industrias?",
+      "Fórmula polinómica del NCA y categorización de establecimientos industriales."
+    ],
+    "occurrences": [
+      "1° Parcial 2026",
+      "1° Parcial 26/06/2023 - Tema 1",
+      "1° Parcial 08/07/2024 - Tema 1",
+      "Recuperatorio 1° Parcial 09/12/2024",
+      "Preguntas-1P-Manejo-LC (Pág 4, 9)",
+      "Preguntas-a-desarrollar-1P-2023 (Pág 5, 14)"
+    ],
+    "unit": "Unidad 3: Instrumentos de Gestión Ambiental",
+    "file": "F-UT08-21 Instrumentos de Gestión Ambiental (1).pdf",
+    "slides": "22, 23, 24",
+    "category": "u3_ambiental",
+    "answer_html": "\n<p class=\"ans-lead\"><strong>Utilidad:</strong> Es una herramienta de gestión ambiental objetiva (Ley 11.459 / Res. 177/07) que clasifica a los establecimientos industriales según su potencial de degradación ambiental y riesgo hacia la comunidad, determinando las exigencias legales, monitoreos y el Certificado de Aptitud Ambiental (CAA).</p>\n\n<div class=\"formula-box\">\n  <span class=\"formula-label\">FÓRMULA POLINÓMICA DEL NCA:</span>\n  <code class=\"formula-code\">NCA = Ru + ER + Ri + Di + Lo</code>\n</div>\n\n<h4 class=\"ans-sub\">Parámetros que componen el Polinomio:</h4>\n<ul class=\"ans-list\">\n  <li><strong>Ru (Rubro de la Actividad):</strong> Clasificación internacional CIIU según el tipo de proceso y su agresividad intrínseca.</li>\n  <li><strong>ER (Efluentes y Residuos):</strong> Pondera la calidad y cantidad de efluentes líquidos, emisiones gaseosas y residuos sólidos/peligrosos generados.</li>\n  <li><strong>Ri (Riesgo):</strong> Evalúa el riesgo específico por manejo de sustancias inflamables, tóxicas, explosivas, recipientes a presión o acústico.</li>\n  <li><strong>Di (Dimensionamiento):</strong> Evalúa la escala operativa en función de la cantidad de personal, potencia instalada (HP) y superficie cubierta ($m^2$).</li>\n  <li><strong>Lo (Localización):</strong> Evalúa la zona donde se ubica el predio (Parque Industrial, zona industrial exclusiva, mixta o residencial) y la infraestructura de servicios circundante.</li>\n</ul>\n\n<h4 class=\"ans-sub\">Categorización de Industrias según Rangos de NCA:</h4>\n<ul class=\"ans-list\">\n  <li><strong>1° Categoría (Baja Complejidad Ambiental):</strong> $NCA \\le 11$ (Establecimientos inocuos o de muy bajo impacto).</li>\n  <li><strong>2° Categoría (Media Complejidad Ambiental):</strong> $11 < NCA \\le 25$ (Establecimientos cuyo funcionamiento puede generar impactos moderados mitigables).</li>\n  <li><strong>3° Categoría (Alta Complejidad Ambiental):</strong> $NCA > 25$ (Establecimientos potencialmente peligrosos o de alto impacto que requieren auditorías y monitoreo ambiental estricto).</li>\n</ul>\n"
+  },
+  {
+    "id": 4,
+    "title": "Planeación de Instalaciones: Definición, Tareas y ¿Qué analiza, dimensiona, diseña y selecciona?",
+    "question": "Defina Planeación de Instalaciones y responda: ¿Qué analiza, dimensiona, diseña y selecciona?",
+    "variants": [
+      "¿Qué analiza, dimensiona, diseña y selecciona la planeación de instalaciones?",
+      "Defina Planeación de Instalaciones e indique al menos cuatro de tareas / objetivos que realiza.",
+      "Indique al menos cuatro objetivos de la Planeación de Instalaciones y sus componentes."
+    ],
+    "occurrences": [
+      "1° Parcial 2026 (Pregunta 9)",
+      "1° Parcial 07/07/2025 - Curso 5053",
+      "Recuperatorio 1° Parcial 09/12/2024",
+      "Recuperatorio 1° Parcial 09/12/2025",
+      "Preguntas-1P-Manejo-LC (Pág 1, 5)",
+      "Preguntas-a-desarrollar-1P-2023 (Pág 1, 7)"
+    ],
+    "unit": "Unidad 1: Planeación de Instalaciones",
+    "file": "UT-01 Planeación de Instalaciones – Tompkins, White, Bozer.pdf",
+    "slides": "2, 6, 7",
+    "category": "u1_intra",
+    "answer_html": "\n<p class=\"ans-lead\"><strong>Definición:</strong> Es el proceso de ingeniería y gestión estratégica que determina cómo los activos fijos tangibles de una organización deben ubicarse y estructurarse para apoyar de manera óptima los objetivos de producción y servicio de la empresa.</p>\n\n<h4 class=\"ans-sub\">¿Qué realiza en cada fase clave?</h4>\n<ul class=\"ans-list\">\n  <li><strong>Analiza:</strong> Los flujos de materiales, volúmenes de demanda, información, personas y las restricciones operativas, legales y ambientales.</li>\n  <li><strong>Dimensiona:</strong> Los requerimientos de espacio físico total ($m^2$ y volumen $m^3$), capacidad de almacenes, muelles de carga, pasillos de circulación y áreas auxiliares/servicios.</li>\n  <li><strong>Diseña:</strong> La estructura edilicia industrial (naves, fundaciones, cerramientos) y la distribución física en planta de maquinaria y departamentos (Layout).</li>\n  <li><strong>Selecciona:</strong> La macro y micro-localización geográfica óptima del predio y los equipos de manutención y manejo de materiales (autoelevadores, puentes grúa, transportadores, racks).</li>\n</ul>\n\n<h4 class=\"ans-sub\">Objetivos Principales (Tompkins):</h4>\n<ul class=\"ans-list\">\n  <li>Maximizar la utilización del espacio y la velocidad de respuesta (reducir tiempos de ciclo).</li>\n  <li>Minimizar costos totales de manipulación y eliminar movimientos innecesarios.</li>\n  <li>Asegurar flexibilidad, ergonomía, confort y seguridad total al trabajador.</li>\n</ul>\n"
+  },
+  {
+    "id": 5,
+    "title": "Principios del Material Handling Institute (MHI): Estandarización y Trabajo",
+    "question": "Enuncie el Principio de Estandarización y el Principio de Trabajo desarrollados por el MHI, e indique los puntos clave de cada uno.",
+    "variants": [
+      "Enuncie el Principio de Estandarización de acuerdo con lo desarrollado por el MHI, e indique al menos dos puntos clave de este.",
+      "Enuncie el Principio de Trabajo de acuerdo con el MHI e indique al menos dos puntos clave.",
+      "Principios de Manejo de Materiales del MHI (Estandarización, Trabajo, Ergonomía, Carga Unitaria, Espacio)."
+    ],
+    "occurrences": [
+      "1° Parcial 2026 (Pregunta 7)",
+      "Foto Parcial Manuscrito (Pregunta 2)",
+      "1° Parcial 13/06/2022 - Tema 2",
+      "1° Parcial 26/06/2023 - Tema 2",
+      "1° Parcial 08/07/2024 - Tema 2",
+      "Preguntas-1P-Manejo-LC (Pág 1, 6)"
+    ],
+    "unit": "Unidad 1: Introducción a la Intralogística",
+    "file": "G-UT01-01 Introducción a la Intralogística.pdf",
+    "slides": "15, 18",
+    "category": "u1_intra",
+    "answer_html": "\n<h4 class=\"ans-sub\">1. Principio de Estandarización:</h4>\n<p class=\"ans-lead\"><strong>Enunciado:</strong> Se deben estandarizar los métodos de manejo, equipos, contenedores, controles y software dentro de los límites necesarios para lograr los objetivos globales de desempeño, sin sacrificar la flexibilidad y modularidad operativa requerida.</p>\n<ul class=\"ans-list\">\n  <li><strong>Punto Clave 1:</strong> Estandarizar contenedores y unidades de carga (ej. pallets normalizados $1200 \times 1000\text{ mm}$ o $1200 \times 800\text{ mm}$) para que cualquier equipo y estantería pueda manipularlos sin adaptaciones.</li>\n  <li><strong>Punto Clave 2:</strong> Reducción de costos de inventario de repuestos, simplificación del mantenimiento preventivo y facilitación del entrenamiento del personal.</li>\n</ul>\n\n<h4 class=\"ans-sub\">2. Principio de Trabajo:</h4>\n<p class=\"ans-lead\"><strong>Enunciado:</strong> El trabajo de manejo de materiales (definido como la masa trasladada multiplicada por la distancia recorrida: $Trabajo = Peso \times Distancia$) debe ser minimizado sin perjudicar la productividad o la seguridad de la operación.</p>\n<ul class=\"ans-list\">\n  <li><strong>Punto Clave 1:</strong> Simplificar procesos eliminando pasos innecesarios, manipulaciones intermedias y reacomodos reiterados.</li>\n  <li><strong>Punto Clave 2:</strong> Acortar las distancias físicas entre operaciones consecutivas adoptando un layout en línea recta o en U, aprovechando la gravedad siempre que sea posible.</li>\n</ul>\n"
+  },
+  {
+    "id": 6,
+    "title": "Método de Alfred Weber para la Localización de Plantas: Etapas y Fundamento",
+    "question": "Describa cada una de las etapas y los fundamentos del método desarrollado por Alfred Weber para la localización de plantas industriales.",
+    "variants": [
+      "Weber fue el primero en introducir el análisis sistemático para la localización de plantas, describa cada una de las etapas del método desarrollado por Weber para la localización de la planta.",
+      "Etapas para localización de Weber.",
+      "Modelo del Triángulo de Weber y minimización de costos de transporte."
+    ],
+    "occurrences": [
+      "1° Parcial 2026 (Pregunta 8)",
+      "Foto Parcial Manuscrito (Pregunta 3)",
+      "Preguntas-1P-Manejo-LC (Pág 2)",
+      "Preguntas-a-desarrollar-1P-2023 (Pág 3)"
+    ],
+    "unit": "Unidad 3: Localización de Plantas",
+    "file": "G-UT08-11 Localización de Plantas.pdf",
+    "slides": "4, 5",
+    "category": "u3_localiz",
+    "answer_html": "\n<p class=\"ans-lead\"><strong>Fundamento Teórico:</strong> Alfred Weber (1909) planteó el primer modelo sistemático cuantitativo de localización industrial. Postula que la planta debe ubicarse en el punto geográfico exacto que <strong>minimice los costos totales de transporte</strong> (tanto de materias primas desde las fuentes hasta la fábrica, como de productos terminados desde la fábrica hasta los mercados de consumo).</p>\n\n<h4 class=\"ans-sub\">Etapas del Método de Weber:</h4>\n<ul class=\"ans-list\">\n  <li><strong>1. Determinación del Punto de Mínimo Costo de Transporte (Punto de Mínimo Transporte):</strong> Se ubican espacialmente las fuentes de insumos ($M_1, M_2$) y los mercados ($C$). Se calcula el baricentro de fuerzas o punto de equilibrio donde la sumatoria del producto $(Peso \times Distancia \times Tarifa)$ sea mínima (Triángulo de Weber). Si la materia prima es ubicua (disponible en todos lados) o pierde peso en el proceso (peso bruto > producto terminado), la planta se orienta a la fuente de insumos; si gana peso, se orienta al mercado.</li>\n  <li><strong>2. Análisis de la Distorsión por Mano de Obra (Efecto Mano de Obra):</strong> Se evalúa si existen centros con mano de obra significativamente más barata o calificada que justifiquen desplazar la fábrica fuera del punto óptimo de transporte, siempre que el ahorro salarial total supere el costo de transporte adicional generado.</li>\n  <li><strong>3. Efecto de Aglomeración o Desaglomeración (Economías de Escala / Parques Industriales):</strong> Se analiza si la cercanía a otras industrias complementarias, servicios compartidos o infraestructura existente (clusters industriales) genera economías de escala suficientes para justificar un reasentamiento final.</li>\n</ul>\n"
+  },
+  {
+    "id": 7,
+    "title": "Método Funcional Basado en Costos para Localización de Planta (Función Objetivo Fi)",
+    "question": "En el Método Funcional basado en costos para localización de planta según la función objetivo Fi = Π (SAi / SBi)^Pi, indique qué valor toma Fi cuando la locación B es la óptima y qué representa cada término.",
+    "variants": [
+      "Utilizando el método funcional basado en costos para la localización de la planta según la función objetivo Fi = Π (SAi / SBi)^Pi ... Indique que valor toma Fi cuando la locación B es la óptima.",
+      "Utilizando el Método Funcional basado en costos para la localización de planta, indicar qué valor toma Fi cuando la locación A es la óptima."
+    ],
+    "occurrences": [
+      "1° Parcial 13/06/2022 - Tema 2",
+      "Foto Parcial Manuscrito (Pregunta 4)",
+      "Preguntas-1P-Manejo-LC (Pág 2)",
+      "Preguntas-a-desarrollar-1P-2023 (Pág 3)"
+    ],
+    "unit": "Unidad 3: Localización de Plantas",
+    "file": "G-UT08-11 Localización de Plantas.pdf",
+    "slides": "12",
+    "category": "u3_localiz",
+    "answer_html": "\n<p class=\"ans-lead\"><strong>Explicación Conceptual:</strong> El método funcional compara dos locaciones alternativas ($A$ y $B$) mediante el cociente ponderado de sus costos en diferentes rubros (mano de obra, fletes, energía, impuestos, alquileres).</p>\n\n<div class=\"formula-box\">\n  <span class=\"formula-label\">FUNCIÓN OBJETIVO FI:</span>\n  <code class=\"formula-code\">F_i = \\prod_{i=1}^{n} \\left( \frac{S_{Ai}}{S_{Bi}} \right)^{P_i}</code>\n</div>\n\n<h4 class=\"ans-sub\">Significado de los Parámetros:</h4>\n<ul class=\"ans-list\">\n  <li>$S_{Ai}$: Costo o puntaje del factor $i$ en la alternativa de localización $A$.</li>\n  <li>$S_{Bi}$: Costo o puntaje del factor $i$ en la alternativa de localización $B$.</li>\n  <li>$P_i$: Peso relativo o factor de ponderación asignado al rubro $i$ (con $\\sum P_i = 1$).</li>\n</ul>\n\n<h4 class=\"ans-sub\">Criterio de Decisión:</h4>\n<ul class=\"ans-list\">\n  <li><strong>Cuando la locación B es la óptima:</strong> Toma el valor <strong>$F_i > 1$</strong> (porque los costos en la alternativa $A$ son mayores que en $B$, haciendo que el cociente $S_{Ai} / S_{Bi} > 1$).</li>\n  <li><strong>Cuando la locación A es la óptima:</strong> Toma el valor <strong>$F_i < 1$</strong> (los costos en $A$ son menores que en $B$).</li>\n  <li><strong>Si $F_i = 1$:</strong> Ambas alternativas son económicamente indiferentes.</li>\n</ul>\n"
+  },
+  {
+    "id": 8,
+    "title": "Estructura de Pisos Industriales: Capas (Subrasante, Sub-base, Base) y Barrera de Vapor",
+    "question": "¿Cómo está conformada la estructura de un piso industrial (subrasante, sub-base, base, losa) y para qué se usa la barrera de vapor (indicando su material)?",
+    "variants": [
+      "Piso industrial base y sub base de qué están hechos",
+      "Para el piso industrial: ¿Para qué se usa la barrera de vapor y de qué material está hecha?",
+      "Para un piso industrial ¿Cómo está conformado el subrasante y la base?"
+    ],
+    "occurrences": [
+      "1° Parcial 2026 (Pregunta 10)",
+      "Foto Parcial Manuscrito (Pregunta 5)",
+      "1° Parcial 08/07/2024 - Temas 1 y 2",
+      "Preguntas-1P-Manejo-LC (Pág 4, 11)",
+      "Preguntas-a-desarrollar-1P-2023 (Pág 6, 17)"
+    ],
+    "unit": "Unidad 3: Edificios Industriales",
+    "file": "G-UT08-41 Edificios Industriales.pdf",
+    "slides": "24, 25, 26, 27",
+    "category": "u3_edificios",
+    "answer_html": "\n<h4 class=\"ans-sub\">1. Capas del Piso Industrial (de abajo hacia arriba):</h4>\n<ul class=\"ans-list\">\n  <li><strong>Subrasante:</strong> Terreno natural nivelado, escarificado y compactado (o suelo de aporte seleccionado). Sirve de fundación directa al pavimento y debe tener adecuada capacidad portante (módulo de reacción $k$).</li>\n  <li><strong>Sub-base:</strong> Capa de material granular grueso estabilizado (grava, piedra partida o tosca). Mejora el soporte estructural, previene el bombeo de finos (*pumping*) y funciona como capa drenante.</li>\n  <li><strong>Base:</strong> Capa de suelo-cemento o material granular de alta densidad y granulometría graduada. Distribuye de manera uniforme las presiones transmitidas por la losa superior hacia la sub-base.</li>\n  <li><strong>Losa de Hormigón (Capa de Rodadura):</strong> Losa estructural de hormigón reforzado con mallas de acero o fibras (metálicas/polipropileno) con endurecedor superficial (cuarzo/corindón) para soportar el tránsito pesado, desgaste y abrasión.</li>\n</ul>\n\n<h4 class=\"ans-sub\">2. Barrera de Vapor:</h4>\n<ul class=\"ans-list\">\n  <li><strong>¿Para qué se usa?</strong> Se coloca inmediatamente debajo de la losa de hormigón (sobre la base) para <strong>impedir el ascenso de humedad por capilaridad</strong> desde el suelo hacia el interior del edificio, evitando el desprendimiento de revestimientos epóxicos, degradación de mercadería apoyada en el piso y el curado deficiente del hormigón.</li>\n  <li><strong>¿De qué material está hecha?</strong> Láminas impermeables de <strong>polietileno de alta densidad (PEAD) de 200 a 300 micrones</strong> (o membranas multicapa de PVC / poliolefinas) colocadas con solapes solapados y sellados con cinta estanca.</li>\n</ul>\n"
+  },
+  {
+    "id": 9,
+    "title": "Hormigón Pretensado: Características, Componentes y Efecto que Busca",
+    "question": "Describa las características del hormigón pretensado, el funcionamiento de sus componentes y qué efecto busca en las estructuras industriales.",
+    "variants": [
+      "Describa las características del hormigón pretensado y qué efecto busca.",
+      "Describa el funcionamiento de cada uno de los componentes del hormigón pretensado.",
+      "Hormigón pretensado en vigas y cubiertas de naves industriales."
+    ],
+    "occurrences": [
+      "1° Parcial 09/12/2024 (Recuperatorio)",
+      "Foto Parcial Manuscrito (Pregunta 6)",
+      "Preguntas-1P-Manejo-LC (Pág 4)",
+      "Preguntas-a-desarrollar-1P-2023 (Pág 6)"
+    ],
+    "unit": "Unidad 3: Edificios Industriales",
+    "file": "G-UT08-41 Edificios Industriales.pdf",
+    "slides": "13, 14",
+    "category": "u3_edificios",
+    "answer_html": "\n<p class=\"ans-lead\"><strong>Concepto:</strong> Es una técnica estructural que consiste en introducir deliberadamente esfuerzos de compresión previos en las zonas del hormigón que luego sufrirán esfuerzos de tracción por las cargas de servicio.</p>\n\n<h4 class=\"ans-sub\">Funcionamiento de sus Componentes:</h4>\n<ul class=\"ans-list\">\n  <li><strong>Armaduras Activas (Cables/Torones de Acero de Alta Resistencia):</strong> Se tensan mecánicamente mediante gatos hidráulicos antes (pretensado propiamente dicho) o después (postensado) del fraguado del hormigón, quedando anclados firmemente en los extremos.</li>\n  <li><strong>Masa de Hormigón de Alta Resistencia:</strong> Al liberarse los gatos, el acero busca contraerse a su longitud original, transfiriendo una fuerza de compresión pura y uniforme a la masa de hormigón a través de la adherencia o los anclajes de extremo.</li>\n</ul>\n\n<h4 class=\"ans-sub\">¿Qué Efecto Busca?</h4>\n<ul class=\"ans-list\">\n  <li><strong>Eliminar o minimizar las fisuras por tracción</strong> en el hormigón, aprovechando su altísima capacidad para resistir compresión.</li>\n  <li><strong>Permitir salvar grandes luces libres (20 a 40 metros)</strong> sin columnas intermedias con secciones transversales de viga mucho más esbeltas y livianas.</li>\n  <li>Reducir significativamente las deformaciones (flechas) bajo cargas dinámicas o de puentes grúa.</li>\n</ul>\n"
+  },
+  {
+    "id": 10,
+    "title": "Métodos No Cuantitativos y Metodología SLP de Muther en sus 4 Etapas",
+    "question": "¿Cuáles son los métodos no cuantitativos de distribución y qué metodología recomienda el Systematic Layout Planning (SLP) de Muther en sus 4 etapas?",
+    "variants": [
+      "Cuáles son los métodos no cuantitativos de distribución",
+      "El método SLP de Muther en cada una de sus cuatro etapas ¿Qué metodología recomienda aplicar para la toma de decisión y desarrollo de la etapa?",
+      "Indique y describa cada uno de los métodos no cuantificables para la distribución de planta."
+    ],
+    "occurrences": [
+      "1° Parcial 2026 (Pregunta 2)",
+      "Foto Parcial Manuscrito (Pregunta 7)",
+      "1° Parcial Fotos Tema 1",
+      "Preguntas-1P-Manejo-LC (Pág 5)"
+    ],
+    "unit": "Unidad 9: Distribución en Planta",
+    "file": "G-UT0910-01 Distribución en planta.pdf",
+    "slides": "12, 13, 14, 15",
+    "category": "u9_layout",
+    "answer_html": "\n<h4 class=\"ans-sub\">1. Métodos No Cuantitativos (Cualitativos):</h4>\n<p class=\"ans-lead\">Se basan en el juicio experto, diagramas de flujo subjetivos y ponderaciones de preferencias cuando no se dispone de datos exactos de matrices origen-destino o costos monetarios directos.</p>\n\n<h4 class=\"ans-sub\">2. Las 4 Etapas del Método SLP (Systematic Layout Planning) de Richard Muther:</h4>\n<ul class=\"ans-list\">\n  <li><strong>Etapa I - Localización:</strong> Se define la posición física general de la planta o área a distribuir con respecto a su entorno externo. <em>(Metodología: Matriz de evaluación multicriterio y cribado).</em></li>\n  <li><strong>Etapa II - Distribución General de Conjunto (Block Layout):</strong> Se establece la disposición básica y la relación espacial entre los departamentos principales sin entrar en detalles de maquinaria individual. <em>(Metodología: Carta Muthed de relación de actividades, diagrama relacional de espacios y análisis de flujo).</em></li>\n  <li><strong>Etapa III - Distribución en Detalle (Detail Layout):</strong> Se ubica con precisión milimétrica cada máquina individual, banco de trabajo, puesto operativo, pasillos y racks. <em>(Metodología: Planos de detalle a escala, maquetas 2D/3D y análisis ergonómico).</em></li>\n  <li><strong>Etapa IV - Instalación e Implementación:</strong> Planificación y ejecución física del traslado, montaje, cableado, prueba de equipos y puesta en marcha operativa. <em>(Metodología: Cronogramas de Gantt / PERT-CPM y gestión de cambios).</em></li>\n</ul>\n"
+  },
+  {
+    "id": 11,
+    "title": "Factores de Distribución en Planta (Concepto y los 8 Factores de Muther)",
+    "question": "¿Cómo definiría los factores de distribución de planta? Indique y describa al menos cuatro de los ocho factores de Richard Muther.",
+    "variants": [
+      "¿Cómo definiría los factores de distribución de planta? Indique al menos cuatro de estos factores.",
+      "Los 8 factores que influyen en la distribución en planta según Muther y Tompkins."
+    ],
+    "occurrences": [
+      "Foto Parcial Manuscrito (Pregunta 8)",
+      "Preguntas-1P-Manejo-LC (Pág 5)",
+      "Preguntas-a-desarrollar-1P-2023 (Pág 7)"
+    ],
+    "unit": "Unidad 9: Distribución en Planta",
+    "file": "G-UT0910-01 Distribución en planta.pdf",
+    "slides": "5",
+    "category": "u9_layout",
+    "answer_html": "\n<p class=\"ans-lead\"><strong>Definición:</strong> Son el conjunto de elementos, restricciones y variables operativas y físicas que influyen de manera directa y determinante en el diseño del layout, condicionando la disposición espacial de los recursos.</p>\n\n<h4 class=\"ans-sub\">Los 8 Factores de Richard Muther (seleccionar 4):</h4>\n<ul class=\"ans-list\">\n  <li><strong>1. Factor Material:</strong> Considera el diseño, variedad, cantidad, peso, dimensiones, estado físico y secuencia química/física del producto a elaborar.</li>\n  <li><strong>2. Factor Maquinaria:</strong> Considera los equipos de producción, dimensiones, peso, potencia, necesidades de mantenimiento y espacio para el operador.</li>\n  <li><strong>3. Factor Hombre (Personal):</strong> Considera las condiciones de trabajo, ergonomía, seguridad laboral, iluminación, ventilación y servicios higiénicos/vestuarios.</li>\n  <li><strong>4. Factor Movimiento:</strong> Considera los traslados de materiales y personas, tiempos de transporte, pasillos de circulación y selección de equipos de manutención.</li>\n  <li><strong>5. Factor Espera (Almacenamiento):</strong> Considera los stocks de materias primas, producto en proceso (WIP), producto terminado y las demoras programadas.</li>\n  <li><strong>6. Factor Servicio (Auxiliares):</strong> Considera control de calidad, mantenimiento, subestaciones eléctricas, aire comprimido y oficinas administrativas.</li>\n  <li><strong>7. Factor Edificio:</strong> Considera la forma del terreno, altura libre bajo viga, resistencia del piso, ubicación de columnas y accesos viales.</li>\n  <li><strong>8. Factor Cambio (Flexibilidad):</strong> Considera la previsión de futuras ampliaciones, modularidad y versatilidad ante cambios en la demanda o nuevos productos.</li>\n</ul>\n"
+  },
+  {
+    "id": 12,
+    "title": "Consumo de Energía en Edificios Industriales: Distribución y Fuentes",
+    "question": "¿De dónde sale y cómo se distribuye porcentualmente el consumo de energía en los edificios industriales?",
+    "variants": [
+      "De dónde sale el consumo de energía de edificio",
+      "El consumo de energía de los edificios representa el aspecto ambiental más relevante. Indicar en qué se distribuye este consumo."
+    ],
+    "occurrences": [
+      "1° Parcial 2026 (Pregunta 3)",
+      "1° Parcial Fotos Tema 1",
+      "Preguntas-1P-Manejo-LC (Pág 5)"
+    ],
+    "unit": "Unidad 3: Edificios Industriales",
+    "file": "G-UT08-41 Edificios Industriales.pdf",
+    "slides": "33, 34",
+    "category": "u3_edificios",
+    "answer_html": "\n<p class=\"ans-lead\"><strong>Origen y Contexto:</strong> Proviene del suministro de la red eléctrica comercial, gas natural y combustibles auxiliares. Representa el impacto ambiental más relevante por la huella de carbono y costos operativos del ciclo de vida del edificio.</p>\n\n<h4 class=\"ans-sub\">Distribución Típica del Consumo Energético en Edificios Industriales:</h4>\n<ul class=\"ans-list\">\n  <li><strong>Climatización y Termomecánica (HVAC - Calefacción, Ventilación y Aire Acondicionado):</strong> Representa entre el <strong>40% y 50%</strong> del consumo energético total, condicionado fuertemente por la aislación térmica de techos y cerramientos perimetrales.</li>\n  <li><strong>Iluminación Artificial:</strong> Representa entre el <strong>20% y 25%</strong> del consumo (optimizables con domos cenitales de luz natural y tecnología LED automatizada con sensores).</li>\n  <li><strong>Fuerza Motriz / Equipos de Proceso y Manutención:</strong> Representa entre el <strong>15% y 25%</strong> (motores eléctricos, cargadores de baterías de autoelevadores, compresores de aire).</li>\n  <li><strong>Servicios Auxiliares y Sanitarios:</strong> Representa entre el <strong>5% y 10%</strong> (calentamiento de agua sanitaria, bombas de impulsión y computación).</li>\n</ul>\n"
+  },
+  {
+    "id": 13,
+    "title": "Pasillos de Circulación en Planta y Almacenes: Características y Clasificación",
+    "question": "¿Qué características deben tener los pasillos de circulación y cómo se clasifican según su función?",
+    "variants": [
+      "Características de pasillos y clasificación",
+      "Qué características deben tener los pasillos de circulación y cómo se clasifican"
+    ],
+    "occurrences": [
+      "1° Parcial 2026 (Pregunta 4)",
+      "1° Parcial Fotos Tema 1",
+      "Preguntas-1P-Manejo-LC (Pág 5)"
+    ],
+    "unit": "Unidad 7: Diseño y Dimensionamiento de Almacenes",
+    "file": "G-UT07-04 Diseño Dimensionamiento de Almacenes.pdf",
+    "slides": "12, 13, 14",
+    "category": "u7_almacenes",
+    "answer_html": "\n<h4 class=\"ans-sub\">1. Características de Diseño y Seguridad:</h4>\n<ul class=\"ans-list\">\n  <li><strong>Trazado Rectilíneo:</strong> Deben ser lo más rectos posible, evitando giros cerrados a 90° en puntos ciegos.</li>\n  <li><strong>Demarcación y Señalización:</strong> Pintados con líneas amarillas reflectivas de 10 cm de ancho en el piso y libres de obstáculos en todo momento.</li>\n  <li><strong>Dimensionamiento Holgado:</strong> Para sentido único: ancho del equipo + 0,60 m de holgura. Para doble sentido de circulación: doble ancho del equipo más ancho + 0,90 m a 1,00 m de margen de seguridad.</li>\n  <li><strong>Segregación Peatonal:</strong> Separación física mediante barandas de contención o sendas peatonales exclusivas diferenciadas.</li>\n</ul>\n\n<h4 class=\"ans-sub\">2. Clasificación de Pasillos:</h4>\n<ul class=\"ans-list\">\n  <li><strong>Pasillos Principales (Troncales / de Tránsito Mayor):</strong> Conectan las zonas neurálgicas (recepción, producción, almacenamiento y expedición). Soportan el tránsito bidireccional más intenso de autoelevadores y peatones.</li>\n  <li><strong>Pasillos Secundarios (de Trabajo / Operativos):</strong> Se ubican entre racks o líneas de montaje para operaciones de carga, descarga y picking.</li>\n  <li><strong>Pasillos de Servicio / Evacuación:</strong> Destinados a salidas de emergencia contra incendios, acceso a tableros eléctricos y mantenimiento de infraestructura edilicia.</li>\n</ul>\n"
+  },
+  {
+    "id": 14,
+    "title": "Áreas y Zonas Complementarias en el Diseño de Almacenes y Muelles",
+    "question": "Además de la zona de carga y descarga propiamente dicha, ¿qué otras áreas o partes de la planta comprende el diseño de un almacén?",
+    "variants": [
+      "Además de la zona de carga y descarga propiamente dicha ¿Qué otras áreas o partes de las plantas comprende el diseño?",
+      "Diseño integral de almacenes: zonas y áreas auxiliares."
+    ],
+    "occurrences": [
+      "Foto Parcial Manuscrito (Pregunta 9)",
+      "Preguntas-1P-Manejo-LC (Pág 6)"
+    ],
+    "unit": "Unidad 7: Diseño y Dimensionamiento de Almacenes",
+    "file": "G-UT07-04 Diseño Dimensionamiento de Almacenes.pdf",
+    "slides": "4, 5, 6",
+    "category": "u7_almacenes",
+    "answer_html": "\n<h4 class=\"ans-sub\">Áreas Complementarias del Diseño:</h4>\n<ul class=\"ans-list\">\n  <li><strong>Playa de Maniobras Externa:</strong> Espacio exterior pavimentado para el giro, retroceso y estacionamiento en espera de camiones de gran porte (requiere un radio de giro libre de 30 a 35 metros).</li>\n  <li><strong>Zona de Staging / Pulmón de Recepción y Despacho:</strong> Superficie de piso frente a los muelles donde se agrupan transitoriamente las cargas para control cuantitativo y cualitativo antes del ingreso o despacho.</li>\n  <li><strong>Área de Almacenamiento Principal:</strong> Sector de estanterías, racks selectivos, dinámicos o bloques sobre piso donde se custodia el inventario.</li>\n  <li><strong>Zona de Picking y Consolidación de Pedidos:</strong> Área específica acondicionada para el fraccionamiento de bultos, armado de pedidos y embalaje.</li>\n  <li><strong>Área de Carga de Baterías de Autoelevadores:</strong> Sector cerrado con ventilación forzada forzada antiexplosiva (para evacuación de hidrógeno) y lavaojos de seguridad.</li>\n  <li><strong>Oficinas de Control y Servicios al Personal:</strong> Puestos de control de WMS/remitos, vestuarios, sanitarios, comedor y área de mantenimiento de autoelevadores.</li>\n</ul>\n"
+  },
+  {
+    "id": 15,
+    "title": "Modelo Determinista / Abastecimiento por Lote y Parámetros del Costo C1",
+    "question": "Indique las premisas del modelo determinista de abastecimiento por lote y detalle los parámetros que componen el costo unitario de almacenamiento (C1).",
+    "variants": [
+      "Indique las características y premisas del modelo determinista o abastecimiento por lote para la planificación de stock.",
+      "En el cálculo del modelo de abastecimiento por lote aparece el término C1 costo unitario de almacenamiento ¿Qué parámetros componen este costo?"
+    ],
+    "occurrences": [
+      "1° Parcial 09/12/2024 (Recuperatorio)",
+      "Foto Parcial Manuscrito (Pregunta 10)",
+      "Preguntas-1P-Manejo-LC (Pág 6)"
+    ],
+    "unit": "Unidad 7: Supply Chain y Abastecimiento",
+    "file": "G-UT07-01 Supply Chain y Proceso de Abastecimiento.pdf",
+    "slides": "11, 12",
+    "category": "u7_supply",
+    "answer_html": "\n<h4 class=\"ans-sub\">1. Premisas del Modelo Determinista (EOQ - Lote Óptimo de Wilson):</h4>\n<ul class=\"ans-list\">\n  <li>Demanda anual ($D$) constante, conocida y uniforme a lo largo del tiempo.</li>\n  <li>Tiempo de entrega del proveedor (*Lead Time*) constante y perfectamente conocido.</li>\n  <li>Costo unitario de compra ($P$) constante (sin descuentos por cantidad en el modelo básico).</li>\n  <li>Reposición instantánea del lote completo en una única entrega sin faltantes permitidos.</li>\n</ul>\n\n<h4 class=\"ans-sub\">2. Parámetros que componen el Costo Unitario de Almacenamiento ($C_1$):</h4>\n<p class=\"ans-lead\">Representa el costo total de mantener una unidad inmovilizada en stock durante un período de tiempo ($C_1 = i \times P$):</p>\n<ul class=\"ans-list\">\n  <li><strong>Costo de Capital Inmovilizado (Costo Financiero):</strong> Tasa de interés o costo de oportunidad del dinero invertido en el inventario.</li>\n  <li><strong>Costo de Espacio Físico y Ocupación:</strong> Alquiler del predio, amortización del edificio, iluminación, climatización y mantenimiento del depósito.</li>\n  <li><strong>Costo de Manipulación y Mano de Obra:</strong> Sueldos de operarios, autoelevadores, seguros y software WMS.</li>\n  <li><strong>Costo por Riesgo, Obsolescencia y Deterioro:</strong> Mermas, roturas, vencimiento de productos, pérdidas y seguros contra robo/incendio.</li>\n</ul>\n"
+  },
+  {
+    "id": 16,
+    "title": "Unidad de Carga: Definición, Concepto de Cohesión y Ventajas Logísticas",
+    "question": "Defina Unidad de Carga y detalle sus factores de cohesión y ventajas en el manejo de materiales.",
+    "variants": [
+      "Unidad de carga, defínalo.",
+      "Defina Unidad de Carga e indique sus principales ventajas logísticas y operativas."
+    ],
+    "occurrences": [
+      "Foto Parcial Manuscrito (Pregunta 11)",
+      "Preguntas-1P-Manejo-LC (Pág 6)"
+    ],
+    "unit": "Unidad 7: Unidades de Carga",
+    "file": "G-UT07-03 Unidades de Carga.pdf",
+    "slides": "3, 4, 5",
+    "category": "u7_almacenes",
+    "answer_html": "\n<p class=\"ans-lead\"><strong>Definición:</strong> Es la combinación homogénea o heterogénea de un número determinado de bultos o elementos individuales que, dispuestos sobre un soporte base (típicamente un pallet o contenedor), quedan asegurados de modo que <strong>se manipulan, transportan y almacenan como si fueran un único objeto indivisible</strong> a lo largo de la cadena logística.</p>\n\n<h4 class=\"ans-sub\">Elementos y Métodos de Cohesión:</h4>\n<ul class=\"ans-list\">\n  <li><strong>Traba Mecánica:</strong> Patrón de apilado entrelazado de cajas (patrón molinete o ladrillo).</li>\n  <li><strong>Contención Externa:</strong> Envoltura con film stretch estirable, termoencogible, flejes plásticos/metálicos o esquineros de cartón reforzado.</li>\n</ul>\n\n<h4 class=\"ans-sub\">Ventajas Principales:</h4>\n<ul class=\"ans-list\">\n  <li>Reduce drásticamente los tiempos de carga y descarga de camiones (mecanización).</li>\n  <li>Protege el producto contra roturas, golpes, polvo y hurtos durante el tránsito.</li>\n  <li>Maximiza la utilización de la altura cúbica del almacén mediante el apilamiento estandarizado.</li>\n</ul>\n"
+  },
+  {
+    "id": 17,
+    "title": "3 Métodos Básicos de Manejo de Materiales (Manual, Mecanizado y Automatizado)",
+    "question": "Describa los 3 métodos básicos de manejo de materiales y proporcione un ejemplo claro de cada uno.",
+    "variants": [
+      "3 métodos básicos de manejo describir y dar ejemplo de cada uno",
+      "Clasificación de los métodos de manejo de materiales con ejemplos."
+    ],
+    "occurrences": [
+      "1° Parcial 2026 (Pregunta 1)",
+      "Preguntas-1P-Manejo-LC (Pág 1)"
+    ],
+    "unit": "Unidad 1: Introducción a la Intralogística",
+    "file": "G-UT01-01 Introducción a la Intralogística.pdf",
+    "slides": "8, 9, 10",
+    "category": "u1_intra",
+    "answer_html": "\n<h4 class=\"ans-sub\">1. Método Manual:</h4>\n<p class=\"ans-lead\">El movimiento, elevación y traslado de las cargas se realiza exclusivamente mediante la <strong>fuerza muscular humana</strong>, asistida en algunos casos por elementos mecánicos no motorizados de apoyo simple.</p>\n<ul class=\"ans-list\">\n  <li><em>Ejemplo:</em> Operario levantando cajas de 15 kg manualmente desde una mesa para armar un pedido o empujando una zorra hidráulica manual de piso.</li>\n</ul>\n\n<h4 class=\"ans-sub\">2. Método Mecanizado:</h4>\n<p class=\"ans-lead\">La fuerza motriz para levantar y trasladar la carga es provista por un <strong>motor mecánico o eléctrico</strong>, pero la conducción, dirección y control de las operaciones dependen de un operador humano a bordo o a pie.</p>\n<ul class=\"ans-list\">\n  <li><em>Ejemplo:</em> Autoelevador contrapesado con motor a combustión/batería operado por chofer o un puente grúa manejado por botonera colgante.</li>\n</ul>\n\n<h4 class=\"ans-sub\">3. Método Automatizado:</h4>\n<p class=\"ans-lead\">El traslado, almacenamiento y posicionamiento de las cargas es realizado por <strong>equipos robóticos autónomos gobernados por software y sensores</strong>, sin intervención física directa de operadores humanos en el movimiento.</p>\n<ul class=\"ans-list\">\n  <li><em>Ejemplo:</em> Vehículos de Guiado Automático (AGVs / AMRs) o Transelevadores automáticos (AS/RS) vinculados al sistema WMS.</li>\n</ul>\n"
+  },
+  {
+    "id": 18,
+    "title": "Trabajo Muscular: Dinámico, Estático y Trabajo Manual Moderado",
+    "question": "Defina Trabajo Muscular Estático y Dinámico (diferencias fisiológicas) y describa las características del Trabajo Moderado.",
+    "variants": [
+      "Definir trabajo muscular dinámico",
+      "Describa el trabajo manual moderado e indique los efectos en el cuerpo.",
+      "Defina trabajo muscular estático y dinámico ¿Cuáles son las diferencias entre ellos?"
+    ],
+    "occurrences": [
+      "1° Parcial 2026 (Pregunta 11)",
+      "Foto Parcial Manuscrito (Pregunta 12)",
+      "1° Parcial 07/07/2025 - Curso 5053",
+      "Recuperatorio 1° Parcial 09/12/2025",
+      "2° Parcial 07/11/2022 - Tema 1"
+    ],
+    "unit": "Unidad 2: Manejo Manual de Cargas",
+    "file": "G-UT02-02 Manejo manual de cargas.pdf",
+    "slides": "4, 5, 6, 7, 11",
+    "category": "u2_material",
+    "answer_html": "\n<h4 class=\"ans-sub\">1. Trabajo Muscular Dinámico vs Estático:</h4>\n<ul class=\"ans-list\">\n  <li><strong>Trabajo Dinámico:</strong> Se produce una sucesión rítmica de contracciones y relajaciones musculares con movimiento visible. La alternancia de presiones actúa como una <strong>bomba impulsora de sangre</strong>, favoreciendo la irrigación, el aporte de oxígeno y la eliminación rápida del ácido láctico (menor fatiga).</li>\n  <li><strong>Trabajo Estático:</strong> Implica una contracción muscular continua y sostenida para mantener una postura fija. La tensión comprime los vasos sanguíneos, estrangula el flujo de sangre, acumula ácido láctico y produce fatiga muscular aguda y dolor en pocos minutos.</li>\n</ul>\n\n<h4 class=\"ans-sub\">2. Trabajo Manual Moderado (Efectos en el Cuerpo):</h4>\n<ul class=\"ans-list\">\n  <li><strong>Consumo Metabólico:</strong> Gasto energético situado entre <strong>1,6 y 3,0 kcal/min</strong> (o 100 a 200 Watts).</li>\n  <li><strong>Efectos Fisiológicos:</strong> Aumento moderado y estable de la frecuencia cardíaca (entre 90 y 110 latidos por minuto) y respiratoria. Es perfectamente sustentable durante una jornada laboral de 8 horas con descansos estándar sin generar sobrecarga cardiovascular.</li>\n  <li><strong>Ejemplo:</strong> Operación continua en puestos de ensamble con traslado de piezas de 5 a 10 kg a ritmo constante.</li>\n</ul>\n"
+  },
+  {
+    "id": 19,
+    "title": "Administración de Supply Chain: Tipos de Riesgos y Matriz de Segmentación de Proveedores",
+    "question": "¿Cuáles son los tipos de riesgos en la administración de la cadena de suministros y cómo se segmentan los proveedores según la relación Volumen Q vs Monto $?",
+    "variants": [
+      "Cuáles son los tipos de riesgos de administración en la cadena de suministro y ejemplos",
+      "En la segmentación de proveedores se utilizan Q y $. Indicar las cuatro categorías y cómo es la relación Q/$ en cada una."
+    ],
+    "occurrences": [
+      "1° Parcial 2026 (Pregunta 6)",
+      "1° Parcial Fotos Tema 1",
+      "2° Parcial 07/11/2022"
+    ],
+    "unit": "Unidad 7: Supply Chain y Abastecimiento",
+    "file": "G-UT07-01 Supply Chain y Proceso de Abastecimiento.pdf",
+    "slides": "6, 7, 8, 9, 10",
+    "category": "u7_supply",
+    "answer_html": "\n<h4 class=\"ans-sub\">1. Tipos de Riesgos en Supply Chain:</h4>\n<ul class=\"ans-list\">\n  <li><strong>Riesgos Internos / Operacionales:</strong> Fallas en maquinaria propia, paradas no programadas, errores de pronóstico de ventas o huelgas de personal interno.</li>\n  <li><strong>Riesgos de Red / Proveedores:</strong> Quiebra de proveedores clave, desabastecimiento de insumos críticos o entregas fuera de especificación de calidad.</li>\n  <li><strong>Riesgos Externos / del Entorno:</strong> Eventos macroeconómicos bruscos, cepos cambiarios, bloqueos de aduana, catástrofes climáticas o conflictos bélicos internacionales.</li>\n</ul>\n\n<h4 class=\"ans-sub\">2. Matriz de Segmentación de Proveedores (Volumen Q vs Monto $):</h4>\n<ul class=\"ans-list\">\n  <li><strong>Proveedores Rutinarios / Commodities (Bajo Q, Bajo $):</strong> Insumos estándar de bajo impacto (tornillos comunes, librería). Estrategia: compras automatizadas por catálogo.</li>\n  <li><strong>Proveedores de Cuello de Botella (Bajo Q, Alto $ / Criticidad):</strong> Insumos de bajo volumen pero con pocos proveedores o tecnología patentada. Riesgo alto; estrategia: contratos a largo plazo y stock de seguridad.</li>\n  <li><strong>Proveedores de Volumen (Alto Q, Bajo $):</strong> Gran cantidad física pero bajo costo unitario (envases plásticos, cajas de cartón). Estrategia: negociación por economías de escala.</li>\n  <li><strong>Proveedores Estratégicos (Alto Q, Alto $):</strong> Insumos vitales de altísimo impacto en el costo y calidad final del producto. Estrategia: Alianzas estratégicas (*Partnership*), integración de sistemas y auditorías conjuntas.</li>\n</ul>\n"
+  },
+  {
+    "id": 20,
+    "title": "Esquema de Actividades en Recepción y Despacho de Almacenes",
+    "question": "Describa en un esquema ordenado las tareas que se realizan en la actividad de Recepción y en la actividad de Despacho de almacenes.",
+    "variants": [
+      "Esquema de las actividades zona de despacho",
+      "Describa en un esquema las tareas que se realizan en la actividad de recepción de almacenes.",
+      "Describa en un esquema las tareas que se realizan en la actividad de despacho de almacenes."
+    ],
+    "occurrences": [
+      "1° Parcial 2026 (Pregunta 5)",
+      "1° Parcial Fotos Temas 1, 2 y 3",
+      "Preguntas-1P-Manejo-LC (Pág 6, 14)"
+    ],
+    "unit": "Unidad 7: Operación de Almacenes",
+    "file": "G-UT07-02 Operación de Almacenes.pdf",
+    "slides": "4, 5, 11",
+    "category": "u7_almacenes",
+    "answer_html": "\n<h4 class=\"ans-sub\">1. Secuencia de Recepción de Almacenes:</h4>\n<ul class=\"ans-list\">\n  <li><strong>Paso 1 (Llegada y Muelle):</strong> Arribo del vehículo, verificación de turno y acople en rampa/muelle nivelador.</li>\n  <li><strong>Paso 2 (Descarga Física):</strong> Descarga de bultos o pallets mediante transpaletas/autoelevadores hacia la playa de recepción (*staging*).</li>\n  <li><strong>Paso 3 (Control de Entrada):</strong> Control cuantitativo (conteo físico de bultos vs remito) y cualitativo (estado de embalaje y control de calidad).</li>\n  <li><strong>Paso 4 (Identificación y Alta en WMS):</strong> Lectura de código de barras/RFID, generación de etiquetas internas y registro de stock en el sistema.</li>\n  <li><strong>Paso 5 (Guardado / Put-away):</strong> Traslado de la carga a su ubicación asignada en los racks o bloques de almacenamiento.</li>\n</ul>\n\n<h4 class=\"ans-sub\">2. Secuencia de Despacho / Expedición:</h4>\n<ul class=\"ans-list\">\n  <li><strong>Paso 1 (Consolidación de Pedidos):</strong> Agrupamiento de los artículos extraídos de los racks (*picking*) en la zona de expedición.</li>\n  <li><strong>Paso 2 (Control y Embalaje):</strong> Verificación de ítems recolectados contra orden de pedido, control de peso y enfardado/paletizado final.</li>\n  <li><strong>Paso 3 (Asignación en Playa / Staging de Salida):</strong> Posicionamiento de los pedidos ordenados por ruta de reparto en el muelle asignado.</li>\n  <li><strong>Paso 4 (Carga del Camión):</strong> Estiba física de la mercadería en el furgón respetando la secuencia inversa de entrega (último en bajar = primero en cargar).</li>\n  <li><strong>Paso 5 (Documentación y Salida):</strong> Emisión de remitos, firma de hoja de ruta y precintado del vehículo.</li>\n</ul>\n"
+  },
+  {
+    "id": 21,
+    "title": "Distribución en Planta según Relación Volumen - Variedad de Productos",
+    "question": "Indique las características de los 4 tipos básicos de distribución en planta (Posición Fija, Funcional/Proceso, Celular, Línea/Producto) en función del Volumen y la Variedad.",
+    "variants": [
+      "Indicar como es esta relación volumen de producción y la variedad de productos para cada uno de los tipos básicos de distribución en planta.",
+      "Explicar en qué consiste la llamada Distribución por Posición Fija y en qué casos se aconseja su utilización."
+    ],
+    "occurrences": [
+      "1° Parcial Fotos Temas 1, 2 y 3",
+      "Preguntas-1P-Manejo-LC (Pág 5, 12)",
+      "Preguntas-a-desarrollar-1P-2023 (Pág 7, 18)"
+    ],
+    "unit": "Unidad 9: Distribución en Planta",
+    "file": "G-UT0910-01 Distribución en planta.pdf",
+    "slides": "6, 7, 8, 9, 10",
+    "category": "u9_layout",
+    "answer_html": "\n<h4 class=\"ans-sub\">Los 4 Tipos Básicos de Layout según Volumen y Variedad:</h4>\n<ul class=\"ans-list\">\n  <li><strong>1. Distribución por Posición Fija (Muy Bajo Volumen - Altísima Variedad):</strong> El producto permanece inmóvil en un sitio único debido a su gran tamaño, peso o fragilidad, y todos los recursos (maquinaria, mano de obra, herramientas y materiales) se desplazan hacia él. <em>(Ejemplo: Construcción de barcos, aviones, obras civiles, turbinas de gran escala).</em></li>\n  <li><strong>2. Distribución por Proceso o Funcional (Bajo/Medio Volumen - Alta Variedad):</strong> Las máquinas y operarios que realizan tareas similares se agrupan en departamentos funcionales específicos (sección tornos, sección pintura, sección soldadura). Los materiales viajan de un sector a otro según su ruta particular. <em>(Ejemplo: Talleres metalúrgicos, carpinterías bajo pedido).</em></li>\n  <li><strong>3. Distribución Celular / Grupo Tecnológico (Volumen Medio - Variedad Media):</strong> Las máquinas se agrupan en pequeñas células autónomas (típicamente en forma de U) dedicadas a fabricar una familia de piezas de geometría o proceso similar.</li>\n  <li><strong>4. Distribución por Producto o en Línea (Altísimo Volumen - Mínima Variedad):</strong> Las máquinas y puestos de trabajo se ordenan rígidamente siguiendo la secuencia tecnológica exacta de elaboración del producto. El flujo es continuo y rectilíneo. <em>(Ejemplo: Línea de montaje automotriz, embotelladora de bebidas).</em></li>\n</ul>\n"
+  },
+  {
+    "id": 22,
+    "title": "Ventajas y Desventajas de la Distribución por Proceso vs Distribución por Producto",
+    "question": "Enumere dos ventajas y dos desventajas de la distribución por proceso (funcional) y de la distribución por producto (en línea).",
+    "variants": [
+      "Enumerar dos ventajas y dos desventajas de la distribución por proceso.",
+      "Enumerar dos ventajas y dos desventajas de la distribución por producto."
+    ],
+    "occurrences": [
+      "1° Parcial Fotos Temas 1 y 2",
+      "Preguntas-1P-Manejo-LC (Pág 5, 13)",
+      "Preguntas-a-desarrollar-1P-2023 (Pág 7, 19)"
+    ],
+    "unit": "Unidad 9: Distribución en Planta",
+    "file": "G-UT0910-01 Distribución en planta.pdf",
+    "slides": "8, 10",
+    "category": "u9_layout",
+    "answer_html": "\n<h4 class=\"ans-sub\">1. Distribución por Proceso (Funcional):</h4>\n<ul class=\"ans-list\">\n  <li><strong>Ventajas:</strong>\n    <ul>\n      <li>Gran flexibilidad para procesar productos diversos y adaptarse a cambios de diseño.</li>\n      <li>Menor vulnerabilidad a paradas totales: si una máquina falla, el trabajo se deriva a otra máquina del mismo departamento.</li>\n    </ul>\n  </li>\n  <li><strong>Desventajas:</strong>\n    <ul>\n      <li>Manejo de materiales muy complejo, costoso, con recorridos largos y entrecruzados.</li>\n      <li>Alto inventario de producto en proceso (WIP) y tiempos de ciclo totales prolongados.</li>\n    </ul>\n  </li>\n</ul>\n\n<h4 class=\"ans-sub\">2. Distribución por Producto (En Línea):</h4>\n<ul class=\"ans-list\">\n  <li><strong>Ventajas:</strong>\n    <ul>\n      <li>Manejo de materiales simple, automatizado, lineal y de muy bajo costo unitario.</li>\n      <li>Mínimo inventario en proceso (flujo continuo) y tiempos de fabricación sumamente cortos.</li>\n    </ul>\n  </li>\n  <li><strong>Desventajas:</strong>\n    <ul>\n      <li>Nula o muy baja flexibilidad ante variaciones del producto o caídas bruscas de demanda.</li>\n      <li>Altísima vulnerabilidad: la rotura de una sola máquina detiene por completo toda la línea de producción.</li>\n    </ul>\n  </li>\n</ul>\n"
+  },
+  {
+    "id": 23,
+    "title": "Edificios de Hormigón Armado Prefabricado y Edificios de Construcción Híbrida",
+    "question": "Enumere las ventajas de los edificios de hormigón armado prefabricado y las ventajas de los edificios industriales de construcción híbrida.",
+    "variants": [
+      "Enumere las ventajas de los edificios de hormigón armado prefabricado.",
+      "Enumere las ventajas de los edificios de construcción híbrida."
+    ],
+    "occurrences": [
+      "1° Parcial 13/06/2022 - Tema 2",
+      "1° Parcial 26/06/2023 - Tema 2",
+      "1° Parcial 08/07/2024 - Tema 2",
+      "Preguntas-1P-Manejo-LC (Pág 4, 10)"
+    ],
+    "unit": "Unidad 3: Edificios Industriales",
+    "file": "G-UT08-41 Edificios Industriales.pdf",
+    "slides": "17, 19",
+    "category": "u3_edificios",
+    "answer_html": "\n<h4 class=\"ans-sub\">1. Ventajas de Edificios de Hormigón Armado Prefabricado:</h4>\n<ul class=\"ans-list\">\n  <li><strong>Gran Velocidad de Montaje:</strong> Los componentes se fabrican en planta industrial paralelamente al movimiento de suelos y se ensamblan en seco rápidamente en obra.</li>\n  <li><strong>Alta Resistencia al Fuego (Ignífugo Natural):</strong> No requiere pinturas intumescentes costosas para cumplir con las normas de seguridad contra incendios.</li>\n  <li><strong>Mínimo Mantenimiento y Durabilidad:</strong> Alta resistencia a la corrosión y ambientes industriales agresivos sin necesidad de repintado periódico.</li>\n  <li><strong>Control de Calidad Riguroso:</strong> Fabricación bajo estándares industriales controlados en planta de pretensado.</li>\n</ul>\n\n<h4 class=\"ans-sub\">2. Ventajas de Edificios de Construcción Híbrida (Hormigón + Acero):</h4>\n<ul class=\"ans-list\">\n  <li><strong>Combinación Óptima de Propiedades:</strong> Columnas de hormigón armado (resistentes al impacto de autoelevadores y al fuego) con cubiertas metálicas de acero (livianas y de gran luz libre).</li>\n  <li><strong>Reducción de Cargas a las Fundaciones:</strong> Al ser la cubierta metálica mucho más liviana que la de hormigón, se reducen las dimensiones y costos de las bases y pilotes.</li>\n  <li><strong>Economía Global y Rapidez:</strong> Menor costo de estructura de techo permitiendo salvar luces de más de 30 metros sin columnas intermedias.</li>\n</ul>\n"
+  },
+  {
+    "id": 24,
+    "title": "Tornillos 10.9, Uniones Abulonadas y Método del Giro de Tuerca",
+    "question": "Indique qué significa la inscripción 10.9 en un tornillo de alta resistencia y explique cómo se realiza el apriete de una unión rígida sin torquímetro (Método del Giro de Tuerca).",
+    "variants": [
+      "Indique el valor de resistencia (en N/mm²) a la rotura del material de un tornillo en cuya cabeza se encuentra la siguiente inscripción: 10.9",
+      "Explique la diferencia entre torque y tensión y cómo se realiza el ajuste de una unión abulonada rígida sin torquímetro (giro de tuerca)."
+    ],
+    "occurrences": [
+      "1° Parcial Fotos Tema 3 (Preguntas 8 y 10)",
+      "Preguntas-1P-Manejo-LC (Pág 4)",
+      "Preguntas-a-desarrollar-1P-2023 (Pág 6)"
+    ],
+    "unit": "Unidad 3: Edificios Industriales",
+    "file": "G-UT08-41 Edificios Industriales.pdf",
+    "slides": "22, 23",
+    "category": "u3_edificios",
+    "answer_html": "\n<h4 class=\"ans-sub\">1. Significado de la Inscripción \"10.9\" en la Cabeza del Tornillo:</h4>\n<ul class=\"ans-list\">\n  <li><strong>Primer Número (10):</strong> Representa la décima parte de la <strong>Resistencia Nominal a la Tracción / Rotura</strong> ($R_m$):\n    <div class=\"formula-box\"><code class=\"formula-code\">R_m = 10 \times 100 = 1000\text{ N/mm}^2\text{ (o }100\text{ kg/mm}^2\text{)}</code></div>\n  </li>\n  <li><strong>Segundo Número (9):</strong> Representa el porcentaje (en décimas) del <strong>Límite Elástico / Tensión de Fluencia</strong> ($R_e$) respecto a la rotura:\n    <div class=\"formula-box\"><code class=\"formula-code\">R_e = 0,9 \times R_m = 0,9 \times 1000 = 900\text{ N/mm}^2\text{ (o }90\text{ kg/mm}^2\text{)}</code></div>\n  </li>\n</ul>\n\n<h4 class=\"ans-sub\">2. Torque vs Tensión y Método del Giro de Tuerca:</h4>\n<ul class=\"ans-list\">\n  <li><strong>Torque vs Tensión:</strong> El torque es el momento de giro aplicado con la herramienta; la tensión es la fuerza axial de pretensado real que estira el perno y mantiene unidas las placas. La fricción en roscas distorsiona la relación entre torque y tensión.</li>\n  <li><strong>Método del Giro de Tuerca (Sin Torquímetro):</strong> Se aprietan primero todos los tornillos a la condición de \"apoyo pleno\" (*snug-tight*, usando una llave de impacto común para unir íntimamente las caras de acero). Luego, se marca con tiza la tuerca y la placa, y se gira la tuerca una fracción fija de vuelta adicional (típicamente <strong>$1/3$ a $1/2$ de vuelta</strong> según la longitud del tornillo), garantizando una deformación elástica exacta y la tensión de pretensado exigida.</li>\n</ul>\n"
+  },
+  {
+    "id": 25,
+    "title": "Certificación LEED en Edificios Industriales Sustentables",
+    "question": "¿Qué evalúa la certificación LEED y cuáles son los parámetros o categorías clave que monitorea?",
+    "variants": [
+      "Las normas LEED miden y monitorean una serie de parámetros de una construcción sustentable. Enumere al menos tres de estos parámetros.",
+      "Indique cuáles son los aspectos que evalúa y certifica la norma LEED en edificios sustentables."
+    ],
+    "occurrences": [
+      "1° Parcial 26/06/2023 - Tema 2",
+      "1° Parcial 08/07/2024 - Tema 2",
+      "Recuperatorio 1° Parcial 09/12/2024",
+      "Preguntas-1P-Manejo-LC (Pág 5, 11)"
+    ],
+    "unit": "Unidad 3: Edificios Industriales",
+    "file": "G-UT08-41 Edificios Industriales.pdf",
+    "slides": "35, 36",
+    "category": "u3_edificios",
+    "answer_html": "\n<p class=\"ans-lead\"><strong>Concepto:</strong> LEED (Leadership in Energy and Environmental Design) es un sistema internacional de certificación de edificios sustentables que evalúa el diseño, construcción y operación con criterios de eficiencia ecológica.</p>\n\n<h4 class=\"ans-sub\">Categorías / Parámetros Evaluados por LEED (mencionar al menos 3):</h4>\n<ul class=\"ans-list\">\n  <li><strong>1. Ubicación y Transporte:</strong> Elección de terrenos no vulnerables, conectividad con transporte público y provisión de cargadores de vehículos eléctricos o bicicleteros.</li>\n  <li><strong>2. Sitios Sustentables:</strong> Manejo de aguas de lluvia dentro de la parcela, techos con reflectancia solar (evitar efecto isla de calor) y preservación de vegetación nativa.</li>\n  <li><strong>3. Eficiencia en el Uso del Agua:</strong> Reducción del consumo de agua potable en sanitarios (griferías eficientes) y reutilización de aguas grises o pluviales para riego.</li>\n  <li><strong>4. Energía y Atmósfera:</strong> Optimización de la aislación térmica, sistemas de climatización de alta eficiencia, iluminación LED y uso de energías renovables (paneles solares).</li>\n  <li><strong>5. Materiales y Recursos:</strong> Utilización de materiales regionales, contenido reciclado y gestión de residuos de obra (desvío de vertedero).</li>\n  <li><strong>6. Calidad Ambiental Interior:</strong> Confort térmico, ventilación natural adecuada, monitoreo de $CO_2$ y uso de pinturas y adhesivos con bajo contenido de compuestos orgánicos volátiles (COVs).</li>\n</ul>\n"
+  },
+  {
+    "id": 26,
+    "title": "Materiales a Granel: Características Primarias, Secundarias y Factores del Ángulo de Reposo",
+    "question": "Para un material a granel: defina características primarias y secundarias, qué es el ángulo de reposo y qué factores provocan su variación.",
+    "variants": [
+      "Para un material a granel ¿a qué corresponden las características primarias y secundarias? Indique cada una.",
+      "El ángulo de reposo de un material a granel, ¿Hasta cuántos grados puede variar? ¿Cuáles son los cinco factores que provocan esta variación?"
+    ],
+    "occurrences": [
+      "1° Parcial 07/07/2025 - Curso 5053",
+      "Recuperatorio 1° Parcial 09/12/2025",
+      "Parcial 12 Preguntas Fotos",
+      "Preguntas-1P-Manejo-LC (Pág 2)"
+    ],
+    "unit": "Unidad 2: El Material a Mover",
+    "file": "G-UT02-01 Material a mover.pdf",
+    "slides": "17, 18, 21, 22",
+    "category": "u2_material",
+    "answer_html": "\n<h4 class=\"ans-sub\">1. Características Primarias vs Secundarias:</h4>\n<ul class=\"ans-list\">\n  <li><strong>Características Primarias (Intrínsecas):</strong> Propiedades fijas del material en sí: densidad aparente ($kg/m^3$), tamaño medio del grano (granulometría), forma de las partículas (esféricas, laminares, angulosas) y cohesión interna.</li>\n  <li><strong>Características Secundarias (Ambientales / de Comportamiento):</strong> Propiedades que varían según el entorno y la manipulación: contenido de humedad, temperatura, fluidez, abrasividad, corrosividad, higroscopicidad y riesgo de inflamabilidad/explosividad en suspensión.</li>\n</ul>\n\n<h4 class=\"ans-sub\">2. Ángulo de Reposo y Factores de Variación:</h4>\n<p class=\"ans-lead\"><strong>Definición:</strong> Es el ángulo que forma la generatriz del cono natural formado por el material al ser vertido por gravedad con respecto al plano horizontal. Puede variar hasta <strong>$15^\\circ$</strong> (o más) según las condiciones de operación.</p>\n<ul class=\"ans-list\">\n  <li><strong>Factores de Variación (5 factores):</strong>\n    <ol style=\"padding-left: 1.2rem; margin-top: 0.3rem;\">\n      <li>Contenido de humedad libre en el material.</li>\n      <li>Distribución granulométrica (mezcla de finos y gruesos).</li>\n      <li>Forma, textura y rugosidad superficial de los granos.</li>\n      <li>Altura de caída libre y método de apilamiento / descarga.</li>\n      <li>Grado de aireación o compactación del lecho granular.</li>\n    </ol>\n  </li>\n</ul>\n"
+  },
+  {
+    "id": 27,
+    "title": "Número Mesh: Definición, Determinación y Relación con el Tamaño de Partícula",
+    "question": "Defina Número Mesh, cómo se calcula y determine cuál de dos materiales (Mesh A > Mesh B) posee mayor tamaño de grano.",
+    "variants": [
+      "Defina número Mesh e indique como se determina. Además, dados dos materiales a granel, A y B cuyos números Mesh son A > B. Indicar cuál de los materiales tiene mayor tamaño de grano.",
+      "Determinar el diámetro del alambre de una malla Mesh 6, siendo la apertura de la malla 3,36mm."
+    ],
+    "occurrences": [
+      "Recuperatorio 1° Parcial 09/12/2025",
+      "2° Parcial 07/11/2022 - Tema 1",
+      "2° Parcial 06/11/2023 - Tema 1",
+      "Preguntas-1P-Manejo-LC (Pág 2)"
+    ],
+    "unit": "Unidad 2: El Material a Mover",
+    "file": "G-UT02-01 Material a mover.pdf",
+    "slides": "23, 24, 25",
+    "category": "u2_material",
+    "answer_html": "\n<p class=\"ans-lead\"><strong>Definición:</strong> Es la cantidad de hilos o aperturas cuadradas existentes por cada pulgada lineal ($1\text{ pulgada} = 25,4\text{ mm}$) en una malla o tamiz normalizado, medido en dirección ortogonal.</p>\n\n<div class=\"formula-box\">\n  <span class=\"formula-label\">FÓRMULA FUNDAMENTAL DE LA MALLA MESH:</span>\n  <code class=\"formula-code\">25,4\text{ mm} = \text{Mesh} \times (\text{Apertura de Malla [mm]} + \text{Diámetro del Alambre [mm]})</code>\n</div>\n\n<h4 class=\"ans-sub\">Relación con el Tamaño de Grano:</h4>\n<ul class=\"ans-list\">\n  <li>A mayor número Mesh, <strong>más fina y cerrada es la criba</strong> (menor es el hueco o luz de malla).</li>\n  <li>Por lo tanto, si $\text{Mesh A} > \text{Mesh B}$, <strong>el material B tiene mayor tamaño de grano</strong>, ya que el material A pasa a través de un tamiz con aperturas mucho más pequeñas (partículas más finas).</li>\n</ul>\n"
+  },
+  {
+    "id": 28,
+    "title": "Envases según Clasificación Europea (Primario, Secundario, Terciario) y Rígidos vs Flexibles",
+    "question": "Defina los tres niveles de envases según la Directiva Europea 94/62/CE y diferencie envases rígidos de flexibles.",
+    "variants": [
+      "Defina envase terciario según la clasificación europea.",
+      "Defina envase secundario según la clasificación europea.",
+      "Defina los envases rígidos y los flexibles."
+    ],
+    "occurrences": [
+      "1° Parcial 13/06/2022 - Tema 2",
+      "1° Parcial Fotos Temas 1 y 2",
+      "Preguntas-1P-Manejo-LC (Pág 6, 15)"
+    ],
+    "unit": "Unidad 7: Unidades de Carga",
+    "file": "G-UT07-03 Unidades de Carga.pdf",
+    "slides": "6, 7, 8, 9, 15",
+    "category": "u7_almacenes",
+    "answer_html": "\n<h4 class=\"ans-sub\">1. Clasificación Europea de Envases (Directiva 94/62/CE):</h4>\n<ul class=\"ans-list\">\n  <li><strong>Envase Primario (o de Venta):</strong> Está en contacto directo con el producto y constituye la unidad de venta mínima destinada al consumidor final. <em>(Ejemplo: Botella de vidrio de vino, lata de gaseosa).</em></li>\n  <li><strong>Envase Secundario (o Colectivo):</strong> Agrupa un número determinado de envases primarios en el punto de venta. Puede separarse del producto sin alterar sus propiedades. <em>(Ejemplo: Pack de cartón de 6 botellas, caja de 12 latas).</em></li>\n  <li><strong>Envase Terciario (o de Transporte):</strong> Agrupación de varios envases primarios o secundarios sobre un soporte para facilitar su manipulación mecánica y transporte a gran escala. <em>(Ejemplo: Pallet de 100 cajas enfardado con film stretch).</em></li>\n</ul>\n\n<h4 class=\"ans-sub\">2. Envases Rígidos vs Flexibles:</h4>\n<ul class=\"ans-list\">\n  <li><strong>Envases Rígidos:</strong> Conservan su forma geométrica invariable con o sin producto en su interior, soportando esfuerzos de apilamiento vertical. <em>(Ej. Tambores de 200 L, botellas de vidrio, cajas plásticas inyectadas).</em></li>\n  <li><strong>Envases Flexibles:</strong> Su forma se amolda al producto que contienen y no soportan carga de apilamiento por sí mismos. <em>(Ej. Bolsas de polietileno, sachets, doypacks, big bags).</em></li>\n</ul>\n"
+  },
+  {
+    "id": 29,
+    "title": "Industria 4.0 e Intralogística 4.0: Definición y Pilares Tecnológicos",
+    "question": "¿Qué es la Industria 4.0 y la Intralogística 4.0 y qué tecnologías clave las componen?",
+    "variants": [
+      "¿Qué es la industria 4.0? y ¿la intralogística 4.0?",
+      "Indicar qué cuestiones hacen que la Intralogística reemplace al tradicional tratado de Manejo de Materiales."
+    ],
+    "occurrences": [
+      "Foto Parcial Manuscrito (Pregunta 1)",
+      "Recuperatorio 1° Parcial 09/12/2025",
+      "1° Parcial Fotos Tema 3",
+      "Parcial 12 Preguntas Fotos"
+    ],
+    "unit": "Unidad 1: Introducción a la Intralogística",
+    "file": "G-UT01-01 Introducción a la Intralogística.pdf",
+    "slides": "3, 4, 5, 6",
+    "category": "u1_intra",
+    "answer_html": "\n<h4 class=\"ans-sub\">1. Industria 4.0:</h4>\n<p class=\"ans-lead\">Es la cuarta revolución industrial caracterizada por la digitalización integral de las fábricas mediante la convergencia de <strong>Sistemas Ciberfísicos (CPS), Internet de las Cosas (IoT), Big Data, Cloud Computing e Inteligencia Artificial</strong>, logrando procesos productivos hiperconectados y adaptables en tiempo real.</p>\n\n<h4 class=\"ans-sub\">2. Intralogística 4.0:</h4>\n<p class=\"ans-lead\">Es la traslación de los pilares de la Industria 4.0 a todos los <strong>flujos internos de materiales e información</strong> de la planta y los almacenes:</p>\n<ul class=\"ans-list\">\n  <li><strong>Automatización Móvil:</strong> Robots Móviles Autónomos (AMRs) y vehículos AGV guiados por visión 3D sin rieles físicos.</li>\n  <li><strong>Almacenes Inteligentes (AS/RS):</strong> Transelevadores de alta velocidad comandados por software WMS / MES integrado al ERP.</li>\n  <li><strong>Trazabilidad en Tiempo Real:</strong> Sensores RFID, visión artificial y dispositivos *Pick-to-Light* / *Voice-Picking*.</li>\n</ul>\n"
+  },
+  {
+    "id": 30,
+    "title": "Buenas Prácticas de Almacenamiento (BPA)",
+    "question": "Indique y justifique al menos tres Buenas Prácticas de Almacenamiento (BPA) en depósitos industriales.",
+    "variants": [
+      "Indique al menos tres buenas prácticas de almacenamiento.",
+      "Enumere buenas prácticas en la gestión y operación de depósitos y almacenes."
+    ],
+    "occurrences": [
+      "1° Parcial 13/06/2022 - Tema 2",
+      "1° Parcial 26/06/2023 - Tema 2",
+      "1° Parcial 08/07/2024 - Tema 2",
+      "Preguntas-1P-Manejo-LC (Pág 6, 14)"
+    ],
+    "unit": "Unidad 7: Operación de Almacenes",
+    "file": "G-UT07-02 Operación de Almacenes.pdf",
+    "slides": "14, 15",
+    "category": "u7_almacenes",
+    "answer_html": "\n<h4 class=\"ans-sub\">Buenas Prácticas de Almacenamiento (mencionar al menos 3):</h4>\n<ul class=\"ans-list\">\n  <li><strong>1. Clasificación ABC y Zonificación por Rotación:</strong> Ubicar los productos de mayor movimiento (Clase A) en los niveles intermedios de los racks (altura ergonómica) y lo más cerca posible de las zonas de expedición para acortar las trayectorias de los autoelevadores.</li>\n  <li><strong>2. Pasillos Despejados y Señalizados:</strong> Mantener los pasillos de tránsito libres de bultos o pallets transitorios en el piso, con demarcación visible de 10 cm y segregación peatonal.</li>\n  <li><strong>3. Control Estricto de Cargas Admisibles:</strong> Respetar rigurosamente los límites de carga máxima del piso ($kg/m^2$) y de las vigas/puntales de las estanterías metálicas, exhibiendo placas normalizadas de carga.</li>\n  <li><strong>4. Rotación FIFO / FEFO Estricta:</strong> Garantizar que lo primero que entra (o lo que primero vence) sea lo primero en salir para evitar mermas por obsolescencia o caducidad.</li>\n</ul>\n"
+  },
+  {
+    "id": 31,
+    "title": "Patrones de Flujo Intra-Departamentales para Distribución por Procesos",
+    "question": "Indique y esquematice los patrones de flujos intra-departamentos para una distribución por procesos.",
+    "variants": [
+      "Indique los patrones de flujos intra departamentos, para una distribución de este por procesos.",
+      "Flujo intra departamental en distribución funcional: directo, en L, en U, circular, serpentina."
+    ],
+    "occurrences": [
+      "1° Parcial 13/06/2022 - Tema 2",
+      "1° Parcial 26/06/2023 - Tema 2",
+      "1° Parcial 08/07/2024 - Tema 2",
+      "Preguntas-1P-Manejo-LC (Pág 5, 13)"
+    ],
+    "unit": "Unidad 9: Distribución en Planta",
+    "file": "G-UT0910-01 Distribución en planta.pdf",
+    "slides": "17, 18",
+    "category": "u9_layout",
+    "answer_html": "\n<p class=\"ans-lead\"><strong>Concepto:</strong> Definen la trayectoria geométrica que describen los materiales dentro de una sección o área de trabajo individual:</p>\n\n<ul class=\"ans-list\">\n  <li><strong>Flujo en Línea Recta (Directo):</strong> Entrada y salida ubicadas en extremos opuestos. Flujo simple y secuencial.</li>\n  <li><strong>Flujo en L:</strong> Entrada y salida formando un ángulo de $90^\\circ$. Se usa cuando los pasillos de alimentación y retiro se cruzan ortogonalmente.</li>\n  <li><strong>Flujo en U:</strong> Entrada y salida ubicadas sobre el mismo pasillo lateral. Facilita la supervisión, la flexibilidad del operador y reduce recorridos.</li>\n  <li><strong>Flujo Circular:</strong> El material realiza un circuito cerrado alrededor de las máquinas y regresa cerca de la estación inicial.</li>\n  <li><strong>Flujo en Serpentina / en S:</strong> Trayectoria en zigzag utilizada para acomodar recorridos largos de proceso en espacios rectangulares confinados.</li>\n</ul>\n"
+  },
+  {
+    "id": 32,
+    "title": "Estudio de Impacto Ambiental (EsIA): Concepto, Utilidad y Contenido",
+    "question": "¿Qué proporciona y para qué sirve un Estudio de Impacto Ambiental (EsIA)?",
+    "variants": [
+      "¿Qué proporciona y para qué sirve un estudio de impacto ambiental?",
+      "¿Qué entiende por Impacto Ambiental y Proceso Sostenible?"
+    ],
+    "occurrences": [
+      "Recuperatorio 1° Parcial 09/12/2024",
+      "1° Parcial Fotos Temas 1 y 3",
+      "Preguntas-1P-Manejo-LC (Pág 3, 9)"
+    ],
+    "unit": "Unidad 3: Instrumentos de Gestión Ambiental",
+    "file": "F-UT08-21 Instrumentos de Gestión Ambiental (1).pdf",
+    "slides": "6, 7, 8",
+    "category": "u3_ambiental",
+    "answer_html": "\n<p class=\"ans-lead\"><strong>Definición:</strong> Es el documento técnico interdisciplinario que el proponente de un proyecto industrial debe presentar ante la autoridad ambiental antes de iniciar una obra, para predecir, identificar y mitigar los impactos sobre el medio físico, biológico y social.</p>\n\n<h4 class=\"ans-sub\">¿Para qué sirve?</h4>\n<ul class=\"ans-list\">\n  <li>Permite a la autoridad de aplicación evaluar la viabilidad ecológica del proyecto y emitir la <strong>Declaratoria de Impacto Ambiental (DIA)</strong> o el Certificado de Aptitud Ambiental (CAA).</li>\n  <li>Permite diseñar las medidas preventivas, correctoras y de mitigación antes de que se produzca el daño ambiental.</li>\n</ul>\n\n<h4 class=\"ans-sub\">¿Qué proporciona?</h4>\n<ul class=\"ans-list\">\n  <li>La <strong>Línea de Base Ambiental</strong> (diagnóstico del estado original del suelo, agua, aire y población).</li>\n  <li>La matriz de valoración cuali-cuantitativa de impactos positivos y negativos.</li>\n  <li>El <strong>Plan de Gestión Ambiental (PGA)</strong>, planes de contingencia y programas de monitoreo periódico de efluentes y emisiones.</li>\n</ul>\n"
+  },
+  {
+    "id": 33,
+    "title": "Método de Brown & Gibson para Localización de Plantas (Parámetro W)",
+    "question": "En el método de Brown & Gibson para localización de plantas, explique la función del parámetro W y cómo se integra con los factores objetivos y subjetivos.",
+    "variants": [
+      "En el cálculo del valor relativo de los factores subjetivos en el método de Brown Gibson ¿Qué representa el parámetro W?",
+      "Método de Brown-Gibson: Factores Críticos, Objetivos y Subjetivos (W y K)."
+    ],
+    "occurrences": [
+      "Recuperatorio 1° Parcial 09/12/2024",
+      "1° Parcial Fotos Temas 1 y 2",
+      "Preguntas-1P-Manejo-LC (Pág 2, 7)"
+    ],
+    "unit": "Unidad 3: Localización de Plantas",
+    "file": "G-UT08-11 Localización de Plantas.pdf",
+    "slides": "9, 10, 11",
+    "category": "u3_localiz",
+    "answer_html": "\n<p class=\"ans-lead\"><strong>Estructura del Modelo:</strong> Brown y Gibson calcula la Medida de Preferencia de Localización ($MPL_i$) combinando Factores Críticos ($FC_i = 0\text{ ó }1$), Factores Objetivos ($FO_i$) y Factores Subjetivos ($FS_i$):</p>\n\n<div class=\"formula-box\">\n  <span class=\"formula-label\">FÓRMULA MPL:</span>\n  <code class=\"formula-code\">MPL_i = FC_i \times [ K \times FO_i + (1 - K) \times FS_i ]</code>\n</div>\n\n<h4 class=\"ans-sub\">Función del Parámetro W:</h4>\n<ul class=\"ans-list\">\n  <li>En el cálculo de los <strong>Factores Subjetivos ($FS_i$)</strong>, $W_j$ representa el <strong>vector de peso relativo o importancia ponderada</strong> de cada factor cualitativo $j$ (clima, sindicatos, servicios comunitarios) con respecto a los demás ($\\sum W_j = 1$).</li>\n  <li>Se obtiene mediante matrices de comparación pareada entre todos los factores subjetivos evaluados.</li>\n</ul>\n"
+  },
+  {
+    "id": 34,
+    "title": "Clasificación del Territorio en PBA (Decreto Ley 8912/77): Áreas y Zonas",
+    "question": "Describa cómo clasifica el territorio municipal el Decreto Ley 8912/77 de la Provincia de Buenos Aires (Áreas y Zonas).",
+    "variants": [
+      "La clasificación del uso del suelo en la PBA define áreas y zonas, indique los tipos de zonas que define esta clasificación."
+    ],
+    "occurrences": [
+      "1° Parcial 13/06/2022 - Tema 2",
+      "1° Parcial 26/06/2023 - Tema 2",
+      "1° Parcial 08/07/2024 - Tema 2"
+    ],
+    "unit": "Unidad 3: Códigos Urbanísticos",
+    "file": "G-UT08-31 Códigos Urbanisticos.pdf",
+    "slides": "4, 5, 6",
+    "category": "u3_urbano",
+    "answer_html": "\n<h4 class=\"ans-sub\">1. Las 3 Áreas Territoriales Principales:</h4>\n<ul class=\"ans-list\">\n  <li><strong>Área Urbana:</strong> Destinada a la población concentrada con servicios de agua, cloaca, energía y trama vial consolidada.</li>\n  <li><strong>Área Rural:</strong> Destinada a la producción agropecuaria, forestal y actividades primarias extensivas.</li>\n  <li><strong>Área Complementaria:</strong> Franja de transición entre el campo y la ciudad, reservada para ensanche urbano, clubes de campo, quintas o parques industriales.</li>\n</ul>\n\n<h4 class=\"ans-sub\">2. Tipos de Zonas según el Uso del Suelo:</h4>\n<ul class=\"ans-list\">\n  <li><strong>Zonas Residenciales (R):</strong> Exclusivas o predominantes para vivienda unifamiliar o multifamiliar.</li>\n  <li><strong>Zonas Comerciales (C):</strong> Concentración de locales minoristas, mayoristas y oficinas.</li>\n  <li><strong>Zonas Industriales (I):</strong> Aptas para radicación fabril categorizada (I1, I2, I3).</li>\n  <li><strong>Zonas de Reserva Urbana:</strong> Áreas vacantes planificadas para futuro crecimiento.</li>\n  <li><strong>Zonas de Usos Específicos:</strong> Equipamientos singulares (puertos, plantas de efluentes, cementerios).</li>\n</ul>\n"
+  },
+  {
+    "id": 35,
+    "title": "Localización de Centros de Servicios (Consumo In Situ vs Directo al Cliente)",
+    "question": "Explique las dos clases principales de localización para empresas de servicios y detalle los factores determinantes de cada una.",
+    "variants": [
+      "Para el estudio de la localización de centros de servicios se dividen en dos clases principales. Indicar cuáles son y describir los factores característicos de cada una de ellas."
+    ],
+    "occurrences": [
+      "1° Parcial 13/06/2022 - Tema 2",
+      "1° Parcial 26/06/2023 - Tema 2",
+      "1° Parcial 08/07/2024 - Tema 2"
+    ],
+    "unit": "Unidad 3: Localización de Plantas",
+    "file": "G-UT08-11 Localización de Plantas.pdf",
+    "slides": "13, 14",
+    "category": "u3_localiz",
+    "answer_html": "\n<h4 class=\"ans-sub\">1. Servicios Consumidos \"In Situ\" (El cliente se traslada al local):</h4>\n<p class=\"ans-lead\"><em>Ejemplos:</em> Sucursales bancarias, restaurantes, centros médicos, cines.</p>\n<ul class=\"ans-list\">\n  <li><strong>Factores Críticos:</strong> Máxima cercanía y conveniencia para el cliente, alto tráfico peatonal/vehicular, facilidad de estacionamiento, visibilidad de fachada y entorno seguro.</li>\n</ul>\n\n<h4 class=\"ans-sub\">2. Servicios Prestados Directamente al Cliente (El prestador se traslada al domicilio):</h4>\n<p class=\"ans-lead\"><em>Ejemplos:</em> Ambulancias, servicios de catering, reparto de correspondencia, mantenimiento domiciliario.</p>\n<ul class=\"ans-list\">\n  <li><strong>Factores Críticos:</strong> Mínimo tiempo de respuesta radial, conexión inmediata a autopistas y avenidas rápidas, costos bajos de terreno/alquiler (no requiere fachada comercial vistosa).</li>\n</ul>\n"
+  },
+  {
+    "id": 36,
+    "title": "Factores Críticos para Localización de Centros Comerciales y Locales Minoristas (Retail)",
+    "question": "Enumere al menos cuatro factores críticos que condicionan la localización de centros comerciales y locales minoristas.",
+    "variants": [
+      "Enumerar 4 factores críticos para la localización de centros comerciales y locales minoristas.",
+      "Enumere al menos cuatro factores críticos para la localización de centros comerciales y locales minoristas."
+    ],
+    "occurrences": [
+      "1° Parcial 2026 (Pregunta 12)",
+      "1° Parcial Fotos Temas 1 y 2",
+      "Preguntas-1P-Manejo-LC (Pág 2, 8)"
+    ],
+    "unit": "Unidad 3: Localización de Plantas",
+    "file": "G-UT08-11 Localización de Plantas.pdf",
+    "slides": "15",
+    "category": "u3_localiz",
+    "answer_html": "\n<h4 class=\"ans-sub\">Factores Críticos en Retail (mencionar al menos 4):</h4>\n<ul class=\"ans-list\">\n  <li><strong>1. Área de Atracción y Perfil Demográfico:</strong> Densidad de población en el radio de influencia y poder adquisitivo / nivel socioeconómico de los hogares cercanos.</li>\n  <li><strong>2. Flujo y Tráfico Peatonal / Vehicular:</strong> Cantidad de transeúntes y autos que pasan frente al local durante los horarios de mayor venta.</li>\n  <li><strong>3. Accesibilidad y Estacionamiento:</strong> Capacidad y comodidad de cocheras propias, paradas de colectivos y estaciones de subte/tren cercanas.</li>\n  <li><strong>4. Visibilidad e Imagen Comercial:</strong> Frente vidriado amplio, cartelería visible e iluminación pública atractiva.</li>\n  <li><strong>5. Presencia de Negocios \"Ancla\" y Sinergia:</strong> Cercanía a supermercados, cines o marcas tractoras que generen atracción masiva compartida.</li>\n</ul>\n"
+  },
+  {
+    "id": 37,
+    "title": "Responsables de Obra según el Código de Edificación de CABA para Obra Mayor",
+    "question": "Para un permiso de Obra Mayor en CABA, ¿cuántos y cuáles son los responsables técnicos obligatorios y qué función cumple cada uno?",
+    "variants": [
+      "De acuerdo con el código de construcción de CABA ¿Cuántos responsables de obra debe haber y cuáles son sus áreas de incumbencias para un permiso de obra mayor?"
+    ],
+    "occurrences": [
+      "1° Parcial Fotos Temas 1 y 2",
+      "Preguntas-1P-Manejo-LC (Pág 3, 8)"
+    ],
+    "unit": "Unidad 3: Códigos Urbanísticos",
+    "file": "G-UT08-31 Códigos Urbanisticos.pdf",
+    "slides": "17, 18",
+    "category": "u3_urbano",
+    "answer_html": "\n<p class=\"ans-lead\">El Código de Edificación de CABA exige la designación formal e independiente de profesionales matriculados habilitados para cada rol:</p>\n\n<ul class=\"ans-list\">\n  <li><strong>1. Proyectista:</strong> Diseña los planos de arquitectura, efectúa el cálculo de estructuras e instalaciones y responde por el cumplimiento de las normas de edificación.</li>\n  <li><strong>2. Director de Obra:</strong> Representa técnica y éticamente al comitente. Fiscaliza e inspecciona que la construcción se ejecute respetando fielmente los planos aprobados y las reglas del buen arte.</li>\n  <li><strong>3. Constructor / Empresa Constructora:</strong> Es el responsable operativo directo de la provisión de materiales, mano de obra, andamios y de la ejecución material de la obra.</li>\n  <li><strong>4. Representante Técnico:</strong> Profesional matriculado que asume la responsabilidad técnica por parte de la empresa constructora en el sitio de trabajo.</li>\n  <li><strong>5. Responsable de Higiene y Seguridad:</strong> Confecciona el Programa de Seguridad (Dec. 911/96), audita el uso de EPPs y previene accidentes laborales en obra.</li>\n</ul>\n"
+  },
+  {
+    "id": 38,
+    "title": "Vínculos Estructurales: Unión Rígida vs Unión Elástica en Edificios Industriales",
+    "question": "Defina qué es una unión rígida (empotramiento) y qué es una unión elástica (articulación) en estructuras metálicas y de hormigón.",
+    "variants": [
+      "Indicar la definición de unión rígida.",
+      "Indicar la definición de unión elástica."
+    ],
+    "occurrences": [
+      "1° Parcial 13/06/2022 - Tema 2",
+      "1° Parcial Fotos Temas 1 y 2",
+      "Preguntas-1P-Manejo-LC (Pág 4, 10)"
+    ],
+    "unit": "Unidad 3: Edificios Industriales",
+    "file": "G-UT08-41 Edificios Industriales.pdf",
+    "slides": "22",
+    "category": "u3_edificios",
+    "answer_html": "\n<h4 class=\"ans-sub\">1. Unión Rígida (Empotramiento):</h4>\n<p class=\"ans-lead\">Es aquella vinculación estructural diseñada para <strong>impedir tanto los desplazamientos lineales relativos como la rotación angular</strong> entre los miembros conectados. Transmite momentos flectores ($M$), además de esfuerzos normales ($N$) y de corte ($V$). Exige rigidizadores y mayor masa de acero/hormigón en el nudo.</p>\n\n<h4 class=\"ans-sub\">2. Unión Elástica (Articulación / Apoyo Simple):</h4>\n<p class=\"ans-lead\">Es aquella vinculación diseñada deliberadamente para <strong>permitir cierta rotación angular o deformación elástica relativa</strong> entre los elementos unidos. Transmite principalmente esfuerzos axiales y de corte, pero <strong>no transmite momentos flectores significativos ($M \u0007pprox 0$)</strong>, simplificando el cálculo de fundaciones.</p>\n"
+  },
+  {
+    "id": 39,
+    "title": "Principio de Distribución en Planta de Integración de Conjunto",
+    "question": "Enuncie y explique el Principio de la Integración de Conjunto en el diseño de Layout.",
+    "variants": [
+      "Indicar el principio de distribución en planta para la integración de conjunto."
+    ],
+    "occurrences": [
+      "1° Parcial 13/06/2022 - Tema 2",
+      "1° Parcial Fotos Temas 1 y 2",
+      "Preguntas-1P-Manejo-LC (Pág 5, 12)"
+    ],
+    "unit": "Unidad 9: Distribución en Planta",
+    "file": "G-UT0910-01 Distribución en planta.pdf",
+    "slides": "4",
+    "category": "u9_layout",
+    "answer_html": "\n<p class=\"ans-lead\"><strong>Enunciado Oficial:</strong> «La mejor distribución en planta es aquella que integra a los hombres, los materiales, la maquinaria, las actividades auxiliares, así como cualquier otro factor, de modo que resulte el compromiso óptimo entre todas estas partes funcionando como un sistema armónico global.»</p>\n\n<h4 class=\"ans-sub\">Interpretación Práctica:</h4>\n<p>No se debe optimizar un departamento de forma aislada si ello perjudica el flujo global de la planta. El diseño del layout debe priorizar la eficiencia y seguridad sistémica total de la fábrica por sobre los óptimos locales individuales.</p>\n"
+  },
+  {
+    "id": 40,
+    "title": "Método de Cribado para Localización y Objetivos de los Parques Industriales",
+    "question": "Indique la secuencia ordenada de pasos del Método de Cribado para localización de plantas y enumere los objetivos básicos de los Parques Industriales.",
+    "variants": [
+      "Indicar los pasos (en secuencia ordenada) a cumplir para la localización de una planta mediante el uso del Método de Cribado.",
+      "Indicar cuáles son los objetivos básicos que se pretenden alcanzar mediante la creación y uso de Parques Industriales."
+    ],
+    "occurrences": [
+      "1° Parcial Fotos Tema 3 (Preguntas 3 y 4)",
+      "Preguntas-1P-Manejo-LC (Pág 2, 3)",
+      "Preguntas-a-desarrollar-1P-2023 (Pág 3, 4)"
+    ],
+    "unit": "Unidad 3: Localización de Plantas",
+    "file": "G-UT08-11 Localización de Plantas.pdf",
+    "slides": "6, 7",
+    "category": "u3_localiz",
+    "answer_html": "\n<h4 class=\"ans-sub\">1. Pasos del Método de Cribado (Secuencia Ordenada):</h4>\n<ul class=\"ans-list\">\n  <li><strong>Paso 1:</strong> Definición de Factores Críticos Excluyentes (condiciones indispensables de cumplimiento obligatorio: ej. disponibilidad de gasoducto de alta presión o acceso a puerto).</li>\n  <li><strong>Paso 2:</strong> Preselección y Filtrado de Macro-Zonas que cumplan con todos los factores críticos del Paso 1, descartando inmediatamente las restantes.</li>\n  <li><strong>Paso 3:</strong> Evaluación Multicriterio Ponderada de factores objetivos (costos medibles) y subjetivos en las alternativas supervivientes.</li>\n  <li><strong>Paso 4:</strong> Selección Final del terreno y verificación legal/ambiental definitiva.</li>\n</ul>\n\n<h4 class=\"ans-sub\">2. Objetivos Básicos de los Parques Industriales:</h4>\n<ul class=\"ans-list\">\n  <li>Concentrar la actividad industrial en áreas dotadas de infraestructura común de alta potencia (subestaciones, red de media tensión, desagües industriales con planta de tratamiento común y balanza pública).</li>\n  <li>Ordenar el planeamiento urbano segregando industrias de los centros residenciales para minimizar conflictos ambientales y de tránsito.</li>\n  <li>Fomentar la sinergia comercial, economías de escala y reducción de costos en seguridad física compartida y trámites de habilitación rápida.</li>\n</ul>\n"
+  }
+]
