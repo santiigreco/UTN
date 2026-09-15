@@ -53,3 +53,64 @@ Mantenimiento condicional = predictivo + proactivo
 
 Se basa en estrategias de diagnostico en funcion del estado parametrico siempre que sea tecnicamente posible el monitoreo y el diagnostico
 
+-------------------------------------------
+-------14/09/2026----------------
+
+Unidad 5
+Concepto de edificios inteligentes: 
+1. Condiciones de confort -> mas productividad
+2. Ejerce control sobre 3 areas que tienen que estar integradas enun sistema (BMS -> building management software)
+    A. energia (luminaria, ascensores)
+    B. termomecanica (frio y calor del edificio)
+    C. seguridad (aspersores para incendios, matafuegos)
+
+
+Unidad 4: TPM 
+
+Lo que entra al parcial: 
+
+TPM: Total Productive Maintenance (8 pilares)
+Consiste en que existe (entran 1,2,4,8 )
+1. Mantenimiento profesional o planificado (oficina tecnica)
+2. Mantenimiento no profesional o autonomo (por parte de los operarios de produccion. Toma a su cargo el mantenimiento del equipo y se convierte en un inspector permanente
+
+preg de examen-> que pasa con los operarios en TPM? nunca se los mueve, simplemente cambian las funciones de cada uno.
+
+3. Mejora focalizada -> comitee
+4. TPM  en departamentos de apoyo (compras, marketing, RRHH) 
+5. Gestion temprana incial -> mantenimiento tiene q participar desde el inicio
+6. Calidad 
+7. RRHH 
+8. Seguridad, higiene y medioambiente -> pilar integrador. Voy a lograr el 0 accidentes de JIT si logro los 5 anteriores. 
+
+Las areas donde mas incidencias tiene matenimiento de just in time son: 
+0 defectos
+0 fallas
+
+preg de examen -> ¿que grafico aparece en JIT? -> curva de costo de falla vs curva de costo de mantenimiento, porque nose permite trabajar a la falla
+
+Toma la decision la cupula de la empresa y se baja linea hacia toda la compañía
+Lo fundamental en TPM es el recurso humanoporque es quien diseña, opera y MANTIENE los equipos. Donde mejores resultados da, es en la industria manufacturera
+
+
+RCM - > Mantenimiento Centrado en la Confiabilidad
+los yankees intentaron copiar TPM 
+
+Se arman comites y grupos de trabajo para cada equipo. Los grupos estan conformados por calidad, produccion, mantenimiento. Los jefes no estan dentro de este grupo.
+
+1. Funciones -> producc y calidad
+2. Fallas funcionales -> producc y calidad
+3. Modos de falla
+4. Efectos -> cuantificar en tiempo y en plata un sustantivo y un adjetivo  (ej: valvula globo abierta permanentemente, cuesta tanto $$ y tarda xx en )
+5. Consecuencias -> 
+    a. falla evidente u oculta? 
+    b. falla perjudica a la seguridad de las personas y/o al medioambiente?  este  sistema no me permite trabajar a la falla
+    c. falla tiene consecuencias operacionales? (costo de reparacion,costo fijo, lucro cesante)
+    d. consecuencias no operacionales? -> costo de la reparacion
+6. Verificar si hay acciones proactivas que se puedan realizar
+    1° acciones proactivas 
+    2° acciones preventivas
+7. Correctivo / reingenieria
+
+
+preg de examen-> modo de falla evidente que tiene consecuencias operacionales. como procede? la rta es explicar como recorrer el grafico
