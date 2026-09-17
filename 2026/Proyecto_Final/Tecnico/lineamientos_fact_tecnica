@@ -1,0 +1,43 @@
+PRODUCTO
+
+Caracteristicas TECNICAS, FISICAS Y QUIMICAS. -> hoja de datos tecnica, tanto para producto final como para materias primas. 
+dimensiones-> los productos requerirán dimensiones definidas, puesto que necesitaremos moldes destinados a la fabricación de estos
+Materiales
+
+Componentes -> diagrama multicomponente (arboreo +
+Planos
+Normas
+Diagramas
+Materia Prima
+Tratamiento
+
+Calidad del producto
+
+Atributos
+Tolerancias
+Resistencia
+Durabilidad
+Vida util
+Confiabilidad
+Garantia
+Normas y certificaciones requeridas
+
+
+PROCESO
+
+Flujograma-> mas detallado que en la precactbilidad. Desde que entra la materia prima hasta que sale el producto terminado. 
+Cantidades
+Caudales
+Volumenes
+Potencias
+Rendimientos
+Tiempos
+Diagrama de operaciones de proceso detallado. -> tiene que ser cuantificado. Tiene que decir cuanto de MP voy a necesitar para un lote.
+Diagrama de analisis de proceso. DAP. ->  Necesito los tiempos de cada operacion.
+
+
+MAQUINAS Y HERRAMIENTAS
+
+
+
+

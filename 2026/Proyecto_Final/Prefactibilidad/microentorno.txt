@@ -1,0 +1,65 @@
+1.2 Microentorno
+
+Competidores directos 
+Schar: empresa líder mundial en el mercado de alimentos sin gluten, con sede en el Tirol del Sur, Italia, Brasil y una fuerte presencia en Argentina a través de importaciones. Tiene más de 100 años en el mercado. 
+Smams: empresa líder en Argentina, ubicada en Buenos Aires. Cuenta con diversos productos como panificados, galletitas y alfajores. Presente hace más de 15 años en dietéticas y supermercados
+Santa Maria: Ubicada en la Plata, con 30 años de experiencia en productos sin gluten donde sus productos, donde tienen productos de confitería, snacks dulces, snacks salados, harinas, entre otros. 
+Bio: Cuenta con diversos productos como panes, premezclas, tostadas, rebozadores y snacks, ubicada en Pilar. 
+
+Grandes empresas con líneas sin gluten: 
+-MDLZ: Su impacto en el mercado se basa en la adaptación de marcas importantes , como las Oreo Sin Gluten o el alfajor Terrabusi, utilizando el fasoneo local para garantizar la seguridad alimentaria. 
+-Molinos rio de la plata: La empresa domina el segmento de snacks a través de Gallo Snacks y premezclas como Exquisita, con más de 15 años liderando el rubro. Su éxito se basa en transformar el alimento sin gluten en una opción cotidiana y saludable para todo público, no solo para el celíaco diagnosticado . 
+
+
+Clientes
+Nuestro modelo de negocio se estructura bajo un esquema B2B por lo que tenemos dos segmentos a analizar:
+Clientes indirectos: cuentas estratégicas que garanticen la rotación del producto a escala nacional. Los principales son:
+Cadenas de Retail Masivo: Se proyecta la comercialización en las principales cadenas de supermercados del país, tales como Coto, INC, Dia, Dorinka . Estos clientes representarán el 50% de la facturación de la empresa.
+Distribuidores Mayoristas y Regionales: Actúan como socios logísticos estratégicos para alcanzar puntos de venta minoristas en el interior del país, donde la logística propia no es eficiente. 
+Grandes Dietéticas y Tiendas Especializadas: Puntos de venta especializados que compran a través de depósitos centrales o franquicias. Funcionan como el canal de entrada para el consumidor específico que busca productos Sin TACC, permitiendo una rotación constante en el nicho de salud. Estos clientes representarán el otro 50% de las ventas.
+
+
+Clientes directos o consumidores:
+Analizando el cliente o consumidor final, la demanda de nuestros productos se divide en cuatro segmentos estratégicos que definen el comportamiento de compra y los requisitos del producto: 
+Personas con celiaquía: Es el núcleo de nuestro mercado. Su compra es por necesidad médica y su principal exigencia es la seguridad. 
+Convivientes con personas con celiaquía: Son hogares donde se opta por unificar la dieta para evitar la contaminación cruzada. Buscan productos que tengan una "performance" sensorial similar al trigo para que toda la familia pueda consumirlos sin notar la diferencia.  
+Persona con alimentación saludable: Consumidores que eligen productos sin gluten por elección personal o bienestar digestivo. Valoran la calidad de los ingredientes y buscan opciones que, además de ser aptas, aporten un valor nutricional superior. 
+Intolerantes a otros alérgenos: Público con necesidades múltiples (alérgicos a la leche, huevo, frutos secos) que a su vez buscan opciones sin gluten 
+
+
+Productos sustitutos 
+Los frutos secos y harinas alternativas (almendra, garbanzo, trigo sarraceno) actúan como sustitutos directos en el segmento que busca una alimentación menos procesada.
+Productos de Arroz: Las galletas de arroz inflado son el sustituto por excelencia debido a su bajo costo y amplia disponibilidad. Aunque ofrecen una experiencia sensorial inferior en términos de sabor y textura, dominan el mercado de snacks..
+Premezclas: representan una amenaza significativa, ya que permiten al consumidor elaborar panificados y repostería en su hogar. Esto reduce la dependencia de productos terminados, especialmente en hogares que buscan optimizar costos o garantizar la frescura total.
+Snacks Salados Industriales: Productos como papas fritas, nachos y chizitos certificados como Sin TACC compiten directamente en el momento de consumo social o "picada", sustituyendo a los bizcochos o snacks panificados de nuestra línea.
+
+Proveedores 
+La cartera de proveedores de la materia prima es acotada, debido a las rigurosas normas que se requieren para garantizar materias primas libres de contaminación cruzada y a su vez es de vital importancia que cuenten con el certificado libre de gluten. 
+Insumos base (harinas y almidones): Representan el mayor riesgo operativo; se depende de molinos especializados que garanticen la ausencia de trazas de gluten.
+Materias grasas y endulzantes: El suministro de aceite, grasa y azúcar requiere proveedores con procesos segregados que eviten la contaminación en el transporte o envasado. 
+Chocolate: al procesarse en máquinas que suelen manejar otros cereales, es difícil encontrar proveedores que garanticen pureza absoluta. 
+Huevo: Es fundamental para la textura y estructura de los panificados sin gluten. Se requiere un proveedor con alta frecuencia de entrega y certificaciones de sanidad estrictas.
+Esto nos determina que los proveedores tienen un alto poder de negociación.
+
+En el caso de los proveedores de insumos no comestibles, la variedad se amplía y no representan una gran amenaza:
+Cajas: es necesario un proveedor fiable que tenga capacidad de entrega semanal, ya que el depósito de packaging es acotado. 
+Bobinas: es fundamental que sean proveedores donde el pedido mínimo sea 300 kg ya que al tener muchos productos se necesita bajo volumen de bobina de cada producto.
+Pallets: Se requiere un proveedor que cuente con stock permanente de unidades bajo estándar ARLOG (1000 x 1200 mm).
+Cintas: Es un insumo de baja criticidad,  se busca estandarizar un único tipo de cinta de embalaje de alta adherencia que soporte las variaciones térmicas de los depósitos. 
+Etiquetas: útiles para identificar las cajas con códigos de barra, fechas de vencimiento y  lote, se necesita un proveedor que maneje poco volúmenes y que tengan entrega inmediata. 
+
+
+Para los proveedores de servicio, debemos contar con: 
+-Servicio de plagas: proveedor certificado con disponibilidad para visitar semanalmente la planta y revisar el estado de los cebos.  
+-Transporte logístico: Flota que cuente con dos semis, para el envío de grandes volúmenes de producto terminado, y con dos chasis de menor tamaño para el envío  de pedidos pequeños. 
+
+Barreras de entrada y salida
+
+Entrada: 
+Especialización de Proveedores: A diferencia del mercado masivo, aquí los proveedores de insumos críticos deben contar con plantas exclusivas o líneas certificadas sin gluten . 
+Gran Inversión Inicial: Se requiere un desembolso significativo para el montaje de una planta desde cero que cumpla con los estándares de calidad.. Esto incluye no solo la infraestructura, sino la tecnología necesaria para garantizar ambientes controlados que eviten la contaminación cruzada.
+Concentración de Mercado: Existe una fuerte rivalidad dominada por pocas empresas con gran trayectoria y escala, lo que obliga a los nuevos entrantes a invertir fuertemente en diferenciación y marketing para ganar espacio en la góndola.
+Barreras Legales y Certificaciones: La obtención de registros de establecimiento (RNE) y de producto (RNPA) con el logo oficial, sumado a certificaciones internacionales como FSSC 22000.
+Salida: 
+Costos de desmantelamiento: el cierre de procesos certificados bajo normas de seguridad alimentaria implican costos operativos finales. 
+Compromisos contractuales: Al operar con una cartera de proveedores acotada y contratos de volumen con grandes cadenas de retail, una salida del mercado podría generar penalizaciones logísticas o conflictos legales por incumplimiento de suministro.
