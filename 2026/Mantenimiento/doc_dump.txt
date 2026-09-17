@@ -1,0 +1,339 @@
+TP Anual
+
+UNIVERSIDAD TECNOLÓGICA NACIONAL
+
+INGENIERÍA INDUSTRIAL
+
+MANTENIMIENTO
+
+TRABAJO PRÁCTICO ANUAL
+
+	Curso N°: I-5052			Grupo Nº: 5
+
+           Nombre y apellido				Legajo Nro.
+
+Diego Valentin Mollo				1756126
+
+Santiago Greco					1779801
+
+Jerónimo Isolabella				1717741
+
+Profesor: Ing. Fernando Javier Aprigliano
+
+Trabajos Prácticos: Teo Dolce
+
+1) Descripción general de la empresa
+
+1.1) Nombre (puede ser ficticio): UnionBat S.A.
+
+1.1.a) ¿Usaron la empresa para un TP de otra materia?. ¿Qué materia?
+
+Sí. La empresa fue utilizada para el TP1 de la materia Seguridad e Higiene Laboral (Curso I-4053, año 2023).
+
+1.2) Conformación jurídica.
+
+Sociedad Anonima
+
+1.3) Rubro/s industriales y comerciales.
+
+Rubro industrial: Fabricación de baterías de plomo-ácido para automotores y camiones (autopartes de seguridad).
+
+Rubro comercial: Comercialización de baterías en el mercado de reposición nacional e internacional. Certificado de tratamiento y reciclado de baterías de scrap.
+
+Actividades complementarias: Fundición de metales no ferrosos; fabricación de aleaciones propias.
+
+1.4) Facturación anual promedio y volumen en unidades producidas:
+
+Teniendo en cuenta que no disponemos de los datos exactos de facturación y volumen de ventas, a raíz de que la empresa no nos pudo compartir esta información, estimamos los mismos considerando que la planta de San Martín cuenta con aproximadamente 140 empleados y una estructura de producción integral con procesos de fundición, armado, activación, lavado y paletizado de baterías, en donde aproximadamente el 70% del personal corresponde a operarios directos de producción.
+
+Si consideramos una productividad promedio de 22 baterías por operario por jornada laboral y tomamos 281 días laborables anuales, obtenemos una producción aproximada de 605.000 baterías por año. Sumado a esto, basándonos en los precios de venta, asumimos un precio promedio de $140.000 por batería (equivalente a aproximadamente 100 USD), la facturación anual estimada de la planta de sería cercana a $84.7 mil millones, es decir unos 60.5 millones USD anuales.
+
+1.5) Mercado:
+
+Mercado nacional: Mercado de reposición de baterías (autos y camiones). Proveedora de distintos fabricantes del sector automotriz.
+
+Mercado internacional: Única empresa nacional exportadora de baterías de plomo-ácido.
+
+1.6) Productos y especificaciones.
+
+Baterías de plomo-ácido para:
+
+Automóviles: Baterías de 15 a 20 kg.
+
+Camiones y vehículos pesados: Baterías de 35 a 40 kg.
+
+Especificaciones relevantes:
+
+Electrolito: ácido sulfúrico diluido.
+
+Proceso de activación mediante carga progresiva controlada por software (monitoreo de temperatura, tensión y corriente).
+
+Temperatura máxima de operación: 85 °C (con alarma automática).
+
+1.7) Servicio técnico brindado.
+
+La empresa brinda certificados de tratamiento y reciclado de baterías de scrap. Sumado a esto, ofrecen una garantía que debe ser activada por el cliente, una vez adquirido el producto.
+
+1.8) Organigrama general de la empresa, indicando la cantidad de personal por sector.
+
+1.9) Turnos de trabajo
+
+Los operarios del sector de activación de baterías trabajan turnos de 6 horas por las condiciones de carga térmica.
+
+1.10) Apertura de costos.
+
+Al igual que con la facturación y el volumen de ventas, no logramos tener acceso a la estructura de costos, por lo que estimamos los mismos a partir de criterio técnico, como se muestra a continuación.
+
+La estructura de costos la estimamos considerando las características del proceso productivo, el nivel de integración industrial de la fábrica y las tomamos las referencias típicas para este tipo de industria. Por ello consideramos que la materia prima representa aproximadamente el 45% de la facturación debido a la elevada utilización de plomo, ácido sulfúrico, polímeros y componentes metálicos, por otro lado la mano de obra directa se estimó en un 16%, considerando que, si bien existen procesos automatizados, gran parte de las tareas de armado, activación, control, lavado y paletizado continúan requiriendo intervención operativa permanente.
+
+Sumado a esto, los costos indirectos de fabricación los calculamos en torno al 12%, incluyendo energía eléctrica industrial, sistemas de ventilación y extracción, elementos de protección personal, y seguridad e higiene. Asimismo, estimamos que los costos de comercialización y logística representan cerca del 10%, debido al elevado peso de las baterías, la necesidad de almacenamiento en pallets y los costos asociados a la distribución nacional y exportación. Los gastos administrativos se proyectaron en un 8%, y finalmente, se incorporó un 5% correspondiente a mantenimiento y depreciación de activos industriales, considerando el desgaste de maquinarias, sistemas eléctricos, líneas de carga, autoelevadores y equipos sometidos a ambientes corrosivos y de trabajo continuo. A partir de estas estimaciones, se consideró un margen operativo aproximado del 4%, coherente con valores habituales de la industria manufacturera nacional.
+
+1.11)  Descripción general de los procesos incluyendo flujograma de proceso y lay out fabril.
+
+  1.12)  Parque de máquinas contemplando:
+
+Nivel tecnológico.
+
+Marcas y modelos.
+
+Antigüedad de uso (si es posible ubicación en curva de bañera).
+
+% de ocupación unitario.
+
+Nivel tecnológico general: La planta posee un nivel tecnológico Medio-Alto. Cuenta con líneas semi-automatizadas con cintas de rodillos, brazos mecánicos asistidos neumáticamente para mitigación de riesgos ergonómicos (cargas de 40 kg), y un sistema de activación/formación de baterías 100% automatizado, controlado por un software de monitoreo central tipo SCADA que regula la tensión y controla alarmas de temperatura térmica (corte a los 85°C).
+
+Nota: Debido a políticas de confidencialidad de la empresa respecto a sus activos, los modelos exactos, años y porcentajes de ocupación han sido estimados en base al régimen de trabajo (3 turnos continuos y sábados, totalizando ~129 hs operativas semanales) y a observaciones directas durante las visitas a la planta.
+
+Curva de bañera
+
+2) Descripción detallada del relevamiento del servicio de mantenimiento 
+
+2.1) Organización del Área: organigrama, personal por función, turnos, etc. descripción de funciones y nivel de capacitación.
+
+El área de mantenimiento está conformada por 15 personas, representando una estructura robusta adecuada para una planta de operaciones continuas. El equipo se distribuye de la siguiente manera: 
+
+Jefatura de mantenimiento (1): Responsable de la estrategia global del sector, gestión del presupuesto y coordinación con Producción.
+
+Planificador / Supervisor (2): Encargados de la programación de tareas preventivas, gestión de órdenes de trabajo y asignación de recursos diarios.  
+
+Técnicos mecánicos (6): Ejecutan tareas de rutina y reparación sobre elementos de transmisión, cintas transportadoras, neumática e hidráulica.  
+
+Técnicos electricistas / electrónicos (6): Abordan fallas en tableros, cableados, mantenimiento de los rectificadores y sistemas de automatización
+
+Turnos de trabajo: El personal operativo de mantenimiento cubre la demanda de la planta trabajando en los mismos turnos de producción:
+
+Mañana: 06:00 a 15:00.  
+
+Tarde: 15:00 a 22:30.  
+
+Noche: 22:30 a 06:00.  
+
+Sábados: 06:00 a 15:00.
+
+Nivel de capacitación:
+
+El nivel general de capacitación es medio-alto. Los técnicos base poseen formación técnica secundaria (electromecánicos, mecánicos, electricistas). Dado que la empresa cuenta con certificación ISO 9001 y automatización avanzada, existe personal especializado (probablemente dentro de los electricistas/electrónicos) capacitado específicamente en programación de PLCs y control de software tipo SCADA. 
+
+2.2) Presupuesto detallado, abierto y porcentualizado respecto de un indicador económico de la empresa (s/ventas; s/activos, etc.).
+
+No logramos obtener información detallada sobre el presupuesto de mantenimiento que destina la empresa, no obstante estimamos el mismo a partir de lo aprendido en clase y de información de la web.
+
+Si comparamos el presupuesto destinado a mantenimiento contra dos indicadores claves, como lo son la ventas y los activos fijos, podemos decir que este mismo representa un 5% de las ventas estimadas y un 3,5% sobre los activos.
+
+   2.3)	Equipamiento: Máquinas herramientas, instrumental, etc, indicando nivel tecnológico y antigüedad.
+
+El taller de mantenimiento, al tener que dar soporte a equipos que van desde tecnología electromecánica antigua hasta robótica de última generación, requiere un pañol versátil:
+
+Taller mecánico: Torno paralelo universal, fresadora, taladro de banco, amoladoras y equipos de soldadura (MIG/TIG y electrodo) para reparación de ejes de cintas y estructuras del horno Sovema. 
+
+Nivel tecnológico: Convencional/Bajo. Antigüedad promedio: 10-15 años.
+
+Instrumental eléctrico/electrónico: Multímetros digitales TRMS, pinzas amperométricas, megóhmetros para motores, y un osciloscopio portátil para el diagnóstico de los rectificadores de carga Digatron y sensores de la plataforma KUKA. 
+
+Nivel tecnológico: Alto. Antigüedad promedio: 2-4 años.
+
+Herramientas generales y de SyH: Herramientas de mano estándar, extractores de rodamientos, dinamómetros, e instrumental de medición (calibres, micrómetros). Elementos para trabajo seguro (bloqueos LOTO).
+
+   2.4)	Descripción detallada de las actividades / tipo de mantenimiento: reactivo, preventivo, etc.
+
+El servicio de mantenimiento aplica una estrategia mixta:
+
+Mantenimiento reactivo: Aplicado a equipos que se encuentran en su etapa de "mortalidad infantil", como la plataforma rotatoria y brazo mecánico KUKA (1 año de antigüedad), los cuales sufren fallas tempranas por calibración y ajustes de parámetros. También se aplica ante roturas imprevistas no críticas.
+
+Mantenimiento preventivo: Es la base para equipos en la zona de "vida útil normal", como las cintas transportadoras (5 años). Incluye rutinas de lubricación, tensión de correas, revisión de motores asíncronos y calibración de los rectificadores Digatron (3 años).
+
+Mantenimiento predictivo / reacondicionamiento: Enfocado en los equipos en "etapa de desgaste". El Horno Sovema (12 años) requiere inspecciones termográficas para detectar fugas de calor por fatiga de materiales. Las lavadoras MAC (15 años) requirieron mantenimiento correctivo debido a que emitían 81 dBA, instalándose aislamiento térmico y sonoro para cumplir con normativas.
+
+   2.5)	Administración de las actividades (manual, computarizada, etc.).
+
+Considerando que la empresa cuenta con sistemas SCADA , posee certificación ISO 9001 e ISO/TS 16949, la administración de las actividades se realiza de manera computarizada. Es altamente probable que utilicen un software CMMS (Computerized Maintenance Management System) o un módulo de gestión de mantenimiento integrado a su ERP. Este sistema centraliza la generación de Órdenes de Trabajo (OT), el registro de tiempos de parada, el historial de fallas por máquina y la programación automática de las rutinas preventivas semanales y mensuales. 
+
+   2.6)	Tipo de documentación (estática y dinámica).
+
+Documentación Estática: Planos mecánicos y eléctricos del lay-out fabril , esquemas de conexión de los rectificadores Digatron, manuales de fabricante de las lavadoras MAC y robótica KUKA , procedimientos operativos estandarizados de mantenimiento (exigidos por la norma ISO 9001), y matrices de análisis de riesgos de puestos de trabajo.
+
+Documentación Dinámica: Órdenes de Trabajo (OT) emitidas y cerradas diariamente, reportes de turnos, check-lists de inspección de los sistemas de ventilación y extracción (críticos por las concentraciones de vapor de ácido sulfúrico), inventarios móviles del pañol y registros de bloqueos (LOTO) de energías peligrosas.
+
+   2.7)	Stocks: Indicar quien es el responsable y cuales son los sistemas de gestión utilizados.
+
+La gestión física y administrativa de los repuestos y consumibles recae bajo el área de logística y almacenes, específicamente en el sector de recepción y pañol. Si bien el Jefe de mantenimiento define los máximos, mínimos y puntos de pedido de repuestos críticos, la administración del stock es ejecutada por el pañolero mediante el sistema ERP de la compañía, registrando los retiros contra un número de OT para costear correctamente las intervenciones. 
+
+   2.8)	Estadísticas e indicadores utilizados, actividades sobre ahorro energético.
+
+KPIs: Se gestionan indicadores clásicos de clase mundial debido a la estandarización automotriz (ISO/TS 16949):
+
+MTBF y MTTR, enfocados fuertemente en el equipo "cuello de botella" que son los rectificadores de carga.
+
+Cumplimiento del Plan de Mantenimiento Preventivo mensual.
+
+Ahorro energético: El consumo eléctrico es un factor crítico en el costo indirecto de fabricación (12% del total de costos). Las actividades de mantenimiento con impacto energético incluyen:
+
+Mantenimiento continuo de la aislación térmica del Horno Sovema para evitar pérdidas.
+
+Calibración rigurosa de las fuentes de carga de activación. El software SCADA ajusta el amperaje óptimo dependiendo del tamaño de la batería y de la temperatura ambiente (bajando las cargas en verano y aprovechando el invierno para acelerar la producción sin desperdiciar energía).
+
+Mantenimiento preventivo de los motores de los 4 extractores de aire, asegurando que las correas no resbalen y que los sistemas de ventilación operen en su punto de mayor eficiencia electromecánica para combatir la elevada carga térmica.
+
+   2.9)	Opinión del equipo sobre el estado actual del servicio de mantenimiento.
+
+El servicio de mantenimiento de UnionBat tiene una estructura sólida, respaldada por la cultura de procesos automotrices que imponen las certificaciones internacionales. Es destacable la correcta identificación tecnológica y de ciclo de vida del parque de máquinas, aplicando robótica y software para mitigar problemas tanto productivos como ergonómicos.
+
+No obstante, existe un desafío importante en la convivencia de activos. Mientras ciertos equipos son de tecnología de punta, otros se encuentran en la "zona de desgaste" (como horno y lavadoras, con más de 12 a 15 años de uso). Esto obliga al sector a invertir una considerable porción de recursos en mantenimiento correctivo. Consideramos que la jefatura de mantenimiento debería iniciar un análisis de reemplazo de estos activos envejecidos o intensificar técnicas de mantenimiento predictivo para evitar paradas que afecten la línea de producción continua. Y en relación a la mano de obra directa del área, la jefatura no requiere aumentar la capacidad del personal, ya que no se comentó necesidad de esto por parte de la empresa.
+
+En conclusión, el equipo considera que el área de mantenimiento cuenta con una base muy sólida, sin embargo se necesita tomar algunas decisiones estratégicas y de planificación en el corto/mediano plazo para profundizar en el mantenimiento predictivo y reforzar la redundancia o el stock de ciertos repuestos críticos.
+
+Módulo 2
+
+ 1.1)	Proponer la reingeniería en los campos /actividades / etc. que consideren oportunas y convenientes.
+
+1.1.1) Propuesta de reingeniería de mantenimiento
+
+La reingeniería es una acción técnica programada de rediseño sobre las instalaciones, equipos y procesos existentes, cuyo propósito no es únicamente restituir las condiciones iniciales, sino modificar las condiciones de diseño originales para corregir fallos crónicos, eliminar causas raíz de averías, incrementar la mantenibilidad, confiabilidad y seguridad operativa, y optimizar el costo global del ciclo de vida del activo.
+
+Desde el punto de vista analitico de mantenimiento:
+
+Impacto en la curva de la bañera: la reingeniería buscará desplazar la tasa de fallas hacia valores mínimos, prolongando la vida útil normal y mitigando el incremento acelerado de fallas por envejecimiento en la etapa de desgaste.
+
+Optimización del costo total de mantenimiento: al reducir recurrencia y severidad de averías en equipos cuello de botella, se contraerá la curva del costo de falla, reduciendo el lucro cesante y penalizaciones por PNP, lo que permite buscar un óptimo de costo total menor.
+
+Mejora de KPIS: las propuestas apuntan a maximizar el MTBF, minimizar el MTTR mediante mejoras en accesibilidad y estandarización.
+
+1.1.2) Matriz de selección y criticidad de ejes de reingeniería
+
+A partir del diagnóstico realizado en las secciones precedentes, se definen cuatro ejes estratégicos de reingeniería. 
+
+Eje 1: Bateas y rectificadores digatron (Cuello de botella y carga térmica)
+
+Eje 2: Sistema de extracción y ventilación (Vapores de H2SO4 y ambiente corrosivo)
+
+Eje 3: Lavadoras industriales MAC (Zona de desgaste y ruido 81 dBA)
+
+Eje 4: Reingeniería de la mecanización y transporte continuo
+
+1.1.3) Desarrollo detallado de propuestas de reingeniería
+
+Eje 1: Bateas y rectificadores digatron
+
+Situación actual y diagnóstico: el sector de formación y activación es el cuello de botella de la planta (90% de ocupación). En este proceso se somete a las baterías a rampas de carga de alta corriente con ácido sulfúrico diluido, liberando hidrógeno gaseoso y elevando la temperatura del electrolito. Las conexiones actuales de los chicotes de carga sufren sulfatación recurrente por vapores ácidos, provocando microcortes, calentamiento por resistencia de contacto y disparos de alarma por temperatura (85°C), lo que detiene la curva programada por el sistema SCADA y exige mantenimiento correctivo en caliente.
+
+Propuesta de reingeniería: 
+
+Rediseño del sistema de conexión eléctrica anticorrosiva: sustitución de terminales convencionales de apriete por mordazas de acople rápido con baño electrolítico de aleación plomo-estaño sobre baso de cobre electrolítico de alta pureza, encapsuladas en fundas elastoméricas de EPDM resistentes a salpicaduras ácidas
+
+Implementación de circuito cerrado de refrigeración forzada en bateas: rediseño del fondo de las bateas de formación incorporando un serpentín inferior de circulación de agua tratada en circuito cerrado (con intercambiador de placas de acero inoxidable y torre de enfriamiento existente).  Esto estabiliza la temperatura del electrolito entre 45°C y 55°C, eliminando los cortes de carga por sobretemperatura y reduciendo el tiempo de ciclo en un 12%
+
+Monitoreo térmico continuo no invasivo: instalación de pirómetros ópticos infrarrojos fijos calibrados e integrados a las entradas analogicas del SCADA, eliminando la necesidad de mediciones manuales con termómetros por parte del operario (mitigando riesgos de contacto con ácido)
+
+Eje 2: Sistema de extracción y ventilación
+
+Situación actual y diagnóstico: Los 4 extractores industriales de aire operan en un régimen de servicio pesado continuo, expuestos a niebla de ácido sulfúrico y calor. El sistema actual presenta conductos de chapa galvanizada con corrosión localizada prematura, arrastre por correas trapezoidales con desgaste acelerado y fallas frecuentes de rodamientos por ingreso de humedad ácida, afectando los límites permisibles de calidad de aire y carga térmica requeridos por SeH.
+
+Propuesta de reingeniería: 
+
+Conversión de materiales de conductos e impulsores a polímeros de alta resistencia: Reemplazo de los conductos troncales por plástico reforzado con fibra de vidrio (PRFV) con resina viniléster, y carcasas/rodetes de extracción en Polipropileno (PP) termofusionado, químicamente inertes al H2SO4.
+
+Acoplamiento directo con variadores electrónicos de frecuencia (VDF): Eliminación del sistema mecánico de poleas y correas mediante la adopción de motores de accionamiento directo acoplados bridados (IP66 / Aislamiento Clase F con sello mecánico de laberinto presurizado). La velocidad de extracción se modula automáticamente mediante VDF comandados por sensores de presión diferencial y concentración de gases, ajustando el caudal volumétrico en función de la cantidad de bancos activos.
+
+Incorporación de sistema de lavado de gases (Scrubber) de bajo mantenimiento: Rediseño del empaque de anillos Pall plásticos en la torre de lavado con toberas de aspersión autolimpiantes de polietileno de alta densidad (PEAD).
+
+Eje 3: Lavadoras industriales MAC
+
+Situación actual y diagnóstico: Las lavadoras de baterías cuentan con 15 años de servicio (etapa de desgaste de la curva de bañera). Presentan vibraciones mecánicas, toberas obstruidas por sarro y sulfatos, y un nivel de presión sonora de 81 dBA, al borde del umbral legal exigido por el marco de SeH, requiriendo constantes paradas correctivas.
+
+Propuesta de reingeniería: 
+
+Rediseño hidráulico del sistema de lavado y neutralización: Sustitución de las bombas y colectores de aspersión de fundición de hierro por bombas de arrastre magnético con impulsor de PVDF (Polivinilideno) y tuberías modulares de PEAD desmontables por uniones rápidas clamp en acero inoxidable AISI 316L. Incorporación de un filtro doble tipo cesta en paralelo que permite limpiar el filtro obstruido sin detener el flujo de la lavadora.
+
+Aislamiento acústico y ergonómico: Rediseño del cerramiento perimetral incorporando paneles sándwich modulares fonoabsorbentes con lana de roca basáltica revestida en chapa perforada de acero inoxidable, montados sobre estructuras de apertura deslizante rápida para inspección mecánica.
+
+Sistema de drenaje con decantador de plomo integrado: Modificación de la batea inferior con plano inclinado de 15°  y válvula de purga de fondo para evitar la acumulación de barros de óxido de plomo que desgastan prematuramente los sellos mecánicos.
+
+Eje 4: Reingeniería de la mecanización y transporte continuo
+
+Situación actual y diagnóstico: La manipulación de acumuladores pesados de camión (35 a 40 kg) y la transferencia entre sectores depende de cintas de rodillos y una plataforma robotizada KUKA en etapa de puesta a punto. El ambiente con micropartículas de plomo y humedad sulfúrica genera fallas aleatorias en fotocélulas estándar y desajuste de guías mecánicas.
+
+Propuesta de reingeniería:
+
+Estandarización modular de accionamientos (Poka-Yoke): Unificación de los motorreductores de las cintas transportadoras a solo dos modelos universales con bridas de montaje rápido estandarizadas, permitiendo que cualquier recambio de motor se realice en menos de 15 minutos sin adaptaciones mecánicas en sitio.
+
+Presurización localizada por aire seco de sensores opticos: Implementación de un microcircuito de purga continua de aire comprimido filtrado en el lente de los sensores fotoeléctricos e inductivos de la celda KUKA (grado de protección IP67/IP69K), evitando el depósito de polvo de plomo y niebla ácida que provoca lecturas falsas.
+
+Garras modulares con amortiguación neumática progresiva: Rediseño de los dedos de agarre del manipulador KUKA incorporando placas de poliuretano vulcanizado con cambio rápido mediante chaveta pasante, eliminando el desgaste por impacto sobre las cajas de polipropileno de las baterías.
+
+ 1.2)	Presentar una planificación de la realización de la Reingeniería, indicando:
+
+1.2.1 Indicar cuales son los recursos necesarios (humanos, técnicos, económicos)
+
+Recursos Humanos:
+
+Internos: 
+
+1 Jefe de Mantenimiento (Coordinador General de la Parada/Reingeniería)
+
+2 Planificadores/Supervisores (Coordinación de área)
+
+6 Técnicos Mecánicos y 6 Técnicos Electricistas/Electrónicos de la planta.
+
+De los técnicos mecánicos, cuatro estarán avocados dedicados a las tareas de montaje y modificaciones físicas de la reingeniería (ductos, bombas, garras KUKA y motorreductores), mientras que los otros dos serán asignados de forma permanente a la cobertura del mantenimiento de rutina y guardia de la producción diaria.
+
+Por el lado de los técnicos electricistas, cuatros se dedicarán al cableado, montaje de VDFs, pirómetros y tableros IP66 de la reingeniería, y los otros dos estarán dedicados a la guardia operativa y atención de emergencias/preventivos de línea en producción.
+
+Tercerizados:
+
+1 Empresa especializada en instalaciones plásticas industriales (instalación de ductos PRFV/PP y Scrubber)
+
+1 Integrador de automatización y SCADA (configuración de VDF, sensores infrarrojos y presurización de celda KUKA)
+
+1 Proveedor de aislamientos acústicos e ingeniería hidráulica.
+
+Aquí se demandarán especialistas externos puntuales para las tareas que requieren habilitaciones o herramientas específicas, con el fin de evitar sobrecargar al personal propio.
+
+Recursos técnicos y materiales:
+
+Equipos de soldadura plástica por termofusión, instrumentación de calibración y alineación láser, grúa/autoelevador de maniobra, software SCADA con licencias de extensión de nodos de E/S.
+
+Materiales: Módulos PVDF/PEAD, ductos PRFV, VDFs, bombas magnéticas, sensores infrarrojos, mordazas con baño plomo-estaño, tableros IP66.
+
+Recursos económicos:
+
+Eje 1 (Digatron/Bateas): USD 38.000 (Mordazas, intercambiador de placas, pirómetros, integración SCADA).
+
+Las soluciones de carga de alta exigencia para baterías de plomo-ácido requieren materiales químicamente inertes al ácido sulfúrico diluido. Los costos de actualización de la electrónica de control y la sensorización para integradores de baterías industriales están alineados con los estándares de fabricantes de la industria como Digatron Power Electronics.
+
+Eje 2 (Ventilación/Scrubber): USD 45.000 (Ductos PRFV/PP, VDF, motores IP66, scrubber).
+
+Eje 3 (Lavadoras MAC): USD 22.000 (Pump PVDF, filtros dobles, aislamiento acústico, batea ).
+
+Eje 4 (Transporte/KUKA): USD 15.000 (Motorreductores estandarizados, purga de aire seco, garras neumáticas).
+
+Imprevistos y Montaje/Servicios Tercerizados: Se estima un 15% de costo de los equipos, como gastos de montaje e imprevistos de obra, siendo un total de USD 15.825.
+
+Inversión Total Reingeniería (CAPEX Inicial): USD 121.325 (Equivalente a aprox. $182.000.000 ARS sumado a un a tipo de cambio oficial/referencial de 1 USD = 1.500 ARS).
+
+1.2.2 Presentar el cronograma calendarizado de realización “técnica”, acompañado por el cronograma (también calendarizado) de desembolsos y beneficios esperados.
+
+1.3)	Realizar un análisis de factibilidad técnico-económico por la metodología TIR o Cash Flow.
+
+Bibliografía
+
+TP1.Seguridad e Higiene.Grupo2.2023 06-07.pdf
