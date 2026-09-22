@@ -1,0 +1,85 @@
+{
+    "v2": [],
+    "v1": [
+        {
+            "seed": 8577,
+            "variant": "v1",
+            "z": 35359.4,
+            "ov": 0.0,
+            "cinta_mode": "colinear",
+            "start_node": 6
+        },
+        {
+            "seed": 2524,
+            "variant": "v1",
+            "z": 35443.7,
+            "ov": 1.8651746813702627e-15,
+            "cinta_mode": "turn_down",
+            "start_node": 200
+        },
+        {
+            "seed": 6505,
+            "variant": "v1",
+            "z": 35447.9,
+            "ov": 0.0,
+            "cinta_mode": "colinear",
+            "start_node": 6
+        },
+        {
+            "seed": 7819,
+            "variant": "v1",
+            "z": 35563.6,
+            "ov": 0.0,
+            "cinta_mode": "colinear",
+            "start_node": 200
+        },
+        {
+            "seed": 11426,
+            "variant": "v1",
+            "z": 35565.2,
+            "ov": 5.226929999935237e-15,
+            "cinta_mode": "colinear",
+            "start_node": 200
+        },
+        {
+            "seed": 12884,
+            "variant": "v1",
+            "z": 35844.0,
+            "ov": 1.3322676295501878e-15,
+            "cinta_mode": "colinear",
+            "start_node": 200
+        },
+        {
+            "seed": 14179,
+            "variant": "v1",
+            "z": 35875.8,
+            "ov": 2.0103918529912333e-14,
+            "cinta_mode": "colinear",
+            "start_node": 6
+        },
+        {
+            "seed": 13239,
+            "variant": "v1",
+            "z": 35889.3,
+            "ov": 0.0,
+            "cinta_mode": "turn_down",
+            "start_node": 6
+        },
+        {
+            "seed": 7963,
+            "variant": "v1",
+            "z": 36039.2,
+            "ov": 0.0,
+            "cinta_mode": "colinear",
+            "start_node": 6
+        },
+        {
+            "seed": 1,
+            "variant": "v1",
+            "z": 36180.3,
+            "ov": 0.0,
+            "cinta_mode": "colinear",
+            "start_node": 6
+        }
+    ]
+}
