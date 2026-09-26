@@ -1,0 +1,78 @@
+3.9 Medios de cobro y régimen cambiario (Normativa BCRA / MLC)
+Instrumento: Carta de Crédito (L/C) Irrevocable y Confirmada a la vista emitida por banco marroquí (Attijariwafa Bank) y confirmada por banco local argentino. Comisión bancaria: 1,00% sobre FOB.
+Plazo Cambiario: 180 días corridos a partir del cumplido aduanero de embarque para liquidar en el MLC (BCRA).
+3.10 Formación del costo y precio de exportación (Fórmula matemática de la cátedra)
+A. Determinación del Costo Fabril (Rubro 1)
+Materia Prima Nacional (MPN): Insumos locales del extintor (cilindro, recubrimientos, manómetro, sifón, pasador, agente y caja): USD 6,80.
+Materia Prima Importada (CIF MPI): Válvula importada VM22 RO2 nacionalizada puesta en planta: USD 1,53 (valor CIF MPI USD 1,10).
+Mano de Obra Directa (MOD): Operarios directos de prensas, soldadura, pintura y ensamble: USD 2,20.
+Costos Indirectos de Fabricación (CIFab): Energía, horneado y mantenimiento indirecto: USD 1,40.
+Costo Unitario de Producción: USD 6,80 + USD 1,10 + USD 2,20 + USD 1,40 = USD 11,50 por unidad.
+TOTAL RUBRO 1 (Lote 2.000 unidades): 2.000 extintores x USD 11,50 = USD 23.000,00.
+B. Rubros de Costo de Exportación (Suma Fija en USD)
+Cálculo del Costo de Exportación (CX):
+   CX = Rubros 1 + 2 + 3 + 4 + 5 + 7 = 23.000 + 1.050 + 250 + 210 + 0 + 1.350 = USD 25.860,00
+   Costo unitario CX = USD 25.860,00 / 2.000 = USD 12,93 por extintor.
+C. Coeficientes Porcentuales e Incentivos
+RUBRO 8 — Gastos Indirectos (GXI): Comisión bancaria por Carta de Crédito = 1,00% (0,01).
+RUBRO 9 — Gravámenes de Exportación (DX): No grava la posición NCM 8424.10.00 = 0,00% (0,00).
+RUBRO 10 — Reintegros (R): Reintegro a la exportación para MOI = 3,00% (0,03).
+RUBRO 6 — Utilidad Neta Pretendida (UN): Se adopta una Utilidad Neta deseada del 15,00% (0,15).
+D. Aplicación de las Fórmulas de la Cátedra
+1. Costo FOB sin utilidad (FOB₀):
+   FOB₀ = CX / (1 - GXI) = 25.860,00 / (1 - 0,01) = 25.860,00 / 0,99 = USD 26.121,21
+   Costo FOB₀ Unitario = USD 26.121,21 / 2.000 = USD 13,06 por extintor.
+2. Precio de Venta FOB Buenos Aires (FOB₂):
+   FOB₂ = CX / [ 1 - (GXI + DX - R + UN) ]
+   Denominador = 1 - (0,01 + 0,00 - 0,03 + 0,15) = 1 - 0,13 = 0,87
+   FOB₂ = 25.860,00 / 0,87 = USD 29.724,14
+   PRECIO FOB UNITARIO BUENOS AIRES = USD 29.724,14 / 2.000 = USD 14,86 por extintor
+3. Precio CIF Casablanca:
+   Flete Marítimo FCL 20' a Casablanca = USD 1.950,00
+   Seguro Marítimo ICC (A) (110% CIF) = USD 110,00
+   PRECIO CIF TOTAL CASABLANCA = FOB (29.724,14) + Flete (1.950,00) + Seguro (110,00) = USD 31.784,14
+   PRECIO CIF UNITARIO CASABLANCA = USD 31.784,14 / 2.000 = USD 15,89 por extintor
+E. Verificación en Punto Homogéneo (Retrocálculo y Competitividad en Marruecos)
+Comparativa de competitividad en Casablanca: En distribuidores de Marruecos, los extintores vehiculares/portátiles similares de origen francés y español se venden entre 310 MAD y 380 MAD (USD 31 a USD 38). El extintor argentino llega a 262 MAD (USD 26,15), situándose entre un 15% y un 30% por debajo de las marcas europeas con calidad certificada IRAM / IMANOR.
+3.11 Conclusión parcial de la exportación
+La exportación de 2.000 extintores portátiles a Casablanca genera una facturación trimestral de USD 29.724,14 FOB con una Utilidad Neta del 15% en moneda dura (USD 4.458,62 libres por embarque), aprovechando la capacidad ociosa de la planta y demostrando alta viabilidad comercial.
+CUARTA PARTE: CONCLUSIÓN GENERAL
+4.1 Síntesis y factibilidad integrada del circuito productivo y comercial
+El estudio demuestra el encadenamiento virtuoso entre la sustitución de importaciones y la diversificación exportadora:
+1. Impacto de la Válvula Importada: Al importar la válvula VM22 RO2 de Safefire Hangzhou a USD 1,53 puesta en planta en lugar de pagar USD 4,50 en plaza local, se logra un ahorro directo de USD 2,97 por extintor (ahorro del 66%).
+2. Competitividad del Precio FOB/CIF: Este ahorro reduce el costo fabril a USD 11,50, permitiendo fijar un precio FOB de USD 14,86 y un CIF Casablanca de USD 15,89. Si se mantuviese la válvula local cara, el precio CIF superaría los USD 19,50 y el precio al público marroquí treparía a más de 320 MAD, perdiendo competitividad frente a las marcas europeas.
+3. Balanza Comercial Superavitaria: La importación de válvulas demanda USD 5.000 FOB cada cinco meses, mientras que la exportación genera USD 29.724 FOB trimestralmente. La empresa consolida un superávit comercial neto en moneda extranjera.
+4.2 Matriz FODA y recomendaciones estratégicas de gestión
+REFERENCIAS BIBLIOGRÁFICAS Y FUENTES DOCUMENTALES
+HZ Firetec Argentina: Catálogo Oficial de Válvulas para Extintores; Ficha Técnica Válvula para Polvo 1 kg Cód. VM22 RO2; Especificaciones de materiales DIN 17660, manijas de acero rojo, asiento NBR Shore A 90 y rosca M22 x 1,5. Disponible en: https://www.hzfiretec.com.ar/prod_valvulas_valvulas-polvo-1kg.html
+Safefire (Hangzhou) Technology Co., Ltd. (Made-in-China): China Manufacture Fire Extinguisher Valve for 1kg 2kg; Certificaciones ISO 9001, CE, UL; Escala de cotizaciones FOB Ningbo (500-999 u.: USD 2,00; 1.000-2.999 u.: USD 1,50; ≥3.000 u.: USD 1,00). Disponible en: https://es.made-in-china.com/co_safefire-valve/product_China-Manufacture-Fire-Extinguisher-Valve-for-1kg-2kg_yuiniguggg.html
+ARCA - Agencia de Recaudación y Control Aduanero (ex AFIP): Código Aduanero (Ley 22.415); Resolución General Conjunta 5466/2023 (Sistema Estadístico de Importaciones - SEDI); Resoluciones Generales de Percepción RG 2281 (Ganancias) y RG 2937 (IVA).
+Banco Central de la República Argentina (BCRA): Texto Ordenado de las Normas sobre 'Exterior y Cambios'; Regulaciones sobre plazos de liquidación de exportaciones MOI y acceso al MLC.
+Instituto Argentino de Normalización y Certificación (IRAM): Norma IRAM 3525 ('Extintores de agua bajo presión'); Norma IRAM 3527 ('Ensayos de potencial extintor sobre fuegos Clase A'); Normas IRAM 3517-1 y 3517-2 ('Dotación y mantenimiento de extintores').
+Institut Marocain de Normalisation (IMANOR) & Ministère de l'Industrie et du Commerce: Norme Marocaine NM ISO 7165 ('Extincteurs portatifs d'incendie'); Règlement du Programme de Vérification de la Conformité (VoC) des produits industriels importés au Maroc.
+Administration des Douanes et Impôts Indirects du Maroc (ADII): Tarif Douanier National; Régime arancelario para la partida HS 8424.10; Alícuotas del Droit de Douane (2,5%), TPI (0,25%) y TVA (20%).
+Cámara de Comercio Internacional (ICC): Incoterms® 2020: Reglas oficiales para la interpretación de términos comerciales; Cláusulas del Instituto de Londres (Institute Cargo Clauses A).
+SENASA: Norma Internacional para Medidas Fitosanitarias NIMF N° 15 para embalajes de madera de exportación.
+Cámaras y proveedores nacionales de seguridad contra incendios: Premier Matafuegos, FADESA, Matafuegos Antártida, Matafuegos Geo, Drago SRL; Relevamiento de tarifas de despachantes de aduana y forwarders marítimos.
+RUBRO DE COSTO | DESGLOSE OPERATIVO | IMPORTE (USD)
+RUBRO 1 — Costo de Producción Fabril | 2.000 extintores x USD 11,50 (por absorción) | 23.000,00
+RUBRO 2 — Gastos Administrativos Exportación | Auditoría VoC SGS (USD 750) + Rotulado bilingüe (USD 180) + Cert. Origen CERA (USD 120) | 1.050,00
+RUBRO 3 — Gastos Comerciales Internacionales | Comunicaciones, catálogos técnicos y muestras comerciales | 250,00
+RUBRO 4 — Gastos Financieros (Prefinanciación) | Financiación bancaria 60 días al 7,5% anual sobre costos directos fabriles | 210,00
+RUBRO 5 — Impuestos Nacionales | Alícuota 0% (Operación exenta de IVA e Ingresos Brutos a la exportación) | 0,00
+RUBRO 7 — Gastos Directos de Exportación (FOB) | Embalaje exportación y film (USD 280) + Flete a puerto (USD 350) + THC origen (USD 280) + Despachante y SIM (USD 440) | 1.350,00
+ETAPA CADENA COMERCIAL EN MARRUECOS | BASE DE CÁLCULO / ALÍCUOTA | IMPORTE UNITARIO
+Precio de Venta CIF Puerto Casablanca | Incoterm pactado de exportación | USD 15,89 (158,90 MAD)
+Droit de Douane (Arancel Aduanero) | 2,50% sobre Valor CIF | USD 0,40 (4,00 MAD)
+Taxe Parafiscale à l'Importation (TPI) | 0,25% sobre Valor CIF | USD 0,04 (0,40 MAD)
+Gastos de Terminal Portuaria y Despacho Casablanca | Manipuleo portuario, PORTNET y flete interno | USD 1,10 (11,00 MAD)
+COSTO TOTAL DEL IMPORTADOR MARROQUÍ | Costo nacionalizado puesto en depósito | USD 17,43 (174,30 MAD)
+Margen de Ganancia del Distribuidor | 25,00% sobre costo de adquisición | USD 4,36 (43,60 MAD)
+Precio de Venta Mayorista sin Impuestos | Base gravable para IVA marroquí | USD 21,79 (217,90 MAD)
+TVA Marroquí (Taxe sur la Valeur Ajoutée) | 20,00% sobre precio mayorista | USD 4,36 (43,60 MAD)
+PRECIO FINAL AL CONSUMIDOR CON IMPUESTOS | Precio final al usuario en Casablanca | USD 26,15 (≈ 262,00 MAD)
+MATRIZ FODA INTEGRAL DEL PROYECTO | MATRIZ FODA INTEGRAL DEL PROYECTO
+FORTALEZAS | • Planta fabril propia con soldadura y ensayos hidrostáticos a 25 bar según IRAM 3525. • Ahorro del 66% en la válvula VM22 RO2 importada de Safefire Hangzhou. • Producto normalizado y probado para fuegos Clase A.
+DEBILIDADES | • Lead time marítimo desde China (70 días) que exige planificar stocks mínimos de seguridad. • Concentración inicial de ventas externas en un único distribuidor mayorista en Casablanca.
+OPORTUNIDADES | • Demanda sostenida en Marruecos de equipamiento de seguridad contra incendios. • Arancel de importación marroquí reducido (2,50% NMF). • Ventaja de precio del 15% al 30% respecto de los fabricantes europeos en Casablanca.
+AMENAZAS | • Variaciones en tarifas de fletes marítimos de ultramar. • Regulaciones del BCRA sobre plazos de acceso al MLC y liquidación de divisas. • Estricta fiscalización pre-embarque del programa VoC IMANOR.
